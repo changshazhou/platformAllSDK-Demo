@@ -1,4 +1,3 @@
-
 declare class moosnowAdRow {
     appid: string;
     boxAppid: string;
@@ -87,7 +86,7 @@ declare class HttpModule extends BaseModule {
      * @param {*} complete
      */
     request(url: string, data: any, method: 'POST' | 'GET', success?: Function, fail?: Function, complete?: Function): void;
-    private _object2Query;
+    public _object2Query;
     isDisableArea(callback: any): void;
     /**
        * Loading加载完成
@@ -188,7 +187,6 @@ declare class bannerStyle {
 }
 
 
-
 declare class PlatformModule extends BaseModule {
     constructor();
     baseUrl: string;
@@ -202,16 +200,19 @@ declare class PlatformModule extends BaseModule {
     video: any;
     inter: any;
     native: any;
+    box: any;
     platformName: string;
     bannerId: string;
     videoId: string;
     interId: string;
+    boxId: string;
     /**
      * https://u.oppomobile.com/main/app.html 广告联盟网站中媒体管理 > 广告管理中广告名称下面的 id 即为 adUnitId
      */
     nativeId: Array<number>;
     nativeIdIndex: number;
     bannerWidth: number;
+    bannerHeigth: number;
     bannerShowCount: number;
     bannerShowCountLimit: number;
     bannerCb: Function;
@@ -227,7 +228,10 @@ declare class PlatformModule extends BaseModule {
     nativeCb: Function;
     nativeLoading: boolean;
     record: any;
-    private shareInfoArr;
+    shareInfoArr: {
+        img: string;
+        title: string;
+    }[];
     onEnable(): void;
     private vibrateSwitch;
     initAppConfig(): void;
@@ -305,18 +309,45 @@ declare class PlatformModule extends BaseModule {
      * wifiSignal	number	wifi 信号强度，范围 0 - 4	                        >= 1.9.0
      */
     getSystemInfoSync(): any;
+    /**
+     * 横屏还是竖屏
+     * @param windowHeight
+     * @param windowWidth
+     */
+    isLandscape(windowHeight: any, windowWidth: any): boolean;
     initShare(shareInfoArr: any): void;
     getShareInfo(ticket: string, success: (encryptedData: string, iv: string) => void, fail?: Function): void;
+    /**
+     * 分享
+     * @param query 分享参数 { channel:moosnow.SHARE_CHANNEL.LINK }
+     * SHARE_CHANNEL.LINK, SHARE_CHANNEL.ARTICLE, SHARE_CHANNEL.TOKEN, SHARE_CHANNEL.VIDEO 可选 仅字节跳动有效
+     * @param callback 分享成功回调参数 = true, 分享失败回调参数 = false,
+     */
     share(query?: Object, callback?: (shared: boolean) => void): void;
     shareWithoutCheck(query?: Object, callback?: (shared: boolean) => void): void;
     private _share;
-    private _buildShareInfo;
+    _buildShareInfo(query?: any): {
+        title: string;
+        imageUrl: string;
+        query: any;
+    };
     private _onShareback;
     private _initLoginButton;
     initRecord(): void;
     clipRecord(): void;
+    /**
+     * 开始录屏
+     * @param duration 录屏时长
+     * @param callback 如果不是抖音回调参数=false
+     */
     startRecord(duration?: number, callback?: any): void;
+    /**
+     * 停止录屏
+     * @param callback 如果不是抖音回调参数=false，如果录制成功，回调参数中录屏地址=res.videoPath
+     */
     stopRecord(callback?: any): void;
+    pauseRecord(): void;
+    resumeRecord(): void;
     /**
      * 注册微信各种回调
      */
@@ -331,6 +362,7 @@ declare class PlatformModule extends BaseModule {
     _onBannerLoad(): void;
     _onBannerError(err: any): void;
     _bottomCenterBanner(size: any): void;
+    _resetBanenrStyle(size: any): void;
     /**
      *
      * @param callback 点击回调
@@ -397,13 +429,28 @@ declare class PlatformModule extends BaseModule {
      *
      */
     clickNative(): void;
+    /**
+      * 盒子广告
+      * @param callback 关闭回调
+      * @param remoteOn 被后台开关控制
+      */
+    showAppBox(callback?: Function, remoteOn?: boolean): void;
+    /**
+     *
+     * @param callback
+     */
+    hideAppBox(callback?: Function): void;  /**
+    * 平台数据上报
+    * @param name
+    * @param value
+    */
+    reportMonitor(name?: string, value?: string): void;
     initRank(): void;
     showRank(): void;
     updateUserScore(score: any): void;
     hideRank(): void;
     onDisable(): void;
 }
-
 
 
 declare class GameDataCenter extends BaseModule {
@@ -418,9 +465,259 @@ declare class GameDataCenter extends BaseModule {
     getChannelAppId(): string;
     setChannelAppId(value: any): void;
 }
+declare class EventModule extends BaseModule {
+    constructor();
+    private _eventList;
+    private _waitingForSendList;
+    /**
+    * 添加一个监听者
+    * @param {string} eventName 监听的事件名
+    * @param {typeof Class} target 监听者
+    * @param {Function} callback 监听事件触发后的回调
+    */
+    addListener(eventName: any, target: any, callback: any): void;
+    /**
+     * 将事件添加到发送队列里在update里发送
+     * @param {string} eventName 要发送的事件名
+     * @param {any} data 要发送的自定义数据
+     */
+    addToSendQueue(eventName: any, data: any): void;
+    /**
+     * 当前帧立即发送一个事件
+     * @param {String} eventName 事件名
+     * @param {any} data 自定义数据
+     */
+    sendEventImmediately(eventName: any, data: any): void;
+    /**
+     * 移除一个监听者
+     * @param {string} eventName 事件名
+     * @param {any} target 监听者
+     */
+    removeListener(eventName: any, target: any): void;
+    /**
+     * 移除所有监听者
+     */
+    removeAllListener(): void;
+    _addListener(eventName: any, target: any, once: any, callback: any): void;
+    _addToSendList(eventName: any, data: any): void;
+    _sendEvent(eventName: any, data: any): void;
+    onUpdate(): void;
+    onDisable(): void;
+}
+/**
+ * 监听者
+ */
+declare class MListener {
+    callback: Function;
+    target: any;
+    once: Boolean;
+    constructor();
+}
+/**
+ * 事件类
+ */
+declare class MLEvent {
+    eventName: string;
+    listeners: Array<any>;
+    constructor();
+}
+declare enum PlatformType {
+    /**
+     * 微信
+     */
+    WX = 0,
+    /**
+     * 字节跳动
+     */
+    BYTEDANCE = 1,
+    /**
+     * OPPO
+     */
+    OPPO = 2,
+    /**
+     * OPPO
+     */
+    OPPO_ZS = 3,
+    /**
+     * 百度
+     */
+    BAIDU = 4,
+    /**
+     * QQ
+     */
+    QQ = 5,
+    /**
+     * PC电脑
+     */
+    PC = 6,
+    /**
+     * V
+     */
+    VIVO = 7
+}
+declare class EventType {
+    static ON_PLATFORM_SHOW: string;
+    static ON_PLATFORM_HIDE: string;
+    static ON_AD_SHOW: string;
 
+}
 
+interface IUIModule {
+    showToast(msg: string): any;
+    /**
+     * 显示一个ui
+     * @param {string} name  resources/UI目录下的预设名字
+     * @param {Object} data 携带的自定义数据
+     * @param {Function} callback ui显示后回调:(formModel,data:Object)
+     */
+    pushUIForm(name: any, data?: any, callback?: any): any;
+    /**
+    * 从栈顶隐藏一个UI
+    * @param {bool} destroy 是否销毁
+    */
+    pop(destroy: boolean, cb?: any): any;
+    /**
+   * 获取一个UIForm
+   * @param {string} name
+   */
+    getUIFrom(name: string): any;
+    /**
+    * 隐藏某个UI
+    * @param {string} name 预设名
+    * @param {any} data 携带的自定义数据
+    */
+    hideUIForm(name: string, data: any, cb?: any): any;
+    hideAllUIForm(): any;
+    destroyUIForm(name: string, data: any): any;
+}
+
+interface IResourceModule {
+    /**
+     * 加载resources下的cc.SpriteFrame, cc.AnimationClip, cc.Prefab
+     * 不带扩展名
+     * @method loadAsset
+     * @param {string} url resources下路径
+     * @param {string} assetType cc.SpriteFrame, cc.AnimationClip, cc.Prefab..
+     * @param {Function} [callback] (err:Error,asset:cc.Asset)
+     */
+    loadAsset(url: any, assetType: any, callback: any): any;
+    /**
+    * 加载resources目录下某个目录下的指定类型的资源(用于预加载整个目录资源)
+    * @param {string} dir resources下的目录
+    * @param {typeof cc.Asset} type
+    * @param {Function} progressCallback (precent:number)
+    * @param {Function} completeCallback (err:Error,reses:Asset[])
+    */
+    loadAssetDir(dir: any, type: any, progressCallback: any, completeCallback: any): any;
+}
+declare class EntityModule extends BaseModule {
+    private entityLogics;
+    private _serializeId;
+    private paused;
+    prefabPath: string;
+    private mEntity3DPools;
+    private mEntity3DLogics;
+    private entityPools;
+    private mIsSlow;
+    constructor();
+    start(): void;
+    update(dt: any): void;
+    pause(): void;
+    resume(): void;
+    getAllEntity(name: any): any[];
+    showEntity(name: any, parentNode: any, data: any): any;
+    hideEntity(logic: any, data: any, isDestory?: boolean): void;
+    hideAllEntity(name: any, isDestory?: boolean): void;
+    private _showEntity;
+    private _hideEntity;
+    private _createEntity;
+    private _getPrefabByName;
+    private _getOrNewEntityPool;
+    private _getEntityPool;
+    private _newEntityPool;
+}
+declare class Common {
+    static titleCase(s: any): any;
+    static numFixed(num: any, len: any): number;
+    static parseMoney(value: any): number;
+    static objKeySort(obj: any): {};
+    static isWeChat(): boolean;
+    static isQQPlay(): boolean;
+    static isObject(x: any): boolean;
+    static object2Query(obj: any): string;
+    static isFunction(fun: any): boolean;
+    static isEmpty(obj: any): boolean;
+    static formatTime(date: any): string;
+    static formatNumber(n: any): any;
+    /**
+     * 复制源对象属性到目标上
+     * @param {*} from
+     * @param {*} target
+     */
+    static copy(from: any, target: any): void;
+    static randomNumBoth(Min: any, Max: any): any;
+    static randomFloat(Min: any, Max: any): any;
+    static randomToRatio(start: number, end: number, range: number): boolean;
+    static generateUUID(): string;
+    static isNumber(obj: any): boolean;
+    static isArray(obj: any): boolean;
+    static isString(obj: any): boolean;
+    private static mPlatform;
+    /**
+     * 获取当前的运行平台
+     * PC状态下会返回debug平台
+     * debug没有时 默认返回微信平台
+     */
+    static get platform(): PlatformType;
+    static deepCopy(obj: any): object | [];
+    static popOpenAnim(node: cc.Node, callback?: Function): void;
+    static popCloseAnim(node: cc.Node, callback?: Function): void;
+    static formatMoney(value: number): any;
+}
+declare interface IForm {
+    showToast(msg: string): any;
+    showAd(params: {
+        showAd: any;
+        callback: any;
+    }): any;
+    showReward(): any;
+}
+declare enum AD_POSITION {
+    /**
+  * 不显示
+  */
+    NONE = 0,
+    BANNER = 1,
+    FLOAT = 2,
+    /**
+     * 侧拉广告
+     */
+    SIDE = 4,
+    CENTER = 8,
+    EXPORT = 16,
+
+    /**
+     * 返回按钮
+     */
+    BACK = 32,
+    /**
+     * 黑色半透明遮挡
+     */
+    MASK = 64,
+    /**
+     * 延迟显示
+     */
+    WAIT = 128,
+
+    /**
+     * 左右两侧
+     */
+    LEFTRIGHT = 256
+}
 declare class moosnow {
+
+    static UIForm: IUIForm;
+
     static VIDEO_STATUS: {
         END: string;
         NOTEND: string;
@@ -445,11 +742,22 @@ declare class moosnow {
         TOKEN: string;
         LINK: string;
     };
+    static Common = Common
+
+    static EVENT_TYPE = EventType;
+    static APP_PLATFORM = PlatformType;
+    static AD_POSITION = AD_POSITION;
+    static getAppPlatform(): PlatformType
     static http: HttpModule
     static platform: PlatformModule
     static ad: AdModule
     static setting: SettingModule
     static data: GameDataCenter
+    static event: EventModule
+    static ui: IUIModule
+    static form: IForm
+    static resource: IResourceModule
+    static entity: EntityModule
 }
 
 

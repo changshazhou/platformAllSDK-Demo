@@ -12,6 +12,8 @@ export default class Helloworld extends cc.Component {
     start() {
         // init logic
         this.label.string = this.text;
+
+        moosnow.ui.pushUIForm("adForm", null)
     }
 
     showVideo() {
@@ -55,7 +57,42 @@ export default class Helloworld extends cc.Component {
     }
 
     showBox() {
-        moosnow.platform.showAppBox();
+        moosnow.platform.showAppBox(() => {
+            console.log('关闭盒子')
+        });
+    }
+
+    showNativeBanner() {
+        // console.log('moosnow.platform.moosnowConfig.bannerId', moosnow.platform.moosnowConfig.bannerId)
+
+        const bannerAd = qq.createBannerAd({
+            adUnitId: '393fd2c197f4fdda1f9729ef36737890',
+            style: {
+                top: 0,
+                width: 320,
+                height: 100,
+                left: 0
+            }
+        })
+        // 尺寸调整时会触发回调         
+        // 注意：如果在回调里再次调整尺寸，要确保不要触发死循环！！！    
+        bannerAd.onResize(size => {
+            console.log('Resize后正式宽高:', size.width, size.height);
+            // 在这里可以根据banner宽高进行定位        
+            // bannerAd.style.top = 76;
+            // bannerAd.style.left = 320;
+
+
+        });
+        bannerAd.onError(res => { console.log('bannerAd onError', res) })
+        bannerAd.onLoad(res => {
+            console.log('bannerAd onLoad', res)
+            bannerAd.show().then(() => {
+                console.log('bannerAd show ok')
+            }).catch((res) => {
+                console.log('bannerAd show error', res)
+            });
+        })
     }
 
 
