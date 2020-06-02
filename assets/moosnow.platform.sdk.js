@@ -6222,6 +6222,145 @@
         return FormControl;
     }());
 
+    var UIForms = /** @class */ (function () {
+        function UIForms() {
+        }
+        Object.defineProperty(UIForms, "mapping", {
+            get: function () {
+                var _a, _b, _c, _d, _e, _f, _g;
+                return {
+                    adForm: (_a = {},
+                        _a[moosnow.APP_PLATFORM.WX] = "adForm",
+                        _a[moosnow.APP_PLATFORM.OPPO] = "adFormOPPO",
+                        _a[moosnow.APP_PLATFORM.OPPO_ZS] = "adFormOPPO",
+                        _a[moosnow.APP_PLATFORM.VIVO] = "adFormOPPO",
+                        _a[moosnow.APP_PLATFORM.QQ] = "adFormQQ",
+                        _a),
+                    pauseForm: (_b = {},
+                        _b[moosnow.APP_PLATFORM.WX] = "pauseForm",
+                        _b[moosnow.APP_PLATFORM.BYTEDANCE] = "pauseFormTT",
+                        _b[moosnow.APP_PLATFORM.OPPO] = "pauseFormOPPO",
+                        _b[moosnow.APP_PLATFORM.OPPO_ZS] = "pauseFormOPPO",
+                        _b[moosnow.APP_PLATFORM.VIVO] = "pauseFormOPPO",
+                        _b[moosnow.APP_PLATFORM.QQ] = "pauseFormTT",
+                        _b),
+                    respawnForm: (_c = {},
+                        _c[moosnow.APP_PLATFORM.WX] = "respawnForm",
+                        _c[moosnow.APP_PLATFORM.BYTEDANCE] = "respawnFormTT",
+                        _c[moosnow.APP_PLATFORM.OPPO] = "respawnFormOPPO",
+                        _c[moosnow.APP_PLATFORM.OPPO_ZS] = "respawnFormOPPO",
+                        _c[moosnow.APP_PLATFORM.VIVO] = "respawnFormOPPO",
+                        _c[moosnow.APP_PLATFORM.QQ] = "respawnFormQQ",
+                        _c),
+                    endForm: (_d = {},
+                        _d[moosnow.APP_PLATFORM.WX] = "endForm",
+                        _d[moosnow.APP_PLATFORM.BYTEDANCE] = "endFormTT",
+                        _d[moosnow.APP_PLATFORM.OPPO] = "endFormOPPO",
+                        _d[moosnow.APP_PLATFORM.OPPO_ZS] = "endFormOPPO",
+                        _d[moosnow.APP_PLATFORM.VIVO] = "endFormOPPO",
+                        _d),
+                    totalForm: (_e = {},
+                        _e[moosnow.APP_PLATFORM.WX] = "totalForm",
+                        _e[moosnow.APP_PLATFORM.BYTEDANCE] = "totalFormTT",
+                        _e[moosnow.APP_PLATFORM.QQ] = "totalFormQQ",
+                        _e),
+                    tryForm: (_f = {},
+                        _f[moosnow.APP_PLATFORM.WX] = "tryForm",
+                        _f[moosnow.APP_PLATFORM.BYTEDANCE] = "tryFormTT",
+                        _f[moosnow.APP_PLATFORM.QQ] = "tryFormTT",
+                        _f),
+                    mistouchForm: (_g = {},
+                        _g[moosnow.APP_PLATFORM.WX] = "mistouchForm",
+                        _g[moosnow.APP_PLATFORM.QQ] = "mistouchFormQQ",
+                        _g),
+                };
+            },
+            enumerable: true,
+            configurable: true
+        });
+        UIForms.convertUIName = function (mappingForm) {
+            if (!mappingForm) {
+                console.warn("convertUIName fail  mappingForm is null ");
+                return null;
+            }
+            var curApp = moosnow.getAppPlatform();
+            if (mappingForm[curApp])
+                return mappingForm[curApp];
+            else if (mappingForm[moosnow.APP_PLATFORM.WX])
+                return mappingForm[moosnow.APP_PLATFORM.WX];
+            else {
+                console.warn("convertUIName fail ", mappingForm);
+                return null;
+            }
+            return null;
+        };
+        Object.defineProperty(UIForms, "AdForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.adForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "TotalForm", {
+            /**
+             * 结算页
+             */
+            get: function () {
+                return this.convertUIName(this.mapping.totalForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(UIForms, "EndForm", {
+            /**
+             * 结束页
+             */
+            get: function () {
+                return this.convertUIName(this.mapping.endForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "PauseForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.pauseForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "RespawnForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.respawnForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "MistouchForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.mistouchForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "TryForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.tryForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        UIForms.HomeForm = "homeForm";
+        UIForms.SkinForm = "skinForm";
+        UIForms.GameForm = "gameForm";
+        UIForms.CoinForm = "coinForm";
+        UIForms.PrevHomeForm = "prevHomeForm";
+        UIForms.ToastForm = "toastForm";
+        UIForms.SetForm = "setForm";
+        UIForms.PrizeForm = "prizeForm";
+        return UIForms;
+    }());
+
     /**
      * 广告结果
      */
@@ -6229,13 +6368,32 @@
         function Form() {
         }
         /**
-         * 显示广告
-         * @param adType
-         * @param callback
+         * 预加载广告
          */
-        Form.prototype.showAd = function (adType, callback) {
+        Form.prototype.preloadAd = function () {
+            moosnow.ui.pushUIForm(UIForms.AdForm, { showAd: moosnow.AD_POSITION.NONE }, null);
+        };
+        /**
+         * 显示广告
+         * @param adType 广告类型
+         * @param callback  有返回按钮时的回调
+         * @param zIndex  层级
+         */
+        Form.prototype.showAd = function (adType, callback, zIndex) {
             if (adType === void 0) { adType = AD_POSITION.NONE; }
-            moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback });
+            if (zIndex === void 0) { zIndex = 999; }
+            var adForm = moosnow.ui.getUIFrom(UIForms.AdForm);
+            if (adForm) {
+                adForm.node.zIndex = zIndex;
+                moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback });
+            }
+            else {
+                moosnow.ui.pushUIForm(UIForms.AdForm, { showAd: moosnow.AD_POSITION.NONE }, function () {
+                    var adForm = moosnow.ui.getUIFrom(UIForms.AdForm);
+                    adForm.node.zIndex = zIndex;
+                    moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback });
+                });
+            }
         };
         return Form;
     }());
