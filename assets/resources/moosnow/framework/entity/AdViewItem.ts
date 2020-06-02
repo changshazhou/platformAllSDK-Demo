@@ -102,7 +102,8 @@ export default class AdViewItem extends EntityLogic {
     }
 
     public onHide() {
-        this.mAdItem && this.mAdItem.onCancel = null;
+        if (this.mAdItem)
+            this.mAdItem.onCancel = null;
         moosnow.event.removeListener(EventType.AD_VIEW_CHANGE, this);
     }
 

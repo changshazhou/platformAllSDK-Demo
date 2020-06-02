@@ -9,6 +9,8 @@ declare class moosnowAdRow {
     pkgName: string;
     extraData: any;
     position: string;
+    onCancel: Function;
+
 }
 declare class moosnowAppConfig {
     bannerId: string;
@@ -43,6 +45,12 @@ declare class nativeAdRow {
 
 declare class BaseModule {
     protected moduleName: string;
+    preload(url: any, callback: any): void;
+    /**
+     *
+     */
+    _findComponent(node: any, classname: any): any;
+    _findComponentByName(instance: any, classname: any): any;
 }
 
 declare class AdModule extends BaseModule {
@@ -559,6 +567,8 @@ declare class EventType {
     static ON_PLATFORM_SHOW: string;
     static ON_PLATFORM_HIDE: string;
     static ON_AD_SHOW: string;
+    static AD_VIEW_CHANGE: string;
+
 
 }
 
@@ -610,7 +620,7 @@ interface IResourceModule {
     */
     loadAssetDir(dir: any, type: any, progressCallback: any, completeCallback: any): any;
 }
-declare class EntityModule extends BaseModule {
+declare class BaseEntityModule extends BaseModule {
     private entityLogics;
     private _serializeId;
     private paused;
@@ -714,9 +724,191 @@ declare enum AD_POSITION {
      */
     LEFTRIGHT = 256
 }
-declare class moosnow {
 
-    static UIForm: IUIForm;
+declare class BaseForm {
+    private mIntervalArr;
+    schedule(callback: Function, time: number): void;
+    unschedule(callback: any): void;
+    initProperty(form: any): void;
+}
+
+
+declare class AdForm extends BaseForm {
+    pauseContainer: cc.Node;
+    pauseView: cc.ScrollView;
+    pauseLayout: cc.Layout;
+    centerContainer: cc.Node;
+    centerView: cc.ScrollView;
+    centerLayout: cc.Layout;
+    exportContainer: cc.Node;
+    exportView: cc.ScrollView;
+    exportLayout: cc.Layout;
+    exportClose: cc.Node;
+    exportMask: cc.Node;
+    exportCloseTxt: cc.Node;
+    floatContainer: cc.Node;
+    floatFull: cc.Node;
+    bannerContainer: cc.Node;
+    bannerView: cc.ScrollView;
+    bannerLayout: cc.Layout;
+    endContainer: cc.Node;
+    endView: cc.ScrollView;
+    endLayout: cc.Layout;
+    failContainer: cc.Node;
+    failView: cc.ScrollView;
+    failLayout: cc.Layout;
+    gameOverContainer: cc.Node;
+    gameOverView: cc.ScrollView;
+    gameOverLayout: cc.Layout;
+    respawnContainer: cc.Node;
+    respawnScrollView: cc.ScrollView;
+    respawnLayout: cc.Layout;
+    playerDiedContainer: cc.Node;
+    playerDiedScrollView: cc.ScrollView;
+    playerDiedLayout: cc.Layout;
+    leftContainer: cc.Node;
+    leftView: cc.ScrollView;
+    leftLayout: cc.Layout;
+    rightView: cc.ScrollView;
+    rightLayout: cc.Layout;
+    drawerContainer: cc.Node;
+    drawerView: cc.ScrollView;
+    drawerLayout: cc.Layout;
+    drawerShow: cc.Node;
+    drawerHide: cc.Node;
+    private mAdItemList;
+    setPosition(source: Array<moosnowAdRow>, position?: string): Array<moosnowAdRow>;
+    private mScrollVec;
+    /**
+     *
+     * @param scrollView
+     * @param layout
+     * @param positionTag
+     * @param entityName
+     */
+    initView(container: cc.Node, scrollView: cc.ScrollView, layout: cc.Layout, position: AD_POSITION, entityName: string): void;
+    private addEvent;
+    private removeEvent;
+    private mZindex;
+    private onAdChange;
+    /**
+      *
+      * @param data
+      */
+    willShow(data: any): void;
+    private mShowAd;
+    private mBackCall;
+    displayChange(data: any, callback?: any): void;
+    private onBack;
+    private mMoveSpeed;
+    onFwUpdate(dt: any): void;
+    willHide(): void;
+    private mFloatIndex;
+    private mFloatRefresh;
+    private mFloatCache;
+    private mAdData;
+    initFloatAd(parentNode: any, prefabs: any, points: Array<cc.Vec2>): void;
+    private floatAnim;
+    private updateFloat;
+    private hasAd;
+    private mSecond;
+    private showExportClose;
+    private displayAd;
+}
+declare class FormModel {
+    name: string;
+    node: cc.Node;
+    UIForm: any;
+    zIndex: number;
+    constructor();
+}
+/**
+  * HASDO:
+  * 1栈方式管理UI，
+  * 2缓存UI
+  * 3入栈（显示UI）
+  * 4出栈（关闭UI）
+  * 5关闭指定UI
+  *
+  * TODO:
+  * 1上层UI遮盖下层UI逻辑回调
+  * 2设置label默认字体
+  * 3按需清理缓存
+  *
+  * ISSUE
+  * 1由于UI是异步加载，导致UI栈顺序会错乱 (fixed)
+  * 2连续push相同UI（待测试）
+  */
+declare class BaseUIModule extends BaseModule {
+    rootCanvas: any;
+    constructor();
+    layerIndex: number;
+    UIRoot: string;
+    UIFormStack: Array<any>;
+    cachedUIForms: Array<any>;
+    toastForm: any;
+    showToast(msg: string): void;
+    /**
+     * 显示一个ui
+     * @param {string} name  resources/UI目录下的预设名字
+     * @param {Object} data 携带的自定义数据
+     * @param {Function} callback ui显示后回调:(formModel,data:Object)
+     */
+    pushUIForm(name: any, data?: any, callback?: any): void;
+    /**
+     * 从栈顶隐藏一个UI
+     * @param {bool} destroy 是否销毁
+     */
+    pop(destroy?: boolean, cb?: any): void;
+    /**
+    * 获取一个UIForm
+    * @param {string} name
+    */
+    getUIFrom(name: string): any;
+    /**
+     * 隐藏某个UI
+     * @param {string} name 预设名
+     * @param {any} data 携带的自定义数据
+     */
+    hideUIForm(name: string, data: any, cb?: any): void;
+    hideAllUIForm(): void;
+    destroyUIForm(name: string, data: any): void;
+    _formatUIFormName(name: string): string;
+    /**
+     * 实例化resource下ui目录的prefab
+     * @param {Int} formId 层级
+     * @param {string} name resources下的路径
+     * @param {Function} callback 参数 node
+     */
+    _createUINode(name: string, formId: number, callback: Function): void;
+    /**
+     * 创建一个formModel
+     * @param {string} name
+     * @param {Function} callback (node, index)
+     */
+    _createUIFormModel(name: string, callback: Function): void;
+    _getUINodeFromCacheByName(name: string): any;
+    _showUIForm(formModel: FormModel, data: any): void;
+    _hideUIForm(formModel: FormModel, data: any, cb?: any): void;
+    _destroyUIForm(formModel: FormModel, data: any): void;
+    _removeStack(removeItem: any): void;
+}
+declare class FormControl {
+    public adForm: AdForm
+}
+/**
+ * 广告结果
+ */
+declare class Form {
+    /**
+     * 显示广告
+     * @param adType
+     * @param callback
+     */
+    showAd(adType: AD_POSITION, callback: Function): void;
+}
+
+declare class moosnow {
 
     static VIDEO_STATUS: {
         END: string;
@@ -742,8 +934,7 @@ declare class moosnow {
         TOKEN: string;
         LINK: string;
     };
-    static Common = Common
-
+    static Common = Common;
     static EVENT_TYPE = EventType;
     static APP_PLATFORM = PlatformType;
     static AD_POSITION = AD_POSITION;
@@ -754,10 +945,12 @@ declare class moosnow {
     static setting: SettingModule
     static data: GameDataCenter
     static event: EventModule
-    static ui: IUIModule
-    static form: IForm
+    static ui: BaseUIModule
     static resource: IResourceModule
-    static entity: EntityModule
+    static entity: BaseEntityModule
+    static form: Form
+    static control: FormControl
+
 }
 
 

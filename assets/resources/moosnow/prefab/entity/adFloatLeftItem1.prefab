@@ -492,17 +492,23 @@
     "_id": ""
   },
   {
-    "__type__": "29580uSMUNB74bWNlLxrslp",
+    "__type__": "1a41aJFN0RHY4bZTxb9WGan",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "logo": null,
-    "title": null,
+    "logo": {
+      "__id__": 3
+    },
+    "title": {
+      "__id__": 11
+    },
     "animLogo": null,
-    "nameBg": null,
+    "nameBg": {
+      "__id__": 3
+    },
     "changeView": false,
     "_id": ""
   },

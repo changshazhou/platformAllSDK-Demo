@@ -13,8 +13,17 @@ export default class Helloworld extends cc.Component {
         // init logic
         this.label.string = this.text;
 
-        moosnow.ui.pushUIForm("adForm", null)
+        moosnow.ui.pushUIForm("adForm", { showAd: moosnow.AD_POSITION.NONE }, () => {
+
+        });
+
     }
+
+
+    showAd() {
+        moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.LEFTRIGHT, null);
+    }
+
 
     showVideo() {
         moosnow.platform.showVideo(res => {
