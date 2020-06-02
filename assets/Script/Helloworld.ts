@@ -21,7 +21,16 @@ export default class Helloworld extends cc.Component {
 
 
     showAd() {
-        moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.LEFTRIGHT, null);
+        // |
+        moosnow.form.showAd(moosnow.AD_POSITION.EXPORT | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
+            moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT, () => {
+
+            });
+        });
+    }
+
+    hideAd() {
+        moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
     }
 
 

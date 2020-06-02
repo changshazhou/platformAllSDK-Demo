@@ -1,7 +1,7 @@
 
-import AdViewItem from "./AdViewItem";
 import UIForm from "../ui/UIForm";
 import EntityLogic from "../entity/EntityLogic";
+import AdViewItem from "../entity/AdViewItem";
 
 
 const { ccclass, property } = cc._decorator;
@@ -96,7 +96,6 @@ export default class AdForm extends UIForm {
 
     public isMask: boolean = false;
     public isPopEffect: boolean = false;
-    private mAdItemList: Array<AdViewItem> = [];
 
 
 
@@ -127,13 +126,27 @@ export default class AdForm extends UIForm {
     public willShow(data) {
         moosnow.control.adForm.initProperty(this);
         moosnow.control.adForm.willShow(data);
+        moosnow.control.adForm.onAfterShow = (index) => {
+            // index 默认999
+            //限时完成后，用户可以更改层级
+            this.node.zIndex = index
+        }
     }
     public onShow(data) {
         moosnow.ad.getAd(res => {
             moosnow.control.adForm.initView(this.bannerContainer, this.bannerView, this.bannerLayout, moosnow.AD_POSITION.BANNER, this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.leftContainer, this.leftView, this.leftLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.leftContainer, this.rightView, this.rightLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListBannerItem);
-            moosnow.control.adForm.initView(this.exportContainer, this.exportView, this.exportLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.exportContainer, this.exportView, this.exportLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListExportItem);
+
+            let points = [];
+            let prefabs = [this.mAdFloatLeftItem1, this.mAdFloatLeftItem2, this.mAdFloatLeftItem1, this.mAdFloatLeftItem3]
+            this.floatContainer.children.forEach((item, idx) => {
+                if (item.name.indexOf('ad') != -1) {
+                    points.push({ x: item.x, y: item.y })
+                }
+            });
+            moosnow.control.adForm.initFloatAd(this.floatContainer, prefabs, points)
         })
     }
 

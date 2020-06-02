@@ -466,6 +466,9 @@ declare class GameDataCenter extends BaseModule {
     private mUserToken;
     getToken(): string;
     setToken(v: any): void;
+    private mCurrentMisTouchCount;
+    getCurrentMisTouchCount(): number;
+    setCurrentMisTouchCount(num: number): void;
     private mChannel_id;
     getChannelId(): string;
     setChannelId(value: any): void;
@@ -786,11 +789,16 @@ declare class AdForm extends BaseForm {
      * @param positionTag
      * @param entityName
      */
-    initView(container: cc.Node, scrollView: cc.ScrollView, layout: cc.Layout, position: AD_POSITION, entityName: string): void;
-    private addEvent;
-    private removeEvent;
-    private mZindex;
-    private onAdChange;
+    initView(container: cc.Node, scrollView: cc.ScrollView, layout: cc.Layout, position: AD_POSITION, entityName: string | cc.Prefab): void;
+    addEvent(): void;
+    removeEvent(): void;
+    onAdChange(data: any): void;
+    private mIndex;
+    /**
+     *
+     * @param zindex
+     */
+    onAfterShow(zindex: number): void;
     /**
       *
       * @param data
@@ -799,7 +807,7 @@ declare class AdForm extends BaseForm {
     private mShowAd;
     private mBackCall;
     displayChange(data: any, callback?: any): void;
-    private onBack;
+    onBack(): void;
     private mMoveSpeed;
     onFwUpdate(dt: any): void;
     willHide(): void;
@@ -808,7 +816,7 @@ declare class AdForm extends BaseForm {
     private mFloatCache;
     private mAdData;
     initFloatAd(parentNode: any, prefabs: any, points: Array<cc.Vec2>): void;
-    private floatAnim;
+    floatAnim(floatNode: any): void;
     private updateFloat;
     private hasAd;
     private mSecond;
@@ -907,6 +915,37 @@ declare class Form {
      */
     showAd(adType: AD_POSITION, callback: Function): void;
 }
+declare class DelayMove extends BaseModule {
+    posButton: cc.Node;
+    moveDis: number;
+    showBanner: boolean;
+    private pos1;
+    private pos2;
+    private mMistouchPosNum;
+    private mMistouchPosSecond;
+    /**
+     *
+     * @param moveNode
+     * @param distince
+     * @param showBanner
+     */
+    move(moveNode: any, distince: any, showBanner: any): void;
+    private setPos;
+    private onPosCallback;
+    private removeTemp;
+}
+declare class DelayShow extends BaseModule {
+    show(node: any, delayTime?: number): void;
+    hideNode(node: any): void;
+    private showNode;
+}
+declare class Delay extends BaseModule {
+    private mMistouchPos;
+    private mDelayMove;
+    get DelayMove(): DelayMove;
+    private mDelayShow;
+    get DelayShow(): DelayShow;
+}
 
 declare class moosnow {
 
@@ -950,7 +989,5 @@ declare class moosnow {
     static entity: BaseEntityModule
     static form: Form
     static control: FormControl
-
+    static delay: Delay
 }
-
-

@@ -247,7 +247,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New ProgressBar",
+    "_name": "progressBar",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -395,7 +395,9 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "f11c1fc8-d53c-4d7e-bef2-1f083dd7805e"
+    },
     "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -436,7 +438,9 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "28c892de-71d5-45fa-b1b3-503722e74cbe"
+    },
     "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -687,7 +691,9 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "1c49f1e4-8ee2-4263-b5d4-4d7cdd1dd248"
+    },
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,
@@ -808,7 +814,9 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "94c1dade-44ab-4af9-90cc-b70e3e3db0b8"
+    },
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,

@@ -166,7 +166,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "8cdb44ac-a3f6-449f-b354-7cd48cf84061"
+      "__uuid__": "60e774ad-bfcf-4f75-940e-28670302e0f4"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -215,7 +215,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "28cfb45a-3a41-4178-9196-78645f6613fb"
+      "__uuid__": "ff367135-e3e7-4d1a-838a-80ce19b25f58"
     },
     "fileId": "348F8wOuVD0ZeBr6gaEL3v",
     "sync": false
@@ -298,8 +298,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Label",
-    "_N$string": "Label",
+    "_string": "更多好玩",
+    "_N$string": "更多好玩",
     "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": false,
@@ -320,7 +320,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "28cfb45a-3a41-4178-9196-78645f6613fb"
+      "__uuid__": "ff367135-e3e7-4d1a-838a-80ce19b25f58"
     },
     "fileId": "70F7NDTs5NdKFqQYZ3Evst",
     "sync": false
@@ -356,7 +356,7 @@
     "_id": ""
   },
   {
-    "__type__": "e482fDqWsFOkKTB1y3IlvJw",
+    "__type__": "1a41aJFN0RHY4bZTxb9WGan",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -371,6 +371,7 @@
     },
     "animLogo": null,
     "nameBg": null,
+    "changeView": false,
     "_id": ""
   },
   {
@@ -379,7 +380,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "28cfb45a-3a41-4178-9196-78645f6613fb"
+      "__uuid__": "ff367135-e3e7-4d1a-838a-80ce19b25f58"
     },
     "fileId": "67mrTFUUxPJoy+DX5PMLjn",
     "sync": false
