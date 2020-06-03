@@ -18,10 +18,18 @@ export default class Helloworld extends cc.Component {
     }
 
 
+    showMistouch() {
+        moosnow.form.showMistouch(() => {
+            console.log('误触结束')
+        });
+    }
+
+
+
     showAd() {
         // |
         moosnow.form.showAd(moosnow.AD_POSITION.EXPORT | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
-            moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT, () => {
+            moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.SIDE, () => {
 
             });
         });

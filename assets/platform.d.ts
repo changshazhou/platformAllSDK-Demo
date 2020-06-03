@@ -45,6 +45,11 @@ declare class nativeAdRow {
 
 declare class BaseModule {
     protected moduleName: string;
+    private mIntervalArr;
+    schedule(callback: Function, time: number): void;
+    unschedule(callback: any): void;
+    scheduleOnce(callback: Function, time: number): void;
+    initProperty(form: any): void;
     preload(url: any, callback: any): void;
     /**
      *
@@ -901,8 +906,154 @@ declare class BaseUIModule extends BaseModule {
     _destroyUIForm(formModel: FormModel, data: any): void;
     _removeStack(removeItem: any): void;
 }
-declare class FormControl {
-    public adForm: AdForm
+declare enum MISTOUCH_BANNER_TYPE {
+    AUTO_HIDE = 1,
+    MAST = 2
+}
+
+declare class MistouchForm extends BaseForm {
+    clickProgress: any;
+    btnBanner: any;
+    logo: any;
+    mBeginPos: any;
+    mEndPos: any;
+    mMaxNum: number;
+    mCurrentNum: number;
+    mNavigateIndex: number;
+    mBannerShow: boolean;
+    mShowTime: number;
+    mBannerClickType: MISTOUCH_BANNER_TYPE;
+    initPos(): void;
+    willShow(data: any): void;
+    willHide(): void;
+    subProgress(): void;
+    addEvent(): void;
+    removeEvent(): void;
+    bannerClickCallback(isOpend: any): void;
+    onLogoUp(): void;
+    onLogoDown(): void;
+    onBannerClick(): void;
+    resetProgress(): void;
+    onHideBanner(): void;
+    update(): void;
+}
+declare class MistouchFormTT extends MistouchForm {
+    clickProgress: cc.ProgressBar;
+    btnReceive: cc.Node;
+    btnConfirm: cc.Node;
+    checked: cc.Sprite;
+    unchecked: cc.Sprite;
+    step1: cc.Node;
+    step2: cc.Node;
+    logo: cc.Node;
+    mMaxNum: number;
+    mCurrentNum: number;
+    mOpenVideo: boolean;
+    willShow(data: any): void;
+    willHide(): void;
+    subProgress(): void;
+    addEvent(): void;
+    removeEvent(): void;
+    openBox(): void;
+    private checkboxChange;
+    private showCheckbox;
+    private playBoxAnim;
+    onLogoUp(): void;
+    onBannerClick(): void;
+    resetProgress(): void;
+    update(): void;
+}
+declare class CocosMistouchFormTT extends MistouchFormTT {
+    clickProgress: cc.ProgressBar;
+    btnReceive: cc.Node;
+    btnConfirm: cc.Node;
+    checked: cc.Sprite;
+    unchecked: cc.Sprite;
+    step1: cc.Node;
+    step2: cc.Node;
+    logo: cc.Node;
+}
+declare class MistouchFormQQ extends MistouchForm {
+    clickProgress: any;
+    btnBanner: any;
+    logo: any;
+    hand: any;
+    pinch1: any;
+    pinch2: any;
+    pinch3: any;
+    pinch4: any;
+    pinch5: any;
+    pinch6: any;
+    mBeginPos: any;
+    mEndPos: any;
+    willShow(data: any): void;
+    mistouchAppBox(): boolean;
+    subProgress(): void;
+    addEvent(): void;
+    removeEvent(): void;
+    onLogoUp(): void;
+    onLogoDown(): void;
+    initPos(): void;
+    onHideBanner(): void;
+    onBannerClick(): void;
+}
+declare class CocosMistouchFormQQ extends MistouchFormQQ {
+    clickProgress: any;
+    btnBanner: any;
+    logo: any;
+    hand: any;
+    pinch1: any;
+    pinch2: any;
+    pinch3: any;
+    pinch4: any;
+    pinch5: any;
+    pinch6: any;
+    mBeginPos: any;
+    mEndPos: any;
+}
+declare class BaseLogic extends BaseModule {
+    private mLogicData;
+    /**
+    * 父类缓存willShow，onShow传递到实体的逻辑数据
+    */
+    get LogicData(): any;
+    willShow(data?: any): void;
+    onShow(data: any): void;
+    willHide(data: any): void;
+    onHide(data: any): void;
+}
+declare class AdViewItem extends BaseLogic {
+    logo: cc.Sprite;
+    title: cc.Label;
+    animLogo: cc.Sprite;
+    nameBg: cc.Sprite;
+    changeView: boolean;
+    mAdItem: moosnowAdRow;
+    initItem(): void;
+    private onClickAd;
+    private findNextAd;
+    private onAdViewChange;
+    onShow(): void;
+    onHide(): void;
+    willShow(cell: moosnowAdRow): void;
+    refreshImg(cell: moosnowAdRow): void;
+}
+declare class LogicControl {
+    private mAdViewItem;
+    /**
+     * 返回一个AdViewItem实例
+     */
+    newViewItem(): AdViewItem;
+    private mAdForm;
+    get adForm(): AdForm;
+    private mAdFormQQ;
+    get adFormQQ(): any;
+    private mMistouchForm;
+    get mistouchForm(): MistouchForm;
+    private mMistouchFormTT;
+    get mistouchFormTT(): CocosMistouchFormTT;
+    private mMistouchFormQQ;
+    get mistouchFormQQ(): CocosMistouchFormQQ;
 }
 /**
  * 广告结果
@@ -919,6 +1070,12 @@ declare class Form {
      * @param zIndex  层级
      */
     showAd(adType: AD_POSITION, callback: Function, zIndex?: number): void;
+    /**
+     * 显示狂点页面
+     * @param callback 点击完成回调
+     * @param type 类型 仅对QQ平台生效 1 是按钮点击  2 动画点击
+     */
+    showMistouch(callback?: Function, type?: number): void;
 }
 declare class DelayMove extends BaseModule {
     posButton: cc.Node;
@@ -978,10 +1135,10 @@ declare class moosnow {
         TOKEN: string;
         LINK: string;
     };
-    static Common = Common;
-    static EVENT_TYPE = EventType;
-    static APP_PLATFORM = PlatformType;
-    static AD_POSITION = AD_POSITION;
+    static Common: typeof Common;
+    static EVENT_TYPE: typeof EventType;
+    static APP_PLATFORM: typeof PlatformType;
+    static AD_POSITION: typeof AD_POSITION;
     static getAppPlatform(): PlatformType
     static http: HttpModule
     static platform: PlatformModule
@@ -993,6 +1150,6 @@ declare class moosnow {
     static resource: IResourceModule
     static entity: BaseEntityModule
     static form: Form
-    static control: FormControl
+    static control: LogicControl
     static delay: Delay
 }

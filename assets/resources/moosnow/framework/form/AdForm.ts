@@ -78,19 +78,19 @@ export default class AdForm extends UIForm {
 
 
     @property(cc.Node)
-    public drawerContainer: cc.Node = null;
+    public sideContainer: cc.Node = null;
 
     @property(cc.ScrollView)
-    public drawerView: cc.ScrollView = null;
+    public sideView: cc.ScrollView = null;
 
     @property(cc.Layout)
-    public drawerLayout: cc.Layout = null;
+    public sideLayout: cc.Layout = null;
 
     @property(cc.Node)
-    public drawerShow: cc.Node = null;
+    public btnSideShow: cc.Node = null;
 
     @property(cc.Node)
-    public drawerHide: cc.Node = null;
+    public btnSideHide: cc.Node = null;
 
 
 
@@ -138,6 +138,7 @@ export default class AdForm extends UIForm {
             moosnow.control.adForm.initView(this.leftContainer, this.leftView, this.leftLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.leftContainer, this.rightView, this.rightLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.exportContainer, this.exportView, this.exportLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListExportItem);
+            moosnow.control.adForm.initView(this.sideContainer, this.sideView, this.sideLayout, moosnow.AD_POSITION.SIDE, this.mAdListBannerItem);
 
             let points = [];
             let prefabs = [this.mAdFloatLeftItem1, this.mAdFloatLeftItem2, this.mAdFloatLeftItem1, this.mAdFloatLeftItem3]

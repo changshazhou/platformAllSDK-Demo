@@ -40,10 +40,13 @@
       },
       {
         "__id__": 27
+      },
+      {
+        "__id__": 28
       }
     ],
     "_prefab": {
-      "__id__": 28
+      "__id__": 29
     },
     "_opacity": 255,
     "_color": {
@@ -565,7 +568,9 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "2777f98f-a8dc-4a9b-b834-94f3cfa0fd40"
+    },
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,
@@ -581,7 +586,7 @@
     "_id": ""
   },
   {
-    "__type__": "9c1e2AO8wZPWbAgk+CIA9Na",
+    "__type__": "a737fPN/FtMTrnjqhxkZNap",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -594,8 +599,6 @@
     "autoSwing": false,
     "scaleMax": 1,
     "scaleMin": 0.8,
-    "enableLogPoint": false,
-    "logPointName": "",
     "_id": ""
   },
   {
@@ -716,8 +719,17 @@
       "__id__": 18
     },
     "_enabled": true,
-    "_defaultClip": null,
-    "_clips": [],
+    "_defaultClip": {
+      "__uuid__": "0d9b2c7f-b55c-4fbd-9813-ae726496c9bd"
+    },
+    "_clips": [
+      {
+        "__uuid__": "275d8895-6c15-4681-ac83-7ed0c0eb8faf"
+      },
+      {
+        "__uuid__": "0d9b2c7f-b55c-4fbd-9813-ae726496c9bd"
+      }
+    ],
     "playOnLoad": false,
     "_id": ""
   },
@@ -839,8 +851,14 @@
       "__id__": 22
     },
     "_enabled": true,
-    "_defaultClip": null,
-    "_clips": [],
+    "_defaultClip": {
+      "__uuid__": "c33b4c9c-70b0-4acf-822d-262fa32e7d49"
+    },
+    "_clips": [
+      {
+        "__uuid__": "c33b4c9c-70b0-4acf-822d-262fa32e7d49"
+      }
+    ],
     "playOnLoad": false,
     "_id": ""
   },
@@ -910,6 +928,46 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 1334,
     "_originalHeight": 750,
+    "_id": ""
+  },
+  {
+    "__type__": "4f1e4c462dEl4o1/rB0BJLe",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "clickProgress": {
+      "__id__": 12
+    },
+    "btnBanner": {
+      "__id__": 14
+    },
+    "logo": {
+      "__id__": 18
+    },
+    "hand": {
+      "__id__": 22
+    },
+    "pinch1": {
+      "__uuid__": "1c49f1e4-8ee2-4263-b5d4-4d7cdd1dd248"
+    },
+    "pinch2": {
+      "__uuid__": "53be57e2-cfec-4ddc-8182-8d7f56c7b88a"
+    },
+    "pinch3": {
+      "__uuid__": "176e46c1-8b7f-43be-a7d0-dae67b885104"
+    },
+    "pinch4": {
+      "__uuid__": "9743e67b-ec73-4fc6-9c10-e13b7204c3cc"
+    },
+    "pinch5": {
+      "__uuid__": "61ee0421-545d-4b5d-99bb-303a601ff81c"
+    },
+    "pinch6": {
+      "__uuid__": "fbbb8692-3a43-40f5-bcc1-7bb30517edb8"
+    },
     "_id": ""
   },
   {

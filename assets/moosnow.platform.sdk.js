@@ -1,4 +1,4 @@
-(function () {
+var mx = (function () {
     'use strict';
 
     /*! *****************************************************************************
@@ -263,7 +263,13 @@
         PlatformType[PlatformType["VIVO"] = 7] = "VIVO";
     })(PlatformType || (PlatformType = {}));
 
-    var Common$1 = /** @class */ (function () {
+    var ENGINE_TYPE = {
+        COCOS: "cc",
+        LAYA: "Laya",
+        NONE: ""
+    };
+
+    var Common = /** @class */ (function () {
         function Common() {
         }
         //
@@ -463,19 +469,37 @@
             }
             return objClone;
         };
+        Common.getEngine = function (instance) {
+            if (window[ENGINE_TYPE.COCOS] && typeof instance != "string") {
+                return ENGINE_TYPE.COCOS;
+            }
+            else if (window[ENGINE_TYPE.LAYA] && typeof instance != "string") {
+                return ENGINE_TYPE.LAYA;
+            }
+            else
+                return ENGINE_TYPE.NONE;
+        };
         Common.popOpenAnim = function (node, callback) {
-            node.scale = 0.8;
-            node.runAction(cc.sequence(cc.scaleTo(0.1, 1.2, 1.2), cc.scaleTo(0.1, 1, 1), cc.callFunc(function () {
-                if (callback)
-                    callback();
-            }, this)));
+            if (this.getEngine(node) == ENGINE_TYPE.COCOS) {
+                node.scale = 0.8;
+                node.runAction(cc.sequence(cc.scaleTo(0.1, 1.2, 1.2), cc.scaleTo(0.1, 1, 1), cc.callFunc(function () {
+                    if (callback)
+                        callback();
+                }, this)));
+                return;
+            }
+            callback();
         };
         Common.popCloseAnim = function (node, callback) {
-            node.scale = 1;
-            node.runAction(cc.sequence(cc.scaleTo(0.1, 0, 0), cc.callFunc(function () {
-                if (callback)
-                    callback();
-            }, this)));
+            if (this.getEngine(node) == ENGINE_TYPE.COCOS) {
+                node.scale = 1;
+                node.runAction(cc.sequence(cc.scaleTo(0.1, 0, 0), cc.callFunc(function () {
+                    if (callback)
+                        callback();
+                }, this)));
+                return;
+            }
+            callback();
         };
         Common.formatMoney = function (value) {
             var retValue = "0";
@@ -526,6 +550,14 @@
                     clearInterval(parseInt(key));
                 }
             }
+        };
+        BaseModule.prototype.scheduleOnce = function (callback, time) {
+            var self = this;
+            var id = setTimeout(function () {
+                clearTimeout(id);
+                if (callback)
+                    callback.apply(self);
+            }, time * 1000);
         };
         BaseModule.prototype.initProperty = function (form) {
             for (var v in form) {
@@ -584,6 +616,7 @@
         EventType.ON_PLATFORM_HIDE = "ON_PLATFORM_HIDE";
         EventType.ON_AD_SHOW = "ON_AD_SHOW";
         EventType.AD_VIEW_CHANGE = "AD_VIEW_CHANGE";
+        EventType.AD_VIEW_REFRESH = "AD_VIEW_REFRESH";
         return EventType;
     }());
 
@@ -654,17 +687,17 @@
         // }
         PlatformModule.prototype.initAppConfig = function () {
             var winCfg = window["moosnowConfig"];
-            if (Common$1.platform == PlatformType.WX)
+            if (Common.platform == PlatformType.WX)
                 this.moosnowConfig = winCfg.wx;
-            else if (Common$1.platform == PlatformType.OPPO || Common$1.platform == PlatformType.OPPO_ZS)
+            else if (Common.platform == PlatformType.OPPO || Common.platform == PlatformType.OPPO_ZS)
                 this.moosnowConfig = winCfg.oppo;
-            else if (Common$1.platform == PlatformType.VIVO)
+            else if (Common.platform == PlatformType.VIVO)
                 this.moosnowConfig = winCfg.vivo;
-            else if (Common$1.platform == PlatformType.QQ)
+            else if (Common.platform == PlatformType.QQ)
                 this.moosnowConfig = winCfg.qq;
-            else if (Common$1.platform == PlatformType.BAIDU)
+            else if (Common.platform == PlatformType.BAIDU)
                 this.moosnowConfig = winCfg.bd;
-            else if (Common$1.platform == PlatformType.BYTEDANCE)
+            else if (Common.platform == PlatformType.BYTEDANCE)
                 this.moosnowConfig = winCfg.byte;
             else
                 this.moosnowConfig = winCfg.wx;
@@ -758,10 +791,10 @@
             return false;
         };
         PlatformModule.prototype.login = function (success, fail) {
-            if (Common$1.isFunction(success)) {
+            if (Common.isFunction(success)) {
                 var token = moosnow.data.getToken();
                 if (!token) {
-                    token = Common$1.generateUUID();
+                    token = Common.generateUUID();
                     token = token.replace(/-/g, '');
                     moosnow.data.setToken(token);
                 }
@@ -851,15 +884,17 @@
             }
         };
         PlatformModule.prototype.vibrateShort = function () {
-            if (!window[this.platformName] || !this.vibrateOn) {
+            if (!window[this.platformName])
                 return;
-            }
+            if (window[this.platformName] && !window[this.platformName].vibrateShort)
+                return;
             window[this.platformName].vibrateShort();
         };
         PlatformModule.prototype.vibrateLong = function () {
-            if (!window[this.platformName] || !this.vibrateOn) {
+            if (!window[this.platformName])
                 return;
-            }
+            if (window[this.platformName] && !window[this.platformName].vibrateLong)
+                return;
             window[this.platformName].vibrateLong();
         };
         PlatformModule.prototype.showLoading = function (title) {
@@ -1353,7 +1388,7 @@
             var wxsys = this.getSystemInfoSync();
             var windowWidth = wxsys.windowWidth;
             var left = (windowWidth - this.bannerWidth) / 2;
-            if (Common$1.isEmpty(this.bannerId)) {
+            if (Common.isEmpty(this.bannerId)) {
                 console.warn('banner id is null');
                 return;
             }
@@ -1391,7 +1426,7 @@
             console.log('_bottomCenterBanner', this.banner.style);
         };
         PlatformModule.prototype._resetBanenrStyle = function (size) {
-            if (Common$1.isEmpty(size)) {
+            if (Common.isEmpty(size)) {
                 console.log('设置的banner尺寸为空,不做调整');
                 return;
             }
@@ -1526,7 +1561,7 @@
                 moosnow.platform.videoCb(VIDEO_STATUS.END);
                 return;
             }
-            if (Common$1.isEmpty(this.videoId)) {
+            if (Common.isEmpty(this.videoId)) {
                 console.warn(' video id is null');
                 moosnow.platform.videoCb(VIDEO_STATUS.END);
                 return;
@@ -1604,7 +1639,7 @@
                 return;
             if (!this.supportVersion('2.8.0'))
                 return;
-            if (Common$1.isEmpty(this.interId)) {
+            if (Common.isEmpty(this.interId)) {
                 console.warn('插屏广告ID为空，系统不加载');
                 return;
             }
@@ -1664,7 +1699,7 @@
          * @param callback 回调函数
          */
         PlatformModule.prototype.showNativeAd = function (callback) {
-            if (Common$1.isFunction(callback))
+            if (Common.isFunction(callback))
                 callback();
         };
         /**
@@ -1691,7 +1726,7 @@
         */
         PlatformModule.prototype.showAppBox = function (callback, remoteOn) {
             if (remoteOn === void 0) { remoteOn = true; }
-            if (Common$1.isFunction(callback))
+            if (Common.isFunction(callback))
                 callback();
         };
         /**
@@ -1699,7 +1734,7 @@
          * @param callback
          */
         PlatformModule.prototype.hideAppBox = function (callback) {
-            if (Common$1.isFunction(callback))
+            if (Common.isFunction(callback))
                 callback();
         };
         /**
@@ -1807,7 +1842,7 @@
                                 self.getUserToken(res.code, "", callback);
                             }
                             else {
-                                if (Common$1.isFunction(callback))
+                                if (Common.isFunction(callback))
                                     callback();
                             }
                         },
@@ -1847,11 +1882,11 @@
                 if (respone.code == 0 && respone.data && respone.data.user_id) {
                     moosnow.data.setToken(respone.data.user_id);
                 }
-                if (Common$1.isFunction(callback))
+                if (Common.isFunction(callback))
                     callback(respone);
             }, function () {
                 //如果出错，不影响游戏
-                if (Common$1.isFunction(callback))
+                if (Common.isFunction(callback))
                     callback({});
             });
         };
@@ -1969,7 +2004,7 @@
         AdModule.prototype.getAd = function (callback) {
             var _this = this;
             var cache = this.getCache();
-            if (!Common$1.isEmpty(cache.indexLeft)) {
+            if (!Common.isEmpty(cache.indexLeft)) {
                 var distinctAd = this.getDistinctAd(cache.indexLeft);
                 var temp = __assign(__assign({}, cache), { indexLeft: distinctAd });
                 callback(temp);
@@ -2147,12 +2182,12 @@
             _this.baseUrl = "https://api.liteplay.com.cn/";
             _this.cfgData = null;
             _this.areaData = null;
-            if (Common$1.platform == PlatformType.PC) {
+            if (Common.platform == PlatformType.PC) {
                 var versionUrl = 'https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/SDK/version.json?t=' + Date.now();
                 _this.request(versionUrl, {}, 'GET', function (res) {
                     if (_this.version < res.version) {
                         console.warn("\u60A8\u7684SDK\u7248\u672C\u53F7[" + _this.version + "]\u4E0D\u662F\u6700\u65B0\u7248\u672C\uFF0C\u8BF7\u5C3D\u5FEB\u5347\u7EA7\uFF0C\u6700\u65B0\u7248\u672C[" + res.version + "]  \u4E0B\u8F7D\u5730\u5740\uFF1A" + res.download);
-                        if (!Common$1.isEmpty(res.memo))
+                        if (!Common.isEmpty(res.memo))
                             console.warn("" + res.memo);
                     }
                 });
@@ -2256,7 +2291,7 @@
          */
         HttpModule.prototype.postData = function (url) {
             var userToken = moosnow.data.getToken();
-            if (!Common$1.isEmpty(userToken) && moosnow.data.getChannelId() != "0" && moosnow.data.getChannelAppId() != "0") {
+            if (!Common.isEmpty(userToken) && moosnow.data.getChannelId() != "0" && moosnow.data.getChannelAppId() != "0") {
                 try {
                     this.request("" + this.baseUrl + url, {
                         appid: moosnow.platform.moosnowConfig.moosnowAppId,
@@ -2277,7 +2312,7 @@
          */
         HttpModule.prototype.point = function (name, data) {
             if (data === void 0) { data = null; }
-            if (Common$1.platform == PlatformType.WX) {
+            if (Common.platform == PlatformType.WX) {
                 if (window['wx'] && window['wx'].aldSendEvent)
                     window['wx'].aldSendEvent(name, data);
             }
@@ -2287,7 +2322,7 @@
         * @param {string} level 关卡数 必须是1 || 2 || 1.1 || 12.2 格式
         */
         HttpModule.prototype.startGame = function (level) {
-            if (Common$1.platform == PlatformType.WX)
+            if (Common.platform == PlatformType.WX)
                 if (window['wx'] && window['wx'].aldStage)
                     window['wx'].aldStage.onStart({
                         stageId: level,
@@ -2303,7 +2338,7 @@
          * @param {boolean} isWin 是否成功
          */
         HttpModule.prototype.endGame = function (level, isWin) {
-            if (Common$1.platform != PlatformType.WX)
+            if (Common.platform != PlatformType.WX)
                 return;
             var event = isWin ? "complete" : "fail";
             var desc = isWin ? "关卡完成" : "关卡失败";
@@ -2327,7 +2362,7 @@
          * @param {string} level 关卡数
          */
         HttpModule.prototype.videoPoint = function (type, info, level) {
-            if (Common$1.platform != PlatformType.WX)
+            if (Common.platform != PlatformType.WX)
                 return;
             var name = type == 0 ? "点击视频" : "观看完成视频";
             if (window['wx'] && window['wx'].aldSendEvent)
@@ -2356,13 +2391,13 @@
         };
         HttpModule.prototype.loadCfg = function (callback) {
             var _this = this;
-            if (!Common$1.isEmpty(this.cfgData)) {
+            if (!Common.isEmpty(this.cfgData)) {
                 callback(this.cfgData);
             }
             else {
                 var url = moosnow.platform.moosnowConfig.url + "?t=" + Date.now();
                 this.request(url, {}, 'GET', function (res) {
-                    _this.cfgData = __assign(__assign({}, Common$1.deepCopy(res)), { zs_native_click_switch: res && res.lureNative ? res.lureNative : 0, zs_jump_switch: res && res.lureExportAd ? res.lureExportAd : 0 });
+                    _this.cfgData = __assign(__assign({}, Common.deepCopy(res)), { zs_native_click_switch: res && res.lureNative ? res.lureNative : 0, zs_jump_switch: res && res.lureExportAd ? res.lureExportAd : 0 });
                     if (moosnow.platform) {
                         moosnow.platform.bannerShowCountLimit = parseInt(res.bannerShowCountLimit);
                     }
@@ -2403,7 +2438,7 @@
             });
         };
         HttpModule.prototype.disabledForceExport = function (res, res2, callback) {
-            var curTime = Common$1.formatTime(new Date());
+            var curTime = Common.formatTime(new Date());
             var inDisabledRegion = false;
             if (res.disabledForceExport) {
                 for (var i = 0; i < res.disabledForceExport.length; i++) {
@@ -2484,7 +2519,7 @@
             });
         };
         HttpModule.prototype.disableAd = function (res, res2, callback) {
-            var curTime = Common$1.formatTime(new Date());
+            var curTime = Common.formatTime(new Date());
             var inDisabledRegion = false;
             if (res && res.disabledRegion) {
                 for (var i = 0; i < res.disabledRegion.length; i++) {
@@ -2794,7 +2829,7 @@
             var windowWidth = wxsys.windowWidth;
             var windowHeight = wxsys.windowHeight;
             var left = (windowWidth - this.bannerWidth) / 2;
-            if (Common$1.isEmpty(this.bannerId)) {
+            if (Common.isEmpty(this.bannerId)) {
                 console.warn('banner id is null');
                 return;
             }
@@ -2986,7 +3021,7 @@
                 this.video.offLoad(this._onVideoLoad);
             }
             else {
-                if (Common$1.isEmpty(this.videoId)) {
+                if (Common.isEmpty(this.videoId)) {
                     console.warn(' video id is null');
                     return;
                 }
@@ -3008,7 +3043,7 @@
             }
         };
         OPPOModule.prototype.prepareInter = function () {
-            if (Common$1.isEmpty(this.interId)) {
+            if (Common.isEmpty(this.interId)) {
                 console.warn('插屏广告ID为空，系统不加载');
                 return;
             }
@@ -3083,19 +3118,19 @@
             console.log("\u52A0\u8F7D\u539F\u751F\u5E7F\u544A\u6210\u529F", res);
             if (res && res.adList && res.adList.length > 0) {
                 this.nativeAdResult = res.adList[0];
-                if (!Common$1.isEmpty(this.nativeAdResult.adId)) {
+                if (!Common.isEmpty(this.nativeAdResult.adId)) {
                     console.log("\u4E0A\u62A5\u539F\u751F\u5E7F\u544A");
                     this.native.reportAdShow({
                         adId: this.nativeAdResult.adId
                     });
                 }
-                if (Common$1.isFunction(this.nativeCb)) {
-                    this.nativeCb(Common$1.deepCopy(this.nativeAdResult));
+                if (Common.isFunction(this.nativeCb)) {
+                    this.nativeCb(Common.deepCopy(this.nativeAdResult));
                 }
             }
             else {
                 console.log("\u539F\u751F\u5E7F\u544A\u6570\u636E\u6CA1\u6709\uFF0C\u56DE\u8C03Null");
-                if (Common$1.isFunction(this.nativeCb)) {
+                if (Common.isFunction(this.nativeCb)) {
                     this.nativeCb(null);
                 }
             }
@@ -3113,14 +3148,14 @@
                 else {
                     console.log("\u539F\u751F\u5E7F\u544AID\u5DF2\u7ECF\u7528\u5B8C\uFF0C\u672C\u6B21\u6CA1\u6709\u5E7F\u544A");
                     this.nativeIdIndex = 0;
-                    if (Common$1.isFunction(this.nativeCb)) {
+                    if (Common.isFunction(this.nativeCb)) {
                         this.nativeCb(null);
                     }
                 }
             }
             else {
                 console.log("\u539F\u751F\u5E7F\u544A\u52A0\u8F7D\u51FA\u9519\uFF0C\u672C\u6B21\u6CA1\u6709\u5E7F\u544A", err);
-                if (Common$1.isFunction(this.nativeCb)) {
+                if (Common.isFunction(this.nativeCb)) {
                     this.nativeCb(null);
                 }
             }
@@ -3176,7 +3211,7 @@
          *
          */
         OPPOModule.prototype.clickNative = function (callback) {
-            if (this.nativeAdResult && !Common$1.isEmpty(this.nativeAdResult.adId)) {
+            if (this.nativeAdResult && !Common.isEmpty(this.nativeAdResult.adId)) {
                 this.mClickedNativeCallback = callback;
                 this.mIsClickedNative = true;
                 console.log('点击了原生广告', this.nativeAdResult.adId);
@@ -3188,7 +3223,7 @@
         OPPOModule.prototype.onAppShow = function () {
             if (this.mIsClickedNative) {
                 this.mIsClickedNative = false;
-                if (Common$1.isFunction(this.mClickedNativeCallback))
+                if (Common.isFunction(this.mClickedNativeCallback))
                     this.mClickedNativeCallback();
             }
         };
@@ -3207,7 +3242,7 @@
             return _this;
         }
         GameDataCenter.prototype.getToken = function () {
-            if (Common$1.isEmpty(this.mUserToken))
+            if (Common.isEmpty(this.mUserToken))
                 this.mUserToken = moosnow.setting.getString(this.TOKEN, "");
             return this.mUserToken;
         };
@@ -3426,7 +3461,7 @@
                 return;
             if (typeof window[this.platformName].createInterstitialAd != "function")
                 return;
-            if (Common$1.isEmpty(this.interId)) {
+            if (Common.isEmpty(this.interId)) {
                 console.warn('插屏广告ID为空，系统不加载');
                 return;
             }
@@ -3540,7 +3575,7 @@
             }
             console.log('record stop recordRes ', this.recordRes);
             if (this.recordRes) {
-                if (Common$1.isFunction(callback))
+                if (Common.isFunction(callback))
                     callback(this.recordRes);
             }
             else {
@@ -3629,7 +3664,7 @@
             _super.prototype._prepareBanner.call(this);
         };
         TTModule.prototype._resetBanenrStyle = function (size) {
-            if (Common$1.isEmpty(size)) {
+            if (Common.isEmpty(size)) {
                 console.log('设置的banner尺寸为空,不做调整');
                 return;
             }
@@ -3799,7 +3834,7 @@
             var windowHeight = wxsys.screenHeight;
             var centerPos = (windowWidth - this.bannerWidth) / 2;
             var top = windowHeight - height / 2;
-            if (Common$1.isEmpty(this.bannerId)) {
+            if (Common.isEmpty(this.bannerId)) {
                 console.warn('banner id is null');
                 return;
             }
@@ -3895,7 +3930,7 @@
                         });
                     }
                     else {
-                        if (Common$1.isFunction(_this.mOnBoxCallback))
+                        if (Common.isFunction(_this.mOnBoxCallback))
                             _this.mOnBoxCallback(-1);
                         console.log('后台不允许显示Box，如有需要请联系运营');
                     }
@@ -3925,20 +3960,20 @@
                         .then(function () {
                         console.log('destroy successfully ', promise_1);
                         _this.box = null;
-                        if (Common$1.isFunction(callback))
+                        if (Common.isFunction(callback))
                             callback(true);
                     })
                         .catch(function () {
                         console.log('destroy fail ', promise_1);
                         _this.box = null;
-                        if (Common$1.isFunction(callback))
+                        if (Common.isFunction(callback))
                             callback(false);
                     });
                 }
             }
         };
         QQModule.prototype.onBoxClose = function () {
-            if (Common$1.isFunction(this.mOnBoxCallback))
+            if (Common.isFunction(this.mOnBoxCallback))
                 this.mOnBoxCallback(0);
         };
         return QQModule;
@@ -4072,7 +4107,7 @@
             var _this = this;
             _super.prototype.navigate2Mini.call(this, row, function () {
                 _this.navigateCallback(row.appid);
-                if (Common$1.isFunction(success))
+                if (Common.isFunction(success))
                     success();
             }, fail, complete);
         };
@@ -4118,7 +4153,7 @@
             var wxsys = this.getSystemInfoSync();
             var windowWidth = wxsys.screenWidth;
             var windowHeight = wxsys.screenHeight;
-            if (Common$1.isEmpty(this.bannerId)) {
+            if (Common.isEmpty(this.bannerId)) {
                 console.warn('banner id is null');
                 return;
             }
@@ -4283,7 +4318,7 @@
                     apk_id: moosnow.platform.moosnowConfig.moosnowAppId
                 }, 'POST', function (res) {
                     var enabled = res.data.zs_version == moosnow.platform.moosnowConfig.version;
-                    _this.cfgData = __assign(__assign({}, Common$1.deepCopy(res.data)), { mistouchNum: res.data.zs_switch, mistouchPosNum: res.data.zs_switch, showNative: enabled, showInter: enabled, showExportAd: enabled, lureNative: res.zs_native_click_switch == 1, lureExportAd: res.zs_jump_switch == 1, bannerShowCountLimit: isNaN(res.data.bannerShowCountLimit) ? 1 : res.data.bannerShowCountLimit });
+                    _this.cfgData = __assign(__assign({}, Common.deepCopy(res.data)), { mistouchNum: res.data.zs_switch, mistouchPosNum: res.data.zs_switch, showNative: enabled, showInter: enabled, showExportAd: enabled, lureNative: res.zs_native_click_switch == 1, lureExportAd: res.zs_jump_switch == 1, bannerShowCountLimit: isNaN(res.data.bannerShowCountLimit) ? 1 : res.data.bannerShowCountLimit });
                     if (moosnow.platform) {
                         moosnow.platform.bannerShowCountLimit = parseInt(res.data.bannerShowCountLimit);
                     }
@@ -4826,7 +4861,7 @@
             var windowWidth = wxsys.windowWidth;
             var windowHeight = wxsys.windowHeight;
             var left = (windowWidth - this.bannerWidth) / 2;
-            if (Common$1.isEmpty(this.bannerId)) {
+            if (Common.isEmpty(this.bannerId)) {
                 console.warn('banner id is null');
                 return;
             }
@@ -4988,7 +5023,7 @@
                 this.video.offLoad(this._onVideoLoad);
             }
             else {
-                if (Common$1.isEmpty(this.videoId)) {
+                if (Common.isEmpty(this.videoId)) {
                     console.warn(' video id is null');
                     return;
                 }
@@ -5010,7 +5045,7 @@
             }
         };
         VIVOModule.prototype.prepareInter = function () {
-            if (Common$1.isEmpty(this.interId)) {
+            if (Common.isEmpty(this.interId)) {
                 console.warn('插屏广告ID为空，系统不加载');
                 return;
             }
@@ -5085,19 +5120,19 @@
             console.log("\u52A0\u8F7D\u539F\u751F\u5E7F\u544A\u6210\u529F", res);
             if (res && res.adList && res.adList.length > 0) {
                 this.nativeAdResult = res.adList[0];
-                if (!Common$1.isEmpty(this.nativeAdResult.adId)) {
+                if (!Common.isEmpty(this.nativeAdResult.adId)) {
                     console.log("\u4E0A\u62A5\u539F\u751F\u5E7F\u544A");
                     this.native.reportAdShow({
                         adId: this.nativeAdResult.adId
                     });
                 }
-                if (Common$1.isFunction(this.nativeCb)) {
-                    this.nativeCb(Common$1.deepCopy(this.nativeAdResult));
+                if (Common.isFunction(this.nativeCb)) {
+                    this.nativeCb(Common.deepCopy(this.nativeAdResult));
                 }
             }
             else {
                 console.log("\u539F\u751F\u5E7F\u544A\u6570\u636E\u6CA1\u6709\uFF0C\u56DE\u8C03Null");
-                if (Common$1.isFunction(this.nativeCb)) {
+                if (Common.isFunction(this.nativeCb)) {
                     this.nativeCb(null);
                 }
             }
@@ -5115,14 +5150,14 @@
                 else {
                     console.log("\u539F\u751F\u5E7F\u544AID\u5DF2\u7ECF\u7528\u5B8C\uFF0C\u672C\u6B21\u6CA1\u6709\u5E7F\u544A");
                     this.nativeIdIndex = 0;
-                    if (Common$1.isFunction(this.nativeCb)) {
+                    if (Common.isFunction(this.nativeCb)) {
                         this.nativeCb(null);
                     }
                 }
             }
             else {
                 console.log("\u539F\u751F\u5E7F\u544A\u52A0\u8F7D\u51FA\u9519\uFF0C\u672C\u6B21\u6CA1\u6709\u5E7F\u544A", err);
-                if (Common$1.isFunction(this.nativeCb)) {
+                if (Common.isFunction(this.nativeCb)) {
                     this.nativeCb(null);
                 }
             }
@@ -5183,7 +5218,7 @@
          *
          */
         VIVOModule.prototype.clickNative = function (callback) {
-            if (this.nativeAdResult && !Common$1.isEmpty(this.nativeAdResult.adId)) {
+            if (this.nativeAdResult && !Common.isEmpty(this.nativeAdResult.adId)) {
                 this.mClickedNativeCallback = callback;
                 this.mIsClickedNative = true;
                 console.log('点击了原生广告', this.nativeAdResult.adId);
@@ -5195,7 +5230,7 @@
         VIVOModule.prototype.onAppShow = function () {
             if (this.mIsClickedNative) {
                 this.mIsClickedNative = false;
-                if (Common$1.isFunction(this.mClickedNativeCallback))
+                if (Common.isFunction(this.mClickedNativeCallback))
                     this.mClickedNativeCallback();
             }
         };
@@ -5245,7 +5280,6 @@
         AD_POSITION[AD_POSITION["extend5"] = 8192] = "extend5";
     })(AD_POSITION$1 || (AD_POSITION$1 = {}));
 
-    var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
     var BaseEntityModule = /** @class */ (function (_super) {
         __extends(BaseEntityModule, _super);
         function BaseEntityModule() {
@@ -5291,19 +5325,9 @@
         BaseEntityModule.prototype.hideAllEntity = function (name, isDestory) {
             if (isDestory === void 0) { isDestory = false; }
         };
-        BaseEntityModule = __decorate([
-            ccclass
-        ], BaseEntityModule);
         return BaseEntityModule;
     }(BaseModule));
 
-    var ENGINE_TYPE = {
-        COCOS: "cc",
-        LAYA: "Laya",
-        NONE: ""
-    };
-
-    var _a$1 = cc._decorator, ccclass$1 = _a$1.ccclass, property$1 = _a$1.property;
     var CocosEntityModule = /** @class */ (function (_super) {
         __extends(CocosEntityModule, _super);
         function CocosEntityModule() {
@@ -5330,7 +5354,7 @@
         };
         CocosEntityModule.prototype._createEntity = function (name) {
             var prefab;
-            if (this._getEngine(name) == ENGINE_TYPE.NONE)
+            if (Common.getEngine(name) == ENGINE_TYPE.NONE)
                 prefab = this._getPrefabByName(name);
             else
                 prefab = name;
@@ -5358,19 +5382,9 @@
             }
             return pool;
         };
-        CocosEntityModule.prototype._getEngine = function (instance) {
-            if (window[ENGINE_TYPE.COCOS] && instance instanceof cc.Prefab) {
-                return ENGINE_TYPE.COCOS;
-            }
-            else if (window[ENGINE_TYPE.LAYA] && instance instanceof Laya.Prefab) {
-                return ENGINE_TYPE.LAYA;
-            }
-            else
-                return ENGINE_TYPE.NONE;
-        };
         CocosEntityModule.prototype._getPoolName = function (name) {
             var poolName = "";
-            var engine = this._getEngine(name);
+            var engine = Common.getEngine(name);
             if (engine == ENGINE_TYPE.COCOS) {
                 poolName = name.name;
             }
@@ -5661,7 +5675,7 @@
             formModel.UIForm.onShow(data);
             if (formModel.UIForm.isPopEffect) {
                 var owner = formModel.node;
-                Common$1.popOpenAnim(owner);
+                Common.popOpenAnim(owner);
             }
         };
         BaseUIModule.prototype._hideUIForm = function (formModel, data, cb) {
@@ -5671,7 +5685,7 @@
             this.cachedUIForms.push(formModel);
             if (formModel.UIForm.isPopEffect) {
                 var owner = formModel.node;
-                Common$1.popCloseAnim(owner, function () {
+                Common.popCloseAnim(owner, function () {
                     formModel.node.active = false;
                     formModel.node.removeFromParent(false);
                     // formModel.node.removeSelf();
@@ -5737,19 +5751,33 @@
         return CocosUIModule;
     }(BaseUIModule));
 
-    var _a$2 = cc._decorator, ccclass$2 = _a$2.ccclass, property$2 = _a$2.property;
     var BaseForm = /** @class */ (function (_super) {
         __extends(BaseForm, _super);
         function BaseForm() {
             return _super !== null && _super.apply(this, arguments) || this;
         }
-        BaseForm = __decorate([
-            ccclass$2
-        ], BaseForm);
+        Object.defineProperty(BaseForm.prototype, "FormData", {
+            /**
+             * 父类缓存willShow，onShow传递到实体的逻辑数据
+             */
+            get: function () {
+                return this.mFormData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        BaseForm.prototype.willShow = function (data) {
+            this.mFormData = data;
+        };
+        BaseForm.prototype.onShow = function (data) {
+        };
+        BaseForm.prototype.willHide = function (data) {
+        };
+        BaseForm.prototype.onHide = function (data) {
+        };
         return BaseForm;
     }(BaseModule));
 
-    var _a$3 = cc._decorator, ccclass$3 = _a$3.ccclass, property$3 = _a$3.property;
     var AdForm = /** @class */ (function (_super) {
         __extends(AdForm, _super);
         function AdForm() {
@@ -5791,11 +5819,11 @@
             _this.leftLayout = null;
             _this.rightView = null;
             _this.rightLayout = null;
-            _this.drawerContainer = null;
-            _this.drawerView = null;
-            _this.drawerLayout = null;
-            _this.drawerShow = null;
-            _this.drawerHide = null;
+            _this.sideContainer = null;
+            _this.sideView = null;
+            _this.sideLayout = null;
+            _this.btnSideShow = null;
+            _this.btnSideHide = null;
             _this.mAdItemList = [];
             _this.mScrollVec = [];
             _this.mIndex = 999;
@@ -5809,7 +5837,7 @@
         }
         AdForm.prototype.setPosition = function (source, position) {
             if (position === void 0) { position = ""; }
-            var retValue = Common$1.deepCopy(source);
+            var retValue = Common.deepCopy(source);
             retValue.forEach(function (item) {
                 item.position = position;
             });
@@ -5946,6 +5974,27 @@
                 }
             }
         };
+        AdForm.prototype.sideOut = function () {
+            var _this = this;
+            var wxsys = moosnow.platform.getSystemInfoSync();
+            var statusBarHeight = 0;
+            var notchHeight = 0;
+            if (wxsys) {
+                statusBarHeight = wxsys.statusBarHeight || 0;
+                notchHeight = wxsys.notchHeight || 0;
+            }
+            this.sideView.node.runAction(cc.sequence(cc.moveTo(1, statusBarHeight + notchHeight + this.sideView.node.width + 20, 0), cc.callFunc(function () {
+                _this.btnSideShow.active = false;
+                _this.btnSideHide.active = true;
+            })));
+        };
+        AdForm.prototype.sideIn = function () {
+            var _this = this;
+            this.sideView.node.runAction(cc.sequence(cc.moveTo(1, 0, 0), cc.callFunc(function () {
+                _this.btnSideShow.active = true;
+                _this.btnSideHide.active = false;
+            })));
+        };
         AdForm.prototype.willHide = function () {
             this.removeEvent();
             this.mAdItemList.forEach(function (item) {
@@ -5954,6 +6003,12 @@
             this.mAdItemList = [];
             this.mScrollVec = [];
         };
+        /**
+         *
+         * @param parentNode 父节点
+         * @param prefabs 匹配的预制体
+         * @param points 需要显示的坐标点
+         */
         AdForm.prototype.initFloatAd = function (parentNode, prefabs, points) {
             var _this = this;
             cc.loader.loadResDir(moosnow.entity.prefabPath, cc.Prefab, function () {
@@ -5961,8 +6016,9 @@
                     _this.mAdData = res;
                     var source = __spreadArrays(res.indexLeft);
                     prefabs.forEach(function (prefabName, idx) {
-                        var showIndex = idx; //Common.randomNumBoth(0, this.mAdData.indexLeft.length - 1);
-                        var adRow = __assign(__assign({}, source[showIndex]), { position: "首页浮动", x: points[idx].x, y: points[idx].y });
+                        var showIndex = idx;
+                        var point = points[idx];
+                        var adRow = __assign(__assign({}, source[showIndex]), { position: "首页浮动", x: point.x, y: point.y });
                         var logic = moosnow.entity.showEntity(prefabName, parentNode, adRow);
                         _this.mFloatCache[idx] = {
                             index: showIndex,
@@ -5971,9 +6027,9 @@
                         };
                         _this.floatAnim(logic.node);
                     });
-                    _this.updateFloat(Common$1.deepCopy(res));
+                    _this.updateFloat(Common.deepCopy(res));
                     setInterval(function () {
-                        _this.updateFloat(Common$1.deepCopy(res));
+                        _this.updateFloat(Common.deepCopy(res));
                     }, _this.mFloatRefresh * 1000);
                 });
             });
@@ -6014,8 +6070,7 @@
             this.centerContainer.active = visible && this.hasAd(AD_POSITION$1.CENTER);
             this.leftContainer.active = visible && this.hasAd(AD_POSITION$1.LEFTRIGHT);
             this.exportMask.active = visible && this.hasAd(AD_POSITION$1.MASK);
-            // this.endContainer.active = visible && this.hasAd(AD_POSITION.EXPORT);
-            // this.endContainer.active && this.initEndExport();
+            this.sideContainer.active = visible && this.hasAd(AD_POSITION$1.SIDE);
             this.exportClose.active = false;
             this.exportCloseTxt.active = false;
             this.unschedule(this.showExportClose);
@@ -6038,144 +6093,14 @@
             if (visible && this.hasAd(AD_POSITION$1.EXPORT)) {
                 moosnow.http.getAllConfig(function (res) {
                     if (res.exportAutoNavigate == 1) {
-                        moosnow.platform.navigate2Mini(_this.mAdData.indexLeft[Common$1.randomNumBoth(0, _this.mAdData.indexLeft.length - 1)]);
+                        moosnow.platform.navigate2Mini(_this.mAdData.indexLeft[Common.randomNumBoth(0, _this.mAdData.indexLeft.length - 1)]);
                     }
                 });
             }
         };
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "pauseContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "pauseView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "pauseLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "centerContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "centerView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "centerLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "exportContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "exportView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "exportLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "exportClose", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "exportMask", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "exportCloseTxt", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "floatContainer", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "floatFull", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "bannerContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "bannerView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "bannerLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "endContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "endView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "endLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "failContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "failView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "failLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "gameOverContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "gameOverView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "gameOverLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "respawnContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "respawnScrollView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "respawnLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "playerDiedContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "playerDiedScrollView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "playerDiedLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "leftContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "leftView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "leftLayout", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "rightView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "rightLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "drawerContainer", void 0);
-        __decorate([
-            property$3(cc.ScrollView)
-        ], AdForm.prototype, "drawerView", void 0);
-        __decorate([
-            property$3(cc.Layout)
-        ], AdForm.prototype, "drawerLayout", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "drawerShow", void 0);
-        __decorate([
-            property$3(cc.Node)
-        ], AdForm.prototype, "drawerHide", void 0);
-        AdForm = __decorate([
-            ccclass$3
-        ], AdForm);
         return AdForm;
     }(BaseForm));
 
-    var _a$4 = cc._decorator, ccclass$4 = _a$4.ccclass, property$4 = _a$4.property;
     var CocosAdForm = /** @class */ (function (_super) {
         __extends(CocosAdForm, _super);
         function CocosAdForm() {
@@ -6184,43 +6109,32 @@
         CocosAdForm.prototype.addEvent = function () {
             if (this.exportClose)
                 this.exportClose.on(cc.Node.EventType.TOUCH_END, this.onBack, this);
+            if (this.btnSideShow)
+                this.btnSideShow.on(cc.Node.EventType.TOUCH_START, this.sideOut, this);
+            if (this.btnSideHide)
+                this.btnSideHide.on(cc.Node.EventType.TOUCH_START, this.sideIn, this);
             _super.prototype.addEvent.call(this);
         };
         CocosAdForm.prototype.removeEvent = function () {
             if (this.exportClose)
                 this.exportClose.off(cc.Node.EventType.TOUCH_END, this.onBack, this);
+            if (this.btnSideShow)
+                this.btnSideShow.off(cc.Node.EventType.TOUCH_START, this.sideOut, this);
+            if (this.btnSideHide)
+                this.btnSideHide.off(cc.Node.EventType.TOUCH_START, this.sideIn, this);
             _super.prototype.removeEvent.call(this);
         };
         CocosAdForm.prototype.floatAnim = function (floatNode) {
             floatNode.runAction(cc.sequence(cc.rotateTo(0.3, 10), cc.rotateTo(0.6, -10), cc.rotateTo(0.3, 0), cc.scaleTo(0.3, 0.8), cc.scaleTo(0.3, 1)).repeatForever());
         };
-        CocosAdForm = __decorate([
-            ccclass$4
-        ], CocosAdForm);
         return CocosAdForm;
     }(AdForm));
 
-    /**
-     * 广告结果
-     */
-    var FormControl = /** @class */ (function () {
-        function FormControl() {
-        }
-        Object.defineProperty(FormControl.prototype, "adForm", {
-            /**
-             * 广告form
-             */
-            get: function () {
-                if (!this.mAdForm)
-                    this.mAdForm = new CocosAdForm();
-                return this.mAdForm;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        ;
-        return FormControl;
-    }());
+    var MISTOUCH_BANNER_TYPE;
+    (function (MISTOUCH_BANNER_TYPE) {
+        MISTOUCH_BANNER_TYPE[MISTOUCH_BANNER_TYPE["AUTO_HIDE"] = 1] = "AUTO_HIDE";
+        MISTOUCH_BANNER_TYPE[MISTOUCH_BANNER_TYPE["MAST"] = 2] = "MAST";
+    })(MISTOUCH_BANNER_TYPE || (MISTOUCH_BANNER_TYPE = {}));
 
     var UIForms = /** @class */ (function () {
         function UIForms() {
@@ -6231,10 +6145,6 @@
                 return {
                     adForm: (_a = {},
                         _a[moosnow.APP_PLATFORM.WX] = "adForm",
-                        _a[moosnow.APP_PLATFORM.OPPO] = "adFormOPPO",
-                        _a[moosnow.APP_PLATFORM.OPPO_ZS] = "adFormOPPO",
-                        _a[moosnow.APP_PLATFORM.VIVO] = "adFormOPPO",
-                        _a[moosnow.APP_PLATFORM.QQ] = "adFormQQ",
                         _a),
                     pauseForm: (_b = {},
                         _b[moosnow.APP_PLATFORM.WX] = "pauseForm",
@@ -6361,6 +6271,608 @@
         return UIForms;
     }());
 
+    var MistouchForm = /** @class */ (function (_super) {
+        __extends(MistouchForm, _super);
+        function MistouchForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            _this.mMaxNum = 10;
+            _this.mCurrentNum = 0;
+            _this.mNavigateIndex = 0;
+            _this.mBannerShow = false;
+            _this.mShowTime = 0;
+            _this.mBannerClickType = MISTOUCH_BANNER_TYPE.AUTO_HIDE;
+            return _this;
+        }
+        MistouchForm.prototype.initPos = function () {
+        };
+        MistouchForm.prototype.willShow = function (data) {
+            var _this = this;
+            _super.prototype.willShow.call(this, data);
+            this.btnBanner.active = true;
+            this.initPos();
+            this.mCurrentNum = 0;
+            this.mNavigateIndex = Common.randomNumBoth(3, this.mMaxNum - 2);
+            this.addEvent();
+            this.schedule(this.subProgress, 0.1);
+            moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
+            this.mBannerShow = false;
+            moosnow.http.getAllConfig(function (res) {
+                // this.mBannerClickType = res.bannerClickType
+                _this.mBannerClickType = MISTOUCH_BANNER_TYPE.MAST;
+            });
+        };
+        MistouchForm.prototype.willHide = function () {
+            this.unschedule(this.subProgress);
+            this.unschedule(this.resetProgress);
+            this.removeEvent();
+        };
+        MistouchForm.prototype.subProgress = function () {
+            if (this.mCurrentNum > 0)
+                this.mCurrentNum -= 0.1;
+        };
+        MistouchForm.prototype.addEvent = function () {
+        };
+        MistouchForm.prototype.removeEvent = function () {
+        };
+        MistouchForm.prototype.bannerClickCallback = function (isOpend) {
+            if (isOpend) {
+                this.unschedule(this.onHideBanner);
+                this.unschedule(this.resetProgress);
+                moosnow.platform.hideBanner();
+                this.mBannerShow = false;
+                if (this.FormData && this.FormData.onCompleted)
+                    this.FormData.onCompleted();
+            }
+        };
+        MistouchForm.prototype.onLogoUp = function () {
+        };
+        MistouchForm.prototype.onLogoDown = function () {
+        };
+        MistouchForm.prototype.onBannerClick = function () {
+            var _this = this;
+            this.onLogoDown();
+            this.mCurrentNum += 1;
+            if (this.mCurrentNum >= this.mNavigateIndex) {
+                if (!this.mBannerShow) {
+                    this.mShowTime = Date.now();
+                    this.mBannerShow = true;
+                    moosnow.platform.showBanner(function (e) {
+                        console.log('banner click callback ', e);
+                        _this.bannerClickCallback(e);
+                    });
+                    if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.AUTO_HIDE) {
+                        this.unschedule(this.onHideBanner);
+                        this.scheduleOnce(this.onHideBanner, 2);
+                    }
+                    else if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.MAST) {
+                        this.unschedule(this.resetProgress);
+                        this.scheduleOnce(this.resetProgress, 2);
+                    }
+                }
+            }
+            if (this.mCurrentNum >= this.mMaxNum) {
+                moosnow.platform.hideBanner();
+                this.mBannerShow = false;
+                moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+                if (this.FormData && this.FormData.onCompleted)
+                    this.FormData.onCompleted(true);
+            }
+        };
+        MistouchForm.prototype.resetProgress = function () {
+            this.mCurrentNum = 0;
+            moosnow.platform.hideBanner();
+            this.mBannerShow = false;
+        };
+        MistouchForm.prototype.onHideBanner = function () {
+            moosnow.platform.hideBanner();
+        };
+        MistouchForm.prototype.update = function () {
+            this.clickProgress.progress = this.mCurrentNum / this.mMaxNum;
+        };
+        return MistouchForm;
+    }(BaseForm));
+
+    var CocosMistouchForm = /** @class */ (function (_super) {
+        __extends(CocosMistouchForm, _super);
+        function CocosMistouchForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            return _this;
+        }
+        CocosMistouchForm.prototype.addEvent = function () {
+            this.btnBanner.on(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+            this.btnBanner.on(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+        };
+        CocosMistouchForm.prototype.removeEvent = function () {
+            this.btnBanner.off(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+            this.btnBanner.off(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            moosnow.event.removeListener(EventType.ON_PLATFORM_SHOW, this);
+        };
+        CocosMistouchForm.prototype.onLogoUp = function () {
+            this.logo.position = this.mEndPos;
+        };
+        CocosMistouchForm.prototype.onLogoDown = function () {
+            this.logo.position = this.mBeginPos;
+        };
+        CocosMistouchForm.prototype.initPos = function () {
+            this.mBeginPos = this.logo.position.clone();
+            this.mEndPos = this.mBeginPos.add(new cc.Vec2(0, 50));
+        };
+        return CocosMistouchForm;
+    }(MistouchForm));
+
+    var MistouchFormTT = /** @class */ (function (_super) {
+        __extends(MistouchFormTT, _super);
+        function MistouchFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnReceive = null;
+            _this.btnConfirm = null;
+            _this.checked = null;
+            _this.unchecked = null;
+            _this.step1 = null;
+            _this.step2 = null;
+            _this.logo = null;
+            _this.mMaxNum = 10;
+            _this.mCurrentNum = 0;
+            _this.mOpenVideo = true;
+            return _this;
+        }
+        MistouchFormTT.prototype.willShow = function (data) {
+            _super.prototype.willShow.call(this, data);
+            this.step1.active = true;
+            this.step2.active = false;
+            this.btnConfirm.active = true;
+            this.mCurrentNum = 0;
+            this.mOpenVideo = true;
+            this.showCheckbox();
+            this.addEvent();
+            this.schedule(this.subProgress, 0.1);
+            moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
+        };
+        MistouchFormTT.prototype.willHide = function () {
+            this.unschedule(this.subProgress);
+            this.unschedule(this.resetProgress);
+            this.removeEvent();
+        };
+        MistouchFormTT.prototype.subProgress = function () {
+            if (this.mCurrentNum > 0)
+                this.mCurrentNum -= 0.1;
+        };
+        MistouchFormTT.prototype.addEvent = function () {
+        };
+        MistouchFormTT.prototype.removeEvent = function () {
+        };
+        MistouchFormTT.prototype.openBox = function () {
+            var _this = this;
+            if (this.mOpenVideo) {
+                this.btnConfirm.active = false;
+                moosnow.platform.showVideo(function (res) {
+                    if (res == moosnow.VIDEO_STATUS.END) {
+                        if (_this.FormData && _this.FormData.onCompleted)
+                            _this.FormData.onCompleted(true);
+                        return;
+                    }
+                    else if (res == moosnow.VIDEO_STATUS.NOTEND) {
+                        moosnow.ui.showToast(moosnow.VIDEO_MSG.NOTEND);
+                    }
+                    else {
+                        moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR);
+                    }
+                    _this.btnConfirm.active = true;
+                });
+            }
+            else {
+                moosnow.ui.hideUIForm(UIForms.MistouchForm, null);
+            }
+        };
+        MistouchFormTT.prototype.checkboxChange = function () {
+            this.mOpenVideo = !this.mOpenVideo;
+            this.showCheckbox();
+        };
+        MistouchFormTT.prototype.showCheckbox = function () {
+            if (this.mOpenVideo) {
+                this.checked.node.active = true;
+            }
+            else {
+                this.checked.node.active = false;
+            }
+        };
+        MistouchFormTT.prototype.playBoxAnim = function (animName) {
+        };
+        MistouchFormTT.prototype.onLogoUp = function () {
+            // this.logo.position = this.mEndPos;
+            this.playBoxAnim("prizeBox2");
+        };
+        MistouchFormTT.prototype.onBannerClick = function () {
+            if (this.mCurrentNum > this.mMaxNum + 1)
+                return;
+            this.mCurrentNum += 1;
+            if (this.mCurrentNum >= this.mMaxNum) {
+                this.step1.active = false;
+                this.step2.active = true;
+                this.playBoxAnim("prizeBox1");
+            }
+        };
+        MistouchFormTT.prototype.resetProgress = function () {
+            this.mCurrentNum = 0;
+        };
+        MistouchFormTT.prototype.update = function () {
+            var progress = this.mCurrentNum / this.mMaxNum;
+            this.clickProgress.progress = progress > 1 ? 1 : progress;
+        };
+        return MistouchFormTT;
+    }(MistouchForm));
+
+    var CocosMistouchFormTT = /** @class */ (function (_super) {
+        __extends(CocosMistouchFormTT, _super);
+        function CocosMistouchFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnReceive = null;
+            _this.btnConfirm = null;
+            _this.checked = null;
+            _this.unchecked = null;
+            _this.step1 = null;
+            _this.step2 = null;
+            _this.logo = null;
+            return _this;
+        }
+        CocosMistouchFormTT.prototype.playBoxAnim = function (animName) {
+            var anim = this.logo.getComponent(cc.Animation);
+            if (!anim.getAnimationState(animName).isPlaying)
+                anim.play(animName);
+        };
+        CocosMistouchFormTT.prototype.addEvent = function () {
+            this.unchecked.node.on(cc.Node.EventType.TOUCH_END, this.checkboxChange, this);
+            this.btnReceive.on(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+            this.btnReceive.on(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            this.btnConfirm.on(cc.Node.EventType.TOUCH_END, this.openBox, this);
+        };
+        CocosMistouchFormTT.prototype.removeEvent = function () {
+            this.unchecked.node.off(cc.Node.EventType.TOUCH_END, this.checkboxChange, this);
+            this.btnReceive.off(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+            this.btnReceive.off(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            this.btnConfirm.off(cc.Node.EventType.TOUCH_END, this.openBox, this);
+        };
+        return CocosMistouchFormTT;
+    }(MistouchFormTT));
+
+    var MistouchFormQQ = /** @class */ (function (_super) {
+        __extends(MistouchFormQQ, _super);
+        function MistouchFormQQ() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            _this.hand = null;
+            _this.pinch1 = null;
+            _this.pinch2 = null;
+            _this.pinch3 = null;
+            _this.pinch4 = null;
+            _this.pinch5 = null;
+            _this.pinch6 = null;
+            return _this;
+        }
+        MistouchFormQQ.prototype.willShow = function (data) {
+            _super.prototype.willShow.call(this, data);
+            this.btnBanner.active = true;
+            this.mCurrentNum = 0;
+            this.mNavigateIndex = Common.randomNumBoth(3, this.mMaxNum - 2);
+            this.addEvent();
+            this.schedule(this.subProgress, 0.016);
+            moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
+            this.mBannerShow = false;
+            if (this.mistouchAppBox()) {
+                this.hand.active = true;
+                var anim = this.hand.getComponent(cc.Animation);
+                anim.play();
+            }
+            moosnow.platform.hideBanner();
+        };
+        MistouchFormQQ.prototype.mistouchAppBox = function () {
+            return this.FormData && this.FormData.mistouchType == 4;
+        };
+        MistouchFormQQ.prototype.subProgress = function () {
+            if (this.mCurrentNum > 0)
+                this.mCurrentNum -= 0.02;
+        };
+        MistouchFormQQ.prototype.addEvent = function () {
+            this.btnBanner.on(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+            this.btnBanner.on(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+        };
+        MistouchFormQQ.prototype.removeEvent = function () {
+            this.btnBanner.off(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+            this.btnBanner.off(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            moosnow.event.removeListener(EventType.ON_PLATFORM_SHOW, this);
+        };
+        MistouchFormQQ.prototype.onLogoUp = function () {
+            this.logo.position = this.mEndPos;
+        };
+        MistouchFormQQ.prototype.onLogoDown = function () {
+            this.logo.position = this.mBeginPos;
+        };
+        MistouchFormQQ.prototype.initPos = function () {
+            this.mBeginPos = this.logo.position.clone();
+            this.mEndPos = this.mBeginPos.add(new cc.Vec2(0, 50));
+        };
+        MistouchFormQQ.prototype.onHideBanner = function () {
+            if (this.mistouchAppBox())
+                moosnow.platform.hideAppBox();
+            else
+                moosnow.platform.hideBanner();
+        };
+        MistouchFormQQ.prototype.onBannerClick = function () {
+            var _this = this;
+            this.onLogoDown();
+            this.hand.active = false;
+            this.mCurrentNum += 1;
+            if (this.mCurrentNum >= this.mNavigateIndex) {
+                if (!this.mBannerShow) {
+                    this.mShowTime = Date.now();
+                    this.mBannerShow = true;
+                    if (this.mistouchAppBox()) {
+                        moosnow.platform.showAppBox(function () {
+                            _this.bannerClickCallback(true);
+                        });
+                    }
+                    else {
+                        moosnow.platform.showBanner(function (e) {
+                            console.log('banner click callback ', e);
+                            _this.bannerClickCallback(e);
+                        });
+                    }
+                    if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.AUTO_HIDE) {
+                        this.unschedule(this.onHideBanner);
+                        this.scheduleOnce(this.onHideBanner, 2);
+                    }
+                    else if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.MAST) {
+                        this.unschedule(this.resetProgress);
+                        this.scheduleOnce(this.resetProgress, 2);
+                    }
+                }
+            }
+            if (this.mCurrentNum >= this.mMaxNum) {
+                moosnow.platform.hideBanner();
+                this.mBannerShow = false;
+                moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+                if (this.FormData && this.FormData.onCompleted)
+                    this.FormData.onCompleted();
+            }
+        };
+        return MistouchFormQQ;
+    }(MistouchForm));
+
+    var CocosMistouchFormQQ = /** @class */ (function (_super) {
+        __extends(CocosMistouchFormQQ, _super);
+        function CocosMistouchFormQQ() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            _this.hand = null;
+            _this.pinch1 = null;
+            _this.pinch2 = null;
+            _this.pinch3 = null;
+            _this.pinch4 = null;
+            _this.pinch5 = null;
+            _this.pinch6 = null;
+            return _this;
+        }
+        return CocosMistouchFormQQ;
+    }(MistouchFormQQ));
+
+    var BaseLogic = /** @class */ (function (_super) {
+        __extends(BaseLogic, _super);
+        function BaseLogic() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(BaseLogic.prototype, "LogicData", {
+            /**
+            * 父类缓存willShow，onShow传递到实体的逻辑数据
+            */
+            get: function () {
+                return this.mLogicData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        BaseLogic.prototype.willShow = function (data) {
+            this.mLogicData = data;
+        };
+        BaseLogic.prototype.onShow = function (data) {
+        };
+        BaseLogic.prototype.willHide = function (data) {
+        };
+        BaseLogic.prototype.onHide = function (data) {
+        };
+        return BaseLogic;
+    }(BaseModule));
+
+    var AdViewItem = /** @class */ (function (_super) {
+        __extends(AdViewItem, _super);
+        function AdViewItem() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.logo = null;
+            _this.title = null;
+            _this.animLogo = null;
+            _this.nameBg = null;
+            _this.changeView = false;
+            return _this;
+            // update (dt) {}
+        }
+        AdViewItem.prototype.initItem = function () {
+            this.logo.node.on(cc.Node.EventType.TOUCH_END, this.onClickAd, this);
+        };
+        AdViewItem.prototype.onClickAd = function () {
+            var _this = this;
+            var openAd = __assign({}, this.mAdItem);
+            if (this.changeView) {
+                var nextAd = this.findNextAd();
+                moosnow.event.sendEventImmediately(EventType.AD_VIEW_REFRESH, {
+                    current: openAd,
+                    next: nextAd
+                });
+                var callback = this.mAdItem.onCancel;
+                console.log('回调函数', !!callback);
+                this.refreshImg(__assign(__assign({}, nextAd), { onCancel: callback }));
+            }
+            moosnow.platform.navigate2Mini(openAd, function () { }, function () {
+                if (_this.mAdItem.onCancel)
+                    _this.mAdItem.onCancel();
+            });
+        };
+        AdViewItem.prototype.findNextAd = function () {
+            if (!this.LogicData.source)
+                return null;
+            if (!this.LogicData.showAppId)
+                return null;
+            for (var i = 0; i < this.LogicData.source.length; i++) {
+                var isShow = false;
+                for (var j = 0; j < this.LogicData.showAppId.length; j++) {
+                    if (this.LogicData.showAppId[j].appid == this.LogicData.source[i].appid) {
+                        isShow = true;
+                    }
+                }
+                if (!isShow) {
+                    return this.LogicData.source[i];
+                }
+            }
+            return null;
+        };
+        AdViewItem.prototype.onAdViewChange = function (e) {
+            var current = e.current, next = e.next;
+            for (var i = 0; i < this.LogicData.showAppId.length; i++) {
+                if (current.appid == this.LogicData.showAppId[i]) {
+                    this.LogicData.showAppId[i] = next.appid;
+                }
+            }
+            for (var i = 0; i < this.LogicData.source.length; i++) {
+                if (next.appid == this.LogicData.source[i].appid) {
+                    this.LogicData.source.splice(i, 1);
+                    this.LogicData.source.push(current);
+                    break;
+                }
+            }
+        };
+        AdViewItem.prototype.onShow = function () {
+            if (this.LogicData.onCancel) {
+                console.log('ad view item ', this.LogicData);
+            }
+            if (this.changeView) {
+                moosnow.event.addListener(EventType.AD_VIEW_REFRESH, this, this.onAdViewChange);
+            }
+        };
+        AdViewItem.prototype.onHide = function () {
+            if (this.mAdItem)
+                this.mAdItem.onCancel = null;
+            moosnow.event.removeListener(EventType.AD_VIEW_REFRESH, this);
+        };
+        AdViewItem.prototype.willShow = function (cell) {
+            _super.prototype.willShow.call(this, cell);
+        };
+        AdViewItem.prototype.refreshImg = function (cell) {
+        };
+        return AdViewItem;
+    }(BaseLogic));
+
+    var CocosAdViewItem = /** @class */ (function (_super) {
+        __extends(CocosAdViewItem, _super);
+        function CocosAdViewItem() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        CocosAdViewItem.prototype.willShow = function (cell) {
+            var _this = this;
+            _super.prototype.willShow.call(this, cell);
+            this.mAdItem = cell;
+            cc.loader.load(cell.img, function (err, tex) {
+                var spriteFrame = new cc.SpriteFrame(tex);
+                _this.logo.spriteFrame = spriteFrame;
+            });
+            if (this.title)
+                this.title.string = (cell.title);
+        };
+        CocosAdViewItem.prototype.refreshImg = function (cell) {
+            var _this = this;
+            this.mAdItem = cell;
+            cc.loader.load(cell.img, function (err, tex) {
+                var spriteFrame = new cc.SpriteFrame(tex);
+                _this.logo.spriteFrame = spriteFrame;
+            });
+            if (this.title)
+                this.title.string = (cell.title);
+        };
+        return CocosAdViewItem;
+    }(AdViewItem));
+
+    /**
+     * 页面逻辑控制
+     */
+    var LogicControl = /** @class */ (function () {
+        function LogicControl() {
+        }
+        /**
+         * 返回一个AdViewItem实例
+         */
+        LogicControl.prototype.newViewItem = function () {
+            return new CocosAdViewItem();
+        };
+        ;
+        Object.defineProperty(LogicControl.prototype, "adForm", {
+            get: function () {
+                if (!this.mAdForm)
+                    this.mAdForm = new CocosAdForm();
+                return this.mAdForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(LogicControl.prototype, "adFormQQ", {
+            get: function () {
+                if (!this.mAdForm)
+                    this.mAdForm = new CocosAdForm();
+                return this.mAdFormQQ;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(LogicControl.prototype, "mistouchForm", {
+            get: function () {
+                if (!this.mMistouchForm)
+                    this.mMistouchForm = new CocosMistouchForm();
+                return this.mMistouchForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "mistouchFormTT", {
+            get: function () {
+                if (!this.mMistouchFormTT)
+                    this.mMistouchFormTT = new CocosMistouchFormTT();
+                return this.mMistouchFormTT;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "mistouchFormQQ", {
+            get: function () {
+                if (!this.mMistouchFormQQ)
+                    this.mMistouchFormQQ = new CocosMistouchFormQQ();
+                return this.mMistouchFormQQ;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return LogicControl;
+    }());
+
     /**
      * 广告结果
      */
@@ -6394,6 +6906,53 @@
                     moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback });
                 });
             }
+        };
+        /**
+         * 金币动画
+         * @param imgNum 动画图片数量
+         * @param starVec 开始位置
+         * @param endVec 结束位置
+         * @param callback 结束回调
+         */
+        Form.prototype.showCoin = function (imgNum, starVec, endVec, callback) {
+            if (imgNum === void 0) { imgNum = 20; }
+            console.log('showCoin');
+            cc.loader.loadRes(moosnow.entity.prefabPath + 'coin', cc.Prefab, function () {
+                var _loop_1 = function (i) {
+                    var delayTime = Common.randomNumBoth(0, 100) / 200.0;
+                    var logic = moosnow.entity.showEntity("coin", cc.Canvas.instance.node, {
+                        x: Common.randomNumBoth(starVec.x - 100, starVec.x + 100),
+                        y: Common.randomNumBoth(starVec.y - 100, starVec.y + 100)
+                    });
+                    logic.node.runAction(cc.sequence(cc.delayTime(delayTime), cc.spawn(cc.moveTo(1, endVec.x, endVec.y), cc.fadeOut(1.0), cc.sequence(cc.scaleTo(0.8, 1.2, 1.2), cc.scaleTo(0.8, 0.8, 9.8))), cc.callFunc(function () {
+                        moosnow.entity.hideEntity(logic, null, true);
+                    })));
+                };
+                for (var i = 0; i < imgNum; i++) {
+                    _loop_1(i);
+                }
+                var t = setTimeout(function () {
+                    clearTimeout(t);
+                    if (Common.isFunction(callback))
+                        callback();
+                }, 2100);
+            });
+        };
+        /**
+         * 显示狂点页面
+         * @param callback 点击完成回调
+         * @param type 类型 仅对QQ平台生效 1 是按钮点击  2 动画点击
+         */
+        Form.prototype.showMistouch = function (callback, type) {
+            if (type === void 0) { type = 1; }
+            moosnow.ui.pushUIForm(UIForms.MistouchForm, {
+                mistouchType: type == 2 ? 4 : 1,
+                onCompleted: function () {
+                    if (callback)
+                        callback();
+                }
+            }, function () {
+            });
         };
         return Form;
     }());
@@ -6573,7 +7132,7 @@
             this.SHARE_CHANNEL = SHARE_CHANNEL;
             this.APP_PLATFORM = PlatformType;
             this.PLATFORM_EVENT = EventType;
-            this.Common = Common$1;
+            this.Common = Common;
             this.AD_POSITION = AD_POSITION$1;
             this.mData = new GameDataCenter();
             this.mSetting = new SettingModule();
@@ -6584,7 +7143,7 @@
             /**
              * form表单控制
              */
-            this.mControl = new FormControl();
+            this.mControl = new LogicControl();
             this.mEntity = new BaseEntityModule();
             this.mDelay = new Delay();
             (window["moosnow"]) = this;
@@ -6601,7 +7160,7 @@
          * 获取当前的游戏平台
          */
         Main.prototype.getAppPlatform = function () {
-            return Common$1.platform;
+            return Common.platform;
         };
         Main.prototype.initUI = function () {
             this.mUi = new CocosUIModule();
@@ -6610,9 +7169,9 @@
             this.mEntity = new CocosEntityModule();
         };
         Main.prototype.initHttp = function () {
-            if (Common$1.platform == PlatformType.WX)
+            if (Common.platform == PlatformType.WX)
                 this.mHttp = new HttpModule();
-            else if (Common$1.platform == PlatformType.OPPO_ZS) {
+            else if (Common.platform == PlatformType.OPPO_ZS) {
                 this.mHttp = new ZSHttpModule();
             }
             else
@@ -6620,20 +7179,20 @@
         };
         Main.prototype.initPlatform = function () {
             // console.log('初始化平台', Common.platform, 'oppo', PlatformType.OPPO, 'vivo', PlatformType.VIVO)
-            if (Common$1.platform == PlatformType.WX)
+            if (Common.platform == PlatformType.WX)
                 this.mPlatform = new WXModule();
-            else if (Common$1.platform == PlatformType.OPPO)
+            else if (Common.platform == PlatformType.OPPO)
                 this.mPlatform = new OPPOModule();
-            else if (Common$1.platform == PlatformType.VIVO)
+            else if (Common.platform == PlatformType.VIVO)
                 this.mPlatform = new VIVOModule();
-            else if (Common$1.platform == PlatformType.OPPO_ZS) {
+            else if (Common.platform == PlatformType.OPPO_ZS) {
                 this.mPlatform = new ZSOPPOModule();
             }
-            else if (Common$1.platform == PlatformType.BYTEDANCE)
+            else if (Common.platform == PlatformType.BYTEDANCE)
                 this.mPlatform = new TTModule();
-            else if (Common$1.platform == PlatformType.QQ)
+            else if (Common.platform == PlatformType.QQ)
                 this.mPlatform = new QQModule();
-            else if (Common$1.platform == PlatformType.BAIDU)
+            else if (Common.platform == PlatformType.BAIDU)
                 this.mPlatform = new BDModule();
             else {
                 this.mPlatform = new PlatformModule();
@@ -6641,12 +7200,12 @@
             // console.log(' cc.sys.browserType ', cc.sys.browserType, ' cc.sys.platform ', cc.sys.platform)
         };
         Main.prototype.initAd = function () {
-            if (Common$1.platform == PlatformType.WX || Common$1.platform == PlatformType.PC)
+            if (Common.platform == PlatformType.WX || Common.platform == PlatformType.PC)
                 this.mAd = new WXAdModule();
-            else if (Common$1.platform == PlatformType.OPPO || Common$1.platform == PlatformType.VIVO) {
+            else if (Common.platform == PlatformType.OPPO || Common.platform == PlatformType.VIVO) {
                 this.mAd = new OPPOAdModule();
             }
-            else if (Common$1.platform == PlatformType.OPPO_ZS) {
+            else if (Common.platform == PlatformType.OPPO_ZS) {
                 this.mAd = new ZSOPPOAdModule();
             }
             else
@@ -6748,5 +7307,7 @@
         return Main;
     }());
     new Main();
+
+    return Main;
 
 }());
