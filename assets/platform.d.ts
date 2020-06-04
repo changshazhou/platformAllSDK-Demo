@@ -1076,6 +1076,11 @@ declare class Form {
      * @param type 类型 仅对QQ平台生效 1 是按钮点击  2 动画点击
      */
     showMistouch(callback?: Function, type?: number): void;
+    /**
+     * Toast消息
+     * @param msg  消息内容
+     */
+    showToast(msg: string): void;
 }
 declare class DelayMove extends BaseModule {
     posButton: cc.Node;

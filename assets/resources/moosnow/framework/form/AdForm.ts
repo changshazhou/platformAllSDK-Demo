@@ -138,6 +138,7 @@ export default class AdForm extends UIForm {
             moosnow.control.adForm.initView(this.leftContainer, this.leftView, this.leftLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.leftContainer, this.rightView, this.rightLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.exportContainer, this.exportView, this.exportLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListExportItem);
+            moosnow.control.adForm.initView(this.centerContainer, this.centerView, this.centerLayout, moosnow.AD_POSITION.CENTER, this.mAdListExportItem);
             moosnow.control.adForm.initView(this.sideContainer, this.sideView, this.sideLayout, moosnow.AD_POSITION.SIDE, this.mAdListBannerItem);
 
             let points = [];

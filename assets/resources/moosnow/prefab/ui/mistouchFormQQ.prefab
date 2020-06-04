@@ -30,23 +30,23 @@
         "__id__": 18
       },
       {
-        "__id__": 22
+        "__id__": 21
       }
     ],
     "_active": true,
     "_components": [
       {
+        "__id__": 25
+      },
+      {
         "__id__": 26
       },
       {
         "__id__": 27
-      },
-      {
-        "__id__": 28
       }
     ],
     "_prefab": {
-      "__id__": 29
+      "__id__": 28
     },
     "_opacity": 255,
     "_color": {
@@ -624,13 +624,10 @@
     "_components": [
       {
         "__id__": 19
-      },
-      {
-        "__id__": 20
       }
     ],
     "_prefab": {
-      "__id__": 21
+      "__id__": 20
     },
     "_opacity": 255,
     "_color": {
@@ -712,28 +709,6 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Animation",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 18
-    },
-    "_enabled": true,
-    "_defaultClip": {
-      "__uuid__": "0d9b2c7f-b55c-4fbd-9813-ae726496c9bd"
-    },
-    "_clips": [
-      {
-        "__uuid__": "275d8895-6c15-4681-ac83-7ed0c0eb8faf"
-      },
-      {
-        "__uuid__": "0d9b2c7f-b55c-4fbd-9813-ae726496c9bd"
-      }
-    ],
-    "playOnLoad": false,
-    "_id": ""
-  },
-  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
@@ -755,14 +730,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 23
+        "__id__": 22
       },
       {
-        "__id__": 24
+        "__id__": 23
       }
     ],
     "_prefab": {
-      "__id__": 25
+      "__id__": 24
     },
     "_opacity": 255,
     "_color": {
@@ -816,7 +791,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 22
+      "__id__": 21
     },
     "_enabled": true,
     "_materials": [
@@ -848,7 +823,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 22
+      "__id__": 21
     },
     "_enabled": true,
     "_defaultClip": {
@@ -948,7 +923,7 @@
       "__id__": 18
     },
     "hand": {
-      "__id__": 22
+      "__id__": 21
     },
     "pinch1": {
       "__uuid__": "1c49f1e4-8ee2-4263-b5d4-4d7cdd1dd248"

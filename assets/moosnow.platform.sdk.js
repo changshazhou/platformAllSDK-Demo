@@ -561,7 +561,7 @@ var mx = (function () {
         };
         BaseModule.prototype.initProperty = function (form) {
             for (var v in form) {
-                if (v.indexOf("m") != 0 && (form[v] instanceof cc.Node || form[v] instanceof cc.Component)) {
+                if (this.hasOwnProperty(v)) {
                     this[v] = form[v];
                 }
             }
@@ -614,6 +614,7 @@ var mx = (function () {
         }
         EventType.ON_PLATFORM_SHOW = "ON_PLATFORM_SHOW";
         EventType.ON_PLATFORM_HIDE = "ON_PLATFORM_HIDE";
+        EventType.ON_BANNER_HIDE = "ON_BANNER_HIDE";
         EventType.ON_AD_SHOW = "ON_AD_SHOW";
         EventType.AD_VIEW_CHANGE = "AD_VIEW_CHANGE";
         EventType.AD_VIEW_REFRESH = "AD_VIEW_REFRESH";
@@ -1409,6 +1410,7 @@ var mx = (function () {
             console.warn('banner___error:', err.errCode, err.errMsg);
             this.banner = null;
             this.isBannerShow = false;
+            moosnow.event.sendEventImmediately(EventType.ON_BANNER_HIDE, null);
         };
         PlatformModule.prototype._bottomCenterBanner = function (size) {
             // if (Common.isEmpty(size)) {
@@ -1862,13 +1864,15 @@ var mx = (function () {
          */
         WXModule.prototype.getUserToken = function (code, user_id, callback) {
             var options = this.getLaunchOption();
+            var scene = options.scene;
             var channel_id = options.query && options.query.channel_id ? options.query.channel_id : "0";
             var channel_appid = options.referrerInfo && options.referrerInfo.appId ? options.referrerInfo.appId : "0";
             moosnow.data.setChannelAppId(channel_appid);
             moosnow.data.setChannelId(channel_id);
+            var fromApp = options.referrerInfo ? options.referrerInfo.appId : '未知';
             if (window[this.platformName] && window[this.platformName].aldSendEvent) {
                 window[this.platformName].aldSendEvent("来源", {
-                    origin: options.referrerInfo ? options.referrerInfo.appId : '未知',
+                    origin: fromApp,
                     path: options.query.from || 0
                 });
             }
@@ -1877,7 +1881,8 @@ var mx = (function () {
                 code: code,
                 user_id: user_id,
                 channel_id: channel_id,
-                channel_appid: channel_appid
+                channel_appid: channel_appid,
+                scene: scene, fromApp: fromApp
             }, "POST", function (respone) {
                 if (respone.code == 0 && respone.data && respone.data.user_id) {
                     moosnow.data.setToken(respone.data.user_id);
@@ -5858,6 +5863,8 @@ var mx = (function () {
             }
             moosnow.entity.preload(entityName, function () {
                 moosnow.ad.getAd(function (res) {
+                    if (res.indexLeft.length == 0)
+                        return;
                     var source = _this.setPosition(res.indexLeft, "");
                     source.forEach(function (item, idx) {
                         var adItemCtl = moosnow.entity.showEntity(entityName, layout.node, item);
@@ -6014,6 +6021,8 @@ var mx = (function () {
             cc.loader.loadResDir(moosnow.entity.prefabPath, cc.Prefab, function () {
                 moosnow.ad.getAd(function (res) {
                     _this.mAdData = res;
+                    if (res.indexLeft.length == 0)
+                        return;
                     var source = __spreadArrays(res.indexLeft);
                     prefabs.forEach(function (prefabName, idx) {
                         var showIndex = idx;
@@ -6328,8 +6337,10 @@ var mx = (function () {
             }
         };
         MistouchForm.prototype.onLogoUp = function () {
+            this.logo.position = this.mEndPos;
         };
         MistouchForm.prototype.onLogoDown = function () {
+            this.logo.position = this.mBeginPos;
         };
         MistouchForm.prototype.onBannerClick = function () {
             var _this = this;
@@ -6561,7 +6572,6 @@ var mx = (function () {
         }
         MistouchFormQQ.prototype.willShow = function (data) {
             _super.prototype.willShow.call(this, data);
-            this.btnBanner.active = true;
             this.mCurrentNum = 0;
             this.mNavigateIndex = Common.randomNumBoth(3, this.mMaxNum - 2);
             this.addEvent();
@@ -6569,11 +6579,17 @@ var mx = (function () {
             moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
             this.mBannerShow = false;
             if (this.mistouchAppBox()) {
-                this.hand.active = true;
-                var anim = this.hand.getComponent(cc.Animation);
-                anim.play();
+                this.showHand(true);
+                this.showButton(false);
+                this.playHandAnim();
+            }
+            else {
+                this.showHand(false);
+                this.showButton(true);
             }
             moosnow.platform.hideBanner();
+        };
+        MistouchFormQQ.prototype.playHandAnim = function () {
         };
         MistouchFormQQ.prototype.mistouchAppBox = function () {
             return this.FormData && this.FormData.mistouchType == 4;
@@ -6582,24 +6598,7 @@ var mx = (function () {
             if (this.mCurrentNum > 0)
                 this.mCurrentNum -= 0.02;
         };
-        MistouchFormQQ.prototype.addEvent = function () {
-            this.btnBanner.on(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
-            this.btnBanner.on(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
-        };
-        MistouchFormQQ.prototype.removeEvent = function () {
-            this.btnBanner.off(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
-            this.btnBanner.off(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
-            moosnow.event.removeListener(EventType.ON_PLATFORM_SHOW, this);
-        };
-        MistouchFormQQ.prototype.onLogoUp = function () {
-            this.logo.position = this.mEndPos;
-        };
-        MistouchFormQQ.prototype.onLogoDown = function () {
-            this.logo.position = this.mBeginPos;
-        };
         MistouchFormQQ.prototype.initPos = function () {
-            this.mBeginPos = this.logo.position.clone();
-            this.mEndPos = this.mBeginPos.add(new cc.Vec2(0, 50));
         };
         MistouchFormQQ.prototype.onHideBanner = function () {
             if (this.mistouchAppBox())
@@ -6607,11 +6606,15 @@ var mx = (function () {
             else
                 moosnow.platform.hideBanner();
         };
+        MistouchFormQQ.prototype.showButton = function (isShow) {
+        };
+        MistouchFormQQ.prototype.showHand = function (isShow) {
+        };
         MistouchFormQQ.prototype.onBannerClick = function () {
             var _this = this;
-            this.onLogoDown();
-            this.hand.active = false;
             this.mCurrentNum += 1;
+            this.onLogoDown();
+            this.showHand(false);
             if (this.mCurrentNum >= this.mNavigateIndex) {
                 if (!this.mBannerShow) {
                     this.mShowTime = Date.now();
@@ -6640,9 +6643,11 @@ var mx = (function () {
             if (this.mCurrentNum >= this.mMaxNum) {
                 moosnow.platform.hideBanner();
                 this.mBannerShow = false;
-                moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
-                if (this.FormData && this.FormData.onCompleted)
-                    this.FormData.onCompleted();
+                this.scheduleOnce(function () {
+                    moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+                    if (_this.FormData && _this.FormData.onCompleted)
+                        _this.FormData.onCompleted();
+                }, 0.2);
             }
         };
         return MistouchFormQQ;
@@ -6664,6 +6669,48 @@ var mx = (function () {
             _this.pinch6 = null;
             return _this;
         }
+        CocosMistouchFormQQ.prototype.onLogoUp = function () {
+        };
+        CocosMistouchFormQQ.prototype.onLogoDown = function () {
+            var logoSprite = this.logo.getComponent(cc.Sprite);
+            if (this.mCurrentNum < this.mMaxNum)
+                logoSprite.spriteFrame = this["pinch" + ((parseInt("" + this.mCurrentNum) % 4) + 1)];
+            else
+                logoSprite.spriteFrame = this.pinch6;
+        };
+        CocosMistouchFormQQ.prototype.addEvent = function () {
+            var _this = this;
+            //误触appbox 广告
+            if (this.mistouchAppBox()) {
+                this.btnBanner.active = false;
+                this.logo.on(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+                this.logo.on(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            }
+            else {
+                //误触banner
+                this.btnBanner.active = true;
+                this.btnBanner.on(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+                this.btnBanner.on(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            }
+            moosnow.event.addListener(EventType.ON_PLATFORM_SHOW, this, function () {
+                if (_this.mBannerShow)
+                    _this.bannerClickCallback(true);
+            });
+        };
+        CocosMistouchFormQQ.prototype.removeEvent = function () {
+            this.btnBanner.off(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            moosnow.event.removeListener(EventType.ON_PLATFORM_SHOW, this);
+        };
+        CocosMistouchFormQQ.prototype.playHandAnim = function () {
+            var anim = this.hand.getComponent(cc.Animation);
+            anim.play();
+        };
+        CocosMistouchFormQQ.prototype.showButton = function (isShow) {
+            this.btnBanner.active = isShow;
+        };
+        CocosMistouchFormQQ.prototype.showHand = function (isShow) {
+            this.hand.active = isShow;
+        };
         return CocosMistouchFormQQ;
     }(MistouchFormQQ));
 
@@ -6953,6 +7000,13 @@ var mx = (function () {
                 }
             }, function () {
             });
+        };
+        /**
+         * Toast消息
+         * @param msg  消息内容
+         */
+        Form.prototype.showToast = function (msg) {
+            moosnow.ui.showToast(msg);
         };
         return Form;
     }());

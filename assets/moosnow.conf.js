@@ -1,5 +1,5 @@
 window.moosnowConfig = {
-    debug: "wx",
+    debug: "qq",
     /**
      * 微信平台
      */

@@ -17,17 +17,27 @@ export default class Helloworld extends cc.Component {
 
     }
 
+    showToast() {
+        moosnow.form.showToast("这是一个Toast消息")
+    }
+
 
     showMistouch() {
         moosnow.form.showMistouch(() => {
             console.log('误触结束')
-        });
+        }, 2);
     }
 
 
+    showAd2() {
+        moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
+            moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.SIDE, () => {
+
+            });
+        });
+    }
 
     showAd() {
-        // |
         moosnow.form.showAd(moosnow.AD_POSITION.EXPORT | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
             moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.SIDE, () => {
 
