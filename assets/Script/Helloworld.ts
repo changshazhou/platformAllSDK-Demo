@@ -29,6 +29,26 @@ export default class Helloworld extends cc.Component {
     }
 
 
+    showPrize() {
+        moosnow.form.showPrize({
+            coinNum: 500,
+            randomY: 100,
+            randomX: 100,
+            imgNum: 30,
+            starVec: {
+                x: 0,
+                y: 0,
+            },
+            endVec: {
+                x: 1000,
+                y: 1000,
+            },
+        }, 1, true, () => {
+            console.log('奖励结束')
+        })
+    }
+
+
     showAd2() {
         moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
             moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.SIDE, () => {
@@ -99,34 +119,34 @@ export default class Helloworld extends cc.Component {
     showNativeBanner() {
         // console.log('moosnow.platform.moosnowConfig.bannerId', moosnow.platform.moosnowConfig.bannerId)
 
-        const bannerAd = qq.createBannerAd({
-            adUnitId: '393fd2c197f4fdda1f9729ef36737890',
-            style: {
-                top: 0,
-                width: 320,
-                height: 100,
-                left: 0
-            }
-        })
-        // 尺寸调整时会触发回调         
-        // 注意：如果在回调里再次调整尺寸，要确保不要触发死循环！！！    
-        bannerAd.onResize(size => {
-            console.log('Resize后正式宽高:', size.width, size.height);
-            // 在这里可以根据banner宽高进行定位        
-            // bannerAd.style.top = 76;
-            // bannerAd.style.left = 320;
+        // const bannerAd = qq.createBannerAd({
+        //     adUnitId: '393fd2c197f4fdda1f9729ef36737890',
+        //     style: {
+        //         top: 0,
+        //         width: 320,
+        //         height: 100,
+        //         left: 0
+        //     }
+        // })
+        // // 尺寸调整时会触发回调         
+        // // 注意：如果在回调里再次调整尺寸，要确保不要触发死循环！！！    
+        // bannerAd.onResize(size => {
+        //     console.log('Resize后正式宽高:', size.width, size.height);
+        //     // 在这里可以根据banner宽高进行定位        
+        //     // bannerAd.style.top = 76;
+        //     // bannerAd.style.left = 320;
 
 
-        });
-        bannerAd.onError(res => { console.log('bannerAd onError', res) })
-        bannerAd.onLoad(res => {
-            console.log('bannerAd onLoad', res)
-            bannerAd.show().then(() => {
-                console.log('bannerAd show ok')
-            }).catch((res) => {
-                console.log('bannerAd show error', res)
-            });
-        })
+        // });
+        // bannerAd.onError(res => { console.log('bannerAd onError', res) })
+        // bannerAd.onLoad(res => {
+        //     console.log('bannerAd onLoad', res)
+        //     bannerAd.show().then(() => {
+        //         console.log('bannerAd show ok')
+        //     }).catch((res) => {
+        //         console.log('bannerAd show error', res)
+        //     });
+        // })
     }
 
 
@@ -160,7 +180,7 @@ export default class Helloworld extends cc.Component {
     }
 
     navigate2Mini() {
-        moosnow.navigate2Mini({
+        let row = {
             appid: "30238187",
             atlas: "",
             boxAppid: "",
@@ -169,7 +189,12 @@ export default class Helloworld extends cc.Component {
             path: "",
             pkgName: "com.cszs.qscssd.nearme.gamecenter",
             title: "枪神传说3D",
-        }, () => { }, () => {
+        }
+        moosnow.platform.navigate2Mini(row, () => {
+
+        }, () => {
+
+        }, () => {
 
         })
     }
