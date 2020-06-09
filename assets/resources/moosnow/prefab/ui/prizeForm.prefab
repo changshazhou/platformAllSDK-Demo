@@ -518,7 +518,7 @@
     "_id": ""
   },
   {
-    "__type__": "9c1e2AO8wZPWbAgk+CIA9Na",
+    "__type__": "a737fPN/FtMTrnjqhxkZNap",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -531,8 +531,6 @@
     "autoSwing": false,
     "scaleMax": 1,
     "scaleMin": 0.8,
-    "enableLogPoint": false,
-    "logPointName": "",
     "_id": ""
   },
   {

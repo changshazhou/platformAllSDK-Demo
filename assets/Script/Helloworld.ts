@@ -29,6 +29,25 @@ export default class Helloworld extends cc.Component {
     }
 
 
+    showCoin() {
+        moosnow.form.showCoin({
+            coinNum: 500,
+            randomY: 100,
+            randomX: 100,
+            imgNum: 30,
+            starVec: {
+                x: 0,
+                y: 0,
+            },
+            endVec: {
+                x: 1000,
+                y: 1000,
+            },
+        }, () => {
+            console.log('金币动画')
+        })
+    }
+
     showPrize() {
         moosnow.form.showPrize({
             coinNum: 500,
@@ -43,11 +62,37 @@ export default class Helloworld extends cc.Component {
                 x: 1000,
                 y: 1000,
             },
-        }, 1, true, () => {
+        }, 1, false, () => {
             console.log('奖励结束')
         })
     }
 
+    showPrize2() {
+        moosnow.form.showPrize({
+            coinNum: 500,
+            randomY: 100,
+            randomX: 100,
+            imgNum: 30,
+            starVec: {
+                x: 0,
+                y: 0,
+            },
+            endVec: {
+                x: 1000,
+                y: 1000,
+            },
+        }, 1, true, () => {
+            console.log('奖励结束2')
+        })
+    }
+
+    showAd3() {
+        moosnow.form.showAd(moosnow.AD_POSITION.EXPORT_FIXED | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
+            moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.SIDE, () => {
+
+            });
+        });
+    }
 
     showAd2() {
         moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
@@ -180,22 +225,22 @@ export default class Helloworld extends cc.Component {
     }
 
     navigate2Mini() {
-        let row = {
-            appid: "30238187",
-            atlas: "",
-            boxAppid: "",
-            desc: "",
-            img: "https://txcdn.ylll111.xyz/more_channel/6fb282c9ba4a7f6859f6d26c70335c58.png",
-            path: "",
-            pkgName: "com.cszs.qscssd.nearme.gamecenter",
-            title: "枪神传说3D",
-        }
-        moosnow.platform.navigate2Mini(row, () => {
+        // let row = {
+        //     appid: "30238187",
+        //     atlas: "",
+        //     boxAppid: "",
+        //     desc: "",
+        //     img: "https://txcdn.ylll111.xyz/more_channel/6fb282c9ba4a7f6859f6d26c70335c58.png",
+        //     path: "",
+        //     pkgName: "com.cszs.qscssd.nearme.gamecenter",
+        //     title: "枪神传说3D",
+        // }
+        // moosnow.platform.navigate2Mini(row, () => {
 
-        }, () => {
+        // }, () => {
 
-        }, () => {
+        // }, () => {
 
-        })
+        // })
     }
 }

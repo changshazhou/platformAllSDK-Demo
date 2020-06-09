@@ -1,12 +1,15 @@
 import PlatformModule from "./PlatformModule";
 import bannerStyle from "../model/bannerStyle";
+import moosnowAdRow from "../model/moosnowAdRow";
 export default class TTModule extends PlatformModule {
     platformName: string;
     recordRes: any;
     recordCb: any;
     recordNumber: number;
     bannerWidth: number;
+    moreGameCb: Function;
     constructor();
+    private _registerTTCallback;
     prepareInter(): void;
     _bottomCenterBanner(size: any): void;
     initRecord(): void;
@@ -54,6 +57,21 @@ export default class TTModule extends PlatformModule {
     * @param style 自定义样式
     */
     showBanner(callback?: Function, position?: string, style?: bannerStyle): void;
-    showAppBox(): void;
-    showAppBox2(): void;
+    /**
+    * 盒子广告
+    * @param callback 关闭回调
+    * @param remoteOn 被后台开关控制
+    */
+    showAppBox(callback?: Function, remoteOn?: boolean): void;
+    private _getAppLaunchOptions;
+    private _showMoreGamesModal;
+    showMoreGameBanner(): void;
+    private _moreGameBotton;
+    showMoreGameButton(url: string, callback?: Function, style?: any): void;
+    hideMoreGameButton(): void;
+    /***
+     * 检测Iphone
+     */
+    isIphone(): boolean;
+    navigate2Mini(row: moosnowAdRow, success?: Function, fail?: Function, complete?: Function): void;
 }

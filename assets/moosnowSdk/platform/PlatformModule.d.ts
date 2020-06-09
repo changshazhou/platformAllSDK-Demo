@@ -51,7 +51,14 @@ export default class PlatformModule extends BaseModule {
     onEnable(): void;
     private vibrateSwitch;
     initAppConfig(): void;
+    /***
+     * 检测IphoneX
+     */
     isIphoneXModel(): boolean;
+    /***
+     * 检测Iphone
+     */
+    isIphone(): boolean;
     isIphoneX(): boolean;
     private compareVersion;
     /**
@@ -60,12 +67,21 @@ export default class PlatformModule extends BaseModule {
     */
     supportVersion(version: string): boolean;
     /**
+     * 是否支持函数
+     * @param name
+     */
+    supportFunction(name: string): boolean;
+    private versionRet;
+    /**
      * 检查当前版本的导出广告是否开启
      * @param {string} version 版本号 为了兼容旧版本SDK的参数，目前已无作用，SDK会取moosnowConfig 中的version 来判断
      * @param {*} callback
      * @returns callback回调函数的参数为boolean，true：打开广告，false：关闭广告
      */
-    checkVersion(version: string, callback: any): void;
+    checkVersion(version: string, callback: Function): void;
+    private _checkRemoteVersion;
+    private _checkConfigVersion;
+    checkLog(remoteVersion: any): boolean;
     isSmallWidth(): boolean;
     login(success?: Function, fail?: Function): void;
     postMessage(data: {
@@ -263,6 +279,13 @@ export default class PlatformModule extends BaseModule {
      * @param value
      */
     reportMonitor(name?: string, value?: string): void;
+    /**
+     * 更多游戏按钮
+     * @param url
+     * @param callback
+     * @param style
+     */
+    showMoreGameButton(url: string, callback?: Function, style?: any): void;
     initRank(): void;
     showRank(): void;
     updateUserScore(score: any): void;

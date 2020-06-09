@@ -55,8 +55,8 @@ export default class AdForm extends UIForm {
     @property(cc.ScrollView)
     public endView: cc.ScrollView = null;
 
-    @property(cc.Layout)
-    public endLayout: cc.Layout = null;
+    @property(cc.Node)
+    public endLayout: cc.Node = null;
 
     @property(cc.Node)
     public floatContainer: cc.Node = null;
@@ -134,12 +134,15 @@ export default class AdForm extends UIForm {
     }
     public onShow(data) {
         moosnow.ad.getAd(res => {
-            moosnow.control.adForm.initView(this.bannerContainer, this.bannerView, this.bannerLayout, moosnow.AD_POSITION.BANNER, this.mAdListBannerItem);
-            moosnow.control.adForm.initView(this.leftContainer, this.leftView, this.leftLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListBannerItem);
-            moosnow.control.adForm.initView(this.leftContainer, this.rightView, this.rightLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListBannerItem);
-            moosnow.control.adForm.initView(this.exportContainer, this.exportView, this.exportLayout, moosnow.AD_POSITION.LEFTRIGHT, this.mAdListExportItem);
-            moosnow.control.adForm.initView(this.centerContainer, this.centerView, this.centerLayout, moosnow.AD_POSITION.CENTER, this.mAdListExportItem);
-            moosnow.control.adForm.initView(this.sideContainer, this.sideView, this.sideLayout, moosnow.AD_POSITION.SIDE, this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.bannerContainer, this.bannerView, this.bannerLayout, "banner位置", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.leftContainer, this.leftView, this.leftLayout, "左边侧拉栏", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.leftContainer, this.rightView, this.rightLayout, "右边侧拉栏", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.exportContainer, this.exportView, this.exportLayout, "全屏导出", this.mAdListExportItem);
+            moosnow.control.adForm.initView(this.centerContainer, this.centerView, this.centerLayout, "中间页导出", this.mAdListExportItem);
+            moosnow.control.adForm.initView(this.sideContainer, this.sideView, this.sideLayout,"侧拉栏", this.mAdListBannerItem);
+
+            moosnow.control.adForm.initFiexdView(this.endContainer, this.endLayout, "固定模式的导出", this.mAdListExportItem);
+
 
             let points = [];
             let prefabs = [this.mAdFloatLeftItem1, this.mAdFloatLeftItem2, this.mAdFloatLeftItem1, this.mAdFloatLeftItem3]
