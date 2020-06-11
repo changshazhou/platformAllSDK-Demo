@@ -1,3 +1,5 @@
+import UIForms from "../resources/moosnow/config/UIForms";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -110,6 +112,11 @@ export default class Helloworld extends cc.Component {
         });
     }
 
+    showTotal() {
+        moosnow.ui.pushUIForm(UIForms.TotalForm, { coin: 500, shareCoin: 1000 })
+    }
+
+
     hideAd() {
         moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
     }
@@ -149,6 +156,14 @@ export default class Helloworld extends cc.Component {
     showAutoBanner() {
         moosnow.platform.showAutoBanner();
 
+    }
+
+    showIntervalBanner() {
+        moosnow.platform.showIntervalBanner();
+
+        this.scheduleOnce(() => {
+            moosnow.platform.clearIntervalBanner();
+        }, 20)
     }
 
     hideBanner() {
