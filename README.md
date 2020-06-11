@@ -1,2 +1,3 @@
-# hello-world
-Hello world new project template.
+# 本示例主要是SDK功能演示，会自动适配平台
+
+
