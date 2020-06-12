@@ -113,7 +113,47 @@ export default class Helloworld extends cc.Component {
     }
 
     showTotal() {
-        moosnow.ui.pushUIForm(UIForms.TotalForm, { coin: 500, shareCoin: 1000 })
+        let touchOptions = {
+            type: 1,
+            onCompleted: () => {
+                console.log("误触页-结束")
+            }
+        }
+        let endOptions = {
+            coinNum: 0,
+            videoNum: 0,
+            shareCoinNum: 0,
+            isWin: true,
+            hideEnd: true,
+            level: "1",
+            extraData: {},
+            touchOptions: touchOptions,
+            onReceive: () => {
+                console.log("结束页-点了领取")
+            },
+            onVideoReceive: () => {
+                console.log("结束页-点了视频领取")
+            },
+        }
+
+        moosnow.form.showTotal({
+            coinNum: 500,
+            videoNum: 2500,
+            shareCoinNum: 500,
+            hideTotal: true,
+            showEnd: true,
+            endOptions: endOptions,
+            onReceive: () => {
+                console.log("点了领取")
+            },
+            onVideoReceive: () => {
+                console.log("点了视频领取")
+            },
+            onMore: () => {
+                console.log("点了更多游戏")
+            },
+            extraData: {}
+        })
     }
 
 

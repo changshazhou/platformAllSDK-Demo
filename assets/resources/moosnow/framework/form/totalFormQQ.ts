@@ -1,6 +1,7 @@
 import UIForm from "../../framework/ui/UIForm";
 import UIForms from "../../config/UIForms";
 import Common from "../utils/Common";
+import showTotalOptions from "../../../../moosnowSdk/model/showTotalOptions";
 
 
 const { ccclass, property } = cc._decorator;
@@ -26,9 +27,13 @@ export default class totalFormQQ extends UIForm {
     @property(cc.Node)
     btnMore: cc.Node = null;
 
-
     @property(cc.Label)
     levelCoin: cc.Label = null;
+
+    public get FormData(): showTotalOptions {
+        return this.mFormData
+    }
+
     public isMask: boolean = true;
 
     private mCheckedVideo: boolean = true;
@@ -50,11 +55,20 @@ export default class totalFormQQ extends UIForm {
 
     private showAppbox() {
         moosnow.platform.showAppBox(() => { }, false);
+        if (this.FormData && this.FormData.onMore)
+            this.FormData.onMore();
     }
     private onVideoReceive() {
         moosnow.platform.showVideo(res => {
             if (res == moosnow.VIDEO_STATUS.END) {
-                this.receiveSuccess(this.mLevelCoinNum * 5)
+                if (this.FormData.hideTotal) {
+                    moosnow.ui.hideUIForm(UIForms.TotalForm, null)
+                }
+                if (this.FormData.showEnd) {
+                    moosnow.form.showEnd(this.FormData.endOptions)
+                }
+                if (this.FormData && this.FormData.onVideoReceive)
+                    this.FormData.onVideoReceive();
             }
             else if (res == moosnow.VIDEO_STATUS.ERR) {
                 moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR)
@@ -65,20 +79,17 @@ export default class totalFormQQ extends UIForm {
         })
     }
     private onReceive() {
-        this.receiveSuccess(this.mLevelCoinNum)
+        if (this.FormData.hideTotal) {
+            moosnow.ui.hideUIForm(UIForms.TotalForm, null)
+        }
+        if (this.FormData.showEnd) {
+            moosnow.form.showEnd(this.FormData.endOptions)
+        }
+        if (this.FormData && this.FormData.onReceive)
+            this.FormData.onReceive();
     }
 
 
-    private receiveSuccess(coin: number) {
-        moosnow.data.addCoin(coin);
-        moosnow.data.saveCoin();
-        moosnow.ui.hideUIForm(UIForms.TotalForm, null)
-        moosnow.ui.pushUIForm(UIForms.HomeForm, null, () => {
-
-        })
-        moosnow.platform.showAppBox();
-        // Lite.ui.pushUIForm(UIForms.EndForm, { level: this.FormData.level, levelShareCoinNum: this.mLevelShareCoinNum, ...this.FormData })
-    }
 
     private onShareChange() {
         this.mCheckedVideo = !this.mCheckedVideo;
@@ -110,7 +121,6 @@ export default class totalFormQQ extends UIForm {
         this.addEvent();
         this.changeUI();
         this.mCheckedVideo = true;
-        this.changeUI();
         moosnow.platform.stopRecord();
         moosnow.platform.showBanner();
         moosnow.platform.showAppBox(res => {

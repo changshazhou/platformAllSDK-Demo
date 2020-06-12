@@ -75,7 +75,7 @@ export default class UIForm extends cc.Component {
         // MLF.UI.destroyUIForm(this.formName)
     }
 
-    private mFormData: any;
+    public mFormData: any;
     /**
      * 父类缓存willShow，onShow传递到实体的逻辑数据
      */

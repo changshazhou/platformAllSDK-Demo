@@ -1,6 +1,7 @@
 import UIForm from "../../framework/ui/UIForm";
 import UIForms from "../../config/UIForms";
 import Common from "../utils/Common";
+import showTotalOptions from "../../../../moosnowSdk/model/showTotalOptions";
 
 
 const { ccclass, property } = cc._decorator;
@@ -25,6 +26,10 @@ export default class totalFormTT extends UIForm {
 
     @property(cc.Label)
     txtMemo: cc.Label = null;
+
+    public get FormData(): showTotalOptions {
+        return this.mFormData
+    }
 
     public isMask: boolean = true;
     private mIsChecked: boolean = true;
@@ -123,6 +128,21 @@ export default class totalFormTT extends UIForm {
     public onVideo() {
         moosnow.platform.showVideo(res => {
             if (res == moosnow.VIDEO_STATUS.END) {
+                this.onVideoReceive()
+            }
+            else if (res == moosnow.VIDEO_STATUS.ERR) {
+                moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR)
+            }
+            else {
+                moosnow.ui.showToast(moosnow.VIDEO_MSG.NOTEND)
+            }
+        })
+    }
+
+    public onVideoReceive() {
+        moosnow.platform.showVideo(res => {
+            this.mIsReceive = false;
+            if (res == moosnow.VIDEO_STATUS.END) {
                 moosnow.form.showCoin({
                     /**
                      * Y方向的随机范围
@@ -155,10 +175,14 @@ export default class totalFormTT extends UIForm {
                         y: 100,
                     },
                 }, () => {
-                    moosnow.ui.hideUIForm(UIForms.TotalForm, null);
+                    if (this.FormData.hideTotal) {
+                        moosnow.ui.hideUIForm(UIForms.TotalForm, null)
+                    }
                     moosnow.http.getMisTouchNum(misNum => {
                         if (misNum == 0) {
-                            moosnow.ui.pushUIForm(UIForms.EndForm, this.FormData)
+                            if (this.FormData.showEnd) {
+                                moosnow.form.showEnd(this.FormData.endOptions)
+                            }
                         }
                         else {
                             moosnow.ui.pushUIForm(UIForms.MistouchForm)
@@ -182,59 +206,7 @@ export default class totalFormTT extends UIForm {
         this.mIsReceive = true;
 
         if (this.mOpenVideo) {
-            moosnow.platform.showVideo(res => {
-                this.mIsReceive = false;
-                if (res == moosnow.VIDEO_STATUS.END) {
-                    moosnow.form.showCoin({
-                        /**
-                         * Y方向的随机范围
-                         */
-                        randomY: 100,
-                        /**
-                        * X方向的随机范围
-                        */
-                        randomX: 100,
-                        /**
-                         * 金币图片数量
-                         */
-                        imgNum: 20,
-                        /**
-                         * 金币数量
-                         */
-                        coinNum: this.mLevelCoinNum * 5,
-                        /**
-                         * 开始位置
-                         */
-                        starVec: {
-                            x: 0,
-                            y: 0,
-                        },
-                        /**
-                         * 结束位置
-                         */
-                        endVec: {
-                            x: 100,
-                            y: 100,
-                        },
-                    }, () => {
-                        moosnow.ui.hideUIForm(UIForms.TotalForm, null);
-                        moosnow.http.getMisTouchNum(misNum => {
-                            if (misNum == 0) {
-                                moosnow.ui.pushUIForm(UIForms.EndForm, this.FormData)
-                            }
-                            else {
-                                moosnow.ui.pushUIForm(UIForms.MistouchForm)
-                            }
-                        })
-                    })
-                }
-                else if (res == moosnow.VIDEO_STATUS.ERR) {
-                    moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR)
-                }
-                else {
-                    moosnow.ui.showToast(moosnow.VIDEO_MSG.NOTEND)
-                }
-            })
+            this.onVideoReceive();
         }
         else {
             moosnow.form.showCoin({

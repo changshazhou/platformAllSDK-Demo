@@ -1,5 +1,6 @@
 import UIForm from "../../framework/ui/UIForm";
 import UIForms from "../../config/UIForms";
+import showEndOptions from "../../../../moosnowSdk/model/showEndOptions";
 
 const { ccclass, property } = cc._decorator;
 
@@ -9,7 +10,6 @@ export default class endForm extends UIForm {
     @property(cc.Node)
     public btnWinReceive: cc.Node = null;
 
-
     @property(cc.Label)
     public coinText: cc.Label = null;
 
@@ -17,10 +17,20 @@ export default class endForm extends UIForm {
     public winBox: cc.Node = null;
 
 
+    @property(cc.Node)
+    public failBox: cc.Node = null;
+
+    @property(cc.Node)
+    public btnFailReceive: cc.Node = null;
+
+
+    public get FormData(): showEndOptions {
+        return this.mFormData
+    }
     /**
      * 是否有渐入渐出效果
      */
-    public isPopEffect: boolean = true;
+    public isPopEffect: boolean = false;
     /**
      * 是否需要蒙层
      */
@@ -36,38 +46,38 @@ export default class endForm extends UIForm {
         this.removeListener();
     }
     addListener() {
+
         this.btnWinReceive.on(cc.Node.EventType.TOUCH_END, this.receiveCoin, this);
+        this.btnFailReceive.on(cc.Node.EventType.TOUCH_END, this.receiveCoin, this);
     }
     removeListener() {
         this.btnWinReceive.off(cc.Node.EventType.TOUCH_END, this.receiveCoin, this);
+        this.btnFailReceive.off(cc.Node.EventType.TOUCH_END, this.receiveCoin, this);
     }
     willShow(data) {
         super.willShow(data);
         // Lite.data.setTryingSkin(null);
     }
-    onShow(data) {
+    onShow(data: showEndOptions) {
         let isWin = data.isWin;
         let level = data.level;
-        let fail = data.fail;
 
         if (data) {
-            let coin = data.coin;
-            moosnow.data.addCoin(parseInt(coin));
+            moosnow.data.addCoin(parseInt("" + data.coinNum));
             moosnow.data.saveCoin();
         }
 
-        if (isWin) {
-            this.winBox.active = true;
-        }
-        else {
-            this.winBox.active = false;
-        }
-        this.showStar(level, data.useTime);
+        this.winBox.active = isWin;
+        this.failBox.active = !isWin
 
 
         this.node.zIndex = 7;
         moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
             moosnow.form.showAd(moosnow.AD_POSITION.NONE, () => { })
+            if (this.FormData.hideEnd)
+                moosnow.ui.hideUIForm(UIForms.EndForm, null);
+            if (this.FormData.onReceive)
+                this.FormData.onReceive();
             //回到首页
 
         }, 6)
@@ -85,10 +95,10 @@ export default class endForm extends UIForm {
     receiveCoin() {
         moosnow.data.addCoin(this.coin);
         moosnow.data.saveCoin();
-        this.goIndexCb();
-    }
-    goIndexCb() {
-        moosnow.ui.hideUIForm(UIForms.EndForm, null);
-        moosnow.ui.pushUIForm(UIForms.HomeForm)
+        if (this.FormData.hideEnd) {
+            moosnow.ui.hideUIForm(UIForms.EndForm, null);
+        }
+        if (this.FormData.onReceive)
+            this.FormData.onReceive();
     }
 }

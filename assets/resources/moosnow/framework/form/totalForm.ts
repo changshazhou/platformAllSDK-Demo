@@ -1,6 +1,7 @@
 import UIForm from "../../framework/ui/UIForm";
 import UIForms from "../../config/UIForms";
 import Common from "../utils/Common";
+import showTotalOptions from "../../../../moosnowSdk/model/showTotalOptions";
 
 
 const { ccclass, property } = cc._decorator;
@@ -21,6 +22,10 @@ export default class totalForm extends UIForm {
     levelCoin: cc.Label = null;
 
 
+    public get FormData(): showTotalOptions {
+        return this.mFormData
+    }
+
     public isMask: boolean = true;
 
     private mCheckedVideo: boolean = true;
@@ -38,7 +43,14 @@ export default class totalForm extends UIForm {
         if (this.mCheckedVideo) {
             moosnow.platform.showVideo(res => {
                 if (res == moosnow.VIDEO_STATUS.END) {
-                    this.receiveSuccess(this.mLevelCoinNum * 5)
+                    if (this.FormData.hideTotal) {
+                        moosnow.ui.hideUIForm(UIForms.TotalForm, null)
+                    }
+                    if (this.FormData.showEnd) {
+                        moosnow.form.showEnd(this.FormData.endOptions)
+                    }
+                    if (this.FormData && this.FormData.onVideoReceive)
+                        this.FormData.onVideoReceive();
                 }
                 else if (res == moosnow.VIDEO_STATUS.ERR) {
                     moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR)
@@ -49,18 +61,10 @@ export default class totalForm extends UIForm {
             })
         }
         else {
-            this.receiveSuccess(this.mLevelCoinNum)
+            if (this.FormData && this.FormData.onReceive)
+                this.FormData.onReceive();
         }
     }
-
-
-    private receiveSuccess(coin: number) {
-        moosnow.ui.hideUIForm(UIForms.TotalForm, null)
-        moosnow.ui.pushUIForm(UIForms.EndForm, { coin, ...Common.deepCopy(this.FormData) })
-    }
-
-
-
 
     private onShareChange() {
         this.mCheckedVideo = !this.mCheckedVideo;
@@ -79,10 +83,9 @@ export default class totalForm extends UIForm {
 
     public mLevelCoinNum: number = 0;
     public mLevelShareCoinNum: number = 0;
-    onShow(data) {
-        let { coin, shareCoin } = data
-        this.mLevelCoinNum = coin;
-        this.mLevelShareCoinNum = shareCoin
+    onShow(data: showTotalOptions) {
+        this.mLevelCoinNum = data.coinNum;
+        this.mLevelShareCoinNum = data.shareCoinNum
         this.levelCoin.string = `${Common.formatMoney(this.mLevelCoinNum)}`
         this.addEvent();
         this.mCheckedVideo = true;

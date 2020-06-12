@@ -7690,14 +7690,10 @@
          * @param callback 点击完成回调
          * @param type 类型 仅对QQ平台生效 1 是按钮点击  2 动画点击
          */
-        UIForm.prototype.showMistouch = function (callback, type) {
-            if (type === void 0) { type = 1; }
+        UIForm.prototype.showMistouch = function (options) {
             moosnow.ui.pushUIForm(UIForms.MistouchForm, {
-                mistouchType: type == 2 ? 4 : 1,
-                onCompleted: function () {
-                    if (callback)
-                        callback();
-                }
+                mistouchType: options.type == 2 ? 4 : 1,
+                onCompleted: options.onCompleted
             }, function () {
             });
         };
@@ -7722,28 +7718,16 @@
          * @param coinNum
          * @param callback
          */
-        UIForm.prototype.showTotal = function (coinNum, callback) {
-            moosnow.ui.pushUIForm(UIForms.TotalForm, {
-                coinNum: coinNum,
-                onReceive: function () {
-                    if (callback)
-                        callback();
-                }
-            });
+        UIForm.prototype.showTotal = function (options) {
+            moosnow.ui.pushUIForm(UIForms.TotalForm, options);
         };
         /**
         * 显示结算统计页
         * @param coinNum
         * @param callback
         */
-        UIForm.prototype.showEnd = function (coinNum, callback) {
-            moosnow.ui.pushUIForm(UIForms.EndForm, {
-                coinNum: coinNum,
-                onReceive: function () {
-                    if (callback)
-                        callback();
-                }
-            });
+        UIForm.prototype.showEnd = function (options) {
+            moosnow.ui.pushUIForm(UIForms.EndForm, options);
         };
         return UIForm;
     }());

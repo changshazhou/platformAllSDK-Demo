@@ -2,6 +2,7 @@ import UIForm from "../../framework/ui/UIForm";
 import UIForms from "../../config/UIForms";
 import totalForm from "./totalForm";
 import Common from "../utils/Common";
+import showEndOptions from "../../../../moosnowSdk/model/showEndOptions";
 
 const { ccclass, property } = cc._decorator;
 
@@ -31,6 +32,11 @@ export default class endFormTT extends UIForm {
 
     @property(cc.Label)
     txtMemo: cc.Label = null;
+
+
+    public get FormData(): showEndOptions {
+        return this.mFormData
+    }
 
     public isMask: boolean = true;
     private mIsChecked: boolean = true;
@@ -86,13 +92,15 @@ export default class endFormTT extends UIForm {
                 y: 100,
             },
         }, () => {
-            moosnow.ui.hideUIForm(UIForms.EndForm, null);
+            if (this.FormData.hideEnd)
+                moosnow.ui.hideUIForm(UIForms.EndForm, null);
             moosnow.http.getMisTouchNum(misNum => {
                 if (misNum == 0) {
-                    moosnow.ui.pushUIForm(UIForms.HomeForm)
+                    if (this.FormData.onReceive)
+                        this.FormData.onReceive()
                 }
                 else {
-                    moosnow.ui.pushUIForm(UIForms.MistouchForm)
+                    moosnow.form.showMistouch(this.FormData.touchOptions)
                 }
             })
         })
@@ -101,11 +109,11 @@ export default class endFormTT extends UIForm {
     private onShareChange() {
         this.mIsChecked = !this.mIsChecked;
         this.mOpenVideo = !this.mOpenVideo;
-        this.showBtn();
+        this.changeUI();
 
     }
 
-    private showBtn() {
+    private changeUI() {
         if (this.mIsChecked) {
             this.checked.node.active = true;
         }
@@ -162,13 +170,13 @@ export default class endFormTT extends UIForm {
     private showCheckedVideo() {
         this.mIsChecked = true;
         this.txtMemo.string = "看视频得5倍奖励";
-        this.showBtn();
+        this.changeUI();
     }
 
     private showUnCheckedVideo() {
         this.mIsChecked = false;
         this.txtMemo.string = "不看视频得5倍奖励";
-        this.showBtn();
+        this.changeUI();
     }
 
 
@@ -177,8 +185,6 @@ export default class endFormTT extends UIForm {
         moosnow.platform.hideBanner();
     }
     onShareVideo() {
-
-
         moosnow.platform.share({
             channel: moosnow.SHARE_CHANNEL.VIDEO
         }, (res) => {
@@ -236,13 +242,15 @@ export default class endFormTT extends UIForm {
                             y: 100,
                         },
                     }, () => {
-                        moosnow.ui.hideUIForm(UIForms.EndForm, null);
+                        if (this.FormData.hideEnd)
+                            moosnow.ui.hideUIForm(UIForms.EndForm, null);
                         moosnow.http.getMisTouchNum(misNum => {
                             if (misNum == 0) {
-                                moosnow.ui.pushUIForm(UIForms.HomeForm)
+                                if (this.FormData.onReceive)
+                                    this.FormData.onReceive();
                             }
                             else {
-                                moosnow.ui.pushUIForm(UIForms.MistouchForm)
+                                moosnow.form.showMistouch(this.FormData.touchOptions)
                             }
                         })
                     })
