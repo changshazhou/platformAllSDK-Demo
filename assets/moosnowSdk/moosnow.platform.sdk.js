@@ -529,6 +529,7 @@
         function BaseModule() {
             this.moduleName = "";
             this.mIntervalArr = {};
+            this.mTimeoutArr = {};
         }
         BaseModule.prototype.schedule = function (callback, time) {
             var self = this;
@@ -552,6 +553,14 @@
                 if (callback)
                     callback.apply(self);
             }, time * 1000);
+            this.mTimeoutArr[id] = callback;
+        };
+        BaseModule.prototype.unscheduleOnce = function (callback) {
+            for (var key in this.mTimeoutArr) {
+                if (this.mTimeoutArr[key] === callback || Common.isEmpty(this.mTimeoutArr[key])) {
+                    clearTimeout(parseInt(key));
+                }
+            }
         };
         BaseModule.prototype.initProperty = function (form) {
             for (var v in form) {
@@ -5475,21 +5484,21 @@
         */
         EXPORT_FIXED: 512,
         /**
+        * 扩展1
+        */
+        EXTEND1: 1024,
+        /**
         * 扩展2
         */
-        EXTEND2: 1024,
+        EXTEND2: 2048,
         /**
         * 扩展3
         */
-        EXTEND3: 2048,
+        EXTEND3: 4096,
         /**
         * 扩展4
         */
-        EXTEND4: 4096,
-        /**
-        * 扩展5
-        */
-        EXTEND5: 8192,
+        EXTEND4: 8192,
     };
 
     var BaseEntityModule = /** @class */ (function (_super) {
@@ -5963,6 +5972,458 @@
         return CocosUIModule;
     }(BaseUIModule));
 
+    var BaseForm = /** @class */ (function (_super) {
+        __extends(BaseForm, _super);
+        function BaseForm() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(BaseForm.prototype, "FormData", {
+            /**
+             * 父类缓存willShow，onShow传递到实体的逻辑数据
+             */
+            get: function () {
+                return this.mFormData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * 初始化
+         * @param logic
+         */
+        BaseForm.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+        };
+        BaseForm.prototype.willShow = function (data) {
+            this.mFormData = data;
+        };
+        BaseForm.prototype.onShow = function (data) {
+        };
+        BaseForm.prototype.willHide = function (data) {
+        };
+        BaseForm.prototype.onHide = function (data) {
+        };
+        return BaseForm;
+    }(BaseModule));
+
+    var AdForm = /** @class */ (function (_super) {
+        __extends(AdForm, _super);
+        function AdForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.pauseContainer = null;
+            _this.pauseView = null;
+            _this.pauseLayout = null;
+            _this.centerContainer = null;
+            _this.centerView = null;
+            _this.centerLayout = null;
+            _this.exportContainer = null;
+            _this.exportView = null;
+            _this.exportLayout = null;
+            _this.exportClose = null;
+            _this.exportMask = null;
+            _this.exportCloseTxt = null;
+            _this.floatContainer = null;
+            _this.floatFull = null;
+            _this.bannerContainer = null;
+            _this.bannerView = null;
+            _this.bannerLayout = null;
+            _this.endContainer = null;
+            _this.endView = null;
+            _this.endLayout = null;
+            _this.failContainer = null;
+            _this.failView = null;
+            _this.failLayout = null;
+            _this.gameOverContainer = null;
+            _this.gameOverView = null;
+            _this.gameOverLayout = null;
+            _this.respawnContainer = null;
+            _this.respawnScrollView = null;
+            _this.respawnLayout = null;
+            _this.playerDiedContainer = null;
+            _this.playerDiedScrollView = null;
+            _this.playerDiedLayout = null;
+            _this.leftContainer = null;
+            _this.leftView = null;
+            _this.leftLayout = null;
+            _this.rightView = null;
+            _this.rightLayout = null;
+            _this.sideContainer = null;
+            _this.sideView = null;
+            _this.sideLayout = null;
+            _this.btnSideShow = null;
+            _this.btnSideHide = null;
+            _this.extend1Container = null;
+            _this.extend1View = null;
+            _this.extend1Layout = null;
+            _this.extend2Container = null;
+            _this.extend2View = null;
+            _this.extend2Layout = null;
+            _this.extend3Container = null;
+            _this.extend3View = null;
+            _this.extend3Layout = null;
+            _this.extend4Container = null;
+            _this.extend4View = null;
+            _this.extend4Layout = null;
+            _this.mAdItemList = [];
+            _this.mScrollVec = [];
+            _this.mIndex = 999;
+            _this.mShowAd = moosnow.AD_POSITION.NONE;
+            _this.mMoveSpeed = 2;
+            _this.mEndLogic = [];
+            _this.mFloatIndex = 0;
+            _this.mFloatRefresh = 3;
+            _this.mFloatCache = {};
+            _this.mSecond = 3;
+            return _this;
+        }
+        AdForm.prototype.setPosition = function (source, position) {
+            if (position === void 0) { position = ""; }
+            var retValue = Common.deepCopy(source);
+            retValue.forEach(function (item) {
+                item.position = position;
+            });
+            return retValue;
+        };
+        AdForm.prototype.loadAd = function (entityName, callback) {
+            var _this = this;
+            moosnow.entity.preload(entityName, function () {
+                moosnow.ad.getAd(function (res) {
+                    _this.mAdData = res;
+                    if (res.indexLeft.length == 0)
+                        return;
+                    if (callback)
+                        callback(res);
+                });
+            });
+        };
+        /**
+         *
+         * @param scrollView
+         * @param layout
+         * @param positionTag string
+         * @param entityName
+         */
+        AdForm.prototype.initView = function (container, scrollView, layout, position, entityName) {
+            var _this = this;
+            if (!entityName) {
+                console.warn('entityName is null 无法初始化 ');
+                return;
+            }
+            this.loadAd(entityName, function (res) {
+                var source = _this.setPosition(res.indexLeft, position);
+                source.forEach(function (item, idx) {
+                    var adItemCtl = moosnow.entity.showEntity(entityName, layout.node, item);
+                    _this.mAdItemList.push(adItemCtl);
+                });
+                if (layout.type == cc.Layout.Type.GRID) {
+                    if (scrollView.vertical) {
+                        _this.mScrollVec.push({
+                            scrollView: scrollView,
+                            move2Up: false
+                        });
+                    }
+                    else {
+                        _this.mScrollVec.push({
+                            scrollView: scrollView,
+                            move2Left: false
+                        });
+                    }
+                }
+                else if (layout.type == cc.Layout.Type.HORIZONTAL) {
+                    _this.mScrollVec.push({
+                        scrollView: scrollView,
+                        move2Left: false
+                    });
+                }
+                else if (layout.type == cc.Layout.Type.VERTICAL) {
+                    _this.mScrollVec.push({
+                        scrollView: scrollView,
+                        move2Up: false
+                    });
+                }
+            });
+        };
+        AdForm.prototype.addEvent = function () {
+            moosnow.event.addListener(EventType.AD_VIEW_CHANGE, this, this.onAdChange);
+        };
+        AdForm.prototype.removeEvent = function () {
+            moosnow.event.removeListener(EventType.AD_VIEW_CHANGE, this);
+        };
+        AdForm.prototype.onAdChange = function (data) {
+            this.displayChange(data.showAd, data.callback);
+            this.onAfterShow(this.mIndex);
+        };
+        /**
+         *
+         * @param zindex
+         */
+        AdForm.prototype.onAfterShow = function (zindex) {
+        };
+        /**
+          *
+          * @param data
+          */
+        AdForm.prototype.willShow = function (data) {
+            this.mAdItemList = [];
+            this.mScrollVec = [];
+            this.addEvent();
+            if (data)
+                this.displayChange(data.showAd, data.callback);
+            else
+                this.displayChange(AD_POSITION.NONE, null);
+        };
+        AdForm.prototype.displayChange = function (data, callback) {
+            if (callback === void 0) { callback = null; }
+            var curApp = moosnow.getAppPlatform();
+            if (moosnow.APP_PLATFORM.WX == curApp || curApp == moosnow.APP_PLATFORM.OPPO) {
+                this.mShowAd = data;
+                this.displayAd(true);
+                this.mBackCall = callback;
+            }
+            else {
+                this.onBack();
+            }
+        };
+        AdForm.prototype.onBack = function () {
+            if (this.mBackCall) {
+                this.mBackCall();
+            }
+        };
+        AdForm.prototype.onFwUpdate = function (dt) {
+            for (var i = 0; i < this.mScrollVec.length; i++) {
+                var item = this.mScrollVec[i];
+                var scrollView = item.scrollView;
+                if (scrollView.isScrolling())
+                    continue;
+                var scrollOffset = scrollView.getMaxScrollOffset();
+                var maxH = scrollOffset.y / 2 + 20;
+                var maxW = scrollOffset.x / 2 + 20;
+                var contentPos = scrollView.getContentPosition();
+                if (item.move2Up == true) {
+                    if (contentPos.y > maxH) {
+                        item.move2Up = false;
+                    }
+                    item.scrollView.setContentPosition(new cc.Vec2(contentPos.x, contentPos.y + this.mMoveSpeed));
+                }
+                else if (item.move2Up == false) {
+                    if (contentPos.y < -maxH) {
+                        item.move2Up = true;
+                    }
+                    item.scrollView.setContentPosition(new cc.Vec2(contentPos.x, contentPos.y - this.mMoveSpeed));
+                }
+                if (item.move2Left == true) {
+                    if (contentPos.x > maxW) {
+                        item.move2Left = false;
+                    }
+                    item.scrollView.setContentPosition(new cc.Vec2(contentPos.x + this.mMoveSpeed, contentPos.y));
+                }
+                else if (item.move2Left == false) {
+                    if (contentPos.x < -maxW) {
+                        item.move2Left = true;
+                    }
+                    item.scrollView.setContentPosition(new cc.Vec2(contentPos.x - this.mMoveSpeed, contentPos.y));
+                }
+            }
+        };
+        AdForm.prototype.sideOut = function () {
+            var _this = this;
+            var wxsys = moosnow.platform.getSystemInfoSync();
+            var statusBarHeight = 0;
+            var notchHeight = 0;
+            if (wxsys) {
+                statusBarHeight = wxsys.statusBarHeight || 0;
+                notchHeight = wxsys.notchHeight || 0;
+            }
+            this.sideView.node.runAction(cc.sequence(cc.moveTo(1, statusBarHeight + notchHeight + this.sideView.node.width + 20, 0), cc.callFunc(function () {
+                _this.btnSideShow.active = false;
+                _this.btnSideHide.active = true;
+            })));
+        };
+        AdForm.prototype.sideIn = function () {
+            var _this = this;
+            this.sideView.node.runAction(cc.sequence(cc.moveTo(1, 0, 0), cc.callFunc(function () {
+                _this.btnSideShow.active = true;
+                _this.btnSideHide.active = false;
+            })));
+        };
+        AdForm.prototype.initFiexdView = function (container, layout, position, entityName) {
+            var _this = this;
+            this.loadAd(entityName, function (res) {
+                if (_this.mEndLogic) {
+                    for (var i = 0; i < _this.mEndLogic.length; i++) {
+                        moosnow.entity.hideEntity(_this.mEndLogic[i], {});
+                    }
+                    _this.mEndLogic = [];
+                }
+                var banner = _this.setPosition(res.indexLeft, position);
+                var endAd = [];
+                var showAppId = [];
+                for (var i = 0; i < 6; i++) {
+                    var item = banner.length > i ? banner[i] : banner[0];
+                    showAppId.push(item.appid);
+                    endAd.push(item);
+                }
+                endAd.forEach(function (item) {
+                    var adRow = __assign(__assign({}, Common.deepCopy(item)), { showAppId: Common.deepCopy(showAppId), source: Common.deepCopy(banner) });
+                    var logic = moosnow.entity.showEntity(entityName, layout, adRow);
+                    _this.mEndLogic.push(logic);
+                    return false;
+                });
+            });
+        };
+        AdForm.prototype.willHide = function () {
+            this.removeEvent();
+            this.mAdItemList.forEach(function (item) {
+                moosnow.entity.hideEntity(item, null);
+            });
+            this.mAdItemList = [];
+            this.mScrollVec = [];
+        };
+        /**
+         *
+         * @param parentNode 父节点
+         * @param prefabs 匹配的预制体
+         * @param points 需要显示的坐标点
+         */
+        AdForm.prototype.initFloatAd = function (parentNode, prefabs, points, position) {
+            var _this = this;
+            if (position === void 0) { position = ""; }
+            cc.loader.loadResDir(moosnow.entity.prefabPath, cc.Prefab, function () {
+                moosnow.ad.getAd(function (res) {
+                    _this.mAdData = res;
+                    if (res.indexLeft.length == 0)
+                        return;
+                    var source = __spreadArrays(res.indexLeft);
+                    prefabs.forEach(function (prefabName, idx) {
+                        var showIndex = idx;
+                        var floatData = source[0];
+                        if (showIndex > source.length - 1)
+                            showIndex = 0;
+                        floatData = source[showIndex];
+                        var point = points[idx];
+                        var adRow = __assign(__assign({}, floatData), { position: position, x: point.x, y: point.y });
+                        var logic = moosnow.entity.showEntity(prefabName, parentNode, adRow);
+                        _this.mFloatCache[idx] = {
+                            index: showIndex,
+                            logic: logic,
+                            onCancel: adRow.onCancel
+                        };
+                        _this.floatAnim(logic.node);
+                    });
+                    _this.updateFloat(Common.deepCopy(res));
+                    setInterval(function () {
+                        _this.updateFloat(Common.deepCopy(res));
+                    }, _this.mFloatRefresh * 1000);
+                });
+            });
+        };
+        AdForm.prototype.floatAnim = function (floatNode) {
+        };
+        AdForm.prototype.updateFloat = function (source) {
+            for (var key in this.mFloatCache) {
+                var showIndex = this.mFloatCache[key].index;
+                var logic = this.mFloatCache[key].logic;
+                if (showIndex < source.indexLeft.length - 1)
+                    showIndex++;
+                else
+                    showIndex = 0;
+                this.mFloatCache[key].index = showIndex;
+                logic.refreshImg(__assign(__assign({}, source.indexLeft[showIndex]), { onCancel: this.mFloatCache[key].onCancel }));
+            }
+        };
+        AdForm.prototype.hasAd = function (ad) {
+            return (this.mShowAd & ad) == ad;
+        };
+        AdForm.prototype.showExportClose = function () {
+            this.mSecond -= 1;
+            this.exportCloseTxt.active = true;
+            var closeLabel = this.exportCloseTxt.getComponent(cc.Label);
+            if (this.mSecond <= 0) {
+                this.exportClose.active = true;
+                this.exportCloseTxt.active = false;
+                this.unschedule(this.showExportClose);
+                return;
+            }
+            closeLabel.string = "\u5269\u4F59" + this.mSecond + "\u79D2\u53EF\u5173\u95ED";
+        };
+        AdForm.prototype.displayAd = function (visible) {
+            var _this = this;
+            this.floatContainer.active = visible && this.hasAd(AD_POSITION.FLOAT);
+            this.bannerContainer.active = visible && this.hasAd(AD_POSITION.BANNER);
+            this.centerContainer.active = visible && this.hasAd(AD_POSITION.CENTER);
+            this.leftContainer.active = visible && this.hasAd(AD_POSITION.LEFTRIGHT);
+            this.exportMask.active = visible && this.hasAd(AD_POSITION.MASK);
+            this.sideContainer.active = visible && this.hasAd(AD_POSITION.SIDE);
+            this.endContainer.active = visible && this.hasAd(AD_POSITION.EXPORT_FIXED);
+            this.extend1Container.active = visible && this.hasAd(AD_POSITION.EXTEND1);
+            this.extend2Container.active = visible && this.hasAd(AD_POSITION.EXTEND2);
+            this.extend3Container.active = visible && this.hasAd(AD_POSITION.EXTEND3);
+            this.extend4Container.active = visible && this.hasAd(AD_POSITION.EXTEND4);
+            this.exportClose.active = false;
+            this.exportCloseTxt.active = false;
+            this.unschedule(this.showExportClose);
+            if (visible && this.hasAd(AD_POSITION.BACK)) {
+                if (this.hasAd(AD_POSITION.WAIT)) {
+                    this.mSecond = 3;
+                    this.showExportClose();
+                    this.schedule(this.showExportClose, 1);
+                }
+                else {
+                    this.exportClose.active = true;
+                    this.exportCloseTxt.active = false;
+                }
+            }
+            else {
+                this.exportClose.active = false;
+                this.exportCloseTxt.active = false;
+            }
+            this.exportContainer.active = visible && this.hasAd(AD_POSITION.EXPORT);
+            if (visible && this.hasAd(AD_POSITION.EXPORT)) {
+                moosnow.http.getAllConfig(function (res) {
+                    if (res.exportAutoNavigate == 1) {
+                        moosnow.platform.navigate2Mini(_this.mAdData.indexLeft[Common.randomNumBoth(0, _this.mAdData.indexLeft.length - 1)]);
+                    }
+                });
+            }
+        };
+        return AdForm;
+    }(BaseForm));
+
+    var CocosAdForm = /** @class */ (function (_super) {
+        __extends(CocosAdForm, _super);
+        function CocosAdForm() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        CocosAdForm.prototype.addEvent = function () {
+            if (this.exportClose)
+                this.exportClose.on(cc.Node.EventType.TOUCH_END, this.onBack, this);
+            if (this.btnSideShow)
+                this.btnSideShow.on(cc.Node.EventType.TOUCH_START, this.sideOut, this);
+            if (this.btnSideHide)
+                this.btnSideHide.on(cc.Node.EventType.TOUCH_START, this.sideIn, this);
+            _super.prototype.addEvent.call(this);
+        };
+        CocosAdForm.prototype.removeEvent = function () {
+            if (this.exportClose)
+                this.exportClose.off(cc.Node.EventType.TOUCH_END, this.onBack, this);
+            if (this.btnSideShow)
+                this.btnSideShow.off(cc.Node.EventType.TOUCH_START, this.sideOut, this);
+            if (this.btnSideHide)
+                this.btnSideHide.off(cc.Node.EventType.TOUCH_START, this.sideIn, this);
+            _super.prototype.removeEvent.call(this);
+        };
+        CocosAdForm.prototype.floatAnim = function (floatNode) {
+            floatNode.runAction(cc.sequence(cc.rotateTo(0.3, 10), cc.rotateTo(0.6, -10), cc.rotateTo(0.3, 0), cc.scaleTo(0.3, 0.8), cc.scaleTo(0.3, 1)).repeatForever());
+        };
+        return CocosAdForm;
+    }(AdForm));
+
+    var MISTOUCH_BANNER_TYPE;
+    (function (MISTOUCH_BANNER_TYPE) {
+        MISTOUCH_BANNER_TYPE[MISTOUCH_BANNER_TYPE["AUTO_HIDE"] = 1] = "AUTO_HIDE";
+        MISTOUCH_BANNER_TYPE[MISTOUCH_BANNER_TYPE["MAST"] = 2] = "MAST";
+    })(MISTOUCH_BANNER_TYPE || (MISTOUCH_BANNER_TYPE = {}));
+
     var UIForms = /** @class */ (function () {
         function UIForms() {
         }
@@ -6098,6 +6559,1073 @@
         return UIForms;
     }());
 
+    var MistouchForm = /** @class */ (function (_super) {
+        __extends(MistouchForm, _super);
+        function MistouchForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            _this.mMaxNum = 10;
+            _this.mCurrentNum = 0;
+            _this.mNavigateIndex = 0;
+            _this.mBannerShow = false;
+            _this.mShowTime = 0;
+            _this.mBannerClickType = MISTOUCH_BANNER_TYPE.AUTO_HIDE;
+            return _this;
+        }
+        MistouchForm.prototype.initPos = function () {
+        };
+        MistouchForm.prototype.willShow = function (data) {
+            var _this = this;
+            _super.prototype.willShow.call(this, data);
+            this.btnBanner.active = true;
+            this.initPos();
+            this.mCurrentNum = 0;
+            this.mNavigateIndex = Common.randomNumBoth(3, this.mMaxNum - 2);
+            this.addEvent();
+            this.schedule(this.subProgress, 0.1);
+            moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
+            this.mBannerShow = false;
+            moosnow.http.getAllConfig(function (res) {
+                // this.mBannerClickType = res.bannerClickType
+                _this.mBannerClickType = MISTOUCH_BANNER_TYPE.MAST;
+            });
+        };
+        MistouchForm.prototype.willHide = function () {
+            this.unschedule(this.subProgress);
+            this.unschedule(this.resetProgress);
+            this.removeEvent();
+        };
+        MistouchForm.prototype.subProgress = function () {
+            if (this.mCurrentNum > 0)
+                this.mCurrentNum -= 0.1;
+        };
+        MistouchForm.prototype.addEvent = function () {
+        };
+        MistouchForm.prototype.removeEvent = function () {
+        };
+        MistouchForm.prototype.bannerClickCallback = function (isOpend) {
+            if (isOpend) {
+                this.unschedule(this.onHideBanner);
+                this.unschedule(this.resetProgress);
+                moosnow.platform.hideBanner();
+                this.mBannerShow = false;
+                if (this.FormData && this.FormData.onCompleted)
+                    this.FormData.onCompleted();
+            }
+        };
+        MistouchForm.prototype.onLogoUp = function () {
+            this.logo.position = this.mEndPos;
+        };
+        MistouchForm.prototype.onLogoDown = function () {
+            this.logo.position = this.mBeginPos;
+        };
+        MistouchForm.prototype.onBannerClick = function () {
+            var _this = this;
+            this.onLogoDown();
+            this.mCurrentNum += 1;
+            if (this.mCurrentNum >= this.mNavigateIndex) {
+                if (!this.mBannerShow) {
+                    this.mShowTime = Date.now();
+                    this.mBannerShow = true;
+                    moosnow.platform.showBanner(function (e) {
+                        console.log('banner click callback ', e);
+                        _this.bannerClickCallback(e);
+                    });
+                    if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.AUTO_HIDE) {
+                        this.unschedule(this.onHideBanner);
+                        this.scheduleOnce(this.onHideBanner, 2);
+                    }
+                    else if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.MAST) {
+                        this.unschedule(this.resetProgress);
+                        this.scheduleOnce(this.resetProgress, 2);
+                    }
+                }
+            }
+            if (this.mCurrentNum >= this.mMaxNum) {
+                moosnow.platform.hideBanner();
+                this.mBannerShow = false;
+                moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+                if (this.FormData && this.FormData.onCompleted)
+                    this.FormData.onCompleted(true);
+            }
+        };
+        MistouchForm.prototype.resetProgress = function () {
+            this.mCurrentNum = 0;
+            moosnow.platform.hideBanner();
+            this.mBannerShow = false;
+        };
+        MistouchForm.prototype.onHideBanner = function () {
+            moosnow.platform.hideBanner();
+        };
+        MistouchForm.prototype.update = function () {
+            this.clickProgress.progress = this.mCurrentNum / this.mMaxNum;
+        };
+        return MistouchForm;
+    }(BaseForm));
+
+    var CocosMistouchForm = /** @class */ (function (_super) {
+        __extends(CocosMistouchForm, _super);
+        function CocosMistouchForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            return _this;
+        }
+        CocosMistouchForm.prototype.addEvent = function () {
+            this.btnBanner.on(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+            this.btnBanner.on(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+        };
+        CocosMistouchForm.prototype.removeEvent = function () {
+            this.btnBanner.off(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+            this.btnBanner.off(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            moosnow.event.removeListener(EventType.ON_PLATFORM_SHOW, this);
+        };
+        CocosMistouchForm.prototype.onLogoUp = function () {
+            this.logo.position = this.mEndPos;
+        };
+        CocosMistouchForm.prototype.onLogoDown = function () {
+            this.logo.position = this.mBeginPos;
+        };
+        CocosMistouchForm.prototype.initPos = function () {
+            this.mBeginPos = this.logo.position.clone();
+            this.mEndPos = this.mBeginPos.add(new cc.Vec2(0, 50));
+        };
+        return CocosMistouchForm;
+    }(MistouchForm));
+
+    var MistouchFormTT = /** @class */ (function (_super) {
+        __extends(MistouchFormTT, _super);
+        function MistouchFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnReceive = null;
+            _this.btnConfirm = null;
+            _this.checked = null;
+            _this.unchecked = null;
+            _this.step1 = null;
+            _this.step2 = null;
+            _this.logo = null;
+            _this.mMaxNum = 10;
+            _this.mCurrentNum = 0;
+            _this.mOpenVideo = true;
+            return _this;
+        }
+        MistouchFormTT.prototype.willShow = function (data) {
+            _super.prototype.willShow.call(this, data);
+            this.step1.active = true;
+            this.step2.active = false;
+            this.btnConfirm.active = true;
+            this.mCurrentNum = 0;
+            this.mOpenVideo = true;
+            this.showCheckbox();
+            this.addEvent();
+            this.schedule(this.subProgress, 0.1);
+            moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
+        };
+        MistouchFormTT.prototype.willHide = function () {
+            this.unschedule(this.subProgress);
+            this.unschedule(this.resetProgress);
+            this.removeEvent();
+        };
+        MistouchFormTT.prototype.subProgress = function () {
+            if (this.mCurrentNum > 0)
+                this.mCurrentNum -= 0.1;
+        };
+        MistouchFormTT.prototype.addEvent = function () {
+        };
+        MistouchFormTT.prototype.removeEvent = function () {
+        };
+        MistouchFormTT.prototype.openBox = function () {
+            var _this = this;
+            if (this.mOpenVideo) {
+                this.btnConfirm.active = false;
+                moosnow.platform.showVideo(function (res) {
+                    if (res == moosnow.VIDEO_STATUS.END) {
+                        if (_this.FormData && _this.FormData.onCompleted)
+                            _this.FormData.onCompleted(true);
+                        return;
+                    }
+                    else if (res == moosnow.VIDEO_STATUS.NOTEND) {
+                        moosnow.ui.showToast(moosnow.VIDEO_MSG.NOTEND);
+                    }
+                    else {
+                        moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR);
+                    }
+                    _this.btnConfirm.active = true;
+                });
+            }
+            else {
+                moosnow.ui.hideUIForm(UIForms.MistouchForm, null);
+            }
+        };
+        MistouchFormTT.prototype.checkboxChange = function () {
+            this.mOpenVideo = !this.mOpenVideo;
+            this.showCheckbox();
+        };
+        MistouchFormTT.prototype.showCheckbox = function () {
+            if (this.mOpenVideo) {
+                this.checked.node.active = true;
+            }
+            else {
+                this.checked.node.active = false;
+            }
+        };
+        MistouchFormTT.prototype.playBoxAnim = function (animName) {
+        };
+        MistouchFormTT.prototype.onLogoUp = function () {
+            // this.logo.position = this.mEndPos;
+            this.playBoxAnim("prizeBox2");
+        };
+        MistouchFormTT.prototype.onBannerClick = function () {
+            if (this.mCurrentNum > this.mMaxNum + 1)
+                return;
+            this.mCurrentNum += 1;
+            if (this.mCurrentNum >= this.mMaxNum) {
+                this.step1.active = false;
+                this.step2.active = true;
+                this.playBoxAnim("prizeBox1");
+            }
+        };
+        MistouchFormTT.prototype.resetProgress = function () {
+            this.mCurrentNum = 0;
+        };
+        MistouchFormTT.prototype.update = function () {
+            var progress = this.mCurrentNum / this.mMaxNum;
+            this.clickProgress.progress = progress > 1 ? 1 : progress;
+        };
+        return MistouchFormTT;
+    }(MistouchForm));
+
+    var CocosMistouchFormTT = /** @class */ (function (_super) {
+        __extends(CocosMistouchFormTT, _super);
+        function CocosMistouchFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnReceive = null;
+            _this.btnConfirm = null;
+            _this.checked = null;
+            _this.unchecked = null;
+            _this.step1 = null;
+            _this.step2 = null;
+            _this.logo = null;
+            return _this;
+        }
+        CocosMistouchFormTT.prototype.playBoxAnim = function (animName) {
+            var anim = this.logo.getComponent(cc.Animation);
+            if (!anim.getAnimationState(animName).isPlaying)
+                anim.play(animName);
+        };
+        CocosMistouchFormTT.prototype.addEvent = function () {
+            this.unchecked.node.on(cc.Node.EventType.TOUCH_END, this.checkboxChange, this);
+            this.btnReceive.on(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+            this.btnReceive.on(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            this.btnConfirm.on(cc.Node.EventType.TOUCH_END, this.openBox, this);
+        };
+        CocosMistouchFormTT.prototype.removeEvent = function () {
+            this.unchecked.node.off(cc.Node.EventType.TOUCH_END, this.checkboxChange, this);
+            this.btnReceive.off(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+            this.btnReceive.off(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            this.btnConfirm.off(cc.Node.EventType.TOUCH_END, this.openBox, this);
+        };
+        return CocosMistouchFormTT;
+    }(MistouchFormTT));
+
+    var MistouchFormQQ = /** @class */ (function (_super) {
+        __extends(MistouchFormQQ, _super);
+        function MistouchFormQQ() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            _this.hand = null;
+            _this.pinch1 = null;
+            _this.pinch2 = null;
+            _this.pinch3 = null;
+            _this.pinch4 = null;
+            _this.pinch5 = null;
+            _this.pinch6 = null;
+            return _this;
+        }
+        MistouchFormQQ.prototype.willShow = function (data) {
+            _super.prototype.willShow.call(this, data);
+            this.mCurrentNum = 0;
+            this.mNavigateIndex = Common.randomNumBoth(3, this.mMaxNum - 2);
+            this.addEvent();
+            this.schedule(this.subProgress, 0.016);
+            moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
+            this.mBannerShow = false;
+            if (this.mistouchAppBox()) {
+                this.showHand(true);
+                this.showButton(false);
+                this.playHandAnim();
+            }
+            else {
+                this.showHand(false);
+                this.showButton(true);
+            }
+            moosnow.platform.hideBanner();
+        };
+        MistouchFormQQ.prototype.playHandAnim = function () {
+        };
+        MistouchFormQQ.prototype.mistouchAppBox = function () {
+            return this.FormData && this.FormData.mistouchType == 4;
+        };
+        MistouchFormQQ.prototype.subProgress = function () {
+            if (this.mCurrentNum > 0)
+                this.mCurrentNum -= 0.02;
+        };
+        MistouchFormQQ.prototype.initPos = function () {
+        };
+        MistouchFormQQ.prototype.onHideBanner = function () {
+            if (this.mistouchAppBox())
+                moosnow.platform.hideAppBox();
+            else
+                moosnow.platform.hideBanner();
+        };
+        MistouchFormQQ.prototype.showButton = function (isShow) {
+        };
+        MistouchFormQQ.prototype.showHand = function (isShow) {
+        };
+        MistouchFormQQ.prototype.onBannerClick = function () {
+            var _this = this;
+            this.mCurrentNum += 1;
+            this.onLogoDown();
+            this.showHand(false);
+            if (this.mCurrentNum >= this.mNavigateIndex) {
+                if (!this.mBannerShow) {
+                    this.mShowTime = Date.now();
+                    this.mBannerShow = true;
+                    if (this.mistouchAppBox()) {
+                        moosnow.platform.showAppBox(function () {
+                            _this.bannerClickCallback(true);
+                        });
+                    }
+                    else {
+                        moosnow.platform.showBanner(function (e) {
+                            console.log('banner click callback ', e);
+                            _this.bannerClickCallback(e);
+                        });
+                    }
+                    if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.AUTO_HIDE) {
+                        this.unschedule(this.onHideBanner);
+                        this.scheduleOnce(this.onHideBanner, 2);
+                    }
+                    else if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.MAST) {
+                        this.unschedule(this.resetProgress);
+                        this.scheduleOnce(this.resetProgress, 2);
+                    }
+                }
+            }
+            if (this.mCurrentNum >= this.mMaxNum) {
+                moosnow.platform.hideBanner();
+                this.mBannerShow = false;
+                this.scheduleOnce(function () {
+                    moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+                    if (_this.FormData && _this.FormData.onCompleted)
+                        _this.FormData.onCompleted();
+                }, 0.2);
+            }
+        };
+        return MistouchFormQQ;
+    }(MistouchForm));
+
+    var CocosMistouchFormQQ = /** @class */ (function (_super) {
+        __extends(CocosMistouchFormQQ, _super);
+        function CocosMistouchFormQQ() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            _this.hand = null;
+            _this.pinch1 = null;
+            _this.pinch2 = null;
+            _this.pinch3 = null;
+            _this.pinch4 = null;
+            _this.pinch5 = null;
+            _this.pinch6 = null;
+            return _this;
+        }
+        CocosMistouchFormQQ.prototype.onLogoUp = function () {
+        };
+        CocosMistouchFormQQ.prototype.onLogoDown = function () {
+            var logoSprite = this.logo.getComponent(cc.Sprite);
+            if (this.mCurrentNum < this.mMaxNum)
+                logoSprite.spriteFrame = this["pinch" + ((parseInt("" + this.mCurrentNum) % 4) + 1)];
+            else
+                logoSprite.spriteFrame = this.pinch6;
+        };
+        CocosMistouchFormQQ.prototype.addEvent = function () {
+            var _this = this;
+            //误触appbox 广告
+            if (this.mistouchAppBox()) {
+                this.btnBanner.active = false;
+                this.logo.on(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+                this.logo.on(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            }
+            else {
+                //误触banner
+                this.btnBanner.active = true;
+                this.btnBanner.on(cc.Node.EventType.TOUCH_START, this.onLogoUp, this);
+                this.btnBanner.on(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            }
+            moosnow.event.addListener(EventType.ON_PLATFORM_SHOW, this, function () {
+                if (_this.mBannerShow)
+                    _this.bannerClickCallback(true);
+            });
+        };
+        CocosMistouchFormQQ.prototype.removeEvent = function () {
+            this.btnBanner.off(cc.Node.EventType.TOUCH_END, this.onBannerClick, this);
+            moosnow.event.removeListener(EventType.ON_PLATFORM_SHOW, this);
+        };
+        CocosMistouchFormQQ.prototype.playHandAnim = function () {
+            var anim = this.hand.getComponent(cc.Animation);
+            anim.play();
+        };
+        CocosMistouchFormQQ.prototype.showButton = function (isShow) {
+            this.btnBanner.active = isShow;
+        };
+        CocosMistouchFormQQ.prototype.showHand = function (isShow) {
+            this.hand.active = isShow;
+        };
+        return CocosMistouchFormQQ;
+    }(MistouchFormQQ));
+
+    var BaseLogic = /** @class */ (function (_super) {
+        __extends(BaseLogic, _super);
+        function BaseLogic() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(BaseLogic.prototype, "LogicData", {
+            /**
+            * 父类缓存willShow，onShow传递到实体的逻辑数据
+            */
+            get: function () {
+                return this.mLogicData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        BaseLogic.prototype.willShow = function (data) {
+            this.mLogicData = data;
+        };
+        BaseLogic.prototype.onShow = function (data) {
+        };
+        BaseLogic.prototype.willHide = function (data) {
+        };
+        BaseLogic.prototype.onHide = function (data) {
+        };
+        return BaseLogic;
+    }(BaseModule));
+
+    var AdViewItem = /** @class */ (function (_super) {
+        __extends(AdViewItem, _super);
+        function AdViewItem() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.logo = null;
+            _this.title = null;
+            _this.animLogo = null;
+            _this.nameBg = null;
+            _this.changeView = false;
+            return _this;
+            // update (dt) {}
+        }
+        AdViewItem.prototype.initItem = function () {
+            this.logo.node.on(cc.Node.EventType.TOUCH_END, this.onClickAd, this);
+        };
+        AdViewItem.prototype.onClickAd = function () {
+            var _this = this;
+            var openAd = __assign({}, this.mAdItem);
+            if (this.changeView) {
+                var nextAd = this.findNextAd();
+                moosnow.event.sendEventImmediately(EventType.AD_VIEW_REFRESH, {
+                    current: openAd,
+                    next: nextAd
+                });
+                var callback = this.mAdItem.onCancel;
+                console.log('回调函数', !!callback);
+                this.refreshImg(__assign(__assign({}, nextAd), { onCancel: callback }));
+            }
+            moosnow.platform.navigate2Mini(openAd, function () { }, function () {
+                if (_this.mAdItem.onCancel)
+                    _this.mAdItem.onCancel();
+            });
+        };
+        AdViewItem.prototype.findNextAd = function () {
+            if (!this.LogicData.source)
+                return null;
+            if (!this.LogicData.showAppId)
+                return null;
+            for (var i = 0; i < this.LogicData.source.length; i++) {
+                var isShow = false;
+                for (var j = 0; j < this.LogicData.showAppId.length; j++) {
+                    if (this.LogicData.showAppId[j].appid == this.LogicData.source[i].appid) {
+                        isShow = true;
+                    }
+                }
+                if (!isShow) {
+                    return this.LogicData.source[i];
+                }
+            }
+            return null;
+        };
+        AdViewItem.prototype.onAdViewChange = function (e) {
+            var current = e.current, next = e.next;
+            for (var i = 0; i < this.LogicData.showAppId.length; i++) {
+                if (current.appid == this.LogicData.showAppId[i]) {
+                    this.LogicData.showAppId[i] = next.appid;
+                }
+            }
+            for (var i = 0; i < this.LogicData.source.length; i++) {
+                if (next.appid == this.LogicData.source[i].appid) {
+                    this.LogicData.source.splice(i, 1);
+                    this.LogicData.source.push(current);
+                    break;
+                }
+            }
+        };
+        AdViewItem.prototype.onShow = function () {
+            if (this.LogicData.onCancel) {
+                console.log('ad view item ', this.LogicData);
+            }
+            if (this.changeView) {
+                moosnow.event.addListener(EventType.AD_VIEW_REFRESH, this, this.onAdViewChange);
+            }
+        };
+        AdViewItem.prototype.onHide = function () {
+            if (this.mAdItem)
+                this.mAdItem.onCancel = null;
+            moosnow.event.removeListener(EventType.AD_VIEW_REFRESH, this);
+        };
+        AdViewItem.prototype.willShow = function (cell) {
+            _super.prototype.willShow.call(this, cell);
+        };
+        AdViewItem.prototype.refreshImg = function (cell) {
+        };
+        return AdViewItem;
+    }(BaseLogic));
+
+    var CocosAdViewItem = /** @class */ (function (_super) {
+        __extends(CocosAdViewItem, _super);
+        function CocosAdViewItem() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        CocosAdViewItem.prototype.willShow = function (cell) {
+            var _this = this;
+            _super.prototype.willShow.call(this, cell);
+            this.mAdItem = cell;
+            cc.loader.load(cell.img, function (err, tex) {
+                var spriteFrame = new cc.SpriteFrame(tex);
+                _this.logo.spriteFrame = spriteFrame;
+            });
+            if (this.title)
+                this.title.string = (cell.title);
+        };
+        CocosAdViewItem.prototype.refreshImg = function (cell) {
+            var _this = this;
+            this.mAdItem = cell;
+            cc.loader.load(cell.img, function (err, tex) {
+                var spriteFrame = new cc.SpriteFrame(tex);
+                _this.logo.spriteFrame = spriteFrame;
+            });
+            if (this.title)
+                this.title.string = (cell.title);
+        };
+        return CocosAdViewItem;
+    }(AdViewItem));
+
+    var PrizeForm = /** @class */ (function (_super) {
+        __extends(PrizeForm, _super);
+        function PrizeForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.coinNum = null;
+            _this.btnConfirm = null;
+            return _this;
+        }
+        PrizeForm.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            // this.btnConfirm.on(cc.Node.EventType.TOUCH_END, this.closeForm, this)
+        };
+        PrizeForm.prototype.willHide = function () {
+            // this.btnConfirm.off(cc.Node.EventType.TOUCH_END, this.closeForm, this)
+        };
+        PrizeForm.prototype.willShow = function (data) {
+            _super.prototype.willShow.call(this, data);
+            this.coinNum.string = "" + Common.formatMoney(data.coinNum);
+            moosnow.platform.hideBanner();
+        };
+        PrizeForm.prototype.closeForm = function () {
+            var _this = this;
+            moosnow.ui.destroyUIForm(UIForms.PrizeForm, null);
+            moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+            if (this.FormData.showCoinAnim == true) {
+                moosnow.ui.pushUIForm(UIForms.CoinForm, __assign(__assign({}, Common.deepCopy(this.FormData)), { callback: function () {
+                        if (_this.FormData.onCompleted)
+                            _this.FormData.onCompleted();
+                    } }));
+            }
+            else {
+                if (this.FormData.onCompleted)
+                    this.FormData.onCompleted();
+            }
+        };
+        return PrizeForm;
+    }(BaseForm));
+
+    var CocosPrizeForm = /** @class */ (function (_super) {
+        __extends(CocosPrizeForm, _super);
+        function CocosPrizeForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.coinNum = null;
+            _this.btnConfirm = null;
+            return _this;
+        }
+        CocosPrizeForm.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            this.btnConfirm.on(cc.Node.EventType.TOUCH_END, this.closeForm, this);
+        };
+        CocosPrizeForm.prototype.willHide = function () {
+            this.btnConfirm.off(cc.Node.EventType.TOUCH_END, this.closeForm, this);
+        };
+        return CocosPrizeForm;
+    }(PrizeForm));
+
+    var PrizeFormTT = /** @class */ (function (_super) {
+        __extends(PrizeFormTT, _super);
+        function PrizeFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.prizeBg1 = null;
+            _this.prizeBg2 = null;
+            _this.btnCancel = null;
+            _this.txtCoutdown = null;
+            _this.btnVideo = null;
+            _this.btnShare = null;
+            _this.btnReceive = null;
+            _this.checked = null;
+            _this.unchecked = null;
+            _this.isMask = true;
+            _this.mChecked = false;
+            _this.mTotalSecond = 10;
+            _this.mCurrentSecond = 0;
+            return _this;
+        }
+        PrizeFormTT.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            // this.btnConfirm.on(cc.Node.EventType.TOUCH_END, this.closeForm, this)
+        };
+        PrizeFormTT.prototype.willShow = function (data) {
+            var _this = this;
+            _super.prototype.willShow.call(this, data);
+            this.addListener();
+            this.mChecked = false;
+            this.onChecked();
+            this.prizeBg1.active = false;
+            this.prizeBg2.active = false;
+            moosnow.http.getAllConfig(function (res) {
+                if (res) {
+                    if (res.prizeFormVideo == 1) {
+                        _this.showVideo();
+                    }
+                    else if (res.prizeFormVideo == 2) {
+                        _this.showShare();
+                    }
+                    else {
+                        var precent = res && res.prizeFormVideosPrecent ? parseFloat(res.prizeFormVideosPrecent) : 0.5;
+                        if (Common.randomNumBoth(0, 100) / 100.0 < precent) {
+                            _this.showVideo();
+                        }
+                        else
+                            _this.showShare();
+                    }
+                }
+                else {
+                    _this.showShare();
+                }
+            });
+            this.mTotalSecond = 10;
+            this.mCurrentSecond = 0;
+            this.resumeCountdown();
+            moosnow.platform.showBanner();
+        };
+        PrizeFormTT.prototype.onHide = function () {
+            this.removeListener();
+        };
+        PrizeFormTT.prototype.showVideo = function () {
+            this.prizeBg1.active = true;
+            this.prizeBg2.active = false;
+        };
+        PrizeFormTT.prototype.showShare = function () {
+            this.prizeBg1.active = false;
+            this.prizeBg2.active = true;
+        };
+        PrizeFormTT.prototype.onCountdown = function () {
+            this.mCurrentSecond += 1;
+            var num = this.mTotalSecond - this.mCurrentSecond;
+            if (num < 0) {
+                this.unschedule(this.onCountdown);
+                moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                return;
+            }
+            this.txtCoutdown.string = num + "\u79D2";
+        };
+        PrizeFormTT.prototype.stopCountdown = function () {
+            this.unschedule(this.onCountdown);
+        };
+        PrizeFormTT.prototype.resumeCountdown = function () {
+            this.schedule(this.onCountdown, 1);
+        };
+        PrizeFormTT.prototype.addListener = function () {
+            this.btnCancel.on(cc.Node.EventType.TOUCH_END, this.closeForm, this);
+            this.btnVideo.on(cc.Node.EventType.TOUCH_END, this.onVideo, this);
+            this.btnReceive.on(cc.Node.EventType.TOUCH_END, this.onReceive, this);
+            this.btnShare.on(cc.Node.EventType.TOUCH_END, this.onShare, this);
+            this.unchecked.on(cc.Node.EventType.TOUCH_END, this.onChecked, this);
+        };
+        PrizeFormTT.prototype.removeListener = function () {
+            this.btnCancel.off(cc.Node.EventType.TOUCH_END, this.closeForm, this);
+            this.btnVideo.off(cc.Node.EventType.TOUCH_END, this.onVideo, this);
+            this.btnReceive.off(cc.Node.EventType.TOUCH_END, this.onReceive, this);
+            this.btnShare.off(cc.Node.EventType.TOUCH_END, this.onShare, this);
+            this.unchecked.off(cc.Node.EventType.TOUCH_END, this.onChecked, this);
+        };
+        PrizeFormTT.prototype.closeForm = function () {
+            moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+        };
+        PrizeFormTT.prototype.onChecked = function () {
+            this.mChecked = !this.mChecked;
+            this.checked.active = this.mChecked;
+        };
+        PrizeFormTT.prototype.onShare = function () {
+            var _this = this;
+            this.stopCountdown();
+            moosnow.platform.share({
+                channel: ""
+            }, function (shared) {
+                _this.resumeCountdown();
+                if (shared) {
+                    _this.addCoin(_this.getCoinNum() * 2, function () {
+                        moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                    });
+                }
+            });
+        };
+        PrizeFormTT.prototype.onReceive = function () {
+            if (this.mChecked)
+                this.onVideo();
+            else
+                this.addCoin(this.getCoinNum(), function () {
+                    moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                });
+        };
+        PrizeFormTT.prototype.onVideo = function () {
+            var _this = this;
+            this.stopCountdown();
+            moosnow.platform.showVideo(function (res) {
+                if (res == moosnow.VIDEO_STATUS.END) {
+                    _this.addCoin(_this.getCoinNum() * (_this.FormData && _this.FormData.baseNum ? parseFloat(_this.FormData.baseNum) : 2), function () {
+                        moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                    });
+                    return;
+                }
+                else if (res == moosnow.VIDEO_STATUS.ERR)
+                    moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR);
+                else {
+                    moosnow.ui.showToast(moosnow.VIDEO_MSG.NOTEND);
+                }
+                _this.resumeCountdown();
+            });
+        };
+        PrizeFormTT.prototype.getCoinNum = function () {
+            var coinNum = Common.randomNumBoth(500, 600);
+            return coinNum;
+        };
+        PrizeFormTT.prototype.addCoin = function (coinNum, callback) {
+            moosnow.ui.hideUIForm(UIForms.MistouchForm, null);
+            moosnow.event.sendEventImmediately(EventType.COIN_CHANGED, null);
+            moosnow.ui.pushUIForm(UIForms.CoinForm, __assign(__assign({}, Common.deepCopy(this.FormData)), { coinNum: coinNum, callback: function () {
+                    if (callback)
+                        callback();
+                } }));
+        };
+        return PrizeFormTT;
+    }(BaseForm));
+
+    var CocosPrizeFormTT = /** @class */ (function (_super) {
+        __extends(CocosPrizeFormTT, _super);
+        function CocosPrizeFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.coinNum = null;
+            _this.btnConfirm = null;
+            return _this;
+        }
+        CocosPrizeFormTT.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            this.btnConfirm.on(cc.Node.EventType.TOUCH_END, this.closeForm, this);
+        };
+        CocosPrizeFormTT.prototype.willHide = function () {
+            this.btnConfirm.off(cc.Node.EventType.TOUCH_END, this.closeForm, this);
+        };
+        return CocosPrizeFormTT;
+    }(PrizeFormTT));
+
+    var CoinForm = /** @class */ (function (_super) {
+        __extends(CoinForm, _super);
+        function CoinForm() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(CoinForm.prototype, "rootNode", {
+            get: function () {
+                return {};
+            },
+            enumerable: true,
+            configurable: true
+        });
+        CoinForm.prototype.flyAnim = function (logic, endVec, callback) {
+        };
+        CoinForm.prototype.onShow = function (data) {
+            var _this = this;
+            var imgNum = data.imgNum, coinNum = data.coinNum, starVec = data.starVec, endVec = data.endVec, callback = data.callback;
+            console.log('showCoin', data);
+            cc.loader.loadRes(moosnow.entity.prefabPath + 'coin', cc.Prefab, function () {
+                for (var i = 0; i < imgNum; i++) {
+                    var logic = moosnow.entity.showEntity("coin", _this.rootNode, {
+                        x: Common.randomNumBoth(starVec.x - data.randomX, starVec.x + data.randomX),
+                        y: Common.randomNumBoth(starVec.y - data.randomY, starVec.y + data.randomY)
+                    });
+                    _this.flyAnim(logic, endVec, callback);
+                }
+                _this.scheduleOnce(function () {
+                    moosnow.ui.hideUIForm(UIForms.CoinForm, null);
+                    if (Common.isFunction(callback))
+                        callback();
+                }, 2.1);
+            });
+        };
+        return CoinForm;
+    }(BaseForm));
+
+    var CocosCoinForm = /** @class */ (function (_super) {
+        __extends(CocosCoinForm, _super);
+        function CocosCoinForm() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(CocosCoinForm.prototype, "rootNode", {
+            get: function () {
+                return cc.Canvas.instance.node;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        CocosCoinForm.prototype.flyAnim = function (logic, endVec, callback) {
+            var coinNode = logic.node;
+            var delayTime = Common.randomNumBoth(0, 100) / 200.0;
+            coinNode.active = true;
+            coinNode.runAction(cc.sequence(cc.delayTime(delayTime), cc.spawn(cc.moveTo(1, endVec.x, endVec.y), cc.fadeOut(1.0), cc.sequence(cc.scaleTo(0.8, 1.2, 1.2), cc.scaleTo(0.8, 0.8, 9.8))), cc.callFunc(function () {
+                moosnow.entity.hideEntity(logic, null, true);
+            })));
+        };
+        return CocosCoinForm;
+    }(CoinForm));
+
+    var TotalForm = /** @class */ (function (_super) {
+        __extends(TotalForm, _super);
+        function TotalForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.checked = null;
+            _this.unchecked = null;
+            _this.btnReceive = null;
+            _this.levelCoin = null;
+            _this.mCheckedVideo = true;
+            _this.mLevelCoinNum = 0;
+            _this.mLevelShareCoinNum = 0;
+            return _this;
+        }
+        TotalForm.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            // this.btnConfirm.on(cc.Node.EventType.TOUCH_END, this.closeForm, this)
+        };
+        TotalForm.prototype.addEvent = function () {
+        };
+        TotalForm.prototype.removeEvent = function () {
+        };
+        TotalForm.prototype.onReceive = function () {
+            var _this = this;
+            if (this.mCheckedVideo) {
+                moosnow.platform.showVideo(function (res) {
+                    if (res == moosnow.VIDEO_STATUS.END) {
+                        _this.openEndForm(_this.mLevelCoinNum * 5);
+                    }
+                    else if (res == moosnow.VIDEO_STATUS.ERR) {
+                        moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR);
+                    }
+                    else {
+                        moosnow.ui.showToast(moosnow.VIDEO_MSG.NOTEND);
+                    }
+                });
+            }
+            else {
+                this.openEndForm(this.mLevelCoinNum);
+            }
+        };
+        TotalForm.prototype.openEndForm = function (coin) {
+            moosnow.ui.hideUIForm(UIForms.TotalForm, null);
+            moosnow.ui.pushUIForm(UIForms.EndForm, __assign({ coin: coin, level: this.FormData.level, levelShareCoinNum: this.mLevelShareCoinNum }, this.FormData));
+        };
+        TotalForm.prototype.onShareChange = function () {
+            this.mCheckedVideo = !this.mCheckedVideo;
+            this.changeUI();
+        };
+        TotalForm.prototype.changeUI = function () {
+        };
+        TotalForm.prototype.onShow = function (data) {
+            var coin = data.coin, shareCoin = data.shareCoin;
+            this.mLevelCoinNum = coin;
+            this.mLevelShareCoinNum = shareCoin;
+            this.levelCoin.string = "" + Common.formatMoney(this.mLevelCoinNum);
+            this.addEvent();
+            this.mCheckedVideo = true;
+            this.changeUI();
+            moosnow.platform.stopRecord();
+            moosnow.platform.showBanner();
+        };
+        TotalForm.prototype.willHide = function () {
+            this.removeEvent();
+            moosnow.platform.hideBanner();
+        };
+        return TotalForm;
+    }(BaseForm));
+
+    var CocosTotalForm = /** @class */ (function (_super) {
+        __extends(CocosTotalForm, _super);
+        function CocosTotalForm() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        CocosTotalForm.prototype.addEvent = function () {
+            this.unchecked.node.on(cc.Node.EventType.TOUCH_END, this.onShareChange, this);
+            this.btnReceive.node.on(cc.Node.EventType.TOUCH_END, this.onReceive, this);
+        };
+        CocosTotalForm.prototype.removeEvent = function () {
+            this.unchecked.node.off(cc.Node.EventType.TOUCH_END, this.onShareChange, this);
+            this.btnReceive.node.off(cc.Node.EventType.TOUCH_END, this.onReceive, this);
+        };
+        CocosTotalForm.prototype.changeUI = function () {
+            if (this.mCheckedVideo) {
+                this.checked.node.active = true;
+            }
+            else {
+                this.checked.node.active = false;
+            }
+        };
+        return CocosTotalForm;
+    }(TotalForm));
+
+    /**
+     * 页面逻辑控制
+     */
+    var LogicControl = /** @class */ (function () {
+        function LogicControl() {
+        }
+        /**
+         * 返回一个AdViewItem实例
+         */
+        LogicControl.prototype.newViewItem = function () {
+            return new CocosAdViewItem();
+        };
+        ;
+        Object.defineProperty(LogicControl.prototype, "adForm", {
+            get: function () {
+                if (!this.mAdForm)
+                    this.mAdForm = new CocosAdForm();
+                return this.mAdForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(LogicControl.prototype, "adFormQQ", {
+            get: function () {
+                if (!this.mAdForm)
+                    this.mAdForm = new CocosAdForm();
+                return this.mAdFormQQ;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(LogicControl.prototype, "mistouchForm", {
+            get: function () {
+                if (!this.mMistouchForm)
+                    this.mMistouchForm = new CocosMistouchForm();
+                return this.mMistouchForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "mistouchFormTT", {
+            get: function () {
+                if (!this.mMistouchFormTT)
+                    this.mMistouchFormTT = new CocosMistouchFormTT();
+                return this.mMistouchFormTT;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "mistouchFormQQ", {
+            get: function () {
+                if (!this.mMistouchFormQQ)
+                    this.mMistouchFormQQ = new CocosMistouchFormQQ();
+                return this.mMistouchFormQQ;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "prizeForm", {
+            get: function () {
+                if (!this.mPrizeForm)
+                    this.mPrizeForm = new CocosPrizeForm();
+                return this.mPrizeForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "prizeFormTT", {
+            get: function () {
+                if (!this.mPrizeFormTT)
+                    this.mPrizeFormTT = new CocosPrizeFormTT();
+                return this.mPrizeFormTT;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "coinForm", {
+            /**
+            * 金币
+            */
+            get: function () {
+                if (!this.mCoinForm)
+                    this.mCoinForm = new CocosCoinForm();
+                return this.mCoinForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "totalForm", {
+            /**
+            * 金币
+            */
+            get: function () {
+                if (!this.mTotalForm)
+                    this.mTotalForm = new CocosTotalForm();
+                return this.mTotalForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return LogicControl;
+    }());
+
     /**
      * 广告结果
      */
@@ -6133,14 +7661,14 @@
             }
             var adForm = moosnow.ui.getUIFrom(UIForms.AdForm);
             if (adForm) {
+                moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback, zIndex: zIndex });
                 adForm.node.zIndex = zIndex;
-                moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback });
             }
             else {
                 moosnow.ui.pushUIForm(UIForms.AdForm, { showAd: moosnow.AD_POSITION.NONE }, function () {
                     var adForm = moosnow.ui.getUIFrom(UIForms.AdForm);
                     adForm.node.zIndex = zIndex;
-                    moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback });
+                    moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback, zIndex: zIndex });
                 });
             }
         };
@@ -6260,6 +7788,7 @@
             });
         };
         DelayMove.prototype.movePosition = function () {
+            var _this = this;
             if (this.mMistouchPosNum == 0) {
                 this.moveNode.active = true;
                 this.moveNode.x = this.pos1.x;
@@ -6270,8 +7799,10 @@
             else {
                 var count = moosnow.data.getCurrentMisTouchCount();
                 if (count % this.mMistouchPosNum == 0) {
-                    this.copyNode();
-                    this.schedule(this.onPosCallback, this.mMistouchPosSecond);
+                    var tempButtom_1 = this.copyNode();
+                    this.scheduleOnce(function () {
+                        _this.onPosCallback(tempButtom_1);
+                    }, this.mMistouchPosSecond);
                 }
             }
         };
@@ -6284,7 +7815,7 @@
             this.moveNode.active = true;
             this.moveNode.x = this.pos1.x;
             this.moveNode.y = this.pos1.y;
-            this.unschedule(this.onPosCallback);
+            this.unscheduleOnce(this.onPosCallback);
         };
         DelayMove.prototype.removeTemp = function (tempButtom) {
             tempButtom.active = false;
@@ -6301,13 +7832,15 @@
             _this.moveNode = null;
             _this.distince = -100;
             _this.showBanner = true;
+            _this.pos1 = cc.Vec2.ZERO;
+            _this.pos2 = cc.Vec2.ZERO;
             return _this;
         }
         CocosDelayMove.prototype.initPos = function () {
-            if (!this.pos1)
+            if (this.pos1.x == 0 && this.pos1.y == 0) {
                 this.pos1 = this.moveNode.position.clone();
-            if (!this.pos2)
                 this.pos2 = this.pos1.add(new cc.Vec2(0, this.distince));
+            }
         };
         CocosDelayMove.prototype.copyNode = function () {
             var tempButtom = cc.instantiate(this.moveNode);
@@ -6315,6 +7848,7 @@
             this.moveNode.parent.addChild(tempButtom);
             tempButtom.x = this.pos2.x;
             tempButtom.y = this.pos2.y;
+            return tempButtom;
         };
         CocosDelayMove.prototype.removeTemp = function (tempButtom) {
             tempButtom.active = false;
@@ -6478,13 +8012,10 @@
              * form UI 操作
              */
             this.mForm = new UIForm();
-            // /**
-            //  * form表单控制
-            //  */
-            // private mControl: LogicControl = new LogicControl();
-            // public get control() {
-            //     return this.mControl;
-            // }
+            /**
+             * form表单控制
+             */
+            this.mControl = new LogicControl();
             this.mEntity = new BaseEntityModule();
             this.mAudio = null;
             this.mDelay = new Delay();
@@ -6621,6 +8152,13 @@
         Object.defineProperty(moosnowEntry.prototype, "form", {
             get: function () {
                 return this.mForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnowEntry.prototype, "control", {
+            get: function () {
+                return this.mControl;
             },
             enumerable: true,
             configurable: true

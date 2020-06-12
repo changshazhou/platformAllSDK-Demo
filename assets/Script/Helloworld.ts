@@ -117,6 +117,11 @@ export default class Helloworld extends cc.Component {
     }
 
 
+    showRespawn() {
+        moosnow.ui.pushUIForm(UIForms.RespawnForm, { coin: 500, shareCoin: 1000 })
+    }
+
+
     hideAd() {
         moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
     }

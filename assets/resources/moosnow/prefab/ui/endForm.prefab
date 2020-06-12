@@ -24,6 +24,9 @@
     "_active": true,
     "_components": [
       {
+        "__id__": 19
+      },
+      {
         "__id__": 20
       },
       {
@@ -110,7 +113,7 @@
     "_active": true,
     "_components": [],
     "_prefab": {
-      "__id__": 19
+      "__id__": 18
     },
     "_opacity": 255,
     "_color": {
@@ -593,13 +596,10 @@
     "_components": [
       {
         "__id__": 16
-      },
-      {
-        "__id__": 17
       }
     ],
     "_prefab": {
-      "__id__": 18
+      "__id__": 17
     },
     "_opacity": 255,
     "_color": {
@@ -678,24 +678,6 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "9c1e2AO8wZPWbAgk+CIA9Na",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 15
-    },
-    "_enabled": true,
-    "enableEffect": true,
-    "enableMusic": true,
-    "autoScale": false,
-    "autoSwing": false,
-    "scaleMax": 1,
-    "scaleMin": 0.8,
-    "enableLogPoint": false,
-    "logPointName": "",
     "_id": ""
   },
   {
@@ -785,30 +767,27 @@
       "__id__": 1
     },
     "_enabled": true,
-    "btnVideoRespawn": null,
-    "btnBack": null,
-    "btnVideoReceive": null,
     "btnWinReceive": {
       "__id__": 15
     },
-    "btnFailReceive": null,
     "coinText": null,
     "winBox": {
       "__id__": 2
     },
-    "failBox": null,
-    "timeoutBox": null,
-    "star1": {
-      "__id__": 6
+    "_id": ""
+  },
+  {
+    "__type__": "0164fz8qIhFzbVaGGPnpYM4",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
     },
-    "star2": {
-      "__id__": 9
+    "_enabled": true,
+    "showNode": {
+      "__id__": 15
     },
-    "star3": {
-      "__id__": 12
-    },
-    "star": null,
-    "starActive": null,
+    "delayTime": 3,
     "_id": ""
   },
   {

@@ -85,7 +85,6 @@ export default class totalForm extends UIForm {
         this.mLevelShareCoinNum = shareCoin
         this.levelCoin.string = `${Common.formatMoney(this.mLevelCoinNum)}`
         this.addEvent();
-        this.changeUI();
         this.mCheckedVideo = true;
         this.changeUI();
         moosnow.platform.stopRecord();

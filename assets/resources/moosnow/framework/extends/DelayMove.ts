@@ -15,7 +15,7 @@ export default class DelayMove extends cc.Component {
     showBanner: boolean = true;
 
     onEnable() {
-        // moosnow.delay.DelayMove.move(this.moveNode, this.moveDis, this.showBanner)
+        moosnow.delay.DelayMove.move(this.moveNode, this.moveDis, this.showBanner)
     }
 
 

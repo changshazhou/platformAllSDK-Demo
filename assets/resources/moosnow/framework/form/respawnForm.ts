@@ -59,7 +59,7 @@ export default class respawnForm extends UIForm {
 
     onShow() {
         this.node.zIndex = 7;
-        moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK, () => { }, 6)
+        moosnow.form.showAd(moosnow.AD_POSITION.LEFTRIGHT | moosnow.AD_POSITION.EXTEND1, () => { }, 8)
         moosnow.platform.pauseRecord();
     }
 
@@ -92,6 +92,7 @@ export default class respawnForm extends UIForm {
         this.closeForm(() => {
             moosnow.platform.stopRecord(() => {
 
+                moosnow.form.showAd(moosnow.AD_POSITION.NONE, () => { })
                 //回到首页点击
 
             });

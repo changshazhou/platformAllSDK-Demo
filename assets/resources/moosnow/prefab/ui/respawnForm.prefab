@@ -88,8 +88,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 8,
-    "groupIndex": 8,
+    "_groupIndex": 0,
+    "groupIndex": 0,
     "_id": ""
   },
   {
@@ -192,7 +192,7 @@
     "_id": ""
   },
   {
-    "__type__": "9c1e2AO8wZPWbAgk+CIA9Na",
+    "__type__": "a737fPN/FtMTrnjqhxkZNap",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -202,10 +202,9 @@
     "enableEffect": true,
     "enableMusic": true,
     "autoScale": false,
+    "autoSwing": false,
     "scaleMax": 1,
     "scaleMin": 0.8,
-    "enableLogPoint": false,
-    "logPointName": "",
     "_id": ""
   },
   {
@@ -721,23 +720,6 @@
     "_id": ""
   },
   {
-    "__type__": "9c1e2AO8wZPWbAgk+CIA9Na",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 13
-    },
-    "_enabled": true,
-    "enableEffect": true,
-    "enableMusic": true,
-    "autoScale": false,
-    "scaleMax": 1,
-    "scaleMin": 0.8,
-    "enableLogPoint": false,
-    "logPointName": "",
-    "_id": ""
-  },
-  {
     "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
@@ -762,6 +744,22 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 0,
     "_originalHeight": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "a737fPN/FtMTrnjqhxkZNap",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 13
+    },
+    "_enabled": true,
+    "enableEffect": true,
+    "enableMusic": true,
+    "autoScale": false,
+    "autoSwing": false,
+    "scaleMax": 1,
+    "scaleMin": 0.8,
     "_id": ""
   },
   {
@@ -1463,21 +1461,6 @@
     "_id": ""
   },
   {
-    "__type__": "9222dTvKcNPNL8wgXkrapSa",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "posButton": {
-      "__id__": 13
-    },
-    "moveDis": -200,
-    "showBanner": true,
-    "_id": ""
-  },
-  {
     "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
@@ -1502,6 +1485,21 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 1334,
     "_originalHeight": 750,
+    "_id": ""
+  },
+  {
+    "__type__": "3f4faCKydJGdJnzvuOS1mkZ",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "moveNode": {
+      "__id__": 13
+    },
+    "moveDis": -100,
+    "showBanner": true,
     "_id": ""
   },
   {

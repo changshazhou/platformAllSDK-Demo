@@ -24,7 +24,7 @@ export default class endForm extends UIForm {
     /**
      * 是否需要蒙层
      */
-    public isMask: boolean = true;
+    public isMask: boolean = false;
 
     public coin: number = 0;
     constructor() { super(); }
@@ -66,7 +66,11 @@ export default class endForm extends UIForm {
 
 
         this.node.zIndex = 7;
-        moosnow.form.showAd(moosnow.AD_POSITION.CENTER, () => { }, 6)
+        moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
+            moosnow.form.showAd(moosnow.AD_POSITION.NONE, () => { })
+            //回到首页
+
+        }, 6)
 
     }
     willHide() {

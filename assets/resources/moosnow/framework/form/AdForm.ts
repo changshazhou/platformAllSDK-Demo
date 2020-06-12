@@ -2,7 +2,6 @@
 import UIForm from "../ui/UIForm";
 import EntityLogic from "../entity/EntityLogic";
 import AdViewItem from "../entity/AdViewItem";
-import Common from "../utils/Common";
 
 
 const { ccclass, property } = cc._decorator;
@@ -93,7 +92,33 @@ export default class AdForm extends UIForm {
     @property(cc.Node)
     public btnSideHide: cc.Node = null;
 
+    @property(cc.Node)
+    public extend1Container: cc.Node = null;
+    @property(cc.ScrollView)
+    public extend1View: cc.ScrollView = null;
+    @property(cc.Layout)
+    public extend1Layout: cc.Layout = null;
 
+    @property(cc.Node)
+    public extend2Container: cc.Node = null;
+    @property(cc.ScrollView)
+    public extend2View: cc.ScrollView = null;
+    @property(cc.Layout)
+    public extend2Layout: cc.Layout = null;
+
+    @property(cc.Node)
+    public extend3Container: cc.Node = null;
+    @property(cc.ScrollView)
+    public extend3View: cc.ScrollView = null;
+    @property(cc.Layout)
+    public extend3Layout: cc.Layout = null;
+
+    @property(cc.Node)
+    public extend4Container: cc.Node = null;
+    @property(cc.ScrollView)
+    public extend4View: cc.ScrollView = null;
+    @property(cc.Layout)
+    public extend4Layout: cc.Layout = null;
 
     public isMask: boolean = false;
     public isPopEffect: boolean = false;
@@ -118,20 +143,35 @@ export default class AdForm extends UIForm {
     }
 
     public update(dt) {
-        this.onFwUpdate(dt);
+        moosnow.control.adForm.onFwUpdate(dt);
     }
-
+    /**
+     * 
+     * @param data 
+     */
+    public willShow(data) {
+        moosnow.control.adForm.initProperty(this);
+        moosnow.control.adForm.willShow(data);
+        moosnow.control.adForm.onAfterShow = (index) => {
+            // index 默认999
+            //限时完成后，用户可以更改层级
+            // this.node.zIndex = index
+        }
+    }
     public onShow(data) {
         moosnow.ad.getAd(res => {
-            this.initView(this.bannerContainer, this.bannerView, this.bannerLayout, "banner位置", this.mAdListBannerItem);
-            this.initView(this.leftContainer, this.leftView, this.leftLayout, "左边侧拉栏", this.mAdListBannerItem);
-            this.initView(this.leftContainer, this.rightView, this.rightLayout, "右边侧拉栏", this.mAdListBannerItem);
-            this.initView(this.exportContainer, this.exportView, this.exportLayout, "全屏导出", this.mAdListExportItem);
-            this.initView(this.centerContainer, this.centerView, this.centerLayout, "中间页导出", this.mAdListExportItem);
-            this.initView(this.sideContainer, this.sideView, this.sideLayout, "侧拉栏", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.bannerContainer, this.bannerView, this.bannerLayout, "位置1", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.leftContainer, this.leftView, this.leftLayout, "位置2", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.leftContainer, this.rightView, this.rightLayout, "位置3", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.exportContainer, this.exportView, this.exportLayout, "位置4", this.mAdListExportItem);
+            moosnow.control.adForm.initView(this.centerContainer, this.centerView, this.centerLayout, "位置5", this.mAdListExportItem);
+            moosnow.control.adForm.initView(this.sideContainer, this.sideView, this.sideLayout, "位置6", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.extend1Container, this.extend1View, this.extend1Layout, "位置2", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.extend2Container, this.extend2View, this.extend2Layout, "位置2", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.extend3Container, this.extend3View, this.extend3Layout, "位置2", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.extend4Container, this.extend4View, this.extend4Layout, "位置2", this.mAdListBannerItem);
 
-            this.initFiexdView(this.endContainer, this.endLayout, "固定模式的导出", this.mAdListExportItem);
-
+            moosnow.control.adForm.initFiexdView(this.endContainer, this.endLayout, "位置7", this.mAdListExportItem)
 
             let points = [];
             let prefabs = [this.mAdFloatLeftItem1, this.mAdFloatLeftItem2, this.mAdFloatLeftItem1, this.mAdFloatLeftItem3]
@@ -140,388 +180,17 @@ export default class AdForm extends UIForm {
                     points.push({ x: item.x, y: item.y })
                 }
             });
-            this.initFloatAd(this.floatContainer, prefabs, points)
-        })
-    }
-
-
-    private mAdItemList = [];
-    public setPosition(source: Array<moosnowAdRow>, position: string = ""): Array<moosnowAdRow> {
-        let retValue = Common.deepCopy(source) as [];
-        retValue.forEach((item: moosnowAdRow) => {
-            item.position = position;
-        })
-        return retValue;
-    }
-
-
-
-    public loadAd(entityName: string | cc.Prefab, callback: Function) {
-        moosnow.entity.preload(entityName, () => {
-            moosnow.ad.getAd((res) => {
-                this.mAdData = res;
-                if (res.indexLeft.length == 0)
-                    return;
-                if (callback)
-                    callback(res);
-            })
-        })
-    }
-
-    private mScrollVec = [];
-    /**
-     * 
-     * @param scrollView 
-     * @param layout 
-     * @param positionTag string
-     * @param entityName 
-     */
-    public initView(container: any, scrollView: any, layout: any, position: string, entityName: string | cc.Prefab) {
-        if (!entityName) {
-            console.warn('entityName is null 无法初始化 ')
-            return;
-        }
-        this.loadAd(entityName, (res) => {
-
-            let source = this.setPosition(res.indexLeft, position);
-            source.forEach((item, idx) => {
-                let adItemCtl = moosnow.entity.showEntity(entityName, layout.node, item);
-                this.mAdItemList.push(adItemCtl);
-            })
-            if (layout.type == cc.Layout.Type.GRID) {
-                if (scrollView.vertical) {
-                    this.mScrollVec.push({
-                        scrollView,
-                        move2Up: false
-                    })
-                }
-                else {
-                    this.mScrollVec.push({
-                        scrollView,
-                        move2Left: false
-                    })
-                }
-            }
-            else if (layout.type == cc.Layout.Type.HORIZONTAL) {
-                this.mScrollVec.push({
-                    scrollView,
-                    move2Left: false
-                })
-            }
-            else if (layout.type == cc.Layout.Type.VERTICAL) {
-                this.mScrollVec.push({
-                    scrollView,
-                    move2Up: false
-                })
-            }
-        })
-    }
-
-
-
-    public addEvent() {
-        moosnow.event.addListener(moosnow.PLATFORM_EVENT.AD_VIEW_CHANGE, this, this.onAdChange)
-    }
-    public removeEvent() {
-        moosnow.event.removeListener(moosnow.PLATFORM_EVENT.AD_VIEW_CHANGE, this)
-    }
-
-    public onAdChange(data) {
-
-        this.displayChange(data.showAd, data.callback)
-
-        this.onAfterShow(this.mIndex);
-
-    }
-
-    private mIndex: number = 999;
-    /**
-     * 
-     * @param zindex 
-     */
-    public onAfterShow(zindex: number) {
-
-    }
-
-
-    /**
-      * 
-      * @param data 
-      */
-    public willShow(data) {
-
-        this.mAdItemList = [];
-        this.mScrollVec = [];
-        this.addEvent();
-        if (data)
-            this.displayChange(data.showAd, data.callback)
-        else
-            this.displayChange(moosnow.AD_POSITION.NONE, null)
-
-    }
-
-    private mShowAd = moosnow.AD_POSITION.NONE;
-    private mBackCall: Function
-    public displayChange(data, callback = null) {
-        let curApp = moosnow.getAppPlatform()
-        if (moosnow.APP_PLATFORM.WX == curApp || curApp == moosnow.APP_PLATFORM.OPPO) {
-            this.mShowAd = data;
-            this.displayAd(true)
-            this.mBackCall = callback;
-        }
-        else {
-            this.onBack();
-        }
-
-    }
-    public onBack() {
-        if (this.mBackCall) {
-            this.mBackCall();
-        }
-    }
-
-
-    private mMoveSpeed: number = 2;
-    public onFwUpdate(dt) {
-        for (let i = 0; i < this.mScrollVec.length; i++) {
-            let item = this.mScrollVec[i];
-            let scrollView = item.scrollView as cc.ScrollView;
-            if (scrollView.isScrolling())
-                continue;
-
-            let scrollOffset = scrollView.getMaxScrollOffset();
-            let maxH = scrollOffset.y / 2 + 20;
-            let maxW = scrollOffset.x / 2 + 20;
-            let contentPos = scrollView.getContentPosition() as any;
-            if (item.move2Up == true) {
-                if (contentPos.y > maxH) {
-                    item.move2Up = false;
-                }
-                item.scrollView.setContentPosition(new cc.Vec2(contentPos.x, contentPos.y + this.mMoveSpeed))
-            }
-            else if (item.move2Up == false) {
-                if (contentPos.y < -maxH) {
-                    item.move2Up = true;
-                }
-                item.scrollView.setContentPosition(new cc.Vec2(contentPos.x, contentPos.y - this.mMoveSpeed))
-            }
-            if (item.move2Left == true) {
-                if (contentPos.x > maxW) {
-                    item.move2Left = false;
-                }
-                item.scrollView.setContentPosition(new cc.Vec2(contentPos.x + this.mMoveSpeed, contentPos.y))
-            }
-            else if (item.move2Left == false) {
-                if (contentPos.x < -maxW) {
-                    item.move2Left = true;
-                }
-                item.scrollView.setContentPosition(new cc.Vec2(contentPos.x - this.mMoveSpeed, contentPos.y))
-            }
-        }
-
-    }
-    public sideOut() {
-        let wxsys = moosnow.platform.getSystemInfoSync();
-        let statusBarHeight = 0;
-        let notchHeight = 0;
-        if (wxsys) {
-            statusBarHeight = wxsys.statusBarHeight || 0;
-            notchHeight = wxsys.notchHeight || 0;
-        }
-
-        this.sideView.node.runAction(cc.sequence(
-            cc.moveTo(1, statusBarHeight + notchHeight + this.sideView.node.width + 20, 0),
-            cc.callFunc(() => {
-                this.btnSideShow.active = false;
-                this.btnSideHide.active = true;
-            })
-        ))
-    }
-
-    public sideIn() {
-        this.sideView.node.runAction(cc.sequence(
-            cc.moveTo(1, 0, 0),
-            cc.callFunc(() => {
-                this.btnSideShow.active = true;
-                this.btnSideHide.active = false;
-            })
-        ))
-    }
-
-    private mEndLogic = [];
-    public initFiexdView(container: any, layout: any, position: string, entityName: string | cc.Prefab) {
-
-        this.loadAd(entityName, (res) => {
-            if (this.mEndLogic) {
-                for (let i = 0; i < this.mEndLogic.length; i++) {
-                    moosnow.entity.hideEntity(this.mEndLogic[i], {});
-                }
-                this.mEndLogic = [];
-            }
-
-            let banner = this.setPosition(res.indexLeft, position);
-            let endAd: Array<moosnowAdRow> = [];
-            let showAppId = []
-            for (let i = 0; i < 6; i++) {
-                let item = banner.length > i ? banner[i] : banner[0];
-                showAppId.push(item.appid)
-                endAd.push(item);
-            }
-            endAd.forEach(item => {
-                let adRow = { ...Common.deepCopy(item), showAppId: Common.deepCopy(showAppId), source: Common.deepCopy(banner) }
-                let logic = moosnow.entity.showEntity(entityName, layout, adRow)
-                this.mEndLogic.push(logic);
-                return false;
-            })
+            moosnow.control.adForm.initFloatAd(this.floatContainer, prefabs, points)
         })
     }
 
 
 
     public willHide() {
-        this.removeEvent();
-        this.mAdItemList.forEach(item => {
-            moosnow.entity.hideEntity(item, null);
-        })
-        this.mAdItemList = [];
-        this.mScrollVec = [];
-    }
-    private mFloatIndex = 0;
-    private mFloatRefresh = 3;
-    private mFloatCache = {};
-    private mAdData: moosnowResult;
-    /**
-     * 
-     * @param parentNode 父节点
-     * @param prefabs 匹配的预制体
-     * @param points 需要显示的坐标点
-     */
-    public initFloatAd(parentNode, prefabs: Array<string>, points: Array<object>, position: string = "") {
-        cc.loader.loadResDir(moosnow.entity.prefabPath, cc.Prefab, () => {
-            moosnow.ad.getAd((res: moosnowResult) => {
-                this.mAdData = res;
-
-                if (res.indexLeft.length == 0)
-                    return;
-                let source = [...res.indexLeft];
-
-
-                prefabs.forEach((prefabName, idx) => {
-                    let showIndex = idx;
-                    let floatData = source[0];
-                    if (showIndex > source.length - 1)
-                        showIndex = 0;
-
-                    floatData = source[showIndex];
-                    let point = points[idx] as any;
-                    let adRow = { ...floatData, position, x: point.x, y: point.y }
-                    let logic = moosnow.entity.showEntity(prefabName, parentNode, adRow);
-                    this.mFloatCache[idx] = {
-                        index: showIndex,
-                        logic: logic,
-                        onCancel: adRow.onCancel
-                    };
-                    this.floatAnim((logic as any).node);
-                })
-                this.updateFloat(Common.deepCopy(res));
-                setInterval(() => {
-                    this.updateFloat(Common.deepCopy(res));
-                }, this.mFloatRefresh * 1000)
-            })
-
-        })
-
-    }
-    public floatAnim(floatNode) {
-
+        moosnow.control.adForm.willHide();
     }
 
 
-    private updateFloat(source) {
 
-        for (let key in this.mFloatCache) {
-            let showIndex = this.mFloatCache[key].index;
-            let logic = this.mFloatCache[key].logic;
-            if (showIndex < source.indexLeft.length - 1)
-                showIndex++;
-            else
-                showIndex = 0;
-            this.mFloatCache[key].index = showIndex;
-
-            logic.refreshImg({ ...source.indexLeft[showIndex], onCancel: this.mFloatCache[key].onCancel });
-
-        }
-
-
-    }
-    private hasAd(ad) {
-        return (this.mShowAd & ad) == ad;
-    }
-
-
-    private mSecond: number = 3
-    private showExportClose() {
-        this.mSecond -= 1;
-        this.exportCloseTxt.active = true;
-        let closeLabel = this.exportCloseTxt.getComponent(cc.Label)
-        if (this.mSecond <= 0) {
-            this.exportClose.active = true;
-            this.exportCloseTxt.active = false;
-            this.unschedule(this.showExportClose)
-            return;
-        }
-        closeLabel.string = `剩余${this.mSecond}秒可关闭`
-
-
-    }
-
-
-    private displayAd(visible: boolean) {
-
-        this.floatContainer.active = visible && this.hasAd(moosnow.AD_POSITION.FLOAT);
-
-        this.bannerContainer.active = visible && this.hasAd(moosnow.AD_POSITION.BANNER);
-
-        this.centerContainer.active = visible && this.hasAd(moosnow.AD_POSITION.CENTER);
-
-        this.leftContainer.active = visible && this.hasAd(moosnow.AD_POSITION.LEFTRIGHT);
-
-        this.exportMask.active = visible && this.hasAd(moosnow.AD_POSITION.MASK);
-
-        this.sideContainer.active = visible && this.hasAd(moosnow.AD_POSITION.SIDE);
-
-        this.endContainer.active = visible && this.hasAd(moosnow.AD_POSITION.EXPORT_FIXED);
-
-        this.exportClose.active = false;
-        this.exportCloseTxt.active = false;
-
-        this.unschedule(this.showExportClose)
-
-        if (this.hasAd(moosnow.AD_POSITION.BACK)) {
-            if (this.hasAd(moosnow.AD_POSITION.WAIT)) {
-                this.mSecond = 3;
-                this.showExportClose();
-                this.schedule(this.showExportClose, 1);
-            }
-            else {
-                this.exportClose.active = true;
-                this.exportCloseTxt.active = false;
-            }
-        }
-        else {
-            this.exportClose.active = false;
-            this.exportCloseTxt.active = false;
-        }
-
-        this.exportContainer.active = visible && this.hasAd(moosnow.AD_POSITION.EXPORT)
-        if (visible && this.hasAd(moosnow.AD_POSITION.EXPORT)) {
-            moosnow.http.getAllConfig(res => {
-                if (res.exportAutoNavigate == 1) {
-                    moosnow.platform.navigate2Mini(this.mAdData.indexLeft[Common.randomNumBoth(0, this.mAdData.indexLeft.length - 1)])
-                }
-            })
-        }
-
-    }
 
 }
