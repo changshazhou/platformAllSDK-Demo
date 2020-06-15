@@ -1,4 +1,4 @@
-import EntityLogic from "../framework/entity/EntityLogic";
+import EntityLogic from "./EntityLogic";
 
 const { ccclass, property } = cc._decorator;
 
@@ -88,7 +88,7 @@ export default class NativeAd extends EntityLogic {
     }
 
     private onCloseAd() {
-        Lite.entity.hideEntity(this, null)
+        moosnow.entity.hideEntity(this, null)
     }
 
     private onOpenAd() {

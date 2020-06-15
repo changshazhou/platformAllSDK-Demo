@@ -17,6 +17,13 @@ export default class Helloworld extends cc.Component {
 
         moosnow.form.preloadAd();
 
+        // if (moosnow.APP_PLATFORM.WX == moosnow.getAppPlatform())
+        //     cc.loader.downloader.loadSubpackage('tex', (err) => {
+        //         if (err) {
+        //             return console.error(err);
+        //         }
+        //     });
+
     }
 
     showToast() {
@@ -25,67 +32,66 @@ export default class Helloworld extends cc.Component {
 
 
     showMistouch() {
-        moosnow.form.showMistouch(() => {
-            console.log('误触结束')
-        }, 2);
+        let options = new moosnow.showOptions.touchOptions();
+        options.type = 2;
+        options.callback = () => {
+
+        }
+
+        moosnow.form.showMistouch(options);
     }
 
 
     showCoin() {
-        moosnow.form.showCoin({
-            coinNum: 500,
-            randomY: 100,
-            randomX: 100,
-            imgNum: 30,
-            starVec: {
-                x: 0,
-                y: 0,
+        let options = new moosnow.showOptions.coinOptions();
+        options.coinNum = 500;
+        options.callback = () => {
+            console.log('金币动画完成')
+        }
+        moosnow.form.showCoin(options)
+    }
+
+
+    showShare() {
+        let options = {
+            shareCoinNum: 500,
+            hideForm: true,
+            shareCallback: (shared) => {
+
             },
-            endVec: {
-                x: 1000,
-                y: 1000,
-            },
-        }, () => {
-            console.log('金币动画')
-        })
+            videoCallback: (shared) => {
+
+            }
+        }
+        moosnow.form.showShare(options)
     }
 
     showPrize() {
-        moosnow.form.showPrize({
-            coinNum: 500,
-            randomY: 100,
-            randomX: 100,
-            imgNum: 30,
-            starVec: {
-                x: 0,
-                y: 0,
-            },
-            endVec: {
-                x: 1000,
-                y: 1000,
-            },
-        }, 1, false, () => {
-            console.log('奖励结束')
-        })
+
+        let coinOptions = new moosnow.showOptions.coinOptions();
+        coinOptions.coinNum = 500;
+        coinOptions.callback = () => {
+            console.log('金币动画完成2')
+        }
+
+
+        let options = new moosnow.showOptions.prizeOptions();
+        options.callback = () => {
+            console.log('奖励完成')
+        }
+        options.showCoinAnim = true;
+        options.coinOptions = coinOptions;
+
+        moosnow.form.showPrize(options)
     }
 
     showPrize2() {
-        moosnow.form.showPrize({
-            coinNum: 500,
-            randomY: 100,
-            randomX: 100,
-            imgNum: 30,
-            starVec: {
-                x: 0,
-                y: 0,
-            },
-            endVec: {
-                x: 1000,
-                y: 1000,
-            },
-        }, 1, true, () => {
-            console.log('奖励结束2')
-        })
+        let options = new moosnow.showOptions.prizeOptions();
+        options.callback = () => {
+            console.log('奖励完成')
+        }
+        options.showCoinAnim = false;
+        moosnow.form.showPrize(options)
     }
 
     showAd3() {
