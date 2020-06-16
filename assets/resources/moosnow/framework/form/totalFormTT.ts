@@ -143,44 +143,31 @@ export default class totalFormTT extends UIForm {
         moosnow.platform.showVideo(res => {
             this.mIsReceive = false;
             if (res == moosnow.VIDEO_STATUS.END) {
-                moosnow.form.showCoin({
-                    /**
-                     * Y方向的随机范围
-                     */
-                    randomY: 100,
-                    /**
-                    * X方向的随机范围
-                    */
-                    randomX: 100,
-                    /**
-                     * 金币图片数量
-                     */
-                    imgNum: 20,
-                    /**
-                     * 金币数量
-                     */
-                    coinNum: this.mLevelCoinNum * 5,
-                    /**
-                     * 开始位置
-                     */
-                    starVec: {
-                        x: 0,
-                        y: 0,
-                    },
-                    /**
-                     * 结束位置
-                     */
-                    endVec: {
-                        x: 100,
-                        y: 100,
-                    },
-                }, () => {
-                    if (this.FormData.hideTotal) {
+                if (this.FormData.coinOptions) {
+                    this.FormData.coinOptions.coinNum = this.FormData.videoNum;
+                    moosnow.form.showCoin(this.FormData.coinOptions, () => {
+                        if (this.FormData.hideForm) {
+                            moosnow.ui.hideUIForm(UIForms.TotalForm, null)
+                        }
+                        moosnow.http.getMisTouchNum(misNum => {
+                            if (misNum == 0) {
+                                if (this.FormData.endOptions) {
+                                    moosnow.form.showEnd(this.FormData.endOptions)
+                                }
+                            }
+                            else {
+                                moosnow.form.showmi
+                            }
+                        })
+                    })
+                }
+                else {
+                    if (this.FormData.hideForm) {
                         moosnow.ui.hideUIForm(UIForms.TotalForm, null)
                     }
                     moosnow.http.getMisTouchNum(misNum => {
                         if (misNum == 0) {
-                            if (this.FormData.showEnd) {
+                            if (this.FormData.endOptions) {
                                 moosnow.form.showEnd(this.FormData.endOptions)
                             }
                         }
@@ -188,7 +175,8 @@ export default class totalFormTT extends UIForm {
                             moosnow.ui.pushUIForm(UIForms.MistouchForm)
                         }
                     })
-                })
+                }
+
             }
             else if (res == moosnow.VIDEO_STATUS.ERR) {
                 moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR)

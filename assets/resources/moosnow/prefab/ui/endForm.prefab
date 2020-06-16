@@ -113,7 +113,7 @@
         "__id__": 15
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [],
     "_prefab": {
       "__id__": 18
@@ -1402,17 +1402,18 @@
     "_id": ""
   },
   {
-    "__type__": "0164fz8qIhFzbVaGGPnpYM4",
+    "__type__": "3f4faCKydJGdJnzvuOS1mkZ",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "showNode": {
+    "moveNode": {
       "__id__": 15
     },
-    "delayTime": 3,
+    "moveDis": -100,
+    "showBanner": true,
     "_id": ""
   },
   {

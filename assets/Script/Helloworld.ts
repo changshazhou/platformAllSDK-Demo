@@ -53,15 +53,30 @@ export default class Helloworld extends cc.Component {
 
 
     showShare() {
-        let options = {
-            shareCoinNum: 500,
-            hideForm: true,
-            shareCallback: (shared) => {
 
-            },
-            videoCallback: (shared) => {
+        let coinOptions = new moosnow.showOptions.coinOptions();
+        coinOptions.coinNum = 500;
+        coinOptions.endVec = { x: 800, y: 300 }
+        coinOptions.callback = () => {
+            console.log('金币动画完成3')
+        }
 
-            }
+
+        let options = new moosnow.showOptions.shareOptions();
+        options.shareCoinNum = 500;
+        options.shareCallback = (shared) => {
+            console.log('分享', shared)
+            moosnow.form.showCoin(coinOptions)
+        };
+        options.videoCallback = () => {
+            console.log('视频结束')
+            moosnow.form.showCoin(coinOptions)
+
+        }
+        options.callback = () => {
+            console.log('结束')
+            moosnow.form.showCoin(coinOptions)
+
         }
         moosnow.form.showShare(options)
     }
@@ -119,47 +134,44 @@ export default class Helloworld extends cc.Component {
     }
 
     showTotal() {
-        let touchOptions = {
-            type: 1,
-            onCompleted: () => {
-                console.log("误触页-结束")
-            }
-        }
-        let endOptions = {
-            coinNum: 0,
-            videoNum: 0,
-            shareCoinNum: 0,
-            isWin: true,
-            hideEnd: true,
-            level: "1",
-            extraData: {},
-            touchOptions: touchOptions,
-            onReceive: () => {
-                console.log("结束页-点了领取")
-            },
-            onVideoReceive: () => {
-                console.log("结束页-点了视频领取")
-            },
+        let touchOptions = new moosnow.showOptions.touchOptions();
+        touchOptions.type = 1;
+        touchOptions.callback = () => {
+            console.log("误触页-结束")
         }
 
-        moosnow.form.showTotal({
-            coinNum: 500,
-            videoNum: 2500,
-            shareCoinNum: 500,
-            hideTotal: true,
-            showEnd: true,
-            endOptions: endOptions,
-            onReceive: () => {
-                console.log("点了领取")
-            },
-            onVideoReceive: () => {
-                console.log("点了视频领取")
-            },
-            onMore: () => {
-                console.log("点了更多游戏")
-            },
-            extraData: {}
-        })
+
+        let coinOptions = new moosnow.showOptions.coinOptions();
+        coinOptions.endVec = { x: 500, y: 500 }
+        coinOptions.starVec = { x: 0, y: 0 }
+
+        let endOptions = new moosnow.showOptions.endOptions();
+        endOptions.isWin = true;
+        endOptions.onReceive = () => {
+            console.log("结束页-点了领取")
+        }
+        endOptions.onVideoReceive = () => {
+            console.log("结束页-点了领取")
+        }
+
+        let options = new moosnow.showOptions.totalOptions();
+        options.coinNum = 500;
+        options.videoNum = 1000;
+        options.shareCoinNum = 1500;
+        options.onReceive = () => {
+            console.log("结束页-点了领取")
+        }
+        options.onVideoReceive = () => {
+            console.log("结束页-点了视频领取")
+        }
+        options.onMore = () => {
+            console.log("点了更多游戏")
+        }
+        options.endOptions = endOptions;
+        options.coinOptions = coinOptions;
+        options.touchOptions = touchOptions;
+
+        moosnow.form.showTotal(options)
     }
 
 

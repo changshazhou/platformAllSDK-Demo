@@ -72,13 +72,8 @@ export default class endForm extends UIForm {
 
 
         this.node.zIndex = 7;
-        moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
-            moosnow.form.showAd(moosnow.AD_POSITION.NONE, () => { })
-            if (this.FormData.hideEnd)
-                moosnow.ui.hideUIForm(UIForms.EndForm, null);
-            if (this.FormData.onReceive)
-                this.FormData.onReceive();
-            //回到首页
+        moosnow.form.showAd(moosnow.AD_POSITION.CENTER, () => {
+
 
         }, 6)
 
@@ -95,9 +90,11 @@ export default class endForm extends UIForm {
     receiveCoin() {
         moosnow.data.addCoin(this.coin);
         moosnow.data.saveCoin();
-        if (this.FormData.hideEnd) {
+        if (this.FormData.hideForm) {
             moosnow.ui.hideUIForm(UIForms.EndForm, null);
         }
+        moosnow.form.showAd(moosnow.AD_POSITION.NONE, () => { })
+        //回到首页
         if (this.FormData.onReceive)
             this.FormData.onReceive();
     }

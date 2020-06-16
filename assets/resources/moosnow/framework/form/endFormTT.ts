@@ -60,39 +60,8 @@ export default class endFormTT extends UIForm {
 
 
     private onHome() {
-        moosnow.form.showCoin({
-            /**
-             * Y方向的随机范围
-             */
-            randomY: 100,
-            /**
-            * X方向的随机范围
-            */
-            randomX: 100,
-            /**
-             * 金币图片数量
-             */
-            imgNum: 20,
-            /**
-             * 金币数量
-             */
-            coinNum: this.mLevelCoinNum * 5,
-            /**
-             * 开始位置
-             */
-            starVec: {
-                x: 0,
-                y: 0,
-            },
-            /**
-             * 结束位置
-             */
-            endVec: {
-                x: 100,
-                y: 100,
-            },
-        }, () => {
-            if (this.FormData.hideEnd)
+        moosnow.form.showCoin(this.FormData.coinOptions, () => {
+            if (this.FormData.hideForm)
                 moosnow.ui.hideUIForm(UIForms.EndForm, null);
             moosnow.http.getMisTouchNum(misNum => {
                 if (misNum == 0) {
@@ -210,39 +179,8 @@ export default class endFormTT extends UIForm {
             moosnow.platform.showVideo(res => {
                 this.mIsReceive = false;
                 if (res == moosnow.VIDEO_STATUS.END) {
-                    moosnow.form.showCoin({
-                        /**
-                         * Y方向的随机范围
-                         */
-                        randomY: 100,
-                        /**
-                        * X方向的随机范围
-                        */
-                        randomX: 100,
-                        /**
-                         * 金币图片数量
-                         */
-                        imgNum: 20,
-                        /**
-                         * 金币数量
-                         */
-                        coinNum: this.mLevelCoinNum * 5,
-                        /**
-                         * 开始位置
-                         */
-                        starVec: {
-                            x: 0,
-                            y: 0,
-                        },
-                        /**
-                         * 结束位置
-                         */
-                        endVec: {
-                            x: 100,
-                            y: 100,
-                        },
-                    }, () => {
-                        if (this.FormData.hideEnd)
+                    moosnow.form.showCoin(this.FormData.coinOptions, () => {
+                        if (this.FormData.hideForm)
                             moosnow.ui.hideUIForm(UIForms.EndForm, null);
                         moosnow.http.getMisTouchNum(misNum => {
                             if (misNum == 0) {

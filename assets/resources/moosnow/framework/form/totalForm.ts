@@ -43,10 +43,10 @@ export default class totalForm extends UIForm {
         if (this.mCheckedVideo) {
             moosnow.platform.showVideo(res => {
                 if (res == moosnow.VIDEO_STATUS.END) {
-                    if (this.FormData.hideTotal) {
+                    if (this.FormData.hideForm) {
                         moosnow.ui.hideUIForm(UIForms.TotalForm, null)
                     }
-                    if (this.FormData.showEnd) {
+                    if (this.FormData.endOptions) {
                         moosnow.form.showEnd(this.FormData.endOptions)
                     }
                     if (this.FormData && this.FormData.onVideoReceive)

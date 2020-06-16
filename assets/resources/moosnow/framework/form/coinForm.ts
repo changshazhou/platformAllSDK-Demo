@@ -5,6 +5,10 @@ const { ccclass, property } = cc._decorator;
 
 export default class CoinForm extends UIForm {
 
+    willShow(data) {
+        moosnow.control.coinForm.willShow(data);
+    }
+
     onShow(data) {
         moosnow.control.coinForm.onShow(data);
     }
