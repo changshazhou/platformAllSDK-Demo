@@ -145,7 +145,7 @@ export default class totalFormTT extends UIForm {
             if (res == moosnow.VIDEO_STATUS.END) {
                 if (this.FormData.coinOptions) {
                     this.FormData.coinOptions.coinNum = this.FormData.videoNum;
-                    moosnow.form.showCoin(this.FormData.coinOptions, () => {
+                    this.FormData.coinOptions.callback = () => {
                         if (this.FormData.hideForm) {
                             moosnow.ui.hideUIForm(UIForms.TotalForm, null)
                         }
@@ -156,10 +156,12 @@ export default class totalFormTT extends UIForm {
                                 }
                             }
                             else {
-                                moosnow.form.showmi
+                                if (this.FormData.touchOptions)
+                                    moosnow.form.showMistouch(this.FormData.touchOptions)
                             }
                         })
-                    })
+                    }
+                    moosnow.form.showCoin(this.FormData.coinOptions)
                 }
                 else {
                     if (this.FormData.hideForm) {
@@ -197,41 +199,15 @@ export default class totalFormTT extends UIForm {
             this.onVideoReceive();
         }
         else {
-            moosnow.form.showCoin({
-                /**
-                 * Y方向的随机范围
-                 */
-                randomY: 100,
-                /**
-                * X方向的随机范围
-                */
-                randomX: 100,
-                /**
-                 * 金币图片数量
-                 */
-                imgNum: 20,
-                /**
-                 * 金币数量
-                 */
-                coinNum: this.mLevelCoinNum,
-                /**
-                 * 开始位置
-                 */
-                starVec: {
-                    x: 0,
-                    y: 0,
-                },
-                /**
-                 * 结束位置
-                 */
-                endVec: {
-                    x: 100,
-                    y: 100,
-                },
-            }, () => {
-                moosnow.ui.hideUIForm(UIForms.TotalForm, null);
-                moosnow.ui.pushUIForm(UIForms.EndForm, this.FormData)
-            })
+            let options = this.FormData.coinOptions;
+            options.coinNum = this.FormData.coinNum;
+            options.callback = () => {
+                if (this.FormData.hideForm)
+                    moosnow.ui.hideUIForm(UIForms.TotalForm, null);
+                if (this.FormData.endOptions)
+                    moosnow.form.showEnd(this.FormData.endOptions)
+            }
+            moosnow.form.showCoin(options)
         }
     }
 

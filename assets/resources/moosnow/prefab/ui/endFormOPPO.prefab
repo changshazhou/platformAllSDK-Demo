@@ -403,9 +403,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "24e44659-00a9-425a-abac-2f3e41ab4175"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -885,7 +883,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        20.464,
+        0,
         307.944,
         0,
         0,
@@ -1032,9 +1030,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "fb83779a-0b6f-400e-b13d-fdc48a275e7c"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,
@@ -1139,9 +1135,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "fb83779a-0b6f-400e-b13d-fdc48a275e7c"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,
@@ -1246,9 +1240,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "fb83779a-0b6f-400e-b13d-fdc48a275e7c"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,
@@ -2282,20 +2274,8 @@
       "__id__": 1
     },
     "_enabled": true,
-    "btnVideoRespawn": {
-      "__id__": 5
-    },
-    "btnBack": {
-      "__id__": 8
-    },
-    "btnVideoReceive": {
-      "__id__": 2
-    },
     "btnWinReceive": {
       "__id__": 34
-    },
-    "btnFailReceive": {
-      "__id__": 46
     },
     "coinText": null,
     "winBox": {
@@ -2304,23 +2284,8 @@
     "failBox": {
       "__id__": 39
     },
-    "timeoutBox": {
-      "__id__": 50
-    },
-    "star1": {
-      "__id__": 25
-    },
-    "star2": {
-      "__id__": 28
-    },
-    "star3": {
-      "__id__": 31
-    },
-    "star": {
-      "__uuid__": "fb83779a-0b6f-400e-b13d-fdc48a275e7c"
-    },
-    "starActive": {
-      "__uuid__": "976d208c-a657-4d08-bf97-75ccba4c044b"
+    "btnFailReceive": {
+      "__id__": 46
     },
     "_id": ""
   },

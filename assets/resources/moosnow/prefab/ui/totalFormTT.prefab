@@ -1357,17 +1357,17 @@
     "_id": ""
   },
   {
-    "__type__": "bf087t9CVFMXo4G+LQyaXD6",
+    "__type__": "0164fz8qIhFzbVaGGPnpYM4",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "targetNode": {
+    "showNode": {
       "__id__": 31
     },
-    "waiting": 2,
+    "delayTime": 2,
     "_id": ""
   },
   {

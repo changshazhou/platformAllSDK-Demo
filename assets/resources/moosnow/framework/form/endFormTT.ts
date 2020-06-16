@@ -60,19 +60,35 @@ export default class endFormTT extends UIForm {
 
 
     private onHome() {
-        moosnow.form.showCoin(this.FormData.coinOptions, () => {
+        if (this.FormData.coinOptions) {
+            this.FormData.coinOptions.callback = () => {
+                if (this.FormData.hideForm)
+                    moosnow.ui.hideUIForm(UIForms.EndForm, null);
+                moosnow.http.getMisTouchNum(misNum => {
+                    if (misNum == 0) {
+                        if (this.FormData.onReceive)
+                            this.FormData.onReceive();
+                    }
+                    else {
+                        moosnow.form.showMistouch(this.FormData.touchOptions)
+                    }
+                })
+            }
+            moosnow.form.showCoin(this.FormData.coinOptions)
+        }
+        else {
             if (this.FormData.hideForm)
                 moosnow.ui.hideUIForm(UIForms.EndForm, null);
             moosnow.http.getMisTouchNum(misNum => {
                 if (misNum == 0) {
                     if (this.FormData.onReceive)
-                        this.FormData.onReceive()
+                        this.FormData.onReceive();
                 }
                 else {
                     moosnow.form.showMistouch(this.FormData.touchOptions)
                 }
             })
-        })
+        }
     }
 
     private onShareChange() {
@@ -179,19 +195,35 @@ export default class endFormTT extends UIForm {
             moosnow.platform.showVideo(res => {
                 this.mIsReceive = false;
                 if (res == moosnow.VIDEO_STATUS.END) {
-                    moosnow.form.showCoin(this.FormData.coinOptions, () => {
+                    if (this.FormData.coinOptions) {
+                        this.FormData.coinOptions.callback = () => {
+                            if (this.FormData.hideForm)
+                                moosnow.ui.hideUIForm(UIForms.EndForm, null);
+                            moosnow.http.getMisTouchNum(misNum => {
+                                if (misNum == 0) {
+                                    if (this.FormData.onVideoReceive)
+                                        this.FormData.onVideoReceive();
+                                }
+                                else {
+                                    moosnow.form.showMistouch(this.FormData.touchOptions)
+                                }
+                            })
+                        }
+                        moosnow.form.showCoin(this.FormData.coinOptions)
+                    }
+                    else {
                         if (this.FormData.hideForm)
                             moosnow.ui.hideUIForm(UIForms.EndForm, null);
                         moosnow.http.getMisTouchNum(misNum => {
                             if (misNum == 0) {
-                                if (this.FormData.onReceive)
-                                    this.FormData.onReceive();
+                                if (this.FormData.onVideoReceive)
+                                    this.FormData.onVideoReceive();
                             }
                             else {
                                 moosnow.form.showMistouch(this.FormData.touchOptions)
                             }
                         })
-                    })
+                    }
                 }
                 else if (res == moosnow.VIDEO_STATUS.ERR) {
                     moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR)
