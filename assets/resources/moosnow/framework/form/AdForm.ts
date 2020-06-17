@@ -143,7 +143,7 @@ export default class AdForm extends UIForm {
     }
 
     public update(dt) {
-        moosnow.control.adForm.onFwUpdate(dt);
+        moosnow.control.adForm.onFwUpdate();
     }
     /**
      * 
@@ -171,7 +171,12 @@ export default class AdForm extends UIForm {
             moosnow.control.adForm.initView(this.extend3Container, this.extend3View, this.extend3Layout, "位置2", this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.extend4Container, this.extend4View, this.extend4Layout, "位置2", this.mAdListBannerItem);
 
-            moosnow.control.adForm.initFiexdView(this.endContainer, this.endLayout, "位置7", this.mAdListExportItem)
+            moosnow.control.adForm.initFiexdView(this.endContainer, this.endLayout, "位置7", this.mAdListExportItem, (res) => {
+                console.log('跳转取消', res)
+                // moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.BACK, () => {
+
+                // })
+            })
 
             let points = [];
             let prefabs = [this.mAdFloatLeftItem1, this.mAdFloatLeftItem2, this.mAdFloatLeftItem1, this.mAdFloatLeftItem3]
