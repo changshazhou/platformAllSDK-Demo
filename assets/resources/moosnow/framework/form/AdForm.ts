@@ -173,9 +173,7 @@ export default class AdForm extends UIForm {
 
             moosnow.control.adForm.initFiexdView(this.endContainer, this.endLayout, "位置7", this.mAdListExportItem, (res) => {
                 console.log('跳转取消', res)
-                // moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.BACK, () => {
 
-                // })
             })
 
             let points = [];
@@ -185,7 +183,14 @@ export default class AdForm extends UIForm {
                     points.push({ x: item.x, y: item.y })
                 }
             });
-            moosnow.control.adForm.initFloatAd(this.floatContainer, prefabs, points)
+            moosnow.control.adForm.initFloatAd(this.floatContainer, prefabs, points, "ICON", (res) => {
+                console.log('跳转取消2', res)
+                moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.BACK, () => {
+                    moosnow.form.showAd(moosnow.AD_POSITION.RECOVER, () => {
+
+                    })
+                })
+            })
         })
     }
 
