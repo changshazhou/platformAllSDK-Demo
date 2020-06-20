@@ -120,6 +120,17 @@ export default class AdForm extends UIForm {
     @property(cc.Layout)
     public extend4Layout: cc.Layout = null;
 
+
+    @property(cc.Node)
+    public topContainer: cc.Node = null;
+
+    @property(cc.ScrollView)
+    public topView: cc.ScrollView = null;
+
+    @property(cc.Layout)
+    public topLayout: cc.Layout = null;
+
+
     public isMask: boolean = false;
     public isPopEffect: boolean = false;
 
@@ -159,17 +170,21 @@ export default class AdForm extends UIForm {
         }
     }
     public onShow(data) {
+
+
+
         moosnow.ad.getAd(res => {
+            moosnow.control.adForm.initView(this.topContainer, this.topView, this.topLayout, "位置0", this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.bannerContainer, this.bannerView, this.bannerLayout, "位置1", this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.leftContainer, this.leftView, this.leftLayout, "位置2", this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.leftContainer, this.rightView, this.rightLayout, "位置3", this.mAdListBannerItem);
             moosnow.control.adForm.initView(this.exportContainer, this.exportView, this.exportLayout, "位置4", this.mAdListExportItem);
             moosnow.control.adForm.initView(this.centerContainer, this.centerView, this.centerLayout, "位置5", this.mAdListExportItem);
             moosnow.control.adForm.initView(this.sideContainer, this.sideView, this.sideLayout, "位置6", this.mAdListBannerItem);
-            moosnow.control.adForm.initView(this.extend1Container, this.extend1View, this.extend1Layout, "位置2", this.mAdListBannerItem);
-            moosnow.control.adForm.initView(this.extend2Container, this.extend2View, this.extend2Layout, "位置2", this.mAdListBannerItem);
-            moosnow.control.adForm.initView(this.extend3Container, this.extend3View, this.extend3Layout, "位置2", this.mAdListBannerItem);
-            moosnow.control.adForm.initView(this.extend4Container, this.extend4View, this.extend4Layout, "位置2", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.extend1Container, this.extend1View, this.extend1Layout, "位置8", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.extend2Container, this.extend2View, this.extend2Layout, "位置9", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.extend3Container, this.extend3View, this.extend3Layout, "位置10", this.mAdListBannerItem);
+            moosnow.control.adForm.initView(this.extend4Container, this.extend4View, this.extend4Layout, "位置11", this.mAdListBannerItem);
 
             moosnow.control.adForm.initFiexdView(this.endContainer, this.endLayout, "位置7", this.mAdListExportItem, (res) => {
                 console.log('跳转取消', res)

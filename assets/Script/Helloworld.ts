@@ -24,6 +24,12 @@ export default class Helloworld extends cc.Component {
         //         }
         //     });
 
+        moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_PLATFORM_HIDE, this, (res) => {
+            console.log('平台隐藏时', res)
+        })
+        moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_PLATFORM_SHOW, this, (res) => {
+            console.log('平台显示时', res)
+        })
     }
 
     showToast() {
@@ -108,7 +114,9 @@ export default class Helloworld extends cc.Component {
         options.showCoinAnim = false;
         moosnow.form.showPrize(options)
     }
-
+    showAd4() {
+        moosnow.form.showAd(moosnow.AD_POSITION.TOP, () => { });
+    }
     showAd3() {
         moosnow.form.showAd(moosnow.AD_POSITION.EXPORT_FIXED | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
             moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.SIDE, () => {

@@ -7,6 +7,7 @@ export default class CoinForm extends UIForm {
 
     willShow(data) {
         moosnow.control.coinForm.willShow(data);
+        
     }
 
     onShow(data) {
