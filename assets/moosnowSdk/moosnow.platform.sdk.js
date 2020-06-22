@@ -1,1 +1,9003 @@
-var _0x4ff7=['showCoinAnim','mChecked','onChecked','prizeBg1','prizeBg2','prizeFormVideo','showShare','prizeFormVideosPrecent','mTotalSecond','mCurrentSecond','resumeCountdown','onCountdown','txtCoutdown','stopCountdown','onShare','hideForm','shareCallback','onReceive','onVideo','videoCallback','btnCancel','btnVideo','btnShare','isMask','rootNode','flyAnim','imgNum','starVec','endVec','showCoin','coin','randomX','randomY','delayTime','spawn','fadeOut','mCheckedVideo','openEndForm','mLevelCoinNum','level','mLevelShareCoinNum','onShareChange','changeUI','shareCoin','levelCoin','shareCoinNum','txtCoinNum','onShareVideo','mShareing','shareFormVideo','shareFormVideoPrecent','SHARE_CHANNEL','分享未完成','分享结束','btnBack','newViewItem','mAdForm','adFormQQ','mAdFormQQ','mMistouchForm','mMistouchFormTT','mMistouchFormQQ','mPrizeForm','mPrizeFormTT','mCoinForm','mTotalForm','mShareForm','preloadAd','头条iphone\x20不显示广告','showMistouch','showPrize','showTotal','showEnd','move','moveNode','distince','mistouchPosSecond','mMistouchPosSecond','mMistouchPosNum','movePosition','pos1','copyNode','onPosCallback','removeTemp','ZERO','pos2','mNode','hideNode','showNode','DelayMove','mDelayMove','DelayShow','mDelayShow','loadAsset','Handler','loadAssetDir','ceil','不支持loadAssetDir','_hideForm','videoNum','isWin','coinOptions','baseNum','SHARE_MSG','BANNER_POSITION','PLATFORM_EVENT','Common','showOptions','mData','mResource','mSetting','mForm','mControl','mEntity','mAudio','mDelay','moosnow','mEvent','initPlatform','initHttp','initAd','initUI','initEntity','mUi','mHttp','mAd','resource','control','audio','delay','setPrototypeOf','__proto__','hasOwnProperty','constructor','prototype','create','assign','length','call','apply','randomNumBoth','random','round','BYTEDANCE','OPPO','OPPO_ZS','BAIDU','VIVO','Laya','titleCase','toLowerCase','split','slice','toUpperCase','join','numFixed','toFixed','parseMoney','objKeySort','keys','sort','isObject','object','function','object2Query','push','isFunction','isEmpty','null','undefined','formatTime','getHours','getMinutes','map','formatNumber','toString','copy','randomFloat','randomToRatio','generateUUID','getTime','xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx','replace','floor','isNumber','number','[object\x20Number]','isArray','[object\x20Array]','isString','[object\x20String]','defineProperty','platform','mPlatform','moosnowConfig','swan','getSystemInfoSync','log','平台判断','stringify','brand','toLocaleLowerCase','indexOf','vivo','oppo','url','platform.qwpo2018.com','debug','byte','config','deepCopy','getEngine','popOpenAnim','scale','runAction','sequence','scaleTo','callFunc','popCloseAnim','formatMoney','schedule','BaseModule\x20schedule\x20','mIntervalArr','unschedule','scheduleOnce','mTimeoutArr','unscheduleOnce','initProperty','preload','_findComponent','_components','willHide','willShow','_findComponentByName','name','$super','moduleName','__banner_top','__banner_center','__banner_bottom','__banner_custom','__video_end','__video_not_end','__video_error','VIBRATESWITCH_CHANGED','SOUNDSWITCH_CHANGED','MUSICSWITCH_CHANGED','ON_PLATFORM_SHOW','ON_PLATFORM_HIDE','ON_BANNER_HIDE','ON_AD_SHOW','AD_VIEW_CHANGE','AD_VIEW_REFRESH','COIN_CHANGED','隐藏banner','onEnable','vibrateSwitch','vibrateOn','initAppConfig','bannerId','videoId','interId','boxId','nativeId','moosnowConfig\x20','isIphoneXModel','platformName','test','model','isIphone','isIphoneX','screenHeight','screenWidth','compareVersion','max','supportVersion','SDKVersion','supportFunction','checkVersion','versionRet','_checkConfigVersion','_checkRemoteVersion','baseUrl','admin/wx_list/getAppConfig','moosnowAppId','http','request','POST','checkLog','data','version','checkVersion\x20fail','checkVersion\x20complete','getAllConfig','版本检查\x20后台版本','\x20配置文件版本','获取广告开关：','isSmallWidth','高度不够','login','getToken','setToken','postMessage','getOpenDataContext','navigate2Mini','跳转数据：','now','prevNavigate','\x20跳转太频繁\x20>>>>>>>>>>>>>>>>>>>>>\x20','appid','path','extraData','navigate','navigateToMiniProgram','point','position','atlas','img','navigateEnd','code','exportUser','navigateToMini\x20fail\x20','\x20fail\x20callback\x20','updateProgram','getUpdateManager','onCheckForUpdate','onUpdateReady','showModal','发现新版本','新版本已经准备好，是否更新？','applyUpdate','onUpdateFailed','vibrateShort','vibrateLong','showLoading','hideLoading','#000000','#3CC51F','confirm','cancel','showModalWithoutCancel','showToast','none','authOrGetUserInfo','getSetting','授权信息','scope.userInfo','getUserInfo','获取用户信息：','showUserInfoButton','授权获取用户信息：','text','_initLoginButton','createUserInfoButton','onTap','userInfo','nickName','hide','show','authSetting','getLaunchOption','getLaunchOptionsSync','systemInfo','设备信息','isLandscape','initShare','showShareMenu','shareInfoArr','onShareAppMessage','_buildShareInfo','getShareInfo','encryptedData','share','currentShareCallback','share_clickTime','shareFail','_share','shareWithoutCheck','shareAppMessage','分享数据：','title','_onShareback','#ffffff','获取用户信息','center','initRecord','clipRecord','startRecord','record','stopRecord','pauseRecord','resumeRecord','_regisiterWXCallback','_regisiterOnShow','_regisiterOnHide','onShow','_onShowCallback','on\x20show\x20','event','sendEventImmediately','onHide','_onHideCallback','on\x20hide\x20','targetAction','targetPagePath','clickBanner','bannerCb','banner\x20callback\x20is\x20null\x20','initBanner','_prepareBanner','createBannerAd','windowWidth','windowHeight','bannerWidth','banner','offResize','_bottomCenterBanner','offError','_onBannerError','offLoad','_onBannerLoad','_createBannerAd','onResize','bind','onError','onLoad','warn','banner\x20id\x20is\x20null','bannerShowCount','banner___error:','errCode','errMsg','isBannerShow','style','left','width','realWidth','bannerHeigth','realHeight','_resetBanenrStyle','设置的banner尺寸为空,不做调整','bannerPosition','BOTTOM','CENTER','TOP','bannerStyle','top','banner位置或大小被重新设置\x20','set\x20top\x20','showBanner','显示banner','mTimeoutId','show\x20banner\x20style\x20','then','showAutoBanner','执行自动显示和隐藏Banner功能','gameBanner','gameBanenrHideTime','自动隐藏时间已到，开始隐藏Banner','hideBanner','showIntervalBanner','执行\x20showIntervalBanner','gameBannerInterval','clearIntervalBanner','执行\x20clearIntervalBanner','bannerShowCountLimit','banner\x20destroy','destroy','initVideo','createRewardAD','videoLoading','createRewardedVideoAd','\x20video\x20id\x20is\x20null','videoCb','END','video','offClose','_onVideoClose','_onVideoError','_onVideoLoad','创建视频广告失败','onClose','videoPlaying','load','catch','加载video失败回调','ERR','video结束回调','isEnded','clickVideo','NOTEND','加载video成功回调','showVideo','显示video','initInter','prepareInter','createInterstitialAd','2.8.0','插屏广告ID为空，系统不加载','inter','_onInterLoad','_onInterClose','showInter','isInterLoaded','interShowCount','插屏广告加载完成','interShowCountLimit','_onInterError','插屏广告出错：','_prepareNative','_onNativeLoad','_onNativeError','_destroyNative','showNativeAd','clickNative','showAppBox','hideAppBox','reportMonitor','showMoreGameButton','initRank','showRank','updateUserScore','hideRank','onDisable','https://api.liteplay.com.cn/','native','box','nativeIdIndex','nativeAdResult','nativeCb','nativeLoading','getUserToken','scene','query','channel_id','referrerInfo','appId','setChannelAppId','setChannelId','aldSendEvent','from','api/channel/login.html','user_id','getDistinctAd','getAd','getCache','indexLeft','getRemoteAd','initRetValue','forEach','formatRow','setCache','loadCacheImage','cacheImage','getStorage','cacheKey','this','cacheKey\x20data\x20\x20','cacheKey\x20error\x20','indexFloat','indexBanner','gameEndPage','gameRespawnPage','exportPage','downloadImage','downloadFile','statusCode','saveFile','tempFilePath','savedFilePath','https://api.liteplay.com.cn/admin/','cacheUrl','getResUrl','convertToCacheUrl','saveCacheUrl','getFileSystemManager','clear\x20file\x20','removeSavedFile','clear\x20file\x20error\x20','setStorage','mMemory','appLaunchOptions','mLaunchOptions','onreadystatechange','readyState','responseText','status','parse','error','json\x20parse\x20error\x20','error\x20','timeout','ontimeout','open','setRequestHeader','Content-Type','application/x-www-form-urlencoded','send','_object2Query','isDisableArea','finishLoading','postData','api/channel/validUser.html','api/channel/clickBanner.html','api/channel/clickVideo.html','api/channel/exportUser.html','api/jump/record','api/jump/status','navigateEnd\x20code\x20','getChannelId','getChannelAppId','postData\x20error\x20','startGame','aldStage','onStart','阿拉丁文件未引入','endGame','complete','fail','关卡完成','关卡失败','onEnd','videoPoint','点击视频','观看完成视频','loadCfg','loadArea','disableAd','cfgData','_cfgQuene','?t=','_cdnUrl','/config/','.json','GET','mx_native_click_switch','mx_jump_switch','load\x20config\x20json\x20fail','areaData','_localQuene','admin/wx_config/getLocation','getForceExport','disabledForceExport','city','province','area','forceExportTime','getMisTouchNum','mistouchNum','getMistouchPosNum','mistouchPosNum','getBannerShowCountLimit','disabledRegion','disabledTime','admin/wx_share/getShare','分享数据','secret','versionNumber','2.0.1','https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com','/SDK/version.json?t=','您的SDK版本号[',']不是最新版本，请尽快升级，最新版本[',']\x20\x20下载地址：','download','memo','aldVersion','阿拉丁文件错误，请重新下载','aldUrl','remote\x20config\x20','initAdService','初始化广告','初始化广告错误\x20','msg','initAdService\x20\x20complete','addListener','onAppShow','pkgName','navigateToMiniGame','navigateToMiniProgram\x20error\x20','版本过低\x20平台不支持跳转','platformVersion','\x20msg\x20','offHide','_onBannerHide','statusBarHeight','notchHeight','height','_bottomCenterBanner\x20\x20','bannerHeight','_resetBanenrStyle\x20','set\x20styleTop\x20','banner\x20已隐藏\x20','destroyBanner','重新创建banner','1061','createInsertAd','_onInterOnShow','interLoadedShow','\x20oppo\x20不支持自动','game_scene','createNativeAd','加载原生广告成功','adList','adId','上报原生广告','reportAdShow','原生广告数据没有，回调Null','原生广告加载出错\x20','使用新ID加载原生广告','原生广告ID已经用完，本次没有广告','原生广告加载出错，本次没有广告','原生广告销毁','mClickedNativeCallback','mIsClickedNative','点击了原生广告','reportAdClick','appSid','initCoin','setting','_getValue','COIN','setValue','getCoin','mCoin','getInt','subCoin','addCoin','setCoin','saveCoin','mUserToken','getString','TOKEN','getCurrentMisTouchCount','mCurrentMisTouchCount','setCurrentMisTouchCount','mChannel_id','mChannel_appid','getVibrateSetting','getBool','VIBRATE_SWITCH','setVibrateSetting','setBool','token','getFloat','true','false','getObject','setObject','localStorage','setItem','appendInt','appendFloat','removeValueOfKey','removeItem','removeAll','clear','getItem','https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/exportConfig/','.json?t=','WXAdModule\x20getRemoteAd','getRemoteAd\x20fail','getRemoteAd\x20complete','repairAd','wx_export/getExport','article','_registerTTCallback','onMoreGamesModalClose','modal\x20closed','moreGameCb','onNavigateToMiniGameBox','onNavigateToMiniProgram','bannerWidth\x20','getGameRecorderManager','recordNumber','recordClip','clipRecord\x20成功\x20','record\x20startRecord','recordCb','recordRes','record\x20onStart','onStop','on\x20stop\x20','clipVideo','videoPath','record\x20clip\x20succes:','record\x20clip\x20recordRes\x20:','record\x20clip\x20fail:','start','\x20stop\x20Record\x20\x20callback\x20\x20','record\x20stop\x20recordRes\x20','stop','record\x20stop\x20\x20','pause','resume','shareInfo:','LINK','ARTICLE','VIDEO','channel','video\x20path\x20','share\x20video\x20success\x20','mBannerLoaded','showMoreGamesModal','_showMoreGamesModal','_getAppLaunchOptions','1=1','ios','_showMoreGamesModal\x20appLaunchOption','show\x20app\x20box\x20success','show\x20app\x20box\x20fail','showMoreGameBanner','createMoreGamesBanner','点击跳转游戏盒子','createMoreGamesButton','#ff0000','_moreGameBotton','loader','loadRes','texture/game/more.png','Texture2D','image','跳转其他小游戏','点击更多游戏','hideMoreGameButton','tt\x20navigate2Mini\x20','tt\x20showAppBox\x20close\x20','create\x20banner\x20by\x20banner\x20id\x20','create\x20banner\x20style\x20','Resize后正式宽高:','createAppBox','mOnBoxCallback','onBoxClose','后台不允许显示Box，如有需要请联系运营','box\x20destroy\x20','destroy\x20successfully\x20','destroy\x20fail\x20','boxAppid','desc','onCancel','index','refresh','https://platform.qwpo2018.com/api/apk_ad/index','接口数据','link_appid','link_img','link_path','link_name','link_page','link_des','zs_version','https://platform.qwpo2018.com/api/oppo_login/index','platformLogin\x20success\x20','platformLogin\x20fail\x20','navigateCallback','跳转数据上报','https://platform.qwpo2018.com/api/apk_ad/click_log','跳转数据上报成功','跳转数据上报失败','upload\x20navigate\x20complete','getVideoRecorderManager','stop\x202','record\x20stopRecord','stop\x201','appid\x20','zs_switch','zs_native_click_switch','zs_jump_switch','请分享到群！','视频正在加载中,请稍后','请完整观看完视频！','shuffle','merge','clone','remove','splice','_addListener','addToSendQueue','_addToSendList','_sendEvent','onUpdate','removeListener','_eventList','eventName','listeners','target','eventName:','不合法！','removeAllListener','_waitingForSendList','callback','callback不是一个方法','target为空','once','offSize','onSize','_onBannerClose','mShowTime','mMinInterval','banner创建太频繁了\x20','秒内只能显示一次','pixelRatio','getNotchHeight','_createBannerAd\x20style','getNotchHeightSync','onSize\x20callback\x20\x20','banner\x20已关闭\x20','显示banner\x20style\x20','banner广告展示成功','新用户1天内不能曝光Banner，请将手机时间调整为1天后，退出游戏重新进入','10秒内调用广告次数超过1次，10秒后再调用','加载广告失败，重新加载广告','banner广告展示失败','激励视频广告展示完成','激励视频广告展示失败','\x20vivo\x20不支持自动','update','paused','entityLogics','onFwUpdate','getAllEntity','filter','poolName','showEntity','hideEntity','hideAllEntity','_serializeId','prefabPath','prefab/entity/','mEntity3DPools','mEntity3DLogics','entityPools','mIsSlow','Prefab','_showEntity','node','parent','active','zIndex','_createEntity','_getPrefabByName','instantiate','_getOrNewEntityPool','get','EntityLogic','getRes','_getPoolName','_getEntityPool','_newEntityPool','json','NodePool','_hideEntity','put','array','moosnow/prefab/entity/','UIForm','toastForm','_createUINode','Canvas','instance','addChild','pushUIForm','_getUINodeFromCacheByName','_createUIFormModel','_showUIForm','layerIndex','UIFormStack','pop','_destroyUIForm','_hideUIForm','getUIFrom','hideUIForm','string','hideAllUIForm','destroyUIForm','_formatUIFormName','UIRoot','_removeStack','formName','cachedUIForms','isPopEffect','removeFromParent','hideAnim','rootCanvas','moosnow/prefab/ui/','FormData','mFormData','initForm','setPosition','loadAd','entity','mAdData','initView','mAdItemList','pushScroll','entityName\x20is\x20null\x20无法初始化\x20','addEvent','onAdChange','removeEvent','mChangeLen','showAd','RECOVER','mPrevShowAd','mShowAd','displayChange','onAfterShow','mIndex','mScrollVec','NONE','getAppPlatform','APP_PLATFORM','displayAd','mBackCall','onBack','sideOut','sideView','moveTo','btnSideShow','btnSideHide','sideIn','initFiexdView','mEndLogic','initFloatAd','loadResDir','source','showIds','mFloatCache','floatAnim','updateFloat','mFloatRefresh','logic','refreshImg','hasAd','showExportClose','mSecond','exportCloseTxt','getComponent','Label','exportClose','秒可关闭','floatContainer','FLOAT','bannerContainer','BANNER','centerContainer','leftContainer','LEFTRIGHT','exportMask','MASK','sideContainer','SIDE','endContainer','EXPORT_FIXED','topContainer','extend1Container','EXTEND1','extend2Container','EXTEND2','extend3Container','EXTEND3','extend4Container','EXTEND4','BACK','WAIT','exportContainer','EXPORT','exportAutoNavigate','pauseContainer','pauseView','pauseLayout','centerView','centerLayout','exportView','exportLayout','floatFull','bannerView','bannerLayout','endView','endLayout','failContainer','failView','failLayout','gameOverContainer','gameOverView','gameOverLayout','respawnContainer','respawnScrollView','respawnLayout','playerDiedContainer','playerDiedScrollView','playerDiedLayout','leftView','leftLayout','rightView','rightLayout','sideLayout','extend1View','extend1Layout','extend2View','extend2Layout','extend3View','extend3Layout','extend4View','extend4Layout','topView','topLayout','AD_POSITION','mFloatIndex','TOUCH_START','TOUCH_END','Node','EventType','off','rotateTo','repeatForever','type','Layout','Type','GRID','vertical','HORIZONTAL','VERTICAL','scrollView','isScrolling','getMaxScrollOffset','getContentPosition','move2Up','setContentPosition','Vec2','mMoveSpeed','move2Left','AUTO_HIDE','MAST','mapping','adForm','pauseForm','pauseFormTT','pauseFormOPPO','respawnForm','respawnFormTT','respawnFormOPPO','respawnFormQQ','endForm','endFormTT','endFormOPPO','totalForm','totalFormTT','totalFormQQ','tryForm','tryFormTT','mistouchForm','mistouchFormQQ','mistouchFormTT','prizeFormTT','prizeForm','shareFormTT','setForm','coinForm','convertUIName','convertUIName\x20fail\x20\x20mappingForm\x20is\x20null\x20','convertUIName\x20fail\x20','AdForm','CoinForm','ShareForm','shareForm','TotalForm','EndForm','ToastForm','PauseForm','RespawnForm','SetForm','PrizeForm','MistouchForm','TryForm','initPos','btnBanner','mCurrentNum','mNavigateIndex','mMaxNum','subProgress','form','mBannerShow','mBannerClickType','resetProgress','bannerClickCallback','onHideBanner','onLogoUp','logo','mEndPos','onLogoDown','mBeginPos','onBannerClick','banner\x20click\x20callback\x20','clickProgress','progress','add','step1','step2','btnConfirm','mOpenVideo','showCheckbox','openBox','VIDEO_STATUS','VIDEO_MSG','checkboxChange','checked','playBoxAnim','prizeBox2','prizeBox1','btnReceive','unchecked','Animation','getAnimationState','isPlaying','play','mistouchAppBox','showHand','showButton','playHandAnim','hand','pinch1','pinch2','pinch3','pinch4','pinch5','pinch6','Sprite','spriteFrame','pinch','LogicData','mLogicData','initPosition','onClickAd','mAdItem','findNextAd','onAdViewChange','current','next','animLogo','nameBg','changeView','SpriteFrame','coinNum','closeForm'];(function(_0x25578a,_0xd9602){var _0x2ca04b=function(_0x489712){while(--_0x489712){_0x25578a['push'](_0x25578a['shift']());}};_0x2ca04b(++_0xd9602);}(_0x4ff7,0x82));var _0x1b0c=function(_0x1bf9c6,_0x168f4b){_0x1bf9c6=_0x1bf9c6-0x0;var _0x42dd95=_0x4ff7[_0x1bf9c6];return _0x42dd95;};!function(){'use strict';var _0x3aa676=function(_0x5d5dc3,_0x1c58c8){return(_0x3aa676=Object[_0x1b0c('0x0')]||{'__proto__':[]}instanceof Array&&function(_0x57e238,_0x69f68b){_0x57e238[_0x1b0c('0x1')]=_0x69f68b;}||function(_0x1d3751,_0x146294){for(var _0x43ff08 in _0x146294)_0x146294[_0x1b0c('0x2')](_0x43ff08)&&(_0x1d3751[_0x43ff08]=_0x146294[_0x43ff08]);})(_0x5d5dc3,_0x1c58c8);};function _0x4492f4(_0x3cf2a5,_0x3157d7){function _0x574443(){this[_0x1b0c('0x3')]=_0x3cf2a5;}_0x3aa676(_0x3cf2a5,_0x3157d7),_0x3cf2a5[_0x1b0c('0x4')]=null===_0x3157d7?Object[_0x1b0c('0x5')](_0x3157d7):(_0x574443[_0x1b0c('0x4')]=_0x3157d7[_0x1b0c('0x4')],new _0x574443());}var _0x2921f6=function(){return(_0x2921f6=Object[_0x1b0c('0x6')]||function(_0x134fd2){for(var _0x41f516,_0x5323e9=0x1,_0x3aa676=arguments[_0x1b0c('0x7')];_0x5323e9<_0x3aa676;_0x5323e9++)for(var _0x5adf90 in _0x41f516=arguments[_0x5323e9])Object[_0x1b0c('0x4')][_0x1b0c('0x2')][_0x1b0c('0x8')](_0x41f516,_0x5adf90)&&(_0x134fd2[_0x5adf90]=_0x41f516[_0x5adf90]);return _0x134fd2;})[_0x1b0c('0x9')](this,arguments);};var _0x478f0d,_0x10425f,_0x85adb7=(_0x45de89[_0x1b0c('0xa')]=function(_0x36f6ae,_0x407298){var _0x2ed98d=_0x407298-_0x36f6ae,_0x3aa676=Math[_0x1b0c('0xb')]();return _0x36f6ae+Math[_0x1b0c('0xc')](_0x3aa676*_0x2ed98d);},_0x45de89);function _0x45de89(){}(_0x10425f=_0x478f0d=_0x478f0d||{})[_0x10425f['WX']=0x0]='WX',_0x10425f[_0x10425f[_0x1b0c('0xd')]=0x1]=_0x1b0c('0xd'),_0x10425f[_0x10425f[_0x1b0c('0xe')]=0x2]=_0x1b0c('0xe'),_0x10425f[_0x10425f[_0x1b0c('0xf')]=0x3]=_0x1b0c('0xf'),_0x10425f[_0x10425f[_0x1b0c('0x10')]=0x4]=_0x1b0c('0x10'),_0x10425f[_0x10425f['QQ']=0x5]='QQ',_0x10425f[_0x10425f['PC']=0x6]='PC',_0x10425f[_0x10425f[_0x1b0c('0x11')]=0x7]=_0x1b0c('0x11');var _0x516b1f='cc',_0x857c42=_0x1b0c('0x12'),_0x444d0c='',_0x279d2d=(_0x467d32[_0x1b0c('0x13')]=function(_0x37a433){for(var _0x10425f=_0x37a433[_0x1b0c('0x14')]()[_0x1b0c('0x15')](/\s+/),_0x45de89=0x0;_0x45de89<_0x10425f[_0x1b0c('0x7')];_0x45de89++)_0x10425f[_0x45de89]=_0x10425f[_0x45de89][_0x1b0c('0x16')](0x0,0x1)[_0x1b0c('0x17')]()+_0x10425f[_0x45de89][_0x1b0c('0x16')](0x1);return _0x10425f[_0x1b0c('0x18')]('\x20');},_0x467d32[_0x1b0c('0x19')]=function(_0x16bfca,_0x360734){return parseFloat(parseFloat(_0x16bfca)[_0x1b0c('0x1a')](_0x360734));},_0x467d32[_0x1b0c('0x1b')]=function(_0x5dce2f){return isNaN(_0x5dce2f)?0x0:parseFloat(parseFloat(_0x5dce2f)[_0x1b0c('0x1a')](0x2));},_0x467d32[_0x1b0c('0x1c')]=function(_0x28f216){for(var _0x10425f=Object[_0x1b0c('0x1d')](_0x28f216)[_0x1b0c('0x1e')](),_0x45de89={},_0x3aa676=0x0;_0x3aa676<_0x10425f[_0x1b0c('0x7')];_0x3aa676++)_0x45de89[_0x10425f[_0x3aa676]]=_0x28f216[_0x10425f[_0x3aa676]];return _0x45de89;},_0x467d32[_0x1b0c('0x1f')]=function(_0x4f32bf){var _0x10425f=typeof _0x4f32bf;return null!==_0x4f32bf&&(_0x1b0c('0x20')==_0x10425f||_0x1b0c('0x21')==_0x10425f);},_0x467d32[_0x1b0c('0x22')]=function(_0x2fd499){var _0x10425f=[];for(var _0x45de89 in _0x2fd499)_0x10425f[_0x1b0c('0x23')](_0x45de89+'='+_0x2fd499[_0x45de89]);return _0x10425f[_0x1b0c('0x18')]('&');},_0x467d32[_0x1b0c('0x24')]=function(_0x3edea5){return _0x1b0c('0x21')==typeof _0x3edea5;},_0x467d32[_0x1b0c('0x25')]=function(_0x797570){if(_0x1b0c('0x20')!=typeof _0x797570)return null==_0x797570||_0x1b0c('0x26')===_0x797570||_0x1b0c('0x27')===_0x797570||''===_0x797570;var _0x10425f;for(_0x10425f in _0x797570)return!0x1;return!0x0;},_0x467d32[_0x1b0c('0x28')]=function(_0x341675){return[_0x341675[_0x1b0c('0x29')](),_0x341675[_0x1b0c('0x2a')]()][_0x1b0c('0x2b')](this[_0x1b0c('0x2c')])[_0x1b0c('0x18')](':');},_0x467d32[_0x1b0c('0x2c')]=function(_0x126bc4){return(_0x126bc4=_0x126bc4[_0x1b0c('0x2d')]())[0x1]?_0x126bc4:'0'+_0x126bc4;},_0x467d32[_0x1b0c('0x2e')]=function(_0x10d674,_0x35145e){for(var _0x45de89 in _0x10d674)_0x35145e[_0x45de89]=_0x10d674[_0x45de89];},_0x467d32[_0x1b0c('0xa')]=function(_0x51ab09,_0x220f4b){var _0x45de89=_0x220f4b-_0x51ab09,_0x3aa676=Math[_0x1b0c('0xb')]();return _0x51ab09+Math[_0x1b0c('0xc')](_0x3aa676*_0x45de89);},_0x467d32[_0x1b0c('0x2f')]=function(_0x429103,_0x1a5855){return _0x429103+Math[_0x1b0c('0xb')]()*_0x1a5855;},_0x467d32[_0x1b0c('0x30')]=function(_0x5aefc4,_0x253022,_0x2f0519){return this[_0x1b0c('0xa')](_0x5aefc4,_0x253022)<=_0x2f0519;},_0x467d32[_0x1b0c('0x31')]=function(){var _0x45de89=new Date()[_0x1b0c('0x32')]();return _0x1b0c('0x33')[_0x1b0c('0x34')](/[xy]/g,function(_0x218ae8){var _0x10425f=(_0x45de89+0x10*Math[_0x1b0c('0xb')]())%0x10|0x0;return _0x45de89=Math[_0x1b0c('0x35')](_0x45de89/0x10),('x'==_0x218ae8?_0x10425f:0x3&_0x10425f|0x8)[_0x1b0c('0x2d')](0x10);});},_0x467d32[_0x1b0c('0x36')]=function(_0x45f6f5){return _0x1b0c('0x37')==typeof _0x45f6f5||_0x1b0c('0x38')==Object[_0x1b0c('0x4')][_0x1b0c('0x2d')][_0x1b0c('0x8')](_0x45f6f5);},_0x467d32[_0x1b0c('0x39')]=function(_0x565efb){return _0x1b0c('0x3a')==Object[_0x1b0c('0x4')][_0x1b0c('0x2d')][_0x1b0c('0x8')](_0x565efb);},_0x467d32[_0x1b0c('0x3b')]=function(_0x30be0d){return _0x1b0c('0x3c')===Object[_0x1b0c('0x4')][_0x1b0c('0x2d')][_0x1b0c('0x8')](_0x30be0d);},Object[_0x1b0c('0x3d')](_0x467d32,_0x1b0c('0x3e'),{'get':function(){if(this[_0x1b0c('0x3f')])return this[_0x1b0c('0x3f')];var _0x4492f4,_0x10425f=window[_0x1b0c('0x40')];return window['tt']?this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0xd')]:window[_0x1b0c('0x41')]?this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0x10')]:window['qq']?this[_0x1b0c('0x3f')]=_0x478f0d['QQ']:window['qg']?window['qg']&&window['qg'][_0x1b0c('0x42')]?(_0x4492f4=window['qg'][_0x1b0c('0x42')](),console[_0x1b0c('0x43')](_0x1b0c('0x44'),JSON[_0x1b0c('0x45')](_0x4492f4)),_0x4492f4&&_0x4492f4[_0x1b0c('0x46')]&&-0x1!=_0x4492f4[_0x1b0c('0x46')][_0x1b0c('0x47')]()[_0x1b0c('0x48')](_0x1b0c('0x49'))?this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0x11')]:-0x1!=_0x10425f[_0x1b0c('0x4a')][_0x1b0c('0x4b')][_0x1b0c('0x48')](_0x1b0c('0x4c'))?this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0xf')]:this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0xe')]):-0x1!=_0x10425f[_0x1b0c('0x4a')][_0x1b0c('0x4b')][_0x1b0c('0x48')](_0x1b0c('0x4c'))?this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0xf')]:this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0xe')]:window['wx']?this[_0x1b0c('0x3f')]=_0x478f0d['WX']:_0x10425f[_0x1b0c('0x4d')]&&_0x10425f[_0x10425f[_0x1b0c('0x4d')]]?'wx'==_0x10425f[_0x1b0c('0x4d')]?this[_0x1b0c('0x3f')]=_0x478f0d['WX']:_0x1b0c('0x4a')==_0x10425f[_0x1b0c('0x4d')]?-0x1!=_0x10425f[_0x1b0c('0x4a')][_0x1b0c('0x4b')][_0x1b0c('0x48')](_0x1b0c('0x4c'))?this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0xf')]:this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0xe')]:'bd'==_0x10425f[_0x1b0c('0x4d')]?this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0x10')]:_0x1b0c('0x4e')==_0x10425f[_0x1b0c('0x4d')]?this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0xd')]:'qq'==_0x10425f[_0x1b0c('0x4d')]?this[_0x1b0c('0x3f')]=_0x478f0d['QQ']:_0x1b0c('0x49')==_0x10425f[_0x1b0c('0x4d')]?this[_0x1b0c('0x3f')]=_0x478f0d[_0x1b0c('0x11')]:this[_0x1b0c('0x3f')]=_0x478f0d['PC']:this[_0x1b0c('0x3f')]=_0x478f0d['PC'],this[_0x1b0c('0x3f')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x467d32,_0x1b0c('0x4f'),{'get':function(){var _0x4492f4=window[_0x1b0c('0x40')],_0x10425f=_0x467d32[_0x1b0c('0x3e')]==_0x478f0d['WX']?_0x4492f4['wx']:_0x467d32[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0xe')]||_0x467d32[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0xf')]?_0x4492f4[_0x1b0c('0x4a')]:_0x467d32[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0x11')]?_0x4492f4[_0x1b0c('0x49')]:_0x467d32[_0x1b0c('0x3e')]==_0x478f0d['QQ']?_0x4492f4['qq']:_0x467d32[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0x10')]?_0x4492f4['bd']:_0x467d32[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0xd')]?_0x4492f4[_0x1b0c('0x4e')]:_0x4492f4['wx'];return _0x10425f;},'enumerable':!0x0,'configurable':!0x0}),_0x467d32[_0x1b0c('0x50')]=function(_0x140481){var _0x10425f=Array[_0x1b0c('0x39')](_0x140481)?[]:{};if(_0x140481&&_0x1b0c('0x20')==typeof _0x140481)for(var _0x45de89 in _0x140481)_0x140481[_0x1b0c('0x2')](_0x45de89)&&(_0x140481[_0x45de89]&&_0x1b0c('0x20')==typeof _0x140481[_0x45de89]?_0x10425f[_0x45de89]=this[_0x1b0c('0x50')](_0x140481[_0x45de89]):_0x10425f[_0x45de89]=_0x140481[_0x45de89]);return _0x10425f;},_0x467d32[_0x1b0c('0x51')]=function(){return window[_0x516b1f]?_0x516b1f:window[_0x857c42]?_0x857c42:_0x444d0c;},_0x467d32[_0x1b0c('0x52')]=function(_0x586b5a,_0x4d1413){if(this[_0x1b0c('0x51')]()==_0x516b1f)return _0x586b5a[_0x1b0c('0x53')]=0.8,void _0x586b5a[_0x1b0c('0x54')](cc[_0x1b0c('0x55')](cc[_0x1b0c('0x56')](0.1,1.2,1.2),cc[_0x1b0c('0x56')](0.1,0x1,0x1),cc[_0x1b0c('0x57')](function(){_0x4d1413&&_0x4d1413();},this)));_0x4d1413();},_0x467d32[_0x1b0c('0x58')]=function(_0x54bb0e,_0x2e0594){if(this[_0x1b0c('0x51')]()==_0x516b1f)return _0x54bb0e[_0x1b0c('0x53')]=0x1,void _0x54bb0e[_0x1b0c('0x54')](cc[_0x1b0c('0x55')](cc[_0x1b0c('0x56')](0.1,0x0,0x0),cc[_0x1b0c('0x57')](function(){_0x2e0594&&_0x2e0594();},this)));_0x2e0594();},_0x467d32[_0x1b0c('0x59')]=function(_0x53dae4){return isNaN(_0x53dae4)&&(_0x53dae4=0x0),_0x53dae4<0x270f?parseInt(''+_0x53dae4):_0x53dae4<0x98967f?parseFloat(''+_0x53dae4/0x3e8)[_0x1b0c('0x1a')](0x2)+'K':_0x53dae4<0x2540be3ff?parseFloat(''+_0x53dae4/0xf4240)[_0x1b0c('0x1a')](0x2)+'M':_0x53dae4<0x9184e729fff?parseFloat(''+_0x53dae4/0x3b9aca00)[_0x1b0c('0x1a')](0x2)+'G':_0x53dae4<0x2386f26fc10000?parseFloat(''+_0x53dae4/0xe8d4a51000)[_0x1b0c('0x1a')](0x2)+'T':_0x53dae4<0x8ac7230489e80000?parseFloat(''+_0x53dae4/0x38d7ea4c68000)[_0x1b0c('0x1a')](0x2)+'P':_0x53dae4<0x21e19e0c9bab2400000?parseFloat(''+_0x53dae4/0xde0b6b3a7640000)[_0x1b0c('0x1a')](0x2)+'E':parseFloat(''+_0x53dae4/0x3635c9adc5dea00000)[_0x1b0c('0x1a')](0x2)+'B';},_0x467d32);function _0x467d32(){}var _0x5fb838=(_0x5c3f8d[_0x1b0c('0x4')][_0x1b0c('0x5a')]=function(_0x2f86a4,_0x6cce){var _0x45de89=this,_0x3aa676=setInterval(function(){_0x2f86a4&&_0x2f86a4[_0x1b0c('0x9')](_0x45de89);},0x3e8*_0x6cce);console[_0x1b0c('0x43')](_0x1b0c('0x5b'),_0x3aa676),this[_0x1b0c('0x5c')][_0x3aa676]=_0x2f86a4;},_0x5c3f8d[_0x1b0c('0x4')][_0x1b0c('0x5d')]=function(_0x1b4790){for(var _0x10425f in this[_0x1b0c('0x5c')])this[_0x1b0c('0x5c')][_0x10425f]!==_0x1b4790&&!_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x5c')][_0x10425f])||clearInterval(parseInt(_0x10425f));},_0x5c3f8d[_0x1b0c('0x4')][_0x1b0c('0x5e')]=function(_0x7266ac,_0x576988){var _0x45de89=this,_0x3aa676=setTimeout(function(){clearTimeout(_0x3aa676),_0x7266ac&&_0x7266ac[_0x1b0c('0x9')](_0x45de89);},0x3e8*_0x576988);this[_0x1b0c('0x5f')][_0x3aa676]=_0x7266ac;},_0x5c3f8d[_0x1b0c('0x4')][_0x1b0c('0x60')]=function(_0x4f7b2a){for(var _0x10425f in this[_0x1b0c('0x5f')])this[_0x1b0c('0x5f')][_0x10425f]!==_0x4f7b2a&&!_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x5f')][_0x10425f])||clearTimeout(parseInt(_0x10425f));},_0x5c3f8d[_0x1b0c('0x4')][_0x1b0c('0x61')]=function(_0x939276){for(var _0x10425f in _0x939276)this[_0x1b0c('0x2')](_0x10425f)&&(this[_0x10425f]=_0x939276[_0x10425f]);},_0x5c3f8d[_0x1b0c('0x4')][_0x1b0c('0x62')]=function(_0x456a20,_0x3408f1){_0x3408f1&&_0x3408f1();},_0x5c3f8d[_0x1b0c('0x4')][_0x1b0c('0x63')]=function(_0xa6b63a,_0x2cbdb6){for(var _0x45de89=null,_0x3aa676=0x0;_0x3aa676<_0xa6b63a[_0x1b0c('0x64')][_0x1b0c('0x7')];_0x3aa676++){var _0x478f0d=_0xa6b63a[_0x1b0c('0x64')][_0x3aa676];if(_0x478f0d[_0x1b0c('0x65')]&&_0x478f0d[_0x1b0c('0x66')]){_0x45de89=_0x478f0d;break;}}return _0x45de89;},_0x5c3f8d[_0x1b0c('0x4')][_0x1b0c('0x67')]=function(_0x11e680,_0x24c918){return!!_0x11e680&&(_0x11e680[_0x1b0c('0x68')]==_0x24c918||this[_0x1b0c('0x67')](_0x11e680[_0x1b0c('0x69')],_0x24c918));},_0x5c3f8d);function _0x5c3f8d(){this[_0x1b0c('0x6a')]='',this[_0x1b0c('0x5c')]={},this[_0x1b0c('0x5f')]={};}var _0x461c34={'TOP':_0x1b0c('0x6b'),'CENTER':_0x1b0c('0x6c'),'BOTTOM':_0x1b0c('0x6d'),'CUSTOM':_0x1b0c('0x6e')},_0x3548aa={'END':_0x1b0c('0x6f'),'NOTEND':_0x1b0c('0x70'),'ERR':_0x1b0c('0x71')},_0x2dd322=(_0x1a4688[_0x1b0c('0x72')]=_0x1b0c('0x72'),_0x1a4688[_0x1b0c('0x73')]=_0x1b0c('0x73'),_0x1a4688[_0x1b0c('0x74')]=_0x1b0c('0x74'),_0x1a4688[_0x1b0c('0x75')]=_0x1b0c('0x75'),_0x1a4688[_0x1b0c('0x76')]=_0x1b0c('0x76'),_0x1a4688[_0x1b0c('0x77')]=_0x1b0c('0x77'),_0x1a4688[_0x1b0c('0x78')]=_0x1b0c('0x78'),_0x1a4688[_0x1b0c('0x79')]=_0x1b0c('0x79'),_0x1a4688[_0x1b0c('0x7a')]=_0x1b0c('0x7a'),_0x1a4688[_0x1b0c('0x7b')]=_0x1b0c('0x7b'),_0x1a4688);function _0x1a4688(){}var _0x3bdd50,_0xd52430=_0x1b0c('0x7c'),_0x226b6b=(_0x4492f4(_0x2eb138,_0x3bdd50=_0x5fb838),_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x7d')]=function(){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x7e')]=function(_0xb6fbb1){this[_0x1b0c('0x7f')]=_0xb6fbb1;},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x80')]=function(){this[_0x1b0c('0x40')]=_0x279d2d[_0x1b0c('0x4f')],this[_0x1b0c('0x81')]=this[_0x1b0c('0x40')][_0x1b0c('0x81')],this[_0x1b0c('0x82')]=this[_0x1b0c('0x40')][_0x1b0c('0x82')],this[_0x1b0c('0x83')]=this[_0x1b0c('0x40')][_0x1b0c('0x83')],this[_0x1b0c('0x84')]=this[_0x1b0c('0x40')][_0x1b0c('0x84')],this[_0x1b0c('0x85')]=this[_0x1b0c('0x40')][_0x1b0c('0x85')],console[_0x1b0c('0x43')](_0x1b0c('0x86'),JSON[_0x1b0c('0x45')](this[_0x1b0c('0x40')]));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x87')]=function(){if(window[this[_0x1b0c('0x88')]]){var _0x4492f4=this[_0x1b0c('0x42')]();return!!/iphone x/[_0x1b0c('0x89')](_0x4492f4[_0x1b0c('0x8a')][_0x1b0c('0x14')]());}},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x8b')]=function(){if(window[this[_0x1b0c('0x88')]]){var _0x4492f4=this[_0x1b0c('0x42')]();return!!/iphone/[_0x1b0c('0x89')](_0x4492f4[_0x1b0c('0x8a')][_0x1b0c('0x14')]());}},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x8c')]=function(){if(window[this[_0x1b0c('0x88')]]){var _0x4492f4=this[_0x1b0c('0x42')](),_0x10425f=_0x4492f4[_0x1b0c('0x8d')],_0x45de89=_0x4492f4[_0x1b0c('0x8e')]/_0x10425f;return _0x45de89<=0.5||0x2<=_0x45de89;}},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x8f')]=function(_0x53e447,_0x322abd){_0x53e447=_0x53e447[_0x1b0c('0x15')]('.'),_0x322abd=_0x322abd[_0x1b0c('0x15')]('.');for(var _0x45de89=Math[_0x1b0c('0x90')](_0x53e447[_0x1b0c('0x7')],_0x322abd[_0x1b0c('0x7')]);_0x53e447[_0x1b0c('0x7')]<_0x45de89;)_0x53e447[_0x1b0c('0x23')]('0');for(;_0x322abd[_0x1b0c('0x7')]<_0x45de89;)_0x322abd[_0x1b0c('0x23')]('0');for(var _0x3aa676=0x0;_0x3aa676<_0x45de89;_0x3aa676++){var _0x478f0d=parseInt(_0x53e447[_0x3aa676]),_0x516b1f=parseInt(_0x322abd[_0x3aa676]);if(_0x516b1f<_0x478f0d)return 0x1;if(_0x478f0d<_0x516b1f)return-0x1;}return 0x0;},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x91')]=function(_0x1f184c){var _0x10425f=this[_0x1b0c('0x42')]()[_0x1b0c('0x92')];return 0x0<=this[_0x1b0c('0x8f')](_0x10425f,_0x1f184c);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x93')]=function(_0x5917e3){return!!window[this[_0x1b0c('0x88')]]&&!!window[this[_0x1b0c('0x88')]][_0x5917e3];},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x94')]=function(_0x240de9,_0x3c931f){null==this[_0x1b0c('0x95')]?this[_0x1b0c('0x96')](_0x3c931f):_0x3c931f(this[_0x1b0c('0x95')]);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x97')]=function(_0x125f78){var _0x45de89=this,_0x4492f4=this[_0x1b0c('0x98')]+_0x1b0c('0x99'),_0x3aa676={'appid':this[_0x1b0c('0x40')][_0x1b0c('0x9a')]};moosnow[_0x1b0c('0x9b')][_0x1b0c('0x9c')](_0x4492f4,_0x3aa676,_0x1b0c('0x9d'),function(_0x33747a){_0x45de89[_0x1b0c('0x95')]=_0x45de89[_0x1b0c('0x9e')](_0x33747a[_0x1b0c('0x9f')][_0x1b0c('0xa0')]),_0x125f78(_0x45de89[_0x1b0c('0x95')]);},function(){console[_0x1b0c('0x43')](_0x1b0c('0xa1'));},function(){console[_0x1b0c('0x43')](_0x1b0c('0xa2'));});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x96')]=function(_0x303963){var _0x45de89=this;moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x5b9f2f){_0x5b9f2f&&_0x5b9f2f[_0x1b0c('0xa0')]?(_0x45de89[_0x1b0c('0x95')]=_0x45de89[_0x1b0c('0x9e')](_0x5b9f2f[_0x1b0c('0xa0')]),_0x303963(_0x45de89[_0x1b0c('0x95')])):_0x45de89[_0x1b0c('0x97')](_0x303963);});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x9e')]=function(_0x3795b6){var _0x10425f=moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0xa0')],_0x45de89=_0x3795b6==_0x10425f;return console[_0x1b0c('0x43')](_0x1b0c('0xa4')+_0x3795b6+_0x1b0c('0xa5')+_0x10425f),console[_0x1b0c('0x43')](_0x1b0c('0xa6'),_0x45de89),_0x45de89;},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xa7')]=function(){if(window[this[_0x1b0c('0x88')]]){var _0x4492f4=this[_0x1b0c('0x42')](),_0x10425f=_0x4492f4[_0x1b0c('0x8d')];return _0x4492f4[_0x1b0c('0x8e')],_0x10425f<0x29b&&(console[_0x1b0c('0x43')](_0x1b0c('0xa8'),_0x10425f),!0x0);}},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xa9')]=function(_0x81bd99,_0x1ba7e2){var _0x45de89;_0x279d2d[_0x1b0c('0x24')](_0x81bd99)&&((_0x45de89=moosnow[_0x1b0c('0x9f')][_0x1b0c('0xaa')]())||(_0x45de89=(_0x45de89=_0x279d2d[_0x1b0c('0x31')]())[_0x1b0c('0x34')](/-/g,''),moosnow[_0x1b0c('0x9f')][_0x1b0c('0xab')](_0x45de89)),_0x81bd99(_0x45de89));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xac')]=function(_0x158636){window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xad')]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xad')]()[_0x1b0c('0xac')](_0x158636);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xae')]=function(_0x192f35,_0x33d7fe,_0x4e9022,_0x3956bf){var _0x516b1f,_0x857c42,_0x85adb7,_0x444d0c=this;console[_0x1b0c('0x43')](_0x1b0c('0xaf'),_0x192f35),Date[_0x1b0c('0xb0')]()-this[_0x1b0c('0xb1')]<0x12c?console[_0x1b0c('0x43')](_0x1b0c('0xb2')):(this[_0x1b0c('0xb1')]=Date[_0x1b0c('0xb0')](),window[this[_0x1b0c('0x88')]]?(_0x516b1f=_0x192f35[_0x1b0c('0xb3')],_0x857c42=_0x192f35[_0x1b0c('0xb4')],_0x85adb7=(_0x85adb7=_0x192f35[_0x1b0c('0xb5')])||{},moosnow[_0x1b0c('0x9b')][_0x1b0c('0xb6')](_0x516b1f,function(_0x930f0d){window[_0x444d0c[_0x1b0c('0x88')]][_0x1b0c('0xb7')]({'appId':_0x516b1f,'path':_0x857c42,'extraData':_0x85adb7,'success':function(){moosnow[_0x1b0c('0x9b')][_0x1b0c('0xb8')]('跳转',{'position':_0x192f35[_0x1b0c('0xb9')],'appid':_0x516b1f,'img':_0x192f35[_0x1b0c('0xba')]||_0x192f35[_0x1b0c('0xbb')]}),moosnow[_0x1b0c('0x9b')][_0x1b0c('0xbc')](_0x930f0d[_0x1b0c('0xbd')]),moosnow[_0x1b0c('0x9b')][_0x1b0c('0xbe')](),_0x33d7fe&&_0x33d7fe();},'fail':function(_0x1095b2){console[_0x1b0c('0x43')](_0x1b0c('0xbf'),_0x1095b2,_0x1b0c('0xc0'),!!_0x4e9022),_0x4e9022&&_0x4e9022();},'complete':function(){_0x3956bf&&_0x3956bf();}});})):_0x4e9022&&_0x4e9022());},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xc1')]=function(){var _0x10425f,_0x45de89=this;window[this[_0x1b0c('0x88')]]&&_0x1b0c('0x21')==typeof window[this[_0x1b0c('0x88')]][_0x1b0c('0xc2')]&&((_0x10425f=window[this[_0x1b0c('0x88')]][_0x1b0c('0xc2')]())[_0x1b0c('0xc3')](function(_0x50108b){}),_0x10425f[_0x1b0c('0xc4')](function(_0x13c3ca){_0x45de89[_0x1b0c('0xc5')](_0x1b0c('0xc6'),_0x1b0c('0xc7'),'取消','更新',function(_0x14cc83){_0x14cc83&&_0x10425f[_0x1b0c('0xc8')]();});}),_0x10425f[_0x1b0c('0xc9')](function(){}));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xca')]=function(){window[this[_0x1b0c('0x88')]]&&(window[this[_0x1b0c('0x88')]]&&!window[this[_0x1b0c('0x88')]][_0x1b0c('0xca')]||window[this[_0x1b0c('0x88')]][_0x1b0c('0xca')]());},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xcb')]=function(){window[this[_0x1b0c('0x88')]]&&(window[this[_0x1b0c('0x88')]]&&!window[this[_0x1b0c('0x88')]][_0x1b0c('0xcb')]||window[this[_0x1b0c('0x88')]][_0x1b0c('0xcb')]());},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xcc')]=function(_0x25ae0d){window[this[_0x1b0c('0x88')]]?window[this[_0x1b0c('0x88')]][_0x1b0c('0xcc')]({'title':_0x25ae0d,'mask':!0x1,'success':null,'fail':null,'complete':null}):console[_0x1b0c('0x43')](_0x1b0c('0xcc'),_0x25ae0d);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xcd')]=function(){window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xcd')]();},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xc5')]=function(_0x308f23,_0x56af58,_0x58009b,_0x2cdc1b,_0x2e5901){window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xc5')]({'title':_0x308f23,'content':_0x56af58,'cancelText':_0x58009b,'confirmText':_0x2cdc1b,'showCancel':!0x0,'cancelColor':_0x1b0c('0xce'),'confirmColor':_0x1b0c('0xcf'),'fail':null,'complete':null,'success':function(_0x53d892){_0x53d892[_0x1b0c('0xd0')]?_0x2e5901&&_0x2e5901(!0x0):_0x53d892[_0x1b0c('0xd1')]&&_0x2e5901&&_0x2e5901(!0x1);}});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xd2')]=function(_0x540e13,_0x4e4608,_0x42cb79,_0xd1d5a0){window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xc5')]({'title':_0x540e13,'content':_0x4e4608,'showCancel':!0x1,'confirmText':_0x42cb79,'cancelColor':_0x1b0c('0xce'),'confirmColor':_0x1b0c('0xcf'),'cancelText':'','fail':null,'complete':null,'success':function(_0x58e53b){_0x58e53b[_0x1b0c('0xd0')]?_0xd1d5a0&&_0xd1d5a0(!0x0):_0x58e53b[_0x1b0c('0xd1')]&&_0xd1d5a0&&_0xd1d5a0(!0x1);}});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xd3')]=function(_0x28fe95,_0x219952,_0x58462d){void 0x0===_0x219952&&(_0x219952=_0x1b0c('0xd4')),void 0x0===_0x58462d&&(_0x58462d=!0x1),window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xd3')]({'title':_0x28fe95,'icon':_0x219952,'duration':0x7d0,'mask':_0x58462d,'image':null,'success':null,'fail':null,'complete':null});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xd5')]=function(_0xb17520){var _0x45de89;window[this[_0x1b0c('0x88')]]&&(_0x45de89=this)[_0x1b0c('0xd6')](function(_0x4de408){console[_0x1b0c('0x43')](_0x1b0c('0xd7'),_0x4de408),_0x4de408[_0x1b0c('0xd8')]?_0x45de89[_0x1b0c('0xd9')](function(_0x1e6501){console[_0x1b0c('0x43')](_0x1b0c('0xda'),_0x1e6501),_0xb17520(_0x1e6501,!0x1);},function(_0x434c0d){}):_0x45de89[_0x1b0c('0xdb')](function(_0x5352ca){_0xb17520(_0x5352ca,!0x0),console[_0x1b0c('0x43')](_0x1b0c('0xdc'),_0x5352ca);});},function(_0x4a29aa){_0x45de89[_0x1b0c('0xdb')](function(_0x3e35){_0xb17520(_0x3e35,!0x0),console[_0x1b0c('0x43')](_0x1b0c('0xdc'),_0x3e35);});});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xdb')]=function(_0xd68419){var _0x4492f4={'type':_0x1b0c('0xdd'),'text':'','style':this[_0x1b0c('0xde')]()},_0x45de89=window[this[_0x1b0c('0x88')]][_0x1b0c('0xdf')](_0x4492f4);_0x45de89[_0x1b0c('0xe0')](function(_0x5d8ec9){_0x5d8ec9[_0x1b0c('0xe1')]&&_0x5d8ec9[_0x1b0c('0xe1')][_0x1b0c('0xe2')]?(_0xd68419(_0x5d8ec9[_0x1b0c('0xe1')]),_0x45de89[_0x1b0c('0xe3')]()):_0xd68419(null);}),_0x45de89[_0x1b0c('0xe4')]();},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xd6')]=function(_0x4db488,_0x48c134){window[this[_0x1b0c('0x88')]][_0x1b0c('0xd6')]({'success':function(_0x3f80d5){_0x4db488(_0x3f80d5[_0x1b0c('0xe5')]);},'fail':function(){_0x48c134();},'complete':null});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xd9')]=function(_0x4c74bf,_0xe62bfe){window[this[_0x1b0c('0x88')]][_0x1b0c('0xd9')]({'success':function(_0x22fbea){_0x4c74bf(_0x22fbea[_0x1b0c('0xe1')]);},'fail':function(){_0xe62bfe();},'withCredentials':!0x1,'complete':null,'lang':'en'});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xe6')]=function(){return window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xe7')]?window[this[_0x1b0c('0x88')]][_0x1b0c('0xe7')]():{};},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x42')]=function(){return null==this[_0x1b0c('0xe8')]&&(window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x42')]?this[_0x1b0c('0xe8')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x42')]():this[_0x1b0c('0xe8')]={},console[_0x1b0c('0x43')](_0x1b0c('0xe9'),this[_0x1b0c('0xe8')])),this[_0x1b0c('0xe8')];},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xea')]=function(_0x920e93,_0x5648d3){return _0x920e93<_0x5648d3;},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xeb')]=function(_0x3a3c35){var _0x10425f=this;window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xec')]&&(this[_0x1b0c('0xed')]=_0x3a3c35,window[this[_0x1b0c('0x88')]][_0x1b0c('0xec')]({'withShareTicket':!0x0,'success':null,'fail':null,'complete':null}),window[this[_0x1b0c('0x88')]][_0x1b0c('0xee')]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xee')](function(){return _0x10425f[_0x1b0c('0xef')]();}));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xf0')]=function(_0x52a0aa,_0x430338,_0x3e3414){void 0x0===_0x3e3414&&(_0x3e3414=null),window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xf0')]({'shareTicket':_0x52a0aa,'success':function(_0x264598){_0x430338(_0x264598[_0x1b0c('0xf1')],_0x264598['iv']);},'fail':function(){_0x3e3414&&_0x3e3414();},'complete':null});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xf2')]=function(_0x12c0e1,_0x4d639a){void 0x0===_0x12c0e1&&(_0x12c0e1={}),window[this[_0x1b0c('0x88')]]||_0x4d639a&&_0x4d639a(!0x0),this[_0x1b0c('0xf3')]=_0x4d639a,this[_0x1b0c('0xf4')]=Date[_0x1b0c('0xb0')](),this[_0x1b0c('0xf5')]=!0x1,this[_0x1b0c('0xf6')](_0x12c0e1);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xf7')]=function(_0x3ad7c4,_0x12837d){void 0x0===_0x3ad7c4&&(_0x3ad7c4={}),window[this[_0x1b0c('0x88')]]||_0x12837d&&_0x12837d(!0x0),this[_0x1b0c('0xf3')]=_0x12837d,this[_0x1b0c('0xf4')]=0x1,this[_0x1b0c('0xf5')]=!0x1,this[_0x1b0c('0xf6')](_0x3ad7c4);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xf6')]=function(_0x313660){var _0x10425f;void 0x0===_0x313660&&(_0x313660=null),window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xf8')]?(_0x10425f=this[_0x1b0c('0xef')](_0x313660),console[_0x1b0c('0x43')](_0x1b0c('0xf9'),_0x10425f),window[this[_0x1b0c('0x88')]][_0x1b0c('0xf8')](_0x10425f)):this[_0x1b0c('0xf3')](!0x0);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xef')]=function(_0x51fdf1){void 0x0===_0x51fdf1&&(_0x51fdf1=null);var _0x10425f,_0x45de89='',_0x3aa676='';return 0x0<this[_0x1b0c('0xed')][_0x1b0c('0x7')]&&(_0x45de89=(_0x10425f=this[_0x1b0c('0xed')][_0x85adb7[_0x1b0c('0xa')](0x0,this[_0x1b0c('0xed')][_0x1b0c('0x7')]-0x1)])[_0x1b0c('0xfa')],_0x3aa676=_0x10425f[_0x1b0c('0xbb')]),{'title':_0x45de89,'imageUrl':_0x3aa676,'query':_0x51fdf1};},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xfb')]=function(){var _0x4492f4=this;setTimeout(function(){_0x4492f4[_0x1b0c('0xf4')]&&_0x4492f4[_0x1b0c('0xf3')]&&(!_0x4492f4[_0x1b0c('0xf5')]&&(0x1==_0x4492f4[_0x1b0c('0xf4')]||0xbb8<=Date[_0x1b0c('0xb0')]()-_0x4492f4[_0x1b0c('0xf4')])?_0x4492f4[_0x1b0c('0xf3')](!0x0):_0x4492f4[_0x1b0c('0xf3')](!0x1)),_0x4492f4[_0x1b0c('0xf5')]=!0x1,_0x4492f4[_0x1b0c('0xf3')]=null,_0x4492f4[_0x1b0c('0xf4')]=null;},0x64);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xde')]=function(){if(window[this[_0x1b0c('0x88')]]){var _0x4492f4=window[this[_0x1b0c('0x88')]][_0x1b0c('0x42')]();return{'left':0x0,'top':0x0,'width':_0x4492f4[_0x1b0c('0x8e')],'height':_0x4492f4[_0x1b0c('0x8d')],'lineHeight':0x28,'color':_0x1b0c('0xfc'),'type':_0x1b0c('0xdd'),'text':_0x1b0c('0xfd'),'textAlign':_0x1b0c('0xfe'),'fontSize':0x1c};}},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0xff')]=function(){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x100')]=function(){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x101')]=function(_0x596dc7,_0x1ca912){void 0x0===_0x596dc7&&(_0x596dc7=0x12c),void 0x0===_0x1ca912&&(_0x1ca912=null),this[_0x1b0c('0x102')]||_0x1ca912&&_0x1ca912(!0x1);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x103')]=function(_0x178635){void 0x0===_0x178635&&(_0x178635=null),this[_0x1b0c('0x102')]||_0x178635&&_0x178635(!0x1);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x104')]=function(){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x105')]=function(){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x106')]=function(){window[this[_0x1b0c('0x88')]]&&(this[_0x1b0c('0x107')](),this[_0x1b0c('0x108')]());},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x107')]=function(){var _0x10425f;window[this[_0x1b0c('0x88')]][_0x1b0c('0x109')]&&window[(_0x10425f=this)[_0x1b0c('0x88')]][_0x1b0c('0x109')](function(_0x2ca1f4){_0x10425f[_0x1b0c('0x10a')](_0x2ca1f4);});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x10a')]=function(_0x35a1ec){this[_0x1b0c('0xfb')](),console[_0x1b0c('0x43')](_0x1b0c('0x10b'),_0x35a1ec),moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x75')],_0x35a1ec);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x108')]=function(){var _0x10425f;window[this[_0x1b0c('0x88')]][_0x1b0c('0x10e')]&&window[(_0x10425f=this)[_0x1b0c('0x88')]][_0x1b0c('0x10e')](function(_0x18a1b2){_0x10425f[_0x1b0c('0x10f')](_0x18a1b2);});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x10f')]=function(_0x5117e6){console[_0x1b0c('0x43')](_0x1b0c('0x10b'),_0x5117e6),moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x76')],_0x5117e6),console[_0x1b0c('0x43')](_0x1b0c('0x110'),_0x5117e6);var _0x10425f=_0x5117e6&&(0x8==_0x5117e6[_0x1b0c('0x111')]||0x9==_0x5117e6[_0x1b0c('0x111')]||0xa==_0x5117e6[_0x1b0c('0x111')])&&0x32<_0x5117e6[_0x1b0c('0x112')][_0x1b0c('0x7')];_0x10425f&&moosnow[_0x1b0c('0x9b')][_0x1b0c('0x113')](),this[_0x1b0c('0x114')]?this[_0x1b0c('0x114')](_0x10425f):console[_0x1b0c('0x43')](_0x1b0c('0x115'));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x116')]=function(){window[this[_0x1b0c('0x88')]]&&this[_0x1b0c('0x117')]();},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x117')]=function(){var _0x4492f4,_0x10425f;window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]&&(_0x10425f=(_0x4492f4=this[_0x1b0c('0x42')]())[_0x1b0c('0x119')],_0x4492f4[_0x1b0c('0x11a')]<_0x4492f4[_0x1b0c('0x119')]&&!(_0x10425f<this[_0x1b0c('0x11b')])||(this[_0x1b0c('0x11b')]=_0x10425f),this[_0x1b0c('0x11c')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0x11d')](this[_0x1b0c('0x11e')]),this[_0x1b0c('0x11c')][_0x1b0c('0x11f')](this[_0x1b0c('0x120')]),this[_0x1b0c('0x11c')][_0x1b0c('0x121')](this[_0x1b0c('0x122')])),this[_0x1b0c('0x11c')]=this[_0x1b0c('0x123')](),this[_0x1b0c('0x11c')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0x124')](this[_0x1b0c('0x11e')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x11c')][_0x1b0c('0x126')](this[_0x1b0c('0x120')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x11c')][_0x1b0c('0x127')](this[_0x1b0c('0x122')][_0x1b0c('0x125')](this))));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x123')]=function(){if(window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]){var _0x4492f4=(this[_0x1b0c('0x42')]()[_0x1b0c('0x119')]-this[_0x1b0c('0x11b')])/0x2;if(!_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x81')]))return window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]({'adUnitId':this[_0x1b0c('0x81')],'style':{'top':0x0,'left':_0x4492f4,'width':this[_0x1b0c('0x11b')]}});console[_0x1b0c('0x128')](_0x1b0c('0x129'));}},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x122')]=function(){this[_0x1b0c('0x12a')]=0x0;},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x120')]=function(_0x2e1416){console[_0x1b0c('0x128')](_0x1b0c('0x12b'),_0x2e1416[_0x1b0c('0x12c')],_0x2e1416[_0x1b0c('0x12d')]),this[_0x1b0c('0x11c')]=null,this[_0x1b0c('0x12e')]=!0x1,moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x77')],null);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x11e')]=function(_0x528d8e){var _0x10425f=this[_0x1b0c('0x42')]()[_0x1b0c('0x119')];this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x130')]=(_0x10425f-_0x528d8e[_0x1b0c('0x131')])/0x2,this[_0x1b0c('0x11b')]=this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x132')],this[_0x1b0c('0x133')]=this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x134')],console[_0x1b0c('0x43')](_0x1b0c('0x11e'),this[_0x1b0c('0x11c')][_0x1b0c('0x12f')]);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x135')]=function(_0x194e5a){var _0x10425f,_0x45de89,_0x3aa676;_0x279d2d[_0x1b0c('0x25')](_0x194e5a)?console[_0x1b0c('0x43')](_0x1b0c('0x136')):((_0x10425f=this[_0x1b0c('0x42')]())[_0x1b0c('0x119')],_0x45de89=_0x10425f[_0x1b0c('0x11a')],_0x3aa676=0x0,this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x138')]?_0x3aa676=_0x45de89-this[_0x1b0c('0x133')]:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x139')]?_0x3aa676=(_0x45de89-this[_0x1b0c('0x133')])/0x2:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x13a')]&&(_0x3aa676=0x0),this[_0x1b0c('0x13b')]?this[_0x1b0c('0x11c')][_0x1b0c('0x12f')]=this[_0x1b0c('0x13b')]:(this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x13c')]=_0x3aa676,console[_0x1b0c('0x43')](_0x1b0c('0x13d'),this[_0x1b0c('0x11c')][_0x1b0c('0x12f')],_0x1b0c('0x13e'),_0x3aa676)));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x13f')]=function(_0x23faac,_0xf2f43d,_0x511c6f){var _0x3aa676=this;void 0x0===_0xf2f43d&&(_0xf2f43d=_0x461c34[_0x1b0c('0x138')]),console[_0x1b0c('0x43')](_0x1b0c('0x140')),this[_0x1b0c('0x114')]=_0x23faac,this[_0x1b0c('0x12e')]=!0x0,window[this[_0x1b0c('0x88')]]&&(this[_0x1b0c('0x137')]=_0xf2f43d,this[_0x1b0c('0x13b')]=_0x511c6f,this[_0x1b0c('0x141')]&&(clearTimeout(this[_0x1b0c('0x141')]),this[_0x1b0c('0x141')]=null),this[_0x1b0c('0x11c')]&&(console[_0x1b0c('0x43')](_0x1b0c('0x142'),this[_0x1b0c('0x11c')][_0x1b0c('0x12f')]),this[_0x1b0c('0x11c')][_0x1b0c('0xe3')](),this[_0x1b0c('0x135')]({'width':this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x131')],'height':this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x134')]}),this[_0x1b0c('0x11c')][_0x1b0c('0xe4')]()[_0x1b0c('0x143')](function(){_0x3aa676[_0x1b0c('0x135')]({'width':_0x3aa676[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x131')],'height':_0x3aa676[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x134')]});})));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x144')]=function(){var _0x45de89=this;console[_0x1b0c('0x43')](_0x1b0c('0x145')),moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x4021ef){var _0x10425f;_0x4021ef&&0x1==_0x4021ef[_0x1b0c('0x146')]&&(moosnow[_0x1b0c('0x3e')][_0x1b0c('0x13f')](),_0x10425f=isNaN(_0x4021ef[_0x1b0c('0x147')])?0x1:parseFloat(_0x4021ef[_0x1b0c('0x147')]),_0x45de89[_0x1b0c('0x141')]=setTimeout(function(){console[_0x1b0c('0x43')](_0x1b0c('0x148')),_0x45de89[_0x1b0c('0x12e')],_0x45de89[_0x1b0c('0x149')]();},0x3e8*_0x10425f));});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x14a')]=function(){var _0x45de89=this;console[_0x1b0c('0x43')](_0x1b0c('0x14b')),moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x51d906){var _0x10425f=_0x51d906&&!isNaN(_0x51d906[_0x1b0c('0x14c')])?parseFloat(_0x51d906[_0x1b0c('0x14c')]):0x14;_0x51d906&&_0x51d906[_0x1b0c('0x146')],_0x45de89[_0x1b0c('0x5a')](_0x45de89[_0x1b0c('0x144')],_0x10425f);});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x14d')]=function(){console[_0x1b0c('0x43')](_0x1b0c('0x14e')),this[_0x1b0c('0x5d')](this[_0x1b0c('0x144')]);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x149')]=function(){console[_0x1b0c('0x43')](_0xd52430),this[_0x1b0c('0x12e')]&&(this[_0x1b0c('0x12e')]=!0x1,window[this[_0x1b0c('0x88')]]&&(this[_0x1b0c('0x12a')]++,this[_0x1b0c('0x11c')]?this[_0x1b0c('0x12a')]>=this[_0x1b0c('0x14f')]?(console[_0x1b0c('0x43')](_0x1b0c('0x150')),this[_0x1b0c('0x11c')][_0x1b0c('0xe3')](),this[_0x1b0c('0x11c')][_0x1b0c('0x151')](),this[_0x1b0c('0x11c')]=null,this[_0x1b0c('0x117')]()):this[_0x1b0c('0x11c')][_0x1b0c('0xe3')]():this[_0x1b0c('0x117')]()));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x152')]=function(){this[_0x1b0c('0x153')](!0x1);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x153')]=function(_0x11d4f9){var _0x10425f=this;if(!moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')])if(window[this[_0x1b0c('0x88')]])if(window[this[_0x1b0c('0x88')]][_0x1b0c('0x155')]){if(_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x82')]))return console[_0x1b0c('0x128')](_0x1b0c('0x156')),void moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')](_0x3548aa[_0x1b0c('0x158')]);if(this[_0x1b0c('0x159')])this[_0x1b0c('0x159')][_0x1b0c('0x15a')](this[_0x1b0c('0x15b')]),this[_0x1b0c('0x159')][_0x1b0c('0x11f')](this[_0x1b0c('0x15c')]),this[_0x1b0c('0x159')][_0x1b0c('0x121')](this[_0x1b0c('0x15d')]);else if(this[_0x1b0c('0x159')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x155')]({'adUnitId':this[_0x1b0c('0x82')]}),!this[_0x1b0c('0x159')])return void console[_0x1b0c('0x128')](_0x1b0c('0x15e'));this[_0x1b0c('0x159')][_0x1b0c('0x126')](this[_0x1b0c('0x15c')]),this[_0x1b0c('0x159')][_0x1b0c('0x15f')](this[_0x1b0c('0x15b')]),this[_0x1b0c('0x159')][_0x1b0c('0x127')](this[_0x1b0c('0x15d')]),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')]=!0x0,this[_0x1b0c('0x160')]=!0x1,this[_0x1b0c('0x159')][_0x1b0c('0x161')]()[_0x1b0c('0x143')](function(){_0x11d4f9&&_0x10425f[_0x1b0c('0x159')][_0x1b0c('0xe4')]()[_0x1b0c('0x143')](function(){})[_0x1b0c('0x162')](function(_0x1b62ea){_0x10425f[_0x1b0c('0x15c')](_0x1b62ea[_0x1b0c('0x12d')],_0x1b62ea[_0x1b0c('0x12c')]),console[_0x1b0c('0x43')](_0x1b62ea[_0x1b0c('0x12d')]);});})[_0x1b0c('0x162')](function(_0x2da747){_0x10425f[_0x1b0c('0x15c')](_0x2da747[_0x1b0c('0x12d')],_0x2da747[_0x1b0c('0x12c')]),console[_0x1b0c('0x43')](_0x2da747[_0x1b0c('0x12d')]);});}else moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')](_0x3548aa[_0x1b0c('0x158')]);else moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')](_0x3548aa[_0x1b0c('0x158')]);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x15c')]=function(_0x18decf,_0x1647ca){console[_0x1b0c('0x43')](_0x1b0c('0x163'),_0x18decf,_0x1647ca),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')]=!0x1,this[_0x1b0c('0x160')]=!0x1,moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')]&&(moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')](_0x3548aa[_0x1b0c('0x164')]),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')]=null);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x15b')]=function(_0x1d4651){var _0x10425f;console[_0x1b0c('0x43')](_0x1b0c('0x165'),_0x1d4651[_0x1b0c('0x166')]),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')]=!0x1,this[_0x1b0c('0x160')]=!0x1,_0x1d4651[_0x1b0c('0x166')]&&moosnow[_0x1b0c('0x9b')][_0x1b0c('0x167')](),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')]&&(_0x10425f=_0x1d4651[_0x1b0c('0x166')]?_0x3548aa[_0x1b0c('0x158')]:_0x3548aa[_0x1b0c('0x168')],setTimeout(function(){moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')](_0x10425f);},0x32));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x15d')]=function(){console[_0x1b0c('0x43')](_0x1b0c('0x169')),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')]=!0x1;},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x16a')]=function(_0x10707c){void 0x0===_0x10707c&&(_0x10707c=null),console[_0x1b0c('0x43')](_0x1b0c('0x16b')),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')]=_0x10707c,this[_0x1b0c('0x153')](!0x0);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x16c')]=function(){this[_0x1b0c('0x16d')]();},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x16d')]=function(){window[this[_0x1b0c('0x88')]]&&_0x1b0c('0x21')==typeof window[this[_0x1b0c('0x88')]][_0x1b0c('0x16e')]&&this[_0x1b0c('0x91')](_0x1b0c('0x16f'))&&(_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x83')])?console[_0x1b0c('0x128')](_0x1b0c('0x170')):(this[_0x1b0c('0x171')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x16e')]({'adUnitId':this[_0x1b0c('0x83')]}),this[_0x1b0c('0x171')][_0x1b0c('0x127')](this[_0x1b0c('0x172')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x15f')](this[_0x1b0c('0x173')][_0x1b0c('0x125')](this))));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x174')]=function(){this[_0x1b0c('0x171')]&&this[_0x1b0c('0x175')]&&this[_0x1b0c('0x171')][_0x1b0c('0xe4')]();},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x172')]=function(){this[_0x1b0c('0x176')]=0x0,this[_0x1b0c('0x175')]=!0x0,console[_0x1b0c('0x43')](_0x1b0c('0x177'));},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x173')]=function(){this[_0x1b0c('0x176')]++,this[_0x1b0c('0x176')]>=this[_0x1b0c('0x178')]&&(this[_0x1b0c('0x175')]=!0x1,this[_0x1b0c('0x171')][_0x1b0c('0x161')]());},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x179')]=function(_0x3e836d){console[_0x1b0c('0x43')](_0x1b0c('0x17a'),_0x3e836d);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x17b')]=function(){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x17c')]=function(_0x222a55){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x17d')]=function(_0x4ed5c7){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x17e')]=function(){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x17f')]=function(_0x507f32){_0x279d2d[_0x1b0c('0x24')](_0x507f32)&&_0x507f32();},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x180')]=function(_0x2e8975){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x181')]=function(_0xe80894,_0x263466){void 0x0===_0x263466&&(_0x263466=!0x0),_0x279d2d[_0x1b0c('0x24')](_0xe80894)&&_0xe80894();},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x182')]=function(_0x292100){_0x279d2d[_0x1b0c('0x24')](_0x292100)&&_0x292100();},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x183')]=function(_0x594005,_0x4c0d3f){},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x184')]=function(_0x3165c4,_0x1d0174,_0x317a06){void 0x0===_0x317a06&&(_0x317a06=null),_0x1d0174&&_0x1d0174();},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x185')]=function(){this[_0x1b0c('0xac')]({'action':0x1});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x186')]=function(){this[_0x1b0c('0xac')]({'action':0xa});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x187')]=function(_0x157213){var _0x10425f={'action':0xd,'data':_0x157213};this[_0x1b0c('0xac')](_0x10425f);},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x188')]=function(){this[_0x1b0c('0xac')]({'action':0x14});},_0x2eb138[_0x1b0c('0x4')][_0x1b0c('0x189')]=function(){},_0x2eb138);function _0x2eb138(){var _0x4492f4=_0x3bdd50[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x98')]=_0x1b0c('0x18a'),_0x4492f4[_0x1b0c('0xf3')]=null,_0x4492f4[_0x1b0c('0xf5')]=null,_0x4492f4[_0x1b0c('0x7f')]=!0x1,_0x4492f4[_0x1b0c('0xe8')]=null,_0x4492f4[_0x1b0c('0x11c')]=null,_0x4492f4[_0x1b0c('0x159')]=null,_0x4492f4[_0x1b0c('0x171')]=null,_0x4492f4[_0x1b0c('0x18b')]=null,_0x4492f4[_0x1b0c('0x18c')]=null,_0x4492f4[_0x1b0c('0x88')]='wx',_0x4492f4[_0x1b0c('0x81')]='',_0x4492f4[_0x1b0c('0x82')]='',_0x4492f4[_0x1b0c('0x83')]='',_0x4492f4[_0x1b0c('0x84')]='',_0x4492f4[_0x1b0c('0x85')]=[],_0x4492f4[_0x1b0c('0x18d')]=0x0,_0x4492f4[_0x1b0c('0x11b')]=0x12c,_0x4492f4[_0x1b0c('0x133')]=0x60,_0x4492f4[_0x1b0c('0x12a')]=0x0,_0x4492f4[_0x1b0c('0x14f')]=0x3,_0x4492f4[_0x1b0c('0x114')]=null,_0x4492f4[_0x1b0c('0x137')]=_0x461c34[_0x1b0c('0x138')],_0x4492f4[_0x1b0c('0x13b')]=null,_0x4492f4[_0x1b0c('0x12e')]=!0x1,_0x4492f4[_0x1b0c('0x157')]=null,_0x4492f4[_0x1b0c('0x154')]=!0x1,_0x4492f4[_0x1b0c('0x160')]=!0x1,_0x4492f4[_0x1b0c('0x176')]=0x0,_0x4492f4[_0x1b0c('0x178')]=0x3,_0x4492f4[_0x1b0c('0x175')]=!0x1,_0x4492f4[_0x1b0c('0x18e')]=null,_0x4492f4[_0x1b0c('0x18f')]=null,_0x4492f4[_0x1b0c('0x190')]=!0x1,_0x4492f4[_0x1b0c('0x102')]=null,_0x4492f4[_0x1b0c('0xed')]=[],_0x4492f4[_0x1b0c('0x95')]=null,_0x4492f4[_0x1b0c('0xb1')]=Date[_0x1b0c('0xb0')](),_0x4492f4[_0x1b0c('0x80')](),_0x4492f4[_0x1b0c('0xeb')](!0x0),_0x4492f4[_0x1b0c('0xf4')]=null,_0x4492f4[_0x1b0c('0xf3')]=null,_0x4492f4[_0x1b0c('0xf5')]=!0x1,_0x4492f4[_0x1b0c('0xc1')](),_0x4492f4[_0x1b0c('0xff')](),_0x4492f4;}var _0xebaa2c,_0x12c1a9=(_0x4492f4(_0x194223,_0xebaa2c=_0x226b6b),_0x194223[_0x1b0c('0x4')][_0x1b0c('0xa9')]=function(_0x2da499,_0x247b7b){moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x39b7d4){});var _0x45de89=this,_0x3aa676=moosnow[_0x1b0c('0x9f')][_0x1b0c('0xaa')]();_0x3aa676?_0x45de89[_0x1b0c('0x191')]('',_0x3aa676,_0x2da499):window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xa9')]?window[this[_0x1b0c('0x88')]][_0x1b0c('0xa9')]({'success':function(_0x380280){_0x380280[_0x1b0c('0xbd')]?_0x45de89[_0x1b0c('0x191')](_0x380280[_0x1b0c('0xbd')],'',_0x2da499):_0x279d2d[_0x1b0c('0x24')](_0x2da499)&&_0x2da499();},'fail':function(){}}):_0xebaa2c[_0x1b0c('0x4')][_0x1b0c('0xa9')][_0x1b0c('0x8')](this,_0x2da499,_0x247b7b);},_0x194223[_0x1b0c('0x4')][_0x1b0c('0x191')]=function(_0x26a77a,_0x584b8c,_0x1360a9){var _0x3aa676=this[_0x1b0c('0xe6')](),_0x478f0d=_0x3aa676[_0x1b0c('0x192')],_0x516b1f=_0x3aa676[_0x1b0c('0x193')]&&_0x3aa676[_0x1b0c('0x193')][_0x1b0c('0x194')]?_0x3aa676[_0x1b0c('0x193')][_0x1b0c('0x194')]:'0',_0x857c42=_0x3aa676[_0x1b0c('0x195')]&&_0x3aa676[_0x1b0c('0x195')][_0x1b0c('0x196')]?_0x3aa676[_0x1b0c('0x195')][_0x1b0c('0x196')]:'0';moosnow[_0x1b0c('0x9f')][_0x1b0c('0x197')](_0x857c42),moosnow[_0x1b0c('0x9f')][_0x1b0c('0x198')](_0x516b1f);var _0x85adb7=_0x3aa676[_0x1b0c('0x195')]?_0x3aa676[_0x1b0c('0x195')][_0x1b0c('0x196')]:'未知';window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x199')]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x199')]('来源',{'origin':_0x85adb7,'path':_0x3aa676[_0x1b0c('0x193')][_0x1b0c('0x19a')]||0x0}),moosnow[_0x1b0c('0x9b')][_0x1b0c('0x9c')](this[_0x1b0c('0x98')]+_0x1b0c('0x19b'),{'appid':moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0x9a')],'code':_0x26a77a,'user_id':_0x584b8c,'channel_id':_0x516b1f,'channel_appid':_0x857c42,'scene':_0x478f0d,'fromApp':_0x85adb7},_0x1b0c('0x9d'),function(_0x4f615f){0x0==_0x4f615f[_0x1b0c('0xbd')]&&_0x4f615f[_0x1b0c('0x9f')]&&_0x4f615f[_0x1b0c('0x9f')][_0x1b0c('0x19c')]&&moosnow[_0x1b0c('0x9f')][_0x1b0c('0xab')](_0x4f615f[_0x1b0c('0x9f')][_0x1b0c('0x19c')]),_0x279d2d[_0x1b0c('0x24')](_0x1360a9)&&_0x1360a9(_0x4f615f);},function(){_0x279d2d[_0x1b0c('0x24')](_0x1360a9)&&_0x1360a9({});});},_0x194223);function _0x194223(){var _0x4492f4=_0xebaa2c[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x88')]='wx',_0x4492f4[_0x1b0c('0x106')](),_0x4492f4[_0x1b0c('0x116')](),_0x4492f4[_0x1b0c('0x16c')](),_0x4492f4;}var _0x12c71c,_0x2e21fb=(_0x4492f4(_0x2b21b2,_0x12c71c=_0x5fb838),_0x2b21b2[_0x1b0c('0x4')][_0x1b0c('0x19d')]=function(_0x82708f){for(var _0x10425f=[],_0x45de89=[],_0x3aa676=_0x82708f[_0x1b0c('0x1e')](function(_0x51b81e,_0x579f11){return 0.5<Math[_0x1b0c('0xb')]()?0x1:-0x1;}),_0x478f0d=0x0;_0x478f0d<_0x3aa676[_0x1b0c('0x7')];_0x478f0d++){for(var _0x516b1f=_0x3aa676[_0x478f0d],_0x857c42=!0x0,_0x85adb7=0x0;_0x85adb7<_0x10425f[_0x1b0c('0x7')];_0x85adb7++)if(_0x10425f[_0x85adb7][_0x1b0c('0xb3')]==_0x516b1f[_0x1b0c('0xb3')]){_0x857c42=!0x1;break;}_0x857c42?_0x10425f[_0x1b0c('0x23')](_0x516b1f):_0x45de89[_0x1b0c('0x23')](_0x516b1f);}return function(){for(var _0x82708f=0x0,_0x10425f=0x0,_0x45de89=arguments[_0x1b0c('0x7')];_0x10425f<_0x45de89;_0x10425f++)_0x82708f+=arguments[_0x10425f][_0x1b0c('0x7')];for(var _0x3aa676=Array(_0x82708f),_0x478f0d=0x0,_0x10425f=0x0;_0x10425f<_0x45de89;_0x10425f++)for(var _0x516b1f=arguments[_0x10425f],_0x857c42=0x0,_0x85adb7=_0x516b1f[_0x1b0c('0x7')];_0x857c42<_0x85adb7;_0x857c42++,_0x478f0d++)_0x3aa676[_0x478f0d]=_0x516b1f[_0x857c42];return _0x3aa676;}(_0x10425f,_0x45de89);},_0x2b21b2[_0x1b0c('0x4')][_0x1b0c('0x19e')]=function(_0x1063ac){var _0x4492f4,_0x10425f,_0x516b1f=this,_0x857c42=this[_0x1b0c('0x19f')]();_0x279d2d[_0x1b0c('0x25')](_0x857c42[_0x1b0c('0x1a0')])?this[_0x1b0c('0x1a1')](function(_0x4f2490){var _0x10425f=_0x516b1f[_0x1b0c('0x1a2')]();_0x4f2490[_0x1b0c('0x1a3')](function(_0x1098af){_0x10425f=_0x516b1f[_0x1b0c('0x1a4')](_0x10425f,_0x1098af);}),_0x516b1f[_0x1b0c('0x1a5')](_0x10425f);var _0x45de89=_0x516b1f[_0x1b0c('0x19d')](_0x10425f[_0x1b0c('0x1a0')]),_0x3aa676=_0x2921f6(_0x2921f6({},_0x857c42),{'indexLeft':_0x45de89});_0x1063ac(_0x3aa676);}):(_0x4492f4=this[_0x1b0c('0x19d')](_0x857c42[_0x1b0c('0x1a0')]),_0x10425f=_0x2921f6(_0x2921f6({},_0x857c42),{'indexLeft':_0x4492f4}),_0x1063ac(_0x10425f));},_0x2b21b2[_0x1b0c('0x4')][_0x1b0c('0x1a1')]=function(_0x5a1ad9){_0x5a1ad9([]);},_0x2b21b2[_0x1b0c('0x4')][_0x1b0c('0x1a6')]=function(_0x485f98){var _0x10425f=this;this[_0x1b0c('0x1a7')]?_0x485f98(this[_0x1b0c('0x1a7')]):wx[_0x1b0c('0x1a8')]({'key':this[_0x1b0c('0x1a9')],'success':function(_0x2902b3){this[_0x1b0c('0x1aa')][_0x1b0c('0x1a7')]=_0x2902b3[_0x1b0c('0x9f')],console[_0x1b0c('0x43')](_0x1b0c('0x1ab'),_0x2902b3[_0x1b0c('0x9f')]);},'fail':function(){_0x10425f[_0x1b0c('0x1a7')]={},console[_0x1b0c('0x43')](_0x1b0c('0x1ac'));},'complete':function(){_0x485f98(this[_0x1b0c('0x1aa')][_0x1b0c('0x1a7')]);}});},_0x2b21b2[_0x1b0c('0x4')][_0x1b0c('0x1a2')]=function(){return{'indexBanner':[],'indexFloat':[],'indexLeft':[],'gameEndPage':[],'gameRespawnPage':[],'exportPage':[]};},_0x2b21b2[_0x1b0c('0x4')][_0x1b0c('0x1a4')]=function(_0xe19fc4,_0x2f735f){switch(_0x2f735f[_0x1b0c('0xb9')]){case'1':_0xe19fc4[_0x1b0c('0x1a0')][_0x1b0c('0x23')](_0x2f735f);break;case'2':_0xe19fc4[_0x1b0c('0x1ad')][_0x1b0c('0x23')](_0x2f735f);break;case'3':_0xe19fc4[_0x1b0c('0x1ae')][_0x1b0c('0x23')](_0x2f735f);break;case'4':_0xe19fc4[_0x1b0c('0x1af')][_0x1b0c('0x23')](_0x2f735f);break;case'5':_0xe19fc4[_0x1b0c('0x1b0')][_0x1b0c('0x23')](_0x2f735f);break;case'6':_0xe19fc4[_0x1b0c('0x1b1')][_0x1b0c('0x23')](_0x2f735f);break;default:_0xe19fc4[_0x1b0c('0x1a0')][_0x1b0c('0x23')](_0x2f735f);}return _0xe19fc4;},_0x2b21b2[_0x1b0c('0x4')][_0x1b0c('0x1b2')]=function(_0x23b0d7,_0x54e691){window['wx']?wx[_0x1b0c('0x1b3')]({'header':{},'url':_0x23b0d7,'success':function(_0x17d445){var _0x10425f=this;0xc8===_0x17d445[_0x1b0c('0x1b4')]&&wx[_0x1b0c('0x1b5')]({'tempFilePath':_0x17d445[_0x1b0c('0x1b6')],'success':function(_0x2c5a2b){_0x10425f[_0x1b0c('0x1a7')][''+_0x23b0d7]=_0x2c5a2b[_0x1b0c('0x1b7')],_0x54e691(_0x2c5a2b[_0x1b0c('0x1b7')]);},'fail':function(){_0x54e691(_0x23b0d7);},'complete':function(){}});},'fail':function(){_0x54e691(_0x23b0d7);},'complete':function(){}}):_0x54e691(_0x23b0d7);},_0x2b21b2);function _0x2b21b2(){var _0x4492f4=_0x12c71c[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x98')]=_0x1b0c('0x1b8'),_0x4492f4[_0x1b0c('0x1a7')]=null,_0x4492f4[_0x1b0c('0x1a9')]=_0x1b0c('0x1b9'),_0x4492f4[_0x1b0c('0x1ba')]=function(_0x4d8d32){for(var _0x10425f in this[_0x1b0c('0x1aa')][_0x1b0c('0x1a7')])if(this[_0x1b0c('0x1aa')][_0x1b0c('0x1a7')][_0x10425f]==_0x4d8d32)return _0x10425f;return'';},_0x4492f4[_0x1b0c('0x1bb')]=function(_0x493ce8,_0x368809){this[_0x1b0c('0x1a7')][_0x493ce8]?_0x368809(this[_0x1b0c('0x1a7')][_0x493ce8]):this[_0x1b0c('0x1b2')](_0x493ce8,function(_0x2b6a74){_0x368809(_0x2b6a74);});},_0x4492f4[_0x1b0c('0x1bc')]=function(_0x48a88f){var _0x10425f=[],_0x45de89=window['wx'][_0x1b0c('0x1bd')]();for(var _0x3aa676 in this[_0x1b0c('0x1a7')]){var _0x478f0d=!0x0;for(var _0x516b1f in _0x48a88f)for(var _0x857c42=0x0;_0x857c42<_0x48a88f[_0x516b1f][_0x1b0c('0x7')];_0x857c42++)_0x48a88f[_0x516b1f][_0x857c42][_0x1b0c('0xba')]!=this[_0x1b0c('0x1a7')][_0x3aa676]&&_0x48a88f[_0x516b1f][_0x857c42][_0x1b0c('0xbb')]!=this[_0x1b0c('0x1a7')][_0x3aa676]||(_0x478f0d=!0x1);_0x478f0d&&_0x10425f[_0x1b0c('0x23')](_0x3aa676);}for(_0x857c42=0x0;_0x857c42<_0x10425f[_0x1b0c('0x7')];_0x857c42++){if(_0x10425f[_0x857c42]){console[_0x1b0c('0x43')](_0x1b0c('0x1be'),_0x10425f[_0x857c42]);try{_0x45de89[_0x1b0c('0x1bf')](_0x10425f[_0x857c42]);}catch(_0x4432aa){console[_0x1b0c('0x43')](_0x1b0c('0x1c0'),_0x10425f[_0x857c42]);}}delete this[_0x1b0c('0x1a7')][_0x10425f[_0x857c42]];}window['wx']&&window['wx'][_0x1b0c('0x1c1')]({'key':this[_0x1b0c('0x1a9')],'data':this[_0x1b0c('0x1a7')],'success':function(){},'fail':function(){},'complete':function(){}});},_0x4492f4[_0x1b0c('0x1c2')]={},_0x4492f4[_0x1b0c('0x19f')]=function(){return this[_0x1b0c('0x1c2')];},_0x4492f4[_0x1b0c('0x1a5')]=function(_0x11e1c9){this[_0x1b0c('0x1c2')]=_0x11e1c9;},_0x4492f4;}var _0x1227e0,_0x29f338=(_0x4492f4(_0x36b124,_0x1227e0=_0x5fb838),Object[_0x1b0c('0x3d')](_0x36b124[_0x1b0c('0x4')],_0x1b0c('0x1c3'),{'get':function(){return this[_0x1b0c('0x1c4')]||moosnow[_0x1b0c('0x3e')]&&moosnow[_0x1b0c('0x3e')][_0x1b0c('0xe6')]&&(this[_0x1b0c('0x1c4')]=moosnow[_0x1b0c('0x3e')][_0x1b0c('0xe6')]()),this[_0x1b0c('0x1c4')];},'enumerable':!0x0,'configurable':!0x0}),_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x9c')]=function(_0x202175,_0x1a926a,_0x159967,_0x12c866,_0x364d1a,_0x32ec1f){var _0x857c42=new XMLHttpRequest();_0x857c42[_0x1b0c('0x1c5')]=function(){if(0x4==_0x857c42[_0x1b0c('0x1c6')]){var _0x1a926a=_0x857c42[_0x1b0c('0x1c7')];if(0xc8<=_0x857c42[_0x1b0c('0x1c8')]&&_0x857c42[_0x1b0c('0x1c8')]<0x190){var _0x202175={};try{_0x202175=JSON[_0x1b0c('0x1c9')](_0x1a926a);}catch(_0x5f30af){console[_0x1b0c('0x1ca')](_0x1b0c('0x1cb'),_0x1a926a),_0x364d1a&&_0x364d1a(_0x5f30af);}_0x12c866&&_0x12c866(_0x202175);}else console[_0x1b0c('0x128')](_0x1b0c('0x1cc'),_0x1a926a),_0x364d1a&&_0x364d1a(_0x1a926a);}},_0x857c42[_0x1b0c('0x1cd')]=0x2710,_0x857c42[_0x1b0c('0x1ce')]=function(_0x25b986){console[_0x1b0c('0x1ca')](_0x1b0c('0x1cc'),_0x25b986),_0x364d1a&&_0x364d1a(_0x25b986);},_0x857c42[_0x1b0c('0x1cf')](_0x159967,_0x202175,!0x0),_0x1b0c('0x9d')==_0x159967?(_0x857c42[_0x1b0c('0x1cf')](_0x1b0c('0x9d'),_0x202175),_0x857c42[_0x1b0c('0x1d0')](_0x1b0c('0x1d1'),_0x1b0c('0x1d2')),_0x857c42[_0x1b0c('0x1d3')](this[_0x1b0c('0x1d4')](_0x1a926a))):_0x857c42[_0x1b0c('0x1d3')]();},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1d4')]=function(_0x1731c0){var _0x10425f=[];for(var _0x45de89 in _0x1731c0)_0x10425f[_0x1b0c('0x23')](_0x45de89+'='+_0x1731c0[_0x45de89]);return _0x10425f[_0x1b0c('0x18')]('&');},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1d5')]=function(_0x3eeb69){},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1d6')]=function(){this[_0x1b0c('0x1d7')](_0x1b0c('0x1d8'));},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x113')]=function(){this[_0x1b0c('0x1d7')](_0x1b0c('0x1d9'));},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x167')]=function(){this[_0x1b0c('0x1d7')](_0x1b0c('0x1da'));},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0xbe')]=function(){this[_0x1b0c('0x1d7')](_0x1b0c('0x1db'));},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0xb6')]=function(_0x5218e4,_0x41a51d){var _0x45de89=moosnow[_0x1b0c('0x9f')][_0x1b0c('0xaa')]();this[_0x1b0c('0x9c')](this[_0x1b0c('0x98')]+_0x1b0c('0x1dc'),{'appid':_0x279d2d[_0x1b0c('0x4f')][_0x1b0c('0x9a')],'uid':_0x45de89,'jump_appid':_0x5218e4},_0x1b0c('0x9d'),function(_0x1b1cc7){console[_0x1b0c('0x43')](_0x1b0c('0xb6'),_0x1b1cc7),_0x41a51d&&_0x41a51d(_0x1b1cc7[_0x1b0c('0x9f')]);});},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0xbc')]=function(_0x5062b8){this[_0x1b0c('0x9c')](this[_0x1b0c('0x98')]+_0x1b0c('0x1dd'),{'code':_0x5062b8},_0x1b0c('0x9d'),function(_0xa29b71){console[_0x1b0c('0x43')](_0x1b0c('0x1de'),_0x5062b8,_0xa29b71);});},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1d7')]=function(_0x3b9a50){var _0x10425f=moosnow[_0x1b0c('0x9f')][_0x1b0c('0xaa')]();if(!_0x279d2d[_0x1b0c('0x25')](_0x10425f)&&'0'!=moosnow[_0x1b0c('0x9f')][_0x1b0c('0x1df')]()&&'0'!=moosnow[_0x1b0c('0x9f')][_0x1b0c('0x1e0')]())try{this[_0x1b0c('0x9c')](''+this[_0x1b0c('0x98')]+_0x3b9a50,{'appid':_0x279d2d[_0x1b0c('0x4f')][_0x1b0c('0x9a')],'user_id':_0x10425f,'channel_id':moosnow[_0x1b0c('0x9f')][_0x1b0c('0x1df')](),'channel_appid':moosnow[_0x1b0c('0x9f')][_0x1b0c('0x1e0')]()},_0x1b0c('0x9d'),function(_0x12fd8d){});}catch(_0x3407ec){console[_0x1b0c('0x43')](_0x1b0c('0x1e1'),_0x3407ec);}},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0xb8')]=function(_0x3c3f11,_0x50a212){void 0x0===_0x50a212&&(_0x50a212=null),_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d['WX']&&window['wx']&&window['wx'][_0x1b0c('0x199')]&&window['wx'][_0x1b0c('0x199')](_0x3c3f11,_0x50a212);},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1e2')]=function(_0x47e4ca){_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d['WX']&&(window['wx']&&window['wx'][_0x1b0c('0x1e3')]?window['wx'][_0x1b0c('0x1e3')][_0x1b0c('0x1e4')]({'stageId':_0x47e4ca,'stageName':_0x47e4ca,'userId':moosnow[_0x1b0c('0x9f')][_0x1b0c('0xaa')]()}):console[_0x1b0c('0x128')](_0x1b0c('0x1e5')));},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1e6')]=function(_0x1d676f,_0x568539){var _0x45de89,_0x3aa676;_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d['WX']&&(_0x45de89=_0x568539?_0x1b0c('0x1e7'):_0x1b0c('0x1e8'),_0x3aa676=_0x568539?_0x1b0c('0x1e9'):_0x1b0c('0x1ea'),window['wx']&&window['wx'][_0x1b0c('0x1e3')]?window['wx'][_0x1b0c('0x1e3')][_0x1b0c('0x1eb')]({'stageId':_0x1d676f,'stageName':_0x1d676f,'userId':moosnow[_0x1b0c('0x9f')][_0x1b0c('0xaa')](),'event':_0x45de89,'params':{'desc':_0x3aa676}}):console[_0x1b0c('0x128')](_0x1b0c('0x1e5')));},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1ec')]=function(_0x1675b0,_0x4bb625,_0x150202){var _0x3aa676;_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d['WX']&&(_0x3aa676=0x0==_0x1675b0?_0x1b0c('0x1ed'):_0x1b0c('0x1ee'),window['wx']&&window['wx'][_0x1b0c('0x199')]?window['wx'][_0x1b0c('0x199')](_0x3aa676,{'info':_0x4bb625,'level':_0x150202+''}):console[_0x1b0c('0x128')](_0x1b0c('0x1e5')));},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0xa3')]=function(_0x1ea1c0){var _0x3aa676=this;this[_0x1b0c('0x1ef')](function(_0x1d5619){_0x3aa676[_0x1b0c('0x1f0')](function(_0x1fe3c8){_0x3aa676[_0x1b0c('0x1f1')](_0x1d5619,_0x1fe3c8,function(_0x4820b1){_0x1ea1c0(_0x4820b1?_0x2921f6(_0x2921f6({},_0x1d5619),{'mistouchNum':0x0,'mistouchPosNum':0x0,'bannerShowCountLimit':0x1}):_0x1d5619);});});});},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1ef')]=function(_0x7e7751){var _0x10425f=this;if(_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x1f2')])){if(this[_0x1b0c('0x1f3')][_0x1b0c('0x23')](_0x7e7751),0x1<this[_0x1b0c('0x1f3')][_0x1b0c('0x7')])return;var _0x45de89='',_0x45de89=_0x279d2d[_0x1b0c('0x4f')][_0x1b0c('0x4b')]?_0x279d2d[_0x1b0c('0x4f')][_0x1b0c('0x4b')]+_0x1b0c('0x1f4')+Date[_0x1b0c('0xb0')]():this[_0x1b0c('0x1f5')]+_0x1b0c('0x1f6')+_0x279d2d[_0x1b0c('0x4f')][_0x1b0c('0x9a')]+_0x1b0c('0x1f7');this[_0x1b0c('0x9c')](_0x45de89,{},_0x1b0c('0x1f8'),function(_0x363b80){_0x10425f[_0x1b0c('0x1f2')]=_0x2921f6(_0x2921f6({},_0x279d2d[_0x1b0c('0x50')](_0x363b80)),{'zs_native_click_switch':_0x363b80&&_0x363b80[_0x1b0c('0x1f9')]?_0x363b80[_0x1b0c('0x1f9')]:0x0,'zs_jump_switch':_0x363b80&&_0x363b80[_0x1b0c('0x1fa')]?_0x363b80[_0x1b0c('0x1fa')]:0x0}),moosnow[_0x1b0c('0x3e')]&&(moosnow[_0x1b0c('0x3e')][_0x1b0c('0x14f')]=parseInt(_0x363b80[_0x1b0c('0x14f')])),_0x10425f[_0x1b0c('0x1f3')][_0x1b0c('0x1a3')](function(_0x460295){_0x460295(_0x10425f[_0x1b0c('0x1f2')]);}),_0x10425f[_0x1b0c('0x1f3')]=[];},function(){_0x10425f[_0x1b0c('0x1f3')][_0x1b0c('0x1a3')](function(_0x95202){_0x95202({'mistouchNum':0x0,'mistouchPosNum':0x0,'bannerShowCountLimit':0x1});}),_0x10425f[_0x1b0c('0x1f3')]=[],console[_0x1b0c('0x43')](_0x1b0c('0x1fb'));});}else _0x7e7751(this[_0x1b0c('0x1f2')]);},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1f0')]=function(_0x57ed59){var _0x10425f=this;if(this[_0x1b0c('0x1fc')])_0x57ed59(this[_0x1b0c('0x1fc')]);else{if(this[_0x1b0c('0x1fd')][_0x1b0c('0x23')](_0x57ed59),0x1<this[_0x1b0c('0x1fd')][_0x1b0c('0x7')])return;var _0x45de89=this[_0x1b0c('0x98')]+_0x1b0c('0x1fe');this[_0x1b0c('0x9c')](_0x45de89,{},_0x1b0c('0x1f8'),function(_0xeb5bac){_0x10425f[_0x1b0c('0x1fc')]=_0xeb5bac,_0x10425f[_0x1b0c('0x1fd')][_0x1b0c('0x1a3')](function(_0x3aee65){_0x3aee65(_0x10425f[_0x1b0c('0x1fc')]);}),_0x10425f[_0x1b0c('0x1fd')]=[];},function(){_0x10425f[_0x1b0c('0x1fd')][_0x1b0c('0x1a3')](function(_0x25caff){_0x25caff(_0x10425f[_0x1b0c('0x1fc')]);}),_0x10425f[_0x1b0c('0x1fd')]=[];});}},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1ff')]=function(_0x2fdd25){var _0x3aa676=this;this[_0x1b0c('0x1ef')](function(_0x6b5d61){_0x3aa676[_0x1b0c('0x1f0')](function(_0x29c015){_0x3aa676[_0x1b0c('0x200')](_0x6b5d61,_0x29c015,function(_0x6e0ee8){_0x2fdd25(_0x6e0ee8);});});});},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x200')]=function(_0x5521bb,_0x475152,_0x460b93){var _0x3aa676=_0x279d2d[_0x1b0c('0x28')](new Date()),_0x478f0d=!0x1;if(_0x5521bb[_0x1b0c('0x200')])for(var _0x516b1f=0x0;_0x516b1f<_0x5521bb[_0x1b0c('0x200')][_0x1b0c('0x7')];_0x516b1f++){var _0x857c42=_0x5521bb[_0x1b0c('0x200')][_0x516b1f];if(-0x1!=_0x475152[_0x1b0c('0x9f')][_0x1b0c('0x201')][_0x1b0c('0x48')](_0x857c42)||-0x1!=_0x475152[_0x1b0c('0x9f')][_0x1b0c('0x202')][_0x1b0c('0x48')](_0x857c42)||-0x1!=_0x475152[_0x1b0c('0x9f')][_0x1b0c('0x203')][_0x1b0c('0x48')](_0x857c42)){_0x478f0d=!0x0;break;}}_0x478f0d&&(!_0x5521bb[_0x1b0c('0x204')]||0x2!=_0x5521bb[_0x1b0c('0x204')][_0x1b0c('0x7')]||_0x3aa676>_0x5521bb[_0x1b0c('0x204')][0x0]&&_0x3aa676<_0x5521bb[_0x1b0c('0x204')][0x1])?_0x460b93(!0x0):_0x460b93(!0x1);},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x205')]=function(_0xf3865a){var _0x3aa676=this;this[_0x1b0c('0x1ef')](function(_0xedd1f4){_0x3aa676[_0x1b0c('0x1f0')](function(_0x5aafbb){_0x3aa676[_0x1b0c('0x1f1')](_0xedd1f4,_0x5aafbb,function(_0x452089){_0x452089?(_0xf3865a(0x0),console[_0x1b0c('0x43')](_0x1b0c('0x205'),0x0,_0x1b0c('0x1f1'),_0x452089)):(_0xf3865a(parseInt(_0xedd1f4[_0x1b0c('0x206')])),console[_0x1b0c('0x43')](_0x1b0c('0x205'),_0xedd1f4[_0x1b0c('0x206')],_0x1b0c('0x1f1'),_0x452089));});});});},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x207')]=function(_0x5014e){var _0x3aa676=this;this[_0x1b0c('0x1ef')](function(_0x401eb3){_0x3aa676[_0x1b0c('0x1f0')](function(_0x3d36ae){_0x3aa676[_0x1b0c('0x1f1')](_0x401eb3,_0x3d36ae,function(_0x5dffd6){_0x5dffd6?(_0x5014e(0x0),console[_0x1b0c('0x43')](_0x1b0c('0x207'),0x0,_0x1b0c('0x1f1'),_0x5dffd6)):(_0x5014e(parseInt(_0x401eb3[_0x1b0c('0x208')])),console[_0x1b0c('0x43')](_0x1b0c('0x207'),_0x401eb3[_0x1b0c('0x208')],_0x1b0c('0x1f1'),_0x5dffd6));});});});},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x209')]=function(_0x19e05f){this[_0x1b0c('0x1ef')](function(_0x594a4f){isNaN(_0x594a4f[_0x1b0c('0x14f')])?_0x19e05f(0x5):_0x19e05f(parseInt(_0x594a4f[_0x1b0c('0x14f')]));});},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0x1f1')]=function(_0x2b6853,_0xb83ee,_0x26be96){var _0x3aa676=_0x279d2d[_0x1b0c('0x28')](new Date()),_0x478f0d=!0x1;if(_0x2b6853&&_0x2b6853[_0x1b0c('0x20a')])for(var _0x516b1f=0x0;_0x516b1f<_0x2b6853[_0x1b0c('0x20a')][_0x1b0c('0x7')];_0x516b1f++){var _0x857c42=_0x2b6853[_0x1b0c('0x20a')][_0x516b1f];if(_0xb83ee&&_0xb83ee[_0x1b0c('0x9f')]&&(-0x1!=_0xb83ee[_0x1b0c('0x9f')][_0x1b0c('0x201')][_0x1b0c('0x48')](_0x857c42)||-0x1!=_0xb83ee[_0x1b0c('0x9f')][_0x1b0c('0x202')][_0x1b0c('0x48')](_0x857c42)||-0x1!=_0xb83ee[_0x1b0c('0x9f')][_0x1b0c('0x203')][_0x1b0c('0x48')](_0x857c42))){_0x478f0d=!0x0;break;}}if(this[_0x1b0c('0x1c3')]&&-0x1!=[0x3ed,0x3ef,0x3f0,0x414][_0x1b0c('0x48')](this[_0x1b0c('0x1c3')][_0x1b0c('0x192')]))return _0x26be96(!0x0),void console[_0x1b0c('0x43')](_0x1b0c('0x1c3'),this[_0x1b0c('0x1c3')]);_0x478f0d&&(!_0x2b6853[_0x1b0c('0x20b')]||0x2!=_0x2b6853[_0x1b0c('0x20b')][_0x1b0c('0x7')]||_0x3aa676>_0x2b6853[_0x1b0c('0x20b')][0x0]&&_0x3aa676<_0x2b6853[_0x1b0c('0x20b')][0x1])?_0x26be96(!0x0):_0x26be96(!0x1);},_0x36b124[_0x1b0c('0x4')][_0x1b0c('0xf0')]=function(_0x13ece9){this[_0x1b0c('0x9c')](this[_0x1b0c('0x98')]+_0x1b0c('0x20c'),{'appid':_0x279d2d[_0x1b0c('0x4f')][_0x1b0c('0x9a')]},_0x1b0c('0x9d'),function(_0x3387c3){console[_0x1b0c('0x43')](_0x1b0c('0x20d'),_0x3387c3[_0x1b0c('0x9f')]),_0x13ece9(_0x3387c3[_0x1b0c('0x9f')]),moosnow[_0x1b0c('0x3e')][_0x1b0c('0xeb')](_0x3387c3[_0x1b0c('0x9f')]);});},_0x36b124);function _0x36b124(){var _0x10425f=_0x1227e0[_0x1b0c('0x8')](this)||this;_0x10425f[_0x1b0c('0xb3')]='',_0x10425f[_0x1b0c('0x20e')]='',_0x10425f[_0x1b0c('0x20f')]='',_0x10425f[_0x1b0c('0xa0')]=_0x1b0c('0x210'),_0x10425f[_0x1b0c('0x98')]=_0x1b0c('0x18a'),_0x10425f[_0x1b0c('0x1f5')]=_0x1b0c('0x211'),_0x10425f[_0x1b0c('0x1c4')]={},_0x10425f[_0x1b0c('0x1f2')]=null,_0x10425f[_0x1b0c('0x1fc')]=null,_0x10425f[_0x1b0c('0x1f3')]=[],_0x10425f[_0x1b0c('0x1fd')]=[];var _0x4492f4=_0x10425f[_0x1b0c('0x1f5')]+_0x1b0c('0x212')+Date[_0x1b0c('0xb0')]();return _0x279d2d[_0x1b0c('0x3e')]==_0x478f0d['PC']?_0x10425f[_0x1b0c('0x9c')](_0x4492f4,{},_0x1b0c('0x1f8'),function(_0x20be3d){_0x10425f[_0x1b0c('0xa0')]<_0x20be3d[_0x1b0c('0xa0')]&&(console[_0x1b0c('0x128')](_0x1b0c('0x213')+_0x10425f[_0x1b0c('0xa0')]+_0x1b0c('0x214')+_0x20be3d[_0x1b0c('0xa0')]+_0x1b0c('0x215')+_0x20be3d[_0x1b0c('0x216')]),_0x279d2d[_0x1b0c('0x25')](_0x20be3d[_0x1b0c('0x217')])||console[_0x1b0c('0x128')](''+_0x20be3d[_0x1b0c('0x217')]));}):_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d['WX']&&window['wx']&&_0x10425f[_0x1b0c('0x9c')](_0x4492f4,{},_0x1b0c('0x1f8'),function(_0x2fbee3){(!window['wx'][_0x1b0c('0x218')]||window['wx'][_0x1b0c('0x218')]&&window['wx'][_0x1b0c('0x218')]<_0x2fbee3[_0x1b0c('0x218')])&&console[_0x1b0c('0x1ca')](_0x1b0c('0x219')+_0x2fbee3[_0x1b0c('0x21a')]);}),_0x10425f[_0x1b0c('0xf0')](function(_0x1ebdd3){moosnow[_0x1b0c('0x3e')][_0x1b0c('0xeb')](_0x1ebdd3);}),_0x10425f[_0x1b0c('0x1ef')](function(_0x5cf084){console[_0x1b0c('0x43')](_0x1b0c('0x21b'),_0x5cf084);}),_0x10425f;}var _0x3c5bf1,_0x328d1c=(_0x4492f4(_0x314e09,_0x3c5bf1=_0x226b6b),_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x21c')]=function(){var _0x10425f;window[this[_0x1b0c('0x88')]]&&(_0x10425f=this,window[this[_0x1b0c('0x88')]][_0x1b0c('0x21c')]?window[this[_0x1b0c('0x88')]][_0x1b0c('0x21c')]({'isDebug':!0x0,'appId':this[_0x1b0c('0x40')][_0x1b0c('0x9a')],'success':function(_0x3dd756){console[_0x1b0c('0x43')](_0x1b0c('0x21d')),_0x10425f[_0x1b0c('0x116')](),_0x10425f[_0x1b0c('0x16c')](),_0x10425f[_0x1b0c('0x17b')]();},'fail':function(_0x23b414){console[_0x1b0c('0x128')](_0x1b0c('0x21e')+_0x23b414[_0x1b0c('0xbd')]+'\x20\x20'+_0x23b414[_0x1b0c('0x21f')]);},'complete':function(_0x20e25e){console[_0x1b0c('0x43')](_0x1b0c('0x220'));}}):(console[_0x1b0c('0x43')](_0x1b0c('0x21d')),_0x10425f[_0x1b0c('0x116')](),_0x10425f[_0x1b0c('0x16c')](),_0x10425f[_0x1b0c('0x17b')]()),moosnow[_0x1b0c('0x10c')][_0x1b0c('0x221')](_0x2dd322[_0x1b0c('0x75')],this,this[_0x1b0c('0x222')]));},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0xae')]=function(_0x550889,_0x5d9a06,_0x9abefe,_0x3bd033){var _0x478f0d,_0x516b1f,_0x857c42,_0x85adb7,_0x444d0c=this;console[_0x1b0c('0x43')](_0x1b0c('0xaf'),_0x550889),Date[_0x1b0c('0xb0')]()-this[_0x1b0c('0xb1')]<0x12c?console[_0x1b0c('0x43')](_0x1b0c('0xb2')):(this[_0x1b0c('0xb1')]=Date[_0x1b0c('0xb0')](),window[this[_0x1b0c('0x88')]]?(_0x478f0d=_0x550889[_0x1b0c('0xb3')],_0x516b1f=_0x550889[_0x1b0c('0xb4')],_0x85adb7=_0x550889[_0x1b0c('0xb5')],_0x857c42=_0x550889[_0x1b0c('0x223')],_0x85adb7=_0x85adb7||{},this[_0x1b0c('0x91')](0x414)?window[this[_0x1b0c('0x88')]][_0x1b0c('0x224')]({'appId':_0x478f0d,'path':_0x516b1f,'pkgName':_0x857c42||_0x478f0d,'extraData':_0x85adb7,'success':function(){window[_0x444d0c[_0x1b0c('0x88')]]&&window[_0x444d0c[_0x1b0c('0x88')]][_0x1b0c('0x199')]&&window[_0x444d0c[_0x1b0c('0x88')]][_0x1b0c('0x199')]('跳转',{'position':_0x550889[_0x1b0c('0xb9')],'appid':_0x478f0d,'img':_0x550889[_0x1b0c('0xba')]||_0x550889[_0x1b0c('0xbb')]}),moosnow[_0x1b0c('0x9b')][_0x1b0c('0xbe')](),_0x5d9a06&&_0x5d9a06();},'fail':function(_0x3e82cb){console[_0x1b0c('0x43')](_0x1b0c('0x225'),_0x3e82cb),_0x9abefe&&_0x9abefe();},'complete':function(){_0x3bd033&&_0x3bd033();}}):console[_0x1b0c('0x43')](_0x1b0c('0x226'))):_0x5d9a06&&_0x5d9a06());},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x91')]=function(_0x30ca20){return this[_0x1b0c('0x42')]()[_0x1b0c('0x227')]>=_0x30ca20;},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x120')]=function(_0x2c4376){console[_0x1b0c('0x128')](_0x1b0c('0x12b'),_0x2c4376[_0x1b0c('0x12c')],_0x1b0c('0x228'),_0x2c4376[_0x1b0c('0x12d')]),this[_0x1b0c('0x11c')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0xe3')](),this[_0x1b0c('0x11c')][_0x1b0c('0x11d')](this[_0x1b0c('0x11e')]),this[_0x1b0c('0x11c')][_0x1b0c('0x11f')](this[_0x1b0c('0x120')]),this[_0x1b0c('0x11c')][_0x1b0c('0x121')](this[_0x1b0c('0x122')]),this[_0x1b0c('0x11c')][_0x1b0c('0x229')](),this[_0x1b0c('0x11c')][_0x1b0c('0x151')](),this[_0x1b0c('0x11c')]=null);},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x117')]=function(){var _0x4492f4,_0x10425f;window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]&&(_0x10425f=(_0x4492f4=this[_0x1b0c('0x42')]())[_0x1b0c('0x119')],(!this[_0x1b0c('0xea')](_0x4492f4[_0x1b0c('0x11a')],_0x4492f4[_0x1b0c('0x119')])||_0x10425f<this[_0x1b0c('0x11b')])&&(this[_0x1b0c('0x11b')]=_0x10425f),this[_0x1b0c('0x11c')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0x11d')](this[_0x1b0c('0x11e')]),this[_0x1b0c('0x11c')][_0x1b0c('0x11f')](this[_0x1b0c('0x120')]),this[_0x1b0c('0x11c')][_0x1b0c('0x121')](this[_0x1b0c('0x122')]),this[_0x1b0c('0x11c')][_0x1b0c('0x229')]()),this[_0x1b0c('0x11c')]=this[_0x1b0c('0x123')](),this[_0x1b0c('0x11c')][_0x1b0c('0x124')](this[_0x1b0c('0x11e')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x11c')][_0x1b0c('0x126')](this[_0x1b0c('0x120')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x11c')][_0x1b0c('0x127')](this[_0x1b0c('0x122')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x11c')][_0x1b0c('0x10e')](this[_0x1b0c('0x22a')][_0x1b0c('0x125')](this)));},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x123')]=function(){if(window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]){var _0x4492f4=this[_0x1b0c('0x42')](),_0x10425f=_0x4492f4[_0x1b0c('0x119')],_0x45de89=_0x4492f4[_0x1b0c('0x11a')],_0x3aa676=(_0x10425f-this[_0x1b0c('0x11b')])/0x2;if(!_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x81')])){var _0x478f0d=_0x45de89-this[_0x1b0c('0x133')];return window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]({'adUnitId':this[_0x1b0c('0x81')],'style':{'top':_0x478f0d,'left':_0x3aa676,'width':this[_0x1b0c('0x11b')]}});}console[_0x1b0c('0x128')](_0x1b0c('0x129'));}},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x11e')]=function(_0x277437){var _0x10425f=this[_0x1b0c('0x42')](),_0x45de89=_0x10425f[_0x1b0c('0x119')],_0x3aa676=_0x10425f[_0x1b0c('0x11a')],_0x478f0d=_0x10425f[_0x1b0c('0x22b')],_0x516b1f=_0x10425f[_0x1b0c('0x22c')]||0x0;this[_0x1b0c('0x11b')]=_0x277437[_0x1b0c('0x131')],this[_0x1b0c('0x133')]=_0x277437[_0x1b0c('0x22d')],this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x130')]=(_0x45de89-_0x277437[_0x1b0c('0x131')])/0x2;var _0x857c42=_0x3aa676-this[_0x1b0c('0x133')],_0x857c42=this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x138')]?_0x3aa676-this[_0x1b0c('0x133')]:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x139')]?(_0x3aa676-this[_0x1b0c('0x133')])/0x2:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x13a')]?this[_0x1b0c('0xea')](_0x10425f[_0x1b0c('0x11a')],_0x10425f[_0x1b0c('0x119')])?0x0:_0x478f0d+_0x516b1f:this[_0x1b0c('0x13b')][_0x1b0c('0x13c')];this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x13c')]=_0x857c42,console[_0x1b0c('0x43')](_0x1b0c('0x22e'),this[_0x1b0c('0x11c')][_0x1b0c('0x12f')]);},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x135')]=function(_0x1da7e5){var _0x10425f=this[_0x1b0c('0x42')](),_0x45de89=(_0x10425f[_0x1b0c('0x119')],_0x10425f[_0x1b0c('0x11a')]),_0x3aa676=_0x10425f[_0x1b0c('0x22b')],_0x478f0d=_0x10425f[_0x1b0c('0x22c')]||0x0;isNaN(this[_0x1b0c('0x11b')])||(this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x131')]=this[_0x1b0c('0x11b')]),isNaN(this[_0x1b0c('0x22f')])||(this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x22d')]=this[_0x1b0c('0x22f')]);var _0x516b1f=_0x45de89-this[_0x1b0c('0x133')],_0x516b1f=this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x138')]?_0x45de89-this[_0x1b0c('0x133')]:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x139')]?(_0x45de89-this[_0x1b0c('0x133')])/0x2:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x13a')]?this[_0x1b0c('0xea')](_0x10425f[_0x1b0c('0x11a')],_0x10425f[_0x1b0c('0x119')])?0x0:_0x3aa676+_0x478f0d:this[_0x1b0c('0x13b')][_0x1b0c('0x13c')];this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x13c')]=_0x516b1f,console[_0x1b0c('0x43')](_0x1b0c('0x230'),this[_0x1b0c('0x11c')][_0x1b0c('0x12f')],_0x1b0c('0x231'),_0x516b1f);},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x22a')]=function(){console[_0x1b0c('0x43')](_0x1b0c('0x232'));},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x233')]=function(){this[_0x1b0c('0x11c')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0xe3')](),this[_0x1b0c('0x11c')][_0x1b0c('0x11d')](this[_0x1b0c('0x11e')]),this[_0x1b0c('0x11c')][_0x1b0c('0x11f')](this[_0x1b0c('0x120')]),this[_0x1b0c('0x11c')][_0x1b0c('0x121')](this[_0x1b0c('0x122')]),this[_0x1b0c('0x11c')][_0x1b0c('0x229')](),this[_0x1b0c('0x11c')][_0x1b0c('0x151')](),this[_0x1b0c('0x11c')]=null);},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x13f')]=function(_0x4edbcd,_0x34f8e0,_0x20db1b){var _0x3aa676=this;void 0x0===_0x34f8e0&&(_0x34f8e0=_0x461c34[_0x1b0c('0x138')]),console[_0x1b0c('0x43')](_0x1b0c('0x140')),this[_0x1b0c('0x114')]=_0x4edbcd,this[_0x1b0c('0x12e')]=!0x0,window[this[_0x1b0c('0x88')]]&&(this[_0x1b0c('0x11c')]?(this[_0x1b0c('0x135')]({'width':this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x131')],'height':this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x22d')]}),this[_0x1b0c('0x11c')][_0x1b0c('0xe4')](),setTimeout(function(){_0x3aa676[_0x1b0c('0x135')]({'width':_0x3aa676[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x131')],'height':_0x3aa676[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x22d')]});},0x1f4)):this[_0x1b0c('0x116')]());},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x149')]=function(){console[_0x1b0c('0x43')](_0xd52430),this[_0x1b0c('0x12e')]&&window[this[_0x1b0c('0x88')]]&&(this[_0x1b0c('0x12a')]++,this[_0x1b0c('0x11c')]?this[_0x1b0c('0x12a')]>=this[_0x1b0c('0x14f')]?(console[_0x1b0c('0x43')](_0x1b0c('0x150')),this[_0x1b0c('0x11c')][_0x1b0c('0xe3')](),this[_0x1b0c('0x11c')][_0x1b0c('0x11d')](this[_0x1b0c('0x11e')]),this[_0x1b0c('0x11c')][_0x1b0c('0x11f')](this[_0x1b0c('0x120')]),this[_0x1b0c('0x11c')][_0x1b0c('0x121')](this[_0x1b0c('0x122')]),this[_0x1b0c('0x11c')][_0x1b0c('0x229')](),this[_0x1b0c('0x11c')][_0x1b0c('0x151')](),this[_0x1b0c('0x11c')]=null,console[_0x1b0c('0x43')](_0x1b0c('0x234')),this[_0x1b0c('0x117')]()):this[_0x1b0c('0x11c')][_0x1b0c('0xe3')]():this[_0x1b0c('0x117')](),this[_0x1b0c('0x12e')]=!0x1);},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x153')]=function(_0x68ff06){if(!moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')])if(window[this[_0x1b0c('0x88')]]){if(window[this[_0x1b0c('0x88')]][_0x1b0c('0x155')]){if(this[_0x1b0c('0x159')])this[_0x1b0c('0x159')][_0x1b0c('0x15a')](this[_0x1b0c('0x15b')]),this[_0x1b0c('0x159')][_0x1b0c('0x11f')](this[_0x1b0c('0x15c')]),this[_0x1b0c('0x159')][_0x1b0c('0x121')](this[_0x1b0c('0x15d')]);else{if(_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x82')]))return void console[_0x1b0c('0x128')](_0x1b0c('0x156'));this[_0x1b0c('0x159')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x155')]({'adUnitId':this[_0x1b0c('0x82')]});}this[_0x1b0c('0x159')][_0x1b0c('0x126')](this[_0x1b0c('0x15c')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x159')][_0x1b0c('0x15f')](this[_0x1b0c('0x15b')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x159')][_0x1b0c('0x127')](this[_0x1b0c('0x15d')][_0x1b0c('0x125')](this)),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')]=!0x0,this[_0x1b0c('0x159')][_0x1b0c('0x161')]();}}else moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')](_0x3548aa[_0x1b0c('0x158')]);},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x15d')]=function(){console[_0x1b0c('0x43')](_0x1b0c('0x169')),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')]=!0x1,this[_0x1b0c('0x159')]&&this[_0x1b0c('0x159')][_0x1b0c('0xe4')]();},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x16d')]=function(){if(_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x83')]))console[_0x1b0c('0x128')](_0x1b0c('0x170'));else if(window[this[_0x1b0c('0x88')]])if(this[_0x1b0c('0x91')](_0x1b0c('0x235'))){if(_0x1b0c('0x21')!=typeof window[this[_0x1b0c('0x88')]][_0x1b0c('0x16e')])return;this[_0x1b0c('0x171')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x16e')]({'adUnitId':this[_0x1b0c('0x83')]}),this[_0x1b0c('0x171')][_0x1b0c('0x127')](this[_0x1b0c('0x172')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x15f')](this[_0x1b0c('0x173')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x161')]();}else{if(_0x1b0c('0x21')!=typeof window[this[_0x1b0c('0x88')]][_0x1b0c('0x236')])return;this[_0x1b0c('0x171')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x236')]({'adUnitId':this[_0x1b0c('0x83')]}),this[_0x1b0c('0x171')][_0x1b0c('0x127')](this[_0x1b0c('0x172')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x109')](this[_0x1b0c('0x237')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x161')]();}},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x174')]=function(){this[_0x1b0c('0x171')]?this[_0x1b0c('0x171')][_0x1b0c('0xe4')]():this[_0x1b0c('0x238')]=!0x0;},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x172')]=function(){this[_0x1b0c('0x238')]&&(this[_0x1b0c('0x171')]?this[_0x1b0c('0x171')][_0x1b0c('0xe4')]():this[_0x1b0c('0x238')]=!0x1);},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x237')]=function(){this[_0x1b0c('0x171')]&&this[_0x1b0c('0x171')][_0x1b0c('0x161')]();},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x144')]=function(){console[_0x1b0c('0x43')](_0x1b0c('0x239'));},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x183')]=function(_0x8a77ff,_0x252b88){window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x183')]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x183')](_0x1b0c('0x23a'),0x0);},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x17b')]=function(){window[this[_0x1b0c('0x88')]]&&_0x1b0c('0x21')==typeof window[this[_0x1b0c('0x88')]][_0x1b0c('0x23b')]&&(this[_0x1b0c('0x18b')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x23b')]({'adUnitId':parseInt(''+this[_0x1b0c('0x85')][this[_0x1b0c('0x18d')]])}),this[_0x1b0c('0x18b')][_0x1b0c('0x127')](this[_0x1b0c('0x17c')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x18b')][_0x1b0c('0x126')](this[_0x1b0c('0x17d')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x190')]=!0x0);},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x17c')]=function(_0x4458b6){this[_0x1b0c('0x190')]=!0x1,console[_0x1b0c('0x43')](_0x1b0c('0x23c'),_0x4458b6),_0x4458b6&&_0x4458b6[_0x1b0c('0x23d')]&&0x0<_0x4458b6[_0x1b0c('0x23d')][_0x1b0c('0x7')]?(this[_0x1b0c('0x18e')]=_0x4458b6[_0x1b0c('0x23d')][0x0],_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x18e')][_0x1b0c('0x23e')])||(console[_0x1b0c('0x43')](_0x1b0c('0x23f')),this[_0x1b0c('0x18b')][_0x1b0c('0x240')]({'adId':this[_0x1b0c('0x18e')][_0x1b0c('0x23e')]})),_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x18f')])&&this[_0x1b0c('0x18f')](_0x279d2d[_0x1b0c('0x50')](this[_0x1b0c('0x18e')]))):(console[_0x1b0c('0x43')](_0x1b0c('0x241')),_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x18f')])&&this[_0x1b0c('0x18f')](null));},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x17d')]=function(_0x10e6f1){this[_0x1b0c('0x190')]=!0x1,this[_0x1b0c('0x18e')]=null,0x4e23==_0x10e6f1[_0x1b0c('0xbd')]?this[_0x1b0c('0x18d')]<this[_0x1b0c('0x85')][_0x1b0c('0x7')]-0x1?(console[_0x1b0c('0x43')](_0x1b0c('0x242'),_0x10e6f1,_0x1b0c('0x243')),this[_0x1b0c('0x18d')]+=0x1,this[_0x1b0c('0x17e')](),this[_0x1b0c('0x17b')]()):(console[_0x1b0c('0x43')](_0x1b0c('0x244')),this[_0x1b0c('0x18d')]=0x0,_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x18f')])&&this[_0x1b0c('0x18f')](null)):(console[_0x1b0c('0x43')](_0x1b0c('0x245'),_0x10e6f1),_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x18f')])&&this[_0x1b0c('0x18f')](null));},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x17e')]=function(){this[_0x1b0c('0x190')]=!0x1,this[_0x1b0c('0x18b')][_0x1b0c('0x121')](),this[_0x1b0c('0x18b')][_0x1b0c('0x11f')](),this[_0x1b0c('0x18b')][_0x1b0c('0x151')](),console[_0x1b0c('0x43')](_0x1b0c('0x246'));},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x17f')]=function(_0x3e63b2){this[_0x1b0c('0x18f')]=_0x3e63b2,this[_0x1b0c('0x18b')]&&this[_0x1b0c('0x18b')][_0x1b0c('0x161')]();},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x180')]=function(_0x16fc0d){this[_0x1b0c('0x18e')]&&!_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x18e')][_0x1b0c('0x23e')])&&(this[_0x1b0c('0x247')]=_0x16fc0d,this[_0x1b0c('0x248')]=!0x0,console[_0x1b0c('0x43')](_0x1b0c('0x249'),this[_0x1b0c('0x18e')][_0x1b0c('0x23e')]),this[_0x1b0c('0x18b')][_0x1b0c('0x24a')]({'adId':this[_0x1b0c('0x18e')][_0x1b0c('0x23e')]}));},_0x314e09[_0x1b0c('0x4')][_0x1b0c('0x222')]=function(){this[_0x1b0c('0x248')]&&(this[_0x1b0c('0x248')]=!0x1,_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x247')])&&this[_0x1b0c('0x247')]());},_0x314e09);function _0x314e09(){var _0x4492f4=_0x3c5bf1[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x88')]='qg',_0x4492f4[_0x1b0c('0x24b')]='',_0x4492f4[_0x1b0c('0x11b')]=0x2f8,_0x4492f4[_0x1b0c('0x22f')]=0x60,_0x4492f4[_0x1b0c('0x238')]=!0x1,_0x4492f4[_0x1b0c('0xb1')]=Date[_0x1b0c('0xb0')](),_0x4492f4[_0x1b0c('0x248')]=!0x1,_0x4492f4[_0x1b0c('0x106')](),_0x4492f4[_0x1b0c('0x21c')](),_0x4492f4;}var _0x47b5a9,_0x451c32=(_0x4492f4(_0x429fe7,_0x47b5a9=_0x5fb838),_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x24c')]=function(_0x281bc7){null==moosnow[_0x1b0c('0x24d')][_0x1b0c('0x24e')](this[_0x1b0c('0x24f')],null)&&moosnow[_0x1b0c('0x24d')][_0x1b0c('0x250')](this[_0x1b0c('0x24f')],_0x281bc7);},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x251')]=function(){return 0x0==this[_0x1b0c('0x252')]&&(this[_0x1b0c('0x252')]=moosnow[_0x1b0c('0x24d')][_0x1b0c('0x253')](this[_0x1b0c('0x24f')],0x0)),this[_0x1b0c('0x252')];},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x254')]=function(_0x4d982d){this[_0x1b0c('0x252')]-=_0x4d982d,moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x7b')],this[_0x1b0c('0x252')]);},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x255')]=function(_0x10a163){this[_0x1b0c('0x252')]+=_0x10a163,moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x7b')],this[_0x1b0c('0x252')]);},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x256')]=function(_0x12b67b){this[_0x1b0c('0x252')]=_0x12b67b,moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x7b')],this[_0x1b0c('0x252')]);},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x257')]=function(){moosnow[_0x1b0c('0x24d')][_0x1b0c('0x250')](this[_0x1b0c('0x24f')],this[_0x1b0c('0x252')]);},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0xaa')]=function(){return _0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x258')])&&(this[_0x1b0c('0x258')]=moosnow[_0x1b0c('0x24d')][_0x1b0c('0x259')](this[_0x1b0c('0x25a')],'')),this[_0x1b0c('0x258')];},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0xab')]=function(_0x2f43f4){moosnow[_0x1b0c('0x24d')][_0x1b0c('0x250')](this[_0x1b0c('0x25a')],_0x2f43f4);},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x25b')]=function(){return this[_0x1b0c('0x25c')];},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x25d')]=function(_0xdea60){this[_0x1b0c('0x25c')]=_0xdea60;},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x1df')]=function(){return this[_0x1b0c('0x25e')];},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x198')]=function(_0x478ebf){this[_0x1b0c('0x25e')]=_0x478ebf;},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x1e0')]=function(){return this[_0x1b0c('0x25f')];},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x197')]=function(_0x34cea8){this[_0x1b0c('0x25f')]=_0x34cea8;},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x260')]=function(){return moosnow[_0x1b0c('0x24d')][_0x1b0c('0x261')](this[_0x1b0c('0x262')],!0x0);},_0x429fe7[_0x1b0c('0x4')][_0x1b0c('0x263')]=function(_0x4c5224){moosnow[_0x1b0c('0x24d')][_0x1b0c('0x264')](this[_0x1b0c('0x262')],_0x4c5224),moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x72')],_0x4c5224);},_0x429fe7);function _0x429fe7(){var _0x4492f4=null!==_0x47b5a9&&_0x47b5a9[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x25a')]=_0x1b0c('0x265'),_0x4492f4[_0x1b0c('0x24f')]=_0x1b0c('0x24f'),_0x4492f4[_0x1b0c('0x258')]='',_0x4492f4[_0x1b0c('0x262')]=_0x1b0c('0x262'),_0x4492f4[_0x1b0c('0x252')]=0x0,_0x4492f4[_0x1b0c('0x25c')]=0x0,_0x4492f4[_0x1b0c('0x25e')]='0',_0x4492f4[_0x1b0c('0x25f')]='0',_0x4492f4;}var _0x560d3d,_0x509b0a=(_0x4492f4(_0x3c0611,_0x560d3d=_0x5fb838),_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x7d')]=function(){},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x253')]=function(_0x1e4db1,_0x849feb){var _0x45de89=this[_0x1b0c('0x24e')](_0x1e4db1,_0x849feb);return parseInt(_0x45de89);},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x266')]=function(_0x38e3ed,_0x41b851){var _0x45de89=this[_0x1b0c('0x24e')](_0x38e3ed,_0x41b851);return parseFloat(_0x45de89);},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x261')]=function(_0x2865e0,_0x523f81){var _0x45de89=0x1==_0x523f81?_0x1b0c('0x267'):_0x1b0c('0x268');return _0x1b0c('0x267')==this[_0x1b0c('0x259')](_0x2865e0,_0x45de89);},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x259')]=function(_0x2da439,_0x6de217){return this[_0x1b0c('0x24e')](_0x2da439,_0x6de217);},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x269')]=function(_0x5263f7,_0x21ba81){var _0x45de89=this[_0x1b0c('0x24e')](_0x5263f7,_0x21ba81);return _0x45de89&&''!=_0x45de89?JSON[_0x1b0c('0x1c9')](_0x45de89):null;},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x26a')]=function(_0x152e80,_0xc62d78){var _0x45de89='';_0xc62d78&&(_0x45de89=JSON[_0x1b0c('0x45')](_0xc62d78)),this[_0x1b0c('0x250')](_0x152e80,_0x45de89);},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x264')]=function(_0xbcb663,_0x4a5bab){0x1==_0x4a5bab?this[_0x1b0c('0x250')](_0xbcb663,_0x1b0c('0x267')):this[_0x1b0c('0x250')](_0xbcb663,_0x1b0c('0x268'));},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x250')]=function(_0xe8ce04,_0x576e3d){window[_0x1b0c('0x26b')][_0x1b0c('0x26c')](_0xe8ce04,_0x576e3d);},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x26d')]=function(_0x21b971,_0x2562f7){var _0x45de89=this[_0x1b0c('0x253')](_0x21b971,0x0),_0x3aa676=parseInt(_0x2562f7)+_0x45de89;return this[_0x1b0c('0x250')](_0x21b971,_0x3aa676),_0x3aa676;},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x26e')]=function(_0x3056fe,_0x54ee3d){var _0x45de89=this[_0x1b0c('0x266')](_0x3056fe,0x0),_0x3aa676=parseFloat(_0x54ee3d)+_0x45de89;this[_0x1b0c('0x250')](_0x3056fe,_0x3aa676);},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x26f')]=function(_0x4aa49b){window[_0x1b0c('0x26b')][_0x1b0c('0x270')](_0x4aa49b);},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x271')]=function(){window[_0x1b0c('0x26b')][_0x1b0c('0x272')]();},_0x3c0611[_0x1b0c('0x4')][_0x1b0c('0x24e')]=function(_0x2cd37e,_0x3bf0dc){var _0x45de89=window[_0x1b0c('0x26b')][_0x1b0c('0x273')](_0x2cd37e);return null!=_0x45de89&&''!=_0x45de89||(_0x45de89=_0x3bf0dc),_0x45de89;},_0x3c0611);function _0x3c0611(){return _0x560d3d[_0x1b0c('0x8')](this)||this;}var _0x5961d4,_0x526f7e=(_0x4492f4(_0x43f9b4,_0x5961d4=_0x2e21fb),_0x43f9b4[_0x1b0c('0x4')][_0x1b0c('0x1a1')]=function(_0x18034f){var _0x4492f4=this,_0x45de89=_0x1b0c('0x274')+moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0x9a')]+_0x1b0c('0x275')+Date[_0x1b0c('0xb0')]();moosnow[_0x1b0c('0x9b')][_0x1b0c('0x9c')](_0x45de89,{},_0x1b0c('0x1f8'),function(_0x5d4b43){_0x18034f(_0x5d4b43),console[_0x1b0c('0x43')](_0x1b0c('0x276'),_0x5d4b43);},function(){_0x5961d4[_0x1b0c('0x4')][_0x1b0c('0x1a1')][_0x1b0c('0x8')](_0x4492f4,_0x18034f),console[_0x1b0c('0x43')](_0x1b0c('0x277'));},function(){console[_0x1b0c('0x43')](_0x1b0c('0x278'));});},_0x43f9b4);function _0x43f9b4(){return null!==_0x5961d4&&_0x5961d4[_0x1b0c('0x9')](this,arguments)||this;}var _0x9c82e9,_0x37dd9f=(_0x4492f4(_0x1821f5,_0x9c82e9=_0x2e21fb),_0x1821f5[_0x1b0c('0x4')][_0x1b0c('0x1a1')]=function(_0x1d762c){var _0x45de89=this,_0x4492f4=_0x1b0c('0x274')+moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0x9a')]+_0x1b0c('0x275')+Date[_0x1b0c('0xb0')]();moosnow[_0x1b0c('0x9b')][_0x1b0c('0x9c')](_0x4492f4,{},_0x1b0c('0x1f8'),function(_0x1d2bc2){_0x1d762c(_0x1d2bc2),console[_0x1b0c('0x43')](_0x1b0c('0x276'),_0x1d2bc2);},function(_0x3d057b){_0x45de89[_0x1b0c('0x279')](_0x1d762c),console[_0x1b0c('0x43')](_0x1b0c('0x277'));},function(){console[_0x1b0c('0x43')](_0x1b0c('0x278'));});},_0x1821f5[_0x1b0c('0x4')][_0x1b0c('0x279')]=function(_0x386f0e){var _0x4492f4=this[_0x1b0c('0x98')]+_0x1b0c('0x27a'),_0x45de89={'appid':moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0x9a')]};moosnow[_0x1b0c('0x9b')][_0x1b0c('0x9c')](_0x4492f4,_0x45de89,_0x1b0c('0x9d'),function(_0x465bfa){_0x465bfa[_0x1b0c('0x9f')][_0x1b0c('0x1e')](function(){return 0.5<Math[_0x1b0c('0xb')]()?0x1:-0x1;}),_0x386f0e&&_0x386f0e(_0x465bfa[_0x1b0c('0x9f')]);},function(){_0x386f0e([]),console[_0x1b0c('0x43')](_0x1b0c('0x277'));},function(){console[_0x1b0c('0x43')](_0x1b0c('0x278'));});},_0x1821f5);function _0x1821f5(){return null!==_0x9c82e9&&_0x9c82e9[_0x1b0c('0x9')](this,arguments)||this;}var _0x563f06,_0x95c78e={'ARTICLE':_0x1b0c('0x27b'),'VIDEO':_0x1b0c('0x159'),'TOKEN':_0x1b0c('0x265'),'LINK':''},_0x4a3a91=function(){},_0x4eb96d=(_0x4492f4(_0x2bcd5a,_0x563f06=_0x226b6b),_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x27c')]=function(){var _0x10425f=this;window[this[_0x1b0c('0x88')]]&&(window[this[_0x1b0c('0x88')]][_0x1b0c('0x27d')]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x27d')](function(_0x540c9b){console[_0x1b0c('0x43')](_0x1b0c('0x27e'),_0x540c9b),_0x10425f[_0x1b0c('0x27f')]&&_0x10425f[_0x1b0c('0x27f')](_0x540c9b);}),window[this[_0x1b0c('0x88')]][_0x1b0c('0x280')]?window[this[_0x1b0c('0x88')]][_0x1b0c('0x280')](function(_0x2188c3){console[_0x1b0c('0x43')](_0x1b0c('0x280'),_0x2188c3);}):window[this[_0x1b0c('0x88')]][_0x1b0c('0x281')]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x281')](function(_0x419624){console[_0x1b0c('0x43')](_0x1b0c('0x281'),_0x419624);}));},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x16d')]=function(){window[this[_0x1b0c('0x88')]]&&_0x1b0c('0x21')==typeof window[this[_0x1b0c('0x88')]][_0x1b0c('0x16e')]&&(_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x83')])?console[_0x1b0c('0x128')](_0x1b0c('0x170')):(this[_0x1b0c('0x171')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x16e')]({'adUnitId':this[_0x1b0c('0x83')]}),this[_0x1b0c('0x171')][_0x1b0c('0x127')](this[_0x1b0c('0x172')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x15f')](this[_0x1b0c('0x173')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x161')]()));},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x11e')]=function(_0x33e9ed){var _0x10425f,_0x45de89,_0x3aa676,_0x478f0d;this[_0x1b0c('0x11b')]!=_0x33e9ed[_0x1b0c('0x131')]&&(_0x45de89=(_0x10425f=this[_0x1b0c('0x42')]())[_0x1b0c('0x119')],_0x3aa676=_0x10425f[_0x1b0c('0x11a')],this[_0x1b0c('0x11b')]=_0x33e9ed[_0x1b0c('0x131')],this[_0x1b0c('0x133')]=this[_0x1b0c('0x11b')]/0x10*0x9,_0x478f0d=_0x3aa676-this[_0x1b0c('0x133')]-0x1e,console[_0x1b0c('0x43')](_0x1b0c('0x282'),this[_0x1b0c('0x11b')],_0x1b0c('0x133'),this[_0x1b0c('0x133')],_0x1b0c('0x13c'),_0x478f0d),this[_0x1b0c('0x11c')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x13c')]=_0x478f0d,this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x130')]=(_0x45de89-_0x33e9ed[_0x1b0c('0x131')])/0x2));},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0xff')]=function(){window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x283')]&&(this[_0x1b0c('0x102')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x283')]());},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x100')]=function(){this[_0x1b0c('0x102')]&&(this[_0x1b0c('0x284')]++,console[_0x1b0c('0x43')](_0x1b0c('0x100'),this[_0x1b0c('0x284')]),this[_0x1b0c('0x102')][_0x1b0c('0x285')]({'timeRange':[0x2,0x2],'success':function(_0x309571){console[_0x1b0c('0x43')](_0x1b0c('0x286'),_0x309571);}}));},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x101')]=function(_0x3fdb09,_0x4942d0){var _0x45de89=this;void 0x0===_0x3fdb09&&(_0x3fdb09=0x12c),void 0x0===_0x4942d0&&(_0x4942d0=null),console[_0x1b0c('0x43')](_0x1b0c('0x287')),this[_0x1b0c('0x102')]?(this[_0x1b0c('0x284')]=0x0,this[_0x1b0c('0x288')]=null,this[_0x1b0c('0x289')]=null,this[_0x1b0c('0x102')][_0x1b0c('0x1e4')](function(_0x6fb61f){console[_0x1b0c('0x43')](_0x1b0c('0x28a')),_0x4942d0&&_0x4942d0(_0x6fb61f);}),this[_0x1b0c('0x289')],this[_0x1b0c('0x102')][_0x1b0c('0x28b')](function(_0x521913){console[_0x1b0c('0x43')](_0x1b0c('0x28c'),_0x521913),0x4<=_0x45de89[_0x1b0c('0x284')]?_0x45de89[_0x1b0c('0x102')][_0x1b0c('0x28d')]({'path':_0x521913[_0x1b0c('0x28e')],'success':function(_0x4dbcd5){console[_0x1b0c('0x43')](_0x1b0c('0x28f'),_0x4dbcd5),_0x45de89[_0x1b0c('0x289')]=_0x4dbcd5,console[_0x1b0c('0x43')](_0x1b0c('0x290'),_0x45de89[_0x1b0c('0x289')]),_0x45de89[_0x1b0c('0x288')]&&_0x45de89[_0x1b0c('0x288')](_0x4dbcd5);},'fail':function(){console[_0x1b0c('0x43')](_0x1b0c('0x291'),_0x521913),_0x45de89[_0x1b0c('0x289')]=_0x521913,_0x45de89[_0x1b0c('0x288')]&&_0x45de89[_0x1b0c('0x288')](_0x521913);}}):(_0x45de89[_0x1b0c('0x289')]=_0x521913,_0x45de89[_0x1b0c('0x288')]&&_0x45de89[_0x1b0c('0x288')](_0x521913));}),this[_0x1b0c('0x102')][_0x1b0c('0x292')]({'duration':_0x3fdb09})):_0x4942d0&&_0x4942d0(!0x1);},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x103')]=function(_0x104f64){void 0x0===_0x104f64&&(_0x104f64=null),console[_0x1b0c('0x43')](_0x1b0c('0x293'),!!_0x104f64),this[_0x1b0c('0x102')]?(console[_0x1b0c('0x43')](_0x1b0c('0x294'),this[_0x1b0c('0x289')]),this[_0x1b0c('0x289')]?_0x279d2d[_0x1b0c('0x24')](_0x104f64)&&_0x104f64(this[_0x1b0c('0x289')]):(this[_0x1b0c('0x288')]=_0x104f64,this[_0x1b0c('0x102')][_0x1b0c('0x295')](),console[_0x1b0c('0x43')](_0x1b0c('0x296'),this[_0x1b0c('0x289')]))):_0x104f64&&_0x104f64(!0x1);},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x104')]=function(){this[_0x1b0c('0x102')]&&this[_0x1b0c('0x102')][_0x1b0c('0x297')]();},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x105')]=function(){this[_0x1b0c('0x102')]&&this[_0x1b0c('0x102')][_0x1b0c('0x298')]();},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0xf2')]=function(_0x2f83e0,_0x4b4763){void 0x0===_0x2f83e0&&(_0x2f83e0={}),this[_0x1b0c('0xf3')]=_0x4b4763;var _0x45de89=this[_0x1b0c('0xef')](_0x2f83e0);console[_0x1b0c('0x43')](_0x1b0c('0x299'),_0x45de89),window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0xf8')]?window[this[_0x1b0c('0x88')]][_0x1b0c('0xf8')](_0x45de89):this[_0x1b0c('0xf3')](!0x0);},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0xef')]=function(_0x3754a7){var _0x10425f,_0x45de89=this,_0x3aa676='',_0x478f0d='';0x0<this[_0x1b0c('0xed')][_0x1b0c('0x7')]&&(_0x3aa676=(_0x10425f=this[_0x1b0c('0xed')][_0x85adb7[_0x1b0c('0xa')](0x0,this[_0x1b0c('0xed')][_0x1b0c('0x7')]-0x1)])[_0x1b0c('0xfa')],_0x478f0d=_0x10425f[_0x1b0c('0xbb')]);var _0x516b1f=_0x95c78e[_0x1b0c('0x29a')];_0x3754a7&&-0x1!=[_0x95c78e[_0x1b0c('0x29a')],_0x95c78e[_0x1b0c('0x29b')],_0x95c78e[_0x1b0c('0x25a')],_0x95c78e[_0x1b0c('0x29c')]][_0x1b0c('0x48')](_0x3754a7[_0x1b0c('0x29d')])&&(_0x516b1f=_0x3754a7[_0x1b0c('0x29d')]);var _0x857c42=this[_0x1b0c('0x289')]&&this[_0x1b0c('0x289')][_0x1b0c('0x28e')]?this[_0x1b0c('0x289')][_0x1b0c('0x28e')]:'';return console[_0x1b0c('0x43')](_0x1b0c('0x29e'),_0x857c42),{'channel':_0x516b1f,'title':_0x3aa676,'imageUrl':_0x478f0d,'query':moosnow[_0x1b0c('0x9b')][_0x1b0c('0x1d4')](_0x3754a7),'extra':{'videoPath':_0x857c42,'videoTopics':[_0x3aa676]},'success':function(){console[_0x1b0c('0x43')](_0x1b0c('0x29f')),_0x45de89[_0x1b0c('0xf3')]&&_0x45de89[_0x1b0c('0xf3')](!0x0);},'fail':function(_0x539f48){console[_0x1b0c('0x43')](_0x1b0c('0x29f'),_0x539f48),_0x45de89[_0x1b0c('0xf3')]&&_0x45de89[_0x1b0c('0xf3')](!0x1);}};},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x122')]=function(){this[_0x1b0c('0x12a')]=0x0,this[_0x1b0c('0x2a0')]=!0x0,this[_0x1b0c('0x12e')]&&this[_0x1b0c('0x13f')]();},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x117')]=function(){this[_0x1b0c('0x2a0')]=!0x1,_0x563f06[_0x1b0c('0x4')][_0x1b0c('0x117')][_0x1b0c('0x8')](this);},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x135')]=function(_0x1b4945){var _0x10425f,_0x45de89,_0x3aa676;_0x279d2d[_0x1b0c('0x25')](_0x1b4945)?console[_0x1b0c('0x43')](_0x1b0c('0x136')):((_0x10425f=this[_0x1b0c('0x42')]())[_0x1b0c('0x119')],_0x45de89=_0x10425f[_0x1b0c('0x11a')],_0x3aa676=0x0,this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x138')]?_0x3aa676=_0x45de89-this[_0x1b0c('0x133')]-0x1e:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x139')]?_0x3aa676=(_0x45de89-this[_0x1b0c('0x133')])/0x2:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x13a')]&&(_0x3aa676=0x0),this[_0x1b0c('0x13b')]?this[_0x1b0c('0x11c')][_0x1b0c('0x12f')]=this[_0x1b0c('0x13b')]:(this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x13c')]=_0x3aa676,console[_0x1b0c('0x43')](_0x1b0c('0x13d'),this[_0x1b0c('0x11c')][_0x1b0c('0x12f')],_0x1b0c('0x13e'),_0x3aa676)));},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x13f')]=function(_0x5dda8c,_0x27f264,_0x3c74da){var _0x3aa676=this;void 0x0===_0x27f264&&(_0x27f264=_0x461c34[_0x1b0c('0x138')]),console[_0x1b0c('0x43')](_0x1b0c('0x140')),this[_0x1b0c('0x114')]=_0x5dda8c,this[_0x1b0c('0x12e')]=!0x0,this[_0x1b0c('0x2a0')]&&window[this[_0x1b0c('0x88')]]&&(this[_0x1b0c('0x137')]=_0x27f264,this[_0x1b0c('0x13b')]=_0x3c74da,this[_0x1b0c('0x11c')]&&(console[_0x1b0c('0x43')](_0x1b0c('0x142'),this[_0x1b0c('0x11c')][_0x1b0c('0x12f')]),this[_0x1b0c('0x11c')][_0x1b0c('0xe3')](),this[_0x1b0c('0x135')]({'width':this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x131')],'height':this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x134')]}),this[_0x1b0c('0x11c')][_0x1b0c('0xe4')]()[_0x1b0c('0x143')](function(){_0x3aa676[_0x1b0c('0x135')]({'width':_0x3aa676[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x131')],'height':_0x3aa676[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x134')]});})));},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x181')]=function(_0x28920c,_0x319ca2){var _0x45de89=this;void 0x0===_0x319ca2&&(_0x319ca2=!0x0),this[_0x1b0c('0x27f')]=_0x28920c,window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x2a1')]&&moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x1c5bdf){(!_0x319ca2||_0x1c5bdf&&0x1==_0x1c5bdf[_0x1b0c('0x181')])&&_0x45de89[_0x1b0c('0x2a2')]();});},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x2a3')]=function(_0x4c21c2){var _0x45de89=[];moosnow['ad'][_0x1b0c('0x19e')](function(_0x2c443a){0x0!=_0x2c443a[_0x1b0c('0x1a0')][_0x1b0c('0x7')]&&(_0x2c443a[_0x1b0c('0x1a0')][_0x1b0c('0x1a3')](function(_0x3e9eda){var _0x4c21c2=new _0x4a3a91();_0x4c21c2[_0x1b0c('0x196')]=_0x3e9eda[_0x1b0c('0xb3')],_0x4c21c2[_0x1b0c('0x193')]=_0x3e9eda[_0x1b0c('0xb4')]||_0x1b0c('0x2a4'),_0x4c21c2[_0x1b0c('0xb5')]=_0x3e9eda[_0x1b0c('0xb5')]||{},_0x45de89[_0x1b0c('0x23')](_0x4c21c2);}),console[_0x1b0c('0x43')](_0x1b0c('0x1c3'),_0x45de89),_0x4c21c2(_0x45de89));});},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x2a2')]=function(){var _0x10425f=this;_0x1b0c('0x2a5')!=this[_0x1b0c('0x42')]()[_0x1b0c('0x3e')]&&this[_0x1b0c('0x2a3')](function(_0x3e5248){console[_0x1b0c('0x43')](_0x1b0c('0x2a6'),_0x3e5248),window[_0x10425f[_0x1b0c('0x88')]][_0x1b0c('0x2a1')]({'appLaunchOptions':_0x3e5248,'success':function(_0x2f2f63){console[_0x1b0c('0x43')](_0x1b0c('0x2a7'),_0x2f2f63);},'fail':function(_0x369cda){console[_0x1b0c('0x43')](_0x1b0c('0x2a8'),_0x369cda);}});});},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x2a9')]=function(){var _0x4492f4,_0x45de89,_0x10425f;window[this[_0x1b0c('0x88')]]&&(!window[this[_0x1b0c('0x88')]][_0x1b0c('0x2aa')]||_0x1b0c('0x2a5')!=(_0x4492f4=this[_0x1b0c('0x42')]())[_0x1b0c('0x3e')]&&_0x1b0c('0x2a5')!==_0x4492f4[_0x1b0c('0x3e')]&&(_0x45de89=[],moosnow['ad'][_0x1b0c('0x19e')](function(_0x8da8c5){0x0!=_0x8da8c5[_0x1b0c('0x1a0')][_0x1b0c('0x7')]&&_0x8da8c5[_0x1b0c('0x1a0')][_0x1b0c('0x1a3')](function(_0x5977e8){var _0x10425f=new _0x4a3a91();_0x10425f[_0x1b0c('0x196')]=_0x5977e8[_0x1b0c('0xb3')],_0x10425f[_0x1b0c('0x193')]=_0x5977e8[_0x1b0c('0xb4')]||_0x1b0c('0x2a4'),_0x10425f[_0x1b0c('0xb5')]=_0x5977e8[_0x1b0c('0xb5')]||{},_0x45de89[_0x1b0c('0x23')](_0x10425f);});}),(_0x10425f=window[this[_0x1b0c('0x88')]][_0x1b0c('0x2aa')]({'style':{'left':0x14,'top':0x0,'width':0x96,'height':0x28},'appLaunchOptions':_0x45de89,'success':function(_0x5c1c8f){console[_0x1b0c('0x43')](_0x1b0c('0x2a7'),_0x5c1c8f[_0x1b0c('0x12d')]);},'fail':function(_0x358c03){console[_0x1b0c('0x43')](_0x1b0c('0x2a8'),_0x358c03[_0x1b0c('0x12d')]);}}))[_0x1b0c('0xe4')](),_0x10425f[_0x1b0c('0xe0')](function(){console[_0x1b0c('0x43')](_0x1b0c('0x2ab'));})));},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x184')]=function(_0x1e16fc,_0x198f05,_0x343a29){var _0x45de89,_0x478f0d,_0x516b1f=this;void 0x0===_0x343a29&&(_0x343a29=null),window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x2ac')]&&(_0x45de89={'left':this[_0x1b0c('0x42')]()[_0x1b0c('0x119')]-0x50-0x1e,'top':0x28,'width':0x50,'height':0x50,'lineHeight':0x50,'backgroundColor':_0x1b0c('0x2ad'),'textColor':_0x1b0c('0xfc'),'textAlign':_0x1b0c('0xfe'),'fontSize':0x10,'borderRadius':0x0,'borderWidth':0x1,'borderColor':_0x1b0c('0x2ad')},_0x478f0d=_0x2921f6(_0x2921f6({},_0x45de89),_0x343a29),this[_0x1b0c('0x2ae')]?this[_0x1b0c('0x2ae')][_0x1b0c('0xe4')]():this[_0x1b0c('0x2a3')](function(_0x1ce47e){cc[_0x1b0c('0x2af')][_0x1b0c('0x2b0')](_0x1b0c('0x2b1'),cc[_0x1b0c('0x2b2')],function(_0x4d409e,_0x4940ee){_0x4d409e||(_0x516b1f[_0x1b0c('0x2ae')]=window[_0x516b1f[_0x1b0c('0x88')]][_0x1b0c('0x2ac')]({'type':_0x1b0c('0x2b3'),'image':_0x4940ee[_0x1b0c('0x4b')],'actionType':_0x1b0c('0x18c'),'style':_0x478f0d,'appLaunchOptions':_0x1ce47e,'onNavigateToMiniGame':function(_0x568442){console[_0x1b0c('0x43')](_0x1b0c('0x2b4'),_0x568442),_0x198f05&&_0x198f05(0x1,_0x568442);}}),_0x516b1f[_0x1b0c('0x2ae')][_0x1b0c('0xe4')](),_0x516b1f[_0x1b0c('0x2ae')][_0x1b0c('0xe0')](function(){console[_0x1b0c('0x43')](_0x1b0c('0x2b5')),_0x198f05&&_0x198f05(0x2,null);}));});}));},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x2b6')]=function(){this[_0x1b0c('0x2ae')]&&this[_0x1b0c('0x2ae')][_0x1b0c('0xe3')]();},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0x8b')]=function(){return!!window[this[_0x1b0c('0x88')]]&&_0x1b0c('0x2a5')==this[_0x1b0c('0x42')]()[_0x1b0c('0x3e')];},_0x2bcd5a[_0x1b0c('0x4')][_0x1b0c('0xae')]=function(_0x18d1fa,_0x57a7f2,_0x6e925d,_0x343255){console[_0x1b0c('0x43')](_0x1b0c('0x2b7')),this[_0x1b0c('0x181')](function(){console[_0x1b0c('0x43')](_0x1b0c('0x2b8'));},!0x1);},_0x2bcd5a);function _0x2bcd5a(){var _0x4492f4=_0x563f06[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x88')]='tt',_0x4492f4[_0x1b0c('0x289')]=null,_0x4492f4[_0x1b0c('0x288')]=null,_0x4492f4[_0x1b0c('0x284')]=0x0,_0x4492f4[_0x1b0c('0x11b')]=0xd0,_0x4492f4[_0x1b0c('0x27f')]=null,_0x4492f4[_0x1b0c('0x2a0')]=!0x1,_0x4492f4[_0x1b0c('0x106')](),_0x4492f4[_0x1b0c('0x27c')](),_0x4492f4[_0x1b0c('0x116')](),_0x4492f4[_0x1b0c('0xff')](),_0x4492f4[_0x1b0c('0x16c')](),_0x4492f4;}var _0x325bec,_0x26c142=(_0x4492f4(_0x4aacc5,_0x325bec=_0x226b6b),_0x4aacc5[_0x1b0c('0x4')][_0x1b0c('0x123')]=function(){if(window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]){var _0x4492f4=this[_0x1b0c('0x133')]=Math[_0x1b0c('0xc')](this[_0x1b0c('0x11b')]/0x12c*72.8071),_0x10425f=this[_0x1b0c('0x42')](),_0x45de89=_0x10425f[_0x1b0c('0x8e')],_0x3aa676=_0x10425f[_0x1b0c('0x8d')],_0x478f0d=(_0x45de89-this[_0x1b0c('0x11b')])/0x2,_0x516b1f=_0x3aa676-_0x4492f4/0x2;if(!_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x81')])){console[_0x1b0c('0x43')](_0x1b0c('0x2b9'),this[_0x1b0c('0x81')]);var _0x857c42={'top':_0x516b1f,'left':_0x478f0d,'width':this[_0x1b0c('0x11b')],'height':_0x4492f4};return console[_0x1b0c('0x43')](_0x1b0c('0x2ba'),_0x857c42),window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]({'adUnitId':this[_0x1b0c('0x81')],'style':_0x857c42});}console[_0x1b0c('0x128')](_0x1b0c('0x129'));}},_0x4aacc5[_0x1b0c('0x4')][_0x1b0c('0x13f')]=function(_0x278432,_0xda97ff,_0x58292d){var _0x3aa676,_0x478f0d=this;void 0x0===_0xda97ff&&(_0xda97ff=_0x461c34[_0x1b0c('0x138')]),console[_0x1b0c('0x43')](_0x1b0c('0x140')),this[_0x1b0c('0x114')]=_0x278432,this[_0x1b0c('0x12e')]=!0x0,window[this[_0x1b0c('0x88')]]&&(this[_0x1b0c('0x137')]=_0xda97ff,this[_0x1b0c('0x13b')]=_0x58292d,this[_0x1b0c('0x135')]({}),!this[_0x1b0c('0x11c')]||(_0x3aa676=this[_0x1b0c('0x11c')][_0x1b0c('0xe4')]())&&_0x3aa676[_0x1b0c('0x143')](function(){_0x478f0d[_0x1b0c('0x135')]({});}));},_0x4aacc5[_0x1b0c('0x4')][_0x1b0c('0x11e')]=function(_0x25c176){console[_0x1b0c('0x43')](_0x1b0c('0x2bb'),_0x25c176[_0x1b0c('0x131')],_0x25c176[_0x1b0c('0x22d')]);},_0x4aacc5[_0x1b0c('0x4')][_0x1b0c('0x135')]=function(_0x1054f1){var _0x10425f=this[_0x1b0c('0x42')](),_0x45de89=(_0x10425f[_0x1b0c('0x119')],_0x10425f[_0x1b0c('0x11a')]),_0x3aa676=0x0,_0x3aa676=this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x138')]?_0x45de89-this[_0x1b0c('0x133')]:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x139')]?(_0x45de89-this[_0x1b0c('0x133')])/0x2:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x13a')]?0x0:this[_0x1b0c('0x13b')][_0x1b0c('0x13c')];this[_0x1b0c('0x11c')]&&this[_0x1b0c('0x11c')][_0x1b0c('0x12f')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0x12f')][_0x1b0c('0x13c')]=_0x3aa676);},_0x4aacc5[_0x1b0c('0x4')][_0x1b0c('0x181')]=function(_0x3f37dd,_0x29f13f){var _0x45de89=this;void 0x0===_0x29f13f&&(_0x29f13f=!0x0),window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x2bc')]&&(this[_0x1b0c('0x2bd')]=_0x3f37dd,console[_0x1b0c('0x43')](_0x1b0c('0x181')),moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x26858f){!_0x29f13f||_0x26858f&&0x1==_0x26858f[_0x1b0c('0x181')]?(_0x45de89[_0x1b0c('0x18c')]||(_0x45de89[_0x1b0c('0x18c')]=window[_0x45de89[_0x1b0c('0x88')]][_0x1b0c('0x2bc')]({'adUnitId':_0x45de89[_0x1b0c('0x40')][_0x1b0c('0x84')]}),_0x45de89[_0x1b0c('0x18c')][_0x1b0c('0x15f')](_0x45de89[_0x1b0c('0x2be')][_0x1b0c('0x125')](_0x45de89))),_0x45de89[_0x1b0c('0x18c')][_0x1b0c('0x161')]()[_0x1b0c('0x143')](function(){_0x45de89[_0x1b0c('0x18c')][_0x1b0c('0xe4')]();})):(_0x279d2d[_0x1b0c('0x24')](_0x45de89[_0x1b0c('0x2bd')])&&_0x45de89[_0x1b0c('0x2bd')](-0x1),console[_0x1b0c('0x43')](_0x1b0c('0x2bf')));}));},_0x4aacc5[_0x1b0c('0x4')][_0x1b0c('0x182')]=function(_0x28a524){var _0x10425f,_0x45de89=this;this[_0x1b0c('0x18c')]&&(this[_0x1b0c('0x18c')][_0x1b0c('0x15a')](this[_0x1b0c('0x2be')]),_0x10425f=this[_0x1b0c('0x18c')][_0x1b0c('0x151')](),console[_0x1b0c('0x43')](_0x1b0c('0x2c0'),_0x10425f),_0x10425f&&_0x10425f[_0x1b0c('0x143')](function(){console[_0x1b0c('0x43')](_0x1b0c('0x2c1'),_0x10425f),_0x45de89[_0x1b0c('0x18c')]=null,_0x279d2d[_0x1b0c('0x24')](_0x28a524)&&_0x28a524(!0x0);})[_0x1b0c('0x162')](function(){console[_0x1b0c('0x43')](_0x1b0c('0x2c2'),_0x10425f),_0x45de89[_0x1b0c('0x18c')]=null,_0x279d2d[_0x1b0c('0x24')](_0x28a524)&&_0x28a524(!0x1);}));},_0x4aacc5[_0x1b0c('0x4')][_0x1b0c('0x2be')]=function(){_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x2bd')])&&this[_0x1b0c('0x2bd')](0x0);},_0x4aacc5);function _0x4aacc5(){var _0x4492f4=_0x325bec[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x88')]='qq',_0x4492f4[_0x1b0c('0x106')](),_0x4492f4[_0x1b0c('0x116')](),_0x4492f4;}var _0x50e34f,_0x2a85aa=function(){this[_0x1b0c('0xb3')]='',this[_0x1b0c('0x2c3')]='',this[_0x1b0c('0x2c4')]='',this[_0x1b0c('0xbb')]='',this[_0x1b0c('0xb4')]='',this[_0x1b0c('0xfa')]='',this[_0x1b0c('0xba')]='',this[_0x1b0c('0x223')]='',this[_0x1b0c('0xb5')]='',this[_0x1b0c('0xb9')]='',this[_0x1b0c('0x2c5')]=null,this[_0x1b0c('0x2c6')]=0x0,this[_0x1b0c('0x2c7')]=!0x1;},_0x116f2f=(_0x4492f4(_0x1e2a0a,_0x50e34f=_0x2e21fb),_0x1e2a0a[_0x1b0c('0x4')][_0x1b0c('0x1a1')]=function(_0x235382){var _0x4492f4={'apk_id':moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0x9a')]};moosnow[_0x1b0c('0x9b')][_0x1b0c('0x9c')](_0x1b0c('0x2c8'),_0x4492f4,_0x1b0c('0x9d'),function(_0x3ee3dd){var _0x10425f=_0x3ee3dd[_0x1b0c('0x9f')];if(_0x10425f[_0x1b0c('0x1e')](function(){return 0.5<Math[_0x1b0c('0xb')]()?0x1:-0x1;}),console[_0x1b0c('0x43')](_0x1b0c('0x2c9'),_0x3ee3dd[_0x1b0c('0x9f')]),_0x235382){for(var _0x45de89=[],_0x3aa676=0x0;_0x3aa676<_0x10425f[_0x1b0c('0x7')];_0x3aa676++){var _0x478f0d=_0x10425f[_0x3aa676],_0x516b1f=new _0x2a85aa();_0x516b1f[_0x1b0c('0xb3')]=_0x478f0d[_0x1b0c('0x2ca')],_0x516b1f[_0x1b0c('0xbb')]=_0x478f0d[_0x1b0c('0x2cb')],_0x516b1f[_0x1b0c('0xb4')]=_0x478f0d[_0x1b0c('0x2cc')],_0x516b1f[_0x1b0c('0xfa')]=_0x478f0d[_0x1b0c('0x2cd')],_0x516b1f[_0x1b0c('0x223')]=_0x478f0d[_0x1b0c('0x2ce')],_0x516b1f[_0x1b0c('0x2c4')]=_0x478f0d[_0x1b0c('0x2cf')],_0x45de89[_0x1b0c('0x23')](_0x516b1f);}_0x235382(_0x45de89);}},function(){_0x235382([]),console[_0x1b0c('0x43')](_0x1b0c('0x277'));},function(){console[_0x1b0c('0x43')](_0x1b0c('0x278'));});},_0x1e2a0a);function _0x1e2a0a(){return null!==_0x50e34f&&_0x50e34f[_0x1b0c('0x9')](this,arguments)||this;}var _0x411a47,_0x386125=(_0x4492f4(_0x494437,_0x411a47=_0x328d1c),_0x494437[_0x1b0c('0x4')][_0x1b0c('0x94')]=function(_0xa7720c,_0x255fd0){var _0x3aa676=this;moosnow[_0x1b0c('0x9b')][_0x1b0c('0x1ef')](function(_0x3cbf89){var _0x10425f=_0x411a47[_0x1b0c('0x4')][_0x1b0c('0x9e')][_0x1b0c('0x8')](_0x3aa676,_0x3cbf89[_0x1b0c('0x2d0')]);_0x255fd0(_0x10425f);});},_0x494437[_0x1b0c('0x4')][_0x1b0c('0xa9')]=function(_0x1d7bb3,_0x1ac89e){window[this[_0x1b0c('0x88')]]?window[this[_0x1b0c('0x88')]][_0x1b0c('0xa9')]({'success':function(_0x54408b){moosnow[_0x1b0c('0x9b')][_0x1b0c('0x9c')](_0x1b0c('0x2d1'),{'apk_id':moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0x9a')],'code':_0x54408b[_0x1b0c('0x9f')][_0x1b0c('0x265')]},_0x1b0c('0x9d'),function(_0x2a68ca){moosnow[_0x1b0c('0x9f')][_0x1b0c('0xab')](_0x2a68ca[_0x1b0c('0x9f')][_0x1b0c('0x19c')]),_0x1d7bb3&&_0x1d7bb3(_0x2a68ca[_0x1b0c('0x9f')]),console[_0x1b0c('0x43')](_0x1b0c('0x2d2'),_0x2a68ca);},function(_0x55d6bc){_0x1d7bb3&&_0x1d7bb3(null),console[_0x1b0c('0x43')](_0x1b0c('0x2d3'),_0x55d6bc);});},'fail':function(_0x1becc0){_0x1ac89e&&_0x1ac89e(_0x1becc0);}}):_0x1d7bb3&&_0x1d7bb3();},_0x494437[_0x1b0c('0x4')][_0x1b0c('0xae')]=function(_0x3d2b6d,_0x5f07b6,_0x419f9a,_0x4e1bda){var _0x478f0d=this;_0x411a47[_0x1b0c('0x4')][_0x1b0c('0xae')][_0x1b0c('0x8')](this,_0x3d2b6d,function(){_0x478f0d[_0x1b0c('0x2d4')](_0x3d2b6d[_0x1b0c('0xb3')]),_0x279d2d[_0x1b0c('0x24')](_0x5f07b6)&&_0x5f07b6();},_0x419f9a,_0x4e1bda);},_0x494437[_0x1b0c('0x4')][_0x1b0c('0x2d4')]=function(_0x4b1b60){var _0x10425f={'user_id':moosnow[_0x1b0c('0x9f')][_0x1b0c('0xaa')](),'apk_id':moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0x9a')],'appid':_0x4b1b60,'link_id':_0x4b1b60};console[_0x1b0c('0x43')](_0x1b0c('0x2d5'),_0x10425f),moosnow[_0x1b0c('0x9b')][_0x1b0c('0x9c')](_0x1b0c('0x2d6'),_0x10425f,_0x1b0c('0x9d'),function(_0x33035a){console[_0x1b0c('0x43')](_0x1b0c('0x2d7'),_0x33035a);},function(_0xa54b45){console[_0x1b0c('0x43')](_0x1b0c('0x2d8'),_0xa54b45);},function(){console[_0x1b0c('0x43')](_0x1b0c('0x2d9'));});},_0x494437);function _0x494437(){return null!==_0x411a47&&_0x411a47[_0x1b0c('0x9')](this,arguments)||this;}var _0x121ed7,_0x44accc=(_0x4492f4(_0x240db3,_0x121ed7=_0x226b6b),_0x240db3[_0x1b0c('0x4')][_0x1b0c('0x123')]=function(){if(window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]){var _0x4492f4=this[_0x1b0c('0x42')](),_0x10425f=_0x4492f4[_0x1b0c('0x8e')],_0x45de89=_0x4492f4[_0x1b0c('0x8d')];if(!_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x81')]))return window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]({'adUnitId':this[_0x1b0c('0x81')],'appSid':this[_0x1b0c('0x24b')],'style':{'top':_0x45de89,'width':_0x10425f}});console[_0x1b0c('0x128')](_0x1b0c('0x129'));}},_0x240db3[_0x1b0c('0x4')][_0x1b0c('0x153')]=function(_0x491810){var _0x10425f=this;this[_0x1b0c('0x154')]||window[this[_0x1b0c('0x88')]][_0x1b0c('0x155')]&&(this[_0x1b0c('0x159')]?(this[_0x1b0c('0x159')][_0x1b0c('0x15a')](this[_0x1b0c('0x15b')]),this[_0x1b0c('0x159')][_0x1b0c('0x11f')](this[_0x1b0c('0x15c')]),this[_0x1b0c('0x159')][_0x1b0c('0x121')](this[_0x1b0c('0x15d')])):this[_0x1b0c('0x159')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x155')]({'adUnitId':this[_0x1b0c('0x82')],'appSid':this[_0x1b0c('0x24b')]}),this[_0x1b0c('0x159')][_0x1b0c('0x126')](this[_0x1b0c('0x15c')]),this[_0x1b0c('0x159')][_0x1b0c('0x15f')](this[_0x1b0c('0x15b')]),this[_0x1b0c('0x159')][_0x1b0c('0x127')](this[_0x1b0c('0x15d')]),this[_0x1b0c('0x154')]=!0x0,this[_0x1b0c('0x159')][_0x1b0c('0x161')]()[_0x1b0c('0x143')](function(){_0x491810&&_0x10425f[_0x1b0c('0x159')][_0x1b0c('0xe4')]()[_0x1b0c('0x143')](function(){})[_0x1b0c('0x162')](function(_0x500b51){_0x10425f[_0x1b0c('0x15c')](_0x500b51[_0x1b0c('0x12d')],_0x500b51[_0x1b0c('0x12c')]),console[_0x1b0c('0x43')](_0x500b51[_0x1b0c('0x12d')]);});})[_0x1b0c('0x162')](function(_0x1ba761){_0x10425f[_0x1b0c('0x15c')](_0x1ba761[_0x1b0c('0x12d')],_0x1ba761[_0x1b0c('0x12c')]),console[_0x1b0c('0x43')](_0x1ba761[_0x1b0c('0x12d')]);}));},_0x240db3[_0x1b0c('0x4')][_0x1b0c('0xff')]=function(){var _0x4492f4;window[this[_0x1b0c('0x88')]]&&(_0x4492f4=this[_0x1b0c('0x42')]()[_0x1b0c('0x46')][_0x1b0c('0x14')](),/huawei/[_0x1b0c('0x89')](_0x4492f4)||/honor/[_0x1b0c('0x89')](_0x4492f4)||(this[_0x1b0c('0x102')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x2da')]()));},_0x240db3[_0x1b0c('0x4')][_0x1b0c('0x101')]=function(_0x31100a,_0x3bcb85){var _0x45de89=this;void 0x0===_0x31100a&&(_0x31100a=0x78),void 0x0===_0x3bcb85&&(_0x3bcb85=null),console[_0x1b0c('0x43')](_0x1b0c('0x287')),this[_0x1b0c('0x289')]=null,this[_0x1b0c('0x288')]=null,this[_0x1b0c('0x102')]?(this[_0x1b0c('0x102')][_0x1b0c('0x1e4')](function(_0x1a535c){console[_0x1b0c('0x43')](_0x1b0c('0x28a')),_0x3bcb85&&_0x3bcb85(_0x1a535c);}),this[_0x1b0c('0x102')][_0x1b0c('0x28b')](function(_0x7cad0c){_0x45de89[_0x1b0c('0x289')]=_0x7cad0c,_0x45de89[_0x1b0c('0x288')]&&(console[_0x1b0c('0x43')](_0x1b0c('0x2db')),_0x45de89[_0x1b0c('0x288')](_0x7cad0c));}),this[_0x1b0c('0x102')][_0x1b0c('0x292')]({'duration':_0x31100a})):_0x3bcb85&&_0x3bcb85(!0x1);},_0x240db3[_0x1b0c('0x4')][_0x1b0c('0x103')]=function(_0x265f24){void 0x0===_0x265f24&&(_0x265f24=null),console[_0x1b0c('0x43')](_0x1b0c('0x2dc')),this[_0x1b0c('0x102')]?this[_0x1b0c('0x289')]?(console[_0x1b0c('0x43')](_0x1b0c('0x2dd')),_0x265f24(this[_0x1b0c('0x289')])):(this[_0x1b0c('0x288')]=_0x265f24,this[_0x1b0c('0x102')][_0x1b0c('0x295')]()):_0x265f24&&_0x265f24(!0x1);},_0x240db3);function _0x240db3(){var _0x4492f4=_0x121ed7[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x88')]=_0x1b0c('0x41'),_0x4492f4[_0x1b0c('0x81')]='',_0x4492f4[_0x1b0c('0x82')]='',_0x4492f4[_0x1b0c('0x24b')]='',_0x4492f4[_0x1b0c('0x289')]=null,_0x4492f4[_0x1b0c('0x288')]=null,_0x4492f4;}var _0x23d4c3,_0x242db2=(_0x4492f4(_0x1df631,_0x23d4c3=_0x29f338),_0x1df631[_0x1b0c('0x4')][_0x1b0c('0x205')]=function(_0x1c02a9){this[_0x1b0c('0x1ef')](function(_0x89967b){_0x1c02a9(parseInt(_0x89967b[_0x1b0c('0x206')]));});},_0x1df631[_0x1b0c('0x4')][_0x1b0c('0x207')]=function(_0x326424){this[_0x1b0c('0x1ef')](function(_0x58cf4d){_0x326424(parseInt(_0x58cf4d[_0x1b0c('0x208')]));});},_0x1df631[_0x1b0c('0x4')][_0x1b0c('0x209')]=function(_0x2215f5){this[_0x1b0c('0x1ef')](function(_0x5cdf38){isNaN(_0x5cdf38[_0x1b0c('0x14f')])?_0x2215f5(0x5):_0x2215f5(parseInt(_0x5cdf38[_0x1b0c('0x14f')]));});},_0x1df631[_0x1b0c('0x4')][_0x1b0c('0xa3')]=function(_0x193dd8){this[_0x1b0c('0x1ef')](function(_0x1102c4){_0x193dd8(_0x1102c4);});},_0x1df631[_0x1b0c('0x4')][_0x1b0c('0x1ef')]=function(_0x6a1e3d){var _0x4492f4,_0x3aa676=this;this[_0x1b0c('0x1f2')]?_0x6a1e3d(this[_0x1b0c('0x1f2')]):(_0x4492f4=moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0x4b')]+_0x1b0c('0x1f4')+Date[_0x1b0c('0xb0')](),console[_0x1b0c('0x43')](_0x1b0c('0x2de'),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0x9a')]),this[_0x1b0c('0x9c')](_0x4492f4,{'apk_id':moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0x9a')]},_0x1b0c('0x9d'),function(_0x2722de){var _0x10425f=_0x2722de[_0x1b0c('0x9f')][_0x1b0c('0x2d0')]==moosnow[_0x1b0c('0x3e')][_0x1b0c('0x40')][_0x1b0c('0xa0')];_0x3aa676[_0x1b0c('0x1f2')]=_0x2921f6(_0x2921f6({},_0x279d2d[_0x1b0c('0x50')](_0x2722de[_0x1b0c('0x9f')])),{'mistouchNum':_0x2722de[_0x1b0c('0x9f')][_0x1b0c('0x2df')],'mistouchPosNum':_0x2722de[_0x1b0c('0x9f')][_0x1b0c('0x2df')],'showNative':_0x10425f,'showInter':_0x10425f,'showExportAd':_0x10425f,'mx_native_click_switch':0x1==_0x2722de[_0x1b0c('0x2e0')],'mx_jump_switch':0x1==_0x2722de[_0x1b0c('0x2e1')],'bannerShowCountLimit':isNaN(_0x2722de[_0x1b0c('0x9f')][_0x1b0c('0x14f')])?0x1:_0x2722de[_0x1b0c('0x9f')][_0x1b0c('0x14f')]}),moosnow[_0x1b0c('0x3e')]&&(moosnow[_0x1b0c('0x3e')][_0x1b0c('0x14f')]=parseInt(_0x2722de[_0x1b0c('0x9f')][_0x1b0c('0x14f')])),_0x6a1e3d(_0x3aa676[_0x1b0c('0x1f2')]);},function(){_0x6a1e3d({}),console[_0x1b0c('0x43')](_0x1b0c('0x1fb'));}));},_0x1df631);function _0x1df631(){return null!==_0x23d4c3&&_0x23d4c3[_0x1b0c('0x9')](this,arguments)||this;}var _0x3e7200={'FAIL':_0x1b0c('0x2e2')},_0x50e901={'ERR':_0x1b0c('0x2e3'),'NOTEND':_0x1b0c('0x2e4')},_0x68aa05=(_0x1178de[_0x1b0c('0x4')][_0x1b0c('0x2e5')]=function(_0x388d95){for(var _0x10425f,_0x45de89,_0x3aa676=_0x388d95[_0x1b0c('0x7')],_0x478f0d=_0x3aa676;_0x478f0d--;)_0x478f0d!==(_0x45de89=Math[_0x1b0c('0x35')](Math[_0x1b0c('0xb')]()*_0x3aa676))&&(_0x10425f=_0x388d95[_0x478f0d],_0x388d95[_0x478f0d]=_0x388d95[_0x45de89],_0x388d95[_0x45de89]=_0x10425f);return _0x388d95;},_0x1178de[_0x1b0c('0x4')][_0x1b0c('0x48')]=function(_0x36a3da,_0x39e5e8){for(var _0x45de89=-0x1,_0x3aa676=0x0,_0x478f0d=_0x36a3da[_0x1b0c('0x7')];_0x3aa676<_0x478f0d;_0x3aa676++)if(_0x36a3da[_0x3aa676]==_0x39e5e8){_0x45de89=_0x3aa676;break;}return _0x45de89;},_0x1178de[_0x1b0c('0x4')][_0x1b0c('0x34')]=function(_0x2ada41,_0x4d330b,_0xd280e2){var _0x3aa676=_0x2ada41[_0x4d330b],_0x478f0d=_0x2ada41[_0xd280e2];_0x2ada41[_0xd280e2]=_0x3aa676,_0x2ada41[_0x4d330b]=_0x478f0d;},_0x1178de[_0x1b0c('0x4')][_0x1b0c('0x2e6')]=function(_0x57c44b,_0x3e3acc){for(var _0x45de89=0x0,_0x3aa676=_0x57c44b[_0x1b0c('0x7')];_0x45de89<_0x3aa676;_0x45de89++)_0x3e3acc[_0x1b0c('0x23')](_0x57c44b[_0x45de89]);return _0x3e3acc;},_0x1178de[_0x1b0c('0x2e7')]=function(_0x4cad34){return new Array(),_0x4cad34[_0x1b0c('0x16')](0x0);},_0x1178de[_0x1b0c('0x2e8')]=function(_0x124940,_0x41751e){for(var _0x45de89=0x0;_0x45de89<_0x124940[_0x1b0c('0x7')];_0x45de89++)if(_0x124940[_0x45de89]==_0x41751e)return _0x124940[_0x1b0c('0x2e9')](_0x45de89,0x1),void _0x45de89--;},_0x1178de);function _0x1178de(){}var _0x3dbf19,_0x4ae340=(_0x4492f4(_0x1983d7,_0x3dbf19=_0x5fb838),_0x1983d7[_0x1b0c('0x4')][_0x1b0c('0x221')]=function(_0x33e40d,_0x9a1043,_0x1c3884){this[_0x1b0c('0x2ea')](_0x33e40d,_0x9a1043,!0x1,_0x1c3884);},_0x1983d7[_0x1b0c('0x4')][_0x1b0c('0x2eb')]=function(_0x34d43e,_0x327894){this[_0x1b0c('0x2ec')](_0x34d43e,_0x327894);},_0x1983d7[_0x1b0c('0x4')][_0x1b0c('0x10d')]=function(_0x436daa,_0x4c026f){this[_0x1b0c('0x2ed')](_0x436daa,_0x4c026f),this[_0x1b0c('0x2ee')]();},_0x1983d7[_0x1b0c('0x4')][_0x1b0c('0x2ef')]=function(_0x10dfc8,_0x419836){if(null!=_0x10dfc8&&''!=_0x10dfc8)for(var _0x45de89=0x0;_0x45de89<this[_0x1b0c('0x2f0')][_0x1b0c('0x7')];_0x45de89++){var _0x3aa676=this[_0x1b0c('0x2f0')][_0x45de89];if(_0x3aa676[_0x1b0c('0x2f1')]===_0x10dfc8){for(var _0x478f0d=0x0;_0x478f0d<_0x3aa676[_0x1b0c('0x2f2')][_0x1b0c('0x7')];_0x478f0d++){var _0x516b1f=_0x3aa676[_0x1b0c('0x2f2')][_0x478f0d];if(_0x516b1f[_0x1b0c('0x2f3')]===_0x419836){_0x68aa05[_0x1b0c('0x2e8')](_0x3aa676[_0x1b0c('0x2f2')],_0x516b1f);break;}}0x0==_0x3aa676[_0x1b0c('0x2f2')][_0x1b0c('0x7')]&&_0x68aa05[_0x1b0c('0x2e8')](this[_0x1b0c('0x2f0')],_0x3aa676);break;}}else console[_0x1b0c('0x1ca')](_0x1b0c('0x2f4')+_0x10dfc8+_0x1b0c('0x2f5'));},_0x1983d7[_0x1b0c('0x4')][_0x1b0c('0x2f6')]=function(){this[_0x1b0c('0x2f0')][_0x1b0c('0x7')]=0x0,this[_0x1b0c('0x2f0')]=[],this[_0x1b0c('0x2f7')][_0x1b0c('0x7')]=0x0,this[_0x1b0c('0x2f7')]=[];},_0x1983d7[_0x1b0c('0x4')][_0x1b0c('0x2ea')]=function(_0x383e43,_0x184097,_0x2c1404,_0x427870){if(null!=_0x383e43&&''!=_0x383e43){var _0x478f0d=new _0x269caf();_0x427870 instanceof Function?_0x478f0d[_0x1b0c('0x2f8')]=_0x427870:console[_0x1b0c('0x1ca')](_0x1b0c('0x2f9')),_0x184097?_0x478f0d[_0x1b0c('0x2f3')]=_0x184097:console[_0x1b0c('0x1ca')](_0x1b0c('0x2fa')),_0x478f0d[_0x1b0c('0x2fb')]=_0x2c1404;var _0x516b1f=!0x1;if(0x0<this[_0x1b0c('0x2f0')][_0x1b0c('0x7')]){for(var _0x857c42,_0x85adb7=0x0;_0x85adb7<this[_0x1b0c('0x2f0')][_0x1b0c('0x7')];_0x85adb7++){var _0x444d0c=this[_0x1b0c('0x2f0')][_0x85adb7];if(_0x383e43===_0x444d0c[_0x1b0c('0x2f1')])return _0x444d0c[_0x1b0c('0x2f2')][_0x1b0c('0x23')](_0x478f0d),void(_0x516b1f=!0x0);}_0x516b1f||((_0x857c42=new _0x21228f())[_0x1b0c('0x2f1')]=_0x383e43,_0x857c42[_0x1b0c('0x2f2')][_0x1b0c('0x23')](_0x478f0d),this[_0x1b0c('0x2f0')][_0x1b0c('0x23')](_0x857c42));}else{var _0x279d2d=new _0x21228f();_0x279d2d[_0x1b0c('0x2f1')]=_0x383e43,_0x279d2d[_0x1b0c('0x2f2')][_0x1b0c('0x23')](_0x478f0d),this[_0x1b0c('0x2f0')][_0x1b0c('0x23')](_0x279d2d);}}else console[_0x1b0c('0x1ca')](_0x1b0c('0x2f4')+_0x383e43+_0x1b0c('0x2f5'));},_0x1983d7[_0x1b0c('0x4')][_0x1b0c('0x2ec')]=function(_0x559b6b,_0x390833){var _0x45de89;null!=_0x559b6b&&''!=_0x559b6b?(_0x45de89={'eventName':_0x559b6b,'data':_0x390833},this[_0x1b0c('0x2f7')][_0x1b0c('0x23')](_0x45de89)):console[_0x1b0c('0x1ca')](_0x1b0c('0x2f4')+_0x559b6b+_0x1b0c('0x2f5'));},_0x1983d7[_0x1b0c('0x4')][_0x1b0c('0x2ed')]=function(_0xc35276,_0x1e5376){for(var _0x45de89=this[_0x1b0c('0x2f0')],_0x3aa676=0x0;_0x3aa676<_0x45de89[_0x1b0c('0x7')];_0x3aa676++){var _0x478f0d=_0x45de89[_0x3aa676];if(_0x478f0d[_0x1b0c('0x2f1')]===_0xc35276)for(var _0x516b1f=_0x478f0d[_0x1b0c('0x2f2')],_0x857c42=_0x516b1f[_0x1b0c('0x7')]-0x1;0x0<=_0x857c42;_0x857c42--){var _0x85adb7=_0x516b1f[_0x857c42],_0x444d0c=_0x85adb7[_0x1b0c('0x2f8')],_0x279d2d=_0x85adb7[_0x1b0c('0x2f3')];_0x279d2d?(_0x444d0c[_0x1b0c('0x8')](_0x279d2d,_0x1e5376),_0x85adb7[_0x1b0c('0x2fb')]&&this[_0x1b0c('0x2f0')][_0x3aa676][_0x1b0c('0x2f2')][_0x857c42]&&(_0x68aa05[_0x1b0c('0x2e8')](this[_0x1b0c('0x2f0')][_0x3aa676][_0x1b0c('0x2f2')],_0x85adb7),_0x3aa676--)):(_0x68aa05[_0x1b0c('0x2e8')](this[_0x1b0c('0x2f0')][_0x3aa676][_0x1b0c('0x2f2')],_0x85adb7),_0x857c42--);}}},_0x1983d7[_0x1b0c('0x4')][_0x1b0c('0x2ee')]=function(){if(0x0!=this[_0x1b0c('0x2f7')][_0x1b0c('0x7')])for(var _0x4492f4=0x0;_0x4492f4<this[_0x1b0c('0x2f7')][_0x1b0c('0x7')];_0x4492f4++){var _0x10425f=this[_0x1b0c('0x2f7')][_0x4492f4];this[_0x1b0c('0x2ed')](_0x10425f[_0x1b0c('0x2f1')],_0x10425f[_0x1b0c('0x9f')]),_0x68aa05[_0x1b0c('0x2e8')](this[_0x1b0c('0x2f7')],_0x10425f),_0x4492f4--;}},_0x1983d7[_0x1b0c('0x4')][_0x1b0c('0x189')]=function(){},_0x1983d7);function _0x1983d7(){var _0x4492f4=_0x3dbf19[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x2f0')]=[],_0x4492f4[_0x1b0c('0x2f7')]=[],_0x4492f4[_0x1b0c('0x2f0')]=[],_0x4492f4[_0x1b0c('0x2f7')]=[],_0x4492f4;}var _0x5b32aa,_0x269caf=function(){this[_0x1b0c('0x2f8')]=null,this[_0x1b0c('0x2f3')]=[],this[_0x1b0c('0x2fb')]=!0x1,this[_0x1b0c('0x2f8')]=null,this[_0x1b0c('0x2f3')]=null,this[_0x1b0c('0x2fb')]=!0x1;},_0x21228f=function(){this[_0x1b0c('0x2f1')]='',this[_0x1b0c('0x2f2')]=[],this[_0x1b0c('0x2f1')]='',this[_0x1b0c('0x2f2')]=[];},_0x576403=(_0x4492f4(_0x5d0344,_0x5b32aa=_0x226b6b),_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x21c')]=function(){moosnow[_0x1b0c('0x10c')][_0x1b0c('0x221')](_0x2dd322[_0x1b0c('0x75')],this,this[_0x1b0c('0x222')]);},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0xae')]=function(_0x32613a,_0x5b9d0e,_0xaf3a40,_0x7ad7d3){var _0x478f0d,_0x516b1f,_0x857c42,_0x85adb7,_0x444d0c=this;console[_0x1b0c('0x43')](_0x1b0c('0xaf'),_0x32613a),Date[_0x1b0c('0xb0')]()-this[_0x1b0c('0xb1')]<0x12c?console[_0x1b0c('0x43')](_0x1b0c('0xb2')):(this[_0x1b0c('0xb1')]=Date[_0x1b0c('0xb0')](),window[this[_0x1b0c('0x88')]]?(_0x478f0d=_0x32613a[_0x1b0c('0xb3')],_0x516b1f=_0x32613a[_0x1b0c('0xb4')],_0x85adb7=_0x32613a[_0x1b0c('0xb5')],_0x857c42=_0x32613a[_0x1b0c('0x223')],_0x85adb7=_0x85adb7||{},this[_0x1b0c('0x91')](0x414)?window[this[_0x1b0c('0x88')]][_0x1b0c('0x224')]({'appId':_0x478f0d,'path':_0x516b1f,'pkgName':_0x857c42||_0x478f0d,'extraData':_0x85adb7,'success':function(){window[_0x444d0c[_0x1b0c('0x88')]]&&window[_0x444d0c[_0x1b0c('0x88')]][_0x1b0c('0x199')]&&window[_0x444d0c[_0x1b0c('0x88')]][_0x1b0c('0x199')]('跳转',{'position':_0x32613a[_0x1b0c('0xb9')],'appid':_0x478f0d,'img':_0x32613a[_0x1b0c('0xba')]||_0x32613a[_0x1b0c('0xbb')]}),moosnow[_0x1b0c('0x9b')][_0x1b0c('0xbe')](),_0x5b9d0e&&_0x5b9d0e();},'fail':function(_0x2726a3){console[_0x1b0c('0x43')](_0x1b0c('0x225'),_0x2726a3),_0xaf3a40&&_0xaf3a40();},'complete':function(){_0x7ad7d3&&_0x7ad7d3();}}):console[_0x1b0c('0x43')](_0x1b0c('0x226'))):_0x5b9d0e&&_0x5b9d0e());},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x91')]=function(_0x4f1fff){return this[_0x1b0c('0x42')]()[_0x1b0c('0x227')]>=_0x4f1fff;},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x120')]=function(_0x2aea5b){console[_0x1b0c('0x128')](_0x1b0c('0x12b'),_0x2aea5b[_0x1b0c('0x12c')],_0x1b0c('0x228'),_0x2aea5b[_0x1b0c('0x12d')]),this[_0x1b0c('0x233')]();},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x42')]=function(){return null==this[_0x1b0c('0xe8')]&&(window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x42')]?this[_0x1b0c('0xe8')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x42')]():this[_0x1b0c('0xe8')]={},console[_0x1b0c('0x43')](_0x1b0c('0xe9'),this[_0x1b0c('0xe8')])),this[_0x1b0c('0xe8')];},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x117')]=function(){window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]&&(this[_0x1b0c('0x11c')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0x2fc')](),this[_0x1b0c('0x11c')][_0x1b0c('0x11f')](),this[_0x1b0c('0x11c')][_0x1b0c('0x121')](),this[_0x1b0c('0x11c')][_0x1b0c('0x15a')](),this[_0x1b0c('0x11c')][_0x1b0c('0x151')](),this[_0x1b0c('0x11c')]=null),this[_0x1b0c('0x11c')]=this[_0x1b0c('0x123')](),this[_0x1b0c('0x11c')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0x2fd')](this[_0x1b0c('0x11e')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x11c')][_0x1b0c('0x126')](this[_0x1b0c('0x120')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x11c')][_0x1b0c('0x127')](this[_0x1b0c('0x122')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x11c')][_0x1b0c('0x15f')](this[_0x1b0c('0x2fe')][_0x1b0c('0x125')](this))));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x123')]=function(){if(window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]){var _0x4492f4=Date[_0x1b0c('0xb0')]();if(this[_0x1b0c('0x2ff')]||(this[_0x1b0c('0x2ff')]=_0x4492f4),!this[_0x1b0c('0x2ff')]||this[_0x1b0c('0x2ff')]&&_0x4492f4-this[_0x1b0c('0x2ff')]<=0x3e8*this[_0x1b0c('0x300')])console[_0x1b0c('0x43')](_0x1b0c('0x301')+this[_0x1b0c('0x300')]+_0x1b0c('0x302'));else{this[_0x1b0c('0x2ff')]=Date[_0x1b0c('0xb0')]();var _0x10425f=this[_0x1b0c('0x42')](),_0x45de89=_0x10425f[_0x1b0c('0x8e')],_0x3aa676=_0x10425f[_0x1b0c('0x8d')],_0x478f0d=_0x10425f[_0x1b0c('0x22b')],_0x516b1f=_0x10425f[_0x1b0c('0x303')],_0x857c42=this[_0x1b0c('0x304')](),_0x85adb7=(_0x45de89-this[_0x1b0c('0x11b')])/_0x516b1f/0x2;if(!_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x81')])){var _0x444d0c={'top':this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x138')]?(_0x3aa676-this[_0x1b0c('0x22f')])/_0x516b1f:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x139')]?(_0x3aa676-this[_0x1b0c('0x22f')])/_0x516b1f/0x2:this[_0x1b0c('0x137')]==_0x461c34[_0x1b0c('0x13a')]?this[_0x1b0c('0xea')](_0x10425f[_0x1b0c('0x8d')],_0x10425f[_0x1b0c('0x8e')])?0x0:_0x478f0d+_0x857c42:this[_0x1b0c('0x13b')][_0x1b0c('0x13c')],'left':_0x85adb7,'width':this[_0x1b0c('0x11b')],'height':this[_0x1b0c('0x22f')]};return console[_0x1b0c('0x43')](_0x1b0c('0x305'),_0x444d0c,_0x1b0c('0x8d'),_0x3aa676,_0x1b0c('0x133'),this[_0x1b0c('0x133')]),window[this[_0x1b0c('0x88')]][_0x1b0c('0x118')]({'posId':this[_0x1b0c('0x81')],'style':_0x444d0c});}console[_0x1b0c('0x128')](_0x1b0c('0x129'));}}},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x304')]=function(){var _0x4492f4=0x0;return window[this[_0x1b0c('0x88')]][_0x1b0c('0x306')]&&(_0x4492f4=window[this[_0x1b0c('0x88')]][_0x1b0c('0x306')]()[_0x1b0c('0x22d')]),_0x4492f4;},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x11e')]=function(_0x1edcca){console[_0x1b0c('0x43')](_0x1b0c('0x307'),_0x1edcca);},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x2fe')]=function(){console[_0x1b0c('0x43')](_0x1b0c('0x308'));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x22a')]=function(){console[_0x1b0c('0x43')](_0x1b0c('0x232'));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x233')]=function(){this[_0x1b0c('0x11c')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0x11d')](this[_0x1b0c('0x11e')]),this[_0x1b0c('0x11c')][_0x1b0c('0x11f')](this[_0x1b0c('0x120')]),this[_0x1b0c('0x11c')][_0x1b0c('0x121')](this[_0x1b0c('0x122')]),this[_0x1b0c('0x11c')][_0x1b0c('0x15a')](this[_0x1b0c('0x2fe')]),this[_0x1b0c('0x11c')][_0x1b0c('0x151')](),this[_0x1b0c('0x11c')]=null);},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x13f')]=function(_0x5e27a7,_0x45172d,_0x3e29cb){var _0x3aa676;void 0x0===_0x45172d&&(_0x45172d=_0x461c34[_0x1b0c('0x138')]),this[_0x1b0c('0x114')]=_0x5e27a7,this[_0x1b0c('0x12e')]=!0x0,window[this[_0x1b0c('0x88')]]&&(this[_0x1b0c('0x137')]=_0x45172d,this[_0x1b0c('0x13b')]=_0x3e29cb,this[_0x1b0c('0x11c')]||this[_0x1b0c('0x116')](),this[_0x1b0c('0x11c')]&&(_0x3aa676=this[_0x1b0c('0x11c')][_0x1b0c('0xe4')](),console[_0x1b0c('0x43')](_0x1b0c('0x309'),this[_0x1b0c('0x11c')]),_0x3aa676&&_0x3aa676[_0x1b0c('0x143')](function(){console[_0x1b0c('0x43')](_0x1b0c('0x30a'));})[_0x1b0c('0x162')](function(_0x4c5feb){switch(_0x4c5feb[_0x1b0c('0xbd')]){case 0x7533:console[_0x1b0c('0x43')](_0x1b0c('0x30b'));break;case 0x7539:console[_0x1b0c('0x43')](_0x1b0c('0x30c'));break;case 0x7532:console[_0x1b0c('0x43')](_0x1b0c('0x30d'));break;default:console[_0x1b0c('0x43')](_0x1b0c('0x30e')),console[_0x1b0c('0x43')](JSON[_0x1b0c('0x45')](_0x4c5feb));}})));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x149')]=function(){console[_0x1b0c('0x43')](_0xd52430),this[_0x1b0c('0x12e')]&&window[this[_0x1b0c('0x88')]]&&(this[_0x1b0c('0x12a')]++,this[_0x1b0c('0x11c')]&&(this[_0x1b0c('0x11c')][_0x1b0c('0xe3')](),this[_0x1b0c('0x233')]()),this[_0x1b0c('0x12e')]=!0x1);},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x153')]=function(_0x5c5be3){moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')]||(window[this[_0x1b0c('0x88')]]?window[this[_0x1b0c('0x88')]][_0x1b0c('0x155')]&&(_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x82')])?console[_0x1b0c('0x128')](_0x1b0c('0x156')):this[_0x1b0c('0x159')]?this[_0x1b0c('0x159')][_0x1b0c('0x161')]():(moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')]=!0x0,this[_0x1b0c('0x159')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x155')]({'posId':this[_0x1b0c('0x82')]}),this[_0x1b0c('0x159')][_0x1b0c('0x126')](this[_0x1b0c('0x15c')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x159')][_0x1b0c('0x15f')](this[_0x1b0c('0x15b')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x159')][_0x1b0c('0x127')](this[_0x1b0c('0x15d')][_0x1b0c('0x125')](this)))):moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')](_0x3548aa[_0x1b0c('0x158')]));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x15d')]=function(){var _0x4492f4=this;console[_0x1b0c('0x43')](_0x1b0c('0x169')),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')]=!0x1,this[_0x1b0c('0x159')]&&this[_0x1b0c('0x159')][_0x1b0c('0xe4')]()[_0x1b0c('0x143')](function(){_0x4492f4[_0x1b0c('0x160')]=!0x0,moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x76')],{}),console[_0x1b0c('0x43')](_0x1b0c('0x30f'));})[_0x1b0c('0x162')](function(_0x5ed1d1){console[_0x1b0c('0x43')](_0x1b0c('0x310'),JSON[_0x1b0c('0x45')](_0x5ed1d1));});},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x15b')]=function(_0x34f1f2){var _0x10425f;console[_0x1b0c('0x43')](_0x1b0c('0x165'),_0x34f1f2[_0x1b0c('0x166')]),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x154')]=!0x1,this[_0x1b0c('0x160')]=!0x1,_0x34f1f2[_0x1b0c('0x166')]&&moosnow[_0x1b0c('0x9b')][_0x1b0c('0x167')](),moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x75')],{}),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')]&&(_0x10425f=_0x34f1f2[_0x1b0c('0x166')]?_0x3548aa[_0x1b0c('0x158')]:_0x3548aa[_0x1b0c('0x168')],setTimeout(function(){moosnow[_0x1b0c('0x3e')][_0x1b0c('0x157')](_0x10425f);},0x32));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x16d')]=function(){if(_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x83')]))console[_0x1b0c('0x128')](_0x1b0c('0x170'));else if(window[this[_0x1b0c('0x88')]])if(this[_0x1b0c('0x91')](_0x1b0c('0x235'))){if(_0x1b0c('0x21')!=typeof window[this[_0x1b0c('0x88')]][_0x1b0c('0x16e')])return;this[_0x1b0c('0x171')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x16e')]({'adUnitId':this[_0x1b0c('0x83')]}),this[_0x1b0c('0x171')][_0x1b0c('0x127')](this[_0x1b0c('0x172')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x15f')](this[_0x1b0c('0x173')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x161')]();}else{if(_0x1b0c('0x21')!=typeof window[this[_0x1b0c('0x88')]][_0x1b0c('0x236')])return;this[_0x1b0c('0x171')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x236')]({'adUnitId':this[_0x1b0c('0x83')]}),this[_0x1b0c('0x171')][_0x1b0c('0x127')](this[_0x1b0c('0x172')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x109')](this[_0x1b0c('0x237')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x171')][_0x1b0c('0x161')]();}},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x174')]=function(){this[_0x1b0c('0x171')]?this[_0x1b0c('0x171')][_0x1b0c('0xe4')]():this[_0x1b0c('0x238')]=!0x0;},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x172')]=function(){this[_0x1b0c('0x238')]&&(this[_0x1b0c('0x171')]?this[_0x1b0c('0x171')][_0x1b0c('0xe4')]():this[_0x1b0c('0x238')]=!0x1);},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x237')]=function(){this[_0x1b0c('0x171')]&&this[_0x1b0c('0x171')][_0x1b0c('0x161')]();},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x144')]=function(){console[_0x1b0c('0x43')](_0x1b0c('0x311'));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x183')]=function(_0x5ada1b,_0x31f93d){window[this[_0x1b0c('0x88')]]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x183')]&&window[this[_0x1b0c('0x88')]][_0x1b0c('0x183')](_0x1b0c('0x23a'),0x0);},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x17b')]=function(_0xbd0a8c){void 0x0===_0xbd0a8c&&(_0xbd0a8c=!0x1),window[this[_0x1b0c('0x88')]]&&_0x1b0c('0x21')==typeof window[this[_0x1b0c('0x88')]][_0x1b0c('0x23b')]&&(this[_0x1b0c('0x18b')]=window[this[_0x1b0c('0x88')]][_0x1b0c('0x23b')]({'posId':this[_0x1b0c('0x85')][this[_0x1b0c('0x18d')]]}),this[_0x1b0c('0x18b')][_0x1b0c('0x127')](this[_0x1b0c('0x17c')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x18b')][_0x1b0c('0x126')](this[_0x1b0c('0x17d')][_0x1b0c('0x125')](this)),this[_0x1b0c('0x190')]=!0x0,_0xbd0a8c&&this[_0x1b0c('0x18b')][_0x1b0c('0x161')]());},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x17c')]=function(_0x402bf5){this[_0x1b0c('0x190')]=!0x1,console[_0x1b0c('0x43')](_0x1b0c('0x23c'),_0x402bf5),_0x402bf5&&_0x402bf5[_0x1b0c('0x23d')]&&0x0<_0x402bf5[_0x1b0c('0x23d')][_0x1b0c('0x7')]?(this[_0x1b0c('0x18e')]=_0x402bf5[_0x1b0c('0x23d')][0x0],_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x18e')][_0x1b0c('0x23e')])||(console[_0x1b0c('0x43')](_0x1b0c('0x23f')),this[_0x1b0c('0x18b')][_0x1b0c('0x240')]({'adId':this[_0x1b0c('0x18e')][_0x1b0c('0x23e')]})),_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x18f')])&&this[_0x1b0c('0x18f')](_0x279d2d[_0x1b0c('0x50')](this[_0x1b0c('0x18e')]))):(console[_0x1b0c('0x43')](_0x1b0c('0x241')),_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x18f')])&&this[_0x1b0c('0x18f')](null));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x17d')]=function(_0x382573){this[_0x1b0c('0x190')]=!0x1,this[_0x1b0c('0x18e')]=null,0x4e23==_0x382573[_0x1b0c('0xbd')]?this[_0x1b0c('0x18d')]<this[_0x1b0c('0x85')][_0x1b0c('0x7')]-0x1?(console[_0x1b0c('0x43')](_0x1b0c('0x242'),_0x382573,_0x1b0c('0x243')),this[_0x1b0c('0x18d')]+=0x1,this[_0x1b0c('0x17e')](),this[_0x1b0c('0x17b')]()):(console[_0x1b0c('0x43')](_0x1b0c('0x244')),this[_0x1b0c('0x18d')]=0x0,_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x18f')])&&this[_0x1b0c('0x18f')](null)):(console[_0x1b0c('0x43')](_0x1b0c('0x245'),_0x382573),_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x18f')])&&this[_0x1b0c('0x18f')](null));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x17e')]=function(){this[_0x1b0c('0x190')]=!0x1,this[_0x1b0c('0x18b')][_0x1b0c('0x121')](),this[_0x1b0c('0x18b')][_0x1b0c('0x11f')](),this[_0x1b0c('0x18b')][_0x1b0c('0x151')](),console[_0x1b0c('0x43')](_0x1b0c('0x246'));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x17f')]=function(_0xf842e4){this[_0x1b0c('0x18f')]=_0xf842e4,this[_0x1b0c('0x18b')]?this[_0x1b0c('0x18b')][_0x1b0c('0x161')]():this[_0x1b0c('0x17b')](!0x0);},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x180')]=function(_0x4b4c32){this[_0x1b0c('0x18e')]&&!_0x279d2d[_0x1b0c('0x25')](this[_0x1b0c('0x18e')][_0x1b0c('0x23e')])&&(this[_0x1b0c('0x247')]=_0x4b4c32,this[_0x1b0c('0x248')]=!0x0,console[_0x1b0c('0x43')](_0x1b0c('0x249'),this[_0x1b0c('0x18e')][_0x1b0c('0x23e')]),this[_0x1b0c('0x18b')][_0x1b0c('0x24a')]({'adId':this[_0x1b0c('0x18e')][_0x1b0c('0x23e')]}));},_0x5d0344[_0x1b0c('0x4')][_0x1b0c('0x222')]=function(){this[_0x1b0c('0x248')]&&(this[_0x1b0c('0x248')]=!0x1,_0x279d2d[_0x1b0c('0x24')](this[_0x1b0c('0x247')])&&this[_0x1b0c('0x247')]());},_0x5d0344);function _0x5d0344(){var _0x4492f4=_0x5b32aa[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x88')]='qg',_0x4492f4[_0x1b0c('0x24b')]='',_0x4492f4[_0x1b0c('0x11b')]=0x2d0,_0x4492f4[_0x1b0c('0x22f')]=0x71,_0x4492f4[_0x1b0c('0x238')]=!0x1,_0x4492f4[_0x1b0c('0xb1')]=Date[_0x1b0c('0xb0')](),_0x4492f4[_0x1b0c('0x300')]=0xa,_0x4492f4[_0x1b0c('0x248')]=!0x1,_0x4492f4[_0x1b0c('0x106')](),_0x4492f4[_0x1b0c('0x21c')](),_0x4492f4;}var _0xa11f18,_0x1a0765={'NONE':0x0,'BANNER':0x1,'FLOAT':0x2,'SIDE':0x4,'CENTER':0x8,'EXPORT':0x10,'BACK':0x20,'MASK':0x40,'WAIT':0x80,'LEFTRIGHT':0x100,'EXPORT_FIXED':0x200,'EXTEND1':0x400,'EXTEND2':0x800,'EXTEND3':0x1000,'EXTEND4':0x2000,'TOP':0x8000,'RECOVER':0x4000},_0x146f33=(_0x4492f4(_0x15f48c,_0xa11f18=_0x5fb838),_0x15f48c[_0x1b0c('0x4')][_0x1b0c('0x312')]=function(_0x2174c6){if(!this[_0x1b0c('0x313')])for(var _0x10425f=0x0;_0x10425f<this[_0x1b0c('0x314')][_0x1b0c('0x7')];_0x10425f++)this[_0x1b0c('0x314')][_0x10425f][_0x1b0c('0x315')](_0x2174c6);},_0x15f48c[_0x1b0c('0x4')][_0x1b0c('0x297')]=function(){this[_0x1b0c('0x313')]=!0x0;},_0x15f48c[_0x1b0c('0x4')][_0x1b0c('0x298')]=function(){this[_0x1b0c('0x313')]=!0x1;},_0x15f48c[_0x1b0c('0x4')][_0x1b0c('0x316')]=function(_0x35c85c){return this[_0x1b0c('0x314')][_0x1b0c('0x317')](function(_0x449b13){return _0x449b13[_0x1b0c('0x318')]==_0x35c85c;});},_0x15f48c[_0x1b0c('0x4')][_0x1b0c('0x319')]=function(_0x21296f,_0x4b91ba,_0xd30aae){},_0x15f48c[_0x1b0c('0x4')][_0x1b0c('0x31a')]=function(_0x26957f,_0x215af4,_0x374d23){void 0x0===_0x374d23&&(_0x374d23=!0x1);},_0x15f48c[_0x1b0c('0x4')][_0x1b0c('0x31b')]=function(_0x251827,_0x2269f4){void 0x0===_0x2269f4&&(_0x2269f4=!0x1);},_0x15f48c);function _0x15f48c(){var _0x4492f4=_0xa11f18[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x314')]=[],_0x4492f4[_0x1b0c('0x31c')]=0x0,_0x4492f4[_0x1b0c('0x313')]=!0x0,_0x4492f4[_0x1b0c('0x31d')]=_0x1b0c('0x31e'),_0x4492f4[_0x1b0c('0x31f')]=[],_0x4492f4[_0x1b0c('0x320')]=[],_0x4492f4[_0x1b0c('0x321')]=[],_0x4492f4[_0x1b0c('0x322')]=!0x0,_0x4492f4[_0x1b0c('0x314')]=[],_0x4492f4[_0x1b0c('0x31f')]=[],_0x4492f4[_0x1b0c('0x320')]=[],_0x4492f4[_0x1b0c('0x31c')]=0x0,_0x4492f4;}var _0x5eed79,_0x5311a6=(_0x4492f4(_0x3c77ef,_0x5eed79=_0x146f33),_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x62')]=function(_0x527088,_0x1134ad){cc[_0x1b0c('0x2af')][_0x1b0c('0x2b0')](this[_0x1b0c('0x31d')]+''+_0x527088,cc[_0x1b0c('0x323')],function(_0x23e138,_0xebb412){_0x1134ad&&_0x1134ad(_0x23e138,_0xebb412);});},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x319')]=function(_0x385b5f,_0x1f5dff,_0x829ecc){var _0x3aa676=this[_0x1b0c('0x324')](_0x385b5f);return _0x3aa676['id']=this[_0x1b0c('0x31c')]--,_0x3aa676[_0x1b0c('0x325')][_0x1b0c('0x326')]=_0x1f5dff,_0x3aa676[_0x1b0c('0x66')](_0x829ecc),_0x3aa676[_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x0,_0x3aa676[_0x1b0c('0x325')][_0x1b0c('0x328')]=_0x3aa676['id'],_0x3aa676[_0x1b0c('0x109')](_0x829ecc),this[_0x1b0c('0x314')][_0x1b0c('0x23')](_0x3aa676),_0x3aa676;},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x329')]=function(_0x1a1f8c){var _0x10425f=_0x279d2d[_0x1b0c('0x3b')](_0x1a1f8c)?this[_0x1b0c('0x32a')](_0x1a1f8c):_0x1a1f8c;return cc[_0x1b0c('0x32b')](_0x10425f);},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x324')]=function(_0x59a413){var _0x10425f=this[_0x1b0c('0x32c')](_0x59a413),_0x45de89=_0x10425f[_0x1b0c('0x32d')]();null==_0x45de89&&(_0x45de89=this[_0x1b0c('0x329')](_0x59a413));var _0x3aa676=this[_0x1b0c('0x63')](_0x45de89,_0x1b0c('0x32e'));return _0x3aa676[_0x1b0c('0x318')]=_0x10425f[_0x1b0c('0x68')],_0x3aa676;},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x32a')]=function(_0x195dad){return cc[_0x1b0c('0x2af')][_0x1b0c('0x32f')](this[_0x1b0c('0x31d')]+''+_0x195dad,cc[_0x1b0c('0x323')]);},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x32c')]=function(_0x2e8929){var _0x10425f=this[_0x1b0c('0x330')](_0x2e8929),_0x45de89=this[_0x1b0c('0x331')](_0x10425f);return null==_0x45de89&&(_0x45de89=this[_0x1b0c('0x332')](_0x10425f)),_0x45de89;},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x330')]=function(_0x1707f6){var _0x10425f=_0x279d2d[_0x1b0c('0x51')]();return _0x10425f==_0x516b1f&&_0x279d2d[_0x1b0c('0x1f')](_0x1707f6)?_0x1707f6[_0x1b0c('0x68')]:_0x10425f==_0x857c42&&_0x279d2d[_0x1b0c('0x1f')](_0x1707f6)?_0x1707f6[_0x1b0c('0x333')][_0x1b0c('0x68')]:''+_0x1707f6;},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x331')]=function(_0x399fc9){for(var _0x10425f=0x0;_0x10425f<this[_0x1b0c('0x321')][_0x1b0c('0x7')];_0x10425f++){var _0x45de89=this[_0x1b0c('0x321')][_0x10425f];if(_0x45de89[_0x1b0c('0x68')]===_0x399fc9)return _0x45de89;}return null;},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x332')]=function(_0x1d256e){var _0x10425f=new cc[(_0x1b0c('0x334'))](_0x1d256e);return _0x10425f[_0x1b0c('0x68')]=_0x1d256e,this[_0x1b0c('0x321')][_0x1b0c('0x23')](_0x10425f),_0x10425f;},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x31a')]=function(_0x4fcdc8,_0x3e856c,_0x3f3068){void 0x0===_0x3f3068&&(_0x3f3068=!0x1),this[_0x1b0c('0x335')](_0x4fcdc8,_0x3e856c,_0x3f3068);},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x31b')]=function(_0x2333cb,_0x54c55a){void 0x0===_0x54c55a&&(_0x54c55a=!0x1);for(var _0x45de89=0x0;_0x45de89<this[_0x1b0c('0x314')][_0x1b0c('0x7')];_0x45de89++){var _0x3aa676=this[_0x1b0c('0x314')][_0x45de89];_0x3aa676[_0x1b0c('0x318')]==_0x2333cb&&(this[_0x1b0c('0x31a')](_0x3aa676,null,_0x54c55a),_0x45de89--);}},_0x3c77ef[_0x1b0c('0x4')][_0x1b0c('0x335')]=function(_0x3575db,_0x347dd0,_0xcf2549){var _0x3aa676;void 0x0===_0xcf2549&&(_0xcf2549=!0x1),_0xcf2549?(_0x3575db[_0x1b0c('0x65')](_0x347dd0),_0x3575db[_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x1,_0x3575db[_0x1b0c('0x10e')](_0x347dd0),_0x3575db[_0x1b0c('0x151')]()):(_0x3aa676=this[_0x1b0c('0x32c')](_0x3575db[_0x1b0c('0x318')]),_0x3575db[_0x1b0c('0x65')](_0x347dd0),_0x3aa676[_0x1b0c('0x336')](_0x3575db[_0x1b0c('0x325')]),_0x3575db[_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x1,_0x3575db[_0x1b0c('0x10e')](_0x347dd0)),cc['js'][_0x1b0c('0x337')][_0x1b0c('0x2e8')](this[_0x1b0c('0x314')],_0x3575db);},_0x3c77ef);function _0x3c77ef(){var _0x4492f4=null!==_0x5eed79&&_0x5eed79[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x31d')]=_0x1b0c('0x338'),_0x4492f4;}var _0x350f1d,_0x125402=function(){this[_0x1b0c('0x68')]='',this[_0x1b0c('0x325')]=null,this[_0x1b0c('0x339')]=null,this[_0x1b0c('0x328')]=0x0,this[_0x1b0c('0x68')]='',this[_0x1b0c('0x325')]=null,this[_0x1b0c('0x339')]=null,this[_0x1b0c('0x328')]=0x0;},_0x5ed826=(_0x4492f4(_0x1c1576,_0x350f1d=_0x5fb838),_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0xd3')]=function(_0x2a5523){var _0x3aa676=this,_0x478f0d=this;null==_0x478f0d[_0x1b0c('0x33a')]?this[_0x1b0c('0x33b')](_0x1b0c('0x33a'),0x3e8,function(_0x41ae8f,_0xa94319){cc[_0x1b0c('0x33c')][_0x1b0c('0x33d')][_0x1b0c('0x325')][_0x1b0c('0x33e')](_0x41ae8f),_0x478f0d[_0x1b0c('0x33a')]=_0x3aa676[_0x1b0c('0x63')](_0x41ae8f,_0x1b0c('0x33a')),_0x41ae8f[_0x1b0c('0x328')]=_0xa94319,_0x478f0d[_0x1b0c('0x33a')][_0x1b0c('0xe4')](_0x2a5523);}):_0x478f0d[_0x1b0c('0x33a')][_0x1b0c('0xe4')](_0x2a5523);},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x33f')]=function(_0xfb04,_0x4bb713,_0x540326){var _0x3aa676=this,_0x478f0d=this[_0x1b0c('0x340')](_0xfb04);null==_0x478f0d?this[_0x1b0c('0x341')](_0xfb04,function(_0x23be36){_0x3aa676[_0x1b0c('0x342')](_0x23be36,_0x4bb713),_0x540326&&_0x540326(_0x23be36,_0x4bb713);}):(_0x478f0d[_0x1b0c('0x328')]=this[_0x1b0c('0x343')]++,this[_0x1b0c('0x344')][_0x1b0c('0x23')](_0x478f0d),this[_0x1b0c('0x342')](_0x478f0d,_0x4bb713),_0x540326&&_0x540326(_0x478f0d,_0x4bb713));},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x345')]=function(_0x2796db,_0x1d74b8){var _0x45de89;void 0x0===_0x2796db&&(_0x2796db=!0x1),0x0!=this[_0x1b0c('0x344')][_0x1b0c('0x7')]&&(_0x45de89=this[_0x1b0c('0x344')][_0x1b0c('0x345')](),_0x2796db?this[_0x1b0c('0x346')](_0x45de89,null):this[_0x1b0c('0x347')](_0x45de89,null,_0x1d74b8));},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x348')]=function(_0x2857c7){for(var _0x10425f=0x0;_0x10425f<this[_0x1b0c('0x344')][_0x1b0c('0x7')];_0x10425f++){var _0x45de89=this[_0x1b0c('0x344')][_0x10425f];if(_0x45de89[_0x1b0c('0x68')]==_0x2857c7)return _0x45de89[_0x1b0c('0x339')];}},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x349')]=function(_0xb03ca8,_0x53d4cc,_0x1ed881){if(_0x1b0c('0x34a')==typeof _0xb03ca8)for(var _0x3aa676=0x0;_0x3aa676<this[_0x1b0c('0x344')][_0x1b0c('0x7')];_0x3aa676++)(_0x478f0d=this[_0x1b0c('0x344')][_0x3aa676])[_0x1b0c('0x68')]==_0xb03ca8&&this[_0x1b0c('0x347')](_0x478f0d,_0x53d4cc,_0x1ed881);else for(var _0x478f0d,_0x3aa676=0x0;_0x3aa676<this[_0x1b0c('0x344')][_0x1b0c('0x7')];_0x3aa676++)(_0x478f0d=this[_0x1b0c('0x344')][_0x3aa676])==_0xb03ca8&&this[_0x1b0c('0x347')](_0x478f0d,_0x53d4cc,_0x1ed881);},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x34b')]=function(){for(var _0x4492f4=this[_0x1b0c('0x344')][_0x1b0c('0x7')]-0x1;0x0<=_0x4492f4;_0x4492f4--){var _0x10425f=this[_0x1b0c('0x344')][_0x4492f4];this[_0x1b0c('0x347')](_0x10425f,null);}},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x34c')]=function(_0x2a78ec,_0x3702de){for(var _0x45de89=0x0;_0x45de89<this[_0x1b0c('0x344')][_0x1b0c('0x7')];_0x45de89++){var _0x3aa676=this[_0x1b0c('0x344')][_0x45de89];_0x3aa676[_0x1b0c('0x68')]==_0x2a78ec&&this[_0x1b0c('0x346')](_0x3aa676,_0x3702de);}},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x34d')]=function(_0x2beed2){return _0x2beed2[_0x1b0c('0x34')](/\//g,'_');},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x33b')]=function(_0x231c1e,_0x5406d6,_0x3f7d66){var _0x10425f=this[_0x1b0c('0x34e')]+_0x231c1e;cc[_0x1b0c('0x2af')][_0x1b0c('0x2b0')](_0x10425f,cc[_0x1b0c('0x323')],function(_0x55ec7c,_0x3f7a9a){var _0x45de89=cc[_0x1b0c('0x32b')](_0x3f7a9a);_0x3f7d66&&_0x3f7d66(_0x45de89,_0x5406d6);});},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x341')]=function(_0x26f1b6,_0x5cf8b8){var _0x85adb7=this,_0x444d0c=this,_0x279d2d=new _0x125402();_0x279d2d[_0x1b0c('0x68')]=_0x26f1b6;var _0x4492f4=this[_0x1b0c('0x343')]++;_0x279d2d[_0x1b0c('0x328')]=_0x4492f4,this[_0x1b0c('0x344')][_0x1b0c('0x23')](_0x279d2d),this[_0x1b0c('0x33b')](_0x26f1b6,_0x4492f4,function(_0xb34389,_0x51e9cb){for(var _0x45de89=0x0;_0x45de89<_0x444d0c[_0x1b0c('0x344')][_0x1b0c('0x7')];_0x45de89++){var _0x3aa676=_0x444d0c[_0x1b0c('0x344')][_0x45de89];if(_0x3aa676[_0x1b0c('0x328')]==_0x51e9cb&&_0x3aa676[_0x1b0c('0x68')]==_0xb34389[_0x1b0c('0x68')]){if(null==_0xb34389)return void _0x85adb7[_0x1b0c('0x34f')](_0x45de89);var _0x478f0d=_0x85adb7[_0x1b0c('0x63')](_0xb34389,_0x1b0c('0x339'));return _0x478f0d[_0x1b0c('0x350')]=_0x26f1b6,_0x3aa676[_0x1b0c('0x339')]=_0x478f0d,_0x3aa676[_0x1b0c('0x325')]=_0xb34389,void(_0x5cf8b8&&_0x5cf8b8(_0x279d2d));}}});},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x340')]=function(_0x209e26){for(var _0x10425f=0x0;_0x10425f<this[_0x1b0c('0x351')][_0x1b0c('0x7')];_0x10425f++){var _0x45de89=this[_0x1b0c('0x351')][_0x10425f];if(null!=_0x45de89[_0x1b0c('0x325')]&&_0x45de89[_0x1b0c('0x68')]==_0x209e26)return this[_0x1b0c('0x351')][_0x1b0c('0x2e9')](_0x10425f,0x1),_0x45de89;}return null;},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x342')]=function(_0x4f6176,_0xd18372){var _0x45de89;cc[_0x1b0c('0x33c')][_0x1b0c('0x33d')][_0x1b0c('0x325')][_0x1b0c('0x33e')](_0x4f6176[_0x1b0c('0x325')]),_0x4f6176[_0x1b0c('0x339')][_0x1b0c('0x66')](_0xd18372),_0x4f6176[_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x0,_0xd18372&&!isNaN(_0xd18372[_0x1b0c('0x328')])?_0x4f6176[_0x1b0c('0x325')][_0x1b0c('0x328')]=_0xd18372[_0x1b0c('0x328')]:_0x4f6176[_0x1b0c('0x325')][_0x1b0c('0x328')]=_0x4f6176[_0x1b0c('0x328')],_0x4f6176[_0x1b0c('0x339')][_0x1b0c('0x109')](_0xd18372),_0x4f6176[_0x1b0c('0x339')][_0x1b0c('0x352')]&&(_0x45de89=_0x4f6176[_0x1b0c('0x325')],_0x279d2d[_0x1b0c('0x52')](_0x45de89));},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x347')]=function(_0x7936f7,_0x5c2d65,_0x2c4490){var _0x3aa676;_0x7936f7[_0x1b0c('0x339')][_0x1b0c('0x65')](_0x5c2d65),_0x7936f7[_0x1b0c('0x339')][_0x1b0c('0x10e')](_0x5c2d65),this[_0x1b0c('0x34f')](_0x7936f7),this[_0x1b0c('0x351')][_0x1b0c('0x23')](_0x7936f7),_0x7936f7[_0x1b0c('0x339')][_0x1b0c('0x352')]?(_0x3aa676=_0x7936f7[_0x1b0c('0x325')],_0x279d2d[_0x1b0c('0x58')](_0x3aa676,function(){_0x7936f7[_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x1,_0x7936f7[_0x1b0c('0x325')][_0x1b0c('0x353')](!0x1),_0x2c4490&&_0x2c4490();})):_0x7936f7[_0x1b0c('0x339')][_0x1b0c('0x354')](function(){_0x7936f7[_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x1,_0x7936f7[_0x1b0c('0x325')][_0x1b0c('0x353')](!0x1),_0x2c4490&&_0x2c4490();});},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x346')]=function(_0x80f552,_0x32d237){_0x80f552[_0x1b0c('0x339')][_0x1b0c('0x65')](_0x32d237),_0x80f552[_0x1b0c('0x325')][_0x1b0c('0x353')](),_0x80f552[_0x1b0c('0x339')][_0x1b0c('0x10e')](_0x32d237),_0x80f552[_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x1,this[_0x1b0c('0x34f')](_0x80f552),_0x80f552[_0x1b0c('0x325')][_0x1b0c('0x151')]();},_0x1c1576[_0x1b0c('0x4')][_0x1b0c('0x34f')]=function(_0xda3924){var _0x3aa676=this;isNaN(_0xda3924)?this[_0x1b0c('0x344')][_0x1b0c('0x1a3')](function(_0xe7fe7e,_0xf2214b){_0xe7fe7e==_0xda3924&&_0x3aa676[_0x1b0c('0x344')][_0x1b0c('0x2e9')](_0xf2214b,0x1);}):this[_0x1b0c('0x344')][_0x1b0c('0x2e9')](_0xda3924,0x1);},_0x1c1576);function _0x1c1576(){var _0x4492f4=_0x350f1d[_0x1b0c('0x8')](this)||this;return _0x4492f4[_0x1b0c('0x355')]=null,_0x4492f4[_0x1b0c('0x343')]=0x0,_0x4492f4[_0x1b0c('0x34e')]='',_0x4492f4[_0x1b0c('0x344')]=[],_0x4492f4[_0x1b0c('0x351')]=[],_0x4492f4[_0x1b0c('0x33a')]=null,_0x4492f4[_0x1b0c('0x343')]=0x0,_0x4492f4[_0x1b0c('0x34e')]=_0x1b0c('0x356'),_0x4492f4[_0x1b0c('0x344')]=[],_0x4492f4[_0x1b0c('0x351')]=[],_0x4492f4[_0x1b0c('0x33a')]=null,_0x4492f4;}var _0x4c85b9,_0x5859ae=(_0x4492f4(_0x1837dc,_0x4c85b9=_0x5ed826),_0x1837dc);function _0x1837dc(){return null!==_0x4c85b9&&_0x4c85b9[_0x1b0c('0x9')](this,arguments)||this;}var _0x2ae358,_0x3bae69=(_0x4492f4(_0x5d676e,_0x2ae358=_0x5fb838),Object[_0x1b0c('0x3d')](_0x5d676e[_0x1b0c('0x4')],_0x1b0c('0x357'),{'get':function(){return this[_0x1b0c('0x358')];},'enumerable':!0x0,'configurable':!0x0}),_0x5d676e[_0x1b0c('0x4')][_0x1b0c('0x359')]=function(_0x2d79fb){this[_0x1b0c('0x61')](_0x2d79fb);},_0x5d676e[_0x1b0c('0x4')][_0x1b0c('0x66')]=function(_0x51fea6){this[_0x1b0c('0x358')]=_0x51fea6;},_0x5d676e[_0x1b0c('0x4')][_0x1b0c('0x109')]=function(_0x144346){},_0x5d676e[_0x1b0c('0x4')][_0x1b0c('0x65')]=function(_0xb317da){},_0x5d676e[_0x1b0c('0x4')][_0x1b0c('0x10e')]=function(_0x1c1009){},_0x5d676e);function _0x5d676e(){return null!==_0x2ae358&&_0x2ae358[_0x1b0c('0x9')](this,arguments)||this;}var _0xe80d18,_0x354ab6=(_0x4492f4(_0x17374c,_0xe80d18=_0x3bae69),_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x35a')]=function(_0x180669,_0x3b80c5,_0x1e5873,_0x2a46ac){void 0x0===_0x3b80c5&&(_0x3b80c5=''),void 0x0===_0x2a46ac&&(_0x2a46ac=!0x1);var _0x478f0d=_0x279d2d[_0x1b0c('0x50')](_0x180669);return _0x478f0d[_0x1b0c('0x1a3')](function(_0x294f73){_0x294f73[_0x1b0c('0xb9')]=_0x3b80c5,_0x294f73[_0x1b0c('0x2c5')]=_0x1e5873,_0x294f73[_0x1b0c('0x2c7')]=_0x2a46ac;}),_0x478f0d;},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x35b')]=function(_0x1e02e6,_0x43c432){var _0x45de89=this;moosnow[_0x1b0c('0x35c')][_0x1b0c('0x62')](_0x1e02e6,function(){moosnow['ad'][_0x1b0c('0x19e')](function(_0x41d536){0x0!=(_0x45de89[_0x1b0c('0x35d')]=_0x41d536)[_0x1b0c('0x1a0')][_0x1b0c('0x7')]&&_0x43c432&&_0x43c432(_0x41d536);});});},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x35e')]=function(_0x1cc70b,_0x4be9bc,_0x219dbc,_0x1a7a27,_0x173e28,_0x4bed4c){var _0x857c42=this;_0x173e28?this[_0x1b0c('0x35b')](_0x173e28,function(_0x4468a8){_0x857c42[_0x1b0c('0x35a')](_0x4468a8[_0x1b0c('0x1a0')],_0x1a7a27,_0x4bed4c)[_0x1b0c('0x1a3')](function(_0x429798,_0x357b0b){var _0x1a7a27=moosnow[_0x1b0c('0x35c')][_0x1b0c('0x319')](_0x173e28,_0x219dbc[_0x1b0c('0x325')],_0x429798);_0x857c42[_0x1b0c('0x35f')][_0x1b0c('0x23')](_0x1a7a27);}),_0x857c42[_0x1b0c('0x360')](_0x4be9bc,_0x219dbc);}):console[_0x1b0c('0x128')](_0x1b0c('0x361'));},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x360')]=function(_0x3f149d,_0x30e6a4){},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x362')]=function(){moosnow[_0x1b0c('0x10c')][_0x1b0c('0x221')](_0x2dd322[_0x1b0c('0x79')],this,this[_0x1b0c('0x363')]);},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x364')]=function(){moosnow[_0x1b0c('0x10c')][_0x1b0c('0x2ef')](_0x2dd322[_0x1b0c('0x79')],this);},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x363')]=function(_0x1d60d5){this[_0x1b0c('0x365')]++,0x1<this[_0x1b0c('0x365')]&&_0x1d60d5[_0x1b0c('0x366')]!=_0x1a0765[_0x1b0c('0x367')]&&(this[_0x1b0c('0x368')]=this[_0x1b0c('0x369')]),_0x1d60d5[_0x1b0c('0x366')]==_0x1a0765[_0x1b0c('0x367')]&&(_0x1d60d5[_0x1b0c('0x366')]=this[_0x1b0c('0x368')]),this[_0x1b0c('0x36a')](_0x1d60d5[_0x1b0c('0x366')],_0x1d60d5[_0x1b0c('0x2f8')]),this[_0x1b0c('0x36b')](this[_0x1b0c('0x36c')]);},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x36b')]=function(_0x21cb8b){},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x66')]=function(_0x3411ab){_0xe80d18[_0x1b0c('0x4')][_0x1b0c('0x66')][_0x1b0c('0x8')](this,_0x3411ab),this[_0x1b0c('0x35f')]=[],this[_0x1b0c('0x36d')]=[],this[_0x1b0c('0x362')](),_0x3411ab?this[_0x1b0c('0x36a')](_0x3411ab[_0x1b0c('0x366')],_0x3411ab[_0x1b0c('0x2f8')]):this[_0x1b0c('0x36a')](_0x1a0765[_0x1b0c('0x36e')],null);},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x36a')]=function(_0x4ba0b7,_0x33397f){void 0x0===_0x33397f&&(_0x33397f=null);var _0x45de89=moosnow[_0x1b0c('0x36f')]();moosnow[_0x1b0c('0x370')]['WX']==_0x45de89||_0x45de89==moosnow[_0x1b0c('0x370')][_0x1b0c('0xe')]||_0x45de89==moosnow[_0x1b0c('0x370')][_0x1b0c('0xd')]?(this[_0x1b0c('0x369')]=_0x4ba0b7,this[_0x1b0c('0x371')](!0x0),this[_0x1b0c('0x372')]=_0x33397f):this[_0x1b0c('0x373')]();},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x373')]=function(){this[_0x1b0c('0x372')]&&this[_0x1b0c('0x372')]();},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x374')]=function(){var _0x4492f4=this,_0x10425f=moosnow[_0x1b0c('0x3e')][_0x1b0c('0x42')](),_0x45de89=0x0,_0x3aa676=0x0;_0x10425f&&(_0x45de89=_0x10425f[_0x1b0c('0x22b')]||0x0,_0x3aa676=_0x10425f[_0x1b0c('0x22c')]||0x0),this[_0x1b0c('0x375')][_0x1b0c('0x325')][_0x1b0c('0x54')](cc[_0x1b0c('0x55')](cc[_0x1b0c('0x376')](0x1,_0x45de89+_0x3aa676+this[_0x1b0c('0x375')][_0x1b0c('0x325')][_0x1b0c('0x131')]+0x14,0x0),cc[_0x1b0c('0x57')](function(){_0x4492f4[_0x1b0c('0x377')][_0x1b0c('0x327')]=!0x1,_0x4492f4[_0x1b0c('0x378')][_0x1b0c('0x327')]=!0x0;})));},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x379')]=function(){var _0x4492f4=this;this[_0x1b0c('0x375')][_0x1b0c('0x325')][_0x1b0c('0x54')](cc[_0x1b0c('0x55')](cc[_0x1b0c('0x376')](0x1,0x0,0x0),cc[_0x1b0c('0x57')](function(){_0x4492f4[_0x1b0c('0x377')][_0x1b0c('0x327')]=!0x0,_0x4492f4[_0x1b0c('0x378')][_0x1b0c('0x327')]=!0x1;})));},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x37a')]=function(_0x13ef3d,_0x18dfc0,_0x7ad0cb,_0x30749d,_0x3b7a91){var _0x467d32=this;this[_0x1b0c('0x35b')](_0x30749d,function(_0x36f984){if(_0x467d32[_0x1b0c('0x37b')]){for(var _0x10425f=0x0;_0x10425f<_0x467d32[_0x1b0c('0x37b')][_0x1b0c('0x7')];_0x10425f++)moosnow[_0x1b0c('0x35c')][_0x1b0c('0x31a')](_0x467d32[_0x1b0c('0x37b')][_0x10425f],{});_0x467d32[_0x1b0c('0x37b')]=[];}for(var _0x3aa676=_0x467d32[_0x1b0c('0x35a')](_0x36f984[_0x1b0c('0x1a0')],_0x7ad0cb,_0x3b7a91,!0x0),_0x45de89=[],_0x478f0d=[],_0x10425f=0x0;_0x10425f<0x6;_0x10425f++){var _0x516b1f=_0x3aa676[_0x1b0c('0x7')]>_0x10425f?_0x3aa676[_0x10425f]:_0x3aa676[0x0];_0x478f0d[_0x1b0c('0x23')]({'appid':_0x516b1f[_0x1b0c('0xb3')],'position':_0x516b1f[_0x1b0c('0xb9')],'index':_0x10425f}),_0x45de89[_0x1b0c('0x23')](_0x516b1f);}_0x45de89[_0x1b0c('0x1a3')](function(_0x153435){var _0x10425f=_0x2921f6(_0x2921f6({},_0x153435),{'showIds':_0x478f0d,'source':_0x3aa676}),_0x45de89=moosnow[_0x1b0c('0x35c')][_0x1b0c('0x319')](_0x30749d,_0x18dfc0,_0x10425f);return _0x467d32[_0x1b0c('0x37b')][_0x1b0c('0x23')](_0x45de89),!0x1;});});},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x65')]=function(){this[_0x1b0c('0x364')](),this[_0x1b0c('0x35f')][_0x1b0c('0x1a3')](function(_0x4c705a){moosnow[_0x1b0c('0x35c')][_0x1b0c('0x31a')](_0x4c705a,null);}),this[_0x1b0c('0x35f')]=[],this[_0x1b0c('0x36d')]=[];},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x37c')]=function(_0x63d9eb,_0x57d535,_0x4de614,_0x37f21d,_0x253a2f){var _0x467d32=this;cc[_0x1b0c('0x2af')][_0x1b0c('0x37d')](moosnow[_0x1b0c('0x35c')][_0x1b0c('0x31d')],cc[_0x1b0c('0x323')],function(){moosnow['ad'][_0x1b0c('0x19e')](function(_0x5b86db){var _0x857c42,_0x85adb7;0x0!=(_0x467d32[_0x1b0c('0x35d')]=_0x5b86db)[_0x1b0c('0x1a0')][_0x1b0c('0x7')]&&(_0x857c42=_0x467d32[_0x1b0c('0x35a')](_0x5b86db[_0x1b0c('0x1a0')],_0x37f21d,_0x253a2f,!0x0),_0x85adb7=[],_0x57d535[_0x1b0c('0x1a3')](function(_0x48cce2,_0x11fb4a){var _0x37f21d=_0x11fb4a;_0x37f21d>_0x857c42[_0x1b0c('0x7')]-0x1&&(_0x37f21d=0x0);var _0x253a2f=_0x857c42[_0x37f21d];_0x85adb7[_0x1b0c('0x23')]({'appid':_0x253a2f[_0x1b0c('0xb3')],'position':_0x253a2f[_0x1b0c('0xb9')],'index':_0x11fb4a});var _0x478f0d=_0x4de614[_0x11fb4a];_0x253a2f['x']=_0x478f0d['x'],_0x253a2f['y']=_0x478f0d['y'],_0x253a2f[_0x1b0c('0x37e')]=_0x857c42,_0x253a2f[_0x1b0c('0x37f')]=_0x85adb7;var _0x516b1f=moosnow[_0x1b0c('0x35c')][_0x1b0c('0x319')](_0x48cce2,_0x63d9eb,_0x253a2f);_0x467d32[_0x1b0c('0x380')][_0x11fb4a]={'index':_0x37f21d,'logic':_0x516b1f},_0x467d32[_0x1b0c('0x381')](_0x516b1f[_0x1b0c('0x325')]);}),_0x467d32[_0x1b0c('0x382')](_0x857c42),_0x467d32[_0x1b0c('0x5a')](function(){_0x467d32[_0x1b0c('0x382')](_0x857c42);},_0x467d32[_0x1b0c('0x383')]));});});},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x381')]=function(_0x86bb73){},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x382')]=function(_0x1aa38a){for(var _0x10425f in this[_0x1b0c('0x380')]){var _0x45de89=this[_0x1b0c('0x380')][_0x10425f][_0x1b0c('0x2c6')],_0x3aa676=this[_0x1b0c('0x380')][_0x10425f][_0x1b0c('0x384')];_0x45de89<_0x1aa38a[_0x1b0c('0x7')]-0x1?_0x45de89++:_0x45de89=0x0,this[_0x1b0c('0x380')][_0x10425f][_0x1b0c('0x2c6')]=_0x45de89,_0x3aa676[_0x1b0c('0x385')](_0x1aa38a[_0x45de89]);}},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x386')]=function(_0x25c5f5){return(this[_0x1b0c('0x369')]&_0x25c5f5)==_0x25c5f5;},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x387')]=function(){--this[_0x1b0c('0x388')],this[_0x1b0c('0x389')][_0x1b0c('0x327')]=!0x0;var _0x4492f4=this[_0x1b0c('0x389')][_0x1b0c('0x38a')](cc[_0x1b0c('0x38b')]);if(this[_0x1b0c('0x388')]<=0x0)return this[_0x1b0c('0x38c')][_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x389')][_0x1b0c('0x327')]=!0x1,void this[_0x1b0c('0x5d')](this[_0x1b0c('0x387')]);_0x4492f4[_0x1b0c('0x34a')]='剩余'+this[_0x1b0c('0x388')]+_0x1b0c('0x38d');},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x371')]=function(_0x48e5d8){var _0x10425f=this;this[_0x1b0c('0x38e')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x38f')]),this[_0x1b0c('0x390')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x391')]),this[_0x1b0c('0x392')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x139')]),this[_0x1b0c('0x393')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x394')]),this[_0x1b0c('0x395')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x396')]),this[_0x1b0c('0x397')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x398')]),this[_0x1b0c('0x399')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x39a')]),this[_0x1b0c('0x39b')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x13a')]),this[_0x1b0c('0x39c')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x39d')]),this[_0x1b0c('0x39e')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x39f')]),this[_0x1b0c('0x3a0')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x3a1')]),this[_0x1b0c('0x3a2')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x3a3')]),this[_0x1b0c('0x38c')][_0x1b0c('0x327')]=!0x1,this[_0x1b0c('0x389')][_0x1b0c('0x327')]=!0x1,this[_0x1b0c('0x5d')](this[_0x1b0c('0x387')]),_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x3a4')])?this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x3a5')])?(this[_0x1b0c('0x388')]=0x3,this[_0x1b0c('0x387')](),this[_0x1b0c('0x5a')](this[_0x1b0c('0x387')],0x1)):(this[_0x1b0c('0x38c')][_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x389')][_0x1b0c('0x327')]=!0x1):(this[_0x1b0c('0x38c')][_0x1b0c('0x327')]=!0x1,this[_0x1b0c('0x389')][_0x1b0c('0x327')]=!0x1),this[_0x1b0c('0x3a6')][_0x1b0c('0x327')]=_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x3a7')]),_0x48e5d8&&this[_0x1b0c('0x386')](_0x1a0765[_0x1b0c('0x3a7')])&&moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x3ab645){_0x3ab645&&0x1==_0x3ab645[_0x1b0c('0x3a8')]&&moosnow[_0x1b0c('0x3e')][_0x1b0c('0xae')](_0x10425f[_0x1b0c('0x35d')][_0x1b0c('0x1a0')][_0x279d2d[_0x1b0c('0xa')](0x0,_0x10425f[_0x1b0c('0x35d')][_0x1b0c('0x1a0')][_0x1b0c('0x7')]-0x1)]);});},_0x17374c[_0x1b0c('0x4')][_0x1b0c('0x315')]=function(){},_0x17374c);function _0x17374c(){var _0x4492f4=null!==_0xe80d18&&_0xe80d18[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x3a9')]=null,_0x4492f4[_0x1b0c('0x3aa')]=null,_0x4492f4[_0x1b0c('0x3ab')]=null,_0x4492f4[_0x1b0c('0x392')]=null,_0x4492f4[_0x1b0c('0x3ac')]=null,_0x4492f4[_0x1b0c('0x3ad')]=null,_0x4492f4[_0x1b0c('0x3a6')]=null,_0x4492f4[_0x1b0c('0x3ae')]=null,_0x4492f4[_0x1b0c('0x3af')]=null,_0x4492f4[_0x1b0c('0x38c')]=null,_0x4492f4[_0x1b0c('0x395')]=null,_0x4492f4[_0x1b0c('0x389')]=null,_0x4492f4[_0x1b0c('0x38e')]=null,_0x4492f4[_0x1b0c('0x3b0')]=null,_0x4492f4[_0x1b0c('0x390')]=null,_0x4492f4[_0x1b0c('0x3b1')]=null,_0x4492f4[_0x1b0c('0x3b2')]=null,_0x4492f4[_0x1b0c('0x399')]=null,_0x4492f4[_0x1b0c('0x3b3')]=null,_0x4492f4[_0x1b0c('0x3b4')]=null,_0x4492f4[_0x1b0c('0x3b5')]=null,_0x4492f4[_0x1b0c('0x3b6')]=null,_0x4492f4[_0x1b0c('0x3b7')]=null,_0x4492f4[_0x1b0c('0x3b8')]=null,_0x4492f4[_0x1b0c('0x3b9')]=null,_0x4492f4[_0x1b0c('0x3ba')]=null,_0x4492f4[_0x1b0c('0x3bb')]=null,_0x4492f4[_0x1b0c('0x3bc')]=null,_0x4492f4[_0x1b0c('0x3bd')]=null,_0x4492f4[_0x1b0c('0x3be')]=null,_0x4492f4[_0x1b0c('0x3bf')]=null,_0x4492f4[_0x1b0c('0x3c0')]=null,_0x4492f4[_0x1b0c('0x393')]=null,_0x4492f4[_0x1b0c('0x3c1')]=null,_0x4492f4[_0x1b0c('0x3c2')]=null,_0x4492f4[_0x1b0c('0x3c3')]=null,_0x4492f4[_0x1b0c('0x3c4')]=null,_0x4492f4[_0x1b0c('0x397')]=null,_0x4492f4[_0x1b0c('0x375')]=null,_0x4492f4[_0x1b0c('0x3c5')]=null,_0x4492f4[_0x1b0c('0x377')]=null,_0x4492f4[_0x1b0c('0x378')]=null,_0x4492f4[_0x1b0c('0x39c')]=null,_0x4492f4[_0x1b0c('0x3c6')]=null,_0x4492f4[_0x1b0c('0x3c7')]=null,_0x4492f4[_0x1b0c('0x39e')]=null,_0x4492f4[_0x1b0c('0x3c8')]=null,_0x4492f4[_0x1b0c('0x3c9')]=null,_0x4492f4[_0x1b0c('0x3a0')]=null,_0x4492f4[_0x1b0c('0x3ca')]=null,_0x4492f4[_0x1b0c('0x3cb')]=null,_0x4492f4[_0x1b0c('0x3a2')]=null,_0x4492f4[_0x1b0c('0x3cc')]=null,_0x4492f4[_0x1b0c('0x3cd')]=null,_0x4492f4[_0x1b0c('0x39b')]=null,_0x4492f4[_0x1b0c('0x3ce')]=null,_0x4492f4[_0x1b0c('0x3cf')]=null,_0x4492f4[_0x1b0c('0x35f')]=[],_0x4492f4[_0x1b0c('0x36d')]=[],_0x4492f4[_0x1b0c('0x365')]=0x0,_0x4492f4[_0x1b0c('0x36c')]=0x3e7,_0x4492f4[_0x1b0c('0x369')]=moosnow[_0x1b0c('0x3d0')][_0x1b0c('0x36e')],_0x4492f4[_0x1b0c('0x368')]=moosnow[_0x1b0c('0x3d0')][_0x1b0c('0x36e')],_0x4492f4[_0x1b0c('0x37b')]=[],_0x4492f4[_0x1b0c('0x3d1')]=0x0,_0x4492f4[_0x1b0c('0x383')]=0x3,_0x4492f4[_0x1b0c('0x380')]={},_0x4492f4[_0x1b0c('0x388')]=0x3,_0x4492f4;}var _0x1e19f2,_0x1d007f=(_0x4492f4(_0x5e6aa6,_0x1e19f2=_0x3bae69),Object[_0x1b0c('0x3d')](_0x5e6aa6,_0x1b0c('0x3d2'),{'get':function(){return'';},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5e6aa6,_0x1b0c('0x3d3'),{'get':function(){return'';},'enumerable':!0x0,'configurable':!0x0}),_0x5e6aa6);function _0x5e6aa6(){return null!==_0x1e19f2&&_0x1e19f2[_0x1b0c('0x9')](this,arguments)||this;}var _0x51e817,_0x29ba8c=(_0x4492f4(_0x4e655d,_0x51e817=_0x1d007f),Object[_0x1b0c('0x3d')](_0x4e655d,_0x1b0c('0x3d2'),{'get':function(){return cc[_0x1b0c('0x3d4')][_0x1b0c('0x3d5')][_0x1b0c('0x3d2')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x4e655d,_0x1b0c('0x3d3'),{'get':function(){return cc[_0x1b0c('0x3d4')][_0x1b0c('0x3d5')][_0x1b0c('0x3d3')];},'enumerable':!0x0,'configurable':!0x0}),_0x4e655d);function _0x4e655d(){return null!==_0x51e817&&_0x51e817[_0x1b0c('0x9')](this,arguments)||this;}var _0xbc9ae,_0x2167e3,_0x2931b4,_0x177641=(_0x4492f4(_0x2410e4,_0xbc9ae=_0x354ab6),_0x2410e4[_0x1b0c('0x4')][_0x1b0c('0x362')]=function(){this[_0x1b0c('0x38c')]&&this[_0x1b0c('0x38c')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x373')],this),this[_0x1b0c('0x377')]&&this[_0x1b0c('0x377')]['on'](_0x29ba8c[_0x1b0c('0x3d2')],this[_0x1b0c('0x374')],this),this[_0x1b0c('0x378')]&&this[_0x1b0c('0x378')]['on'](_0x29ba8c[_0x1b0c('0x3d2')],this[_0x1b0c('0x379')],this),_0xbc9ae[_0x1b0c('0x4')][_0x1b0c('0x362')][_0x1b0c('0x8')](this);},_0x2410e4[_0x1b0c('0x4')][_0x1b0c('0x364')]=function(){this[_0x1b0c('0x38c')]&&this[_0x1b0c('0x38c')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x373')],this),this[_0x1b0c('0x377')]&&this[_0x1b0c('0x377')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d2')],this[_0x1b0c('0x374')],this),this[_0x1b0c('0x378')]&&this[_0x1b0c('0x378')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d2')],this[_0x1b0c('0x379')],this),_0xbc9ae[_0x1b0c('0x4')][_0x1b0c('0x364')][_0x1b0c('0x8')](this);},_0x2410e4[_0x1b0c('0x4')][_0x1b0c('0x381')]=function(_0x40600c){_0x40600c[_0x1b0c('0x54')](cc[_0x1b0c('0x55')](cc[_0x1b0c('0x3d7')](0.3,0xa),cc[_0x1b0c('0x3d7')](0.6,-0xa),cc[_0x1b0c('0x3d7')](0.3,0x0),cc[_0x1b0c('0x56')](0.3,0.8),cc[_0x1b0c('0x56')](0.3,0x1))[_0x1b0c('0x3d8')]());},_0x2410e4[_0x1b0c('0x4')][_0x1b0c('0x360')]=function(_0x58b999,_0x8459ee){_0x8459ee[_0x1b0c('0x3d9')]==cc[_0x1b0c('0x3da')][_0x1b0c('0x3db')][_0x1b0c('0x3dc')]?_0x58b999[_0x1b0c('0x3dd')]?this[_0x1b0c('0x36d')][_0x1b0c('0x23')]({'scrollView':_0x58b999,'move2Up':!0x1}):this[_0x1b0c('0x36d')][_0x1b0c('0x23')]({'scrollView':_0x58b999,'move2Left':!0x1}):_0x8459ee[_0x1b0c('0x3d9')]==cc[_0x1b0c('0x3da')][_0x1b0c('0x3db')][_0x1b0c('0x3de')]?this[_0x1b0c('0x36d')][_0x1b0c('0x23')]({'scrollView':_0x58b999,'move2Left':!0x1}):_0x8459ee[_0x1b0c('0x3d9')]==cc[_0x1b0c('0x3da')][_0x1b0c('0x3db')][_0x1b0c('0x3df')]&&this[_0x1b0c('0x36d')][_0x1b0c('0x23')]({'scrollView':_0x58b999,'move2Up':!0x1});},_0x2410e4[_0x1b0c('0x4')][_0x1b0c('0x315')]=function(){for(var _0x4492f4=0x0;_0x4492f4<this[_0x1b0c('0x36d')][_0x1b0c('0x7')];_0x4492f4++){var _0x10425f,_0x45de89,_0x3aa676,_0x478f0d,_0x516b1f=this[_0x1b0c('0x36d')][_0x4492f4],_0x857c42=_0x516b1f[_0x1b0c('0x3e0')];_0x857c42[_0x1b0c('0x3e1')]()||(_0x45de89=(_0x10425f=_0x857c42[_0x1b0c('0x3e2')]())['y']/0x2+0x14,_0x3aa676=_0x10425f['x']/0x2+0x14,_0x478f0d=_0x857c42[_0x1b0c('0x3e3')](),0x1==_0x516b1f[_0x1b0c('0x3e4')]?(_0x478f0d['y']>_0x45de89&&(_0x516b1f[_0x1b0c('0x3e4')]=!0x1),_0x516b1f[_0x1b0c('0x3e0')][_0x1b0c('0x3e5')](new cc[(_0x1b0c('0x3e6'))](_0x478f0d['x'],_0x478f0d['y']+this[_0x1b0c('0x3e7')]))):0x0==_0x516b1f[_0x1b0c('0x3e4')]&&(_0x478f0d['y']<-_0x45de89&&(_0x516b1f[_0x1b0c('0x3e4')]=!0x0),_0x516b1f[_0x1b0c('0x3e0')][_0x1b0c('0x3e5')](new cc[(_0x1b0c('0x3e6'))](_0x478f0d['x'],_0x478f0d['y']-this[_0x1b0c('0x3e7')]))),0x1==_0x516b1f[_0x1b0c('0x3e8')]?(_0x478f0d['x']>_0x3aa676&&(_0x516b1f[_0x1b0c('0x3e8')]=!0x1),_0x516b1f[_0x1b0c('0x3e0')][_0x1b0c('0x3e5')](new cc[(_0x1b0c('0x3e6'))](_0x478f0d['x']+this[_0x1b0c('0x3e7')],_0x478f0d['y']))):0x0==_0x516b1f[_0x1b0c('0x3e8')]&&(_0x478f0d['x']<-_0x3aa676&&(_0x516b1f[_0x1b0c('0x3e8')]=!0x0),_0x516b1f[_0x1b0c('0x3e0')][_0x1b0c('0x3e5')](new cc[(_0x1b0c('0x3e6'))](_0x478f0d['x']-this[_0x1b0c('0x3e7')],_0x478f0d['y']))));}},_0x2410e4);function _0x2410e4(){var _0x4492f4=null!==_0xbc9ae&&_0xbc9ae[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x3e7')]=0x2,_0x4492f4;}(_0x2931b4=_0x2167e3=_0x2167e3||{})[_0x2931b4[_0x1b0c('0x3e9')]=0x1]=_0x1b0c('0x3e9'),_0x2931b4[_0x2931b4[_0x1b0c('0x3ea')]=0x2]=_0x1b0c('0x3ea');var _0x52196b=(Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x3eb'),{'get':function(){var _0x4492f4,_0x10425f,_0x45de89,_0x3aa676,_0x478f0d,_0x516b1f,_0x857c42,_0x85adb7,_0x444d0c,_0x279d2d,_0x467d32,_0x2921f6;return{'adForm':((_0x4492f4={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x3ec'),_0x4492f4),'pauseForm':((_0x10425f={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x3ed'),_0x10425f[moosnow[_0x1b0c('0x370')][_0x1b0c('0xd')]]=_0x1b0c('0x3ee'),_0x10425f[moosnow[_0x1b0c('0x370')][_0x1b0c('0xe')]]=_0x1b0c('0x3ef'),_0x10425f[moosnow[_0x1b0c('0x370')][_0x1b0c('0xf')]]=_0x1b0c('0x3ef'),_0x10425f[moosnow[_0x1b0c('0x370')][_0x1b0c('0x11')]]=_0x1b0c('0x3ef'),_0x10425f[moosnow[_0x1b0c('0x370')]['QQ']]=_0x1b0c('0x3ee'),_0x10425f),'respawnForm':((_0x45de89={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x3f0'),_0x45de89[moosnow[_0x1b0c('0x370')][_0x1b0c('0xd')]]=_0x1b0c('0x3f1'),_0x45de89[moosnow[_0x1b0c('0x370')][_0x1b0c('0xe')]]=_0x1b0c('0x3f2'),_0x45de89[moosnow[_0x1b0c('0x370')][_0x1b0c('0xf')]]=_0x1b0c('0x3f2'),_0x45de89[moosnow[_0x1b0c('0x370')][_0x1b0c('0x11')]]=_0x1b0c('0x3f2'),_0x45de89[moosnow[_0x1b0c('0x370')]['QQ']]=_0x1b0c('0x3f3'),_0x45de89),'endForm':((_0x3aa676={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x3f4'),_0x3aa676[moosnow[_0x1b0c('0x370')][_0x1b0c('0xd')]]=_0x1b0c('0x3f5'),_0x3aa676[moosnow[_0x1b0c('0x370')][_0x1b0c('0xe')]]=_0x1b0c('0x3f6'),_0x3aa676[moosnow[_0x1b0c('0x370')][_0x1b0c('0xf')]]=_0x1b0c('0x3f6'),_0x3aa676[moosnow[_0x1b0c('0x370')][_0x1b0c('0x11')]]=_0x1b0c('0x3f6'),_0x3aa676),'totalForm':((_0x478f0d={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x3f7'),_0x478f0d[moosnow[_0x1b0c('0x370')][_0x1b0c('0xd')]]=_0x1b0c('0x3f8'),_0x478f0d[moosnow[_0x1b0c('0x370')]['QQ']]=_0x1b0c('0x3f9'),_0x478f0d),'tryForm':((_0x516b1f={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x3fa'),_0x516b1f[moosnow[_0x1b0c('0x370')][_0x1b0c('0xd')]]=_0x1b0c('0x3fb'),_0x516b1f[moosnow[_0x1b0c('0x370')]['QQ']]=_0x1b0c('0x3fb'),_0x516b1f),'mistouchForm':((_0x857c42={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x3fc'),_0x857c42[moosnow[_0x1b0c('0x370')]['QQ']]=_0x1b0c('0x3fd'),_0x857c42[moosnow[_0x1b0c('0x370')][_0x1b0c('0xd')]]=_0x1b0c('0x3fe'),_0x857c42),'prizeForm':((_0x85adb7={})[moosnow[_0x1b0c('0x370')][_0x1b0c('0xd')]]=_0x1b0c('0x3ff'),_0x85adb7[moosnow[_0x1b0c('0x370')]['QQ']]=_0x1b0c('0x400'),_0x85adb7),'shareForm':((_0x444d0c={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x401'),_0x444d0c[moosnow[_0x1b0c('0x370')][_0x1b0c('0xd')]]=_0x1b0c('0x401'),_0x444d0c),'setForm':((_0x279d2d={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x402'),_0x279d2d),'toastForm':((_0x467d32={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x33a'),_0x467d32),'coinForm':((_0x2921f6={})[moosnow[_0x1b0c('0x370')]['WX']]=_0x1b0c('0x403'),_0x2921f6)};},'enumerable':!0x0,'configurable':!0x0}),_0x5dab9b[_0x1b0c('0x404')]=function(_0x4044c9){if(!_0x4044c9)return console[_0x1b0c('0x128')](_0x1b0c('0x405')),null;var _0x10425f=moosnow[_0x1b0c('0x36f')]();return _0x4044c9[_0x10425f]?_0x4044c9[_0x10425f]:_0x4044c9[moosnow[_0x1b0c('0x370')]['WX']]?_0x4044c9[moosnow[_0x1b0c('0x370')]['WX']]:(console[_0x1b0c('0x128')](_0x1b0c('0x406'),_0x4044c9),null);},Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x407'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x3ec')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x408'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x403')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x409'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x40a')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x40b'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x3f7')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x40c'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x3f4')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x40d'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x33a')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x40e'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x3ed')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x40f'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x3f0')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x410'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x402')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x411'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x400')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x412'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x3fc')]);},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x5dab9b,_0x1b0c('0x413'),{'get':function(){return this[_0x1b0c('0x404')](this[_0x1b0c('0x3eb')][_0x1b0c('0x3fa')]);},'enumerable':!0x0,'configurable':!0x0}),_0x5dab9b);function _0x5dab9b(){}var _0x2f9192,_0x3ca6d7=(_0x4492f4(_0x23f4d8,_0x2f9192=_0x3bae69),Object[_0x1b0c('0x3d')](_0x23f4d8[_0x1b0c('0x4')],_0x1b0c('0x357'),{'get':function(){return this[_0x1b0c('0x358')];},'enumerable':!0x0,'configurable':!0x0}),_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x414')]=function(){},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x66')]=function(_0x1ac188){var _0x10425f=this;_0x2f9192[_0x1b0c('0x4')][_0x1b0c('0x66')][_0x1b0c('0x8')](this,_0x1ac188),this[_0x1b0c('0x415')][_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x414')](),this[_0x1b0c('0x416')]=0x0,this[_0x1b0c('0x417')]=_0x279d2d[_0x1b0c('0xa')](0x3,this[_0x1b0c('0x418')]-0x2),this[_0x1b0c('0x362')](),this[_0x1b0c('0x5a')](this[_0x1b0c('0x419')],0.1),moosnow[_0x1b0c('0x41a')][_0x1b0c('0x366')](moosnow[_0x1b0c('0x3d0')][_0x1b0c('0x36e')],null),this[_0x1b0c('0x41b')]=!0x1,moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x3796f5){_0x10425f[_0x1b0c('0x41c')]=_0x2167e3[_0x1b0c('0x3ea')];});},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x65')]=function(){this[_0x1b0c('0x5d')](this[_0x1b0c('0x419')]),this[_0x1b0c('0x5d')](this[_0x1b0c('0x41d')]),this[_0x1b0c('0x364')]();},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x419')]=function(){0x0<this[_0x1b0c('0x416')]&&(this[_0x1b0c('0x416')]-=0.1);},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x362')]=function(){},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x364')]=function(){},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x41e')]=function(_0x123a2d){_0x123a2d&&(this[_0x1b0c('0x5d')](this[_0x1b0c('0x41f')]),this[_0x1b0c('0x5d')](this[_0x1b0c('0x41d')]),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x149')](),this[_0x1b0c('0x41b')]=!0x1,this[_0x1b0c('0x357')]&&this[_0x1b0c('0x357')][_0x1b0c('0x2f8')]&&this[_0x1b0c('0x357')][_0x1b0c('0x2f8')]());},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x420')]=function(){this[_0x1b0c('0x421')][_0x1b0c('0xb9')]=this[_0x1b0c('0x422')];},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x423')]=function(){this[_0x1b0c('0x421')][_0x1b0c('0xb9')]=this[_0x1b0c('0x424')];},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x425')]=function(){var _0x10425f=this;this[_0x1b0c('0x423')](),this[_0x1b0c('0x416')]+=0x1,this[_0x1b0c('0x416')]>=this[_0x1b0c('0x417')]&&(this[_0x1b0c('0x41b')]||(this[_0x1b0c('0x2ff')]=Date[_0x1b0c('0xb0')](),this[_0x1b0c('0x41b')]=!0x0,moosnow[_0x1b0c('0x3e')][_0x1b0c('0x13f')](function(_0x161a0a){console[_0x1b0c('0x43')](_0x1b0c('0x426'),_0x161a0a),_0x10425f[_0x1b0c('0x41e')](_0x161a0a);}),this[_0x1b0c('0x41c')]==_0x2167e3[_0x1b0c('0x3e9')]?(this[_0x1b0c('0x5d')](this[_0x1b0c('0x41f')]),this[_0x1b0c('0x5e')](this[_0x1b0c('0x41f')],0x2)):this[_0x1b0c('0x41c')]==_0x2167e3[_0x1b0c('0x3ea')]&&(this[_0x1b0c('0x5d')](this[_0x1b0c('0x41d')]),this[_0x1b0c('0x5e')](this[_0x1b0c('0x41d')],0x2)))),this[_0x1b0c('0x416')]>=this[_0x1b0c('0x418')]&&(moosnow[_0x1b0c('0x3e')][_0x1b0c('0x149')](),this[_0x1b0c('0x41b')]=!0x1,moosnow['ui'][_0x1b0c('0x34c')](_0x52196b[_0x1b0c('0x412')],null),this[_0x1b0c('0x357')]&&this[_0x1b0c('0x357')][_0x1b0c('0x2f8')]&&this[_0x1b0c('0x357')][_0x1b0c('0x2f8')](!0x0));},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x41d')]=function(){this[_0x1b0c('0x416')]=0x0,moosnow[_0x1b0c('0x3e')][_0x1b0c('0x149')](),this[_0x1b0c('0x41b')]=!0x1;},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x41f')]=function(){moosnow[_0x1b0c('0x3e')][_0x1b0c('0x149')]();},_0x23f4d8[_0x1b0c('0x4')][_0x1b0c('0x312')]=function(){this[_0x1b0c('0x427')][_0x1b0c('0x428')]=this[_0x1b0c('0x416')]/this[_0x1b0c('0x418')];},_0x23f4d8);function _0x23f4d8(){var _0x4492f4=null!==_0x2f9192&&_0x2f9192[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x427')]=null,_0x4492f4[_0x1b0c('0x415')]=null,_0x4492f4[_0x1b0c('0x421')]=null,_0x4492f4[_0x1b0c('0x418')]=0xa,_0x4492f4[_0x1b0c('0x416')]=0x0,_0x4492f4[_0x1b0c('0x417')]=0x0,_0x4492f4[_0x1b0c('0x41b')]=!0x1,_0x4492f4[_0x1b0c('0x2ff')]=0x0,_0x4492f4[_0x1b0c('0x41c')]=_0x2167e3[_0x1b0c('0x3e9')],_0x4492f4;}var _0x528583,_0x43e097=(_0x4492f4(_0x512ea2,_0x528583=_0x3ca6d7),_0x512ea2[_0x1b0c('0x4')][_0x1b0c('0x362')]=function(){this[_0x1b0c('0x415')]['on'](_0x29ba8c[_0x1b0c('0x3d2')],this[_0x1b0c('0x420')],this),this[_0x1b0c('0x415')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x425')],this);},_0x512ea2[_0x1b0c('0x4')][_0x1b0c('0x364')]=function(){this[_0x1b0c('0x415')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d2')],this[_0x1b0c('0x420')],this),this[_0x1b0c('0x415')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x425')],this),moosnow[_0x1b0c('0x10c')][_0x1b0c('0x2ef')](_0x2dd322[_0x1b0c('0x75')],this);},_0x512ea2[_0x1b0c('0x4')][_0x1b0c('0x420')]=function(){this[_0x1b0c('0x421')][_0x1b0c('0xb9')]=this[_0x1b0c('0x422')];},_0x512ea2[_0x1b0c('0x4')][_0x1b0c('0x423')]=function(){this[_0x1b0c('0x421')][_0x1b0c('0xb9')]=this[_0x1b0c('0x424')];},_0x512ea2[_0x1b0c('0x4')][_0x1b0c('0x414')]=function(){this[_0x1b0c('0x424')]=this[_0x1b0c('0x421')][_0x1b0c('0xb9')][_0x1b0c('0x2e7')](),this[_0x1b0c('0x422')]=this[_0x1b0c('0x424')][_0x1b0c('0x429')](new cc[(_0x1b0c('0x3e6'))](0x0,0x32));},_0x512ea2);function _0x512ea2(){var _0x4492f4=null!==_0x528583&&_0x528583[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x427')]=null,_0x4492f4[_0x1b0c('0x415')]=null,_0x4492f4[_0x1b0c('0x421')]=null,_0x4492f4;}var _0x595b37,_0x460e14=(_0x4492f4(_0xd76a5c,_0x595b37=_0x3ca6d7),_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x66')]=function(_0x4cc8ab){_0x595b37[_0x1b0c('0x4')][_0x1b0c('0x66')][_0x1b0c('0x8')](this,_0x4cc8ab),this[_0x1b0c('0x42a')][_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x42b')][_0x1b0c('0x327')]=!0x1,this[_0x1b0c('0x42c')][_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x416')]=0x0,this[_0x1b0c('0x42d')]=!0x0,this[_0x1b0c('0x42e')](),this[_0x1b0c('0x362')](),this[_0x1b0c('0x5a')](this[_0x1b0c('0x419')],0.1),moosnow[_0x1b0c('0x41a')][_0x1b0c('0x366')](moosnow[_0x1b0c('0x3d0')][_0x1b0c('0x36e')],null);},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x65')]=function(){this[_0x1b0c('0x5d')](this[_0x1b0c('0x419')]),this[_0x1b0c('0x5d')](this[_0x1b0c('0x41d')]),this[_0x1b0c('0x364')]();},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x419')]=function(){0x0<this[_0x1b0c('0x416')]&&(this[_0x1b0c('0x416')]-=0.1);},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x362')]=function(){},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x364')]=function(){},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x42f')]=function(){var _0x10425f=this;this[_0x1b0c('0x42d')]?(this[_0x1b0c('0x42c')][_0x1b0c('0x327')]=!0x1,moosnow[_0x1b0c('0x3e')][_0x1b0c('0x16a')](function(_0x4db6f8){_0x4db6f8!=moosnow[_0x1b0c('0x430')][_0x1b0c('0x158')]?(_0x4db6f8==moosnow[_0x1b0c('0x430')][_0x1b0c('0x168')]?moosnow['ui'][_0x1b0c('0xd3')](moosnow[_0x1b0c('0x431')][_0x1b0c('0x168')]):moosnow['ui'][_0x1b0c('0xd3')](moosnow[_0x1b0c('0x431')][_0x1b0c('0x164')]),_0x10425f[_0x1b0c('0x42c')][_0x1b0c('0x327')]=!0x0):_0x10425f[_0x1b0c('0x357')]&&_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x2f8')]&&_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x2f8')](!0x0);})):moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x412')],null);},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x432')]=function(){this[_0x1b0c('0x42d')]=!this[_0x1b0c('0x42d')],this[_0x1b0c('0x42e')]();},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x42e')]=function(){this[_0x1b0c('0x42d')]?this[_0x1b0c('0x433')][_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x0:this[_0x1b0c('0x433')][_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x1;},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x434')]=function(_0x3a6cfc){},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x420')]=function(){this[_0x1b0c('0x434')](_0x1b0c('0x435'));},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x425')]=function(){this[_0x1b0c('0x416')]>this[_0x1b0c('0x418')]+0x1||(this[_0x1b0c('0x416')]+=0x1,this[_0x1b0c('0x416')]>=this[_0x1b0c('0x418')]&&(this[_0x1b0c('0x42a')][_0x1b0c('0x327')]=!0x1,this[_0x1b0c('0x42b')][_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x434')](_0x1b0c('0x436'))));},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x41d')]=function(){this[_0x1b0c('0x416')]=0x0;},_0xd76a5c[_0x1b0c('0x4')][_0x1b0c('0x312')]=function(){var _0x4492f4=this[_0x1b0c('0x416')]/this[_0x1b0c('0x418')];this[_0x1b0c('0x427')][_0x1b0c('0x428')]=0x1<_0x4492f4?0x1:_0x4492f4;},_0xd76a5c);function _0xd76a5c(){var _0x4492f4=null!==_0x595b37&&_0x595b37[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x427')]=null,_0x4492f4[_0x1b0c('0x437')]=null,_0x4492f4[_0x1b0c('0x42c')]=null,_0x4492f4[_0x1b0c('0x433')]=null,_0x4492f4[_0x1b0c('0x438')]=null,_0x4492f4[_0x1b0c('0x42a')]=null,_0x4492f4[_0x1b0c('0x42b')]=null,_0x4492f4[_0x1b0c('0x421')]=null,_0x4492f4[_0x1b0c('0x418')]=0xa,_0x4492f4[_0x1b0c('0x416')]=0x0,_0x4492f4[_0x1b0c('0x42d')]=!0x0,_0x4492f4;}var _0x4ae50c,_0x212afa=(_0x4492f4(_0x3f34d0,_0x4ae50c=_0x460e14),_0x3f34d0[_0x1b0c('0x4')][_0x1b0c('0x434')]=function(_0x295bd7){var _0x10425f=this[_0x1b0c('0x421')][_0x1b0c('0x38a')](cc[_0x1b0c('0x439')]);_0x10425f[_0x1b0c('0x43a')](_0x295bd7)[_0x1b0c('0x43b')]||_0x10425f[_0x1b0c('0x43c')](_0x295bd7);},_0x3f34d0[_0x1b0c('0x4')][_0x1b0c('0x362')]=function(){this[_0x1b0c('0x438')][_0x1b0c('0x325')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x432')],this),this[_0x1b0c('0x437')]['on'](_0x29ba8c[_0x1b0c('0x3d2')],this[_0x1b0c('0x420')],this),this[_0x1b0c('0x437')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x425')],this),this[_0x1b0c('0x42c')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x42f')],this);},_0x3f34d0[_0x1b0c('0x4')][_0x1b0c('0x364')]=function(){this[_0x1b0c('0x438')][_0x1b0c('0x325')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x432')],this),this[_0x1b0c('0x437')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d2')],this[_0x1b0c('0x420')],this),this[_0x1b0c('0x437')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x425')],this),this[_0x1b0c('0x42c')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x42f')],this);},_0x3f34d0);function _0x3f34d0(){var _0x4492f4=null!==_0x4ae50c&&_0x4ae50c[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x427')]=null,_0x4492f4[_0x1b0c('0x437')]=null,_0x4492f4[_0x1b0c('0x42c')]=null,_0x4492f4[_0x1b0c('0x433')]=null,_0x4492f4[_0x1b0c('0x438')]=null,_0x4492f4[_0x1b0c('0x42a')]=null,_0x4492f4[_0x1b0c('0x42b')]=null,_0x4492f4[_0x1b0c('0x421')]=null,_0x4492f4;}var _0x5e14e9,_0x494234=(_0x4492f4(_0x283e21,_0x5e14e9=_0x3ca6d7),_0x283e21[_0x1b0c('0x4')][_0x1b0c('0x66')]=function(_0x16f800){_0x5e14e9[_0x1b0c('0x4')][_0x1b0c('0x66')][_0x1b0c('0x8')](this,_0x16f800),this[_0x1b0c('0x416')]=0x0,this[_0x1b0c('0x417')]=_0x279d2d[_0x1b0c('0xa')](0x3,this[_0x1b0c('0x418')]-0x2),this[_0x1b0c('0x362')](),this[_0x1b0c('0x5a')](this[_0x1b0c('0x419')],0.016),moosnow[_0x1b0c('0x41a')][_0x1b0c('0x366')](moosnow[_0x1b0c('0x3d0')][_0x1b0c('0x36e')],null),this[_0x1b0c('0x41b')]=!0x1,this[_0x1b0c('0x43d')]()?(this[_0x1b0c('0x43e')](!0x0),this[_0x1b0c('0x43f')](!0x1),this[_0x1b0c('0x440')]()):(this[_0x1b0c('0x43e')](!0x1),this[_0x1b0c('0x43f')](!0x0)),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x149')]();},_0x283e21[_0x1b0c('0x4')][_0x1b0c('0x440')]=function(){},_0x283e21[_0x1b0c('0x4')][_0x1b0c('0x43d')]=function(){return this[_0x1b0c('0x357')]&&0x2==this[_0x1b0c('0x357')][_0x1b0c('0x3d9')];},_0x283e21[_0x1b0c('0x4')][_0x1b0c('0x419')]=function(){0x0<this[_0x1b0c('0x416')]&&(this[_0x1b0c('0x416')]-=0.02);},_0x283e21[_0x1b0c('0x4')][_0x1b0c('0x414')]=function(){},_0x283e21[_0x1b0c('0x4')][_0x1b0c('0x41f')]=function(){this[_0x1b0c('0x43d')]()?moosnow[_0x1b0c('0x3e')][_0x1b0c('0x182')]():moosnow[_0x1b0c('0x3e')][_0x1b0c('0x149')]();},_0x283e21[_0x1b0c('0x4')][_0x1b0c('0x43f')]=function(_0x37355c){},_0x283e21[_0x1b0c('0x4')][_0x1b0c('0x43e')]=function(_0x56599c){},_0x283e21[_0x1b0c('0x4')][_0x1b0c('0x425')]=function(){var _0x10425f=this;this[_0x1b0c('0x416')]+=0x1,this[_0x1b0c('0x423')](),this[_0x1b0c('0x43e')](!0x1),this[_0x1b0c('0x416')]>=this[_0x1b0c('0x417')]&&(this[_0x1b0c('0x41b')]||(this[_0x1b0c('0x2ff')]=Date[_0x1b0c('0xb0')](),this[_0x1b0c('0x41b')]=!0x0,this[_0x1b0c('0x43d')]()?moosnow[_0x1b0c('0x3e')][_0x1b0c('0x181')](function(){_0x10425f[_0x1b0c('0x41e')](!0x0);}):moosnow[_0x1b0c('0x3e')][_0x1b0c('0x13f')](function(_0x490271){console[_0x1b0c('0x43')](_0x1b0c('0x426'),_0x490271),_0x10425f[_0x1b0c('0x41e')](_0x490271);}),this[_0x1b0c('0x41c')]==_0x2167e3[_0x1b0c('0x3e9')]?(this[_0x1b0c('0x5d')](this[_0x1b0c('0x41f')]),this[_0x1b0c('0x5e')](this[_0x1b0c('0x41f')],0x2)):this[_0x1b0c('0x41c')]==_0x2167e3[_0x1b0c('0x3ea')]&&(this[_0x1b0c('0x5d')](this[_0x1b0c('0x41d')]),this[_0x1b0c('0x5e')](this[_0x1b0c('0x41d')],0x2)))),this[_0x1b0c('0x416')]>=this[_0x1b0c('0x418')]&&(moosnow[_0x1b0c('0x3e')][_0x1b0c('0x149')](),this[_0x1b0c('0x41b')]=!0x1,this[_0x1b0c('0x5e')](function(){moosnow['ui'][_0x1b0c('0x34c')](_0x52196b[_0x1b0c('0x412')],null),_0x10425f[_0x1b0c('0x357')]&&_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x2f8')]&&_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x2f8')]();},0.2));},_0x283e21);function _0x283e21(){var _0x4492f4=null!==_0x5e14e9&&_0x5e14e9[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x427')]=null,_0x4492f4[_0x1b0c('0x415')]=null,_0x4492f4[_0x1b0c('0x421')]=null,_0x4492f4[_0x1b0c('0x441')]=null,_0x4492f4[_0x1b0c('0x442')]=null,_0x4492f4[_0x1b0c('0x443')]=null,_0x4492f4[_0x1b0c('0x444')]=null,_0x4492f4[_0x1b0c('0x445')]=null,_0x4492f4[_0x1b0c('0x446')]=null,_0x4492f4[_0x1b0c('0x447')]=null,_0x4492f4;}var _0x2038af,_0x2ac992=(_0x4492f4(_0x5efeee,_0x2038af=_0x494234),_0x5efeee[_0x1b0c('0x4')][_0x1b0c('0x420')]=function(){},_0x5efeee[_0x1b0c('0x4')][_0x1b0c('0x423')]=function(){var _0x4492f4=this[_0x1b0c('0x421')][_0x1b0c('0x38a')](cc[_0x1b0c('0x448')]);this[_0x1b0c('0x416')]<this[_0x1b0c('0x418')]?_0x4492f4[_0x1b0c('0x449')]=this[_0x1b0c('0x44a')+(parseInt(''+this[_0x1b0c('0x416')])%0x4+0x1)]:_0x4492f4[_0x1b0c('0x449')]=this[_0x1b0c('0x447')];},_0x5efeee[_0x1b0c('0x4')][_0x1b0c('0x362')]=function(){var _0x4492f4=this;this[_0x1b0c('0x43d')]()?(this[_0x1b0c('0x415')][_0x1b0c('0x327')]=!0x1,this[_0x1b0c('0x421')]['on'](_0x29ba8c[_0x1b0c('0x3d2')],this[_0x1b0c('0x420')],this),this[_0x1b0c('0x421')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x425')],this)):(this[_0x1b0c('0x415')][_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x415')]['on'](_0x29ba8c[_0x1b0c('0x3d2')],this[_0x1b0c('0x420')],this),this[_0x1b0c('0x415')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x425')],this)),moosnow[_0x1b0c('0x10c')][_0x1b0c('0x221')](_0x2dd322[_0x1b0c('0x75')],this,function(){_0x4492f4[_0x1b0c('0x41b')]&&_0x4492f4[_0x1b0c('0x41e')](!0x0);});},_0x5efeee[_0x1b0c('0x4')][_0x1b0c('0x364')]=function(){this[_0x1b0c('0x415')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x425')],this),moosnow[_0x1b0c('0x10c')][_0x1b0c('0x2ef')](_0x2dd322[_0x1b0c('0x75')],this);},_0x5efeee[_0x1b0c('0x4')][_0x1b0c('0x440')]=function(){this[_0x1b0c('0x441')][_0x1b0c('0x38a')](cc[_0x1b0c('0x439')])[_0x1b0c('0x43c')]();},_0x5efeee[_0x1b0c('0x4')][_0x1b0c('0x43f')]=function(_0x281151){this[_0x1b0c('0x415')][_0x1b0c('0x327')]=_0x281151;},_0x5efeee[_0x1b0c('0x4')][_0x1b0c('0x43e')]=function(_0x1b8d31){this[_0x1b0c('0x441')][_0x1b0c('0x327')]=_0x1b8d31;},_0x5efeee);function _0x5efeee(){var _0x4492f4=null!==_0x2038af&&_0x2038af[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x427')]=null,_0x4492f4[_0x1b0c('0x415')]=null,_0x4492f4[_0x1b0c('0x421')]=null,_0x4492f4[_0x1b0c('0x441')]=null,_0x4492f4[_0x1b0c('0x442')]=null,_0x4492f4[_0x1b0c('0x443')]=null,_0x4492f4[_0x1b0c('0x444')]=null,_0x4492f4[_0x1b0c('0x445')]=null,_0x4492f4[_0x1b0c('0x446')]=null,_0x4492f4[_0x1b0c('0x447')]=null,_0x4492f4;}var _0x56cb1e,_0x3c69fc=(_0x4492f4(_0x54c8e3,_0x56cb1e=_0x5fb838),_0x54c8e3[_0x1b0c('0x4')][_0x1b0c('0x359')]=function(_0x2f4d2a){this[_0x1b0c('0x61')](_0x2f4d2a);},Object[_0x1b0c('0x3d')](_0x54c8e3[_0x1b0c('0x4')],_0x1b0c('0x44b'),{'get':function(){return this[_0x1b0c('0x44c')];},'enumerable':!0x0,'configurable':!0x0}),_0x54c8e3[_0x1b0c('0x4')][_0x1b0c('0x66')]=function(_0x345904){this[_0x1b0c('0x44c')]=_0x345904,this[_0x1b0c('0x44d')](_0x345904);},_0x54c8e3[_0x1b0c('0x4')][_0x1b0c('0x44d')]=function(_0x266edd){},_0x54c8e3[_0x1b0c('0x4')][_0x1b0c('0x109')]=function(_0x2a35a6){},_0x54c8e3[_0x1b0c('0x4')][_0x1b0c('0x65')]=function(_0x212e61){},_0x54c8e3[_0x1b0c('0x4')][_0x1b0c('0x10e')]=function(_0x24fcf2){},_0x54c8e3);function _0x54c8e3(){return null!==_0x56cb1e&&_0x56cb1e[_0x1b0c('0x9')](this,arguments)||this;}var _0x6adce5,_0x19dd07=(_0x4492f4(_0x5e5393,_0x6adce5=_0x3c69fc),_0x5e5393[_0x1b0c('0x4')][_0x1b0c('0x44e')]=function(){var _0x4492f4,_0x10425f=this,_0x45de89=this[_0x1b0c('0x44f')];this[_0x1b0c('0x44b')][_0x1b0c('0x2c7')]&&((_0x4492f4=this[_0x1b0c('0x450')]())[_0x1b0c('0x2c7')]&&moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x7a')],{'current':_0x45de89,'next':_0x4492f4}),this[_0x1b0c('0x385')](_0x4492f4)),moosnow[_0x1b0c('0x3e')][_0x1b0c('0xae')](_0x45de89,function(){},function(){_0x10425f[_0x1b0c('0x44f')][_0x1b0c('0x2c5')]&&_0x10425f[_0x1b0c('0x44f')][_0x1b0c('0x2c5')](_0x45de89);});},_0x5e5393[_0x1b0c('0x4')][_0x1b0c('0x450')]=function(){if(!this[_0x1b0c('0x44b')][_0x1b0c('0x37e')])return null;if(!this[_0x1b0c('0x44b')][_0x1b0c('0x37f')])return null;for(var _0x4492f4=0x0;_0x4492f4<this[_0x1b0c('0x44b')][_0x1b0c('0x37e')][_0x1b0c('0x7')];_0x4492f4++){for(var _0x10425f=!0x1,_0x45de89=0x0;_0x45de89<this[_0x1b0c('0x44b')][_0x1b0c('0x37f')][_0x1b0c('0x7')];_0x45de89++)this[_0x1b0c('0x44b')][_0x1b0c('0x37f')][_0x45de89][_0x1b0c('0xb3')]==this[_0x1b0c('0x44b')][_0x1b0c('0x37e')][_0x4492f4][_0x1b0c('0xb3')]&&this[_0x1b0c('0x44b')][_0x1b0c('0x37f')][_0x45de89][_0x1b0c('0xb9')]==this[_0x1b0c('0x44b')][_0x1b0c('0x37e')][_0x4492f4][_0x1b0c('0xb9')]&&(_0x10425f=!0x0);if(!_0x10425f)return this[_0x1b0c('0x44b')][_0x1b0c('0x37e')][_0x4492f4];}return null;},_0x5e5393[_0x1b0c('0x4')][_0x1b0c('0x451')]=function(_0x295a5d){if(this[_0x1b0c('0x44b')][_0x1b0c('0x37f')]&&this[_0x1b0c('0x44b')][_0x1b0c('0x37e')]){for(var _0x10425f=_0x295a5d[_0x1b0c('0x452')],_0x45de89=_0x295a5d[_0x1b0c('0x453')],_0x3aa676=this[_0x1b0c('0x44b')][_0x1b0c('0x37f')],_0x478f0d=this[_0x1b0c('0x44b')][_0x1b0c('0x37e')],_0x516b1f=0x0;_0x516b1f<_0x3aa676[_0x1b0c('0x7')];_0x516b1f++)_0x10425f[_0x1b0c('0xb3')]==_0x3aa676[_0x516b1f][_0x1b0c('0xb3')]&&_0x10425f[_0x1b0c('0xb9')]==_0x3aa676[_0x516b1f][_0x1b0c('0xb9')]&&(this[_0x1b0c('0x44b')][_0x1b0c('0x37f')][_0x516b1f]=_0x45de89[_0x1b0c('0xb3')]);for(_0x516b1f=0x0;_0x516b1f<_0x478f0d[_0x1b0c('0x7')];_0x516b1f++)if(_0x45de89[_0x1b0c('0xb3')]==_0x478f0d[_0x516b1f][_0x1b0c('0xb3')]){this[_0x1b0c('0x44b')][_0x1b0c('0x37e')][_0x1b0c('0x2e9')](_0x516b1f,0x1),this[_0x1b0c('0x44b')][_0x1b0c('0x37e')][_0x1b0c('0x23')](_0x10425f);break;}}},_0x5e5393[_0x1b0c('0x4')][_0x1b0c('0x109')]=function(){this[_0x1b0c('0x44b')]&&this[_0x1b0c('0x44b')][_0x1b0c('0x2c7')]&&moosnow[_0x1b0c('0x10c')][_0x1b0c('0x221')](_0x2dd322[_0x1b0c('0x7a')],this,this[_0x1b0c('0x451')]);},_0x5e5393[_0x1b0c('0x4')][_0x1b0c('0x10e')]=function(){this[_0x1b0c('0x44f')]&&(this[_0x1b0c('0x44f')][_0x1b0c('0x2c5')]=null),this[_0x1b0c('0x2ef')](),moosnow[_0x1b0c('0x10c')][_0x1b0c('0x2ef')](_0x2dd322[_0x1b0c('0x7a')],this);},_0x5e5393[_0x1b0c('0x4')][_0x1b0c('0x221')]=function(){},_0x5e5393[_0x1b0c('0x4')][_0x1b0c('0x2ef')]=function(){},_0x5e5393[_0x1b0c('0x4')][_0x1b0c('0x66')]=function(_0x315a0b){_0x6adce5[_0x1b0c('0x4')][_0x1b0c('0x66')][_0x1b0c('0x8')](this,_0x315a0b),this[_0x1b0c('0x221')]();},_0x5e5393[_0x1b0c('0x4')][_0x1b0c('0x385')]=function(_0x11f5fc){},_0x5e5393);function _0x5e5393(){var _0x4492f4=null!==_0x6adce5&&_0x6adce5[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x421')]=null,_0x4492f4[_0x1b0c('0xfa')]=null,_0x4492f4[_0x1b0c('0x454')]=null,_0x4492f4[_0x1b0c('0x455')]=null,_0x4492f4[_0x1b0c('0x456')]=!0x1,_0x4492f4;}var _0x45fea3,_0x492dd2=(_0x4492f4(_0x23136b,_0x45fea3=_0x19dd07),_0x23136b[_0x1b0c('0x4')][_0x1b0c('0x221')]=function(){this[_0x1b0c('0x421')][_0x1b0c('0x325')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x44e')],this);},_0x23136b[_0x1b0c('0x4')][_0x1b0c('0x2ef')]=function(){this[_0x1b0c('0x421')][_0x1b0c('0x325')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x44e')],this);},_0x23136b[_0x1b0c('0x4')][_0x1b0c('0x44d')]=function(_0x363a8e){},_0x23136b[_0x1b0c('0x4')][_0x1b0c('0x66')]=function(_0x28f6a3){var _0x3aa676=this;_0x45fea3[_0x1b0c('0x4')][_0x1b0c('0x66')][_0x1b0c('0x8')](this,_0x28f6a3),this[_0x1b0c('0x44f')]=_0x28f6a3,cc[_0x1b0c('0x2af')][_0x1b0c('0x161')](_0x28f6a3[_0x1b0c('0xbb')],function(_0x2821c6,_0x407349){var _0x45de89=new cc[(_0x1b0c('0x457'))](_0x407349);_0x3aa676[_0x1b0c('0x421')][_0x1b0c('0x449')]=_0x45de89;}),this[_0x1b0c('0xfa')]&&(this[_0x1b0c('0xfa')][_0x1b0c('0x34a')]=_0x28f6a3[_0x1b0c('0xfa')]);},_0x23136b[_0x1b0c('0x4')][_0x1b0c('0x385')]=function(_0x245149){var _0x3aa676=this;this[_0x1b0c('0x44f')]=_0x245149,cc[_0x1b0c('0x2af')][_0x1b0c('0x161')](_0x245149[_0x1b0c('0xbb')],function(_0x1b83ef,_0x5b31ac){var _0x45de89=new cc[(_0x1b0c('0x457'))](_0x5b31ac);_0x3aa676[_0x1b0c('0x421')][_0x1b0c('0x449')]=_0x45de89;}),this[_0x1b0c('0xfa')]&&(this[_0x1b0c('0xfa')][_0x1b0c('0x34a')]=_0x245149[_0x1b0c('0xfa')]);},_0x23136b);function _0x23136b(){return null!==_0x45fea3&&_0x45fea3[_0x1b0c('0x9')](this,arguments)||this;}var _0x51bd97,_0x3eb27f=(_0x4492f4(_0x509f31,_0x51bd97=_0x3bae69),Object[_0x1b0c('0x3d')](_0x509f31[_0x1b0c('0x4')],_0x1b0c('0x357'),{'get':function(){return this[_0x1b0c('0x358')];},'enumerable':!0x0,'configurable':!0x0}),_0x509f31[_0x1b0c('0x4')][_0x1b0c('0x359')]=function(_0x5b2da0){this[_0x1b0c('0x61')](_0x5b2da0);},_0x509f31[_0x1b0c('0x4')][_0x1b0c('0x65')]=function(){},_0x509f31[_0x1b0c('0x4')][_0x1b0c('0x66')]=function(_0x28d934){_0x51bd97[_0x1b0c('0x4')][_0x1b0c('0x66')][_0x1b0c('0x8')](this,_0x28d934),this[_0x1b0c('0x458')][_0x1b0c('0x34a')]=''+_0x279d2d[_0x1b0c('0x59')](_0x28d934[_0x1b0c('0x458')]),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x149')]();},_0x509f31[_0x1b0c('0x4')][_0x1b0c('0x459')]=function(){var _0x4492f4=this;moosnow['ui'][_0x1b0c('0x34c')](_0x52196b[_0x1b0c('0x411')],null),moosnow['ui'][_0x1b0c('0x34c')](_0x52196b[_0x1b0c('0x412')],null),0x1==this[_0x1b0c('0x357')][_0x1b0c('0x45a')]?moosnow['ui'][_0x1b0c('0x33f')](_0x52196b[_0x1b0c('0x408')],_0x2921f6(_0x2921f6({},_0x279d2d[_0x1b0c('0x50')](this[_0x1b0c('0x357')])),{'callback':function(){_0x4492f4[_0x1b0c('0x357')][_0x1b0c('0x2f8')]&&_0x4492f4[_0x1b0c('0x357')][_0x1b0c('0x2f8')]();}})):this[_0x1b0c('0x357')][_0x1b0c('0x2f8')]&&this[_0x1b0c('0x357')][_0x1b0c('0x2f8')]();},_0x509f31);function _0x509f31(){var _0x4492f4=null!==_0x51bd97&&_0x51bd97[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x458')]=null,_0x4492f4[_0x1b0c('0x42c')]=null,_0x4492f4;}var _0x63b825,_0x20c618=(_0x4492f4(_0x83ef64,_0x63b825=_0x3eb27f),_0x83ef64[_0x1b0c('0x4')][_0x1b0c('0x359')]=function(_0x3b709b){this[_0x1b0c('0x61')](_0x3b709b),this[_0x1b0c('0x42c')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x459')],this);},_0x83ef64[_0x1b0c('0x4')][_0x1b0c('0x65')]=function(){this[_0x1b0c('0x42c')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x459')],this);},_0x83ef64);function _0x83ef64(){var _0x4492f4=null!==_0x63b825&&_0x63b825[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x458')]=null,_0x4492f4[_0x1b0c('0x42c')]=null,_0x4492f4;}var _0x4f3696,_0x1c7da5=(_0x4492f4(_0x4d4dcc,_0x4f3696=_0x3bae69),Object[_0x1b0c('0x3d')](_0x4d4dcc[_0x1b0c('0x4')],_0x1b0c('0x357'),{'get':function(){return this[_0x1b0c('0x358')];},'enumerable':!0x0,'configurable':!0x0}),_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x359')]=function(_0x8074f5){this[_0x1b0c('0x61')](_0x8074f5);},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x66')]=function(_0x1d4c1f){var _0x45de89=this;_0x4f3696[_0x1b0c('0x4')][_0x1b0c('0x66')][_0x1b0c('0x8')](this,_0x1d4c1f),this[_0x1b0c('0x221')](),this[_0x1b0c('0x45b')]=!0x1,this[_0x1b0c('0x45c')](),this[_0x1b0c('0x45d')][_0x1b0c('0x327')]=!0x1,this[_0x1b0c('0x45e')][_0x1b0c('0x327')]=!0x1,moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x15f63a){var _0x10425f;_0x15f63a?0x1==_0x15f63a[_0x1b0c('0x45f')]?_0x45de89[_0x1b0c('0x16a')]():0x2==_0x15f63a[_0x1b0c('0x45f')]?_0x45de89[_0x1b0c('0x460')]():(_0x10425f=_0x15f63a&&_0x15f63a[_0x1b0c('0x461')]?parseFloat(_0x15f63a[_0x1b0c('0x461')]):0.5,_0x279d2d[_0x1b0c('0xa')](0x0,0x64)/0x64<_0x10425f?_0x45de89[_0x1b0c('0x16a')]():_0x45de89[_0x1b0c('0x460')]()):_0x45de89[_0x1b0c('0x460')]();}),this[_0x1b0c('0x462')]=0xa,this[_0x1b0c('0x463')]=0x0,this[_0x1b0c('0x464')](),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x13f')]();},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x10e')]=function(){this[_0x1b0c('0x2ef')]();},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x16a')]=function(){this[_0x1b0c('0x45d')][_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x45e')][_0x1b0c('0x327')]=!0x1;},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x460')]=function(){this[_0x1b0c('0x45d')][_0x1b0c('0x327')]=!0x1,this[_0x1b0c('0x45e')][_0x1b0c('0x327')]=!0x0;},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x465')]=function(){this[_0x1b0c('0x463')]+=0x1;var _0x4492f4=this[_0x1b0c('0x462')]-this[_0x1b0c('0x463')];if(_0x4492f4<0x0)return this[_0x1b0c('0x5d')](this[_0x1b0c('0x465')]),void moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x411')],null);this[_0x1b0c('0x466')][_0x1b0c('0x34a')]=_0x4492f4+'秒';},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x467')]=function(){this[_0x1b0c('0x5d')](this[_0x1b0c('0x465')]);},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x464')]=function(){this[_0x1b0c('0x5a')](this[_0x1b0c('0x465')],0x1);},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x221')]=function(){},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x2ef')]=function(){},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x459')]=function(){moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x411')],null);},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x45c')]=function(){},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x468')]=function(){var _0x10425f=this;this[_0x1b0c('0x467')](),moosnow[_0x1b0c('0x3e')][_0x1b0c('0xf2')]({'channel':''},function(_0x44853c){_0x10425f[_0x1b0c('0x464')](),_0x10425f[_0x1b0c('0x357')]&&(_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x469')]&&moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x411')],null),_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x46a')]&&_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x46a')](_0x44853c));});},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x46b')]=function(){this[_0x1b0c('0x45b')]?this[_0x1b0c('0x46c')]():this[_0x1b0c('0x357')]&&(this[_0x1b0c('0x357')][_0x1b0c('0x469')]&&moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x411')],null),this[_0x1b0c('0x357')][_0x1b0c('0x2f8')]&&this[_0x1b0c('0x357')][_0x1b0c('0x2f8')]());},_0x4d4dcc[_0x1b0c('0x4')][_0x1b0c('0x46c')]=function(){var _0x10425f=this;this[_0x1b0c('0x467')](),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x16a')](function(_0x575228){_0x575228!=moosnow[_0x1b0c('0x430')][_0x1b0c('0x158')]?(_0x575228==moosnow[_0x1b0c('0x430')][_0x1b0c('0x164')]?moosnow['ui'][_0x1b0c('0xd3')](moosnow[_0x1b0c('0x431')][_0x1b0c('0x164')]):moosnow['ui'][_0x1b0c('0xd3')](moosnow[_0x1b0c('0x431')][_0x1b0c('0x168')]),_0x10425f[_0x1b0c('0x464')]()):_0x10425f[_0x1b0c('0x357')]&&(_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x469')]&&moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x411')],null),_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x46d')]&&_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x46d')]());});},_0x4d4dcc);function _0x4d4dcc(){var _0x4492f4=null!==_0x4f3696&&_0x4f3696[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x45d')]=null,_0x4492f4[_0x1b0c('0x45e')]=null,_0x4492f4[_0x1b0c('0x46e')]=null,_0x4492f4[_0x1b0c('0x466')]=null,_0x4492f4[_0x1b0c('0x46f')]=null,_0x4492f4[_0x1b0c('0x470')]=null,_0x4492f4[_0x1b0c('0x437')]=null,_0x4492f4[_0x1b0c('0x433')]=null,_0x4492f4[_0x1b0c('0x438')]=null,_0x4492f4[_0x1b0c('0x471')]=!0x0,_0x4492f4[_0x1b0c('0x45b')]=!0x1,_0x4492f4[_0x1b0c('0x462')]=0xa,_0x4492f4[_0x1b0c('0x463')]=0x0,_0x4492f4;}var _0x1b8b8c,_0x55fba6=(_0x4492f4(_0x124373,_0x1b8b8c=_0x1c7da5),_0x124373[_0x1b0c('0x4')][_0x1b0c('0x45c')]=function(){this[_0x1b0c('0x45b')]=!this[_0x1b0c('0x45b')],this[_0x1b0c('0x433')][_0x1b0c('0x327')]=this[_0x1b0c('0x45b')];},_0x124373[_0x1b0c('0x4')][_0x1b0c('0x359')]=function(_0x371bfd){this[_0x1b0c('0x61')](_0x371bfd),this[_0x1b0c('0x42c')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x459')],this);},_0x124373[_0x1b0c('0x4')][_0x1b0c('0x65')]=function(){this[_0x1b0c('0x42c')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x459')],this);},_0x124373[_0x1b0c('0x4')][_0x1b0c('0x221')]=function(){this[_0x1b0c('0x46e')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x459')],this),this[_0x1b0c('0x46f')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x46c')],this),this[_0x1b0c('0x437')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x46b')],this),this[_0x1b0c('0x470')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x468')],this),this[_0x1b0c('0x438')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x45c')],this);},_0x124373[_0x1b0c('0x4')][_0x1b0c('0x2ef')]=function(){this[_0x1b0c('0x46e')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x459')],this),this[_0x1b0c('0x46f')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x46c')],this),this[_0x1b0c('0x437')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x46b')],this),this[_0x1b0c('0x470')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x468')],this),this[_0x1b0c('0x438')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x45c')],this);},_0x124373);function _0x124373(){var _0x4492f4=null!==_0x1b8b8c&&_0x1b8b8c[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x458')]=null,_0x4492f4[_0x1b0c('0x42c')]=null,_0x4492f4;}var _0x318222,_0x5581a3=(_0x4492f4(_0x3747b0,_0x318222=_0x3bae69),Object[_0x1b0c('0x3d')](_0x3747b0[_0x1b0c('0x4')],_0x1b0c('0x472'),{'get':function(){return{};},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x3747b0[_0x1b0c('0x4')],_0x1b0c('0x357'),{'get':function(){return this[_0x1b0c('0x358')];},'enumerable':!0x0,'configurable':!0x0}),_0x3747b0[_0x1b0c('0x4')][_0x1b0c('0x473')]=function(_0x47ec4e,_0x5895d4,_0x176c6b){},_0x3747b0[_0x1b0c('0x4')][_0x1b0c('0x109')]=function(_0x1c2003){var _0x3aa676=this,_0x4492f4=this[_0x1b0c('0x357')],_0x478f0d=_0x4492f4[_0x1b0c('0x474')],_0x516b1f=(_0x4492f4[_0x1b0c('0x458')],_0x4492f4[_0x1b0c('0x475')]),_0x857c42=_0x4492f4[_0x1b0c('0x476')],_0x85adb7=_0x4492f4[_0x1b0c('0x2f8')];console[_0x1b0c('0x43')](_0x1b0c('0x477'),_0x1c2003),cc[_0x1b0c('0x2af')][_0x1b0c('0x2b0')](moosnow[_0x1b0c('0x35c')][_0x1b0c('0x31d')]+_0x1b0c('0x478'),cc[_0x1b0c('0x323')],function(){for(var _0x4492f4=0x0;_0x4492f4<_0x478f0d;_0x4492f4++){var _0x10425f=moosnow[_0x1b0c('0x35c')][_0x1b0c('0x319')](_0x1b0c('0x478'),_0x3aa676[_0x1b0c('0x472')],{'x':_0x279d2d[_0x1b0c('0xa')](_0x516b1f['x']-_0x1c2003[_0x1b0c('0x479')],_0x516b1f['x']+_0x1c2003[_0x1b0c('0x479')]),'y':_0x279d2d[_0x1b0c('0xa')](_0x516b1f['y']-_0x1c2003[_0x1b0c('0x47a')],_0x516b1f['y']+_0x1c2003[_0x1b0c('0x47a')])});_0x3aa676[_0x1b0c('0x473')](_0x10425f,_0x857c42,_0x85adb7);}_0x3aa676[_0x1b0c('0x5e')](function(){_0x3aa676[_0x1b0c('0x357')][_0x1b0c('0x469')]&&moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x408')],null),_0x279d2d[_0x1b0c('0x24')](_0x85adb7)&&_0x85adb7();},2.1);});},_0x3747b0);function _0x3747b0(){return null!==_0x318222&&_0x318222[_0x1b0c('0x9')](this,arguments)||this;}var _0x340b80,_0xc14f26=(_0x4492f4(_0x1a5ce0,_0x340b80=_0x5581a3),Object[_0x1b0c('0x3d')](_0x1a5ce0[_0x1b0c('0x4')],_0x1b0c('0x472'),{'get':function(){return cc[_0x1b0c('0x33c')][_0x1b0c('0x33d')][_0x1b0c('0x325')];},'enumerable':!0x0,'configurable':!0x0}),_0x1a5ce0[_0x1b0c('0x4')][_0x1b0c('0x473')]=function(_0x21cf98,_0x4b4cfd,_0xf85739){var _0x3aa676=_0x21cf98[_0x1b0c('0x325')],_0x478f0d=_0x279d2d[_0x1b0c('0xa')](0x0,0x64)/0xc8;_0x3aa676[_0x1b0c('0x327')]=!0x0,_0x3aa676[_0x1b0c('0x54')](cc[_0x1b0c('0x55')](cc[_0x1b0c('0x47b')](_0x478f0d),cc[_0x1b0c('0x47c')](cc[_0x1b0c('0x376')](0x1,_0x4b4cfd['x'],_0x4b4cfd['y']),cc[_0x1b0c('0x47d')](0x1),cc[_0x1b0c('0x55')](cc[_0x1b0c('0x56')](0.8,1.2,1.2),cc[_0x1b0c('0x56')](0.8,0.8,9.8))),cc[_0x1b0c('0x57')](function(){moosnow[_0x1b0c('0x35c')][_0x1b0c('0x31a')](_0x21cf98,null,!0x0);})));},_0x1a5ce0);function _0x1a5ce0(){return null!==_0x340b80&&_0x340b80[_0x1b0c('0x9')](this,arguments)||this;}var _0x44e724,_0x1bab08=(_0x4492f4(_0x3def7b,_0x44e724=_0x3bae69),_0x3def7b[_0x1b0c('0x4')][_0x1b0c('0x359')]=function(_0x44aea5){this[_0x1b0c('0x61')](_0x44aea5);},_0x3def7b[_0x1b0c('0x4')][_0x1b0c('0x362')]=function(){},_0x3def7b[_0x1b0c('0x4')][_0x1b0c('0x364')]=function(){},_0x3def7b[_0x1b0c('0x4')][_0x1b0c('0x46b')]=function(){var _0x10425f=this;this[_0x1b0c('0x47e')]?moosnow[_0x1b0c('0x3e')][_0x1b0c('0x16a')](function(_0x2b6f23){_0x2b6f23==moosnow[_0x1b0c('0x430')][_0x1b0c('0x158')]?_0x10425f[_0x1b0c('0x47f')](0x5*_0x10425f[_0x1b0c('0x480')]):_0x2b6f23==moosnow[_0x1b0c('0x430')][_0x1b0c('0x164')]?moosnow['ui'][_0x1b0c('0xd3')](moosnow[_0x1b0c('0x431')][_0x1b0c('0x164')]):moosnow['ui'][_0x1b0c('0xd3')](moosnow[_0x1b0c('0x431')][_0x1b0c('0x168')]);}):this[_0x1b0c('0x47f')](this[_0x1b0c('0x480')]);},_0x3def7b[_0x1b0c('0x4')][_0x1b0c('0x47f')]=function(_0x251bdf){moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x40b')],null),moosnow['ui'][_0x1b0c('0x33f')](_0x52196b[_0x1b0c('0x40c')],_0x2921f6({'coin':_0x251bdf,'level':this[_0x1b0c('0x357')][_0x1b0c('0x481')],'levelShareCoinNum':this[_0x1b0c('0x482')]},this[_0x1b0c('0x357')]));},_0x3def7b[_0x1b0c('0x4')][_0x1b0c('0x483')]=function(){this[_0x1b0c('0x47e')]=!this[_0x1b0c('0x47e')],this[_0x1b0c('0x484')]();},_0x3def7b[_0x1b0c('0x4')][_0x1b0c('0x484')]=function(){},_0x3def7b[_0x1b0c('0x4')][_0x1b0c('0x109')]=function(_0x1d86ff){var _0x10425f=_0x1d86ff[_0x1b0c('0x478')],_0x45de89=_0x1d86ff[_0x1b0c('0x485')];this[_0x1b0c('0x480')]=_0x10425f,this[_0x1b0c('0x482')]=_0x45de89,this[_0x1b0c('0x486')][_0x1b0c('0x34a')]=''+_0x279d2d[_0x1b0c('0x59')](this[_0x1b0c('0x480')]),this[_0x1b0c('0x362')](),this[_0x1b0c('0x47e')]=!0x0,this[_0x1b0c('0x484')](),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x103')](),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x13f')]();},_0x3def7b[_0x1b0c('0x4')][_0x1b0c('0x65')]=function(){this[_0x1b0c('0x364')](),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x149')]();},_0x3def7b);function _0x3def7b(){var _0x4492f4=null!==_0x44e724&&_0x44e724[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x433')]=null,_0x4492f4[_0x1b0c('0x438')]=null,_0x4492f4[_0x1b0c('0x437')]=null,_0x4492f4[_0x1b0c('0x486')]=null,_0x4492f4[_0x1b0c('0x47e')]=!0x0,_0x4492f4[_0x1b0c('0x480')]=0x0,_0x4492f4[_0x1b0c('0x482')]=0x0,_0x4492f4;}var _0x4c84d8,_0xf326b2=(_0x4492f4(_0x1d7a37,_0x4c84d8=_0x1bab08),_0x1d7a37[_0x1b0c('0x4')][_0x1b0c('0x362')]=function(){this[_0x1b0c('0x438')][_0x1b0c('0x325')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x483')],this),this[_0x1b0c('0x437')][_0x1b0c('0x325')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x46b')],this);},_0x1d7a37[_0x1b0c('0x4')][_0x1b0c('0x364')]=function(){this[_0x1b0c('0x438')][_0x1b0c('0x325')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x483')],this),this[_0x1b0c('0x437')][_0x1b0c('0x325')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x46b')],this);},_0x1d7a37[_0x1b0c('0x4')][_0x1b0c('0x484')]=function(){this[_0x1b0c('0x47e')]?this[_0x1b0c('0x433')][_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x0:this[_0x1b0c('0x433')][_0x1b0c('0x325')][_0x1b0c('0x327')]=!0x1;},_0x1d7a37);function _0x1d7a37(){return null!==_0x4c84d8&&_0x4c84d8[_0x1b0c('0x9')](this,arguments)||this;}var _0x5691dd,_0x2e080a=(_0x4492f4(_0x12888d,_0x5691dd=_0x3bae69),Object[_0x1b0c('0x3d')](_0x12888d[_0x1b0c('0x4')],_0x1b0c('0x357'),{'get':function(){return this[_0x1b0c('0x358')];},'enumerable':!0x0,'configurable':!0x0}),_0x12888d[_0x1b0c('0x4')][_0x1b0c('0x359')]=function(_0x10187e){this[_0x1b0c('0x61')](_0x10187e),this[_0x1b0c('0x221')]();},_0x12888d[_0x1b0c('0x4')][_0x1b0c('0x221')]=function(){},_0x12888d[_0x1b0c('0x4')][_0x1b0c('0x2ef')]=function(){},_0x12888d[_0x1b0c('0x4')][_0x1b0c('0x373')]=function(){this[_0x1b0c('0x357')][_0x1b0c('0x469')]&&moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x409')],null),this[_0x1b0c('0x357')]&&this[_0x1b0c('0x357')][_0x1b0c('0x2f8')]&&this[_0x1b0c('0x357')][_0x1b0c('0x2f8')]();},_0x12888d[_0x1b0c('0x4')][_0x1b0c('0x109')]=function(){this[_0x1b0c('0x470')][_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x482')]=this[_0x1b0c('0x357')][_0x1b0c('0x487')],this[_0x1b0c('0x488')][_0x1b0c('0x34a')]=''+_0x279d2d[_0x1b0c('0x59')](this[_0x1b0c('0x482')]),moosnow[_0x1b0c('0x3e')][_0x1b0c('0x103')]();},_0x12888d[_0x1b0c('0x4')][_0x1b0c('0x489')]=function(){var _0x45de89=this;this[_0x1b0c('0x48a')]||(this[_0x1b0c('0x48a')]=!0x0,moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x452409){var _0x10425f;_0x452409&&0x1!=_0x452409[_0x1b0c('0x48b')]?0x2==_0x452409[_0x1b0c('0x48b')]?_0x45de89[_0x1b0c('0x468')]():(_0x10425f=_0x452409&&_0x452409[_0x1b0c('0x48c')]?parseFloat(_0x452409[_0x1b0c('0x48c')]):0.5,_0x279d2d[_0x1b0c('0xa')](0x0,0x64)/0x64<_0x10425f?_0x45de89[_0x1b0c('0x46c')]():_0x45de89[_0x1b0c('0x468')]()):_0x45de89[_0x1b0c('0x46c')]();}));},_0x12888d[_0x1b0c('0x4')][_0x1b0c('0x46c')]=function(){var _0x10425f=this;moosnow[_0x1b0c('0x3e')][_0x1b0c('0x16a')](function(_0x5b15b1){_0x10425f[_0x1b0c('0x48a')]=!0x1,_0x5b15b1==moosnow[_0x1b0c('0x430')][_0x1b0c('0x158')]?(_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x469')]&&moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x409')],null),_0x10425f[_0x1b0c('0x357')]&&_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x46d')]&&_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x46d')]()):_0x5b15b1==moosnow[_0x1b0c('0x430')][_0x1b0c('0x168')]?moosnow['ui'][_0x1b0c('0xd3')](moosnow[_0x1b0c('0x431')][_0x1b0c('0x168')]):moosnow['ui'][_0x1b0c('0xd3')](moosnow[_0x1b0c('0x431')][_0x1b0c('0x164')]);});},_0x12888d[_0x1b0c('0x4')][_0x1b0c('0x468')]=function(){var _0x10425f=this;moosnow[_0x1b0c('0x3e')][_0x1b0c('0xf2')]({'channel':moosnow[_0x1b0c('0x48d')][_0x1b0c('0x29c')]},function(_0x2f60e2){_0x10425f[_0x1b0c('0x48a')]=!0x1,_0x2f60e2?(_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x469')]&&moosnow['ui'][_0x1b0c('0x349')](_0x52196b[_0x1b0c('0x409')],null),_0x10425f[_0x1b0c('0x357')]&&_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x46a')]&&_0x10425f[_0x1b0c('0x357')][_0x1b0c('0x46a')](_0x2f60e2)):moosnow['ui'][_0x1b0c('0xd3')](_0x1b0c('0x48e')),console[_0x1b0c('0x43')](_0x1b0c('0x48f'),_0x2f60e2);});},_0x12888d);function _0x12888d(){var _0x4492f4=null!==_0x5691dd&&_0x5691dd[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x470')]=null,_0x4492f4[_0x1b0c('0x490')]=null,_0x4492f4[_0x1b0c('0x488')]=null,_0x4492f4[_0x1b0c('0x471')]=!0x0,_0x4492f4[_0x1b0c('0x482')]=0x0,_0x4492f4[_0x1b0c('0x48a')]=!0x1,_0x4492f4;}var _0x11342f,_0x28b9bb=(_0x4492f4(_0x3b334b,_0x11342f=_0x2e080a),_0x3b334b[_0x1b0c('0x4')][_0x1b0c('0x221')]=function(){this[_0x1b0c('0x490')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x373')],this),this[_0x1b0c('0x470')]['on'](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x489')],this);},_0x3b334b[_0x1b0c('0x4')][_0x1b0c('0x2ef')]=function(){this[_0x1b0c('0x490')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x373')],this),this[_0x1b0c('0x470')][_0x1b0c('0x3d6')](_0x29ba8c[_0x1b0c('0x3d3')],this[_0x1b0c('0x489')],this);},_0x3b334b);function _0x3b334b(){return null!==_0x11342f&&_0x11342f[_0x1b0c('0x9')](this,arguments)||this;}var _0x8bce18=(_0x2a2974[_0x1b0c('0x4')][_0x1b0c('0x491')]=function(){return new _0x492dd2();},Object[_0x1b0c('0x3d')](_0x2a2974[_0x1b0c('0x4')],_0x1b0c('0x3ec'),{'get':function(){return this[_0x1b0c('0x492')]||(this[_0x1b0c('0x492')]=new _0x177641()),this[_0x1b0c('0x492')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x2a2974[_0x1b0c('0x4')],_0x1b0c('0x493'),{'get':function(){return this[_0x1b0c('0x492')]||(this[_0x1b0c('0x492')]=new _0x177641()),this[_0x1b0c('0x494')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x2a2974[_0x1b0c('0x4')],_0x1b0c('0x3fc'),{'get':function(){return this[_0x1b0c('0x495')]||(this[_0x1b0c('0x495')]=new _0x43e097()),this[_0x1b0c('0x495')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x2a2974[_0x1b0c('0x4')],_0x1b0c('0x3fe'),{'get':function(){return this[_0x1b0c('0x496')]||(this[_0x1b0c('0x496')]=new _0x212afa()),this[_0x1b0c('0x496')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x2a2974[_0x1b0c('0x4')],_0x1b0c('0x3fd'),{'get':function(){return this[_0x1b0c('0x497')]||(this[_0x1b0c('0x497')]=new _0x2ac992()),this[_0x1b0c('0x497')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x2a2974[_0x1b0c('0x4')],_0x1b0c('0x400'),{'get':function(){return this[_0x1b0c('0x498')]||(this[_0x1b0c('0x498')]=new _0x20c618()),this[_0x1b0c('0x498')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x2a2974[_0x1b0c('0x4')],_0x1b0c('0x3ff'),{'get':function(){return this[_0x1b0c('0x499')]||(this[_0x1b0c('0x499')]=new _0x55fba6()),this[_0x1b0c('0x499')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x2a2974[_0x1b0c('0x4')],_0x1b0c('0x403'),{'get':function(){return this[_0x1b0c('0x49a')]||(this[_0x1b0c('0x49a')]=new _0xc14f26()),this[_0x1b0c('0x49a')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x2a2974[_0x1b0c('0x4')],_0x1b0c('0x3f7'),{'get':function(){return this[_0x1b0c('0x49b')]||(this[_0x1b0c('0x49b')]=new _0xf326b2()),this[_0x1b0c('0x49b')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x2a2974[_0x1b0c('0x4')],_0x1b0c('0x401'),{'get':function(){return this[_0x1b0c('0x49c')]||(this[_0x1b0c('0x49c')]=new _0x28b9bb()),this[_0x1b0c('0x49c')];},'enumerable':!0x0,'configurable':!0x0}),_0x2a2974);function _0x2a2974(){}var _0x253459=(_0x4618bf[_0x1b0c('0x4')][_0x1b0c('0xd3')]=function(_0x26bf0f){moosnow['ui'][_0x1b0c('0xd3')](_0x26bf0f);},_0x4618bf[_0x1b0c('0x4')][_0x1b0c('0x49d')]=function(){moosnow['ui'][_0x1b0c('0x33f')](_0x52196b[_0x1b0c('0x407')],{'showAd':moosnow[_0x1b0c('0x3d0')][_0x1b0c('0x36e')]},null);},_0x4618bf[_0x1b0c('0x4')][_0x1b0c('0x366')]=function(_0x24bfc0,_0x2b3600,_0x395dc9){var _0x3aa676;void 0x0===_0x24bfc0&&(_0x24bfc0=_0x1a0765[_0x1b0c('0x36e')]),void 0x0===_0x395dc9&&(_0x395dc9=0x3e7),moosnow[_0x1b0c('0x36f')]()==moosnow[_0x1b0c('0x370')][_0x1b0c('0xd')]&&moosnow[_0x1b0c('0x3e')][_0x1b0c('0x8b')]()?console[_0x1b0c('0x43')](_0x1b0c('0x49e')):(_0x3aa676=moosnow['ui'][_0x1b0c('0x348')](_0x52196b[_0x1b0c('0x407')]))?(moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x79')],{'showAd':_0x24bfc0,'callback':_0x2b3600,'zIndex':_0x395dc9}),_0x3aa676[_0x1b0c('0x325')][_0x1b0c('0x328')]=_0x395dc9):moosnow['ui'][_0x1b0c('0x33f')](_0x52196b[_0x1b0c('0x407')],{'showAd':moosnow[_0x1b0c('0x3d0')][_0x1b0c('0x36e')]},function(){moosnow['ui'][_0x1b0c('0x348')](_0x52196b[_0x1b0c('0x407')])[_0x1b0c('0x325')][_0x1b0c('0x328')]=_0x395dc9,moosnow[_0x1b0c('0x10c')][_0x1b0c('0x10d')](_0x2dd322[_0x1b0c('0x79')],{'showAd':_0x24bfc0,'callback':_0x2b3600,'zIndex':_0x395dc9});});},_0x4618bf[_0x1b0c('0x4')][_0x1b0c('0x477')]=function(_0x3cfd36){moosnow['ui'][_0x1b0c('0x33f')](_0x52196b[_0x1b0c('0x408')],_0x3cfd36);},_0x4618bf[_0x1b0c('0x4')][_0x1b0c('0x49f')]=function(_0xb5edec){moosnow['ui'][_0x1b0c('0x33f')](_0x52196b[_0x1b0c('0x412')],_0xb5edec,function(){});},_0x4618bf[_0x1b0c('0x4')][_0x1b0c('0x4a0')]=function(_0x534769){moosnow['ui'][_0x1b0c('0x33f')](_0x52196b[_0x1b0c('0x411')],_0x534769,function(){});},_0x4618bf[_0x1b0c('0x4')][_0x1b0c('0x4a1')]=function(_0xaefe82){moosnow['ui'][_0x1b0c('0x33f')](_0x52196b[_0x1b0c('0x40b')],_0xaefe82);},_0x4618bf[_0x1b0c('0x4')][_0x1b0c('0x4a2')]=function(_0x485974){moosnow['ui'][_0x1b0c('0x33f')](_0x52196b[_0x1b0c('0x40c')],_0x485974);},_0x4618bf[_0x1b0c('0x4')][_0x1b0c('0x460')]=function(_0x5e1e26){moosnow['ui'][_0x1b0c('0x33f')](_0x52196b[_0x1b0c('0x409')],_0x5e1e26);},_0x4618bf);function _0x4618bf(){}var _0x52a662,_0x2b492f=(_0x4492f4(_0x340db1,_0x52a662=_0x5fb838),_0x340db1[_0x1b0c('0x4')][_0x1b0c('0x414')]=function(){},_0x340db1[_0x1b0c('0x4')][_0x1b0c('0x4a3')]=function(_0x1a5d35,_0x224d35,_0x27f700){var _0x3aa676=this;this[_0x1b0c('0x4a4')]=_0x1a5d35,this[_0x1b0c('0x4a5')]=_0x224d35,this[_0x1b0c('0x13f')]=_0x27f700,this[_0x1b0c('0x414')]();var _0x478f0d=moosnow[_0x1b0c('0x9f')][_0x1b0c('0x25b')]();moosnow[_0x1b0c('0x9f')][_0x1b0c('0x25d')](_0x478f0d+0x1),moosnow[_0x1b0c('0x9b')][_0x1b0c('0xa3')](function(_0x72a695){isNaN(_0x72a695[_0x1b0c('0x4a6')])||(_0x3aa676[_0x1b0c('0x4a7')]=parseFloat(_0x72a695[_0x1b0c('0x4a6')])),moosnow[_0x1b0c('0x9b')][_0x1b0c('0x207')](function(_0x2414d1){_0x3aa676[_0x1b0c('0x4a8')]=_0x2414d1,_0x3aa676[_0x1b0c('0x4a9')]();});});},_0x340db1[_0x1b0c('0x4')][_0x1b0c('0x35a')]=function(_0x4cf9da,_0x50f2f2,_0xa3668c,_0x59d59c){},_0x340db1[_0x1b0c('0x4')][_0x1b0c('0x4a9')]=function(){var _0x4492f4,_0x10425f=this;0x0==this[_0x1b0c('0x4a8')]?(this[_0x1b0c('0x35a')](this[_0x1b0c('0x4a4')],!0x0,this[_0x1b0c('0x4aa')]['x'],this[_0x1b0c('0x4aa')]['y']),this[_0x1b0c('0x13f')]&&moosnow[_0x1b0c('0x3e')][_0x1b0c('0x13f')]()):moosnow[_0x1b0c('0x9f')][_0x1b0c('0x25b')]()%this[_0x1b0c('0x4a8')]==0x0&&(_0x4492f4=this[_0x1b0c('0x4ab')](),this[_0x1b0c('0x5e')](function(){_0x10425f[_0x1b0c('0x4ac')](_0x4492f4);},this[_0x1b0c('0x4a7')]));},_0x340db1[_0x1b0c('0x4')][_0x1b0c('0x4ab')]=function(){},_0x340db1[_0x1b0c('0x4')][_0x1b0c('0x4ac')]=function(_0x2d68d0){this[_0x1b0c('0x13f')]&&moosnow[_0x1b0c('0x3e')][_0x1b0c('0x13f')](),this[_0x1b0c('0x4ad')](_0x2d68d0),this[_0x1b0c('0x35a')](this[_0x1b0c('0x4a4')],!0x0,this[_0x1b0c('0x4aa')]['x'],this[_0x1b0c('0x4aa')]['y']),this[_0x1b0c('0x60')](this[_0x1b0c('0x4ac')]);},_0x340db1[_0x1b0c('0x4')][_0x1b0c('0x4ad')]=function(_0xc241e5){},_0x340db1);function _0x340db1(){var _0x4492f4=null!==_0x52a662&&_0x52a662[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x4a4')]=null,_0x4492f4[_0x1b0c('0x4a5')]=-0x64,_0x4492f4[_0x1b0c('0x13f')]=!0x0,_0x4492f4[_0x1b0c('0x4aa')]=cc[_0x1b0c('0x3e6')][_0x1b0c('0x4ae')],_0x4492f4[_0x1b0c('0x4af')]=cc[_0x1b0c('0x3e6')][_0x1b0c('0x4ae')],_0x4492f4[_0x1b0c('0x4a8')]=0x0,_0x4492f4[_0x1b0c('0x4a7')]=0x2,_0x4492f4;}var _0x4a7d4a,_0x30aacb=(_0x4492f4(_0x50a6e6,_0x4a7d4a=_0x2b492f),_0x50a6e6[_0x1b0c('0x4')][_0x1b0c('0x414')]=function(){0x0==this[_0x1b0c('0x4aa')]['x']&&0x0==this[_0x1b0c('0x4aa')]['y']&&(this[_0x1b0c('0x4aa')]=this[_0x1b0c('0x4a4')][_0x1b0c('0xb9')][_0x1b0c('0x2e7')](),this[_0x1b0c('0x4af')]=this[_0x1b0c('0x4aa')][_0x1b0c('0x429')](new cc[(_0x1b0c('0x3e6'))](0x0,this[_0x1b0c('0x4a5')]))),this[_0x1b0c('0x4a4')][_0x1b0c('0x327')]=!0x1;},_0x50a6e6[_0x1b0c('0x4')][_0x1b0c('0x35a')]=function(_0xf71ca9,_0x137da7,_0x3c9721,_0x43e080){_0xf71ca9[_0x1b0c('0x327')]=_0x137da7,_0xf71ca9['x']=_0x3c9721,_0xf71ca9['y']=_0x43e080;},_0x50a6e6[_0x1b0c('0x4')][_0x1b0c('0x4ab')]=function(){var _0x4492f4=cc[_0x1b0c('0x32b')](this[_0x1b0c('0x4a4')]);return _0x4492f4[_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x4a4')][_0x1b0c('0x326')][_0x1b0c('0x33e')](_0x4492f4),_0x4492f4['x']=this[_0x1b0c('0x4af')]['x'],_0x4492f4['y']=this[_0x1b0c('0x4af')]['y'],_0x4492f4;},_0x50a6e6[_0x1b0c('0x4')][_0x1b0c('0x4ad')]=function(_0x40f9e2){_0x40f9e2[_0x1b0c('0x327')]=!0x1,_0x40f9e2[_0x1b0c('0x353')](),_0x40f9e2[_0x1b0c('0x151')]();},_0x50a6e6);function _0x50a6e6(){var _0x4492f4=null!==_0x4a7d4a&&_0x4a7d4a[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x4a4')]=null,_0x4492f4[_0x1b0c('0x4a5')]=-0x64,_0x4492f4[_0x1b0c('0x13f')]=!0x0,_0x4492f4[_0x1b0c('0x4aa')]=cc[_0x1b0c('0x3e6')][_0x1b0c('0x4ae')],_0x4492f4[_0x1b0c('0x4af')]=cc[_0x1b0c('0x3e6')][_0x1b0c('0x4ae')],_0x4492f4;}var _0x1fe460,_0x5e9728=(_0x4492f4(_0x526227,_0x1fe460=_0x5fb838),_0x526227[_0x1b0c('0x4')][_0x1b0c('0xe4')]=function(_0x19e631,_0x1f9792){void 0x0===_0x1f9792&&(_0x1f9792=0x3),_0x19e631&&(this[_0x1b0c('0x4b0')]=_0x19e631,this[_0x1b0c('0x4b1')](),this[_0x1b0c('0x5a')](this[_0x1b0c('0x4b2')],_0x1f9792));},_0x526227[_0x1b0c('0x4')][_0x1b0c('0xe3')]=function(_0x278ac2,_0xe6efd6){void 0x0===_0xe6efd6&&(_0xe6efd6=0x3),this[_0x1b0c('0x4b0')]=_0x278ac2,this[_0x1b0c('0x5a')](this[_0x1b0c('0x4b1')],_0xe6efd6);},_0x526227[_0x1b0c('0x4')][_0x1b0c('0x272')]=function(){this[_0x1b0c('0x5d')](this[_0x1b0c('0x4b2')]),this[_0x1b0c('0x5d')](this[_0x1b0c('0x4b1')]);},_0x526227[_0x1b0c('0x4')][_0x1b0c('0x4b1')]=function(){this[_0x1b0c('0x4b0')][_0x1b0c('0x327')]=!0x1;},_0x526227[_0x1b0c('0x4')][_0x1b0c('0x4b2')]=function(){this[_0x1b0c('0x4b0')][_0x1b0c('0x327')]=!0x0,this[_0x1b0c('0x5d')](this[_0x1b0c('0x4b2')]);},_0x526227);function _0x526227(){var _0x4492f4=null!==_0x1fe460&&_0x1fe460[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x4b0')]=null,_0x4492f4;}var _0x4b4a80,_0x28e6b7=(_0x4492f4(_0x43266e,_0x4b4a80=_0x5fb838),Object[_0x1b0c('0x3d')](_0x43266e[_0x1b0c('0x4')],_0x1b0c('0x4b3'),{'get':function(){return this[_0x1b0c('0x4b4')]||(this[_0x1b0c('0x4b4')]=new _0x30aacb()),this[_0x1b0c('0x4b4')];},'enumerable':!0x0,'configurable':!0x0}),Object[_0x1b0c('0x3d')](_0x43266e[_0x1b0c('0x4')],_0x1b0c('0x4b5'),{'get':function(){return this[_0x1b0c('0x4b6')]||(this[_0x1b0c('0x4b6')]=new _0x5e9728()),this[_0x1b0c('0x4b6')];},'enumerable':!0x0,'configurable':!0x0}),_0x43266e);function _0x43266e(){return _0x4b4a80[_0x1b0c('0x8')](this)||this;}var _0xc6df38,_0x46aa1d=(_0x4492f4(_0x4a7ca5,_0xc6df38=_0x5fb838),_0x4a7ca5[_0x1b0c('0x4')][_0x1b0c('0x7d')]=function(){},_0x4a7ca5[_0x1b0c('0x4')][_0x1b0c('0x4b7')]=function(_0x5600d3,_0x4d5e4b,_0x16d11f){if(_0x279d2d[_0x1b0c('0x51')]()==_0x516b1f){if(_0x3aa676=cc[_0x1b0c('0x2af')][_0x1b0c('0x32f')](_0x5600d3,_0x4d5e4b))return void(_0x16d11f&&_0x16d11f(null,_0x3aa676));cc[_0x1b0c('0x2af')][_0x1b0c('0x2b0')](_0x5600d3,_0x4d5e4b,function(_0x51a803,_0x549656){_0x16d11f&&_0x16d11f(_0x51a803,_0x549656);});}else if(_0x279d2d[_0x1b0c('0x51')]()==_0x857c42){var _0x3aa676;if(_0x3aa676=Laya[_0x1b0c('0x2af')][_0x1b0c('0x32f')](_0x5600d3))return void(_0x16d11f&&_0x16d11f(null,_0x3aa676));Laya[_0x1b0c('0x2af')][_0x1b0c('0x5')](_0x5600d3,Laya[_0x1b0c('0x4b8')][_0x1b0c('0x5')](this,function(_0x4b7078){_0x16d11f(null,_0x4b7078);}),null,_0x4d5e4b);}},_0x4a7ca5[_0x1b0c('0x4')][_0x1b0c('0x4b9')]=function(_0x2858a0,_0x1d2769,_0x2fea78,_0xc6f254){_0x279d2d[_0x1b0c('0x51')]()==_0x516b1f?cc[_0x1b0c('0x2af')][_0x1b0c('0x37d')](_0x2858a0,_0x1d2769,function(_0x53b308,_0x304732,_0x103e88){var _0x3aa676=_0x53b308/_0x304732*0x64,_0x3aa676=Math[_0x1b0c('0x4ba')](_0x3aa676);_0x2fea78&&_0x2fea78(_0x3aa676);},function(_0x504302,_0x461f4d){_0xc6f254&&_0xc6f254(_0x504302,_0x461f4d);}):console[_0x1b0c('0x128')](_0x1b0c('0x4bb'));},_0x4a7ca5[_0x1b0c('0x4')][_0x1b0c('0x189')]=function(){},_0x4a7ca5);function _0x4a7ca5(){return _0xc6df38[_0x1b0c('0x8')](this)||this;}var _0x539b06=(_0x301fea[_0x1b0c('0x5')]=function(_0x1d1b1c){return new _0x1d1b1c();},Object[_0x1b0c('0x3d')](_0x301fea[_0x1b0c('0x4')],_0x1b0c('0x469'),{'get':function(){return this[_0x1b0c('0x4bc')];},'set':function(_0x47a2ce){this[_0x1b0c('0x4bc')]=_0x47a2ce;},'enumerable':!0x0,'configurable':!0x0}),_0x301fea);function _0x301fea(){this[_0x1b0c('0x4bc')]=!0x0,this[_0x1b0c('0xb5')]={};}var _0x5ae3f8,_0x3fb322=(_0x4492f4(_0xe21b24,_0x5ae3f8=_0x539b06),_0xe21b24);function _0xe21b24(){var _0x4492f4=null!==_0x5ae3f8&&_0x5ae3f8[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x458')]=0x0,_0x4492f4[_0x1b0c('0x4bd')]=0x0,_0x4492f4[_0x1b0c('0x487')]=0x0,_0x4492f4[_0x1b0c('0x4be')]=!0x0,_0x4492f4[_0x1b0c('0x481')]='1',_0x4492f4;}var _0x3c87a9,_0x393910=(_0x4492f4(_0x20e8d5,_0x3c87a9=_0x539b06),_0x20e8d5);function _0x20e8d5(){var _0x4492f4=null!==_0x3c87a9&&_0x3c87a9[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x45a')]=!0x0,_0x4492f4[_0x1b0c('0x4bf')]=null,_0x4492f4[_0x1b0c('0x4c0')]=0x1,_0x4492f4[_0x1b0c('0x2f8')]=null,_0x4492f4[_0x1b0c('0x46a')]=null,_0x4492f4[_0x1b0c('0x46d')]=null,_0x4492f4;}var _0x12c803,_0xfee28f=(_0x4492f4(_0x23ef39,_0x12c803=_0x539b06),_0x23ef39);function _0x23ef39(){var _0x4492f4=null!==_0x12c803&&_0x12c803[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x487')]=0x0,_0x4492f4;}var _0x255bef,_0x102201=(_0x4492f4(_0x143418,_0x255bef=_0x539b06),_0x143418);function _0x143418(){var _0x4492f4=null!==_0x255bef&&_0x255bef[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x458')]=0x0,_0x4492f4[_0x1b0c('0x4bd')]=0x0,_0x4492f4[_0x1b0c('0x487')]=0x0,_0x4492f4;}var _0x444711,_0x2a0e90=(_0x4492f4(_0x159fdb,_0x444711=_0x539b06),_0x159fdb);function _0x159fdb(){var _0x4492f4=null!==_0x444711&&_0x444711[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x3d9')]=0x1,_0x4492f4;}var _0x176469,_0x2e0c81=function(){this['x']=0x0,this['y']=0x0,this['z']=0x0;},_0x43c3ae=(_0x4492f4(_0x3b0cdc,_0x176469=_0x539b06),_0x3b0cdc);function _0x3b0cdc(){var _0x4492f4=null!==_0x176469&&_0x176469[_0x1b0c('0x9')](this,arguments)||this;return _0x4492f4[_0x1b0c('0x47a')]=0x64,_0x4492f4[_0x1b0c('0x479')]=0x64,_0x4492f4[_0x1b0c('0x474')]=0x1e,_0x4492f4[_0x1b0c('0x458')]=0x0,_0x4492f4[_0x1b0c('0x475')]=new _0x2e0c81(),_0x4492f4[_0x1b0c('0x476')]=new _0x2e0c81(),_0x4492f4;}function _0x345b9e(){this[_0x1b0c('0x430')]=_0x3548aa,this[_0x1b0c('0x431')]=_0x50e901,this[_0x1b0c('0x4c1')]=_0x3e7200,this[_0x1b0c('0x4c2')]=_0x461c34,this[_0x1b0c('0x48d')]=_0x95c78e,this[_0x1b0c('0x370')]=_0x478f0d,this[_0x1b0c('0x4c3')]=_0x2dd322,this[_0x1b0c('0x4c4')]=_0x279d2d,this[_0x1b0c('0x3d0')]=_0x1a0765,this[_0x1b0c('0x4c5')]={'endOptions':_0x3fb322,'prizeOptions':_0x393910,'shareOptions':_0xfee28f,'totalOptions':_0x102201,'touchOptions':_0x2a0e90,'coinOptions':_0x43c3ae},this[_0x1b0c('0x4c6')]=new _0x451c32(),this[_0x1b0c('0x4c7')]=new _0x46aa1d(),this[_0x1b0c('0x4c8')]=new _0x509b0a(),this[_0x1b0c('0x4c9')]=new _0x253459(),this[_0x1b0c('0x4ca')]=new _0x8bce18(),this[_0x1b0c('0x4cb')]=new _0x146f33(),this[_0x1b0c('0x4cc')]=null,this[_0x1b0c('0x4cd')]=new _0x28e6b7(),(window[_0x1b0c('0x4ce')]=this)[_0x1b0c('0x4c6')]=new _0x451c32(),this[_0x1b0c('0x4c8')]=new _0x509b0a(),this[_0x1b0c('0x4cf')]=new _0x4ae340(),this[_0x1b0c('0x4d0')](),this[_0x1b0c('0x4d1')](),this[_0x1b0c('0x4d2')](),this[_0x1b0c('0x4d3')](),this[_0x1b0c('0x4d4')]();}new(_0x345b9e[(_0x1b0c('0x4'))][(_0x1b0c('0x36f'))]=function(){return _0x279d2d[_0x1b0c('0x3e')];},_0x345b9e[(_0x1b0c('0x4'))][(_0x1b0c('0x4d3'))]=function(){this[_0x1b0c('0x4d5')]=new _0x5859ae();},_0x345b9e[(_0x1b0c('0x4'))][(_0x1b0c('0x4d4'))]=function(){this[_0x1b0c('0x4cb')]=new _0x5311a6();},_0x345b9e[(_0x1b0c('0x4'))][(_0x1b0c('0x4d1'))]=function(){_0x279d2d[_0x1b0c('0x3e')]!=_0x478f0d['WX']&&_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0xf')]?this[_0x1b0c('0x4d6')]=new _0x242db2():this[_0x1b0c('0x4d6')]=new _0x29f338();},_0x345b9e[(_0x1b0c('0x4'))][(_0x1b0c('0x4d0'))]=function(){_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d['WX']?this[_0x1b0c('0x3f')]=new _0x12c1a9():_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0xe')]?this[_0x1b0c('0x3f')]=new _0x328d1c():_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0x11')]?this[_0x1b0c('0x3f')]=new _0x576403():_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0xf')]?this[_0x1b0c('0x3f')]=new _0x386125():_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0xd')]?this[_0x1b0c('0x3f')]=new _0x4eb96d():_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d['QQ']?this[_0x1b0c('0x3f')]=new _0x26c142():_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0x10')]?this[_0x1b0c('0x3f')]=new _0x44accc():this[_0x1b0c('0x3f')]=new _0x226b6b();},_0x345b9e[(_0x1b0c('0x4'))][(_0x1b0c('0x4d2'))]=function(){_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d['WX']||_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d['PC']||_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0xd')]?this[_0x1b0c('0x4d7')]=new _0x37dd9f():_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0xe')]?this[_0x1b0c('0x4d7')]=new _0x526f7e():_0x279d2d[_0x1b0c('0x3e')]==_0x478f0d[_0x1b0c('0xf')]?this[_0x1b0c('0x4d7')]=new _0x116f2f():this[_0x1b0c('0x4d7')]=new _0x2e21fb();},(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x3e'),{'get':function(){return this[_0x1b0c('0x3f')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],'ad',{'get':function(){return this[_0x1b0c('0x4d7')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x9b'),{'get':function(){return this[_0x1b0c('0x4d6')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x9f'),{'get':function(){return this[_0x1b0c('0x4c6')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x4d8'),{'get':function(){return this[_0x1b0c('0x4c7')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x24d'),{'get':function(){return this[_0x1b0c('0x4c8')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x10c'),{'get':function(){return this[_0x1b0c('0x4cf')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],'ui',{'get':function(){return this[_0x1b0c('0x4d5')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x41a'),{'get':function(){return this[_0x1b0c('0x4c9')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x4d9'),{'get':function(){return this[_0x1b0c('0x4ca')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x35c'),{'get':function(){return this[_0x1b0c('0x4cb')];},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x4da'),{'get':function(){return this[_0x1b0c('0x4cc')];},'set':function(_0x204391){this[_0x1b0c('0x4cc')]=_0x204391;},'enumerable':!0x0,'configurable':!0x0})),(Object[_0x1b0c('0x3d')](_0x345b9e[_0x1b0c('0x4')],_0x1b0c('0x4db'),{'get':function(){return this[_0x1b0c('0x4cd')];},'enumerable':!0x0,'configurable':!0x0})),_0x345b9e)();}();
+(function () {
+    'use strict';
+
+    /*! *****************************************************************************
+    Copyright (c) Microsoft Corporation.
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+    PERFORMANCE OF THIS SOFTWARE.
+    ***************************************************************************** */
+    /* global Reflect, Promise */
+
+    var extendStatics = function(d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+
+    function __extends(d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    }
+
+    var __assign = function() {
+        __assign = Object.assign || function __assign(t) {
+            for (var s, i = 1, n = arguments.length; i < n; i++) {
+                s = arguments[i];
+                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+            }
+            return t;
+        };
+        return __assign.apply(this, arguments);
+    };
+
+    function __rest(s, e) {
+        var t = {};
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+            t[p] = s[p];
+        if (s != null && typeof Object.getOwnPropertySymbols === "function")
+            for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+                if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                    t[p[i]] = s[p[i]];
+            }
+        return t;
+    }
+
+    function __decorate(decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    }
+
+    function __param(paramIndex, decorator) {
+        return function (target, key) { decorator(target, key, paramIndex); }
+    }
+
+    function __metadata(metadataKey, metadataValue) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+    }
+
+    function __awaiter(thisArg, _arguments, P, generator) {
+        function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+            function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+            function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    }
+
+    function __generator(thisArg, body) {
+        var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+        return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+        function verb(n) { return function (v) { return step([n, v]); }; }
+        function step(op) {
+            if (f) throw new TypeError("Generator is already executing.");
+            while (_) try {
+                if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+                if (y = 0, t) op = [op[0] & 2, t.value];
+                switch (op[0]) {
+                    case 0: case 1: t = op; break;
+                    case 4: _.label++; return { value: op[1], done: false };
+                    case 5: _.label++; y = op[1]; op = [0]; continue;
+                    case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                    default:
+                        if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                        if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                        if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                        if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                        if (t[2]) _.ops.pop();
+                        _.trys.pop(); continue;
+                }
+                op = body.call(thisArg, _);
+            } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+            if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+        }
+    }
+
+    function __exportStar(m, exports) {
+        for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    }
+
+    function __values(o) {
+        var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+        if (m) return m.call(o);
+        if (o && typeof o.length === "number") return {
+            next: function () {
+                if (o && i >= o.length) o = void 0;
+                return { value: o && o[i++], done: !o };
+            }
+        };
+        throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+    }
+
+    function __read(o, n) {
+        var m = typeof Symbol === "function" && o[Symbol.iterator];
+        if (!m) return o;
+        var i = m.call(o), r, ar = [], e;
+        try {
+            while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+        }
+        catch (error) { e = { error: error }; }
+        finally {
+            try {
+                if (r && !r.done && (m = i["return"])) m.call(i);
+            }
+            finally { if (e) throw e.error; }
+        }
+        return ar;
+    }
+
+    function __spread() {
+        for (var ar = [], i = 0; i < arguments.length; i++)
+            ar = ar.concat(__read(arguments[i]));
+        return ar;
+    }
+
+    function __spreadArrays() {
+        for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+        for (var r = Array(s), k = 0, i = 0; i < il; i++)
+            for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+                r[k] = a[j];
+        return r;
+    };
+
+    function __await(v) {
+        return this instanceof __await ? (this.v = v, this) : new __await(v);
+    }
+
+    function __asyncGenerator(thisArg, _arguments, generator) {
+        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+        var g = generator.apply(thisArg, _arguments || []), i, q = [];
+        return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+        function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+        function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+        function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+        function fulfill(value) { resume("next", value); }
+        function reject(value) { resume("throw", value); }
+        function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+    }
+
+    function __asyncDelegator(o) {
+        var i, p;
+        return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+        function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+    }
+
+    function __asyncValues(o) {
+        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+        var m = o[Symbol.asyncIterator], i;
+        return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+        function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+        function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+    }
+
+    function __makeTemplateObject(cooked, raw) {
+        if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+        return cooked;
+    };
+
+    function __importStar(mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+        result.default = mod;
+        return result;
+    }
+
+    function __importDefault(mod) {
+        return (mod && mod.__esModule) ? mod : { default: mod };
+    }
+
+    function __classPrivateFieldGet(receiver, privateMap) {
+        if (!privateMap.has(receiver)) {
+            throw new TypeError("attempted to get private field on non-instance");
+        }
+        return privateMap.get(receiver);
+    }
+
+    function __classPrivateFieldSet(receiver, privateMap, value) {
+        if (!privateMap.has(receiver)) {
+            throw new TypeError("attempted to set private field on non-instance");
+        }
+        privateMap.set(receiver, value);
+        return value;
+    }
+
+    var MathUtils = /** @class */ (function () {
+        function MathUtils() {
+        }
+        MathUtils.randomNumBoth = function (Min, Max) {
+            var Range = Max - Min;
+            var Rand = Math.random();
+            var num = Min + Math.round(Rand * Range); //四舍五入
+            return num;
+        };
+        return MathUtils;
+    }());
+
+    var PlatformType;
+    (function (PlatformType) {
+        /**
+         * 微信
+         */
+        PlatformType[PlatformType["WX"] = 0] = "WX";
+        /**
+         * 字节跳动
+         */
+        PlatformType[PlatformType["BYTEDANCE"] = 1] = "BYTEDANCE";
+        /**
+         * OPPO
+         */
+        PlatformType[PlatformType["OPPO"] = 2] = "OPPO";
+        /**
+         * OPPO
+         */
+        PlatformType[PlatformType["OPPO_ZS"] = 3] = "OPPO_ZS";
+        /**
+         * 百度
+         */
+        PlatformType[PlatformType["BAIDU"] = 4] = "BAIDU";
+        /**
+         * QQ
+         */
+        PlatformType[PlatformType["QQ"] = 5] = "QQ";
+        /**
+         * PC电脑
+         */
+        PlatformType[PlatformType["PC"] = 6] = "PC";
+        /**
+         * VIVO
+         */
+        PlatformType[PlatformType["VIVO"] = 7] = "VIVO";
+    })(PlatformType || (PlatformType = {}));
+
+    var ENGINE_TYPE = {
+        COCOS: "cc",
+        LAYA: "Laya",
+        NONE: ""
+    };
+
+    var Common = /** @class */ (function () {
+        function Common() {
+        }
+        //
+        //for循环  
+        Common.titleCase = function (s) {
+            var i, ss = s.toLowerCase().split(/\s+/);
+            for (i = 0; i < ss.length; i++) {
+                ss[i] = ss[i].slice(0, 1).toUpperCase() + ss[i].slice(1);
+            }
+            return ss.join(' ');
+        };
+        Common.numFixed = function (num, len) {
+            return parseFloat(parseFloat(num).toFixed(len));
+        };
+        Common.parseMoney = function (value) {
+            if (isNaN(value))
+                return 0.00;
+            return parseFloat(parseFloat(value).toFixed(2));
+        };
+        Common.objKeySort = function (obj) {
+            var newkey = Object.keys(obj).sort();
+            //先用Object内置类的keys方法获取要排序对象的属性名，再利用Array原型上的sort方法对获取的属性名进行排序，newkey是一个数组
+            var newObj = {}; //创建一个新的对象，用于存放排好序的键值对
+            for (var i = 0; i < newkey.length; i++) { //遍历newkey数组
+                newObj[newkey[i]] = obj[newkey[i]]; //向新创建的对象中按照排好的顺序依次增加键值对
+            }
+            return newObj; //返回排好序的新对象
+        };
+        Common.isObject = function (x) {
+            var type = typeof x;
+            return x !== null && (type === 'object' || type === 'function');
+        };
+        Common.object2Query = function (obj) {
+            var args = [];
+            for (var k in obj)
+                args.push(k + "=" + obj[k]);
+            return args.join("&"); // 返回对象  
+        };
+        Common.isFunction = function (fun) {
+            if (typeof fun == 'function')
+                return true;
+            return false;
+        };
+        Common.isEmpty = function (obj) {
+            if (typeof obj == 'object') {
+                var name;
+                for (name in obj)
+                    return false;
+                return true;
+            }
+            else if (obj === null || obj === undefined || obj === 'null' || obj === 'undefined' || obj === '')
+                return true;
+            return false;
+        };
+        Common.formatTime = function (date) {
+            // const year = date.getFullYear()
+            // const month = date.getMonth() + 1
+            // const day = date.getDate()
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            // const second = date.getSeconds()
+            return [hour, minute].map(this.formatNumber).join(':');
+            // return [year, month, day].map(formatNumber).join('/')
+            // return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+        };
+        Common.formatNumber = function (n) {
+            n = n.toString();
+            return n[1] ? n : '0' + n;
+        };
+        /**
+         * 复制源对象属性到目标上
+         * @param {*} from
+         * @param {*} target
+         */
+        Common.copy = function (from, target) {
+            for (var k in from) {
+                target[k] = from[k];
+            }
+        };
+        Common.randomNumBoth = function (Min, Max) {
+            var Range = Max - Min;
+            var Rand = Math.random();
+            var num = Min + Math.round(Rand * Range); //四舍五入
+            return num;
+        };
+        Common.randomFloat = function (Min, Max) {
+            return Min + Math.random() * Max;
+        };
+        Common.randomToRatio = function (start, end, range) {
+            var num = this.randomNumBoth(start, end);
+            if (num <= range) {
+                return true;
+            }
+            return false;
+        };
+        Common.generateUUID = function () {
+            var d = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (d + Math.random() * 16) % 16 | 0;
+                d = Math.floor(d / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            return uuid;
+        };
+        ;
+        Common.isNumber = function (obj) {
+            return typeof obj == 'number' || Object.prototype.toString.call(obj) == '[object Number]';
+        };
+        Common.isArray = function (obj) {
+            return Object.prototype.toString.call(obj) == '[object Array]';
+        };
+        Common.isString = function (obj) {
+            return Object.prototype.toString.call(obj) === "[object String]";
+        };
+        Object.defineProperty(Common, "platform", {
+            /**
+             * 获取当前的运行平台
+             * PC状态下会返回debug平台
+             * debug没有时 默认返回微信平台
+             */
+            get: function () {
+                if (this.mPlatform) {
+                    return this.mPlatform;
+                }
+                var winCfg = window["moosnowConfig"];
+                if (window['tt'])
+                    this.mPlatform = PlatformType.BYTEDANCE;
+                else if (window['swan'])
+                    this.mPlatform = PlatformType.BAIDU;
+                else if (window['qq'])
+                    this.mPlatform = PlatformType.QQ;
+                else if (window['qg']) {
+                    if (window["qg"] && window["qg"].getSystemInfoSync) {
+                        var sys = window["qg"].getSystemInfoSync();
+                        console.log('平台判断', JSON.stringify(sys));
+                        if (sys && sys.brand && sys.brand.toLocaleLowerCase().indexOf("vivo") != -1) {
+                            this.mPlatform = PlatformType.VIVO;
+                        }
+                        else if (winCfg.oppo.url.indexOf("platform.qwpo2018.com") != -1)
+                            this.mPlatform = PlatformType.OPPO_ZS;
+                        else {
+                            this.mPlatform = PlatformType.OPPO;
+                        }
+                    }
+                    else if (winCfg.oppo.url.indexOf("platform.qwpo2018.com") != -1)
+                        this.mPlatform = PlatformType.OPPO_ZS;
+                    else {
+                        this.mPlatform = PlatformType.OPPO;
+                    }
+                }
+                else if (window['wx'])
+                    this.mPlatform = PlatformType.WX;
+                else {
+                    if (winCfg.debug && winCfg[winCfg.debug]) {
+                        if (winCfg.debug == "wx")
+                            this.mPlatform = PlatformType.WX;
+                        else if (winCfg.debug == "oppo")
+                            if (winCfg.oppo.url.indexOf("platform.qwpo2018.com") != -1)
+                                this.mPlatform = PlatformType.OPPO_ZS;
+                            else
+                                this.mPlatform = PlatformType.OPPO;
+                        else if (winCfg.debug == "bd")
+                            this.mPlatform = PlatformType.BAIDU;
+                        else if (winCfg.debug == "byte")
+                            this.mPlatform = PlatformType.BYTEDANCE;
+                        else if (winCfg.debug == "qq")
+                            this.mPlatform = PlatformType.QQ;
+                        else if (winCfg.debug == "vivo")
+                            this.mPlatform = PlatformType.VIVO;
+                        else
+                            this.mPlatform = PlatformType.PC;
+                    }
+                    else
+                        this.mPlatform = PlatformType.PC;
+                }
+                return this.mPlatform;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Common, "config", {
+            get: function () {
+                var winCfg = window["moosnowConfig"];
+                var config;
+                if (Common.platform == PlatformType.WX)
+                    config = winCfg.wx;
+                else if (Common.platform == PlatformType.OPPO || Common.platform == PlatformType.OPPO_ZS)
+                    config = winCfg.oppo;
+                else if (Common.platform == PlatformType.VIVO)
+                    config = winCfg.vivo;
+                else if (Common.platform == PlatformType.QQ)
+                    config = winCfg.qq;
+                else if (Common.platform == PlatformType.BAIDU)
+                    config = winCfg.bd;
+                else if (Common.platform == PlatformType.BYTEDANCE)
+                    config = winCfg.byte;
+                else
+                    config = winCfg.wx;
+                return config;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Common.deepCopy = function (obj) {
+            //判断拷贝的要进行深拷贝的是数组还是对象，是数组的话进行数组拷贝，对象的话进行对象拷贝
+            var objClone = Array.isArray(obj) ? [] : {};
+            //进行深拷贝的不能为空，并且是对象或者是
+            if (obj && typeof obj === "object") {
+                for (var key in obj) {
+                    if (obj.hasOwnProperty(key)) {
+                        if (obj[key] && typeof obj[key] === "object") {
+                            objClone[key] = this.deepCopy(obj[key]);
+                        }
+                        else {
+                            objClone[key] = obj[key];
+                        }
+                    }
+                }
+            }
+            return objClone;
+        };
+        Common.getEngine = function () {
+            if (window[ENGINE_TYPE.COCOS]) {
+                return ENGINE_TYPE.COCOS;
+            }
+            else if (window[ENGINE_TYPE.LAYA]) {
+                return ENGINE_TYPE.LAYA;
+            }
+            else
+                return ENGINE_TYPE.NONE;
+        };
+        Common.popOpenAnim = function (node, callback) {
+            if (this.getEngine() == ENGINE_TYPE.COCOS) {
+                node.scale = 0.8;
+                node.runAction(cc.sequence(cc.scaleTo(0.1, 1.2, 1.2), cc.scaleTo(0.1, 1, 1), cc.callFunc(function () {
+                    if (callback)
+                        callback();
+                }, this)));
+                return;
+            }
+            callback();
+        };
+        Common.popCloseAnim = function (node, callback) {
+            if (this.getEngine() == ENGINE_TYPE.COCOS) {
+                node.scale = 1;
+                node.runAction(cc.sequence(cc.scaleTo(0.1, 0, 0), cc.callFunc(function () {
+                    if (callback)
+                        callback();
+                }, this)));
+                return;
+            }
+            callback();
+        };
+        /*格式化字符，类似于C# String.Format */
+        Common.format = function (str) {
+            var rep = [];
+            for (var _i = 1; _i < arguments.length; _i++) {
+                rep[_i - 1] = arguments[_i];
+            }
+            if (typeof (str) == "undefined" || str == null || str == '' || str == 'undefined')
+                return str;
+            for (var i = 0; i < rep.length; i++) {
+                var re = new RegExp('\\{' + (i) + '\\}', 'gm');
+                str = str.replace(re, rep[i]);
+            }
+            return str;
+        };
+        Common.formatMoney = function (value) {
+            var retValue = "0";
+            if (isNaN(value))
+                value = 0;
+            if (value < 9999) {
+                retValue = parseInt("" + value);
+            }
+            else if (value < 9999999) {
+                retValue = parseFloat("" + value / 1000).toFixed(2) + "K";
+            }
+            else if (value < 9999999999) {
+                retValue = parseFloat("" + value / 1000000).toFixed(2) + "M";
+            }
+            else if (value < 9999999999999) {
+                retValue = parseFloat("" + value / 1000000000).toFixed(2) + "G";
+            }
+            else if (value < 9999999999999999) {
+                retValue = parseFloat("" + value / 1000000000000).toFixed(2) + "T";
+            }
+            else if (value < 9999999999999999999)
+                retValue = parseFloat("" + value / 1000000000000000).toFixed(2) + "P";
+            else if (value < 9999999999999999999999)
+                retValue = parseFloat("" + value / 1000000000000000000).toFixed(2) + "E";
+            else
+                retValue = parseFloat("" + value / 1000000000000000000000).toFixed(2) + "B";
+            return retValue;
+        };
+        return Common;
+    }());
+
+    var BaseModule = /** @class */ (function () {
+        function BaseModule() {
+            this.moduleName = "";
+            this.mIntervalArr = {};
+            this.mTimeoutArr = {};
+        }
+        BaseModule.prototype.schedule = function (callback, time) {
+            var self = this;
+            var id = setInterval(function () {
+                if (callback)
+                    callback.apply(self);
+            }, time * 1000);
+            console.log('BaseModule schedule ', id);
+            this.mIntervalArr[id] = callback;
+        };
+        BaseModule.prototype.unschedule = function (callback) {
+            for (var key in this.mIntervalArr) {
+                if (this.mIntervalArr[key] === callback || Common.isEmpty(this.mIntervalArr[key])) {
+                    clearInterval(parseInt(key));
+                }
+            }
+        };
+        BaseModule.prototype.scheduleOnce = function (callback, time) {
+            var self = this;
+            var id = setTimeout(function () {
+                clearTimeout(id);
+                if (callback)
+                    callback.apply(self);
+            }, time * 1000);
+            this.mTimeoutArr[id] = callback;
+        };
+        BaseModule.prototype.unscheduleOnce = function (callback) {
+            for (var key in this.mTimeoutArr) {
+                if (this.mTimeoutArr[key] === callback || Common.isEmpty(this.mTimeoutArr[key])) {
+                    clearTimeout(parseInt(key));
+                }
+            }
+        };
+        BaseModule.prototype.initProperty = function (form) {
+            for (var v in form) {
+                if (this.hasOwnProperty(v)) {
+                    this[v] = form[v];
+                }
+            }
+        };
+        BaseModule.prototype.preload = function (url, callback) {
+            if (callback)
+                callback();
+        };
+        /**
+         *
+         */
+        BaseModule.prototype._findComponent = function (node, classname) {
+            var retValue = null;
+            for (var i = 0; i < node._components.length; i++) {
+                var logic = node._components[i];
+                if (logic.willHide && logic.willShow) {
+                    retValue = logic;
+                    break;
+                }
+            }
+            return retValue;
+        };
+        BaseModule.prototype._findComponentByName = function (instance, classname) {
+            if (instance) {
+                if (instance.name == classname)
+                    return true;
+                else
+                    return this._findComponentByName(instance.$super, classname);
+            }
+            return false;
+        };
+        return BaseModule;
+    }());
+
+    var BANNER_POSITION = {
+        TOP: "__banner_top",
+        CENTER: "__banner_center",
+        BOTTOM: "__banner_bottom",
+        CUSTOM: "__banner_custom"
+    };
+
+    var VIDEO_STATUS = {
+        END: "__video_end",
+        NOTEND: "__video_not_end",
+        ERR: "__video_error"
+    };
+
+    var EventType = /** @class */ (function () {
+        function EventType() {
+        }
+        EventType.VIBRATESWITCH_CHANGED = "VIBRATESWITCH_CHANGED";
+        EventType.SOUNDSWITCH_CHANGED = "SOUNDSWITCH_CHANGED";
+        EventType.MUSICSWITCH_CHANGED = "MUSICSWITCH_CHANGED";
+        EventType.ON_PLATFORM_SHOW = "ON_PLATFORM_SHOW";
+        EventType.ON_PLATFORM_HIDE = "ON_PLATFORM_HIDE";
+        EventType.ON_BANNER_HIDE = "ON_BANNER_HIDE";
+        EventType.ON_AD_SHOW = "ON_AD_SHOW";
+        EventType.AD_VIEW_CHANGE = "AD_VIEW_CHANGE";
+        EventType.AD_VIEW_REFRESH = "AD_VIEW_REFRESH";
+        EventType.COIN_CHANGED = "COIN_CHANGED";
+        return EventType;
+    }());
+
+    var MSG = {
+        HIDE_BANNER: "隐藏banner",
+        INVITE_PLAY_USER: "你的好友{0}邀请你加入",
+        BANNER_KEY_IS_NULL: "banner id 没有配置",
+        BANNER_SHOW: "显示BANNER",
+        BANNER_RESIZE: "banner位置或大小被重新设置",
+        NAVIGATE_FAST: "跳转太频繁 >>>>>>>>>>>>>>>>>>>>>",
+        NAVIGATE_DATA: "跳转数据",
+        SYSTEM_INFO: "设备信息",
+        VIDEO_KEY_IS_NULL: "video id 没有配置",
+        VIDEO_LOAD_COMPLETED: "加载video成功回调",
+        VIDEO_CLOSE_COMPLETED: "video关闭回调",
+        VIDEO_ERROR_COMPLETED: "video加载错误",
+        NATIVE_LOAD_COMPLETED: "加载原生广告成功",
+        NATIVE_ERROR: "原生广告加载出错,使用新ID加载原生广告",
+        NATIVE_ERROR2: "原生广告加载出错，本次没有广告",
+        NATIVE_NOT_ID_USE: "原生广告ID已经用完，本次没有广告",
+        NATIVE_CLICK: "点击了原生广告",
+        NATIVE_REPORT: "上报原生广告",
+        NATIVE_LIST_NULL: "原生广告数据没有，回调Null",
+        NATIVE_DESTROY: "原生广告销毁",
+        INTER_KEY_IS_NULL: "插屏广告ID为空，系统不加载",
+        ALD_FILE_NO_IMPORT: "阿拉丁文件未引入",
+        PLATFORM_UNSUPPORT: "版本过低 平台不支持"
+    };
+
+    // var videoLoading: boolean = false;
+    // var videoCb = null;
+    var PlatformModule = /** @class */ (function (_super) {
+        __extends(PlatformModule, _super);
+        function PlatformModule() {
+            var _this = _super.call(this) || this;
+            _this.baseUrl = "https://api.liteplay.com.cn/";
+            _this.currentShareCallback = null;
+            _this.shareFail = null;
+            _this.vibrateOn = false;
+            _this.systemInfo = null;
+            _this.banner = null;
+            _this.video = null;
+            _this.inter = null;
+            _this.native = null;
+            _this.box = null;
+            _this.platformName = "wx";
+            _this.bannerId = "";
+            _this.videoId = "";
+            _this.interId = "";
+            _this.boxId = "";
+            /**
+             * https://u.oppomobile.com/main/app.html 广告联盟网站中媒体管理 > 广告管理中广告名称下面的 id 即为 adUnitId
+             */
+            _this.nativeId = [];
+            _this.nativeIdIndex = 0;
+            _this.bannerWidth = 300;
+            _this.bannerHeigth = 96;
+            _this.bannerShowCount = 0;
+            _this.bannerShowCountLimit = 3;
+            _this.bannerCb = null;
+            _this.bannerPosition = BANNER_POSITION.BOTTOM;
+            _this.bannerStyle = null;
+            _this.isBannerShow = false;
+            _this.videoCb = null;
+            _this.videoLoading = false;
+            _this.videoPlaying = false;
+            _this.interShowCount = 0;
+            _this.interShowCountLimit = 3;
+            _this.isInterLoaded = false;
+            _this.nativeAdResult = null;
+            _this.nativeCb = null;
+            _this.nativeLoading = false;
+            _this.record = null;
+            _this.shareInfoArr = [];
+            _this.versionRet = null;
+            _this.prevNavigate = Date.now();
+            _this.initAppConfig();
+            // this._regisiterWXCallback();
+            _this.initShare(true);
+            _this.share_clickTime = null; //分享拉起时间
+            _this.currentShareCallback = null; //模拟分享回调
+            _this.shareFail = false;
+            _this.updateProgram();
+            _this.initRecord();
+            return _this;
+        }
+        PlatformModule.prototype.onEnable = function () {
+        };
+        PlatformModule.prototype.vibrateSwitch = function (on) {
+            this.vibrateOn = on;
+        };
+        // lateStart() {
+        //     this.updateProgram();
+        //     if (!window[this.platformName]) return;
+        //     Lite.event.sendEventImmediately('OnWXShow', this.getLaunchOption());
+        // }
+        PlatformModule.prototype.initAppConfig = function () {
+            this.moosnowConfig = Common.config;
+            this.bannerId = this.moosnowConfig["bannerId"];
+            this.videoId = this.moosnowConfig["videoId"];
+            this.interId = this.moosnowConfig["interId"];
+            this.boxId = this.moosnowConfig["boxId"];
+            this.nativeId = this.moosnowConfig["nativeId"];
+            console.log('moosnowConfig ', JSON.stringify(this.moosnowConfig));
+        };
+        /***
+         * 检测IphoneX
+         */
+        PlatformModule.prototype.isIphoneXModel = function () {
+            if (!window[this.platformName])
+                return;
+            var sysInfo = this.getSystemInfoSync();
+            if (/iphone x/.test(sysInfo.model.toLowerCase())) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
+        /***
+         * 检测Iphone
+         */
+        PlatformModule.prototype.isIphone = function () {
+            if (!window[this.platformName])
+                return;
+            var sysInfo = this.getSystemInfoSync();
+            if (/iphone/.test(sysInfo.model.toLowerCase())) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
+        PlatformModule.prototype.isIphoneX = function () {
+            if (!window[this.platformName])
+                return;
+            var sysInfo = this.getSystemInfoSync();
+            var screenHeight = sysInfo.screenHeight;
+            var screenWidth = sysInfo.screenWidth;
+            var ratioWH = screenWidth / screenHeight;
+            if (ratioWH <= 0.5 || ratioWH >= 2) {
+                return true;
+            }
+            else {
+                return false;
+            }
+            // let lanscape = screenHeight == 375 && screenWidth == 812;
+            // let portrait = screenHeight == 812 && screenWidth == 375;
+            // if (lanscape || portrait) {
+            //     return true;
+            // }
+            // return false;
+        };
+        PlatformModule.prototype.compareVersion = function (v1, v2) {
+            v1 = v1.split('.');
+            v2 = v2.split('.');
+            var len = Math.max(v1.length, v2.length);
+            while (v1.length < len) {
+                v1.push('0');
+            }
+            while (v2.length < len) {
+                v2.push('0');
+            }
+            for (var i = 0; i < len; i++) {
+                var num1 = parseInt(v1[i]);
+                var num2 = parseInt(v2[i]);
+                if (num1 > num2) {
+                    return 1;
+                }
+                else if (num1 < num2) {
+                    return -1;
+                }
+            }
+            return 0;
+        };
+        /**
+        * 检测版本是否可用
+        * @param version 需要检查的版本号
+        */
+        PlatformModule.prototype.supportVersion = function (version) {
+            var sdkVersion = this.getSystemInfoSync().SDKVersion;
+            return (this.compareVersion(sdkVersion, version) >= 0);
+        };
+        /**
+         * 是否支持函数
+         * @param name
+         */
+        PlatformModule.prototype.supportFunction = function (name) {
+            if (!window[this.platformName])
+                return false;
+            if (!window[this.platformName][name])
+                return false;
+            return true;
+        };
+        /**
+         * 检查当前版本的导出广告是否开启
+         * @param {string} version 版本号 为了兼容旧版本SDK的参数，目前已无作用，SDK会取moosnowConfig 中的version 来判断
+         * @param {*} callback
+         * @returns callback回调函数的参数为boolean，true：打开广告，false：关闭广告
+         */
+        PlatformModule.prototype.checkVersion = function (version, callback) {
+            if (this.versionRet != null) {
+                callback(this.versionRet);
+                return;
+            }
+            else {
+                this._checkConfigVersion(callback);
+            }
+        };
+        PlatformModule.prototype._checkRemoteVersion = function (callback) {
+            var _this = this;
+            var url = this.baseUrl + 'admin/wx_list/getAppConfig';
+            var signParams = {
+                appid: this.moosnowConfig.moosnowAppId,
+            };
+            var data = signParams;
+            moosnow.http.request(url, data, 'POST', function (res) {
+                _this.versionRet = _this.checkLog(res.data.version);
+                callback(_this.versionRet);
+            }, function () {
+                console.log('checkVersion fail');
+            }, function () {
+                console.log('checkVersion complete');
+            });
+        };
+        PlatformModule.prototype._checkConfigVersion = function (callback) {
+            var _this = this;
+            moosnow.http.getAllConfig(function (res) {
+                if (res && res.version) {
+                    _this.versionRet = _this.checkLog(res.version);
+                    callback(_this.versionRet);
+                }
+                else {
+                    _this._checkRemoteVersion(callback);
+                }
+            });
+        };
+        PlatformModule.prototype.checkLog = function (remoteVersion) {
+            var configVersion = moosnow.platform.moosnowConfig.version;
+            var versionRet = remoteVersion == configVersion;
+            console.log("\u7248\u672C\u68C0\u67E5 \u540E\u53F0\u7248\u672C" + remoteVersion + " \u914D\u7F6E\u6587\u4EF6\u7248\u672C" + configVersion);
+            console.log("获取广告开关：", versionRet);
+            return versionRet;
+        };
+        PlatformModule.prototype.isSmallWidth = function () {
+            if (!window[this.platformName])
+                return;
+            var sysInfo = this.getSystemInfoSync();
+            var screenHeight = sysInfo.screenHeight;
+            var screenWidth = sysInfo.screenWidth;
+            if (screenHeight < 667) {
+                console.log('高度不够', screenHeight);
+                return true;
+            }
+            return false;
+        };
+        PlatformModule.prototype.login = function (success, fail) {
+            if (Common.isFunction(success)) {
+                var token = moosnow.data.getToken();
+                if (!token) {
+                    token = Common.generateUUID();
+                    token = token.replace(/-/g, '');
+                    moosnow.data.setToken(token);
+                }
+                success(token);
+            }
+        };
+        PlatformModule.prototype.postMessage = function (data) {
+            if (!window[this.platformName])
+                return;
+            // console.log("postMessage:", data);
+            if (!window[this.platformName].getOpenDataContext)
+                return;
+            window[this.platformName].getOpenDataContext().postMessage(data);
+        };
+        /**
+         * 跳转到指定App
+         * @param row  跳转数据
+         * @param success  跳转成功
+         * @param fail 跳转失败
+         * @param complete  跳转完成
+         */
+        PlatformModule.prototype.navigate2Mini = function (row, success, fail, complete) {
+            var _this = this;
+            console.log(MSG.NAVIGATE_DATA, row);
+            if (Date.now() - this.prevNavigate < 300) {
+                console.log(MSG.NAVIGATE_FAST);
+                return;
+            }
+            this.prevNavigate = Date.now();
+            if (!window[this.platformName]) {
+                if (fail)
+                    fail();
+                // if (success)
+                //     success();
+                return;
+            }
+            var appid = row.appid, path = row.path, extraData = row.extraData;
+            extraData = extraData || {};
+            moosnow.http.navigate(appid, function (res) {
+                window[_this.platformName].navigateToMiniProgram({
+                    appId: appid,
+                    path: path,
+                    extraData: extraData,
+                    success: function () {
+                        moosnow.http.point("跳转", {
+                            position: row.position,
+                            appid: appid,
+                            img: row.atlas || row.img
+                        });
+                        moosnow.http.navigateEnd(res.code);
+                        moosnow.http.exportUser();
+                        if (success)
+                            success();
+                    },
+                    fail: function (err) {
+                        console.log('navigateToMini fail ', err, ' fail callback ', !!fail);
+                        if (fail)
+                            fail();
+                    },
+                    complete: function () {
+                        if (complete)
+                            complete();
+                    }
+                });
+            });
+        };
+        /**
+         * 更新版本
+         */
+        PlatformModule.prototype.updateProgram = function () {
+            var self = this;
+            if (!window[this.platformName])
+                return;
+            if (typeof window[this.platformName].getUpdateManager === 'function') { // 请在使用前先判断是否支持
+                var updateManager_1 = window[this.platformName].getUpdateManager();
+                updateManager_1.onCheckForUpdate(function (res) {
+                    // 请求完新版本信息的回调
+                    // console.log('是否有新版本', res.hasUpdate);
+                });
+                updateManager_1.onUpdateReady(function (res) {
+                    self.showModal('发现新版本', '新版本已经准备好，是否更新？', '取消', '更新', function (res) {
+                        if (res)
+                            updateManager_1.applyUpdate();
+                    });
+                    // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+                });
+                updateManager_1.onUpdateFailed(function () {
+                    // 新的版本下载失败
+                });
+            }
+        };
+        PlatformModule.prototype.vibrateShort = function () {
+            if (!window[this.platformName])
+                return;
+            if (window[this.platformName] && !window[this.platformName].vibrateShort)
+                return;
+            window[this.platformName].vibrateShort();
+        };
+        PlatformModule.prototype.vibrateLong = function () {
+            if (!window[this.platformName])
+                return;
+            if (window[this.platformName] && !window[this.platformName].vibrateLong)
+                return;
+            window[this.platformName].vibrateLong();
+        };
+        PlatformModule.prototype.showLoading = function (title) {
+            if (!window[this.platformName]) {
+                console.log('showLoading', title);
+                return;
+            }
+            window[this.platformName].showLoading({
+                title: title,
+                mask: false,
+                success: null,
+                fail: null,
+                complete: null
+            });
+        };
+        PlatformModule.prototype.hideLoading = function () {
+            if (!window[this.platformName]) {
+                return;
+            }
+            window[this.platformName].hideLoading();
+        };
+        PlatformModule.prototype.showModal = function (title, content, cancelTitle, confirmTitle, confirm) {
+            if (!window[this.platformName]) {
+                return;
+            }
+            window[this.platformName].showModal({
+                title: title,
+                content: content,
+                cancelText: cancelTitle,
+                confirmText: confirmTitle,
+                showCancel: true,
+                cancelColor: '#000000',
+                confirmColor: '#3CC51F',
+                fail: null,
+                complete: null,
+                success: function (res) {
+                    if (res.confirm) {
+                        if (confirm)
+                            confirm(true);
+                        // console.log('用户点击确定')
+                    }
+                    else if (res.cancel) {
+                        if (confirm)
+                            confirm(false);
+                        // console.log('用户点击取消')
+                    }
+                }
+            });
+        };
+        PlatformModule.prototype.showModalWithoutCancel = function (title, content, confirmTitle, confirm) {
+            if (!window[this.platformName]) {
+                return;
+            }
+            window[this.platformName].showModal({
+                title: title,
+                content: content,
+                showCancel: false,
+                confirmText: confirmTitle,
+                cancelColor: '#000000',
+                confirmColor: '#3CC51F',
+                cancelText: '',
+                fail: null,
+                complete: null,
+                success: function (res) {
+                    if (res.confirm) {
+                        if (confirm)
+                            confirm(true);
+                        // console.log('用户点击确定')
+                    }
+                    else if (res.cancel) {
+                        if (confirm)
+                            confirm(false);
+                        // console.log('用户点击取消')
+                    }
+                }
+            });
+        };
+        PlatformModule.prototype.showToast = function (title, toastType, mask) {
+            if (toastType === void 0) { toastType = 'none'; }
+            if (mask === void 0) { mask = false; }
+            if (!window[this.platformName]) {
+                return;
+            }
+            window[this.platformName].showToast({
+                title: title,
+                icon: toastType,
+                duration: 2000,
+                mask: mask,
+                image: null,
+                success: null,
+                fail: null,
+                complete: null
+            });
+        };
+        PlatformModule.prototype.authOrGetUserInfo = function (callback) {
+            if (!window[this.platformName]) {
+                return;
+            }
+            var self = this;
+            this.getSetting(function (setting) {
+                console.log('授权信息', setting);
+                if (setting['scope.userInfo']) {
+                    //已经授权
+                    self.getUserInfo(function (userInfo) {
+                        //获取用户信息成功
+                        console.log('获取用户信息：', userInfo);
+                        callback(userInfo, false);
+                    }, function (error) {
+                        //获取用户信息失败
+                        // callback(null);
+                    });
+                }
+                else {
+                    //未授权
+                    self.showUserInfoButton(function (userInfo) {
+                        callback(userInfo, true);
+                        console.log('授权获取用户信息：', userInfo);
+                    });
+                }
+            }, function (error) {
+                //获取授权设置失败
+                self.showUserInfoButton(function (userInfo) {
+                    callback(userInfo, true);
+                    console.log('授权获取用户信息：', userInfo);
+                });
+            });
+        };
+        PlatformModule.prototype.showUserInfoButton = function (callback) {
+            var obj = {
+                type: 'text',
+                text: '',
+                style: this._initLoginButton(),
+            };
+            var btn = window[this.platformName].createUserInfoButton(obj);
+            btn.onTap(function (res) {
+                if (res.userInfo && res.userInfo.nickName) {
+                    //授权成功
+                    callback(res.userInfo);
+                    btn.hide();
+                }
+                else {
+                    //授权失败
+                    callback(null);
+                }
+            });
+            btn.show();
+        };
+        PlatformModule.prototype.getSetting = function (success, fail) {
+            window[this.platformName].getSetting({
+                success: function (res) {
+                    success(res.authSetting);
+                    // res.authSetting = {
+                    //   "scope.userInfo": true,
+                    //   "scope.userLocation": true
+                    // }
+                },
+                fail: function () {
+                    fail();
+                },
+                complete: null,
+            });
+        };
+        PlatformModule.prototype.getUserInfo = function (success, fail) {
+            window[this.platformName].getUserInfo({
+                success: function (res) {
+                    success(res.userInfo);
+                },
+                fail: function () {
+                    fail();
+                },
+                withCredentials: false,
+                complete: null,
+                lang: 'en',
+            });
+        };
+        /**
+         * 获取游戏启动参数
+         * 返回值
+         * scene	number	场景值
+         * query	Object	启动参数
+         * isSticky	boolean	当前小游戏是否被显示在聊天顶部
+         * shareTicket	string	shareTicket   分享到群后点击进入小游戏会有此变量
+         */
+        PlatformModule.prototype.getLaunchOption = function () {
+            if (window[this.platformName] && window[this.platformName].getLaunchOptionsSync)
+                return window[this.platformName].getLaunchOptionsSync();
+            else
+                return {};
+        };
+        /**
+         * return obj
+         * brand	string	手机品牌
+         * model	string	手机型号
+         * pixelRatio	number	设备像素比
+         * screenWidth	number	屏幕宽度
+         * screenHeight	number	屏幕高度
+         * windowWidth	number	可使用窗口宽度
+         * windowHeight	number	可使用窗口高度
+         * language	string	微信设置的语言
+         * version	string	微信版本号
+         * system	string	操作系统版本
+         * platform	string	客户端平台
+         * fontSizeSetting	number	用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位 px。	>= 1.5.0
+         * SDKVersion	string	客户端基础库版本	                                >= 1.1.0
+         * benchmarkLevel	number	性能等级，-2 或 0：该设备无法运行小游戏，-1：性能未知，>=1 设备性能值，该值越高，设备性能越好(目前设备最高不到50)	                                >= 1.8.0
+         * battery	number	电量，范围 1 - 100	                                   >= 1.9.0
+         * wifiSignal	number	wifi 信号强度，范围 0 - 4	                        >= 1.9.0
+         */
+        PlatformModule.prototype.getSystemInfoSync = function () {
+            if (this.systemInfo == null) {
+                if (window[this.platformName] && window[this.platformName].getSystemInfoSync)
+                    this.systemInfo = window[this.platformName].getSystemInfoSync();
+                else
+                    this.systemInfo = {};
+                console.log(MSG.SYSTEM_INFO, this.systemInfo);
+            }
+            return this.systemInfo;
+        };
+        /**
+         * 横屏还是竖屏
+         * @param windowHeight
+         * @param windowWidth
+         */
+        PlatformModule.prototype.isLandscape = function (windowHeight, windowWidth) {
+            return windowHeight < windowWidth;
+        };
+        //-----------------分享------------------
+        PlatformModule.prototype.initShare = function (shareInfoArr) {
+            var _this = this;
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].showShareMenu)
+                return;
+            this.shareInfoArr = shareInfoArr;
+            window[this.platformName].showShareMenu({
+                withShareTicket: true,
+                success: null,
+                fail: null,
+                complete: null
+            });
+            if (window[this.platformName].onShareAppMessage)
+                window[this.platformName].onShareAppMessage(function () {
+                    return _this._buildShareInfo();
+                });
+        };
+        PlatformModule.prototype.getShareInfo = function (ticket, success, fail) {
+            if (fail === void 0) { fail = null; }
+            if (!window[this.platformName]) {
+                return;
+            }
+            window[this.platformName].getShareInfo({
+                shareTicket: ticket,
+                success: function (res) {
+                    success(res.encryptedData, res.iv);
+                },
+                fail: function () {
+                    if (fail)
+                        fail();
+                },
+                complete: null,
+            });
+        };
+        /**
+         * 分享
+         * @param query 分享参数 { channel:moosnow.SHARE_CHANNEL.LINK }
+         * SHARE_CHANNEL.LINK, SHARE_CHANNEL.ARTICLE, SHARE_CHANNEL.TOKEN, SHARE_CHANNEL.VIDEO 可选 仅字节跳动有效
+         * @param callback 分享成功回调参数 = true, 分享失败回调参数 = false,
+         */
+        PlatformModule.prototype.share = function (query, callback) {
+            if (query === void 0) { query = {}; }
+            if (!window[this.platformName]) {
+                if (callback)
+                    callback(true);
+            }
+            this.currentShareCallback = callback;
+            this.share_clickTime = Date.now();
+            this.shareFail = false;
+            this._share(query);
+        };
+        PlatformModule.prototype.shareWithoutCheck = function (query, callback) {
+            if (query === void 0) { query = {}; }
+            if (!window[this.platformName]) {
+                if (callback)
+                    callback(true);
+            }
+            this.currentShareCallback = callback;
+            this.share_clickTime = 1;
+            this.shareFail = false;
+            this._share(query);
+        };
+        PlatformModule.prototype._share = function (query) {
+            if (query === void 0) { query = null; }
+            if (!window[this.platformName]) {
+                this.currentShareCallback(true);
+                return;
+            }
+            ;
+            ;
+            if (!window[this.platformName].shareAppMessage) {
+                this.currentShareCallback(true);
+                return;
+            }
+            ;
+            var self = this;
+            var shareInfo = this._buildShareInfo(query);
+            console.log('分享数据：', shareInfo);
+            window[this.platformName].shareAppMessage(shareInfo);
+        };
+        //构建分享内容
+        PlatformModule.prototype._buildShareInfo = function (query) {
+            if (query === void 0) { query = null; }
+            var title = "", imageUrl = "";
+            if (this.shareInfoArr.length > 0) {
+                var item = this.shareInfoArr[MathUtils.randomNumBoth(0, this.shareInfoArr.length - 1)];
+                title = item.title;
+                imageUrl = item.img;
+            }
+            var shareInfo = {
+                title: title,
+                imageUrl: imageUrl,
+                query: query,
+            };
+            return shareInfo;
+        };
+        PlatformModule.prototype._onShareback = function () {
+            var _this = this;
+            var self = this;
+            setTimeout(function () {
+                if (_this.share_clickTime && _this.currentShareCallback) {
+                    // console.log('分享回来:',this.shareFail);
+                    if (_this.shareFail) {
+                        _this.currentShareCallback(false);
+                    }
+                    else {
+                        if (_this.share_clickTime == 1 || (Date.now() - _this.share_clickTime >= 3 * 1000)) {
+                            //分享成功
+                            _this.currentShareCallback(true);
+                            // console.log('分享成功',this.shareFail);
+                        }
+                        else {
+                            _this.currentShareCallback(false);
+                            // console.log('分享失败',this.shareFail);
+                        }
+                    }
+                }
+                _this.shareFail = false;
+                _this.currentShareCallback = null;
+                _this.share_clickTime = null;
+            }, 100);
+        };
+        PlatformModule.prototype._initLoginButton = function () {
+            if (!window[this.platformName])
+                return;
+            var wxsys = window[this.platformName].getSystemInfoSync();
+            var style = {
+                left: 0,
+                top: 0,
+                width: wxsys.screenWidth,
+                height: wxsys.screenHeight,
+                lineHeight: 40,
+                // backgroundColor: '#de0000',
+                color: '#ffffff',
+                type: 'text',
+                text: '获取用户信息',
+                textAlign: 'center',
+                fontSize: 28,
+            };
+            return style;
+        };
+        //-----------------录屏 具体逻辑在子类实现------------------
+        PlatformModule.prototype.initRecord = function () { };
+        PlatformModule.prototype.clipRecord = function () { };
+        /**
+         * 开始录屏
+         * @param duration 录屏时长
+         * @param callback 如果不是抖音回调参数=false
+         */
+        PlatformModule.prototype.startRecord = function (duration, callback) {
+            if (duration === void 0) { duration = 300; }
+            if (callback === void 0) { callback = null; }
+            if (!this.record) {
+                if (callback)
+                    callback(false);
+                return;
+            }
+        };
+        /**
+         * 停止录屏
+         * @param callback 如果不是抖音回调参数=false，如果录制成功，回调参数中录屏地址=res.videoPath
+         */
+        PlatformModule.prototype.stopRecord = function (callback) {
+            if (callback === void 0) { callback = null; }
+            if (!this.record) {
+                if (callback)
+                    callback(false);
+                return;
+            }
+        };
+        PlatformModule.prototype.pauseRecord = function () {
+        };
+        PlatformModule.prototype.resumeRecord = function () {
+        };
+        //-----------------注册事件------------------
+        /**
+         * 注册微信各种回调
+         */
+        PlatformModule.prototype._regisiterWXCallback = function () {
+            if (!window[this.platformName])
+                return;
+            this._regisiterOnShow();
+            this._regisiterOnHide();
+        };
+        PlatformModule.prototype._regisiterOnShow = function () {
+            if (!window[this.platformName].onShow)
+                return;
+            var self = this;
+            window[this.platformName].onShow(function (res) {
+                self._onShowCallback(res);
+            });
+        };
+        PlatformModule.prototype._onShowCallback = function (res) {
+            this._onShareback();
+            console.log('on show ', res);
+            moosnow.event.sendEventImmediately(EventType.ON_PLATFORM_SHOW, res);
+        };
+        PlatformModule.prototype._regisiterOnHide = function () {
+            if (!window[this.platformName].onHide)
+                return;
+            var self = this;
+            window[this.platformName].onHide(function (res) {
+                self._onHideCallback(res);
+            });
+        };
+        PlatformModule.prototype._onHideCallback = function (res) {
+            //Lite.log.log('WX_hide');
+            console.log('on show ', res);
+            moosnow.event.sendEventImmediately(EventType.ON_PLATFORM_HIDE, res);
+            console.log('on hide ', res);
+            var isOpend = res && ((res.targetAction == 8 || res.targetAction == 9 || res.targetAction == 10) && res.targetPagePath.length > 50);
+            if (isOpend) {
+                moosnow.http.clickBanner();
+            }
+            if (this.bannerCb) {
+                this.bannerCb(isOpend);
+            }
+            else {
+                console.log('banner callback is null ');
+            }
+        };
+        //-----------------Banner广告------------------
+        PlatformModule.prototype.initBanner = function () {
+            if (!window[this.platformName])
+                return;
+            this._prepareBanner();
+        };
+        PlatformModule.prototype._prepareBanner = function () {
+            if (!window[this.platformName].createBannerAd)
+                return;
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.windowWidth;
+            //横屏模式
+            if (wxsys.windowHeight < wxsys.windowWidth) {
+                if (windowWidth < this.bannerWidth) {
+                    this.bannerWidth = windowWidth;
+                }
+            }
+            else {
+                //竖屏
+                this.bannerWidth = windowWidth;
+            }
+            if (this.banner) {
+                this.banner.offResize(this._bottomCenterBanner);
+                this.banner.offError(this._onBannerError);
+                this.banner.offLoad(this._onBannerLoad);
+            }
+            this.banner = this._createBannerAd();
+            if (this.banner) {
+                this.banner.onResize(this._bottomCenterBanner.bind(this));
+                this.banner.onError(this._onBannerError.bind(this));
+                this.banner.onLoad(this._onBannerLoad.bind(this));
+            }
+        };
+        PlatformModule.prototype._createBannerAd = function () {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createBannerAd)
+                return;
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.windowWidth;
+            var left = (windowWidth - this.bannerWidth) / 2;
+            if (Common.isEmpty(this.bannerId)) {
+                console.warn(MSG.BANNER_KEY_IS_NULL);
+                return;
+            }
+            var banner = window[this.platformName].createBannerAd({
+                adUnitId: this.bannerId,
+                style: {
+                    top: 0,
+                    left: left,
+                    width: this.bannerWidth
+                }
+            });
+            return banner;
+        };
+        PlatformModule.prototype._onBannerLoad = function () {
+            this.bannerShowCount = 0;
+        };
+        PlatformModule.prototype._onBannerError = function (err) {
+            console.warn('banner___error:', err.errCode, err.errMsg);
+            this.banner = null;
+            this.isBannerShow = false;
+            moosnow.event.sendEventImmediately(EventType.ON_BANNER_HIDE, null);
+        };
+        PlatformModule.prototype._bottomCenterBanner = function (size) {
+            // if (Common.isEmpty(size)) {
+            //     console.log('设置的banner尺寸为空,不做调整')
+            //     return;
+            // }
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.windowWidth;
+            // let windowHeight = wxsys.windowHeight;
+            // this.banner.style.height = size.height;
+            this.banner.style.left = (windowWidth - size.width) / 2;
+            // this.banner.style.top = windowHeight - size.height;
+            this.bannerWidth = this.banner.style.realWidth;
+            this.bannerHeigth = this.banner.style.realHeight;
+            console.log('_bottomCenterBanner', this.banner.style);
+        };
+        PlatformModule.prototype._resetBanenrStyle = function (size) {
+            if (Common.isEmpty(size)) {
+                console.log('设置的banner尺寸为空,不做调整');
+                return;
+            }
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.windowWidth;
+            var windowHeight = wxsys.windowHeight;
+            var top = 0;
+            if (this.bannerPosition == BANNER_POSITION.BOTTOM) {
+                top = windowHeight - this.bannerHeigth;
+            }
+            else if (this.bannerPosition == BANNER_POSITION.CENTER)
+                top = (windowHeight - this.bannerHeigth) / 2;
+            else if (this.bannerPosition == BANNER_POSITION.TOP)
+                top = 0;
+            if (this.bannerStyle) {
+                this.banner.style = this.bannerStyle;
+            }
+            else {
+                this.banner.style.top = top;
+                console.log(MSG.BANNER_RESIZE, this.banner.style, 'set top ', top);
+            }
+        };
+        /**
+          *
+          * @param callback 点击回调
+          * @param position banner的位置，默认底部
+          * @param style 自定义样式
+          */
+        PlatformModule.prototype.showBanner = function (callback, position, style) {
+            var _this = this;
+            if (position === void 0) { position = BANNER_POSITION.BOTTOM; }
+            // if (this.isBannerShow)
+            //     return;
+            console.log(MSG.BANNER_SHOW);
+            this.bannerCb = callback;
+            this.isBannerShow = true;
+            if (!window[this.platformName]) {
+                return;
+            }
+            this.bannerPosition = position;
+            this.bannerStyle = style;
+            if (this.mTimeoutId) {
+                clearTimeout(this.mTimeoutId);
+                this.mTimeoutId = null;
+            }
+            if (this.banner) {
+                // let wxsys = this.getSystemInfoSync();
+                // let windowWidth = wxsys.windowWidth;
+                // let windowHeight = wxsys.windowHeight;
+                // if (position == BannerPosition.Bottom) {
+                // }
+                // this.banner.top = 1
+                console.log('show banner style ', this.banner.style);
+                // this.hideBanner();
+                this.banner.hide();
+                this._resetBanenrStyle({
+                    width: this.banner.style.width,
+                    height: this.banner.style.realHeight
+                });
+                this.banner.show().then(function () {
+                    _this._resetBanenrStyle({
+                        width: _this.banner.style.width,
+                        height: _this.banner.style.realHeight
+                    });
+                });
+            }
+        };
+        /**
+         * 会自动隐藏的banner
+         * 一般用游戏中
+         *
+         */
+        PlatformModule.prototype.showAutoBanner = function () {
+            var _this = this;
+            console.log('执行自动显示和隐藏Banner功能');
+            moosnow.http.getAllConfig(function (res) {
+                if (res && res.gameBanner == 1) {
+                    moosnow.platform.showBanner();
+                    var time = isNaN(res.gameBanenrHideTime) ? 1 : parseFloat(res.gameBanenrHideTime);
+                    _this.mTimeoutId = setTimeout(function () {
+                        console.log('自动隐藏时间已到，开始隐藏Banner');
+                        if (_this.isBannerShow) {
+                            _this.hideBanner();
+                        }
+                        else {
+                            _this.hideBanner();
+                        }
+                    }, time * 1000);
+                }
+            });
+        };
+        /**
+         * 连续不断的显示和隐藏 banner
+         */
+        PlatformModule.prototype.showIntervalBanner = function () {
+            var _this = this;
+            console.log('执行 showIntervalBanner');
+            moosnow.http.getAllConfig(function (res) {
+                var gameBannerInterval = res && !isNaN(res.gameBannerInterval) ? parseFloat(res.gameBannerInterval) : 20;
+                _this.schedule(_this.showAutoBanner, gameBannerInterval);
+            });
+        };
+        /**
+         * 取消banner
+         */
+        PlatformModule.prototype.clearIntervalBanner = function () {
+            console.log('执行 clearIntervalBanner');
+            this.unschedule(this.showAutoBanner);
+        };
+        /**
+         * 隐藏banner
+         */
+        PlatformModule.prototype.hideBanner = function () {
+            console.log(MSG.HIDE_BANNER);
+            if (!this.isBannerShow)
+                return;
+            this.isBannerShow = false;
+            if (!window[this.platformName]) {
+                return;
+            }
+            this.bannerShowCount++;
+            if (this.banner) {
+                if (this.bannerShowCount >= this.bannerShowCountLimit) {
+                    console.log('banner destroy');
+                    this.banner.hide();
+                    this.banner.destroy();
+                    this.banner = null;
+                    this._prepareBanner();
+                    // console.log('banner---destory');
+                }
+                else {
+                    this.banner.hide();
+                }
+            }
+            else {
+                this._prepareBanner();
+            }
+        };
+        //------------广告video------------
+        PlatformModule.prototype.initVideo = function () {
+            this.createRewardAD(false);
+        };
+        PlatformModule.prototype.createRewardAD = function (show) {
+            var _this = this;
+            if (moosnow.platform.videoLoading) {
+                return;
+            }
+            if (!window[this.platformName]) {
+                moosnow.platform.videoCb(VIDEO_STATUS.END);
+                return;
+            }
+            if (!window[this.platformName].createRewardedVideoAd) {
+                moosnow.platform.videoCb(VIDEO_STATUS.END);
+                return;
+            }
+            if (Common.isEmpty(this.videoId)) {
+                console.warn(MSG.VIDEO_KEY_IS_NULL);
+                moosnow.platform.videoCb(VIDEO_STATUS.END);
+                return;
+            }
+            if (!this.video) {
+                this.video = window[this.platformName].createRewardedVideoAd({
+                    adUnitId: this.videoId
+                });
+                if (!this.video) {
+                    console.warn('创建视频广告失败');
+                    return;
+                }
+                this.video.onError(this._onVideoError);
+                this.video.onClose(this._onVideoClose);
+                this.video.onLoad(this._onVideoLoad);
+            }
+            moosnow.platform.videoLoading = true;
+            moosnow.platform.videoPlaying = false;
+            this.video.load()
+                .then(function () {
+                if (show) {
+                    _this.video.show().then(function () { }).catch(function (err) {
+                        _this._onVideoError(err.errMsg, err.errCode);
+                        console.log(err.errMsg);
+                    });
+                }
+            }).catch(function (err) {
+                _this._onVideoError(err.errMsg, err.errCode);
+                console.log(err.errMsg);
+            });
+        };
+        PlatformModule.prototype._onVideoError = function (msg, code) {
+            console.log(MSG.VIDEO_ERROR_COMPLETED, msg, code);
+            moosnow.platform.videoLoading = false;
+            moosnow.platform.videoPlaying = false;
+            if (moosnow.platform.videoCb) {
+                moosnow.platform.videoCb(VIDEO_STATUS.ERR);
+                moosnow.platform.videoCb = null;
+            }
+        };
+        PlatformModule.prototype._onVideoClose = function (isEnd) {
+            console.log(MSG.VIDEO_CLOSE_COMPLETED, isEnd.isEnded);
+            moosnow.platform.videoLoading = false;
+            moosnow.platform.videoPlaying = false;
+            if (!!isEnd.isEnded) {
+                moosnow.http.clickVideo();
+            }
+            if (moosnow.platform.videoCb) {
+                var ret_1 = (!!isEnd.isEnded) ? VIDEO_STATUS.END : VIDEO_STATUS.NOTEND;
+                setTimeout(function () {
+                    moosnow.platform.videoCb(ret_1);
+                }, 50);
+            }
+        };
+        PlatformModule.prototype._onVideoLoad = function () {
+            console.log(MSG.VIDEO_LOAD_COMPLETED);
+            moosnow.platform.videoLoading = false;
+        };
+        /**
+         * 唤起视频
+         * @param completeCallback
+         */
+        PlatformModule.prototype.showVideo = function (completeCallback) {
+            if (completeCallback === void 0) { completeCallback = null; }
+            console.log('显示video');
+            moosnow.platform.videoCb = completeCallback;
+            this.createRewardAD(true);
+        };
+        //--------------插屏广告---------------
+        PlatformModule.prototype.initInter = function () {
+            this.prepareInter();
+        };
+        PlatformModule.prototype.prepareInter = function () {
+            if (!window[this.platformName])
+                return;
+            if (typeof window[this.platformName].createInterstitialAd != "function")
+                return;
+            if (!this.supportVersion('2.8.0'))
+                return;
+            if (Common.isEmpty(this.interId)) {
+                console.warn(MSG.INTER_KEY_IS_NULL);
+                return;
+            }
+            this.inter = window[this.platformName].createInterstitialAd({
+                adUnitId: this.interId
+            });
+            this.inter.onLoad(this._onInterLoad.bind(this));
+            this.inter.onClose(this._onInterClose.bind(this));
+            // this.inter.load();
+        };
+        PlatformModule.prototype.showInter = function () {
+            if (!this.inter)
+                return;
+            if (this.isInterLoaded)
+                this.inter.show();
+        };
+        PlatformModule.prototype._onInterLoad = function () {
+            this.interShowCount = 0;
+            this.isInterLoaded = true;
+            console.log('插屏广告加载完成');
+        };
+        PlatformModule.prototype._onInterClose = function () {
+            this.interShowCount++;
+            if (this.interShowCount >= this.interShowCountLimit) {
+                this.isInterLoaded = false;
+                this.inter.load();
+            }
+        };
+        PlatformModule.prototype._onInterError = function (err) {
+            console.log("\u63D2\u5C4F\u5E7F\u544A\u51FA\u9519\uFF1A", err);
+        };
+        PlatformModule.prototype._prepareNative = function () {
+        };
+        PlatformModule.prototype._onNativeLoad = function (res) {
+        };
+        PlatformModule.prototype._onNativeError = function (err) {
+        };
+        PlatformModule.prototype._destroyNative = function () {
+        };
+        /**
+         * 目前只有OPPO平台有此功能
+         * 返回原生广告数据，开发者根据返回的数据来展现
+         * 没有广告返回null
+         *
+         *
+         * 例如 cocos
+         * let adData=moosnow.platform.getNativeAd();
+         * cc.loader.load(adData.imgUrlList[0], (err, texture) => {
+         *   adImg.active = true
+         *   adImg.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+         * })
+         *
+         * 例如 laya
+         * let adData=moosnow.platform.getNativeAd();
+         * new Laya.Image().skin=adData.imgUrlList[0];
+         *
+         * @param callback 回调函数
+         */
+        PlatformModule.prototype.showNativeAd = function (callback) {
+            if (Common.isFunction(callback))
+                callback();
+        };
+        /**
+         * 目前只有OPPO平台有此功能
+         * 用户点击了展示原生广告的图片时，使用此方法
+         * 例如 cocos
+         * this.node.on(cc.Node.EventType.TOUCH_END, () => {
+         *     moosnow.platform.clickNative();
+         * }, this)
+         *
+         *
+         * 例如 laya
+         * (new Laya.Image()).on(Laya.Event.MOUSE_UP, this, () => {
+         *     moosnow.platform.clickNative();
+         * })
+         *
+         */
+        PlatformModule.prototype.clickNative = function (callback) {
+        };
+        /**
+        * 盒子广告
+        * @param callback 关闭回调
+        * @param remoteOn 被后台开关控制
+        */
+        PlatformModule.prototype.showAppBox = function (callback, remoteOn) {
+            if (remoteOn === void 0) { remoteOn = true; }
+            if (Common.isFunction(callback))
+                callback();
+        };
+        /**
+         *
+         * @param callback
+         */
+        PlatformModule.prototype.hideAppBox = function (callback) {
+            if (Common.isFunction(callback))
+                callback();
+        };
+        /**
+         * 平台数据上报
+         * @param name
+         * @param value
+         */
+        PlatformModule.prototype.reportMonitor = function (name, value) {
+        };
+        /**
+         * 更多游戏按钮
+         * @param url
+         * @param callback
+         * @param style
+         */
+        PlatformModule.prototype.showMoreGameButton = function (url, callback, style) {
+            if (style === void 0) { style = null; }
+            if (callback)
+                callback();
+        };
+        //----自定义--
+        PlatformModule.prototype.initRank = function () {
+            var data = {
+                action: 1,
+            };
+            this.postMessage(data);
+        };
+        PlatformModule.prototype.showRank = function () {
+            var data = {
+                action: 10,
+            };
+            this.postMessage(data);
+        };
+        PlatformModule.prototype.updateUserScore = function (score) {
+            var data = {
+                action: 13,
+                data: score,
+            };
+            this.postMessage(data);
+        };
+        PlatformModule.prototype.hideRank = function () {
+            var data = {
+                action: 20,
+            };
+            this.postMessage(data);
+        };
+        PlatformModule.prototype.onDisable = function () {
+        };
+        return PlatformModule;
+    }(BaseModule));
+
+    /**
+     * 微信平台
+     */
+    var WXModule = /** @class */ (function (_super) {
+        __extends(WXModule, _super);
+        function WXModule() {
+            var _this = _super.call(this) || this;
+            _this.platformName = "wx";
+            _this._regisiterWXCallback();
+            _this.initBanner();
+            _this.initInter();
+            return _this;
+        }
+        /**
+         * 游戏登录
+         * @param callback
+         * @param fail
+         */
+        WXModule.prototype.login = function (callback, fail) {
+            moosnow.http.getAllConfig(function (res) {
+            });
+            var self = this;
+            var userToken = moosnow.data.getToken();
+            if (userToken) {
+                self.getUserToken("", userToken, callback);
+            }
+            else {
+                if (window[this.platformName] && window[this.platformName].login)
+                    window[this.platformName].login({
+                        success: function (res) {
+                            if (res.code) {
+                                //发起网络请求
+                                self.getUserToken(res.code, "", callback);
+                            }
+                            else {
+                                if (Common.isFunction(callback))
+                                    callback();
+                            }
+                        },
+                        fail: function () {
+                        }
+                    });
+                else {
+                    _super.prototype.login.call(this, callback, fail);
+                }
+            }
+        };
+        /**
+         *
+         * @param code
+         * @param user_id
+         * @param callback
+         */
+        WXModule.prototype.getUserToken = function (code, user_id, callback) {
+            var options = this.getLaunchOption();
+            var scene = options.scene;
+            var channel_id = options.query && options.query.channel_id ? options.query.channel_id : "0";
+            var channel_appid = options.referrerInfo && options.referrerInfo.appId ? options.referrerInfo.appId : "0";
+            moosnow.data.setChannelAppId(channel_appid);
+            moosnow.data.setChannelId(channel_id);
+            var fromApp = options.referrerInfo ? options.referrerInfo.appId : '未知';
+            if (window[this.platformName] && window[this.platformName].aldSendEvent) {
+                window[this.platformName].aldSendEvent("来源", {
+                    origin: fromApp,
+                    path: options.query.from || 0
+                });
+            }
+            moosnow.http.request(this.baseUrl + "api/channel/login.html", {
+                appid: moosnow.platform.moosnowConfig.moosnowAppId,
+                code: code,
+                user_id: user_id,
+                channel_id: channel_id,
+                channel_appid: channel_appid,
+                scene: scene, fromApp: fromApp
+            }, "POST", function (respone) {
+                if (respone.code == 0 && respone.data && respone.data.user_id) {
+                    moosnow.data.setToken(respone.data.user_id);
+                }
+                if (Common.isFunction(callback))
+                    callback(respone);
+            }, function () {
+                //如果出错，不影响游戏
+                if (Common.isFunction(callback))
+                    callback({});
+            });
+        };
+        return WXModule;
+    }(PlatformModule));
+
+    var AdModule = /** @class */ (function (_super) {
+        __extends(AdModule, _super);
+        function AdModule() {
+            var _this = _super.call(this) || this;
+            _this.baseUrl = "https://api.liteplay.com.cn/admin/";
+            _this.cacheImage = null;
+            _this.cacheKey = "cacheUrl";
+            _this.getResUrl = function (localUrl) {
+                for (var key in this.this.cacheImage) {
+                    if (this.this.cacheImage[key] == localUrl)
+                        return key;
+                }
+                return "";
+            };
+            _this.convertToCacheUrl = function (imgUrl, callback) {
+                if (!this.cacheImage[imgUrl]) {
+                    this.downloadImage(imgUrl, function (url) {
+                        callback(url);
+                    });
+                }
+                else {
+                    callback(this.cacheImage[imgUrl]);
+                }
+            };
+            _this.saveCacheUrl = function (retValue) {
+                var clearItem = [];
+                var fileSystemManager = window["wx"].getFileSystemManager();
+                for (var url in this.cacheImage) {
+                    var removeUrl = true;
+                    for (var pos in retValue) {
+                        for (var i = 0; i < retValue[pos].length; i++) {
+                            if (retValue[pos][i].atlas == this.cacheImage[url] || retValue[pos][i].img == this.cacheImage[url]) {
+                                removeUrl = false;
+                            }
+                        }
+                    }
+                    if (removeUrl) {
+                        clearItem.push(url);
+                    }
+                }
+                for (var i = 0; i < clearItem.length; i++) {
+                    if (clearItem[i]) {
+                        console.log('clear file ', clearItem[i]);
+                        try {
+                            fileSystemManager.removeSavedFile(clearItem[i]);
+                        }
+                        catch (e) {
+                            console.log('clear file error ', clearItem[i]);
+                        }
+                    }
+                    delete this.cacheImage[clearItem[i]];
+                }
+                if (window["wx"])
+                    window["wx"].setStorage({
+                        key: this.cacheKey,
+                        data: this.cacheImage,
+                        success: function () { },
+                        fail: function () { },
+                        complete: function () { }
+                    });
+            };
+            _this.mMemory = {};
+            _this.getCache = function () {
+                return this.mMemory;
+            };
+            _this.setCache = function (val) {
+                this.mMemory = val;
+            };
+            return _this;
+        }
+        /**
+         * 随机去除重复数据
+         * @param source
+         */
+        AdModule.prototype.getDistinctAd = function (source) {
+            var retValue = [];
+            var retValue2 = [];
+            //第一步随机打乱    
+            var temp = source.sort(function (a, b) {
+                return Math.random() > 0.5 ? 1 : -1;
+            });
+            for (var i = 0; i < temp.length; i++) {
+                var item = temp[i];
+                var append = true;
+                for (var j = 0; j < retValue.length; j++) {
+                    var retItem = retValue[j];
+                    if (retItem.appid == item.appid) {
+                        append = false;
+                        break;
+                    }
+                }
+                if (append)
+                    retValue.push(item);
+                else
+                    retValue2.push(item);
+            }
+            return __spreadArrays(retValue, retValue2);
+        };
+        /**
+         * 获取广告数据 目前仅有indexLeft提供使用
+         * @param {Function} callback
+         * @returns  more 更多好玩 个人中心的广告 现已经不用了
+         *   promotion 首页推广   首页开始按钮下的广告
+         *   indexFloat 首页浮动广告 首页右上的广告
+         *   indexLeft 首页侧栏
+         *   gameFloat 游戏页浮动广告
+         *   endPage 结束页广告
+         */
+        AdModule.prototype.getAd = function (callback) {
+            var _this = this;
+            var cache = this.getCache();
+            if (!Common.isEmpty(cache.indexLeft)) {
+                var distinctAd = this.getDistinctAd(cache.indexLeft);
+                var temp = __assign(__assign({}, cache), { indexLeft: distinctAd });
+                callback(temp);
+            }
+            else
+                this.getRemoteAd(function (res) {
+                    var retValue = _this.initRetValue();
+                    // if (window["wx"])
+                    //     loadCacheImage(() => {
+                    //         res.forEach(item => {
+                    //             let remoteUrl = item.atlas ? item.atlas : item.img
+                    //             convertToCacheUrl(remoteUrl, function (url) {
+                    //                 if (item.atlas)
+                    //                     item.atlas = url;
+                    //                 if (item.img)
+                    //                     item.img = url;
+                    //                 retValue = formatRow(retValue, item);
+                    //                 if ((retValue.indexLeft.length
+                    //                     + retValue.indexFloat.length
+                    //                     + retValue.indexBanner.length
+                    //                     + retValue.gameEndPage.length
+                    //                     + retValue.gameRespawnPage.length
+                    //                     + retValue.exportPage.length
+                    //                 ) == res.length) {
+                    //                     saveCacheUrl(retValue);
+                    //                     setCache(retValue)
+                    //                     callback(retValue)
+                    //                 }
+                    //             })
+                    //         })
+                    //     })
+                    // else {
+                    // }
+                    res.forEach(function (item) {
+                        retValue = _this.formatRow(retValue, item);
+                    });
+                    _this.setCache(retValue);
+                    var distinctAd = _this.getDistinctAd(retValue.indexLeft);
+                    var temp = __assign(__assign({}, cache), { indexLeft: distinctAd });
+                    callback(temp);
+                });
+        };
+        AdModule.prototype.getRemoteAd = function (cb) {
+            cb([]);
+        };
+        AdModule.prototype.loadCacheImage = function (callback) {
+            var _this = this;
+            if (this.cacheImage) {
+                callback(this.cacheImage);
+            }
+            else
+                wx.getStorage({
+                    key: this.cacheKey,
+                    success: function (storageVal) {
+                        this.this.cacheImage = storageVal.data;
+                        console.log('cacheKey data  ', storageVal.data);
+                    },
+                    fail: function () {
+                        _this.cacheImage = {};
+                        console.log('cacheKey error ');
+                    },
+                    complete: function () {
+                        callback(this.this.cacheImage);
+                    }
+                });
+        };
+        AdModule.prototype.initRetValue = function () {
+            var retValue = {
+                /**
+                 * 首页开始按钮下的广告
+                 */
+                indexBanner: [],
+                /**
+                 * 首页右上的浮动广告
+                 */
+                indexFloat: [],
+                /**
+                 * 首页侧栏
+                 */
+                indexLeft: [],
+                /**
+                 * 游戏结束
+                 */
+                gameEndPage: [],
+                /**
+                 * 复活页
+                 */
+                gameRespawnPage: [],
+                /**
+                 * 导出页
+                 */
+                exportPage: [],
+            };
+            return retValue;
+        };
+        AdModule.prototype.formatRow = function (retValue, item) {
+            switch (item.position) {
+                case '1':
+                    retValue.indexLeft.push(item);
+                    break;
+                case '2':
+                    retValue.indexFloat.push(item);
+                    break;
+                case '3':
+                    retValue.indexBanner.push(item);
+                    break;
+                case '4':
+                    retValue.gameEndPage.push(item);
+                    break;
+                case '5':
+                    retValue.gameRespawnPage.push(item);
+                    break;
+                case '6':
+                    retValue.exportPage.push(item);
+                    break;
+                default:
+                    retValue.indexLeft.push(item);
+                    break;
+            }
+            return retValue;
+        };
+        AdModule.prototype.downloadImage = function (imgUrl, callback) {
+            if (window["wx"])
+                wx.downloadFile({
+                    header: {},
+                    url: imgUrl,
+                    success: function (res) {
+                        var _this = this;
+                        if (res.statusCode === 200) {
+                            wx.saveFile({
+                                tempFilePath: res.tempFilePath,
+                                success: function (res) {
+                                    _this.cacheImage["" + imgUrl] = res.savedFilePath;
+                                    callback(res.savedFilePath);
+                                },
+                                fail: function () {
+                                    callback(imgUrl);
+                                },
+                                complete: function () {
+                                },
+                            });
+                        }
+                    },
+                    fail: function () {
+                        callback(imgUrl);
+                    },
+                    complete: function () {
+                    },
+                });
+            else
+                callback(imgUrl);
+        };
+        return AdModule;
+    }(BaseModule));
+
+    var ErrorType = {
+        ONERROR: "HTTP协议链接出错",
+        ONTIMEOUT: "HTTP协议链接超时",
+        POSTERROR: "HTTP协议请求出错",
+        RETURNERROR: "服务器返回错误code"
+    };
+    var GAME_COMMAND = {
+        VERIFY_USER: 1,
+        CREATE_ROLE: 2,
+        CAPTAIN: 3
+    };
+    var HttpModule = /** @class */ (function (_super) {
+        __extends(HttpModule, _super);
+        function HttpModule() {
+            var _this = _super.call(this) || this;
+            _this.appid = "";
+            _this.secret = "";
+            _this.versionNumber = "";
+            _this.version = "2.0.1";
+            _this.baseUrl = "https://api.liteplay.com.cn/";
+            _this._cdnUrl = "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com";
+            _this.mLaunchOptions = {};
+            _this.cfgData = null;
+            _this.areaData = null;
+            _this._cfgQuene = [];
+            _this._localQuene = [];
+            var versionUrl = _this._cdnUrl + "/SDK/version.json?t=" + Date.now();
+            if (Common.platform == PlatformType.PC) {
+                _this.request(versionUrl, {}, 'GET', function (res) {
+                    if (_this.version < res.version) {
+                        console.warn("\u60A8\u7684SDK\u7248\u672C\u53F7[" + _this.version + "]\u4E0D\u662F\u6700\u65B0\u7248\u672C\uFF0C\u8BF7\u5C3D\u5FEB\u5347\u7EA7\uFF0C\u6700\u65B0\u7248\u672C[" + res.version + "]  \u4E0B\u8F7D\u5730\u5740\uFF1A" + res.download);
+                        if (!Common.isEmpty(res.memo))
+                            console.warn("" + res.memo);
+                    }
+                });
+            }
+            else if (Common.platform == PlatformType.WX && window["wx"]) {
+                _this.request(versionUrl, {}, 'GET', function (res) {
+                    var aldVersion = window["wx"]["aldVersion"];
+                    if (!aldVersion || (aldVersion && aldVersion < res.aldVersion))
+                        console.warn("\u963F\u62C9\u4E01\u6587\u4EF6\u9519\u8BEF\uFF0C\u8BF7\u91CD\u65B0\u4E0B\u8F7D" + res.aldUrl);
+                });
+            }
+            _this.getShareInfo(function (data) {
+                moosnow.platform.initShare(data);
+            });
+            _this.loadCfg(function (res) {
+                console.log('remote config ', res);
+            });
+            return _this;
+        }
+        Object.defineProperty(HttpModule.prototype, "appLaunchOptions", {
+            get: function () {
+                if (!this.mLaunchOptions) {
+                    if (moosnow.platform && moosnow.platform.getLaunchOption)
+                        this.mLaunchOptions = moosnow.platform.getLaunchOption();
+                }
+                return this.mLaunchOptions;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * 请求服务
+         * @param {*} url
+         * @param {*} data
+         * @param {*} method
+         * @param {*} success
+         * @param {*} fail
+         * @param {*} complete
+         */
+        HttpModule.prototype.request = function (url, data, method, success, fail, complete) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    var response = xhr.responseText;
+                    if (xhr.status >= 200 && xhr.status < 400) {
+                        // if (method1 == "JSON") {
+                        //     var result = response;
+                        // } else {
+                        var result = {};
+                        try {
+                            result = JSON.parse(response);
+                        }
+                        catch (e) {
+                            console.error('json parse error ', response);
+                            if (fail)
+                                fail(e);
+                        }
+                        // }
+                        if (success)
+                            success(result);
+                    }
+                    else {
+                        console.warn('error ', response);
+                        if (fail)
+                            fail(response);
+                    }
+                }
+                else {
+                    // cc.log('caller state change  ', xhr)
+                    // console.log('caller state change  ', xhr)
+                }
+            };
+            xhr.timeout = 10000;
+            xhr.ontimeout = function (event) {
+                console.error('error ', event);
+                if (fail)
+                    fail(event);
+            };
+            xhr.open(method, url, true);
+            if (method == "POST") {
+                xhr.open('POST', url);
+                xhr.setRequestHeader("Content-Type", 'application/x-www-form-urlencoded');
+                xhr.send(this._object2Query(data));
+            }
+            else {
+                xhr.send();
+            }
+        };
+        HttpModule.prototype._object2Query = function (obj) {
+            var args = [];
+            for (var k in obj)
+                args.push(k + "=" + obj[k]);
+            return args.join("&"); // 返回对象  
+        };
+        HttpModule.prototype.isDisableArea = function (callback) {
+        };
+        /**
+           * Loading加载完成
+           */
+        HttpModule.prototype.finishLoading = function () {
+            this.postData('api/channel/validUser.html');
+        };
+        /**
+          * 点击了banner
+          */
+        HttpModule.prototype.clickBanner = function () {
+            this.postData('api/channel/clickBanner.html');
+        };
+        /**
+         * 看完了视频
+         */
+        HttpModule.prototype.clickVideo = function () {
+            this.postData('api/channel/clickVideo.html');
+        };
+        /**
+         * 导出跳转
+         */
+        HttpModule.prototype.exportUser = function () {
+            this.postData('api/channel/exportUser.html');
+        };
+        /**
+         * 跳转记录
+         * @param jump_appid
+         * @param callback
+         */
+        HttpModule.prototype.navigate = function (jump_appid, callback) {
+            var userToken = moosnow.data.getToken();
+            this.request(this.baseUrl + "api/jump/record", {
+                appid: Common.config.moosnowAppId,
+                uid: userToken,
+                jump_appid: jump_appid,
+            }, "POST", function (respone) {
+                console.log('navigate', respone);
+                if (callback)
+                    callback(respone.data);
+            });
+        };
+        /**
+         * 跳转完成
+         * @param code
+         */
+        HttpModule.prototype.navigateEnd = function (code) {
+            this.request(this.baseUrl + "api/jump/status", {
+                code: code
+            }, "POST", function (respone) {
+                console.log('navigateEnd code ', code, respone);
+            });
+        };
+        /**
+         *
+         * @param url
+         */
+        HttpModule.prototype.postData = function (url) {
+            var userToken = moosnow.data.getToken();
+            if (!Common.isEmpty(userToken) && moosnow.data.getChannelId() != "0" && moosnow.data.getChannelAppId() != "0") {
+                try {
+                    this.request("" + this.baseUrl + url, {
+                        appid: Common.config.moosnowAppId,
+                        user_id: userToken,
+                        channel_id: moosnow.data.getChannelId(),
+                        channel_appid: moosnow.data.getChannelAppId()
+                    }, "POST", function (respone) {
+                    });
+                }
+                catch (e) {
+                    console.log('postData error ', e);
+                }
+            }
+        };
+        /**
+         * 数据打点
+         * @param name  打点名称
+         */
+        HttpModule.prototype.point = function (name, data) {
+            if (data === void 0) { data = null; }
+            if (Common.platform == PlatformType.WX) {
+                if (window['wx'] && window['wx'].aldSendEvent)
+                    window['wx'].aldSendEvent(name, data);
+            }
+        };
+        /**
+        * 统计开始游戏
+        * @param {string} level 关卡数 必须是1 || 2 || 1.1 || 12.2 格式
+        */
+        HttpModule.prototype.startGame = function (level) {
+            if (Common.platform == PlatformType.WX)
+                if (window['wx'] && window['wx'].aldStage)
+                    window['wx'].aldStage.onStart({
+                        stageId: level,
+                        stageName: level,
+                        userId: moosnow.data.getToken() //用户ID
+                    });
+                else
+                    console.warn(MSG.ALD_FILE_NO_IMPORT);
+        };
+        /**
+         * 统计结束游戏
+         * @param {string} level 关卡数 必须是1 || 2 || 1.1 || 12.2 格式
+         * @param {boolean} isWin 是否成功
+         */
+        HttpModule.prototype.endGame = function (level, isWin) {
+            if (Common.platform != PlatformType.WX)
+                return;
+            var event = isWin ? "complete" : "fail";
+            var desc = isWin ? "关卡完成" : "关卡失败";
+            if (window['wx'] && window['wx'].aldStage)
+                window['wx'].aldStage.onEnd({
+                    stageId: level,
+                    stageName: level,
+                    userId: moosnow.data.getToken(),
+                    event: event,
+                    params: {
+                        desc: desc //描述
+                    }
+                });
+            else
+                console.warn(MSG.ALD_FILE_NO_IMPORT);
+        };
+        /**
+         * 视频统计
+         * @param {number} type 0：视频点击 1：视频观看完成
+         * @param {string} info 信息 ex:“领取三倍金币”
+         * @param {string} level 关卡数
+         */
+        HttpModule.prototype.videoPoint = function (type, info, level) {
+            if (Common.platform != PlatformType.WX)
+                return;
+            var name = type == 0 ? "点击视频" : "观看完成视频";
+            if (window['wx'] && window['wx'].aldSendEvent)
+                window['wx'].aldSendEvent(name, { info: info, level: level + "" });
+            else
+                console.warn(MSG.ALD_FILE_NO_IMPORT);
+        };
+        /**
+         *
+         * @param callback
+         */
+        HttpModule.prototype.getAllConfig = function (callback) {
+            var _this = this;
+            this.loadCfg(function (res) {
+                _this.loadArea(function (res2) {
+                    _this.disableAd(res, res2, function (disable) {
+                        if (disable) {
+                            callback(__assign(__assign({}, res), { mistouchNum: 0, mistouchPosNum: 0, bannerShowCountLimit: 1 }));
+                        }
+                        else {
+                            callback(res);
+                        }
+                    });
+                });
+            });
+        };
+        HttpModule.prototype.loadCfg = function (callback) {
+            var _this = this;
+            if (!Common.isEmpty(this.cfgData)) {
+                callback(this.cfgData);
+            }
+            else {
+                this._cfgQuene.push(callback);
+                if (this._cfgQuene.length > 1)
+                    return;
+                var url = "";
+                if (Common.config.url)
+                    url = Common.config.url + "?t=" + Date.now();
+                else
+                    url = this._cdnUrl + "/config/" + Common.config.moosnowAppId + ".json";
+                this.request(url, {}, 'GET', function (res) {
+                    _this.cfgData = __assign(__assign({}, Common.deepCopy(res)), { zs_native_click_switch: res && res.mx_native_click_switch ? res.mx_native_click_switch : 0, zs_jump_switch: res && res.mx_jump_switch ? res.mx_jump_switch : 0 });
+                    if (moosnow.platform) {
+                        moosnow.platform.bannerShowCountLimit = parseInt(res.bannerShowCountLimit);
+                    }
+                    _this._cfgQuene.forEach(function (item) {
+                        item(_this.cfgData);
+                    });
+                    _this._cfgQuene = [];
+                }, function () {
+                    _this._cfgQuene.forEach(function (item) {
+                        item({
+                            mistouchNum: 0,
+                            mistouchPosNum: 0,
+                            bannerShowCountLimit: 1
+                        });
+                    });
+                    _this._cfgQuene = [];
+                    console.log('load config json fail');
+                });
+            }
+        };
+        HttpModule.prototype.loadArea = function (callback) {
+            var _this = this;
+            if (this.areaData) {
+                callback(this.areaData);
+            }
+            else {
+                this._localQuene.push(callback);
+                if (this._localQuene.length > 1)
+                    return;
+                var ipUrl = this.baseUrl + "admin/wx_config/getLocation";
+                this.request(ipUrl, {}, 'GET', function (res2) {
+                    _this.areaData = res2;
+                    _this._localQuene.forEach(function (item) {
+                        item(_this.areaData);
+                    });
+                    _this._localQuene = [];
+                }, function () {
+                    _this._localQuene.forEach(function (item) {
+                        item(_this.areaData);
+                    });
+                    _this._localQuene = [];
+                });
+            }
+        };
+        HttpModule.prototype.getForceExport = function (callback) {
+            var _this = this;
+            this.loadCfg(function (res) {
+                _this.loadArea(function (res2) {
+                    _this.disabledForceExport(res, res2, function (disable) {
+                        callback(disable);
+                    });
+                });
+            });
+        };
+        HttpModule.prototype.disabledForceExport = function (res, res2, callback) {
+            var curTime = Common.formatTime(new Date());
+            var inDisabledRegion = false;
+            if (res.disabledForceExport) {
+                for (var i = 0; i < res.disabledForceExport.length; i++) {
+                    var region = res.disabledForceExport[i];
+                    if (res2.data.city.indexOf(region) != -1
+                        || res2.data.province.indexOf(region) != -1
+                        || res2.data.area.indexOf(region) != -1) {
+                        inDisabledRegion = true;
+                        break;
+                    }
+                }
+            }
+            if (inDisabledRegion) {
+                if (res.forceExportTime && res.forceExportTime.length == 2) {
+                    if (curTime > res.forceExportTime[0] && curTime < res.forceExportTime[1]) {
+                        callback(true);
+                    }
+                    else {
+                        callback(false);
+                    }
+                }
+                else {
+                    callback(true);
+                }
+            }
+            else {
+                callback(false);
+            }
+        };
+        /**
+         * 获取误点间隔次数，启动游戏时调用
+         * @param {Funtion} callback 回调参数为misTouchNum:int，当misTouchNum=0时关闭误点，当misTouchNum=n(0除外)时，每隔n次，触发误点1次
+         */
+        HttpModule.prototype.getMisTouchNum = function (callback) {
+            var _this = this;
+            this.loadCfg(function (res) {
+                _this.loadArea(function (res2) {
+                    _this.disableAd(res, res2, function (disable) {
+                        if (disable) {
+                            callback(0);
+                            console.log('getMisTouchNum', 0, 'disableAd', disable);
+                        }
+                        else {
+                            callback(parseInt(res.mistouchNum));
+                            console.log('getMisTouchNum', res.mistouchNum, 'disableAd', disable);
+                        }
+                    });
+                });
+            });
+        };
+        /**
+          * 获取位移间隔次数，启动游戏时调用
+          * @param {Funtion} callback 回调参数为mistouchPosNum:int，当misTouchNum=0时关闭误点，当mistouchPosNum=n(0除外)时，每隔n次，触发误点1次
+          */
+        HttpModule.prototype.getMistouchPosNum = function (callback) {
+            var _this = this;
+            this.loadCfg(function (res) {
+                _this.loadArea(function (res2) {
+                    _this.disableAd(res, res2, function (disable) {
+                        if (disable) {
+                            callback(0);
+                            console.log('getMistouchPosNum', 0, 'disableAd', disable);
+                        }
+                        else {
+                            callback(parseInt(res.mistouchPosNum));
+                            console.log('getMistouchPosNum', res.mistouchPosNum, 'disableAd', disable);
+                        }
+                    });
+                });
+            });
+        };
+        HttpModule.prototype.getBannerShowCountLimit = function (callback) {
+            this.loadCfg(function (res) {
+                if (isNaN(res.bannerShowCountLimit))
+                    callback(5);
+                else
+                    callback(parseInt(res.bannerShowCountLimit));
+            });
+        };
+        HttpModule.prototype.disableAd = function (res, res2, callback) {
+            var curTime = Common.formatTime(new Date());
+            var inDisabledRegion = false;
+            if (res && res.disabledRegion) {
+                for (var i = 0; i < res.disabledRegion.length; i++) {
+                    var region = res.disabledRegion[i];
+                    if (res2 && res2.data && (res2.data.city.indexOf(region) != -1
+                        || res2.data.province.indexOf(region) != -1
+                        || res2.data.area.indexOf(region) != -1)) {
+                        inDisabledRegion = true;
+                        break;
+                    }
+                }
+            }
+            if (this.appLaunchOptions) {
+                if ([1005, 1007, 1008, 1044].indexOf(this.appLaunchOptions.scene) != -1) {
+                    callback(true);
+                    console.log('appLaunchOptions', this.appLaunchOptions);
+                    return;
+                }
+            }
+            if (inDisabledRegion) {
+                if (res.disabledTime && res.disabledTime.length == 2) {
+                    if (curTime > res.disabledTime[0] && curTime < res.disabledTime[1]) {
+                        callback(true);
+                    }
+                    else {
+                        callback(false);
+                    }
+                }
+                else {
+                    callback(true);
+                }
+            }
+            else {
+                callback(false);
+            }
+        };
+        HttpModule.prototype.getShareInfo = function (cb) {
+            this.request(this.baseUrl + "admin/wx_share/getShare", {
+                appid: Common.config.moosnowAppId
+            }, "POST", function (res) {
+                console.log('分享数据', res.data);
+                cb(res.data);
+                moosnow.platform.initShare(res.data);
+            });
+        };
+        return HttpModule;
+    }(BaseModule));
+
+    var OPPOModule = /** @class */ (function (_super) {
+        __extends(OPPOModule, _super);
+        function OPPOModule() {
+            var _this = _super.call(this) || this;
+            _this.platformName = "qg";
+            _this.appSid = "";
+            _this.bannerWidth = 760;
+            _this.bannerHeight = 96;
+            _this.interLoadedShow = false;
+            _this.prevNavigate = Date.now();
+            _this.mIsClickedNative = false;
+            _this._regisiterWXCallback();
+            _this.initAdService();
+            return _this;
+        }
+        OPPOModule.prototype.initAdService = function () {
+            if (!window[this.platformName])
+                return;
+            var self = this;
+            if (window[this.platformName].initAdService) {
+                window[this.platformName].initAdService({
+                    isDebug: true,
+                    appId: this.moosnowConfig.moosnowAppId,
+                    success: function (res) {
+                        console.log("\u521D\u59CB\u5316\u5E7F\u544A");
+                        self.initBanner();
+                        self.initInter();
+                        self._prepareNative();
+                    },
+                    fail: function (res) {
+                        console.warn("\u521D\u59CB\u5316\u5E7F\u544A\u9519\u8BEF " + res.code + "  " + res.msg);
+                    },
+                    complete: function (res) {
+                        console.log("initAdService  complete");
+                    }
+                });
+            }
+            else {
+                console.log("\u521D\u59CB\u5316\u5E7F\u544A");
+                self.initBanner();
+                self.initInter();
+                self._prepareNative();
+            }
+            moosnow.event.addListener(EventType.ON_PLATFORM_SHOW, this, this.onAppShow);
+        };
+        /**
+         * 跳转到指定App
+         * @param row
+         * @param success
+         * @param fail
+         * @param complete
+         */
+        OPPOModule.prototype.navigate2Mini = function (row, success, fail, complete) {
+            var _this = this;
+            console.log(MSG.NAVIGATE_DATA, row);
+            if (Date.now() - this.prevNavigate < 300) {
+                console.log(MSG.NAVIGATE_FAST);
+                return;
+            }
+            this.prevNavigate = Date.now();
+            if (!window[this.platformName]) {
+                if (success)
+                    success();
+                return;
+            }
+            var appid = row.appid, path = row.path, extraData = row.extraData, pkgName = row.pkgName;
+            extraData = extraData || {};
+            // 跳转小游戏按钮，支持最低平台版本号'1044' (minPlatformVersion>='1044')
+            if (!this.supportVersion(1044)) {
+                console.log(MSG.PLATFORM_UNSUPPORT);
+                return;
+            }
+            window[this.platformName].navigateToMiniGame({
+                appId: appid,
+                path: path,
+                pkgName: pkgName || appid,
+                extraData: extraData,
+                success: function () {
+                    if (window[_this.platformName] && window[_this.platformName].aldSendEvent) {
+                        window[_this.platformName].aldSendEvent('跳转', {
+                            position: row.position,
+                            appid: appid,
+                            img: row.atlas || row.img
+                        });
+                    }
+                    moosnow.http.exportUser();
+                    if (success)
+                        success();
+                },
+                fail: function (err) {
+                    console.log('navigateToMiniProgram error ', err);
+                    if (fail)
+                        fail();
+                },
+                complete: function () {
+                    if (complete)
+                        complete();
+                }
+            });
+        };
+        OPPOModule.prototype.supportVersion = function (version) {
+            var oppoSys = this.getSystemInfoSync();
+            return oppoSys.platformVersion >= version;
+        };
+        /**
+         * 游戏登录
+         * @param callback
+         * @param fail
+         */
+        // public login(callback?: Function, fail?: Function) {
+        //     moosnow.http.getAllConfig(res => {
+        //     });
+        //     let self = this;
+        //     let userToken = moosnow.data.getToken();
+        //     if (userToken) {
+        //         self.getUserToken("", userToken, callback)
+        //     }
+        //     else {
+        //         if (!this.supportVersion(1040)) {
+        //             if (Common.isFunction(callback))
+        //                 callback({})
+        //             return;
+        //         }
+        //         window[this.platformName].login({
+        //             success: (res) => {
+        //                 if (res.code) {
+        //                     //发起网络请求
+        //                     self.getUserToken(res.code, "", callback)
+        //                 } else {
+        //                     if (Common.isFunction(callback))
+        //                         callback({})
+        //                 }
+        //             },
+        //             fail: (res) => {
+        //                 if (Common.isFunction(callback))
+        //                     callback({})
+        //             }
+        //         })
+        //     }
+        // }
+        /**
+         *
+         * @param code
+         * @param user_id
+         * @param callback
+         */
+        // private getUserToken(code, user_id, callback?) {
+        //     if (!this.supportVersion(1050)) {
+        //         if (Common.isFunction(callback))
+        //             callback({});
+        //         return;
+        //     }
+        //     let options = window[this.platformName].getLaunchOptionsSync();
+        //     let channel_id = options.query && options.query.channel_id ? options.query.channel_id : "0";
+        //     let channel_appid = options.referrerInfo && options.referrerInfo.appId ? options.referrerInfo.appId : "0";
+        //     moosnow.data.setChannelAppId(channel_appid);
+        //     moosnow.data.setChannelId(channel_id);
+        //     if (window[this.platformName] && window[this.platformName].aldSendEvent) {
+        //         window[this.platformName].aldSendEvent("来源", {
+        //             origin: options.referrerInfo ? options.referrerInfo.appId : '未知',
+        //             path: options.query.from || 0
+        //         })
+        //     }
+        //     moosnow.http.request(`${this.baseUrl}api/channel/login.html`, {
+        //         appid: moosnow.platform.moosnowConfig.moosnowAppId,
+        //         code: code,
+        //         user_id: user_id,
+        //         channel_id: channel_id,
+        //         channel_appid: channel_appid
+        //     }, "POST", (respone) => {
+        //         if (respone.code == 0 && respone.data && respone.data.user_id) {
+        //             moosnow.data.setToken(respone.data.user_id);
+        //         }
+        //         if (Common.isFunction(callback))
+        //             callback(respone)
+        //     }, () => {
+        //         //如果出错，不影响游戏
+        //         if (Common.isFunction(callback))
+        //             callback({})
+        //     });
+        // }
+        OPPOModule.prototype._onBannerError = function (err) {
+            console.warn('banner___error:', err.errCode, ' msg ', err.errMsg);
+            if (this.banner) {
+                this.banner.hide();
+                this.banner.offResize(this._bottomCenterBanner);
+                this.banner.offError(this._onBannerError);
+                this.banner.offLoad(this._onBannerLoad);
+                this.banner.offHide();
+                this.banner.destroy();
+                this.banner = null;
+            }
+        };
+        OPPOModule.prototype._prepareBanner = function () {
+            if (!window[this.platformName].createBannerAd)
+                return;
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.windowWidth;
+            //横屏模式 
+            if (this.isLandscape(wxsys.windowHeight, wxsys.windowWidth)) {
+                if (windowWidth < this.bannerWidth) {
+                    this.bannerWidth = windowWidth;
+                }
+            }
+            else {
+                //竖屏
+                this.bannerWidth = windowWidth;
+            }
+            if (this.banner) {
+                this.banner.offResize(this._bottomCenterBanner);
+                this.banner.offError(this._onBannerError);
+                this.banner.offLoad(this._onBannerLoad);
+                this.banner.offHide();
+            }
+            this.banner = this._createBannerAd();
+            this.banner.onResize(this._bottomCenterBanner.bind(this));
+            this.banner.onError(this._onBannerError.bind(this));
+            this.banner.onLoad(this._onBannerLoad.bind(this));
+            this.banner.onHide(this._onBannerHide.bind(this));
+        };
+        OPPOModule.prototype._createBannerAd = function () {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createBannerAd)
+                return;
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.windowWidth;
+            var windowHeight = wxsys.windowHeight;
+            var left = (windowWidth - this.bannerWidth) / 2;
+            if (Common.isEmpty(this.bannerId)) {
+                console.warn(MSG.BANNER_KEY_IS_NULL);
+                return;
+            }
+            var styleTop = windowHeight - this.bannerHeigth;
+            var banner = window[this.platformName].createBannerAd({
+                adUnitId: this.bannerId,
+                style: {
+                    top: styleTop,
+                    left: left,
+                    width: this.bannerWidth
+                }
+            });
+            return banner;
+        };
+        OPPOModule.prototype._bottomCenterBanner = function (size) {
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.windowWidth;
+            var windowHeight = wxsys.windowHeight;
+            var statusBarHeight = wxsys.statusBarHeight;
+            var notchHeight = wxsys.notchHeight || 0;
+            this.bannerWidth = size.width;
+            this.bannerHeigth = size.height;
+            this.banner.style.left = (windowWidth - size.width) / 2;
+            var styleTop = windowHeight - this.bannerHeigth;
+            if (this.bannerPosition == BANNER_POSITION.BOTTOM) {
+                styleTop = windowHeight - this.bannerHeigth;
+            }
+            else if (this.bannerPosition == BANNER_POSITION.CENTER)
+                styleTop = (windowHeight - this.bannerHeigth) / 2;
+            else if (this.bannerPosition == BANNER_POSITION.TOP) {
+                if (this.isLandscape(wxsys.windowHeight, wxsys.windowWidth))
+                    styleTop = 0;
+                else
+                    styleTop = statusBarHeight + notchHeight;
+            }
+            else
+                styleTop = this.bannerStyle.top;
+            this.banner.style.top = styleTop;
+            console.log('_bottomCenterBanner  ', this.banner.style);
+        };
+        OPPOModule.prototype._resetBanenrStyle = function (size) {
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.windowWidth;
+            var windowHeight = wxsys.windowHeight;
+            var statusBarHeight = wxsys.statusBarHeight;
+            var notchHeight = wxsys.notchHeight || 0;
+            if (!isNaN(this.bannerWidth))
+                this.banner.style.width = this.bannerWidth;
+            if (!isNaN(this.bannerHeight))
+                this.banner.style.height = this.bannerHeight;
+            var styleTop = windowHeight - this.bannerHeigth;
+            if (this.bannerPosition == BANNER_POSITION.BOTTOM) {
+                styleTop = windowHeight - this.bannerHeigth;
+            }
+            else if (this.bannerPosition == BANNER_POSITION.CENTER)
+                styleTop = (windowHeight - this.bannerHeigth) / 2;
+            else if (this.bannerPosition == BANNER_POSITION.TOP) {
+                if (this.isLandscape(wxsys.windowHeight, wxsys.windowWidth))
+                    styleTop = 0;
+                else
+                    styleTop = statusBarHeight + notchHeight;
+            }
+            else
+                styleTop = this.bannerStyle.top;
+            this.banner.style.top = styleTop;
+            console.log('_resetBanenrStyle ', this.banner.style, 'set styleTop ', styleTop);
+        };
+        OPPOModule.prototype._onBannerHide = function () {
+            console.log('banner 已隐藏 ');
+        };
+        OPPOModule.prototype.destroyBanner = function () {
+            if (this.banner) {
+                this.banner.hide();
+                this.banner.offResize(this._bottomCenterBanner);
+                this.banner.offError(this._onBannerError);
+                this.banner.offLoad(this._onBannerLoad);
+                this.banner.offHide();
+                this.banner.destroy();
+                this.banner = null;
+            }
+        };
+        /**
+         *
+         * @param callback 点击回调
+         * @param position banner的位置，默认底部
+         * @param style 自定义样式
+         */
+        OPPOModule.prototype.showBanner = function (callback, position, style) {
+            var _this = this;
+            if (position === void 0) { position = BANNER_POSITION.BOTTOM; }
+            console.log(MSG.BANNER_SHOW);
+            this.bannerCb = callback;
+            this.isBannerShow = true;
+            if (!window[this.platformName]) {
+                return;
+            }
+            // this.bannerPosition = position;
+            // if (this.banner) {
+            //     if (this.bannerPosition != position) {
+            //         this.bannerPosition = position;
+            //         this.bannerStyle = style;
+            //         this.destroyBanner();
+            //         this._prepareBanner();
+            //         console.log('位置要更换,销毁重建');
+            //     }
+            // }
+            // else {
+            //     this.bannerPosition = position;
+            //     this.bannerStyle = style;
+            //     this.initBanner();
+            // }
+            if (this.banner) {
+                // let wxsys = this.getSystemInfoSync();
+                // let windowWidth = wxsys.windowWidth;
+                // let windowHeight = wxsys.windowHeight;
+                // if (position == BannerPosition.Bottom) {
+                // }
+                // this.banner.top = 1
+                // this.banner.hide();
+                // console.log('show banner style 1', this.banner.style)
+                // console.log('show banner style 2', this.banner.style)
+                // this.banner.hide();
+                this._resetBanenrStyle({
+                    width: this.banner.style.width,
+                    height: this.banner.style.height
+                });
+                this.banner.show();
+                setTimeout(function () {
+                    _this._resetBanenrStyle({
+                        width: _this.banner.style.width,
+                        height: _this.banner.style.height
+                    });
+                }, 500);
+                // .then(() => {
+                //     this._resetBanenrStyle({
+                //         width: this.banner.style.width,
+                //         height: this.banner.style.height
+                //     });
+                // })
+            }
+            else {
+                this.initBanner();
+            }
+        };
+        OPPOModule.prototype.hideBanner = function () {
+            console.log(MSG.HIDE_BANNER);
+            if (!this.isBannerShow)
+                return;
+            if (!window[this.platformName]) {
+                return;
+            }
+            this.bannerShowCount++;
+            if (this.banner) {
+                if (this.bannerShowCount >= this.bannerShowCountLimit) {
+                    console.log('banner destroy');
+                    this.banner.hide();
+                    this.banner.offResize(this._bottomCenterBanner);
+                    this.banner.offError(this._onBannerError);
+                    this.banner.offLoad(this._onBannerLoad);
+                    this.banner.offHide();
+                    this.banner.destroy();
+                    this.banner = null;
+                    console.log('重新创建banner');
+                    this._prepareBanner();
+                }
+                else {
+                    this.banner.hide();
+                }
+            }
+            else {
+                this._prepareBanner();
+            }
+            this.isBannerShow = false;
+        };
+        OPPOModule.prototype.createRewardAD = function (show) {
+            if (moosnow.platform.videoLoading) {
+                return;
+            }
+            if (!window[this.platformName]) {
+                moosnow.platform.videoCb(VIDEO_STATUS.END);
+                return;
+            }
+            if (!window[this.platformName].createRewardedVideoAd) {
+                return;
+            }
+            if (this.video) {
+                this.video.offClose(this._onVideoClose);
+                this.video.offError(this._onVideoError);
+                this.video.offLoad(this._onVideoLoad);
+            }
+            else {
+                if (Common.isEmpty(this.videoId)) {
+                    console.warn(MSG.VIDEO_KEY_IS_NULL);
+                    return;
+                }
+                this.video = window[this.platformName].createRewardedVideoAd({
+                    adUnitId: this.videoId
+                });
+            }
+            this.video.onError(this._onVideoError.bind(this));
+            this.video.onClose(this._onVideoClose.bind(this));
+            this.video.onLoad(this._onVideoLoad.bind(this));
+            moosnow.platform.videoLoading = true;
+            this.video.load();
+        };
+        OPPOModule.prototype._onVideoLoad = function () {
+            console.log(MSG.VIDEO_LOAD_COMPLETED);
+            moosnow.platform.videoLoading = false;
+            if (this.video) {
+                this.video.show();
+            }
+        };
+        OPPOModule.prototype.prepareInter = function () {
+            if (Common.isEmpty(this.interId)) {
+                console.warn(MSG.INTER_KEY_IS_NULL);
+                return;
+            }
+            if (!window[this.platformName])
+                return;
+            if (this.supportVersion("1061")) {
+                if (typeof window[this.platformName].createInterstitialAd != "function")
+                    return;
+                this.inter = window[this.platformName].createInterstitialAd({
+                    adUnitId: this.interId
+                });
+                this.inter.onLoad(this._onInterLoad.bind(this));
+                this.inter.onClose(this._onInterClose.bind(this));
+                this.inter.load();
+            }
+            else {
+                if (typeof window[this.platformName].createInsertAd != "function")
+                    return;
+                this.inter = window[this.platformName].createInsertAd({
+                    adUnitId: this.interId
+                });
+                this.inter.onLoad(this._onInterLoad.bind(this));
+                this.inter.onShow(this._onInterOnShow.bind(this));
+                this.inter.load();
+            }
+        };
+        ;
+        OPPOModule.prototype.showInter = function () {
+            if (this.inter)
+                this.inter.show();
+            else
+                this.interLoadedShow = true;
+        };
+        OPPOModule.prototype._onInterLoad = function () {
+            if (this.interLoadedShow) {
+                if (this.inter) {
+                    this.inter.show();
+                }
+                else
+                    this.interLoadedShow = false;
+            }
+        };
+        OPPOModule.prototype._onInterOnShow = function () {
+            if (this.inter)
+                this.inter.load();
+        };
+        OPPOModule.prototype.showAutoBanner = function () {
+            console.log(' oppo 不支持自动');
+        };
+        OPPOModule.prototype.reportMonitor = function (name, value) {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].reportMonitor)
+                return;
+            window[this.platformName].reportMonitor('game_scene', 0);
+        };
+        OPPOModule.prototype._prepareNative = function () {
+            if (!window[this.platformName])
+                return;
+            if (typeof window[this.platformName].createNativeAd != "function")
+                return;
+            this.native = window[this.platformName].createNativeAd({
+                adUnitId: parseInt("" + this.nativeId[this.nativeIdIndex])
+            });
+            this.native.onLoad(this._onNativeLoad.bind(this));
+            this.native.onError(this._onNativeError.bind(this));
+            this.nativeLoading = true;
+            // this.native.load()
+        };
+        OPPOModule.prototype._onNativeLoad = function (res) {
+            this.nativeLoading = false;
+            console.log(MSG.NATIVE_LOAD_COMPLETED, res);
+            if (res && res.adList && res.adList.length > 0) {
+                this.nativeAdResult = res.adList[0];
+                if (!Common.isEmpty(this.nativeAdResult.adId)) {
+                    console.log(MSG.NATIVE_REPORT);
+                    this.native.reportAdShow({
+                        adId: this.nativeAdResult.adId
+                    });
+                }
+                if (Common.isFunction(this.nativeCb)) {
+                    this.nativeCb(Common.deepCopy(this.nativeAdResult));
+                }
+            }
+            else {
+                console.log(MSG.NATIVE_LIST_NULL);
+                if (Common.isFunction(this.nativeCb)) {
+                    this.nativeCb(null);
+                }
+            }
+        };
+        OPPOModule.prototype._onNativeError = function (err) {
+            this.nativeLoading = false;
+            this.nativeAdResult = null;
+            if (err.code == 20003) {
+                if (this.nativeIdIndex < this.nativeId.length - 1) {
+                    console.log(MSG.NATIVE_ERROR, err);
+                    this.nativeIdIndex += 1;
+                    this._destroyNative();
+                    this._prepareNative();
+                }
+                else {
+                    console.log(MSG.NATIVE_NOT_ID_USE);
+                    this.nativeIdIndex = 0;
+                    if (Common.isFunction(this.nativeCb)) {
+                        this.nativeCb(null);
+                    }
+                }
+            }
+            else {
+                console.log(MSG.NATIVE_ERROR2, err);
+                if (Common.isFunction(this.nativeCb)) {
+                    this.nativeCb(null);
+                }
+            }
+        };
+        OPPOModule.prototype._destroyNative = function () {
+            this.nativeLoading = false;
+            this.native.offLoad(); // 移除原生广告加载成功回调
+            this.native.offError(); // 移除失败回调
+            this.native.destroy(); // 隐藏 banner，成功回调 onHide, 出错的时候回调 onError
+            console.log(MSG.NATIVE_DESTROY);
+        };
+        /**
+        * 目前只有OPPO平台有此功能
+        * 返回原生广告数据，开发者根据返回的数据来展现
+        * 没有广告返回null
+        *
+        *
+        * 例如 cocos
+        * let adData=moosnow.platform.getNativeAd();
+        * cc.loader.load(adData.imgUrlList[0], (err, texture) => {
+        *   adImg.active = true
+        *   adImg.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+        * })
+        *
+        * 例如 laya
+        * let adData=moosnow.platform.getNativeAd();
+        * new Laya.Image().skin=adData.imgUrlList[0];
+        *
+        * @param callback 回调函数
+        */
+        OPPOModule.prototype.showNativeAd = function (callback) {
+            this.nativeCb = callback;
+            if (this.native)
+                this.native.load();
+            // if (!this.nativeLoading && !Common.isEmpty(this.nativeAdResult)) {
+            //     let nativeData = Common.deepCopy(this.nativeAdResult)
+            //     callback(nativeData)
+            // }
+        };
+        /**
+         * 目前只有OPPO平台有此功能
+         * 用户点击了展示原生广告的图片时，使用此方法
+         * 例如 cocos
+         * this.node.on(CocosNodeEvent.TOUCH_END, () => {
+         *     moosnow.platform.clickNative();
+         * }, this)
+         *
+         *
+         * 例如 laya
+         * (new Laya.Image()).on(Laya.Event.MOUSE_UP, this, () => {
+         *     moosnow.platform.clickNative();
+         * })
+         *
+         */
+        OPPOModule.prototype.clickNative = function (callback) {
+            if (this.nativeAdResult && !Common.isEmpty(this.nativeAdResult.adId)) {
+                this.mClickedNativeCallback = callback;
+                this.mIsClickedNative = true;
+                console.log(MSG.NATIVE_NOT_ID_USE, this.nativeAdResult.adId);
+                this.native.reportAdClick({
+                    adId: this.nativeAdResult.adId
+                });
+            }
+        };
+        OPPOModule.prototype.onAppShow = function () {
+            if (this.mIsClickedNative) {
+                this.mIsClickedNative = false;
+                if (Common.isFunction(this.mClickedNativeCallback))
+                    this.mClickedNativeCallback();
+            }
+        };
+        return OPPOModule;
+    }(PlatformModule));
+
+    var GameDataCenter = /** @class */ (function (_super) {
+        __extends(GameDataCenter, _super);
+        function GameDataCenter() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.TOKEN = "token";
+            _this.COIN = "COIN";
+            _this.mUserToken = "";
+            _this.VIBRATE_SWITCH = "VIBRATE_SWITCH";
+            _this.mCoin = 0;
+            _this.mCurrentMisTouchCount = 0;
+            _this.mChannel_id = "0";
+            _this.mChannel_appid = "0";
+            return _this;
+        }
+        /***********
+         * 金币
+         */
+        GameDataCenter.prototype.initCoin = function (num) {
+            if (moosnow.setting._getValue(this.COIN, null) == null)
+                moosnow.setting.setValue(this.COIN, num);
+        };
+        GameDataCenter.prototype.getCoin = function () {
+            if (this.mCoin == 0)
+                this.mCoin = moosnow.setting.getInt(this.COIN, 0);
+            return this.mCoin;
+        };
+        GameDataCenter.prototype.subCoin = function (v) {
+            this.mCoin -= v;
+            moosnow.event.sendEventImmediately(EventType.COIN_CHANGED, this.mCoin);
+        };
+        GameDataCenter.prototype.addCoin = function (v) {
+            this.mCoin += v;
+            moosnow.event.sendEventImmediately(EventType.COIN_CHANGED, this.mCoin);
+        };
+        GameDataCenter.prototype.setCoin = function (v) {
+            this.mCoin = v;
+            moosnow.event.sendEventImmediately(EventType.COIN_CHANGED, this.mCoin);
+        };
+        GameDataCenter.prototype.saveCoin = function () {
+            moosnow.setting.setValue(this.COIN, this.mCoin);
+            // Lite.event.sendEventImmediately(EventType.COIN_CHANGED, this.mCoin);
+        };
+        GameDataCenter.prototype.getToken = function () {
+            if (Common.isEmpty(this.mUserToken))
+                this.mUserToken = moosnow.setting.getString(this.TOKEN, "");
+            return this.mUserToken;
+        };
+        GameDataCenter.prototype.setToken = function (v) {
+            moosnow.setting.setValue(this.TOKEN, v);
+        };
+        GameDataCenter.prototype.getCurrentMisTouchCount = function () {
+            // if (!this.mCurrentMisTouchCount)
+            //     this.mCurrentMisTouchCount = Lite.setting.getInt(this.MIS_TOUCH_POS_COUNT, 0);
+            return this.mCurrentMisTouchCount;
+        };
+        GameDataCenter.prototype.setCurrentMisTouchCount = function (num) {
+            this.mCurrentMisTouchCount = num;
+            // Lite.setting.setValue(this.MIS_TOUCH_POS_COUNT, num);
+        };
+        GameDataCenter.prototype.getChannelId = function () {
+            return this.mChannel_id;
+        };
+        GameDataCenter.prototype.setChannelId = function (value) {
+            this.mChannel_id = value;
+        };
+        GameDataCenter.prototype.getChannelAppId = function () {
+            return this.mChannel_appid;
+        };
+        GameDataCenter.prototype.setChannelAppId = function (value) {
+            this.mChannel_appid = value;
+        };
+        //振动
+        GameDataCenter.prototype.getVibrateSetting = function () {
+            return moosnow.setting.getBool(this.VIBRATE_SWITCH, true);
+        };
+        GameDataCenter.prototype.setVibrateSetting = function (on) {
+            moosnow.setting.setBool(this.VIBRATE_SWITCH, on);
+            moosnow.event.sendEventImmediately(EventType.VIBRATESWITCH_CHANGED, on);
+        };
+        return GameDataCenter;
+    }(BaseModule));
+
+    var SettingModule = /** @class */ (function (_super) {
+        __extends(SettingModule, _super);
+        function SettingModule() {
+            return _super.call(this) || this;
+        }
+        SettingModule.prototype.onEnable = function () {
+        };
+        SettingModule.prototype.getInt = function (k, defaultValue) {
+            var v = this._getValue(k, defaultValue);
+            return parseInt(v);
+        };
+        SettingModule.prototype.getFloat = function (k, defaultValue) {
+            var v = this._getValue(k, defaultValue);
+            return parseFloat(v);
+        };
+        SettingModule.prototype.getBool = function (k, defaultValue) {
+            var defaultValueTemp;
+            if (defaultValue == true) {
+                defaultValueTemp = 'true';
+            }
+            else {
+                defaultValueTemp = 'false';
+            }
+            var v = this.getString(k, defaultValueTemp);
+            if (v == 'true') {
+                return true;
+            }
+            return false;
+        };
+        SettingModule.prototype.getString = function (k, defaultValue) {
+            return this._getValue(k, defaultValue);
+        };
+        SettingModule.prototype.getObject = function (k, defaultValue) {
+            var v = this._getValue(k, defaultValue);
+            if (!v || v == '') {
+                return null;
+            }
+            return JSON.parse(v);
+        };
+        //---------------------------------------------
+        SettingModule.prototype.setObject = function (k, v) {
+            var vStr = '';
+            if (v) {
+                vStr = JSON.stringify(v);
+            }
+            this.setValue(k, vStr);
+        };
+        SettingModule.prototype.setBool = function (k, v) {
+            if (v == true) {
+                this.setValue(k, 'true');
+            }
+            else {
+                this.setValue(k, 'false');
+            }
+        };
+        SettingModule.prototype.setValue = function (k, v) {
+            window.localStorage.setItem(k, v);
+        };
+        /**
+         * 追加整数形
+         */
+        SettingModule.prototype.appendInt = function (k, v) {
+            var vint = this.getInt(k, 0);
+            var v2Save = parseInt(v) + vint;
+            this.setValue(k, v2Save);
+            return v2Save;
+        };
+        SettingModule.prototype.appendFloat = function (k, v) {
+            var vf = this.getFloat(k, 0);
+            var v2Save = parseFloat(v) + vf;
+            this.setValue(k, v2Save);
+        };
+        //-------------------------------------------------
+        SettingModule.prototype.removeValueOfKey = function (key) {
+            window.localStorage.removeItem(key);
+        };
+        SettingModule.prototype.removeAll = function () {
+            window.localStorage.clear();
+        };
+        //-------------------------------------------------
+        SettingModule.prototype._getValue = function (k, defaultValue) {
+            var value = window.localStorage.getItem(k);
+            if (value == null || value == '') {
+                value = defaultValue;
+            }
+            return value;
+        };
+        return SettingModule;
+    }(BaseModule));
+
+    var OPPOAdModule = /** @class */ (function (_super) {
+        __extends(OPPOAdModule, _super);
+        function OPPOAdModule() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        OPPOAdModule.prototype.getRemoteAd = function (cb) {
+            var _this = this;
+            var url = "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/exportConfig/" + moosnow.platform.moosnowConfig.moosnowAppId + ".json?t=" + Date.now();
+            moosnow.http.request(url, {}, 'GET', function (res) {
+                cb(res);
+                console.log('WXAdModule getRemoteAd', res);
+            }, function () {
+                _super.prototype.getRemoteAd.call(_this, cb);
+                console.log('getRemoteAd fail');
+            }, function () {
+                console.log('getRemoteAd complete');
+            });
+        };
+        return OPPOAdModule;
+    }(AdModule));
+
+    var WXAdModule = /** @class */ (function (_super) {
+        __extends(WXAdModule, _super);
+        function WXAdModule() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        WXAdModule.prototype.getRemoteAd = function (cb) {
+            var _this = this;
+            var url = "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/exportConfig/" + moosnow.platform.moosnowConfig.moosnowAppId + ".json?t=" + Date.now();
+            moosnow.http.request(url, {}, 'GET', function (res) {
+                cb(res);
+                console.log('WXAdModule getRemoteAd', res);
+            }, function (error) {
+                _this.repairAd(cb);
+                console.log('getRemoteAd fail');
+            }, function () {
+                console.log('getRemoteAd complete');
+            });
+        };
+        WXAdModule.prototype.repairAd = function (cb) {
+            var url = this.baseUrl + 'wx_export/getExport';
+            var signParams = {
+                appid: moosnow.platform.moosnowConfig.moosnowAppId,
+            };
+            var data = signParams;
+            moosnow.http.request(url, data, 'POST', function (res) {
+                var arr = res.data;
+                arr.sort(function () { return Math.random() > 0.5 ? 1 : -1; });
+                if (cb) {
+                    cb(res.data);
+                }
+            }, function () {
+                cb([]);
+                console.log('getRemoteAd fail');
+            }, function () {
+                console.log('getRemoteAd complete');
+            });
+        };
+        return WXAdModule;
+    }(AdModule));
+
+    var SHARE_CHANNEL = {
+        ARTICLE: "article",
+        VIDEO: "video",
+        TOKEN: "token",
+        LINK: ""
+    };
+
+    /**
+     * banner位置
+     */
+    var appLaunchOption = /** @class */ (function () {
+        function appLaunchOption() {
+        }
+        return appLaunchOption;
+    }());
+
+    var TTModule = /** @class */ (function (_super) {
+        __extends(TTModule, _super);
+        function TTModule() {
+            var _this = _super.call(this) || this;
+            _this.platformName = "tt";
+            _this.recordRes = null;
+            _this.recordCb = null;
+            _this.recordNumber = 0;
+            _this.bannerWidth = 208;
+            _this.moreGameCb = null;
+            _this.mBannerLoaded = false;
+            _this._regisiterWXCallback();
+            _this._registerTTCallback();
+            _this.initBanner();
+            _this.initRecord();
+            _this.initInter();
+            return _this;
+        }
+        TTModule.prototype._registerTTCallback = function () {
+            var _this = this;
+            if (!window[this.platformName])
+                return;
+            // 监听弹窗关闭
+            if (window[this.platformName].onMoreGamesModalClose)
+                window[this.platformName].onMoreGamesModalClose(function (res) {
+                    console.log("modal closed", res);
+                    if (_this.moreGameCb)
+                        _this.moreGameCb(0);
+                });
+            // 监听小游戏跳转
+            if (window[this.platformName].onNavigateToMiniGameBox) {
+                window[this.platformName].onNavigateToMiniGameBox(function (res) {
+                    console.log('onNavigateToMiniGameBox', res);
+                });
+            }
+            else if (window[this.platformName].onNavigateToMiniProgram)
+                window[this.platformName].onNavigateToMiniProgram(function (res) {
+                    console.log('onNavigateToMiniProgram', res);
+                });
+        };
+        TTModule.prototype.prepareInter = function () {
+            if (!window[this.platformName])
+                return;
+            if (typeof window[this.platformName].createInterstitialAd != "function")
+                return;
+            if (Common.isEmpty(this.interId)) {
+                console.warn(MSG.INTER_KEY_IS_NULL);
+                return;
+            }
+            this.inter = window[this.platformName].createInterstitialAd({
+                adUnitId: this.interId
+            });
+            this.inter.onLoad(this._onInterLoad.bind(this));
+            this.inter.onClose(this._onInterClose.bind(this));
+            this.inter.load();
+        };
+        TTModule.prototype._bottomCenterBanner = function (size) {
+            if (this.bannerWidth != size.width) {
+                var wxsys = this.getSystemInfoSync();
+                var windowWidth = wxsys.windowWidth;
+                var windowHeight = wxsys.windowHeight;
+                this.bannerWidth = size.width;
+                this.bannerHeigth = (this.bannerWidth / 16) * 9; // 根据系统约定尺寸计算出广告高度
+                var top_1 = windowHeight - this.bannerHeigth - 30;
+                console.log('bannerWidth ', this.bannerWidth, 'bannerHeigth', this.bannerHeigth, 'top', top_1);
+                if (this.banner) {
+                    this.banner.style.top = top_1;
+                    this.banner.style.left = (windowWidth - size.width) / 2;
+                }
+            }
+        };
+        TTModule.prototype.initRecord = function () {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].getGameRecorderManager)
+                return;
+            // if (!this.isDouyin()) return;
+            this.record = window[this.platformName].getGameRecorderManager();
+        };
+        TTModule.prototype.clipRecord = function () {
+            if (!this.record)
+                return;
+            this.recordNumber++;
+            console.log('clipRecord', this.recordNumber);
+            this.record.recordClip({
+                timeRange: [2, 2],
+                success: function (r) {
+                    console.log('clipRecord 成功 ', r);
+                }
+            });
+        };
+        /**
+         * 开始录屏
+         * @param duration 录屏时长
+         * @param callback 如果不是抖音回调参数=false
+         */
+        TTModule.prototype.startRecord = function (duration, callback) {
+            var _this = this;
+            if (duration === void 0) { duration = 300; }
+            if (callback === void 0) { callback = null; }
+            console.log('record startRecord');
+            if (!this.record) {
+                if (callback)
+                    callback(false);
+                return;
+            }
+            this.recordNumber = 0;
+            this.recordCb = null;
+            this.recordRes = null;
+            this.record.onStart(function (res) {
+                console.log('record onStart');
+                if (callback)
+                    callback(res);
+            });
+            var recordRes = this.recordRes;
+            this.record.onStop(function (res) {
+                console.log('on stop ', res);
+                if (_this.recordNumber >= 4) {
+                    _this.record.clipVideo({
+                        path: res.videoPath,
+                        success: function (r) {
+                            console.log('record clip succes:', r);
+                            _this.recordRes = r;
+                            console.log('record clip recordRes :', _this.recordRes);
+                            if (_this.recordCb)
+                                _this.recordCb(r);
+                        },
+                        fail: function () {
+                            console.log('record clip fail:', res);
+                            _this.recordRes = res;
+                            if (_this.recordCb)
+                                _this.recordCb(res);
+                        }
+                    });
+                }
+                else {
+                    _this.recordRes = res;
+                    if (_this.recordCb)
+                        _this.recordCb(res);
+                }
+            });
+            this.record.start({
+                duration: duration
+            });
+        };
+        /**
+         * 停止录屏
+         * @param callback 如果不是抖音回调参数=false，如果录制成功，回调参数中录屏地址=res.videoPath
+         */
+        TTModule.prototype.stopRecord = function (callback) {
+            if (callback === void 0) { callback = null; }
+            console.log(' stop Record  callback  ', !!callback);
+            if (!this.record) {
+                if (callback)
+                    callback(false);
+                return;
+            }
+            console.log('record stop recordRes ', this.recordRes);
+            if (this.recordRes) {
+                if (Common.isFunction(callback))
+                    callback(this.recordRes);
+            }
+            else {
+                this.recordCb = callback;
+                this.record.stop();
+                console.log('record stop  ', this.recordRes);
+            }
+        };
+        TTModule.prototype.pauseRecord = function () {
+            if (this.record)
+                this.record.pause();
+        };
+        TTModule.prototype.resumeRecord = function () {
+            if (this.record)
+                this.record.resume();
+        };
+        /**
+         * 分享
+         * @param query 分享参数 { channel:moosnow.SHARE_CHANNEL.LINK }
+         * SHARE_CHANNEL.LINK, SHARE_CHANNEL.ARTICLE, SHARE_CHANNEL.TOKEN, SHARE_CHANNEL.VIDEO 可选 仅字节跳动有效
+         * @param callback 分享成功回调参数 = true, 分享失败回调参数 = false,
+         */
+        TTModule.prototype.share = function (query, callback) {
+            if (query === void 0) { query = {}; }
+            this.currentShareCallback = callback;
+            var shareInfo = this._buildShareInfo(query);
+            console.log('shareInfo:', shareInfo);
+            if (!window[this.platformName]) {
+                this.currentShareCallback(true);
+                return;
+            }
+            ;
+            ;
+            if (!window[this.platformName].shareAppMessage) {
+                this.currentShareCallback(true);
+                return;
+            }
+            ;
+            window[this.platformName].shareAppMessage(shareInfo);
+        };
+        TTModule.prototype._buildShareInfo = function (query) {
+            var _this = this;
+            var title = "", imageUrl = "";
+            if (this.shareInfoArr.length > 0) {
+                var item = this.shareInfoArr[MathUtils.randomNumBoth(0, this.shareInfoArr.length - 1)];
+                title = item.title;
+                imageUrl = item.img;
+            }
+            var channel = SHARE_CHANNEL.ARTICLE;
+            if (query && [SHARE_CHANNEL.LINK, SHARE_CHANNEL.ARTICLE, SHARE_CHANNEL.TOKEN, SHARE_CHANNEL.VIDEO].indexOf(query.channel) != -1) {
+                channel = query.channel;
+            }
+            // console.log('this. recordRes ', this.recordRes)
+            var videoPath = (this.recordRes && this.recordRes.videoPath) ? this.recordRes.videoPath : "";
+            console.log('video path ', videoPath);
+            return {
+                channel: channel,
+                title: title,
+                imageUrl: imageUrl,
+                query: moosnow.http._object2Query(query),
+                extra: {
+                    videoPath: videoPath,
+                    videoTopics: [title]
+                },
+                success: function () {
+                    console.log('share video success ');
+                    if (_this.currentShareCallback)
+                        _this.currentShareCallback(true);
+                },
+                fail: function (e) {
+                    console.log('share video success ', e);
+                    if (_this.currentShareCallback)
+                        _this.currentShareCallback(false);
+                }
+            };
+        };
+        TTModule.prototype._onBannerLoad = function () {
+            this.bannerShowCount = 0;
+            this.mBannerLoaded = true;
+            if (this.isBannerShow) {
+                this.showBanner();
+            }
+        };
+        TTModule.prototype._prepareBanner = function () {
+            this.mBannerLoaded = false;
+            _super.prototype._prepareBanner.call(this);
+        };
+        TTModule.prototype._resetBanenrStyle = function (size) {
+            if (Common.isEmpty(size)) {
+                console.log('设置的banner尺寸为空,不做调整');
+                return;
+            }
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.windowWidth;
+            var windowHeight = wxsys.windowHeight;
+            var top = 0;
+            if (this.bannerPosition == BANNER_POSITION.BOTTOM) {
+                top = windowHeight - this.bannerHeigth - 30;
+            }
+            else if (this.bannerPosition == BANNER_POSITION.CENTER)
+                top = (windowHeight - this.bannerHeigth) / 2;
+            else if (this.bannerPosition == BANNER_POSITION.TOP)
+                top = 0;
+            if (this.bannerStyle) {
+                this.banner.style = this.bannerStyle;
+            }
+            else {
+                this.banner.style.top = top;
+                console.log(MSG.BANNER_RESIZE, this.banner.style, 'set top ', top);
+            }
+        };
+        /**
+        *
+        * @param callback 点击回调
+        * @param position banner的位置，默认底部
+        * @param style 自定义样式
+        */
+        TTModule.prototype.showBanner = function (callback, position, style) {
+            var _this = this;
+            if (position === void 0) { position = BANNER_POSITION.BOTTOM; }
+            // if (this.isBannerShow)
+            //     return;
+            console.log(MSG.BANNER_SHOW);
+            this.bannerCb = callback;
+            this.isBannerShow = true;
+            if (!this.mBannerLoaded) {
+                return;
+            }
+            if (!window[this.platformName]) {
+                return;
+            }
+            this.bannerPosition = position;
+            this.bannerStyle = style;
+            if (this.banner) {
+                // let wxsys = this.getSystemInfoSync();
+                // let windowWidth = wxsys.windowWidth;
+                // let windowHeight = wxsys.windowHeight;
+                // if (position == BannerPosition.Bottom) {
+                // }
+                // this.banner.top = 1
+                console.log('show banner style ', this.banner.style);
+                // this.hideBanner();
+                this.banner.hide();
+                this._resetBanenrStyle({
+                    width: this.banner.style.width,
+                    height: this.banner.style.realHeight
+                });
+                this.banner.show().then(function () {
+                    _this._resetBanenrStyle({
+                        width: _this.banner.style.width,
+                        height: _this.banner.style.realHeight
+                    });
+                });
+            }
+        };
+        /**
+        * 盒子广告
+        * @param callback 关闭回调
+        * @param remoteOn 被后台开关控制
+        */
+        TTModule.prototype.showAppBox = function (callback, remoteOn) {
+            var _this = this;
+            if (remoteOn === void 0) { remoteOn = true; }
+            this.moreGameCb = callback;
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].showMoreGamesModal)
+                return;
+            moosnow.http.getAllConfig(function (res) {
+                if (remoteOn) {
+                    if (res && res.showAppBox == 1) {
+                        _this._showMoreGamesModal();
+                    }
+                }
+                else {
+                    _this._showMoreGamesModal();
+                }
+            });
+        };
+        TTModule.prototype._getAppLaunchOptions = function (callback) {
+            var appLaunchOptions = [];
+            moosnow.ad.getAd(function (res) {
+                if (res.indexLeft.length == 0)
+                    return;
+                res.indexLeft.forEach(function (item) {
+                    var opt = new appLaunchOption();
+                    opt.appId = item.appid;
+                    opt.query = item.path || "1=1";
+                    opt.extraData = item.extraData || {};
+                    appLaunchOptions.push(opt);
+                });
+                console.log('appLaunchOptions', appLaunchOptions);
+                callback(appLaunchOptions);
+            });
+        };
+        TTModule.prototype._showMoreGamesModal = function () {
+            var _this = this;
+            var systemInfo = this.getSystemInfoSync();
+            // iOS 不支持，建议先检测再使用
+            if (systemInfo.platform == "ios")
+                return;
+            // 打开互跳弹窗
+            this._getAppLaunchOptions(function (appLaunchOptions) {
+                console.log('_showMoreGamesModal appLaunchOption', appLaunchOptions);
+                var banner = window[_this.platformName].showMoreGamesModal({
+                    appLaunchOptions: appLaunchOptions,
+                    success: function (res) {
+                        console.log("show app box success", res);
+                    },
+                    fail: function (res) {
+                        console.log("show app box fail", res);
+                    }
+                });
+            });
+        };
+        TTModule.prototype.showMoreGameBanner = function () {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createMoreGamesBanner)
+                return;
+            var systemInfo = this.getSystemInfoSync();
+            if (systemInfo.platform == "ios")
+                return;
+            // iOS 不支持，建议先检测再使用
+            if (systemInfo.platform !== "ios") {
+                // 打开互跳弹窗
+                var appLaunchOptions_1 = [];
+                moosnow.ad.getAd(function (res) {
+                    if (res.indexLeft.length == 0)
+                        return;
+                    res.indexLeft.forEach(function (item) {
+                        var opt = new appLaunchOption();
+                        opt.appId = item.appid;
+                        opt.query = item.path || "1=1";
+                        opt.extraData = item.extraData || {};
+                        appLaunchOptions_1.push(opt);
+                    });
+                });
+                var banner = window[this.platformName].createMoreGamesBanner({
+                    style: {
+                        left: 20,
+                        top: 0,
+                        width: 150,
+                        height: 40
+                    },
+                    appLaunchOptions: appLaunchOptions_1,
+                    success: function (res) {
+                        console.log("show app box success", res.errMsg);
+                    },
+                    fail: function (res) {
+                        console.log("show app box fail", res.errMsg);
+                    }
+                });
+                banner.show();
+                banner.onTap(function () {
+                    console.log("点击跳转游戏盒子");
+                });
+            }
+        };
+        TTModule.prototype.showMoreGameButton = function (url, callback, style) {
+            var _this = this;
+            if (style === void 0) { style = null; }
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createMoreGamesButton)
+                return;
+            var ttsys = this.getSystemInfoSync();
+            var defaultStyle = {
+                left: ttsys.windowWidth - 80 - 30,
+                top: 40,
+                width: 80,
+                height: 80,
+                lineHeight: 80,
+                backgroundColor: "#ff0000",
+                textColor: "#ffffff",
+                textAlign: "center",
+                fontSize: 16,
+                borderRadius: 0,
+                borderWidth: 1,
+                borderColor: "#ff0000"
+            };
+            var buttonStyle = __assign(__assign({}, defaultStyle), style);
+            if (!this._moreGameBotton)
+                this._getAppLaunchOptions(function (appLaunchOptions) {
+                    cc.loader.loadRes('texture/game/more.png', cc.Texture2D, function (error, tex) {
+                        if (error)
+                            return;
+                        _this._moreGameBotton = window[_this.platformName].createMoreGamesButton({
+                            type: "image",
+                            image: tex.url,
+                            actionType: "box",
+                            style: buttonStyle,
+                            appLaunchOptions: appLaunchOptions,
+                            onNavigateToMiniGame: function (res) {
+                                console.log("跳转其他小游戏", res);
+                                if (callback)
+                                    callback(1, res);
+                            }
+                        });
+                        _this._moreGameBotton.show();
+                        _this._moreGameBotton.onTap(function () {
+                            console.log("点击更多游戏");
+                            if (callback)
+                                callback(2, null);
+                        });
+                    });
+                });
+            else
+                this._moreGameBotton.show();
+        };
+        TTModule.prototype.hideMoreGameButton = function () {
+            if (this._moreGameBotton) {
+                this._moreGameBotton.hide();
+                // this._moreGameBotton.destory();
+            }
+        };
+        /***
+         * 检测Iphone
+         */
+        TTModule.prototype.isIphone = function () {
+            if (!window[this.platformName])
+                return false;
+            var systemInfo = this.getSystemInfoSync();
+            if (systemInfo.platform == "ios")
+                return true;
+            return false;
+        };
+        TTModule.prototype.navigate2Mini = function (row, success, fail, complete) {
+            console.log('tt navigate2Mini ');
+            this.showAppBox(function () {
+                console.log('tt showAppBox close ');
+            }, false);
+        };
+        return TTModule;
+    }(PlatformModule));
+
+    var QQModule = /** @class */ (function (_super) {
+        __extends(QQModule, _super);
+        function QQModule() {
+            var _this = _super.call(this) || this;
+            _this.platformName = "qq";
+            _this._regisiterWXCallback();
+            _this.initBanner();
+            return _this;
+        }
+        QQModule.prototype._createBannerAd = function () {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createBannerAd)
+                return;
+            var height = this.bannerHeigth = Math.round(this.bannerWidth / 300 * 72.8071);
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.screenWidth;
+            var windowHeight = wxsys.screenHeight;
+            var centerPos = (windowWidth - this.bannerWidth) / 2;
+            var top = windowHeight - height / 2;
+            if (Common.isEmpty(this.bannerId)) {
+                console.warn(MSG.BANNER_KEY_IS_NULL);
+                return;
+            }
+            console.log('create banner by banner id ', this.bannerId);
+            var style = {
+                top: top,
+                left: centerPos,
+                width: this.bannerWidth,
+                height: height
+            };
+            console.log('create banner style ', style);
+            var banner = window[this.platformName].createBannerAd({
+                adUnitId: this.bannerId,
+                style: style
+            });
+            return banner;
+        };
+        /**
+           *
+           * @param callback 点击回调
+           * @param position banner的位置，默认底部
+           * @param style 自定义样式
+           */
+        QQModule.prototype.showBanner = function (callback, position, style) {
+            var _this = this;
+            if (position === void 0) { position = BANNER_POSITION.BOTTOM; }
+            console.log(MSG.BANNER_SHOW);
+            this.bannerCb = callback;
+            this.isBannerShow = true;
+            if (!window[this.platformName]) {
+                return;
+            }
+            this.bannerPosition = position;
+            this.bannerStyle = style;
+            this._resetBanenrStyle({});
+            if (this.banner) {
+                var t = this.banner.show();
+                if (t)
+                    t.then(function () {
+                        _this._resetBanenrStyle({});
+                    });
+            }
+        };
+        QQModule.prototype._bottomCenterBanner = function (size) {
+            // 尺寸调整时会触发回调         
+            // 注意：如果在回调里再次调整尺寸，要确保不要触发死循环！！！  
+            console.log('Resize后正式宽高:', size.width, size.height);
+            // this._resetBanenrStyle(size);
+        };
+        QQModule.prototype._resetBanenrStyle = function (size) {
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.windowWidth;
+            var windowHeight = wxsys.windowHeight;
+            var top = 0;
+            if (this.bannerPosition == BANNER_POSITION.BOTTOM) {
+                top = windowHeight - this.bannerHeigth;
+            }
+            else if (this.bannerPosition == BANNER_POSITION.CENTER)
+                top = (windowHeight - this.bannerHeigth) / 2;
+            else if (this.bannerPosition == BANNER_POSITION.TOP)
+                top = 0;
+            else
+                top = this.bannerStyle.top;
+            if (this.banner && this.banner.style)
+                this.banner.style.top = top;
+        };
+        /**
+         * 盒子广告
+         * @param callback 关闭回调
+         * @param remoteOn 被后台开关控制
+         */
+        QQModule.prototype.showAppBox = function (callback, remoteOn) {
+            var _this = this;
+            if (remoteOn === void 0) { remoteOn = true; }
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createAppBox)
+                return;
+            this.mOnBoxCallback = callback;
+            console.log("showAppBox");
+            moosnow.http.getAllConfig(function (res) {
+                if (remoteOn) {
+                    if (res && res.showAppBox == 1) {
+                        if (!_this.box) {
+                            _this.box = window[_this.platformName].createAppBox({
+                                adUnitId: _this.moosnowConfig.boxId
+                            });
+                            _this.box.onClose(_this.onBoxClose.bind(_this));
+                        }
+                        _this.box.load()
+                            .then(function () {
+                            _this.box.show();
+                        });
+                    }
+                    else {
+                        if (Common.isFunction(_this.mOnBoxCallback))
+                            _this.mOnBoxCallback(-1);
+                        console.log('后台不允许显示Box，如有需要请联系运营');
+                    }
+                }
+                else {
+                    if (!_this.box) {
+                        _this.box = window[_this.platformName].createAppBox({
+                            adUnitId: _this.moosnowConfig.boxId
+                        });
+                        _this.box.onClose(_this.onBoxClose.bind(_this));
+                    }
+                    _this.box.load()
+                        .then(function () {
+                        _this.box.show();
+                    });
+                }
+            });
+        };
+        QQModule.prototype.hideAppBox = function (callback) {
+            var _this = this;
+            if (this.box) {
+                this.box.offClose(this.onBoxClose);
+                var promise_1 = this.box.destroy();
+                console.log('box destroy ', promise_1);
+                if (promise_1) {
+                    promise_1
+                        .then(function () {
+                        console.log('destroy successfully ', promise_1);
+                        _this.box = null;
+                        if (Common.isFunction(callback))
+                            callback(true);
+                    })
+                        .catch(function () {
+                        console.log('destroy fail ', promise_1);
+                        _this.box = null;
+                        if (Common.isFunction(callback))
+                            callback(false);
+                    });
+                }
+            }
+        };
+        QQModule.prototype.onBoxClose = function () {
+            if (Common.isFunction(this.mOnBoxCallback))
+                this.mOnBoxCallback(0);
+        };
+        return QQModule;
+    }(PlatformModule));
+
+    /**
+     * 广告结果
+     */
+    var moosnowAdRow = /** @class */ (function () {
+        function moosnowAdRow() {
+            /**
+             * 微信小程序的ID
+             */
+            this.appid = "";
+            this.boxAppid = "";
+            this.desc = "";
+            this.img = "";
+            this.path = "";
+            this.title = "";
+            this.atlas = "";
+            /**
+             * oppo跳转需要使用
+             */
+            this.pkgName = "";
+            this.extraData = "";
+            /**
+             * 位置描述
+             */
+            this.position = "";
+            /**
+             * 取消时的回调
+             */
+            this.onCancel = null;
+            /**
+             * 显示的顺序
+             */
+            this.index = 0;
+            /**
+            * 点击后是否刷新
+            */
+            this.refresh = false;
+        }
+        return moosnowAdRow;
+    }());
+
+    var ZSOPPOAdModule = /** @class */ (function (_super) {
+        __extends(ZSOPPOAdModule, _super);
+        function ZSOPPOAdModule() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        ZSOPPOAdModule.prototype.getRemoteAd = function (cb) {
+            var url = 'https://platform.qwpo2018.com/api/apk_ad/index';
+            var signParams = {
+                apk_id: moosnow.platform.moosnowConfig.moosnowAppId,
+            };
+            var data = signParams;
+            moosnow.http.request(url, data, 'POST', function (res) {
+                var arr = res.data;
+                arr.sort(function () { return Math.random() > 0.5 ? 1 : -1; });
+                console.log('接口数据', res.data);
+                if (cb) {
+                    var retValue = [];
+                    for (var i = 0; i < arr.length; i++) {
+                        var item = arr[i];
+                        var row = new moosnowAdRow();
+                        row.appid = item.link_appid;
+                        row.img = item.link_img;
+                        row.path = item.link_path;
+                        row.title = item.link_name;
+                        row.pkgName = item.link_page;
+                        row.desc = item.link_des;
+                        retValue.push(row);
+                    }
+                    cb(retValue);
+                }
+            }, function () {
+                cb([]);
+                console.log('getRemoteAd fail');
+            }, function () {
+                console.log('getRemoteAd complete');
+            });
+        };
+        return ZSOPPOAdModule;
+    }(AdModule));
+
+    var ZSOPPOModule = /** @class */ (function (_super) {
+        __extends(ZSOPPOModule, _super);
+        function ZSOPPOModule() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        /**
+        * 检查当前版本的导出广告是否开启
+        * @param {string} version
+        * @param {*} callback
+        * @returns callback回调函数的参数为boolean，true：打开广告，false：关闭广告
+        */
+        ZSOPPOModule.prototype.checkVersion = function (version, callback) {
+            var _this = this;
+            moosnow.http.loadCfg(function (res) {
+                var openAd = _super.prototype.checkLog.call(_this, res.zs_version);
+                callback(openAd);
+            });
+        };
+        ZSOPPOModule.prototype.login = function (success, fail) {
+            if (window[this.platformName])
+                window[this.platformName].login({
+                    success: function (res) {
+                        // var data = JSON.stringify(res.data);
+                        // console.log(res.data.token);
+                        var url = "https://platform.qwpo2018.com/api/oppo_login/index";
+                        moosnow.http.request(url, {
+                            apk_id: moosnow.platform.moosnowConfig.moosnowAppId,
+                            code: res.data.token
+                        }, 'POST', function (res2) {
+                            moosnow.data.setToken(res2.data.user_id);
+                            if (success)
+                                success(res2.data);
+                            console.log('platformLogin success ', res2);
+                        }, function (res2) {
+                            if (success)
+                                success(null);
+                            console.log('platformLogin fail ', res2);
+                        });
+                    },
+                    fail: function (res) {
+                        if (fail)
+                            fail(res);
+                    }
+                });
+            else if (success)
+                success();
+        };
+        /**
+         * 跳转到指定App
+         * @param row
+         * @param success
+         * @param fail
+         * @param complete
+         */
+        ZSOPPOModule.prototype.navigate2Mini = function (row, success, fail, complete) {
+            var _this = this;
+            _super.prototype.navigate2Mini.call(this, row, function () {
+                _this.navigateCallback(row.appid);
+                if (Common.isFunction(success))
+                    success();
+            }, fail, complete);
+        };
+        ZSOPPOModule.prototype.navigateCallback = function (appId) {
+            var url = 'https://platform.qwpo2018.com/api/apk_ad/click_log';
+            var openId = moosnow.data.getToken();
+            var signParams = {
+                user_id: openId,
+                apk_id: moosnow.platform.moosnowConfig.moosnowAppId,
+                appid: appId,
+                link_id: appId,
+            };
+            var data = signParams;
+            console.log('跳转数据上报', data);
+            moosnow.http.request(url, data, 'POST', function (res) {
+                console.log('跳转数据上报成功', res);
+            }, function (res) {
+                console.log('跳转数据上报失败', res);
+            }, function () {
+                console.log('upload navigate complete');
+            });
+        };
+        return ZSOPPOModule;
+    }(OPPOModule));
+
+    var BDModule = /** @class */ (function (_super) {
+        __extends(BDModule, _super);
+        function BDModule() {
+            var _this = _super.call(this) || this;
+            _this.platformName = "swan";
+            _this.bannerId = "";
+            _this.videoId = "";
+            _this.appSid = "";
+            _this.recordRes = null;
+            _this.recordCb = null;
+            return _this;
+        }
+        BDModule.prototype._createBannerAd = function () {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createBannerAd)
+                return;
+            var wxsys = this.getSystemInfoSync();
+            var windowWidth = wxsys.screenWidth;
+            var windowHeight = wxsys.screenHeight;
+            if (Common.isEmpty(this.bannerId)) {
+                console.warn(MSG.BANNER_KEY_IS_NULL);
+                return;
+            }
+            var banner = window[this.platformName].createBannerAd({
+                adUnitId: this.bannerId,
+                appSid: this.appSid,
+                style: {
+                    top: windowHeight,
+                    //lef: (750 - 300) / 2 / Laya.Browser.pixelRatio,
+                    width: windowWidth
+                }
+            });
+            return banner;
+        };
+        BDModule.prototype.createRewardAD = function (show) {
+            var _this = this;
+            if (this.videoLoading) {
+                return;
+            }
+            if (!window[this.platformName].createRewardedVideoAd) {
+                return;
+            }
+            if (this.video) {
+                this.video.offClose(this._onVideoClose);
+                this.video.offError(this._onVideoError);
+                this.video.offLoad(this._onVideoLoad);
+            }
+            else {
+                this.video = window[this.platformName].createRewardedVideoAd({
+                    adUnitId: this.videoId,
+                    appSid: this.appSid
+                });
+            }
+            this.video.onError(this._onVideoError);
+            this.video.onClose(this._onVideoClose);
+            this.video.onLoad(this._onVideoLoad);
+            this.videoLoading = true;
+            this.video.load()
+                .then(function () {
+                if (show) {
+                    _this.video.show().then(function () { }).catch(function (err) {
+                        _this._onVideoError(err.errMsg, err.errCode);
+                        console.log(err.errMsg);
+                    });
+                }
+            }).catch(function (err) {
+                _this._onVideoError(err.errMsg, err.errCode);
+                console.log(err.errMsg);
+            });
+        };
+        BDModule.prototype.initRecord = function () {
+            if (!window[this.platformName])
+                return;
+            var brand = this.getSystemInfoSync().brand.toLowerCase();
+            if (/huawei/.test(brand) || /honor/.test(brand))
+                return;
+            // if (!this.isDouyin()) return;
+            this.record = window[this.platformName].getVideoRecorderManager();
+        };
+        /**
+         * 开始录屏
+         * @param duration 录屏时长
+         * @param callback 如果不是抖音回调参数=false
+         */
+        BDModule.prototype.startRecord = function (duration, callback) {
+            var _this = this;
+            if (duration === void 0) { duration = 120; }
+            if (callback === void 0) { callback = null; }
+            console.log('record startRecord');
+            this.recordRes = null;
+            this.recordCb = null;
+            if (!this.record) {
+                if (callback)
+                    callback(false);
+                return;
+            }
+            this.record.onStart(function (res) {
+                console.log('record onStart');
+                if (callback)
+                    callback(res);
+            });
+            this.record.onStop(function (res) {
+                _this.recordRes = res;
+                if (_this.recordCb) {
+                    console.log('stop 2');
+                    _this.recordCb(res);
+                }
+            });
+            this.record.start({
+                duration: duration
+            });
+        };
+        /**
+         * 停止录屏
+         * @param callback 如果不是抖音回调参数=false，如果录制成功，回调参数中录屏地址=res.videoPath
+         */
+        BDModule.prototype.stopRecord = function (callback) {
+            if (callback === void 0) { callback = null; }
+            console.log('record stopRecord');
+            if (!this.record) {
+                if (callback)
+                    callback(false);
+                return;
+            }
+            if (this.recordRes) {
+                console.log('stop 1');
+                callback(this.recordRes);
+            }
+            else {
+                this.recordCb = callback;
+                this.record.stop();
+            }
+        };
+        return BDModule;
+    }(PlatformModule));
+
+    var ZSHttpModule = /** @class */ (function (_super) {
+        __extends(ZSHttpModule, _super);
+        function ZSHttpModule() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        /**
+         * 获取误点间隔次数，启动游戏时调用
+         * @param {Funtion} callback 回调参数为misTouchNum:int，当misTouchNum=0时关闭误点，当misTouchNum=n(0除外)时，每隔n次，触发误点1次
+         */
+        ZSHttpModule.prototype.getMisTouchNum = function (callback) {
+            this.loadCfg(function (res) {
+                callback(parseInt(res.mistouchNum));
+            });
+        };
+        /**
+         * 获取位移间隔次数，启动游戏时调用
+         * @param {Funtion} callback 回调参数为mistouchPosNum:int，当misTouchNum=0时关闭误点，当mistouchPosNum=n(0除外)时，每隔n次，触发误点1次
+         */
+        ZSHttpModule.prototype.getMistouchPosNum = function (callback) {
+            this.loadCfg(function (res) {
+                callback(parseInt(res.mistouchPosNum));
+            });
+        };
+        ZSHttpModule.prototype.getBannerShowCountLimit = function (callback) {
+            this.loadCfg(function (res) {
+                if (isNaN(res.bannerShowCountLimit))
+                    callback(5);
+                else
+                    callback(parseInt(res.bannerShowCountLimit));
+            });
+        };
+        ZSHttpModule.prototype.getAllConfig = function (callback) {
+            this.loadCfg(function (res) {
+                callback(res);
+            });
+        };
+        ZSHttpModule.prototype.loadCfg = function (callback) {
+            var _this = this;
+            if (this.cfgData) {
+                callback(this.cfgData);
+            }
+            else {
+                var url = moosnow.platform.moosnowConfig.url + "?t=" + Date.now();
+                console.log('appid ', moosnow.platform.moosnowConfig.moosnowAppId);
+                this.request(url, {
+                    apk_id: moosnow.platform.moosnowConfig.moosnowAppId
+                }, 'POST', function (res) {
+                    var enabled = res.data.zs_version == moosnow.platform.moosnowConfig.version;
+                    _this.cfgData = __assign(__assign({}, Common.deepCopy(res.data)), { mistouchNum: res.data.zs_switch, mistouchPosNum: res.data.zs_switch, showNative: enabled, showInter: enabled, showExportAd: enabled, mx_native_click_switch: res.zs_native_click_switch == 1, mx_jump_switch: res.zs_jump_switch == 1, bannerShowCountLimit: isNaN(res.data.bannerShowCountLimit) ? 1 : res.data.bannerShowCountLimit });
+                    if (moosnow.platform) {
+                        moosnow.platform.bannerShowCountLimit = parseInt(res.data.bannerShowCountLimit);
+                    }
+                    callback(_this.cfgData);
+                }, function () {
+                    callback({});
+                    console.log('load config json fail');
+                });
+            }
+        };
+        return ZSHttpModule;
+    }(HttpModule));
+
+    var SHARE_MSG = {
+        FAIL: "请分享到群！",
+    };
+
+    var VIDEO_MSG = {
+        ERR: "视频正在加载中,请稍后",
+        NOTEND: "请完整观看完视频！"
+    };
+
+    var ArrayUtil = /** @class */ (function () {
+        function ArrayUtil() {
+        }
+        ArrayUtil.prototype.shuffle = function (array) {
+            var iLength = array.length, i = iLength, mTemp, iRandom;
+            while (i--) {
+                if (i !== (iRandom = Math.floor(Math.random() * iLength))) {
+                    mTemp = array[i];
+                    array[i] = array[iRandom];
+                    array[iRandom] = mTemp;
+                }
+            }
+            return array;
+        };
+        /**
+          * Array.indexOf
+          * @param searchArray
+          * @param searchElement
+          * @returns {Number} 找不到返回-1
+          */
+        ArrayUtil.prototype.indexOf = function (searchArray, searchElement) {
+            var result = -1;
+            for (var i = 0, length = searchArray.length; i < length; i++) {
+                if (searchArray[i] == searchElement) {
+                    result = i;
+                    break;
+                }
+            }
+            return result;
+        };
+        /**
+          * 交换位置
+          * @param replaceArray
+          * @param fromIndex
+          * @param toIndex
+          */
+        ArrayUtil.prototype.replace = function (replaceArray, fromIndex, toIndex) {
+            var from = replaceArray[fromIndex];
+            var to = replaceArray[toIndex];
+            replaceArray[toIndex] = from;
+            replaceArray[fromIndex] = to;
+        };
+        /**
+          * 合并
+          * @param mergefrom
+          * @param mergeto
+          */
+        ArrayUtil.prototype.merge = function (mergefrom, mergeto) {
+            for (var i = 0, length = mergefrom.length; i < length; i++) {
+                mergeto.push(mergefrom[i]);
+            }
+            return mergeto;
+        };
+        /**
+          * 克隆
+          * @param from
+          * @returns {Array}
+          */
+        ArrayUtil.clone = function (from) {
+            var newarray = new Array();
+            newarray = from.slice(0);
+            return newarray;
+        };
+        /**
+         *
+         */
+        ArrayUtil.remove = function (origin, item) {
+            for (var i = 0; i < origin.length; i++) {
+                if (origin[i] == item) {
+                    origin.splice(i, 1);
+                    i--;
+                    return;
+                }
+            }
+        };
+        return ArrayUtil;
+    }());
+
+    var EventModule = /** @class */ (function (_super) {
+        __extends(EventModule, _super);
+        function EventModule() {
+            var _this = _super.call(this) || this;
+            _this._eventList = [];
+            _this._waitingForSendList = [];
+            //监听列表
+            _this._eventList = [];
+            //待发送队列
+            _this._waitingForSendList = [];
+            return _this;
+        }
+        /**
+        * 添加一个监听者
+        * @param {string} eventName 监听的事件名
+        * @param {typeof Class} target 监听者
+        * @param {Function} callback 监听事件触发后的回调
+        */
+        EventModule.prototype.addListener = function (eventName, target, callback) {
+            this._addListener(eventName, target, false, callback);
+        };
+        /**
+         * 将事件添加到发送队列里在update里发送
+         * @param {string} eventName 要发送的事件名
+         * @param {any} data 要发送的自定义数据
+         */
+        EventModule.prototype.addToSendQueue = function (eventName, data) {
+            this._addToSendList(eventName, data);
+        };
+        /**
+         * 当前帧立即发送一个事件
+         * @param {String} eventName 事件名
+         * @param {any} data 自定义数据
+         */
+        EventModule.prototype.sendEventImmediately = function (eventName, data) {
+            this._sendEvent(eventName, data);
+            this.onUpdate();
+        };
+        /**
+         * 移除一个监听者
+         * @param {string} eventName 事件名
+         * @param {any} target 监听者
+         */
+        EventModule.prototype.removeListener = function (eventName, target) {
+            var isEventNameAvailable = eventName != null && eventName != '';
+            if (!isEventNameAvailable) {
+                console.error('eventName:' + eventName + '不合法！');
+                return;
+            }
+            for (var i = 0; i < this._eventList.length; i++) {
+                var event_1 = this._eventList[i];
+                if (event_1.eventName === eventName) {
+                    for (var j = 0; j < event_1.listeners.length; j++) {
+                        var listener = event_1.listeners[j];
+                        if (listener.target === target) {
+                            ArrayUtil.remove(event_1.listeners, listener);
+                            break;
+                        }
+                    }
+                    if (event_1.listeners.length == 0) {
+                        ArrayUtil.remove(this._eventList, event_1);
+                    }
+                    break;
+                }
+            }
+        };
+        /**
+         * 移除所有监听者
+         */
+        EventModule.prototype.removeAllListener = function () {
+            this._eventList.length = 0;
+            this._eventList = [];
+            this._waitingForSendList.length = 0;
+            this._waitingForSendList = [];
+        };
+        EventModule.prototype._addListener = function (eventName, target, once, callback) {
+            var isEventNameAvailable = eventName != null && eventName != '';
+            if (!isEventNameAvailable) {
+                console.error('eventName:' + eventName + '不合法！');
+                return;
+            }
+            var listener = new MListener();
+            callback instanceof Function ? listener.callback = callback : console.error('callback不是一个方法');
+            target ? listener.target = target : console.error('target为空');
+            listener.once = once;
+            var hasSameEvent = false;
+            if (this._eventList.length > 0) {
+                for (var i = 0; i < this._eventList.length; i++) {
+                    var tempEvent = this._eventList[i];
+                    //判断是否已经有相同事件
+                    if (eventName === tempEvent.eventName) {
+                        //有相同事件，则增加监听者
+                        tempEvent.listeners.push(listener);
+                        hasSameEvent = true;
+                        return;
+                    }
+                }
+                //没有相同事件
+                if (!hasSameEvent) {
+                    //创建一个新事件
+                    var event_2 = new MLEvent();
+                    event_2.eventName = eventName;
+                    event_2.listeners.push(listener);
+                    this._eventList.push(event_2);
+                }
+            }
+            else {
+                var event_3 = new MLEvent();
+                event_3.eventName = eventName;
+                event_3.listeners.push(listener);
+                this._eventList.push(event_3);
+            }
+        };
+        EventModule.prototype._addToSendList = function (eventName, data) {
+            var isEventNameAvailable = eventName != null && eventName != '';
+            if (!isEventNameAvailable) {
+                console.error('eventName:' + eventName + '不合法！');
+                return;
+            }
+            var toBeSend = {
+                eventName: eventName,
+                data: data
+            };
+            this._waitingForSendList.push(toBeSend);
+        };
+        EventModule.prototype._sendEvent = function (eventName, data) {
+            var copyedEventList = this._eventList;
+            for (var i = 0; i < copyedEventList.length; i++) {
+                var event_4 = copyedEventList[i];
+                if (event_4.eventName === eventName) {
+                    //匹配该事件下的监听列表
+                    var listeners = event_4.listeners;
+                    for (var j = listeners.length - 1; j >= 0; j--) {
+                        var listener = listeners[j];
+                        var callback = listener.callback;
+                        var target = listener.target;
+                        if (!target) {
+                            ArrayUtil.remove(this._eventList[i].listeners, listener);
+                            j--;
+                            continue;
+                        }
+                        callback.call(target, data);
+                        if (listener.once) {
+                            if (this._eventList[i].listeners[j]) {
+                                ArrayUtil.remove(this._eventList[i].listeners, listener);
+                                i--;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        EventModule.prototype.onUpdate = function () {
+            if (this._waitingForSendList.length == 0) {
+                return;
+            }
+            //两种方式各有利弊，方案1发送慢  方案2和立即发送没区别
+            //1一帧发送一次事件（优化方案：一帧发送n个事件，n根据情况可调整）
+            //     let event = this._waitingForSendList[0];
+            //     this._sendEvent(event.eventName, event.data);
+            //     if (cc.js.array.contains(this._waitingForSendList, event)) {
+            //         cc.js.array.remove(this._waitingForSendList, event);
+            //     }
+            //2当前帧发送所有事件
+            for (var i = 0; i < this._waitingForSendList.length; i++) {
+                var event_5 = this._waitingForSendList[i];
+                this._sendEvent(event_5.eventName, event_5.data);
+                ArrayUtil.remove(this._waitingForSendList, event_5);
+                i--;
+            }
+        };
+        EventModule.prototype.onDisable = function () {
+        };
+        return EventModule;
+    }(BaseModule));
+    /**
+     * 监听者
+     */
+    var MListener = /** @class */ (function () {
+        function MListener() {
+            this.callback = null;
+            this.target = [];
+            this.once = false;
+            this.callback = null;
+            this.target = null;
+            this.once = false;
+        }
+        return MListener;
+    }());
+    /**
+     * 事件类
+     */
+    var MLEvent = /** @class */ (function () {
+        function MLEvent() {
+            this.eventName = "";
+            this.listeners = [];
+            this.eventName = '';
+            this.listeners = [];
+        }
+        return MLEvent;
+    }());
+
+    var VIVOModule = /** @class */ (function (_super) {
+        __extends(VIVOModule, _super);
+        function VIVOModule() {
+            var _this = _super.call(this) || this;
+            _this.platformName = "qg";
+            _this.appSid = "";
+            _this.bannerWidth = 720;
+            _this.bannerHeight = 113;
+            _this.interLoadedShow = false;
+            _this.prevNavigate = Date.now();
+            _this.mMinInterval = 10;
+            _this.mIsClickedNative = false;
+            _this._regisiterWXCallback();
+            _this.initAdService();
+            return _this;
+        }
+        VIVOModule.prototype.initAdService = function () {
+            // this.initBanner();
+            // this.initInter();
+            // this._prepareNative();
+            moosnow.event.addListener(EventType.ON_PLATFORM_SHOW, this, this.onAppShow);
+        };
+        /**
+         * 跳转到指定App
+         * @param row
+         * @param success
+         * @param fail
+         * @param complete
+         */
+        VIVOModule.prototype.navigate2Mini = function (row, success, fail, complete) {
+            var _this = this;
+            console.log(MSG.NAVIGATE_DATA, row);
+            if (Date.now() - this.prevNavigate < 300) {
+                console.log(MSG.NAVIGATE_FAST);
+                return;
+            }
+            this.prevNavigate = Date.now();
+            if (!window[this.platformName]) {
+                if (success)
+                    success();
+                return;
+            }
+            var appid = row.appid, path = row.path, extraData = row.extraData, pkgName = row.pkgName;
+            extraData = extraData || {};
+            // 跳转小游戏按钮，支持最低平台版本号'1044' (minPlatformVersion>='1044')
+            if (!this.supportVersion(1044)) {
+                console.log(MSG.PLATFORM_UNSUPPORT);
+                return;
+            }
+            window[this.platformName].navigateToMiniGame({
+                appId: appid,
+                path: path,
+                pkgName: pkgName || appid,
+                extraData: extraData,
+                success: function () {
+                    if (window[_this.platformName] && window[_this.platformName].aldSendEvent) {
+                        window[_this.platformName].aldSendEvent('跳转', {
+                            position: row.position,
+                            appid: appid,
+                            img: row.atlas || row.img
+                        });
+                    }
+                    moosnow.http.exportUser();
+                    if (success)
+                        success();
+                },
+                fail: function (err) {
+                    console.log('navigateToMiniProgram error ', err);
+                    if (fail)
+                        fail();
+                },
+                complete: function () {
+                    if (complete)
+                        complete();
+                }
+            });
+        };
+        VIVOModule.prototype.supportVersion = function (version) {
+            var oppoSys = this.getSystemInfoSync();
+            return oppoSys.platformVersion >= version;
+        };
+        /**
+         * 游戏登录
+         * @param callback
+         * @param fail
+         */
+        // public login(callback?: Function, fail?: Function) {
+        //     moosnow.http.getAllConfig(res => {
+        //     });
+        //     let self = this;
+        //     let userToken = moosnow.data.getToken();
+        //     if (userToken) {
+        //         self.getUserToken("", userToken, callback)
+        //     }
+        //     else {
+        //         if (!this.supportVersion(1040)) {
+        //             if (Common.isFunction(callback))
+        //                 callback({})
+        //             return;
+        //         }
+        //         window[this.platformName].login({
+        //             success: (res) => {
+        //                 if (res.code) {
+        //                     //发起网络请求
+        //                     self.getUserToken(res.code, "", callback)
+        //                 } else {
+        //                     if (Common.isFunction(callback))
+        //                         callback({})
+        //                 }
+        //             },
+        //             fail: (res) => {
+        //                 if (Common.isFunction(callback))
+        //                     callback({})
+        //             }
+        //         })
+        //     }
+        // }
+        /**
+         *
+         * @param code
+         * @param user_id
+         * @param callback
+         */
+        // private getUserToken(code, user_id, callback?) {
+        //     if (!this.supportVersion(1050)) {
+        //         if (Common.isFunction(callback))
+        //             callback({});
+        //         return;
+        //     }
+        //     let options = window[this.platformName].getLaunchOptionsSync();
+        //     let channel_id = options.query && options.query.channel_id ? options.query.channel_id : "0";
+        //     let channel_appid = options.referrerInfo && options.referrerInfo.appId ? options.referrerInfo.appId : "0";
+        //     moosnow.data.setChannelAppId(channel_appid);
+        //     moosnow.data.setChannelId(channel_id);
+        //     if (window[this.platformName] && window[this.platformName].aldSendEvent) {
+        //         window[this.platformName].aldSendEvent("来源", {
+        //             origin: options.referrerInfo ? options.referrerInfo.appId : '未知',
+        //             path: options.query.from || 0
+        //         })
+        //     }
+        //     moosnow.http.request(`${this.baseUrl}api/channel/login.html`, {
+        //         appid: moosnow.platform.moosnowConfig.moosnowAppId,
+        //         code: code,
+        //         user_id: user_id,
+        //         channel_id: channel_id,
+        //         channel_appid: channel_appid
+        //     }, "POST", (respone) => {
+        //         if (respone.code == 0 && respone.data && respone.data.user_id) {
+        //             moosnow.data.setToken(respone.data.user_id);
+        //         }
+        //         if (Common.isFunction(callback))
+        //             callback(respone)
+        //     }, () => {
+        //         //如果出错，不影响游戏
+        //         if (Common.isFunction(callback))
+        //             callback({})
+        //     });
+        // }
+        VIVOModule.prototype._onBannerError = function (err) {
+            console.warn('banner___error:', err.errCode, ' msg ', err.errMsg);
+            this.destroyBanner();
+        };
+        VIVOModule.prototype.getSystemInfoSync = function () {
+            if (this.systemInfo == null) {
+                if (window[this.platformName] && window[this.platformName].getSystemInfoSync)
+                    this.systemInfo = window[this.platformName].getSystemInfoSync();
+                else
+                    this.systemInfo = {};
+                console.log(MSG.SYSTEM_INFO, this.systemInfo);
+            }
+            return this.systemInfo;
+        };
+        VIVOModule.prototype._prepareBanner = function () {
+            if (!window[this.platformName].createBannerAd)
+                return;
+            if (this.banner) {
+                this.banner.offSize();
+                this.banner.offError();
+                this.banner.offLoad();
+                this.banner.offClose();
+                this.banner.destroy();
+                this.banner = null;
+            }
+            this.banner = this._createBannerAd();
+            if (this.banner) {
+                this.banner.onSize(this._bottomCenterBanner.bind(this));
+                this.banner.onError(this._onBannerError.bind(this));
+                this.banner.onLoad(this._onBannerLoad.bind(this));
+                this.banner.onClose(this._onBannerClose.bind(this));
+            }
+        };
+        VIVOModule.prototype._createBannerAd = function () {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createBannerAd)
+                return;
+            var nowTime = Date.now();
+            if (!this.mShowTime)
+                this.mShowTime = nowTime;
+            if (!!!this.mShowTime || ((!!this.mShowTime) && nowTime - this.mShowTime <= this.mMinInterval * 1000)) {
+                console.log("banner\u521B\u5EFA\u592A\u9891\u7E41\u4E86 " + this.mMinInterval + "\u79D2\u5185\u53EA\u80FD\u663E\u793A\u4E00\u6B21");
+                return;
+            }
+            this.mShowTime = Date.now();
+            var wxsys = this.getSystemInfoSync();
+            var screenWidth = wxsys.screenWidth;
+            var screenHeight = wxsys.screenHeight;
+            var statusBarHeight = wxsys.statusBarHeight;
+            var pixelRatio = wxsys.pixelRatio;
+            var notchHeight = this.getNotchHeight();
+            var left = (screenWidth - this.bannerWidth) / pixelRatio / 2;
+            if (Common.isEmpty(this.bannerId)) {
+                console.warn(MSG.BANNER_KEY_IS_NULL);
+                return;
+            }
+            var styleTop = 0;
+            if (this.bannerPosition == BANNER_POSITION.BOTTOM) {
+                styleTop = (screenHeight - this.bannerHeight) / pixelRatio;
+            }
+            else if (this.bannerPosition == BANNER_POSITION.CENTER)
+                styleTop = (screenHeight - this.bannerHeight) / pixelRatio / 2;
+            else if (this.bannerPosition == BANNER_POSITION.TOP) {
+                if (this.isLandscape(wxsys.screenHeight, wxsys.screenWidth))
+                    styleTop = 0;
+                else
+                    styleTop = statusBarHeight + notchHeight;
+            }
+            else
+                styleTop = this.bannerStyle.top;
+            var style = {
+                top: styleTop,
+                left: left,
+                width: this.bannerWidth,
+                height: this.bannerHeight
+            };
+            console.log('_createBannerAd style', style, 'screenHeight', screenHeight, 'bannerHeigth', this.bannerHeigth);
+            var banner = window[this.platformName].createBannerAd({
+                posId: this.bannerId,
+                style: style
+            });
+            return banner;
+        };
+        VIVOModule.prototype.getNotchHeight = function () {
+            var retVal = 0;
+            if (window[this.platformName].getNotchHeightSync)
+                retVal = window[this.platformName].getNotchHeightSync().height;
+            return retVal;
+        };
+        VIVOModule.prototype._bottomCenterBanner = function (size) {
+            console.log('onSize callback  ', size);
+        };
+        VIVOModule.prototype._onBannerClose = function () {
+            console.log('banner 已关闭 ');
+        };
+        VIVOModule.prototype._onBannerHide = function () {
+            console.log('banner 已隐藏 ');
+        };
+        VIVOModule.prototype.destroyBanner = function () {
+            if (this.banner) {
+                this.banner.offResize(this._bottomCenterBanner);
+                this.banner.offError(this._onBannerError);
+                this.banner.offLoad(this._onBannerLoad);
+                this.banner.offClose(this._onBannerClose);
+                this.banner.destroy();
+                this.banner = null;
+            }
+        };
+        /**
+         *
+         * @param callback 点击回调
+         * @param position banner的位置，默认底部
+         * @param style 自定义样式
+         */
+        VIVOModule.prototype.showBanner = function (callback, position, style) {
+            if (position === void 0) { position = BANNER_POSITION.BOTTOM; }
+            this.bannerCb = callback;
+            this.isBannerShow = true;
+            if (!window[this.platformName])
+                return;
+            this.bannerPosition = position;
+            this.bannerStyle = style;
+            if (!this.banner) {
+                this.initBanner();
+            }
+            if (!this.banner)
+                return;
+            var adshow = this.banner.show();
+            console.log('显示banner style ', this.banner);
+            adshow && adshow.then(function () {
+                console.log("banner广告展示成功");
+            }).catch(function (err) {
+                switch (err.code) {
+                    case 30003:
+                        console.log("新用户1天内不能曝光Banner，请将手机时间调整为1天后，退出游戏重新进入");
+                        break;
+                    case 30009:
+                        console.log("10秒内调用广告次数超过1次，10秒后再调用");
+                        break;
+                    case 30002:
+                        console.log("加载广告失败，重新加载广告");
+                        break;
+                    default:
+                        // 参考 https://minigame.vivo.com.cn/documents/#/lesson/open-ability/ad?id=广告错误码信息 对错误码做分类处理
+                        console.log("banner广告展示失败");
+                        console.log(JSON.stringify(err));
+                        break;
+                }
+            });
+        };
+        VIVOModule.prototype.hideBanner = function () {
+            console.log(MSG.HIDE_BANNER);
+            if (!this.isBannerShow)
+                return;
+            if (!window[this.platformName]) {
+                return;
+            }
+            this.bannerShowCount++;
+            if (this.banner) {
+                this.banner.hide();
+                this.destroyBanner();
+            }
+            this.isBannerShow = false;
+        };
+        VIVOModule.prototype.createRewardAD = function (show) {
+            if (moosnow.platform.videoLoading) {
+                return;
+            }
+            if (!window[this.platformName]) {
+                moosnow.platform.videoCb(VIDEO_STATUS.END);
+                return;
+            }
+            if (!window[this.platformName].createRewardedVideoAd) {
+                return;
+            }
+            if (Common.isEmpty(this.videoId)) {
+                console.warn(MSG.VIDEO_KEY_IS_NULL);
+                return;
+            }
+            if (!this.video) {
+                moosnow.platform.videoLoading = true;
+                this.video = window[this.platformName].createRewardedVideoAd({
+                    posId: this.videoId
+                });
+                this.video.onError(this._onVideoError.bind(this));
+                this.video.onClose(this._onVideoClose.bind(this));
+                this.video.onLoad(this._onVideoLoad.bind(this));
+            }
+            else
+                this.video.load();
+        };
+        VIVOModule.prototype._onVideoLoad = function () {
+            var _this = this;
+            console.log(MSG.VIDEO_LOAD_COMPLETED);
+            moosnow.platform.videoLoading = false;
+            if (this.video) {
+                this.video.show()
+                    .then(function () {
+                    _this.videoPlaying = true;
+                    moosnow.event.sendEventImmediately(EventType.ON_PLATFORM_HIDE, {});
+                    console.log('激励视频广告展示完成');
+                }).catch(function (err) {
+                    console.log('激励视频广告展示失败', JSON.stringify(err));
+                });
+            }
+        };
+        VIVOModule.prototype._onVideoClose = function (isEnd) {
+            console.log(MSG.VIDEO_CLOSE_COMPLETED, isEnd.isEnded);
+            moosnow.platform.videoLoading = false;
+            this.videoPlaying = false;
+            if (!!isEnd.isEnded) {
+                moosnow.http.clickVideo();
+            }
+            moosnow.event.sendEventImmediately(EventType.ON_PLATFORM_SHOW, {});
+            if (moosnow.platform.videoCb) {
+                var ret_1 = (!!isEnd.isEnded) ? VIDEO_STATUS.END : VIDEO_STATUS.NOTEND;
+                setTimeout(function () {
+                    moosnow.platform.videoCb(ret_1);
+                }, 50);
+            }
+        };
+        VIVOModule.prototype.prepareInter = function () {
+            if (Common.isEmpty(this.interId)) {
+                console.warn(MSG.INTER_KEY_IS_NULL);
+                return;
+            }
+            if (!window[this.platformName])
+                return;
+            if (this.supportVersion("1061")) {
+                if (typeof window[this.platformName].createInterstitialAd != "function")
+                    return;
+                this.inter = window[this.platformName].createInterstitialAd({
+                    adUnitId: this.interId
+                });
+                this.inter.onLoad(this._onInterLoad.bind(this));
+                this.inter.onClose(this._onInterClose.bind(this));
+                this.inter.load();
+            }
+            else {
+                if (typeof window[this.platformName].createInsertAd != "function")
+                    return;
+                this.inter = window[this.platformName].createInsertAd({
+                    adUnitId: this.interId
+                });
+                this.inter.onLoad(this._onInterLoad.bind(this));
+                this.inter.onShow(this._onInterOnShow.bind(this));
+                this.inter.load();
+            }
+        };
+        ;
+        VIVOModule.prototype.showInter = function () {
+            if (this.inter)
+                this.inter.show();
+            else
+                this.interLoadedShow = true;
+        };
+        VIVOModule.prototype._onInterLoad = function () {
+            if (this.interLoadedShow) {
+                if (this.inter) {
+                    this.inter.show();
+                }
+                else
+                    this.interLoadedShow = false;
+            }
+        };
+        VIVOModule.prototype._onInterOnShow = function () {
+            if (this.inter)
+                this.inter.load();
+        };
+        VIVOModule.prototype.showAutoBanner = function () {
+            console.log(' vivo 不支持自动');
+        };
+        VIVOModule.prototype.reportMonitor = function (name, value) {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].reportMonitor)
+                return;
+            window[this.platformName].reportMonitor('game_scene', 0);
+        };
+        VIVOModule.prototype._prepareNative = function (isLoad) {
+            if (isLoad === void 0) { isLoad = false; }
+            if (!window[this.platformName])
+                return;
+            if (typeof window[this.platformName].createNativeAd != "function")
+                return;
+            this.native = window[this.platformName].createNativeAd({
+                posId: this.nativeId[this.nativeIdIndex]
+            });
+            this.native.onLoad(this._onNativeLoad.bind(this));
+            this.native.onError(this._onNativeError.bind(this));
+            this.nativeLoading = true;
+            if (isLoad)
+                this.native.load();
+        };
+        VIVOModule.prototype._onNativeLoad = function (res) {
+            this.nativeLoading = false;
+            console.log(MSG.NATIVE_LOAD_COMPLETED, res);
+            if (res && res.adList && res.adList.length > 0) {
+                this.nativeAdResult = res.adList[0];
+                if (!Common.isEmpty(this.nativeAdResult.adId)) {
+                    console.log(MSG.NATIVE_REPORT);
+                    this.native.reportAdShow({
+                        adId: this.nativeAdResult.adId
+                    });
+                }
+                if (Common.isFunction(this.nativeCb)) {
+                    this.nativeCb(Common.deepCopy(this.nativeAdResult));
+                }
+            }
+            else {
+                console.log(MSG.NATIVE_LIST_NULL);
+                if (Common.isFunction(this.nativeCb)) {
+                    this.nativeCb(null);
+                }
+            }
+        };
+        VIVOModule.prototype._onNativeError = function (err) {
+            this.nativeLoading = false;
+            this.nativeAdResult = null;
+            if (err.code == 20003) {
+                if (this.nativeIdIndex < this.nativeId.length - 1) {
+                    console.log(MSG.NATIVE_ERROR, err);
+                    this.nativeIdIndex += 1;
+                    this._destroyNative();
+                    this._prepareNative();
+                }
+                else {
+                    console.log(MSG.NATIVE_NOT_ID_USE);
+                    this.nativeIdIndex = 0;
+                    if (Common.isFunction(this.nativeCb)) {
+                        this.nativeCb(null);
+                    }
+                }
+            }
+            else {
+                console.log(MSG.NATIVE_ERROR2, err);
+                if (Common.isFunction(this.nativeCb)) {
+                    this.nativeCb(null);
+                }
+            }
+        };
+        VIVOModule.prototype._destroyNative = function () {
+            this.nativeLoading = false;
+            this.native.offLoad(); // 移除原生广告加载成功回调
+            this.native.offError(); // 移除失败回调
+            this.native.destroy(); // 隐藏 banner，成功回调 onHide, 出错的时候回调 onError
+            console.log(MSG.NATIVE_DESTROY);
+        };
+        /**
+        * 目前只有OPPO VIVO 平台有此功能
+        * 返回原生广告数据，开发者根据返回的数据来展现
+        * 没有广告返回null
+        *
+        *
+        * 例如 cocos
+        * let adData=moosnow.platform.getNativeAd();
+        * cc.loader.load(adData.imgUrlList[0], (err, texture) => {
+        *   adImg.active = true
+        *   adImg.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(texture)
+        * })
+        *
+        * 例如 laya
+        * let adData=moosnow.platform.getNativeAd();
+        * new Laya.Image().skin=adData.imgUrlList[0];
+        *
+        * @param callback 回调函数
+        */
+        VIVOModule.prototype.showNativeAd = function (callback) {
+            this.nativeCb = callback;
+            if (this.native)
+                this.native.load();
+            else {
+                this._prepareNative(true);
+                // if (this.native)
+                //     this.native.load();
+            }
+            // if (!this.nativeLoading && !Common.isEmpty(this.nativeAdResult)) {
+            //     let nativeData = Common.deepCopy(this.nativeAdResult)
+            //     callback(nativeData)
+            // }
+        };
+        /**
+         * 目前只有OPPO平台有此功能
+         * 用户点击了展示原生广告的图片时，使用此方法
+         * 例如 cocos
+         * this.node.on(CocosNodeEvent.TOUCH_END, () => {
+         *     moosnow.platform.clickNative();
+         * }, this)
+         *
+         *
+         * 例如 laya
+         * (new Laya.Image()).on(Laya.Event.MOUSE_UP, this, () => {
+         *     moosnow.platform.clickNative();
+         * })
+         *
+         */
+        VIVOModule.prototype.clickNative = function (callback) {
+            if (this.nativeAdResult && !Common.isEmpty(this.nativeAdResult.adId)) {
+                this.mClickedNativeCallback = callback;
+                this.mIsClickedNative = true;
+                console.log(MSG.NATIVE_CLICK, this.nativeAdResult.adId);
+                this.native.reportAdClick({
+                    adId: this.nativeAdResult.adId
+                });
+            }
+        };
+        VIVOModule.prototype.onAppShow = function () {
+            if (this.mIsClickedNative) {
+                this.mIsClickedNative = false;
+                if (Common.isFunction(this.mClickedNativeCallback))
+                    this.mClickedNativeCallback();
+            }
+        };
+        return VIVOModule;
+    }(PlatformModule));
+
+    var AD_POSITION = {
+        /**
+         * 不显示
+         */
+        NONE: 0,
+        BANNER: 1,
+        FLOAT: 2,
+        /**
+         * 侧拉广告
+         */
+        SIDE: 4,
+        /**
+         * 中部大导出
+         */
+        CENTER: 8,
+        /**
+         * 导出
+         */
+        EXPORT: 16,
+        /**
+         * 返回按钮
+         */
+        BACK: 32,
+        /**
+         * 黑色半透明遮挡
+         */
+        MASK: 64,
+        /**
+         * 延迟显示
+         */
+        WAIT: 128,
+        /**
+         * 左右两侧
+         */
+        LEFTRIGHT: 256,
+        /**
+        * 固定的六个
+        */
+        EXPORT_FIXED: 512,
+        /**
+        * 扩展1
+        */
+        EXTEND1: 1024,
+        /**
+        * 扩展2
+        */
+        EXTEND2: 2048,
+        /**
+        * 扩展3
+        */
+        EXTEND3: 4096,
+        /**
+        * 扩展4
+        */
+        EXTEND4: 8192,
+        /**
+         * 顶部
+         */
+        TOP: 32768,
+        /**
+         * 恢复到上一个状态
+         */
+        RECOVER: 16384,
+    };
+
+    var BaseEntityModule = /** @class */ (function (_super) {
+        __extends(BaseEntityModule, _super);
+        function BaseEntityModule() {
+            var _this = _super.call(this) || this;
+            _this.entityLogics = [];
+            _this._serializeId = 0;
+            _this.paused = true;
+            _this.prefabPath = "prefab/entity/";
+            _this.mEntity3DPools = [];
+            _this.mEntity3DLogics = [];
+            _this.entityPools = [];
+            _this.mIsSlow = true;
+            _this.entityLogics = [];
+            _this.mEntity3DPools = [];
+            _this.mEntity3DLogics = [];
+            _this._serializeId = 0;
+            return _this;
+            // this.resume();
+            // window["moosnow"].entity = this;
+        }
+        BaseEntityModule.prototype.update = function (dt) {
+            if (this.paused)
+                return;
+            for (var i = 0; i < this.entityLogics.length; i++) {
+                var element = this.entityLogics[i];
+                element.onFwUpdate(dt);
+            }
+        };
+        BaseEntityModule.prototype.pause = function () {
+            this.paused = true;
+        };
+        BaseEntityModule.prototype.resume = function () {
+            this.paused = false;
+        };
+        BaseEntityModule.prototype.getAllEntity = function (name) {
+            return this.entityLogics.filter(function (item) { return item.poolName == name; });
+        };
+        BaseEntityModule.prototype.showEntity = function (name, parentNode, data) {
+        };
+        BaseEntityModule.prototype.hideEntity = function (logic, data, isDestory) {
+            if (isDestory === void 0) { isDestory = false; }
+        };
+        BaseEntityModule.prototype.hideAllEntity = function (name, isDestory) {
+            if (isDestory === void 0) { isDestory = false; }
+        };
+        return BaseEntityModule;
+    }(BaseModule));
+
+    var CocosEntityModule = /** @class */ (function (_super) {
+        __extends(CocosEntityModule, _super);
+        function CocosEntityModule() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.prefabPath = "moosnow/prefab/entity/";
+            return _this;
+        }
+        CocosEntityModule.prototype.preload = function (name, callback) {
+            cc.loader.loadRes(this.prefabPath + '' + name, cc.Prefab, function (error, resource) {
+                if (callback)
+                    callback(error, resource);
+            });
+        };
+        CocosEntityModule.prototype.showEntity = function (name, parentNode, data) {
+            var logic = this._showEntity(name);
+            logic.id = this._serializeId--;
+            logic.node.parent = parentNode;
+            logic.willShow(data);
+            logic.node.active = true;
+            logic.node.zIndex = logic.id;
+            logic.onShow(data);
+            this.entityLogics.push(logic);
+            return logic;
+        };
+        CocosEntityModule.prototype._createEntity = function (name) {
+            var prefab;
+            if (Common.isString(name))
+                prefab = this._getPrefabByName(name);
+            else
+                prefab = name;
+            return cc.instantiate(prefab);
+        };
+        CocosEntityModule.prototype._showEntity = function (name) {
+            var pool = this._getOrNewEntityPool(name);
+            var entity = pool.get();
+            if (entity == null) {
+                entity = this._createEntity(name);
+            }
+            var logic = this._findComponent(entity, "EntityLogic");
+            logic.poolName = pool.name;
+            return logic;
+        };
+        CocosEntityModule.prototype._getPrefabByName = function (name) {
+            var profab = cc.loader.getRes(this.prefabPath + '' + name, cc.Prefab);
+            return profab;
+        };
+        CocosEntityModule.prototype._getOrNewEntityPool = function (name) {
+            var poolName = this._getPoolName(name);
+            var pool = this._getEntityPool(poolName);
+            if (pool == null) {
+                pool = this._newEntityPool(poolName);
+            }
+            return pool;
+        };
+        CocosEntityModule.prototype._getPoolName = function (name) {
+            var poolName = "";
+            var engine = Common.getEngine();
+            if (engine == ENGINE_TYPE.COCOS && Common.isObject(name)) {
+                poolName = name.name;
+            }
+            else if (engine == ENGINE_TYPE.LAYA && Common.isObject(name)) {
+                poolName = name.json.name;
+            }
+            else
+                poolName = "" + name;
+            return poolName;
+        };
+        CocosEntityModule.prototype._getEntityPool = function (name) {
+            for (var i = 0; i < this.entityPools.length; i++) {
+                var pool = this.entityPools[i];
+                if (pool.name === name) {
+                    return pool;
+                }
+            }
+            return null;
+        };
+        CocosEntityModule.prototype._newEntityPool = function (name) {
+            var pool = new cc.NodePool(name);
+            pool.name = name;
+            this.entityPools.push(pool);
+            return pool;
+        };
+        CocosEntityModule.prototype.hideEntity = function (logic, data, isDestory) {
+            if (isDestory === void 0) { isDestory = false; }
+            this._hideEntity(logic, data, isDestory);
+        };
+        CocosEntityModule.prototype.hideAllEntity = function (name, isDestory) {
+            if (isDestory === void 0) { isDestory = false; }
+            for (var i = 0; i < this.entityLogics.length; i++) {
+                var item = this.entityLogics[i];
+                if (item.poolName == name) {
+                    this.hideEntity(item, null, isDestory);
+                    i--;
+                }
+            }
+        };
+        CocosEntityModule.prototype._hideEntity = function (logic, data, isDestory) {
+            if (isDestory === void 0) { isDestory = false; }
+            if (isDestory) {
+                logic.willHide(data);
+                logic.node.active = false;
+                logic.onHide(data);
+                logic.destroy();
+            }
+            else {
+                var pool = this._getOrNewEntityPool(logic.poolName);
+                logic.willHide(data);
+                pool.put(logic.node);
+                logic.node.active = false;
+                logic.onHide(data);
+            }
+            cc.js.array.remove(this.entityLogics, logic);
+        };
+        return CocosEntityModule;
+    }(BaseEntityModule));
+
+    var FormModel = /** @class */ (function () {
+        function FormModel() {
+            this.name = "";
+            this.node = null;
+            this.UIForm = null;
+            this.zIndex = 0;
+            this.name = "";
+            this.node = null;
+            this.UIForm = null;
+            this.zIndex = 0;
+        }
+        return FormModel;
+    }());
+    /**
+      * HASDO:
+      * 1栈方式管理UI，
+      * 2缓存UI
+      * 3入栈（显示UI）
+      * 4出栈（关闭UI）
+      * 5关闭指定UI
+      *
+      * TODO:
+      * 1上层UI遮盖下层UI逻辑回调
+      * 2设置label默认字体
+      * 3按需清理缓存
+      *
+      * ISSUE
+      * 1由于UI是异步加载，导致UI栈顺序会错乱 (fixed)
+      * 2连续push相同UI（待测试）
+      */
+    var BaseUIModule = /** @class */ (function (_super) {
+        __extends(BaseUIModule, _super);
+        function BaseUIModule() {
+            var _this = _super.call(this) || this;
+            _this.rootCanvas = null;
+            _this.layerIndex = 0;
+            _this.UIRoot = "";
+            _this.UIFormStack = [];
+            _this.cachedUIForms = [];
+            _this.toastForm = null;
+            _this.layerIndex = 0;
+            _this.UIRoot = 'moosnow/prefab/ui/'; //定义resources目录下存放UI预设的目录
+            _this.UIFormStack = [];
+            _this.cachedUIForms = [];
+            _this.toastForm = null;
+            return _this;
+        }
+        BaseUIModule.prototype.showToast = function (msg) {
+            var _this = this;
+            var self = this;
+            if (self.toastForm == null) {
+                this._createUINode('toastForm', 1000, function (node, index) {
+                    cc.Canvas.instance.node.addChild(node);
+                    self.toastForm = _this._findComponent(node, "toastForm");
+                    node.zIndex = index;
+                    self.toastForm.show(msg);
+                });
+            }
+            else {
+                self.toastForm.show(msg);
+            }
+        };
+        /**
+         * 显示一个ui
+         * @param {string} name  resources/UI目录下的预设名字
+         * @param {Object} data 携带的自定义数据
+         * @param {Function} callback ui显示后回调:(formModel,data:Object)
+         */
+        BaseUIModule.prototype.pushUIForm = function (name, data, callback) {
+            var self = this;
+            var cachedFormModel = this._getUINodeFromCacheByName(name);
+            if (cachedFormModel == null) {
+                this._createUIFormModel(name, function (formModel) {
+                    self._showUIForm(formModel, data);
+                    if (callback) {
+                        callback(formModel, data);
+                    }
+                });
+            }
+            else {
+                //缓存取出
+                cachedFormModel.zIndex = this.layerIndex++;
+                this.UIFormStack.push(cachedFormModel);
+                this._showUIForm(cachedFormModel, data);
+                if (callback) {
+                    callback(cachedFormModel, data);
+                }
+            }
+        };
+        /**
+         * 从栈顶隐藏一个UI
+         * @param {bool} destroy 是否销毁
+         */
+        BaseUIModule.prototype.pop = function (destroy, cb) {
+            if (destroy === void 0) { destroy = false; }
+            if (this.UIFormStack.length == 0)
+                return;
+            var formModel = this.UIFormStack.pop();
+            if (destroy) {
+                this._destroyUIForm(formModel, null);
+            }
+            else {
+                this._hideUIForm(formModel, null, cb);
+            }
+        };
+        /**
+        * 获取一个UIForm
+        * @param {string} name
+        */
+        BaseUIModule.prototype.getUIFrom = function (name) {
+            for (var i = 0; i < this.UIFormStack.length; i++) {
+                var formModel = this.UIFormStack[i];
+                if (formModel.name == name) {
+                    return formModel.UIForm;
+                }
+            }
+        };
+        /**
+         * 隐藏某个UI
+         * @param {string} name 预设名
+         * @param {any} data 携带的自定义数据
+         */
+        BaseUIModule.prototype.hideUIForm = function (name, data, cb) {
+            if (typeof name == "string") {
+                for (var i = 0; i < this.UIFormStack.length; i++) {
+                    var formModel = this.UIFormStack[i];
+                    if (formModel.name == name) {
+                        this._hideUIForm(formModel, data, cb);
+                    }
+                }
+            }
+            else {
+                for (var i = 0; i < this.UIFormStack.length; i++) {
+                    var formModel = this.UIFormStack[i];
+                    if (formModel == name) {
+                        this._hideUIForm(formModel, data, cb);
+                    }
+                }
+            }
+        };
+        BaseUIModule.prototype.hideAllUIForm = function () {
+            for (var i = this.UIFormStack.length - 1; i >= 0; i--) {
+                var formModel = this.UIFormStack[i];
+                this._hideUIForm(formModel, null);
+            }
+        };
+        BaseUIModule.prototype.destroyUIForm = function (name, data) {
+            for (var i = 0; i < this.UIFormStack.length; i++) {
+                var formModel = this.UIFormStack[i];
+                if (formModel.name == name) {
+                    this._destroyUIForm(formModel, data);
+                }
+            }
+        };
+        BaseUIModule.prototype._formatUIFormName = function (name) {
+            return name.replace(/\//g, "_");
+        };
+        /**
+         * 实例化resource下ui目录的prefab
+         * @param {Int} formId 层级
+         * @param {string} name resources下的路径
+         * @param {Function} callback 参数 node
+         */
+        BaseUIModule.prototype._createUINode = function (name, formId, callback) {
+            var path = this.UIRoot + name;
+            cc.loader.loadRes(path, cc.Prefab, function (err, prefab) {
+                var formNode = cc.instantiate(prefab);
+                if (callback)
+                    callback(formNode, formId);
+            });
+        };
+        /**
+         * 创建一个formModel
+         * @param {string} name
+         * @param {Function} callback (node, index)
+         */
+        BaseUIModule.prototype._createUIFormModel = function (name, callback) {
+            var _this = this;
+            //防止异步加载UI层级错乱方案
+            //1异步加载预设前初始化一个model,记录将要加载的预设名以及zindex
+            //2异步时传入该zindex，在加载完成时回调返回该zindex
+            //3循环匹配UIStack，判断取出zindex和name相等的model，赋值UIForm和node
+            var self = this;
+            var formModel = new FormModel();
+            formModel.name = name;
+            var formId = this.layerIndex++;
+            formModel.zIndex = formId;
+            this.UIFormStack.push(formModel);
+            this._createUINode(name, formId, function (node, index) {
+                for (var i = 0; i < self.UIFormStack.length; i++) {
+                    var tempFormModel = self.UIFormStack[i];
+                    if (tempFormModel.zIndex == index && tempFormModel.name == node.name) {
+                        if (node == null) {
+                            _this._removeStack(i);
+                            return;
+                        }
+                        else {
+                            var form = _this._findComponent(node, "UIForm");
+                            form.formName = name;
+                            tempFormModel.UIForm = form;
+                            tempFormModel.node = node;
+                            if (callback) {
+                                callback(formModel);
+                            }
+                            return;
+                        }
+                    }
+                }
+            });
+        };
+        BaseUIModule.prototype._getUINodeFromCacheByName = function (name) {
+            for (var i = 0; i < this.cachedUIForms.length; i++) {
+                var element = this.cachedUIForms[i];
+                if (element.node != null && element.name == name) {
+                    this.cachedUIForms.splice(i, 1);
+                    return element;
+                }
+            }
+            return null;
+        };
+        BaseUIModule.prototype._showUIForm = function (formModel, data) {
+            cc.Canvas.instance.node.addChild(formModel.node);
+            formModel.UIForm.willShow(data);
+            formModel.node.active = true;
+            if (data && !isNaN(data.zIndex))
+                formModel.node.zIndex = data.zIndex;
+            else
+                formModel.node.zIndex = formModel.zIndex;
+            formModel.UIForm.onShow(data);
+            if (formModel.UIForm.isPopEffect) {
+                var owner = formModel.node;
+                Common.popOpenAnim(owner);
+            }
+        };
+        BaseUIModule.prototype._hideUIForm = function (formModel, data, cb) {
+            formModel.UIForm.willHide(data);
+            formModel.UIForm.onHide(data);
+            this._removeStack(formModel);
+            this.cachedUIForms.push(formModel);
+            if (formModel.UIForm.isPopEffect) {
+                var owner = formModel.node;
+                Common.popCloseAnim(owner, function () {
+                    formModel.node.active = false;
+                    formModel.node.removeFromParent(false);
+                    // formModel.node.removeSelf();
+                    if (cb)
+                        cb();
+                });
+            }
+            else {
+                formModel.UIForm.hideAnim(function () {
+                    formModel.node.active = false;
+                    formModel.node.removeFromParent(false);
+                    // formModel.node.removeSelf();
+                    if (cb)
+                        cb();
+                });
+            }
+        };
+        BaseUIModule.prototype._destroyUIForm = function (formModel, data) {
+            formModel.UIForm.willHide(data);
+            formModel.node.removeFromParent();
+            formModel.UIForm.onHide(data);
+            formModel.node.active = false;
+            this._removeStack(formModel);
+            formModel.node.destroy();
+        };
+        BaseUIModule.prototype._removeStack = function (removeItem) {
+            var _this = this;
+            if (isNaN(removeItem)) {
+                this.UIFormStack.forEach(function (item, idx) {
+                    if (item == removeItem) {
+                        _this.UIFormStack.splice(idx, 1);
+                    }
+                });
+            }
+            else
+                this.UIFormStack.splice(removeItem, 1);
+        };
+        return BaseUIModule;
+    }(BaseModule));
+
+    /**
+      * HASDO:
+      * 1栈方式管理UI，
+      * 2缓存UI
+      * 3入栈（显示UI）
+      * 4出栈（关闭UI）
+      * 5关闭指定UI
+      *
+      * TODO:
+      * 1上层UI遮盖下层UI逻辑回调
+      * 2设置label默认字体
+      * 3按需清理缓存
+      *
+      * ISSUE
+      * 1由于UI是异步加载，导致UI栈顺序会错乱 (fixed)
+      * 2连续push相同UI（待测试）
+      */
+    var CocosUIModule = /** @class */ (function (_super) {
+        __extends(CocosUIModule, _super);
+        function CocosUIModule() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        return CocosUIModule;
+    }(BaseUIModule));
+
+    var BaseForm = /** @class */ (function (_super) {
+        __extends(BaseForm, _super);
+        function BaseForm() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(BaseForm.prototype, "FormData", {
+            /**
+             * 父类缓存willShow，onShow传递到实体的逻辑数据
+             */
+            get: function () {
+                return this.mFormData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * 初始化
+         * @param logic
+         */
+        BaseForm.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+        };
+        BaseForm.prototype.willShow = function (data) {
+            this.mFormData = data;
+        };
+        BaseForm.prototype.onShow = function (data) {
+        };
+        BaseForm.prototype.willHide = function (data) {
+        };
+        BaseForm.prototype.onHide = function (data) {
+        };
+        return BaseForm;
+    }(BaseModule));
+
+    var AdForm = /** @class */ (function (_super) {
+        __extends(AdForm, _super);
+        function AdForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.pauseContainer = null;
+            _this.pauseView = null;
+            _this.pauseLayout = null;
+            _this.centerContainer = null;
+            _this.centerView = null;
+            _this.centerLayout = null;
+            _this.exportContainer = null;
+            _this.exportView = null;
+            _this.exportLayout = null;
+            _this.exportClose = null;
+            _this.exportMask = null;
+            _this.exportCloseTxt = null;
+            _this.floatContainer = null;
+            _this.floatFull = null;
+            _this.bannerContainer = null;
+            _this.bannerView = null;
+            _this.bannerLayout = null;
+            _this.endContainer = null;
+            _this.endView = null;
+            _this.endLayout = null;
+            _this.failContainer = null;
+            _this.failView = null;
+            _this.failLayout = null;
+            _this.gameOverContainer = null;
+            _this.gameOverView = null;
+            _this.gameOverLayout = null;
+            _this.respawnContainer = null;
+            _this.respawnScrollView = null;
+            _this.respawnLayout = null;
+            _this.playerDiedContainer = null;
+            _this.playerDiedScrollView = null;
+            _this.playerDiedLayout = null;
+            _this.leftContainer = null;
+            _this.leftView = null;
+            _this.leftLayout = null;
+            _this.rightView = null;
+            _this.rightLayout = null;
+            _this.sideContainer = null;
+            _this.sideView = null;
+            _this.sideLayout = null;
+            _this.btnSideShow = null;
+            _this.btnSideHide = null;
+            _this.extend1Container = null;
+            _this.extend1View = null;
+            _this.extend1Layout = null;
+            _this.extend2Container = null;
+            _this.extend2View = null;
+            _this.extend2Layout = null;
+            _this.extend3Container = null;
+            _this.extend3View = null;
+            _this.extend3Layout = null;
+            _this.extend4Container = null;
+            _this.extend4View = null;
+            _this.extend4Layout = null;
+            _this.topContainer = null;
+            _this.topView = null;
+            _this.topLayout = null;
+            _this.mAdItemList = [];
+            _this.mScrollVec = [];
+            _this.mChangeLen = 0;
+            _this.mIndex = 999;
+            _this.mShowAd = moosnow.AD_POSITION.NONE;
+            _this.mPrevShowAd = moosnow.AD_POSITION.NONE;
+            _this.mEndLogic = [];
+            _this.mFloatIndex = 0;
+            _this.mFloatRefresh = 3;
+            _this.mFloatCache = {};
+            _this.mSecond = 3;
+            return _this;
+        }
+        AdForm.prototype.setPosition = function (source, position, callback, refresh) {
+            if (position === void 0) { position = ""; }
+            if (refresh === void 0) { refresh = false; }
+            var retValue = Common.deepCopy(source);
+            retValue.forEach(function (item) {
+                item.position = position;
+                item.onCancel = callback;
+                item.refresh = refresh;
+            });
+            return retValue;
+        };
+        AdForm.prototype.loadAd = function (entityName, callback) {
+            var _this = this;
+            moosnow.entity.preload(entityName, function () {
+                moosnow.ad.getAd(function (res) {
+                    _this.mAdData = res;
+                    if (res.indexLeft.length == 0)
+                        return;
+                    if (callback)
+                        callback(res);
+                });
+            });
+        };
+        /**
+         * 绑定导出数据
+         * @param container 列表容器节点，显示/隐藏  的核心节点
+         * @param scrollView
+         * @param layout cc.Layout
+         * @param position 位置信息，将提交到统计后台用于分析
+         * @param entityName  需要绑定的预制体
+         * @param callback  跳转取消时的回调函数
+         */
+        AdForm.prototype.initView = function (container, scrollView, layout, position, entityName, callback) {
+            var _this = this;
+            if (!entityName) {
+                console.warn('entityName is null 无法初始化 ');
+                return;
+            }
+            this.loadAd(entityName, function (res) {
+                var source = _this.setPosition(res.indexLeft, position, callback);
+                source.forEach(function (item, idx) {
+                    var adItemCtl = moosnow.entity.showEntity(entityName, layout.node, item);
+                    _this.mAdItemList.push(adItemCtl);
+                });
+                _this.pushScroll(scrollView, layout);
+            });
+        };
+        AdForm.prototype.pushScroll = function (scrollView, layout) {
+        };
+        AdForm.prototype.addEvent = function () {
+            moosnow.event.addListener(EventType.AD_VIEW_CHANGE, this, this.onAdChange);
+        };
+        AdForm.prototype.removeEvent = function () {
+            moosnow.event.removeListener(EventType.AD_VIEW_CHANGE, this);
+        };
+        AdForm.prototype.onAdChange = function (data) {
+            this.mChangeLen++;
+            if (this.mChangeLen > 1 && data.showAd != AD_POSITION.RECOVER) {
+                this.mPrevShowAd = this.mShowAd;
+            }
+            if (data.showAd == AD_POSITION.RECOVER) {
+                data.showAd = this.mPrevShowAd;
+            }
+            this.displayChange(data.showAd, data.callback);
+            this.onAfterShow(this.mIndex);
+        };
+        /**
+         *
+         * @param zindex
+         */
+        AdForm.prototype.onAfterShow = function (zindex) {
+        };
+        /**
+          *
+          * @param data
+          */
+        AdForm.prototype.willShow = function (data) {
+            _super.prototype.willShow.call(this, data);
+            this.mAdItemList = [];
+            this.mScrollVec = [];
+            this.addEvent();
+            if (data)
+                this.displayChange(data.showAd, data.callback);
+            else
+                this.displayChange(AD_POSITION.NONE, null);
+        };
+        AdForm.prototype.displayChange = function (data, callback) {
+            if (callback === void 0) { callback = null; }
+            var curApp = moosnow.getAppPlatform();
+            if (moosnow.APP_PLATFORM.WX == curApp
+                || curApp == moosnow.APP_PLATFORM.OPPO
+                || curApp == moosnow.APP_PLATFORM.BYTEDANCE) {
+                this.mShowAd = data;
+                this.displayAd(true);
+                this.mBackCall = callback;
+            }
+            else {
+                this.onBack();
+            }
+        };
+        AdForm.prototype.onBack = function () {
+            if (this.mBackCall) {
+                this.mBackCall();
+            }
+        };
+        AdForm.prototype.sideOut = function () {
+            var _this = this;
+            var wxsys = moosnow.platform.getSystemInfoSync();
+            var statusBarHeight = 0;
+            var notchHeight = 0;
+            if (wxsys) {
+                statusBarHeight = wxsys.statusBarHeight || 0;
+                notchHeight = wxsys.notchHeight || 0;
+            }
+            this.sideView.node.runAction(cc.sequence(cc.moveTo(1, statusBarHeight + notchHeight + this.sideView.node.width + 20, 0), cc.callFunc(function () {
+                _this.btnSideShow.active = false;
+                _this.btnSideHide.active = true;
+            })));
+        };
+        AdForm.prototype.sideIn = function () {
+            var _this = this;
+            this.sideView.node.runAction(cc.sequence(cc.moveTo(1, 0, 0), cc.callFunc(function () {
+                _this.btnSideShow.active = true;
+                _this.btnSideHide.active = false;
+            })));
+        };
+        /**
+         * 绑定广告数据-固定显示6个导出
+         * @param container 列表容器节点，显示/隐藏  的核心节点
+         * @param layout cc.Layout
+         * @param position 位置信息，将提交到统计后台用于分析
+         * @param entityName 需要绑定的预制体
+         * @param callback 跳转取消时的回调函数
+         */
+        AdForm.prototype.initFiexdView = function (container, layout, position, entityName, callback) {
+            var _this = this;
+            this.loadAd(entityName, function (res) {
+                if (_this.mEndLogic) {
+                    for (var i = 0; i < _this.mEndLogic.length; i++) {
+                        moosnow.entity.hideEntity(_this.mEndLogic[i], {});
+                    }
+                    _this.mEndLogic = [];
+                }
+                var banner = _this.setPosition(res.indexLeft, position, callback, true);
+                var endAd = [];
+                var showIds = [];
+                for (var i = 0; i < 6; i++) {
+                    var item = banner.length > i ? banner[i] : banner[0];
+                    showIds.push({
+                        appid: item.appid,
+                        position: item.position,
+                        index: i
+                    });
+                    endAd.push(item);
+                }
+                endAd.forEach(function (item) {
+                    var adRow = __assign(__assign({}, item), { showIds: showIds, source: banner });
+                    var logic = moosnow.entity.showEntity(entityName, layout, adRow);
+                    _this.mEndLogic.push(logic);
+                    return false;
+                });
+            });
+        };
+        AdForm.prototype.willHide = function () {
+            this.removeEvent();
+            this.mAdItemList.forEach(function (item) {
+                moosnow.entity.hideEntity(item, null);
+            });
+            this.mAdItemList = [];
+            this.mScrollVec = [];
+        };
+        /**
+         *
+         * @param parentNode 父节点
+         * @param prefabs 匹配的预制体
+         * @param points 需要显示的坐标点
+         * @param entityName  需要绑定的预制体
+         * @param callback  跳转取消时的回调函数
+         */
+        AdForm.prototype.initFloatAd = function (parentNode, prefabs, points, position, callback) {
+            var _this = this;
+            cc.loader.loadResDir(moosnow.entity.prefabPath, cc.Prefab, function () {
+                moosnow.ad.getAd(function (res) {
+                    _this.mAdData = res;
+                    if (res.indexLeft.length == 0)
+                        return;
+                    var source = _this.setPosition(res.indexLeft, position, callback, true);
+                    var showIds = [];
+                    prefabs.forEach(function (prefabName, idx) {
+                        var showIndex = idx;
+                        if (showIndex > source.length - 1)
+                            showIndex = 0;
+                        var adRow = source[showIndex];
+                        showIds.push({
+                            appid: adRow.appid,
+                            position: adRow.position,
+                            index: idx
+                        });
+                        var point = points[idx];
+                        adRow.x = point.x;
+                        adRow.y = point.y;
+                        adRow.source = source;
+                        adRow.showIds = showIds;
+                        var logic = moosnow.entity.showEntity(prefabName, parentNode, adRow);
+                        _this.mFloatCache[idx] = {
+                            index: showIndex,
+                            logic: logic,
+                        };
+                        _this.floatAnim(logic.node);
+                    });
+                    _this.updateFloat(source);
+                    _this.schedule(function () {
+                        _this.updateFloat(source);
+                    }, _this.mFloatRefresh);
+                });
+            });
+        };
+        AdForm.prototype.floatAnim = function (floatNode) {
+        };
+        AdForm.prototype.updateFloat = function (source) {
+            for (var key in this.mFloatCache) {
+                var showIndex = this.mFloatCache[key].index;
+                var logic = this.mFloatCache[key].logic;
+                if (showIndex < source.length - 1)
+                    showIndex++;
+                else
+                    showIndex = 0;
+                this.mFloatCache[key].index = showIndex;
+                logic.refreshImg(source[showIndex]);
+            }
+        };
+        AdForm.prototype.hasAd = function (ad) {
+            return (this.mShowAd & ad) == ad;
+        };
+        AdForm.prototype.showExportClose = function () {
+            this.mSecond -= 1;
+            this.exportCloseTxt.active = true;
+            var closeLabel = this.exportCloseTxt.getComponent(cc.Label);
+            if (this.mSecond <= 0) {
+                this.exportClose.active = true;
+                this.exportCloseTxt.active = false;
+                this.unschedule(this.showExportClose);
+                return;
+            }
+            closeLabel.string = "\u5269\u4F59" + this.mSecond + "\u79D2\u53EF\u5173\u95ED";
+        };
+        AdForm.prototype.displayAd = function (visible) {
+            this.floatContainer.active = visible && this.hasAd(AD_POSITION.FLOAT);
+            this.bannerContainer.active = visible && this.hasAd(AD_POSITION.BANNER);
+            this.centerContainer.active = visible && this.hasAd(AD_POSITION.CENTER);
+            this.leftContainer.active = visible && this.hasAd(AD_POSITION.LEFTRIGHT);
+            this.exportMask.active = visible && this.hasAd(AD_POSITION.MASK);
+            this.sideContainer.active = visible && this.hasAd(AD_POSITION.SIDE);
+            this.endContainer.active = visible && this.hasAd(AD_POSITION.EXPORT_FIXED);
+            this.topContainer.active = visible && this.hasAd(AD_POSITION.TOP);
+            this.extend1Container.active = visible && this.hasAd(AD_POSITION.EXTEND1);
+            this.extend2Container.active = visible && this.hasAd(AD_POSITION.EXTEND2);
+            this.extend3Container.active = visible && this.hasAd(AD_POSITION.EXTEND3);
+            this.extend4Container.active = visible && this.hasAd(AD_POSITION.EXTEND4);
+            this.exportContainer.active = visible && this.hasAd(AD_POSITION.EXPORT);
+            this.showClose(visible);
+            this.showInviteBox(visible);
+        };
+        AdForm.prototype.showClose = function (visible) {
+            this.exportClose.active = false;
+            this.exportCloseTxt.active = false;
+            this.unschedule(this.showExportClose);
+            if (visible && this.hasAd(AD_POSITION.BACK)) {
+                if (this.hasAd(AD_POSITION.WAIT)) {
+                    this.mSecond = 3;
+                    this.showExportClose();
+                    this.schedule(this.showExportClose, 1);
+                }
+                else {
+                    this.exportClose.active = true;
+                    this.exportCloseTxt.active = false;
+                }
+            }
+            else {
+                this.exportClose.active = false;
+                this.exportCloseTxt.active = false;
+            }
+        };
+        AdForm.prototype.showInviteBox = function (visible) {
+            var _this = this;
+            if (visible && this.hasAd(AD_POSITION.EXPORT)) {
+                moosnow.http.getAllConfig(function (res) {
+                    if (res) {
+                        if (res.exportAutoNavigate == 1)
+                            moosnow.platform.navigate2Mini(_this.mAdData.indexLeft[Common.randomNumBoth(0, _this.mAdData.indexLeft.length - 1)]);
+                        if (res.exportAutoInvite)
+                            _this._createInviteBox();
+                    }
+                });
+            }
+            if (visible && this.hasAd(AD_POSITION.BANNER)) {
+                moosnow.http.getAllConfig(function (res) {
+                    _this._createInviteBox();
+                    if (res) {
+                        if (res.bannerAutoInvite)
+                            _this._createInviteBox();
+                    }
+                });
+            }
+            if (visible && this.hasAd(AD_POSITION.SIDE)) {
+                moosnow.http.getAllConfig(function (res) {
+                    if (res) {
+                        if (res.sideAutoInvite)
+                            _this._createInviteBox();
+                    }
+                });
+            }
+        };
+        AdForm.prototype._createInviteBox = function () {
+            var _this = this;
+            moosnow.http.getAllConfig(function (res) {
+                if (res) {
+                    var inviteDelay = isNaN(res.inviteDelay) ? 0 : parseFloat(res.inviteDelay);
+                    if (inviteDelay > 0)
+                        _this.scheduleOnce(function () {
+                            moosnow.entity.showEntity("inviteBox", cc.Canvas.instance.node, {});
+                        }, inviteDelay);
+                    else
+                        moosnow.entity.showEntity("inviteBox", cc.Canvas.instance.node, {});
+                }
+                else
+                    moosnow.entity.showEntity("inviteBox", cc.Canvas.instance.node, {});
+            });
+        };
+        AdForm.prototype.onFwUpdate = function () {
+        };
+        return AdForm;
+    }(BaseForm));
+
+    var NodeEvent = /** @class */ (function (_super) {
+        __extends(NodeEvent, _super);
+        function NodeEvent() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(NodeEvent, "TOUCH_START", {
+            get: function () {
+                return "";
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(NodeEvent, "TOUCH_END", {
+            get: function () {
+                return "";
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return NodeEvent;
+    }(BaseForm));
+
+    var CocosNodeEvent = /** @class */ (function (_super) {
+        __extends(CocosNodeEvent, _super);
+        function CocosNodeEvent() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(CocosNodeEvent, "TOUCH_START", {
+            get: function () {
+                return cc.Node.EventType.TOUCH_START;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(CocosNodeEvent, "TOUCH_END", {
+            get: function () {
+                return cc.Node.EventType.TOUCH_END;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return CocosNodeEvent;
+    }(NodeEvent));
+
+    var CocosAdForm = /** @class */ (function (_super) {
+        __extends(CocosAdForm, _super);
+        function CocosAdForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.mMoveSpeed = 2;
+            return _this;
+        }
+        CocosAdForm.prototype.addEvent = function () {
+            if (this.exportClose)
+                this.exportClose.on(CocosNodeEvent.TOUCH_END, this.onBack, this);
+            if (this.btnSideShow)
+                this.btnSideShow.on(CocosNodeEvent.TOUCH_START, this.sideOut, this);
+            if (this.btnSideHide)
+                this.btnSideHide.on(CocosNodeEvent.TOUCH_START, this.sideIn, this);
+            _super.prototype.addEvent.call(this);
+        };
+        CocosAdForm.prototype.removeEvent = function () {
+            if (this.exportClose)
+                this.exportClose.off(CocosNodeEvent.TOUCH_END, this.onBack, this);
+            if (this.btnSideShow)
+                this.btnSideShow.off(CocosNodeEvent.TOUCH_START, this.sideOut, this);
+            if (this.btnSideHide)
+                this.btnSideHide.off(CocosNodeEvent.TOUCH_START, this.sideIn, this);
+            _super.prototype.removeEvent.call(this);
+        };
+        CocosAdForm.prototype.floatAnim = function (floatNode) {
+            floatNode.runAction(cc.sequence(cc.rotateTo(0.3, 10), cc.rotateTo(0.6, -10), cc.rotateTo(0.3, 0), cc.scaleTo(0.3, 0.8), cc.scaleTo(0.3, 1)).repeatForever());
+        };
+        CocosAdForm.prototype.pushScroll = function (scrollView, layout) {
+            if (layout.type == cc.Layout.Type.GRID) {
+                if (scrollView.vertical) {
+                    this.mScrollVec.push({
+                        scrollView: scrollView,
+                        move2Up: false
+                    });
+                }
+                else {
+                    this.mScrollVec.push({
+                        scrollView: scrollView,
+                        move2Left: false
+                    });
+                }
+            }
+            else if (layout.type == cc.Layout.Type.HORIZONTAL) {
+                this.mScrollVec.push({
+                    scrollView: scrollView,
+                    move2Left: false
+                });
+            }
+            else if (layout.type == cc.Layout.Type.VERTICAL) {
+                this.mScrollVec.push({
+                    scrollView: scrollView,
+                    move2Up: false
+                });
+            }
+        };
+        CocosAdForm.prototype.onFwUpdate = function () {
+            for (var i = 0; i < this.mScrollVec.length; i++) {
+                var item = this.mScrollVec[i];
+                var scrollView = item.scrollView;
+                if (scrollView.isScrolling())
+                    continue;
+                var scrollOffset = scrollView.getMaxScrollOffset();
+                var maxH = scrollOffset.y / 2 + 20;
+                var maxW = scrollOffset.x / 2 + 20;
+                var contentPos = scrollView.getContentPosition();
+                if (item.move2Up == true) {
+                    if (contentPos.y > maxH) {
+                        item.move2Up = false;
+                    }
+                    item.scrollView.setContentPosition(new cc.Vec2(contentPos.x, contentPos.y + this.mMoveSpeed));
+                }
+                else if (item.move2Up == false) {
+                    if (contentPos.y < -maxH) {
+                        item.move2Up = true;
+                    }
+                    item.scrollView.setContentPosition(new cc.Vec2(contentPos.x, contentPos.y - this.mMoveSpeed));
+                }
+                if (item.move2Left == true) {
+                    if (contentPos.x > maxW) {
+                        item.move2Left = false;
+                    }
+                    item.scrollView.setContentPosition(new cc.Vec2(contentPos.x + this.mMoveSpeed, contentPos.y));
+                }
+                else if (item.move2Left == false) {
+                    if (contentPos.x < -maxW) {
+                        item.move2Left = true;
+                    }
+                    item.scrollView.setContentPosition(new cc.Vec2(contentPos.x - this.mMoveSpeed, contentPos.y));
+                }
+            }
+        };
+        return CocosAdForm;
+    }(AdForm));
+
+    var MISTOUCH_BANNER_TYPE;
+    (function (MISTOUCH_BANNER_TYPE) {
+        MISTOUCH_BANNER_TYPE[MISTOUCH_BANNER_TYPE["AUTO_HIDE"] = 1] = "AUTO_HIDE";
+        MISTOUCH_BANNER_TYPE[MISTOUCH_BANNER_TYPE["MAST"] = 2] = "MAST";
+    })(MISTOUCH_BANNER_TYPE || (MISTOUCH_BANNER_TYPE = {}));
+
+    var UIForms = /** @class */ (function () {
+        function UIForms() {
+        }
+        Object.defineProperty(UIForms, "mapping", {
+            get: function () {
+                var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+                return {
+                    adForm: (_a = {},
+                        _a[moosnow.APP_PLATFORM.WX] = "adForm",
+                        _a),
+                    pauseForm: (_b = {},
+                        _b[moosnow.APP_PLATFORM.WX] = "pauseForm",
+                        _b[moosnow.APP_PLATFORM.BYTEDANCE] = "pauseFormTT",
+                        _b[moosnow.APP_PLATFORM.OPPO] = "pauseFormOPPO",
+                        _b[moosnow.APP_PLATFORM.OPPO_ZS] = "pauseFormOPPO",
+                        _b[moosnow.APP_PLATFORM.VIVO] = "pauseFormOPPO",
+                        _b[moosnow.APP_PLATFORM.QQ] = "pauseFormTT",
+                        _b),
+                    respawnForm: (_c = {},
+                        _c[moosnow.APP_PLATFORM.WX] = "respawnForm",
+                        _c[moosnow.APP_PLATFORM.BYTEDANCE] = "respawnFormTT",
+                        _c[moosnow.APP_PLATFORM.OPPO] = "respawnFormOPPO",
+                        _c[moosnow.APP_PLATFORM.OPPO_ZS] = "respawnFormOPPO",
+                        _c[moosnow.APP_PLATFORM.VIVO] = "respawnFormOPPO",
+                        _c[moosnow.APP_PLATFORM.QQ] = "respawnFormQQ",
+                        _c),
+                    endForm: (_d = {},
+                        _d[moosnow.APP_PLATFORM.WX] = "endForm",
+                        _d[moosnow.APP_PLATFORM.BYTEDANCE] = "endFormTT",
+                        _d[moosnow.APP_PLATFORM.OPPO] = "endFormOPPO",
+                        _d[moosnow.APP_PLATFORM.OPPO_ZS] = "endFormOPPO",
+                        _d[moosnow.APP_PLATFORM.VIVO] = "endFormOPPO",
+                        _d),
+                    totalForm: (_e = {},
+                        _e[moosnow.APP_PLATFORM.WX] = "totalForm",
+                        _e[moosnow.APP_PLATFORM.BYTEDANCE] = "totalFormTT",
+                        _e[moosnow.APP_PLATFORM.QQ] = "totalFormQQ",
+                        _e),
+                    tryForm: (_f = {},
+                        _f[moosnow.APP_PLATFORM.WX] = "tryForm",
+                        _f[moosnow.APP_PLATFORM.BYTEDANCE] = "tryFormTT",
+                        _f[moosnow.APP_PLATFORM.QQ] = "tryFormTT",
+                        _f),
+                    mistouchForm: (_g = {},
+                        _g[moosnow.APP_PLATFORM.WX] = "mistouchForm",
+                        _g[moosnow.APP_PLATFORM.QQ] = "mistouchFormQQ",
+                        _g[moosnow.APP_PLATFORM.BYTEDANCE] = "mistouchFormTT",
+                        _g),
+                    prizeForm: (_h = {},
+                        _h[moosnow.APP_PLATFORM.BYTEDANCE] = "prizeFormTT",
+                        _h[moosnow.APP_PLATFORM.QQ] = "prizeForm",
+                        _h),
+                    shareForm: (_j = {},
+                        _j[moosnow.APP_PLATFORM.WX] = "shareFormTT",
+                        _j[moosnow.APP_PLATFORM.BYTEDANCE] = "shareFormTT",
+                        _j),
+                    setForm: (_k = {},
+                        _k[moosnow.APP_PLATFORM.WX] = "setForm",
+                        _k),
+                    toastForm: (_l = {},
+                        _l[moosnow.APP_PLATFORM.WX] = "toastForm",
+                        _l),
+                    coinForm: (_m = {},
+                        _m[moosnow.APP_PLATFORM.WX] = "coinForm",
+                        _m)
+                };
+            },
+            enumerable: true,
+            configurable: true
+        });
+        UIForms.convertUIName = function (mappingForm) {
+            if (!mappingForm) {
+                console.warn("convertUIName fail  mappingForm is null ");
+                return null;
+            }
+            var curApp = moosnow.getAppPlatform();
+            if (mappingForm[curApp])
+                return mappingForm[curApp];
+            else if (mappingForm[moosnow.APP_PLATFORM.WX])
+                return mappingForm[moosnow.APP_PLATFORM.WX];
+            else {
+                console.warn("convertUIName fail ", mappingForm);
+                return null;
+            }
+            return null;
+        };
+        Object.defineProperty(UIForms, "AdForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.adForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "CoinForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.coinForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "ShareForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.shareForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(UIForms, "TotalForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.totalForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(UIForms, "EndForm", {
+            /**
+             * 结束页
+             */
+            get: function () {
+                return this.convertUIName(this.mapping.endForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "ToastForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.toastForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "PauseForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.pauseForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "RespawnForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.respawnForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "SetForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.setForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(UIForms, "PrizeForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.prizeForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(UIForms, "MistouchForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.mistouchForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(UIForms, "TryForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.tryForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return UIForms;
+    }());
+
+    var MistouchForm = /** @class */ (function (_super) {
+        __extends(MistouchForm, _super);
+        function MistouchForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            _this.mMaxNum = 10;
+            _this.mCurrentNum = 0;
+            _this.mNavigateIndex = 0;
+            _this.mBannerShow = false;
+            _this.mShowTime = 0;
+            _this.mBannerClickType = MISTOUCH_BANNER_TYPE.AUTO_HIDE;
+            return _this;
+        }
+        Object.defineProperty(MistouchForm.prototype, "FormData", {
+            get: function () {
+                return this.mFormData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        MistouchForm.prototype.initPos = function () {
+        };
+        MistouchForm.prototype.willShow = function (data) {
+            var _this = this;
+            _super.prototype.willShow.call(this, data);
+            this.btnBanner.active = true;
+            this.initPos();
+            this.mCurrentNum = 0;
+            this.mNavigateIndex = Common.randomNumBoth(3, this.mMaxNum - 2);
+            this.addEvent();
+            this.schedule(this.subProgress, 0.1);
+            moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
+            this.mBannerShow = false;
+            moosnow.http.getAllConfig(function (res) {
+                // this.mBannerClickType = res.bannerClickType
+                _this.mBannerClickType = MISTOUCH_BANNER_TYPE.MAST;
+            });
+        };
+        MistouchForm.prototype.willHide = function () {
+            this.unschedule(this.subProgress);
+            this.unschedule(this.resetProgress);
+            this.removeEvent();
+        };
+        MistouchForm.prototype.subProgress = function () {
+            if (this.mCurrentNum > 0)
+                this.mCurrentNum -= 0.1;
+        };
+        MistouchForm.prototype.addEvent = function () {
+        };
+        MistouchForm.prototype.removeEvent = function () {
+        };
+        MistouchForm.prototype.bannerClickCallback = function (isOpend) {
+            if (isOpend) {
+                this.unschedule(this.onHideBanner);
+                this.unschedule(this.resetProgress);
+                moosnow.platform.hideBanner();
+                this.mBannerShow = false;
+                if (this.FormData && this.FormData.callback)
+                    this.FormData.callback();
+            }
+        };
+        MistouchForm.prototype.onLogoUp = function () {
+            this.logo.position = this.mEndPos;
+        };
+        MistouchForm.prototype.onLogoDown = function () {
+            this.logo.position = this.mBeginPos;
+        };
+        MistouchForm.prototype.onBannerClick = function () {
+            var _this = this;
+            this.onLogoDown();
+            this.mCurrentNum += 1;
+            if (this.mCurrentNum >= this.mNavigateIndex) {
+                if (!this.mBannerShow) {
+                    this.mShowTime = Date.now();
+                    this.mBannerShow = true;
+                    moosnow.platform.showBanner(function (e) {
+                        console.log('banner click callback ', e);
+                        _this.bannerClickCallback(e);
+                    });
+                    if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.AUTO_HIDE) {
+                        this.unschedule(this.onHideBanner);
+                        this.scheduleOnce(this.onHideBanner, 2);
+                    }
+                    else if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.MAST) {
+                        this.unschedule(this.resetProgress);
+                        this.scheduleOnce(this.resetProgress, 2);
+                    }
+                }
+            }
+            if (this.mCurrentNum >= this.mMaxNum) {
+                moosnow.platform.hideBanner();
+                this.mBannerShow = false;
+                moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+                if (this.FormData && this.FormData.callback)
+                    this.FormData.callback(true);
+            }
+        };
+        MistouchForm.prototype.resetProgress = function () {
+            this.mCurrentNum = 0;
+            moosnow.platform.hideBanner();
+            this.mBannerShow = false;
+        };
+        MistouchForm.prototype.onHideBanner = function () {
+            moosnow.platform.hideBanner();
+        };
+        MistouchForm.prototype.update = function () {
+            this.clickProgress.progress = this.mCurrentNum / this.mMaxNum;
+        };
+        return MistouchForm;
+    }(BaseForm));
+
+    var CocosMistouchForm = /** @class */ (function (_super) {
+        __extends(CocosMistouchForm, _super);
+        function CocosMistouchForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            return _this;
+        }
+        CocosMistouchForm.prototype.addEvent = function () {
+            this.btnBanner.on(CocosNodeEvent.TOUCH_START, this.onLogoUp, this);
+            this.btnBanner.on(CocosNodeEvent.TOUCH_END, this.onBannerClick, this);
+        };
+        CocosMistouchForm.prototype.removeEvent = function () {
+            this.btnBanner.off(CocosNodeEvent.TOUCH_START, this.onLogoUp, this);
+            this.btnBanner.off(CocosNodeEvent.TOUCH_END, this.onBannerClick, this);
+            moosnow.event.removeListener(EventType.ON_PLATFORM_SHOW, this);
+        };
+        CocosMistouchForm.prototype.onLogoUp = function () {
+            this.logo.position = this.mEndPos;
+        };
+        CocosMistouchForm.prototype.onLogoDown = function () {
+            this.logo.position = this.mBeginPos;
+        };
+        CocosMistouchForm.prototype.initPos = function () {
+            this.mBeginPos = this.logo.position.clone();
+            this.mEndPos = this.mBeginPos.add(new cc.Vec2(0, 50));
+        };
+        return CocosMistouchForm;
+    }(MistouchForm));
+
+    var MistouchFormTT = /** @class */ (function (_super) {
+        __extends(MistouchFormTT, _super);
+        function MistouchFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnReceive = null;
+            _this.btnConfirm = null;
+            _this.checked = null;
+            _this.unchecked = null;
+            _this.step1 = null;
+            _this.step2 = null;
+            _this.logo = null;
+            _this.mMaxNum = 10;
+            _this.mCurrentNum = 0;
+            _this.mOpenVideo = true;
+            return _this;
+        }
+        MistouchFormTT.prototype.willShow = function (data) {
+            _super.prototype.willShow.call(this, data);
+            this.step1.active = true;
+            this.step2.active = false;
+            this.btnConfirm.active = true;
+            this.mCurrentNum = 0;
+            this.mOpenVideo = true;
+            this.showCheckbox();
+            this.addEvent();
+            this.schedule(this.subProgress, 0.1);
+            moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
+        };
+        MistouchFormTT.prototype.willHide = function () {
+            this.unschedule(this.subProgress);
+            this.unschedule(this.resetProgress);
+            this.removeEvent();
+        };
+        MistouchFormTT.prototype.subProgress = function () {
+            if (this.mCurrentNum > 0)
+                this.mCurrentNum -= 0.1;
+        };
+        MistouchFormTT.prototype.addEvent = function () {
+        };
+        MistouchFormTT.prototype.removeEvent = function () {
+        };
+        MistouchFormTT.prototype.openBox = function () {
+            var _this = this;
+            if (this.mOpenVideo) {
+                this.btnConfirm.active = false;
+                moosnow.platform.showVideo(function (res) {
+                    if (res == moosnow.VIDEO_STATUS.END) {
+                        if (_this.FormData && _this.FormData.callback)
+                            _this.FormData.callback(true);
+                        return;
+                    }
+                    else if (res == moosnow.VIDEO_STATUS.NOTEND) {
+                        moosnow.ui.showToast(moosnow.VIDEO_MSG.NOTEND);
+                    }
+                    else {
+                        moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR);
+                    }
+                    _this.btnConfirm.active = true;
+                });
+            }
+            else {
+                moosnow.ui.hideUIForm(UIForms.MistouchForm, null);
+            }
+        };
+        MistouchFormTT.prototype.checkboxChange = function () {
+            this.mOpenVideo = !this.mOpenVideo;
+            this.showCheckbox();
+        };
+        MistouchFormTT.prototype.showCheckbox = function () {
+            if (this.mOpenVideo) {
+                this.checked.node.active = true;
+            }
+            else {
+                this.checked.node.active = false;
+            }
+        };
+        MistouchFormTT.prototype.playBoxAnim = function (animName) {
+        };
+        MistouchFormTT.prototype.onLogoUp = function () {
+            // this.logo.position = this.mEndPos;
+            this.playBoxAnim("prizeBox2");
+        };
+        MistouchFormTT.prototype.onBannerClick = function () {
+            if (this.mCurrentNum > this.mMaxNum + 1)
+                return;
+            this.mCurrentNum += 1;
+            if (this.mCurrentNum >= this.mMaxNum) {
+                this.step1.active = false;
+                this.step2.active = true;
+                this.playBoxAnim("prizeBox1");
+            }
+        };
+        MistouchFormTT.prototype.resetProgress = function () {
+            this.mCurrentNum = 0;
+        };
+        MistouchFormTT.prototype.update = function () {
+            var progress = this.mCurrentNum / this.mMaxNum;
+            this.clickProgress.progress = progress > 1 ? 1 : progress;
+        };
+        return MistouchFormTT;
+    }(MistouchForm));
+
+    var CocosMistouchFormTT = /** @class */ (function (_super) {
+        __extends(CocosMistouchFormTT, _super);
+        function CocosMistouchFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnReceive = null;
+            _this.btnConfirm = null;
+            _this.checked = null;
+            _this.unchecked = null;
+            _this.step1 = null;
+            _this.step2 = null;
+            _this.logo = null;
+            return _this;
+        }
+        CocosMistouchFormTT.prototype.playBoxAnim = function (animName) {
+            var anim = this.logo.getComponent(cc.Animation);
+            if (!anim.getAnimationState(animName).isPlaying)
+                anim.play(animName);
+        };
+        CocosMistouchFormTT.prototype.addEvent = function () {
+            this.unchecked.node.on(CocosNodeEvent.TOUCH_END, this.checkboxChange, this);
+            this.btnReceive.on(CocosNodeEvent.TOUCH_START, this.onLogoUp, this);
+            this.btnReceive.on(CocosNodeEvent.TOUCH_END, this.onBannerClick, this);
+            this.btnConfirm.on(CocosNodeEvent.TOUCH_END, this.openBox, this);
+        };
+        CocosMistouchFormTT.prototype.removeEvent = function () {
+            this.unchecked.node.off(CocosNodeEvent.TOUCH_END, this.checkboxChange, this);
+            this.btnReceive.off(CocosNodeEvent.TOUCH_START, this.onLogoUp, this);
+            this.btnReceive.off(CocosNodeEvent.TOUCH_END, this.onBannerClick, this);
+            this.btnConfirm.off(CocosNodeEvent.TOUCH_END, this.openBox, this);
+        };
+        return CocosMistouchFormTT;
+    }(MistouchFormTT));
+
+    var MistouchFormQQ = /** @class */ (function (_super) {
+        __extends(MistouchFormQQ, _super);
+        function MistouchFormQQ() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            _this.hand = null;
+            _this.pinch1 = null;
+            _this.pinch2 = null;
+            _this.pinch3 = null;
+            _this.pinch4 = null;
+            _this.pinch5 = null;
+            _this.pinch6 = null;
+            return _this;
+        }
+        MistouchFormQQ.prototype.willShow = function (data) {
+            _super.prototype.willShow.call(this, data);
+            this.mCurrentNum = 0;
+            this.mNavigateIndex = Common.randomNumBoth(3, this.mMaxNum - 2);
+            this.addEvent();
+            this.schedule(this.subProgress, 0.016);
+            moosnow.form.showAd(moosnow.AD_POSITION.NONE, null);
+            this.mBannerShow = false;
+            if (this.mistouchAppBox()) {
+                this.showHand(true);
+                this.showButton(false);
+                this.playHandAnim();
+            }
+            else {
+                this.showHand(false);
+                this.showButton(true);
+            }
+            moosnow.platform.hideBanner();
+        };
+        MistouchFormQQ.prototype.playHandAnim = function () {
+        };
+        MistouchFormQQ.prototype.mistouchAppBox = function () {
+            return this.FormData && this.FormData.type == 2;
+        };
+        MistouchFormQQ.prototype.subProgress = function () {
+            if (this.mCurrentNum > 0)
+                this.mCurrentNum -= 0.02;
+        };
+        MistouchFormQQ.prototype.initPos = function () {
+        };
+        MistouchFormQQ.prototype.onHideBanner = function () {
+            if (this.mistouchAppBox())
+                moosnow.platform.hideAppBox();
+            else
+                moosnow.platform.hideBanner();
+        };
+        MistouchFormQQ.prototype.showButton = function (isShow) {
+        };
+        MistouchFormQQ.prototype.showHand = function (isShow) {
+        };
+        MistouchFormQQ.prototype.onBannerClick = function () {
+            var _this = this;
+            this.mCurrentNum += 1;
+            this.onLogoDown();
+            this.showHand(false);
+            if (this.mCurrentNum >= this.mNavigateIndex) {
+                if (!this.mBannerShow) {
+                    this.mShowTime = Date.now();
+                    this.mBannerShow = true;
+                    if (this.mistouchAppBox()) {
+                        moosnow.platform.showAppBox(function () {
+                            _this.bannerClickCallback(true);
+                        });
+                    }
+                    else {
+                        moosnow.platform.showBanner(function (e) {
+                            console.log('banner click callback ', e);
+                            _this.bannerClickCallback(e);
+                        });
+                    }
+                    if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.AUTO_HIDE) {
+                        this.unschedule(this.onHideBanner);
+                        this.scheduleOnce(this.onHideBanner, 2);
+                    }
+                    else if (this.mBannerClickType == MISTOUCH_BANNER_TYPE.MAST) {
+                        this.unschedule(this.resetProgress);
+                        this.scheduleOnce(this.resetProgress, 2);
+                    }
+                }
+            }
+            if (this.mCurrentNum >= this.mMaxNum) {
+                moosnow.platform.hideBanner();
+                this.mBannerShow = false;
+                this.scheduleOnce(function () {
+                    moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+                    if (_this.FormData && _this.FormData.callback)
+                        _this.FormData.callback();
+                }, 0.2);
+            }
+        };
+        return MistouchFormQQ;
+    }(MistouchForm));
+
+    var CocosMistouchFormQQ = /** @class */ (function (_super) {
+        __extends(CocosMistouchFormQQ, _super);
+        function CocosMistouchFormQQ() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.clickProgress = null;
+            _this.btnBanner = null;
+            _this.logo = null;
+            _this.hand = null;
+            _this.pinch1 = null;
+            _this.pinch2 = null;
+            _this.pinch3 = null;
+            _this.pinch4 = null;
+            _this.pinch5 = null;
+            _this.pinch6 = null;
+            return _this;
+        }
+        CocosMistouchFormQQ.prototype.onLogoUp = function () {
+        };
+        CocosMistouchFormQQ.prototype.onLogoDown = function () {
+            var logoSprite = this.logo.getComponent(cc.Sprite);
+            if (this.mCurrentNum < this.mMaxNum)
+                logoSprite.spriteFrame = this["pinch" + ((parseInt("" + this.mCurrentNum) % 4) + 1)];
+            else
+                logoSprite.spriteFrame = this.pinch6;
+        };
+        CocosMistouchFormQQ.prototype.addEvent = function () {
+            var _this = this;
+            //误触appbox 广告
+            if (this.mistouchAppBox()) {
+                this.btnBanner.active = false;
+                this.logo.on(CocosNodeEvent.TOUCH_START, this.onLogoUp, this);
+                this.logo.on(CocosNodeEvent.TOUCH_END, this.onBannerClick, this);
+            }
+            else {
+                //误触banner
+                this.btnBanner.active = true;
+                this.btnBanner.on(CocosNodeEvent.TOUCH_START, this.onLogoUp, this);
+                this.btnBanner.on(CocosNodeEvent.TOUCH_END, this.onBannerClick, this);
+            }
+            moosnow.event.addListener(EventType.ON_PLATFORM_SHOW, this, function () {
+                if (_this.mBannerShow)
+                    _this.bannerClickCallback(true);
+            });
+        };
+        CocosMistouchFormQQ.prototype.removeEvent = function () {
+            this.btnBanner.off(CocosNodeEvent.TOUCH_END, this.onBannerClick, this);
+            moosnow.event.removeListener(EventType.ON_PLATFORM_SHOW, this);
+        };
+        CocosMistouchFormQQ.prototype.playHandAnim = function () {
+            var anim = this.hand.getComponent(cc.Animation);
+            anim.play();
+        };
+        CocosMistouchFormQQ.prototype.showButton = function (isShow) {
+            this.btnBanner.active = isShow;
+        };
+        CocosMistouchFormQQ.prototype.showHand = function (isShow) {
+            this.hand.active = isShow;
+        };
+        return CocosMistouchFormQQ;
+    }(MistouchFormQQ));
+
+    var BaseLogic = /** @class */ (function (_super) {
+        __extends(BaseLogic, _super);
+        function BaseLogic() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        /**
+         * 初始化
+         * @param logic
+         */
+        BaseLogic.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+        };
+        Object.defineProperty(BaseLogic.prototype, "LogicData", {
+            /**
+            * 父类缓存willShow，onShow传递到实体的逻辑数据
+            */
+            get: function () {
+                return this.mLogicData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        BaseLogic.prototype.willShow = function (data) {
+            this.mLogicData = data;
+            this.initPosition(data);
+        };
+        BaseLogic.prototype.initPosition = function (data) {
+        };
+        BaseLogic.prototype.onShow = function (data) {
+        };
+        BaseLogic.prototype.willHide = function (data) {
+        };
+        BaseLogic.prototype.onHide = function (data) {
+        };
+        return BaseLogic;
+    }(BaseModule));
+
+    var AdViewItem = /** @class */ (function (_super) {
+        __extends(AdViewItem, _super);
+        function AdViewItem() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.logo = null;
+            _this.title = null;
+            _this.animLogo = null;
+            _this.nameBg = null;
+            _this.changeView = false;
+            return _this;
+            // update (dt) {}
+        }
+        // public get LogicData(): moosnowAdRow {
+        //     return this.mLogicData;
+        // }
+        AdViewItem.prototype.onClickAd = function () {
+            var _this = this;
+            var openAd = this.mAdItem;
+            if (this.LogicData.refresh) {
+                var nextAd = this.findNextAd();
+                if (nextAd.refresh)
+                    moosnow.event.sendEventImmediately(EventType.AD_VIEW_REFRESH, {
+                        current: openAd,
+                        next: nextAd
+                    });
+                this.refreshImg(nextAd);
+            }
+            moosnow.platform.navigate2Mini(openAd, function () { }, function () {
+                if (_this.mAdItem.onCancel)
+                    _this.mAdItem.onCancel(openAd);
+            });
+        };
+        AdViewItem.prototype.findNextAd = function () {
+            if (!this.LogicData.source)
+                return null;
+            if (!this.LogicData.showIds)
+                return null;
+            for (var i = 0; i < this.LogicData.source.length; i++) {
+                var isShow = false;
+                for (var j = 0; j < this.LogicData.showIds.length; j++) {
+                    if (this.LogicData.showIds[j].appid == this.LogicData.source[i].appid
+                        && this.LogicData.showIds[j].position == this.LogicData.source[i].position) {
+                        isShow = true;
+                    }
+                }
+                if (!isShow) {
+                    return this.LogicData.source[i];
+                }
+            }
+            return null;
+        };
+        AdViewItem.prototype.onAdViewChange = function (e) {
+            if (!this.LogicData.showIds)
+                return;
+            if (!this.LogicData.source)
+                return;
+            var current = e.current, next = e.next;
+            var showApps = this.LogicData.showIds;
+            var sourceApps = this.LogicData.source;
+            for (var i = 0; i < showApps.length; i++) {
+                if (current.appid == showApps[i].appid && current.position == showApps[i].position) {
+                    this.LogicData.showIds[i] = next.appid;
+                }
+            }
+            for (var i = 0; i < sourceApps.length; i++) {
+                if (next.appid == sourceApps[i].appid) {
+                    this.LogicData.source.splice(i, 1);
+                    this.LogicData.source.push(current);
+                    break;
+                }
+            }
+        };
+        AdViewItem.prototype.onShow = function () {
+            if (this.LogicData && this.LogicData.refresh)
+                moosnow.event.addListener(EventType.AD_VIEW_REFRESH, this, this.onAdViewChange);
+        };
+        AdViewItem.prototype.onHide = function () {
+            if (this.mAdItem)
+                this.mAdItem.onCancel = null;
+            this.removeListener();
+            moosnow.event.removeListener(EventType.AD_VIEW_REFRESH, this);
+        };
+        AdViewItem.prototype.addListener = function () {
+        };
+        AdViewItem.prototype.removeListener = function () {
+        };
+        AdViewItem.prototype.willShow = function (cell) {
+            _super.prototype.willShow.call(this, cell);
+            this.addListener();
+        };
+        AdViewItem.prototype.refreshImg = function (cell) {
+        };
+        return AdViewItem;
+    }(BaseLogic));
+
+    var CocosAdViewItem = /** @class */ (function (_super) {
+        __extends(CocosAdViewItem, _super);
+        function CocosAdViewItem() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        CocosAdViewItem.prototype.addListener = function () {
+            this.logo.node.on(CocosNodeEvent.TOUCH_END, this.onClickAd, this);
+        };
+        CocosAdViewItem.prototype.removeListener = function () {
+            this.logo.node.off(CocosNodeEvent.TOUCH_END, this.onClickAd, this);
+        };
+        CocosAdViewItem.prototype.initPosition = function (data) {
+            if (data) {
+                // if (data.x)
+                //     this.mLogic.node.x = data.x
+                // if (data.y)
+                //     this.mLogic.node.y = data.y
+            }
+        };
+        CocosAdViewItem.prototype.willShow = function (cell) {
+            var _this = this;
+            _super.prototype.willShow.call(this, cell);
+            this.mAdItem = cell;
+            cc.loader.load(cell.img, function (err, tex) {
+                var spriteFrame = new cc.SpriteFrame(tex);
+                _this.logo.spriteFrame = spriteFrame;
+            });
+            if (this.title)
+                this.title.string = (cell.title);
+        };
+        CocosAdViewItem.prototype.refreshImg = function (cell) {
+            var _this = this;
+            this.mAdItem = cell;
+            cc.loader.load(cell.img, function (err, tex) {
+                var spriteFrame = new cc.SpriteFrame(tex);
+                _this.logo.spriteFrame = spriteFrame;
+            });
+            if (this.title)
+                this.title.string = (cell.title);
+        };
+        return CocosAdViewItem;
+    }(AdViewItem));
+
+    var PrizeForm = /** @class */ (function (_super) {
+        __extends(PrizeForm, _super);
+        function PrizeForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.coinNum = null;
+            _this.btnConfirm = null;
+            return _this;
+        }
+        Object.defineProperty(PrizeForm.prototype, "FormData", {
+            get: function () {
+                return this.mFormData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        PrizeForm.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            // this.btnConfirm.on(CocosNodeEvent.TOUCH_END, this.closeForm, this)
+        };
+        PrizeForm.prototype.willHide = function () {
+            // this.btnConfirm.off(CocosNodeEvent.TOUCH_END, this.closeForm, this)
+        };
+        PrizeForm.prototype.willShow = function (data) {
+            _super.prototype.willShow.call(this, data);
+            this.coinNum.string = "" + Common.formatMoney(data.coinNum);
+            moosnow.platform.hideBanner();
+        };
+        PrizeForm.prototype.closeForm = function () {
+            var _this = this;
+            moosnow.ui.destroyUIForm(UIForms.PrizeForm, null);
+            moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+            if (this.FormData.showCoinAnim == true) {
+                moosnow.ui.pushUIForm(UIForms.CoinForm, __assign(__assign({}, Common.deepCopy(this.FormData)), { callback: function () {
+                        if (_this.FormData.callback)
+                            _this.FormData.callback();
+                    } }));
+            }
+            else {
+                if (this.FormData.callback)
+                    this.FormData.callback();
+            }
+        };
+        return PrizeForm;
+    }(BaseForm));
+
+    var CocosPrizeForm = /** @class */ (function (_super) {
+        __extends(CocosPrizeForm, _super);
+        function CocosPrizeForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.coinNum = null;
+            _this.btnConfirm = null;
+            return _this;
+        }
+        CocosPrizeForm.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            this.btnConfirm.on(CocosNodeEvent.TOUCH_END, this.closeForm, this);
+        };
+        CocosPrizeForm.prototype.willHide = function () {
+            this.btnConfirm.off(CocosNodeEvent.TOUCH_END, this.closeForm, this);
+        };
+        return CocosPrizeForm;
+    }(PrizeForm));
+
+    var PrizeFormTT = /** @class */ (function (_super) {
+        __extends(PrizeFormTT, _super);
+        function PrizeFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.prizeBg1 = null;
+            _this.prizeBg2 = null;
+            _this.btnCancel = null;
+            _this.txtCoutdown = null;
+            _this.btnVideo = null;
+            _this.btnShare = null;
+            _this.btnReceive = null;
+            _this.checked = null;
+            _this.unchecked = null;
+            _this.isMask = true;
+            _this.mChecked = false;
+            _this.mTotalSecond = 10;
+            _this.mCurrentSecond = 0;
+            return _this;
+        }
+        Object.defineProperty(PrizeFormTT.prototype, "FormData", {
+            get: function () {
+                return this.mFormData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        PrizeFormTT.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            // this.btnConfirm.on(CocosNodeEvent.TOUCH_END, this.closeForm, this)
+        };
+        PrizeFormTT.prototype.willShow = function (data) {
+            var _this = this;
+            _super.prototype.willShow.call(this, data);
+            this.addListener();
+            this.mChecked = false;
+            this.onChecked();
+            this.prizeBg1.active = false;
+            this.prizeBg2.active = false;
+            moosnow.http.getAllConfig(function (res) {
+                if (res) {
+                    if (res.prizeFormVideo == 1) {
+                        _this.showVideo();
+                    }
+                    else if (res.prizeFormVideo == 2) {
+                        _this.showShare();
+                    }
+                    else {
+                        var precent = res && res.prizeFormVideosPrecent ? parseFloat(res.prizeFormVideosPrecent) : 0.5;
+                        if (Common.randomNumBoth(0, 100) / 100.0 < precent) {
+                            _this.showVideo();
+                        }
+                        else
+                            _this.showShare();
+                    }
+                }
+                else {
+                    _this.showShare();
+                }
+            });
+            this.mTotalSecond = 10;
+            this.mCurrentSecond = 0;
+            this.resumeCountdown();
+            moosnow.platform.showBanner();
+        };
+        PrizeFormTT.prototype.onHide = function () {
+            this.removeListener();
+        };
+        PrizeFormTT.prototype.showVideo = function () {
+            this.prizeBg1.active = true;
+            this.prizeBg2.active = false;
+        };
+        PrizeFormTT.prototype.showShare = function () {
+            this.prizeBg1.active = false;
+            this.prizeBg2.active = true;
+        };
+        PrizeFormTT.prototype.onCountdown = function () {
+            this.mCurrentSecond += 1;
+            var num = this.mTotalSecond - this.mCurrentSecond;
+            if (num < 0) {
+                this.unschedule(this.onCountdown);
+                moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                return;
+            }
+            this.txtCoutdown.string = num + "\u79D2";
+        };
+        PrizeFormTT.prototype.stopCountdown = function () {
+            this.unschedule(this.onCountdown);
+        };
+        PrizeFormTT.prototype.resumeCountdown = function () {
+            this.schedule(this.onCountdown, 1);
+        };
+        PrizeFormTT.prototype.addListener = function () {
+            // this.btnCancel.on(CocosNodeEvent.TOUCH_END, this.closeForm, this)
+            // this.btnVideo.on(CocosNodeEvent.TOUCH_END, this.onVideo, this)
+            // this.btnReceive.on(CocosNodeEvent.TOUCH_END, this.onReceive, this)
+            // this.btnShare.on(CocosNodeEvent.TOUCH_END, this.onShare, this)
+            // this.unchecked.on(CocosNodeEvent.TOUCH_END, this.onChecked, this)
+        };
+        PrizeFormTT.prototype.removeListener = function () {
+            // this.btnCancel.off(CocosNodeEvent.TOUCH_END, this.closeForm, this)
+            // this.btnVideo.off(CocosNodeEvent.TOUCH_END, this.onVideo, this)
+            // this.btnReceive.off(CocosNodeEvent.TOUCH_END, this.onReceive, this)
+            // this.btnShare.off(CocosNodeEvent.TOUCH_END, this.onShare, this)
+            // this.unchecked.off(CocosNodeEvent.TOUCH_END, this.onChecked, this)
+        };
+        PrizeFormTT.prototype.closeForm = function () {
+            moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+        };
+        PrizeFormTT.prototype.onChecked = function () {
+        };
+        PrizeFormTT.prototype.onShare = function () {
+            var _this = this;
+            this.stopCountdown();
+            moosnow.platform.share({
+                channel: ""
+            }, function (shared) {
+                _this.resumeCountdown();
+                if (_this.FormData) {
+                    if (_this.FormData.hideForm)
+                        moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                    if (_this.FormData.shareCallback)
+                        _this.FormData.shareCallback(shared);
+                }
+            });
+        };
+        PrizeFormTT.prototype.onReceive = function () {
+            if (this.mChecked)
+                this.onVideo();
+            else if (this.FormData) {
+                if (this.FormData.hideForm)
+                    moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                if (this.FormData.callback)
+                    this.FormData.callback();
+            }
+        };
+        PrizeFormTT.prototype.onVideo = function () {
+            var _this = this;
+            this.stopCountdown();
+            moosnow.platform.showVideo(function (res) {
+                if (res == moosnow.VIDEO_STATUS.END) {
+                    if (_this.FormData) {
+                        if (_this.FormData.hideForm)
+                            moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                        if (_this.FormData.videoCallback)
+                            _this.FormData.videoCallback();
+                    }
+                    return;
+                }
+                else if (res == moosnow.VIDEO_STATUS.ERR)
+                    moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR);
+                else {
+                    moosnow.ui.showToast(moosnow.VIDEO_MSG.NOTEND);
+                }
+                _this.resumeCountdown();
+            });
+        };
+        return PrizeFormTT;
+    }(BaseForm));
+
+    var CocosPrizeFormTT = /** @class */ (function (_super) {
+        __extends(CocosPrizeFormTT, _super);
+        function CocosPrizeFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.coinNum = null;
+            _this.btnConfirm = null;
+            return _this;
+        }
+        CocosPrizeFormTT.prototype.onChecked = function () {
+            this.mChecked = !this.mChecked;
+            this.checked.active = this.mChecked;
+        };
+        CocosPrizeFormTT.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            this.btnConfirm.on(CocosNodeEvent.TOUCH_END, this.closeForm, this);
+        };
+        CocosPrizeFormTT.prototype.willHide = function () {
+            this.btnConfirm.off(CocosNodeEvent.TOUCH_END, this.closeForm, this);
+        };
+        CocosPrizeFormTT.prototype.addListener = function () {
+            this.btnCancel.on(CocosNodeEvent.TOUCH_END, this.closeForm, this);
+            this.btnVideo.on(CocosNodeEvent.TOUCH_END, this.onVideo, this);
+            this.btnReceive.on(CocosNodeEvent.TOUCH_END, this.onReceive, this);
+            this.btnShare.on(CocosNodeEvent.TOUCH_END, this.onShare, this);
+            this.unchecked.on(CocosNodeEvent.TOUCH_END, this.onChecked, this);
+        };
+        CocosPrizeFormTT.prototype.removeListener = function () {
+            this.btnCancel.off(CocosNodeEvent.TOUCH_END, this.closeForm, this);
+            this.btnVideo.off(CocosNodeEvent.TOUCH_END, this.onVideo, this);
+            this.btnReceive.off(CocosNodeEvent.TOUCH_END, this.onReceive, this);
+            this.btnShare.off(CocosNodeEvent.TOUCH_END, this.onShare, this);
+            this.unchecked.off(CocosNodeEvent.TOUCH_END, this.onChecked, this);
+        };
+        return CocosPrizeFormTT;
+    }(PrizeFormTT));
+
+    var CoinForm = /** @class */ (function (_super) {
+        __extends(CoinForm, _super);
+        function CoinForm() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(CoinForm.prototype, "rootNode", {
+            get: function () {
+                return {};
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(CoinForm.prototype, "FormData", {
+            get: function () {
+                return this.mFormData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        CoinForm.prototype.flyAnim = function (logic, endVec, callback) {
+        };
+        CoinForm.prototype.onShow = function (data) {
+            var _this = this;
+            var _a = this.FormData, imgNum = _a.imgNum, coinNum = _a.coinNum, starVec = _a.starVec, endVec = _a.endVec, callback = _a.callback;
+            console.log('showCoin', data);
+            cc.loader.loadRes(moosnow.entity.prefabPath + 'coin', cc.Prefab, function () {
+                for (var i = 0; i < imgNum; i++) {
+                    var logic = moosnow.entity.showEntity("coin", _this.rootNode, {
+                        x: Common.randomNumBoth(starVec.x - data.randomX, starVec.x + data.randomX),
+                        y: Common.randomNumBoth(starVec.y - data.randomY, starVec.y + data.randomY)
+                    });
+                    _this.flyAnim(logic, endVec, callback);
+                }
+                _this.scheduleOnce(function () {
+                    if (_this.FormData.hideForm)
+                        moosnow.ui.hideUIForm(UIForms.CoinForm, null);
+                    if (Common.isFunction(callback))
+                        callback();
+                }, 2.1);
+            });
+        };
+        return CoinForm;
+    }(BaseForm));
+
+    var CocosCoinForm = /** @class */ (function (_super) {
+        __extends(CocosCoinForm, _super);
+        function CocosCoinForm() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(CocosCoinForm.prototype, "rootNode", {
+            get: function () {
+                return cc.Canvas.instance.node;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        CocosCoinForm.prototype.flyAnim = function (logic, endVec, callback) {
+            var coinNode = logic.node;
+            var delayTime = Common.randomNumBoth(0, 100) / 200.0;
+            coinNode.active = true;
+            coinNode.runAction(cc.sequence(cc.delayTime(delayTime), cc.spawn(cc.moveTo(1, endVec.x, endVec.y), cc.fadeOut(1.0), cc.sequence(cc.scaleTo(0.8, 1.2, 1.2), cc.scaleTo(0.8, 0.8, 9.8))), cc.callFunc(function () {
+                moosnow.entity.hideEntity(logic, null, true);
+            })));
+        };
+        return CocosCoinForm;
+    }(CoinForm));
+
+    var TotalForm = /** @class */ (function (_super) {
+        __extends(TotalForm, _super);
+        function TotalForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.checked = null;
+            _this.unchecked = null;
+            _this.btnReceive = null;
+            _this.levelCoin = null;
+            _this.mCheckedVideo = true;
+            _this.mLevelCoinNum = 0;
+            _this.mLevelShareCoinNum = 0;
+            return _this;
+        }
+        TotalForm.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            // this.btnConfirm.on(CocosNodeEvent.TOUCH_END, this.closeForm, this)
+        };
+        TotalForm.prototype.addEvent = function () {
+        };
+        TotalForm.prototype.removeEvent = function () {
+        };
+        TotalForm.prototype.onReceive = function () {
+            var _this = this;
+            if (this.mCheckedVideo) {
+                moosnow.platform.showVideo(function (res) {
+                    if (res == moosnow.VIDEO_STATUS.END) {
+                        _this.openEndForm(_this.mLevelCoinNum * 5);
+                    }
+                    else if (res == moosnow.VIDEO_STATUS.ERR) {
+                        moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR);
+                    }
+                    else {
+                        moosnow.ui.showToast(moosnow.VIDEO_MSG.NOTEND);
+                    }
+                });
+            }
+            else {
+                this.openEndForm(this.mLevelCoinNum);
+            }
+        };
+        TotalForm.prototype.openEndForm = function (coin) {
+            moosnow.ui.hideUIForm(UIForms.TotalForm, null);
+            moosnow.ui.pushUIForm(UIForms.EndForm, __assign({ coin: coin, level: this.FormData.level, levelShareCoinNum: this.mLevelShareCoinNum }, this.FormData));
+        };
+        TotalForm.prototype.onShareChange = function () {
+            this.mCheckedVideo = !this.mCheckedVideo;
+            this.changeUI();
+        };
+        TotalForm.prototype.changeUI = function () {
+        };
+        TotalForm.prototype.onShow = function (data) {
+            var coin = data.coin, shareCoin = data.shareCoin;
+            this.mLevelCoinNum = coin;
+            this.mLevelShareCoinNum = shareCoin;
+            this.levelCoin.string = "" + Common.formatMoney(this.mLevelCoinNum);
+            this.addEvent();
+            this.mCheckedVideo = true;
+            this.changeUI();
+            moosnow.platform.stopRecord();
+            moosnow.platform.showBanner();
+        };
+        TotalForm.prototype.willHide = function () {
+            this.removeEvent();
+            moosnow.platform.hideBanner();
+        };
+        return TotalForm;
+    }(BaseForm));
+
+    var CocosTotalForm = /** @class */ (function (_super) {
+        __extends(CocosTotalForm, _super);
+        function CocosTotalForm() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        CocosTotalForm.prototype.addEvent = function () {
+            this.unchecked.node.on(CocosNodeEvent.TOUCH_END, this.onShareChange, this);
+            this.btnReceive.node.on(CocosNodeEvent.TOUCH_END, this.onReceive, this);
+        };
+        CocosTotalForm.prototype.removeEvent = function () {
+            this.unchecked.node.off(CocosNodeEvent.TOUCH_END, this.onShareChange, this);
+            this.btnReceive.node.off(CocosNodeEvent.TOUCH_END, this.onReceive, this);
+        };
+        CocosTotalForm.prototype.changeUI = function () {
+            if (this.mCheckedVideo) {
+                this.checked.node.active = true;
+            }
+            else {
+                this.checked.node.active = false;
+            }
+        };
+        return CocosTotalForm;
+    }(TotalForm));
+
+    var ShareFormTT = /** @class */ (function (_super) {
+        __extends(ShareFormTT, _super);
+        function ShareFormTT() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.btnShare = null;
+            _this.btnBack = null;
+            _this.txtCoinNum = null;
+            _this.isMask = true;
+            _this.mLevelShareCoinNum = 0;
+            _this.mShareing = false;
+            return _this;
+        }
+        Object.defineProperty(ShareFormTT.prototype, "FormData", {
+            get: function () {
+                return this.mFormData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ShareFormTT.prototype.initForm = function (logic) {
+            this.initProperty(logic);
+            this.addListener();
+        };
+        ShareFormTT.prototype.addListener = function () {
+        };
+        ShareFormTT.prototype.removeListener = function () {
+        };
+        ShareFormTT.prototype.onBack = function () {
+            if (this.FormData.hideForm)
+                moosnow.ui.hideUIForm(UIForms.ShareForm, null);
+            if (this.FormData && this.FormData.callback)
+                this.FormData.callback();
+        };
+        ShareFormTT.prototype.onShow = function () {
+            this.btnShare.active = true;
+            this.mLevelShareCoinNum = this.FormData.shareCoinNum;
+            this.txtCoinNum.string = "" + Common.formatMoney(this.mLevelShareCoinNum);
+            moosnow.platform.stopRecord();
+        };
+        ShareFormTT.prototype.onShareVideo = function () {
+            var _this = this;
+            if (this.mShareing)
+                return;
+            this.mShareing = true;
+            moosnow.http.getAllConfig(function (res) {
+                if (res) {
+                    if (res.shareFormVideo == 1) {
+                        _this.onVideo();
+                    }
+                    else if (res.shareFormVideo == 2) {
+                        _this.onShare();
+                    }
+                    else {
+                        var precent = res && res.shareFormVideoPrecent ? parseFloat(res.shareFormVideoPrecent) : 0.5;
+                        if (Common.randomNumBoth(0, 100) / 100.0 < precent) {
+                            _this.onVideo();
+                        }
+                        else
+                            _this.onShare();
+                    }
+                }
+                else {
+                    _this.onVideo();
+                }
+            });
+        };
+        ShareFormTT.prototype.onVideo = function () {
+            var _this = this;
+            moosnow.platform.showVideo(function (res) {
+                _this.mShareing = false;
+                if (res == moosnow.VIDEO_STATUS.END) {
+                    if (_this.FormData.hideForm)
+                        moosnow.ui.hideUIForm(UIForms.ShareForm, null);
+                    if (_this.FormData && _this.FormData.videoCallback)
+                        _this.FormData.videoCallback();
+                }
+                else if (res == moosnow.VIDEO_STATUS.NOTEND) {
+                    moosnow.ui.showToast(moosnow.VIDEO_MSG.NOTEND);
+                }
+                else {
+                    moosnow.ui.showToast(moosnow.VIDEO_MSG.ERR);
+                }
+            });
+        };
+        ShareFormTT.prototype.onShare = function () {
+            var _this = this;
+            moosnow.platform.share({
+                channel: moosnow.SHARE_CHANNEL.VIDEO
+            }, function (res) {
+                _this.mShareing = false;
+                if (res) {
+                    if (_this.FormData.hideForm)
+                        moosnow.ui.hideUIForm(UIForms.ShareForm, null);
+                    if (_this.FormData && _this.FormData.shareCallback)
+                        _this.FormData.shareCallback(res);
+                }
+                else {
+                    moosnow.ui.showToast("分享未完成");
+                }
+                console.log('分享结束', res);
+            });
+        };
+        return ShareFormTT;
+    }(BaseForm));
+
+    var CocosShareFormTT = /** @class */ (function (_super) {
+        __extends(CocosShareFormTT, _super);
+        function CocosShareFormTT() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        CocosShareFormTT.prototype.addListener = function () {
+            this.btnBack.on(CocosNodeEvent.TOUCH_END, this.onBack, this);
+            this.btnShare.on(CocosNodeEvent.TOUCH_END, this.onShareVideo, this);
+        };
+        CocosShareFormTT.prototype.removeListener = function () {
+            this.btnBack.off(CocosNodeEvent.TOUCH_END, this.onBack, this);
+            this.btnShare.off(CocosNodeEvent.TOUCH_END, this.onShareVideo, this);
+        };
+        return CocosShareFormTT;
+    }(ShareFormTT));
+
+    var AdInviteBox = /** @class */ (function (_super) {
+        __extends(AdInviteBox, _super);
+        function AdInviteBox() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.logo = null;
+            _this.gameName = null;
+            _this.userName = null;
+            _this.btnConfirm = null;
+            _this.btnCancel = null;
+            _this.url = "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/Avatar";
+            return _this;
+        }
+        AdInviteBox.prototype.willShow = function (data) {
+            var _this = this;
+            _super.prototype.willShow.call(this, data);
+            this.addListener();
+            moosnow.http.request(this.url + "/avatar.json", {}, "GET", function (res) {
+                var userName = res.name[Common.randomNumBoth(0, res.name.length - 1)];
+                var logo = Common.randomNumBoth(res.logo[0], res.logo[1]);
+                moosnow.ad.getAd(function (ad) {
+                    var idx = Common.randomNumBoth(0, ad.indexLeft.length - 1);
+                    var adRow = ad.indexLeft[idx];
+                    _this.initBox(userName, _this.url + "/" + logo + ".png", adRow.title);
+                    _this.mCurrentAdRow = adRow;
+                });
+            });
+            moosnow.http.getAllConfig(function (res) {
+                if (res) {
+                    var inviteDelayClose = isNaN(res.inviteDelayClose) ? 0 : parseFloat(res.inviteDelayClose);
+                    if (inviteDelayClose > 0) {
+                        _this.unscheduleOnce(_this.onCancel);
+                        _this.scheduleOnce(_this.onCancel, inviteDelayClose);
+                    }
+                }
+            });
+        };
+        AdInviteBox.prototype.willHide = function () {
+            this.unscheduleOnce(this.onCancel);
+            this.removeListener();
+        };
+        AdInviteBox.prototype.initBox = function (userName, logo, gameName) {
+        };
+        AdInviteBox.prototype.addListener = function () {
+        };
+        AdInviteBox.prototype.removeListener = function () {
+        };
+        AdInviteBox.prototype.onConfirm = function () {
+            this.onCancel();
+            moosnow.platform.navigate2Mini(this.mCurrentAdRow);
+        };
+        AdInviteBox.prototype.onCancel = function () {
+            moosnow.entity.hideAllEntity("inviteBox", null);
+        };
+        return AdInviteBox;
+    }(BaseLogic));
+
+    var CocosAdInviteBox = /** @class */ (function (_super) {
+        __extends(CocosAdInviteBox, _super);
+        function CocosAdInviteBox() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        CocosAdInviteBox.prototype.addListener = function () {
+            this.btnConfirm.on(CocosNodeEvent.TOUCH_END, this.onConfirm, this);
+            this.btnCancel.on(CocosNodeEvent.TOUCH_END, this.onCancel, this);
+        };
+        CocosAdInviteBox.prototype.removeListener = function () {
+            this.btnConfirm.off(CocosNodeEvent.TOUCH_END, this.onConfirm, this);
+            this.btnCancel.off(CocosNodeEvent.TOUCH_END, this.onCancel, this);
+        };
+        CocosAdInviteBox.prototype.initBox = function (userName, logo, gameName) {
+            var _this = this;
+            cc.loader.load(logo, function (err, tex) {
+                if (err)
+                    return;
+                var spriteFrame = new cc.SpriteFrame(tex);
+                _this.logo.getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            this.userName.string = Common.format(MSG.INVITE_PLAY_USER, userName);
+            this.gameName.string = gameName;
+        };
+        return CocosAdInviteBox;
+    }(AdInviteBox));
+
+    /**
+     * 页面逻辑控制
+     */
+    var LogicControl = /** @class */ (function () {
+        function LogicControl() {
+        }
+        /**
+         * 返回一个AdViewItem实例
+         */
+        LogicControl.prototype.newViewItem = function () {
+            return new CocosAdViewItem();
+        };
+        ;
+        Object.defineProperty(LogicControl.prototype, "inviteBox", {
+            get: function () {
+                if (!this.mAdInviteBox)
+                    this.mAdInviteBox = new CocosAdInviteBox();
+                return this.mAdInviteBox;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(LogicControl.prototype, "adForm", {
+            get: function () {
+                if (!this.mAdForm)
+                    this.mAdForm = new CocosAdForm();
+                return this.mAdForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(LogicControl.prototype, "adFormQQ", {
+            get: function () {
+                if (!this.mAdForm)
+                    this.mAdForm = new CocosAdForm();
+                return this.mAdFormQQ;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(LogicControl.prototype, "mistouchForm", {
+            get: function () {
+                if (!this.mMistouchForm)
+                    this.mMistouchForm = new CocosMistouchForm();
+                return this.mMistouchForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "mistouchFormTT", {
+            get: function () {
+                if (!this.mMistouchFormTT)
+                    this.mMistouchFormTT = new CocosMistouchFormTT();
+                return this.mMistouchFormTT;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "mistouchFormQQ", {
+            get: function () {
+                if (!this.mMistouchFormQQ)
+                    this.mMistouchFormQQ = new CocosMistouchFormQQ();
+                return this.mMistouchFormQQ;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "prizeForm", {
+            get: function () {
+                if (!this.mPrizeForm)
+                    this.mPrizeForm = new CocosPrizeForm();
+                return this.mPrizeForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "prizeFormTT", {
+            get: function () {
+                if (!this.mPrizeFormTT)
+                    this.mPrizeFormTT = new CocosPrizeFormTT();
+                return this.mPrizeFormTT;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "coinForm", {
+            /**
+            * 金币
+            */
+            get: function () {
+                if (!this.mCoinForm)
+                    this.mCoinForm = new CocosCoinForm();
+                return this.mCoinForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "totalForm", {
+            /**
+            * 金币
+            */
+            get: function () {
+                if (!this.mTotalForm)
+                    this.mTotalForm = new CocosTotalForm();
+                return this.mTotalForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(LogicControl.prototype, "shareFormTT", {
+            /**
+             * 分享
+             */
+            get: function () {
+                if (!this.mShareForm)
+                    this.mShareForm = new CocosShareFormTT();
+                return this.mShareForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return LogicControl;
+    }());
+
+    /**
+     * 广告结果
+     */
+    var UIForm = /** @class */ (function () {
+        function UIForm() {
+            // showOptions.create(showTotalOptions)
+            // console.log('showTotalOptions', showOptions.create(showTotalOptions))
+            // showOptions.create(showEndOptions)
+            // showOptions.create(showTouchOptions)
+            // showOptions.create(showPrizeOptions)
+            // showOptions.create(showShareOptions)
+        }
+        /**
+         * Toast消息
+         * @param msg  消息内容
+         */
+        UIForm.prototype.showToast = function (msg) {
+            moosnow.ui.showToast(msg);
+        };
+        /**
+         * 预加载广告
+         */
+        UIForm.prototype.preloadAd = function () {
+            moosnow.ui.pushUIForm(UIForms.AdForm, { showAd: moosnow.AD_POSITION.NONE }, null);
+        };
+        /**
+         * 显示广告
+         * @param adType 广告类型
+         * @param callback  有返回按钮时的回调
+         * @param zIndex  层级
+         */
+        UIForm.prototype.showAd = function (adType, callback, zIndex) {
+            if (adType === void 0) { adType = AD_POSITION.NONE; }
+            if (zIndex === void 0) { zIndex = 999; }
+            //
+            if (moosnow.getAppPlatform() == moosnow.APP_PLATFORM.BYTEDANCE && moosnow.platform.isIphone()) {
+                console.log('头条iphone 不显示广告');
+                return;
+            }
+            var adForm = moosnow.ui.getUIFrom(UIForms.AdForm);
+            if (adForm) {
+                moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback, zIndex: zIndex });
+                adForm.node.zIndex = zIndex;
+            }
+            else {
+                moosnow.ui.pushUIForm(UIForms.AdForm, { showAd: moosnow.AD_POSITION.NONE }, function () {
+                    var adForm = moosnow.ui.getUIFrom(UIForms.AdForm);
+                    adForm.node.zIndex = zIndex;
+                    moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback, zIndex: zIndex });
+                });
+            }
+        };
+        /**
+         * 金币动画
+         * @param options
+         */
+        UIForm.prototype.showCoin = function (options) {
+            moosnow.ui.pushUIForm(UIForms.CoinForm, options);
+        };
+        /**
+         * 显示狂点页面
+         * @param callback 点击完成回调
+         * @param type 类型 仅对QQ平台生效 1 是按钮点击  2 动画点击
+         */
+        UIForm.prototype.showMistouch = function (options) {
+            moosnow.ui.pushUIForm(UIForms.MistouchForm, options, function () {
+            });
+        };
+        /**
+         * 显示奖励
+         * @param style 金币动画
+         * @param baseNum 视频奖励领取的倍数
+         * @param showCoinAnim 显示金币动画
+         * @param callback
+         */
+        UIForm.prototype.showPrize = function (options) {
+            moosnow.ui.pushUIForm(UIForms.PrizeForm, options, function () {
+            });
+        };
+        /**
+         * 显示结算统计页
+         * @param coinNum
+         * @param callback
+         */
+        UIForm.prototype.showTotal = function (options) {
+            moosnow.ui.pushUIForm(UIForms.TotalForm, options);
+        };
+        /**
+        * 显示结算统计页
+        * @param coinNum
+        * @param callback
+        */
+        UIForm.prototype.showEnd = function (options) {
+            moosnow.ui.pushUIForm(UIForms.EndForm, options);
+        };
+        /**
+         *  showShare
+         */
+        UIForm.prototype.showShare = function (options) {
+            moosnow.ui.pushUIForm(UIForms.ShareForm, options);
+        };
+        return UIForm;
+    }());
+
+    var DelayMove = /** @class */ (function (_super) {
+        __extends(DelayMove, _super);
+        function DelayMove() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.moveNode = null;
+            _this.distince = -100;
+            _this.showBanner = true;
+            _this.pos1 = cc.Vec2.ZERO;
+            _this.pos2 = cc.Vec2.ZERO;
+            _this.mMistouchPosNum = 0;
+            _this.mMistouchPosSecond = 2;
+            return _this;
+        }
+        DelayMove.prototype.initPos = function () {
+        };
+        /**
+         * 延迟移动
+         * @param moveNode  需要移动的节点
+         * @param distince 移动的距离
+         * @param showBanner 移动后是否显示 banner
+         */
+        DelayMove.prototype.move = function (moveNode, distince, showBanner) {
+            var _this = this;
+            this.moveNode = moveNode;
+            this.distince = distince;
+            this.showBanner = showBanner;
+            this.initPos();
+            var count = moosnow.data.getCurrentMisTouchCount();
+            moosnow.data.setCurrentMisTouchCount(count + 1);
+            moosnow.http.getAllConfig(function (res) {
+                if (!isNaN(res.mistouchPosSecond))
+                    _this.mMistouchPosSecond = parseFloat(res.mistouchPosSecond);
+                moosnow.http.getMistouchPosNum(function (num) {
+                    _this.mMistouchPosNum = num;
+                    _this.movePosition();
+                });
+            });
+        };
+        DelayMove.prototype.setPosition = function (node, visible, x, y) {
+        };
+        DelayMove.prototype.movePosition = function () {
+            var _this = this;
+            if (this.mMistouchPosNum == 0) {
+                this.setPosition(this.moveNode, true, this.pos1.x, this.pos1.y);
+                if (this.showBanner)
+                    moosnow.platform.showBanner();
+            }
+            else {
+                var count = moosnow.data.getCurrentMisTouchCount();
+                if (count % this.mMistouchPosNum == 0) {
+                    var tempButtom_1 = this.copyNode();
+                    this.scheduleOnce(function () {
+                        _this.onPosCallback(tempButtom_1);
+                    }, this.mMistouchPosSecond);
+                }
+            }
+        };
+        DelayMove.prototype.copyNode = function () {
+        };
+        DelayMove.prototype.onPosCallback = function (tempButtom) {
+            if (this.showBanner)
+                moosnow.platform.showBanner();
+            this.removeTemp(tempButtom);
+            this.setPosition(this.moveNode, true, this.pos1.x, this.pos1.y);
+            this.unscheduleOnce(this.onPosCallback);
+        };
+        DelayMove.prototype.removeTemp = function (tempButtom) {
+        };
+        return DelayMove;
+    }(BaseModule));
+
+    var CocosDelayMove = /** @class */ (function (_super) {
+        __extends(CocosDelayMove, _super);
+        function CocosDelayMove() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.moveNode = null;
+            _this.distince = -100;
+            _this.showBanner = true;
+            _this.pos1 = cc.Vec2.ZERO;
+            _this.pos2 = cc.Vec2.ZERO;
+            return _this;
+        }
+        CocosDelayMove.prototype.initPos = function () {
+            if (this.pos1.x == 0 && this.pos1.y == 0) {
+                this.pos1 = this.moveNode.position.clone();
+                this.pos2 = this.pos1.add(new cc.Vec2(0, this.distince));
+            }
+            this.moveNode.active = false;
+        };
+        CocosDelayMove.prototype.setPosition = function (node, visible, x, y) {
+            node.active = visible;
+            node.x = x;
+            node.y = y;
+        };
+        CocosDelayMove.prototype.copyNode = function () {
+            var tempButtom = cc.instantiate(this.moveNode);
+            tempButtom.active = true;
+            this.moveNode.parent.addChild(tempButtom);
+            tempButtom.x = this.pos2.x;
+            tempButtom.y = this.pos2.y;
+            return tempButtom;
+        };
+        CocosDelayMove.prototype.removeTemp = function (tempButtom) {
+            tempButtom.active = false;
+            tempButtom.removeFromParent();
+            tempButtom.destroy();
+        };
+        return CocosDelayMove;
+    }(DelayMove));
+
+    var DelayShow = /** @class */ (function (_super) {
+        __extends(DelayShow, _super);
+        function DelayShow() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.mNode = null;
+            return _this;
+        }
+        DelayShow.prototype.show = function (node, delayTime) {
+            if (delayTime === void 0) { delayTime = 3; }
+            if (!node)
+                return;
+            this.mNode = node;
+            this.hideNode();
+            this.schedule(this.showNode, delayTime);
+        };
+        DelayShow.prototype.hide = function (node, delayTime) {
+            if (delayTime === void 0) { delayTime = 3; }
+            this.mNode = node;
+            this.schedule(this.hideNode, delayTime);
+        };
+        DelayShow.prototype.clear = function () {
+            this.unschedule(this.showNode);
+            this.unschedule(this.hideNode);
+        };
+        DelayShow.prototype.hideNode = function () {
+            this.mNode.active = false;
+        };
+        DelayShow.prototype.showNode = function () {
+            this.mNode.active = true;
+            this.unschedule(this.showNode);
+        };
+        return DelayShow;
+    }(BaseModule));
+
+    var Delay = /** @class */ (function (_super) {
+        __extends(Delay, _super);
+        function Delay() {
+            return _super.call(this) || this;
+        }
+        Object.defineProperty(Delay.prototype, "DelayMove", {
+            get: function () {
+                if (!this.mDelayMove) {
+                    this.mDelayMove = new CocosDelayMove();
+                }
+                return this.mDelayMove;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Delay.prototype, "DelayShow", {
+            get: function () {
+                if (!this.mDelayShow) {
+                    this.mDelayShow = new DelayShow();
+                }
+                return this.mDelayShow;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return Delay;
+    }(BaseModule));
+
+    var ResourceModule = /** @class */ (function (_super) {
+        __extends(ResourceModule, _super);
+        function ResourceModule() {
+            return _super.call(this) || this;
+        }
+        ResourceModule.prototype.onEnable = function () {
+        };
+        /**
+         * 加载resources下的cc.SpriteFrame, cc.AnimationClip, cc.Prefab
+         * 不带扩展名
+         * @method loadAsset
+         * @param {String} url resources下路径
+         * @param {typeof cc.Asset} assetType cc.SpriteFrame, cc.AnimationClip, cc.Prefab..
+         * @param {Function} [callback] (err:Error,asset:cc.Asset)
+         * @param {typeof cc.Asset} callback.asset cc.SpriteFrame, cc.AnimationClip, cc.Prefab..
+         */
+        ResourceModule.prototype.loadAsset = function (url, assetType, callback) {
+            if (Common.getEngine() == ENGINE_TYPE.COCOS) {
+                var res = cc.loader.getRes(url, assetType);
+                if (res) {
+                    if (callback) {
+                        callback(null, res);
+                    }
+                    return;
+                }
+                cc.loader.loadRes(url, assetType, function (err, asset) {
+                    if (callback) {
+                        callback(err, asset);
+                    }
+                });
+            }
+            else if (Common.getEngine() == ENGINE_TYPE.LAYA) {
+                var res = Laya.loader.getRes(url);
+                if (res) {
+                    if (callback) {
+                        callback(null, res);
+                    }
+                    return;
+                }
+                Laya.loader.create(url, Laya.Handler.create(this, function (res) {
+                    callback(null, res);
+                }), null, assetType);
+            }
+        };
+        /**
+        * 加载resources目录下某个目录下的指定类型的资源(用于预加载整个目录资源) 仅COCOS支持
+        * @param {string} dir resources下的目录
+        * @param {typeof cc.Asset} type
+        * @param {Function} progressCallback (precent:number)
+        * @param {Function} completeCallback (err:Error,reses:Asset[])
+        */
+        ResourceModule.prototype.loadAssetDir = function (dir, type, progressCallback, completeCallback) {
+            if (Common.getEngine() == ENGINE_TYPE.COCOS) {
+                cc.loader.loadResDir(dir, type, function (completedCount, totalCount, item) {
+                    var precent = completedCount / totalCount * 100;
+                    precent = Math.ceil(precent);
+                    if (progressCallback) {
+                        progressCallback(precent);
+                    }
+                }, function (err, res) {
+                    if (completeCallback) {
+                        completeCallback(err, res);
+                    }
+                });
+            }
+            else {
+                console.warn("不支持loadAssetDir");
+            }
+        };
+        ResourceModule.prototype.onDisable = function () {
+        };
+        return ResourceModule;
+    }(BaseModule));
+
+    var showOptions = /** @class */ (function () {
+        function showOptions() {
+            this._hideForm = true;
+            /**
+             * 扩展参数
+             */
+            this.extraData = {};
+        }
+        /**
+         * 实例化参数
+         */
+        showOptions.create = function (c) {
+            return new c();
+        };
+        Object.defineProperty(showOptions.prototype, "hideForm", {
+            /**
+             * 完成后是否隐藏 默认 true
+             */
+            get: function () {
+                return this._hideForm;
+            },
+            set: function (value) {
+                this._hideForm = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return showOptions;
+    }());
+
+    /**
+     * 唤起结算页参数
+     */
+    var showEndOptions = /** @class */ (function (_super) {
+        __extends(showEndOptions, _super);
+        function showEndOptions() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            // /**
+            //  * 实例化参数
+            //  */
+            // public static create(): showEndOptions {
+            //     return new showEndOptions();
+            // }
+            /**
+             * 金币数量
+             */
+            _this.coinNum = 0;
+            /**
+            * 金币数量
+            */
+            _this.videoNum = 0;
+            /**
+            * 分享得到金币数量
+            */
+            _this.shareCoinNum = 0;
+            /**
+            * 通关成功 or 通关失败
+            */
+            _this.isWin = true;
+            /**
+             * 结束时的游戏关卡
+             */
+            _this.level = "1";
+            return _this;
+        }
+        return showEndOptions;
+    }(showOptions));
+
+    /**
+     * 奖励页参数
+     */
+    var showPrizeOptions = /** @class */ (function (_super) {
+        __extends(showPrizeOptions, _super);
+        function showPrizeOptions() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            // /**
+            //  * 实例化参数
+            //  */
+            // public static create(): showPrizeOptions {
+            //     return new showPrizeOptions();
+            // }
+            /**
+             * 是否显示金币动画
+             */
+            _this.showCoinAnim = true;
+            /**
+             * 显示金币动画时，金币动画的参数
+             */
+            _this.coinOptions = null;
+            /**
+             *
+             */
+            _this.baseNum = 1;
+            /**
+             * 点击完成回调
+             */
+            _this.callback = null;
+            /**
+             * 分享完成回调
+             */
+            _this.shareCallback = null;
+            /**
+             * 看完视频回调
+             */
+            _this.videoCallback = null;
+            return _this;
+        }
+        return showPrizeOptions;
+    }(showOptions));
+
+    /**
+     * 奖励页参数
+     */
+    var showShareOptions = /** @class */ (function (_super) {
+        __extends(showShareOptions, _super);
+        function showShareOptions() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            // /**
+            //  * 实例化参数
+            //  */
+            // public static create(): showShareOptions {
+            //     return new showShareOptions();
+            // }
+            /**
+             * 分享将获得金币数量
+             */
+            _this.shareCoinNum = 0;
+            return _this;
+        }
+        return showShareOptions;
+    }(showOptions));
+
+    /**
+     * 唤起结算页参数
+     */
+    var showTotalOptions = /** @class */ (function (_super) {
+        __extends(showTotalOptions, _super);
+        function showTotalOptions() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            // /**
+            // * 实例化参数
+            // */
+            // public static create(): showTotalOptions {
+            //     return new showTotalOptions();
+            // }
+            /**
+             * 金币数量
+             */
+            _this.coinNum = 0;
+            /**
+            * 金币数量
+            */
+            _this.videoNum = 0;
+            /**
+            * 分享得到金币数量
+            */
+            _this.shareCoinNum = 0;
+            return _this;
+        }
+        return showTotalOptions;
+    }(showOptions));
+
+    var showTouchOptions = /** @class */ (function (_super) {
+        __extends(showTouchOptions, _super);
+        function showTouchOptions() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            // /**
+            // * 实例化参数
+            // */
+            // public static create(): showTouchOptions {
+            //     return new showTouchOptions();
+            // }
+            /**
+             * 类型 仅对QQ平台生效 1 是按钮点击  2 动画点击
+             */
+            _this.type = 1;
+            return _this;
+        }
+        return showTouchOptions;
+    }(showOptions));
+
+    var vectory = /** @class */ (function () {
+        function vectory() {
+            this.x = 0.0;
+            this.y = 0.0;
+            this.z = 0.0;
+        }
+        return vectory;
+    }());
+
+    /**
+     * 金币飞入动画
+     */
+    var showCoinOptions = /** @class */ (function (_super) {
+        __extends(showCoinOptions, _super);
+        function showCoinOptions() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            /**
+             * Y方向的随机范围
+             */
+            _this.randomY = 100;
+            /**
+            * X方向的随机范围
+            */
+            _this.randomX = 100;
+            /**
+             * 金币图片数量
+             */
+            _this.imgNum = 30;
+            /**
+             * 金币数量
+             */
+            _this.coinNum = 0;
+            /**
+             * 开始位置
+             */
+            _this.starVec = new vectory();
+            /**
+             * 结束位置
+             */
+            _this.endVec = new vectory();
+            return _this;
+        }
+        return showCoinOptions;
+    }(showOptions));
+
+    var moosnow$1 = /** @class */ (function () {
+        function moosnow() {
+            this.VIDEO_STATUS = VIDEO_STATUS;
+            this.VIDEO_MSG = VIDEO_MSG;
+            this.SHARE_MSG = SHARE_MSG;
+            this.BANNER_POSITION = BANNER_POSITION;
+            this.SHARE_CHANNEL = SHARE_CHANNEL;
+            this.APP_PLATFORM = PlatformType;
+            this.PLATFORM_EVENT = EventType;
+            this.Common = Common;
+            this.AD_POSITION = AD_POSITION;
+            this.showOptions = {
+                endOptions: showEndOptions,
+                prizeOptions: showPrizeOptions,
+                shareOptions: showShareOptions,
+                totalOptions: showTotalOptions,
+                touchOptions: showTouchOptions,
+                coinOptions: showCoinOptions
+            };
+            this.mData = new GameDataCenter();
+            this.mResource = new ResourceModule();
+            this.mSetting = new SettingModule();
+            /**
+             * form UI 操作
+             */
+            this.mForm = new UIForm();
+            /**
+             * form表单控制
+             */
+            this.mControl = new LogicControl();
+            this.mEntity = new BaseEntityModule();
+            this.mAudio = null;
+            this.mDelay = new Delay();
+            (window["moosnow"]) = this;
+            this.mData = new GameDataCenter();
+            this.mSetting = new SettingModule();
+            this.mEvent = new EventModule();
+            this.initPlatform();
+            this.initHttp();
+            this.initAd();
+            this.initUI();
+            this.initEntity();
+        }
+        /**
+         * 获取当前的游戏平台
+         */
+        moosnow.prototype.getAppPlatform = function () {
+            return Common.platform;
+        };
+        moosnow.prototype.initUI = function () {
+            this.mUi = new CocosUIModule();
+        };
+        moosnow.prototype.initEntity = function () {
+            this.mEntity = new CocosEntityModule();
+        };
+        moosnow.prototype.initHttp = function () {
+            if (Common.platform == PlatformType.WX)
+                this.mHttp = new HttpModule();
+            else if (Common.platform == PlatformType.OPPO_ZS) {
+                this.mHttp = new ZSHttpModule();
+            }
+            else
+                this.mHttp = new HttpModule();
+        };
+        moosnow.prototype.initPlatform = function () {
+            // console.log('初始化平台', Common.platform, 'oppo', PlatformType.OPPO, 'vivo', PlatformType.VIVO)
+            if (Common.platform == PlatformType.WX)
+                this.mPlatform = new WXModule();
+            else if (Common.platform == PlatformType.OPPO)
+                this.mPlatform = new OPPOModule();
+            else if (Common.platform == PlatformType.VIVO)
+                this.mPlatform = new VIVOModule();
+            else if (Common.platform == PlatformType.OPPO_ZS) {
+                this.mPlatform = new ZSOPPOModule();
+            }
+            else if (Common.platform == PlatformType.BYTEDANCE)
+                this.mPlatform = new TTModule();
+            else if (Common.platform == PlatformType.QQ)
+                this.mPlatform = new QQModule();
+            else if (Common.platform == PlatformType.BAIDU)
+                this.mPlatform = new BDModule();
+            else {
+                this.mPlatform = new PlatformModule();
+            }
+            // console.log(' cc.sys.browserType ', cc.sys.browserType, ' cc.sys.platform ', cc.sys.platform)
+        };
+        moosnow.prototype.initAd = function () {
+            if (Common.platform == PlatformType.WX || Common.platform == PlatformType.PC || Common.platform == PlatformType.BYTEDANCE)
+                this.mAd = new WXAdModule();
+            else if (Common.platform == PlatformType.OPPO) {
+                this.mAd = new OPPOAdModule();
+            }
+            else if (Common.platform == PlatformType.OPPO_ZS) {
+                this.mAd = new ZSOPPOAdModule();
+            }
+            else
+                this.mAd = new AdModule();
+        };
+        Object.defineProperty(moosnow.prototype, "platform", {
+            get: function () {
+                return this.mPlatform;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "ad", {
+            /**
+             * 墨雪广告
+             */
+            get: function () {
+                return this.mAd;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "http", {
+            get: function () {
+                return this.mHttp;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "data", {
+            /**
+             * 本地内存
+             */
+            get: function () {
+                return this.mData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "resource", {
+            get: function () {
+                return this.mResource;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "setting", {
+            /**
+             * 本地持久化缓存
+             */
+            get: function () {
+                return this.mSetting;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "event", {
+            get: function () {
+                return this.mEvent;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "ui", {
+            get: function () {
+                return this.mUi;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "form", {
+            get: function () {
+                return this.mForm;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "control", {
+            get: function () {
+                return this.mControl;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "entity", {
+            get: function () {
+                return this.mEntity;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "audio", {
+            get: function () {
+                return this.mAudio;
+            },
+            set: function (value) {
+                this.mAudio = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(moosnow.prototype, "delay", {
+            get: function () {
+                return this.mDelay;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return moosnow;
+    }());
+    new moosnow$1();
+
+}());

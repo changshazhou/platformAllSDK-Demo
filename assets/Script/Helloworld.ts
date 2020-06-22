@@ -17,12 +17,12 @@ export default class Helloworld extends cc.Component {
 
         moosnow.form.preloadAd();
 
-        // if (moosnow.APP_PLATFORM.WX == moosnow.getAppPlatform())
-        //     cc.loader.downloader.loadSubpackage('tex', (err) => {
-        //         if (err) {
-        //             return console.error(err);
-        //         }
-        //     });
+        if (moosnow.APP_PLATFORM.WX == moosnow.getAppPlatform() && window["wx"])
+            cc.loader.downloader.loadSubpackage('tex', (err) => {
+                if (err) {
+                    return console.error(err);
+                }
+            });
 
         moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_PLATFORM_HIDE, this, (res) => {
             console.log('平台隐藏时', res)
@@ -224,6 +224,7 @@ export default class Helloworld extends cc.Component {
         moosnow.platform.showBanner(() => { }, moosnow.BANNER_POSITION.TOP);
     }
 
+
     showAutoBanner() {
         moosnow.platform.showAutoBanner();
 
@@ -232,13 +233,12 @@ export default class Helloworld extends cc.Component {
     showIntervalBanner() {
         moosnow.platform.showIntervalBanner();
 
-        this.scheduleOnce(() => {
-            moosnow.platform.clearIntervalBanner();
-        }, 20)
+
     }
 
     hideBanner() {
         moosnow.platform.hideBanner();
+        moosnow.platform.clearIntervalBanner();
     }
 
     showBox() {

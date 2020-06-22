@@ -1,4 +1,5 @@
 import EntityLogic from "./EntityLogic";
+import nativeAdRow from "../../../../moosnowSdk/model/nativeAdRow";
 
 const { ccclass, property } = cc._decorator;
 
