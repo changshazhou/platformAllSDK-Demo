@@ -14,7 +14,6 @@ export default class AudioModule extends BaseModule {
      * @param audioClip cocos cc.AudioClip  laya 文件路径
      * @param loops
      * @param complete
-     * @param startTime
      */
     playMusic(audioClip: cc.AudioClip | string, loops?: boolean, complete?: any): number;
     /**

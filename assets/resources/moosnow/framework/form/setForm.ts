@@ -54,7 +54,11 @@ export default class SetForm extends UIForm {
         if (moosnow.audio.isMute)
             moosnow.audio.stopMusic();
         else
-            moosnow.audio.playMainMusic();
+            moosnow.audio.playMusic();
+
+
+
+       
         this.initData();
     }
 
@@ -62,10 +66,10 @@ export default class SetForm extends UIForm {
         moosnow.platform.showBanner();
         moosnow.http.getAllConfig(res => {
             if (res.setFormAd == 1) {
-                moosnow.event.sendEventImmediately(moosnow.EVENT_TYPE.AD_VIEW_CHANGE, { showAd: moosnow.AD_POSITION.LEFTRIGHT })
+                moosnow.event.sendEventImmediately(moosnow.PLATFORM_EVENT.AD_VIEW_CHANGE, { showAd: moosnow.AD_POSITION.LEFTRIGHT })
             }
             else {
-                moosnow.event.sendEventImmediately(moosnow.EVENT_TYPE.AD_VIEW_CHANGE, { showAd: moosnow.AD_POSITION.NONE })
+                moosnow.event.sendEventImmediately(moosnow.PLATFORM_EVENT.AD_VIEW_CHANGE, { showAd: moosnow.AD_POSITION.NONE })
             }
         })
     }
