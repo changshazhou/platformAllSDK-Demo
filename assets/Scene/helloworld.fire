@@ -183,7 +183,7 @@
       "array": [
         0,
         0,
-        504.0132533556092,
+        452.05175500167275,
         0,
         0,
         0,
@@ -645,7 +645,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        388.399,
+        -30.869,
         0,
         0,
         0,
@@ -5467,7 +5467,7 @@
         "__id__": 209
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": null,
     "_opacity": 255,
