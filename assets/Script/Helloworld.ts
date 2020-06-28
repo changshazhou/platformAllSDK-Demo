@@ -299,8 +299,8 @@ export default class Helloworld extends cc.Component {
     shareRecord() {
         moosnow.platform.share({
             channel: moosnow.SHARE_CHANNEL.VIDEO
-        }, (res) => {
-            console.log('分享结束', res)
+        }, (res, err) => {
+            console.log('分享结束', res, '111',err)
         });
     }
 

@@ -156,7 +156,7 @@ export default class PlatformModule extends BaseModule {
      * SHARE_CHANNEL.LINK, SHARE_CHANNEL.ARTICLE, SHARE_CHANNEL.TOKEN, SHARE_CHANNEL.VIDEO 可选 仅字节跳动有效
      * @param callback 分享成功回调参数 = true, 分享失败回调参数 = false,
      */
-    share(query?: Object, callback?: (shared: boolean) => void): void;
+    share(query?: Object, callback?: (shared: boolean, err: any) => void): void;
     shareWithoutCheck(query?: Object, callback?: (shared: boolean) => void): void;
     private _share;
     _buildShareInfo(query?: any): {
