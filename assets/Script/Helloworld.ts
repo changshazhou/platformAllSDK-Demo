@@ -15,14 +15,21 @@ export default class Helloworld extends cc.Component {
         // init logic
         this.label.string = this.text;
 
+        this.scheduleOnce(() => {
+            moosnow.http.getAllConfig(res => {
+                console.log('所有配置', res)
+            })
+        }, 5)
+
+
         moosnow.form.preloadAd();
 
-        if (moosnow.APP_PLATFORM.WX == moosnow.getAppPlatform() && window["wx"])
-            cc.loader.downloader.loadSubpackage('tex', (err) => {
-                if (err) {
-                    return console.error(err);
-                }
-            });
+        // if (moosnow.APP_PLATFORM.WX == moosnow.getAppPlatform() && window["wx"])
+        //     cc.loader.downloader.loadSubpackage('tex', (err) => {
+        //         if (err) {
+        //             return console.error(err);
+        //         }
+        //     });
 
         moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_PLATFORM_HIDE, this, (res) => {
             console.log('平台隐藏时', res)
@@ -36,6 +43,13 @@ export default class Helloworld extends cc.Component {
         moosnow.form.showToast("这是一个Toast消息")
     }
 
+    testHttp() {
+        moosnow.http.request('https://cdn.liteplay.com.cn/config/wxeb720d78f75a425f.json', {}, 'GET', (res) => {
+            console.log('testHttp success ', res)
+        }, (res) => {
+            console.log('testHttp error ', res)
+        })
+    }
 
     showMistouch() {
         let options = new moosnow.showOptions.touchOptions();
@@ -215,13 +229,13 @@ export default class Helloworld extends cc.Component {
     }
 
     showBottomBanner() {
-        moosnow.platform.showBanner(() => { }, moosnow.BANNER_POSITION.BOTTOM);
+        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_POSITION.BOTTOM);
     }
     showCenterBanner() {
-        moosnow.platform.showBanner(() => { }, moosnow.BANNER_POSITION.CENTER);
+        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_POSITION.CENTER);
     }
     showTopBanner() {
-        moosnow.platform.showBanner(() => { }, moosnow.BANNER_POSITION.TOP);
+        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_POSITION.TOP);
     }
 
 
@@ -299,8 +313,10 @@ export default class Helloworld extends cc.Component {
     shareRecord() {
         moosnow.platform.share({
             channel: moosnow.SHARE_CHANNEL.VIDEO
-        }, (res, err) => {
-            console.log('分享结束', res, '111',err)
+        }, (res) => {
+            console.log('分享结束', res)
+        }, (err) => {
+            console.log('视频太短', err)
         });
     }
 
