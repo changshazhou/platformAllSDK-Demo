@@ -15,11 +15,9 @@ export default class Helloworld extends cc.Component {
         // init logic
         this.label.string = this.text;
 
-        this.scheduleOnce(() => {
-            moosnow.http.getAllConfig(res => {
-                console.log('所有配置', res)
-            })
-        }, 5)
+        moosnow.http.getAllConfig(res => {
+            console.log('所有配置', res)
+        })
 
 
         moosnow.form.preloadAd();
