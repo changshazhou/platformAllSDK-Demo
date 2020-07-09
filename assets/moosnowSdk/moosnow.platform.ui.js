@@ -843,7 +843,7 @@
             _this.cachedUIForms = [];
             _this.toastForm = null;
             _this.layerIndex = 0;
-            _this.UIRoot = 'moosnow/prefab/ui/'; //定义resources目录下存放UI预设的目录
+            _this.UIRoot = 'prefab/ui/'; //定义resources目录下存放UI预设的目录
             _this.UIFormStack = [];
             _this.cachedUIForms = [];
             _this.toastForm = null;
@@ -866,9 +866,10 @@
         };
         /**
          * 显示一个ui
-         * @param {string} name  resources/UI目录下的预设名字
+         * @param {string} name  prefab/ui/目录下的预设名字
          * @param {Object} data 携带的自定义数据
          * @param {Function} callback ui显示后回调:(formModel,data:Object)
+         * @param {string} uiRoot 指定根目录
          */
         BaseUIModule.prototype.pushUIForm = function (name, data, callback, uiRoot) {
             var self = this;
@@ -1113,22 +1114,6 @@
         return CocosUIModule;
     }(BaseUIModule));
 
-    var EventType = /** @class */ (function () {
-        function EventType() {
-        }
-        EventType.VIBRATESWITCH_CHANGED = "VIBRATESWITCH_CHANGED";
-        EventType.SOUNDSWITCH_CHANGED = "SOUNDSWITCH_CHANGED";
-        EventType.MUSICSWITCH_CHANGED = "MUSICSWITCH_CHANGED";
-        EventType.ON_PLATFORM_SHOW = "ON_PLATFORM_SHOW";
-        EventType.ON_PLATFORM_HIDE = "ON_PLATFORM_HIDE";
-        EventType.ON_BANNER_HIDE = "ON_BANNER_HIDE";
-        EventType.ON_AD_SHOW = "ON_AD_SHOW";
-        EventType.AD_VIEW_CHANGE = "AD_VIEW_CHANGE";
-        EventType.AD_VIEW_REFRESH = "AD_VIEW_REFRESH";
-        EventType.COIN_CHANGED = "COIN_CHANGED";
-        return EventType;
-    }());
-
     var AD_POSITION = {
         /**
          * 不显示
@@ -1194,6 +1179,23 @@
         RECOVER: 16384,
     };
 
+    var EventType = /** @class */ (function () {
+        function EventType() {
+        }
+        EventType.VIBRATESWITCH_CHANGED = "VIBRATESWITCH_CHANGED";
+        EventType.SOUNDSWITCH_CHANGED = "SOUNDSWITCH_CHANGED";
+        EventType.MUSICSWITCH_CHANGED = "MUSICSWITCH_CHANGED";
+        EventType.ON_PLATFORM_SHOW = "ON_PLATFORM_SHOW";
+        EventType.ON_PLATFORM_HIDE = "ON_PLATFORM_HIDE";
+        EventType.ON_BANNER_HIDE = "ON_BANNER_HIDE";
+        EventType.ON_AD_SHOW = "ON_AD_SHOW";
+        EventType.AD_VIEW_CHANGE = "AD_VIEW_CHANGE";
+        EventType.AD_VIEW_REFRESH = "AD_VIEW_REFRESH";
+        EventType.COIN_CHANGED = "COIN_CHANGED";
+        EventType.RANDOWM_NAVIGATE = "RANDOWM_NAVIGATE";
+        return EventType;
+    }());
+
     var BaseForm = /** @class */ (function (_super) {
         __extends(BaseForm, _super);
         function BaseForm() {
@@ -1228,6 +1230,11 @@
         return BaseForm;
     }(BaseModule));
 
+    var ROOT_CONFIG = {
+        UI_ROOT: "moosnow/prefab/ui/",
+        ENTITY_ROOT: "moosnow/prefab/entity/"
+    };
+
     var AdForm = /** @class */ (function (_super) {
         __extends(AdForm, _super);
         function AdForm() {
@@ -1244,6 +1251,7 @@
             _this.exportClose = null;
             _this.exportMask = null;
             _this.exportCloseTxt = null;
+            _this.btnBack = null;
             _this.floatContainer = null;
             _this.floatFull = null;
             _this.bannerContainer = null;
@@ -1299,7 +1307,6 @@
             _this.mFloatIndex = 0;
             _this.mFloatRefresh = 3;
             _this.mFloatCache = {};
-            _this.mSecond = 3;
             return _this;
         }
         AdForm.prototype.setPosition = function (source, position, callback, refresh) {
@@ -1353,9 +1360,11 @@
         };
         AdForm.prototype.addEvent = function () {
             moosnow.event.addListener(EventType.AD_VIEW_CHANGE, this, this.onAdChange);
+            moosnow.event.addListener(EventType.RANDOWM_NAVIGATE, this, this.onRandomNavigate);
         };
         AdForm.prototype.removeEvent = function () {
             moosnow.event.removeListener(EventType.AD_VIEW_CHANGE, this);
+            moosnow.event.removeListener(EventType.RANDOWM_NAVIGATE, this);
         };
         AdForm.prototype.onAdChange = function (data) {
             this.mChangeLen++;
@@ -1408,6 +1417,22 @@
             if (this.mBackCall) {
                 this.mBackCall();
             }
+        };
+        AdForm.prototype.onRandomNavigate = function () {
+            var item = this.mAdData.indexLeft[Common.randomNumBoth(0, this.mAdData.indexLeft.length - 1)];
+            moosnow.platform.navigate2Mini(item, function () { }, function () {
+            });
+        };
+        AdForm.prototype.onNavigate = function () {
+            var _this = this;
+            moosnow.http.getAllConfig(function (res) {
+                if (res && res.exportBtnNavigate == 1) {
+                    _this.onRandomNavigate();
+                }
+                else {
+                    _this.onBack();
+                }
+            });
         };
         AdForm.prototype.sideOut = function () {
         };
@@ -1522,16 +1547,6 @@
             return (this.mShowAd & ad) == ad;
         };
         AdForm.prototype.showExportClose = function () {
-            this.mSecond -= 1;
-            this.exportCloseTxt.active = true;
-            var closeLabel = this.exportCloseTxt.getComponent(cc.Label);
-            if (this.mSecond <= 0) {
-                this.exportClose.active = true;
-                this.exportCloseTxt.active = false;
-                this.unschedule(this.showExportClose);
-                return;
-            }
-            closeLabel.string = "\u5269\u4F59" + this.mSecond + "\u79D2\u53EF\u5173\u95ED";
         };
         AdForm.prototype.displayAd = function (visible) {
             this.floatContainer.active = visible && this.hasAd(AD_POSITION.FLOAT);
@@ -1551,24 +1566,6 @@
             this.showInviteBox(visible);
         };
         AdForm.prototype.showClose = function (visible) {
-            this.exportClose.active = false;
-            this.exportCloseTxt.active = false;
-            this.unschedule(this.showExportClose);
-            if (visible && this.hasAd(AD_POSITION.BACK)) {
-                if (this.hasAd(AD_POSITION.WAIT)) {
-                    this.mSecond = 3;
-                    this.showExportClose();
-                    this.schedule(this.showExportClose, 1);
-                }
-                else {
-                    this.exportClose.active = true;
-                    this.exportCloseTxt.active = false;
-                }
-            }
-            else {
-                this.exportClose.active = false;
-                this.exportCloseTxt.active = false;
-            }
         };
         AdForm.prototype.showInviteBox = function (visible) {
             var _this = this;
@@ -1609,13 +1606,13 @@
                         var inviteDelay = isNaN(res.inviteDelay) ? 0 : parseFloat(res.inviteDelay);
                         if (inviteDelay > 0)
                             _this.scheduleOnce(function () {
-                                moosnow.entity.showEntity("inviteBox", cc.Canvas.instance.node, {});
+                                moosnow.entity.showEntity(entityName, cc.Canvas.instance.node, {}, ROOT_CONFIG.ENTITY_ROOT);
                             }, inviteDelay);
                         else
-                            moosnow.entity.showEntity("inviteBox", cc.Canvas.instance.node, {});
+                            moosnow.entity.showEntity(entityName, cc.Canvas.instance.node, {});
                     }
                     else
-                        moosnow.entity.showEntity("inviteBox", cc.Canvas.instance.node, {});
+                        moosnow.entity.showEntity(entityName, cc.Canvas.instance.node, {});
                 });
             });
         };
@@ -1672,12 +1669,15 @@
         __extends(CocosAdForm, _super);
         function CocosAdForm() {
             var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.mSecond = 3;
             _this.mMoveSpeed = 2;
             return _this;
         }
         CocosAdForm.prototype.addEvent = function () {
+            if (this.btnBack)
+                this.btnBack.on(CocosNodeEvent.TOUCH_END, this.onBack, this);
             if (this.exportClose)
-                this.exportClose.on(CocosNodeEvent.TOUCH_END, this.onBack, this);
+                this.exportClose.on(CocosNodeEvent.TOUCH_END, this.onNavigate, this);
             if (this.btnSideShow)
                 this.btnSideShow.on(CocosNodeEvent.TOUCH_START, this.sideOut, this);
             if (this.btnSideHide)
@@ -1685,8 +1685,10 @@
             _super.prototype.addEvent.call(this);
         };
         CocosAdForm.prototype.removeEvent = function () {
+            if (this.btnBack)
+                this.btnBack.off(CocosNodeEvent.TOUCH_END, this.onBack, this);
             if (this.exportClose)
-                this.exportClose.off(CocosNodeEvent.TOUCH_END, this.onBack, this);
+                this.exportClose.off(CocosNodeEvent.TOUCH_END, this.onNavigate, this);
             if (this.btnSideShow)
                 this.btnSideShow.off(CocosNodeEvent.TOUCH_START, this.sideOut, this);
             if (this.btnSideHide)
@@ -1745,6 +1747,42 @@
                 });
             }
         };
+        CocosAdForm.prototype.showClose = function (visible) {
+            this.exportClose.active = false;
+            this.exportCloseTxt.active = false;
+            this.btnBack.active = false;
+            this.unschedule(this.showExportClose);
+            if (visible && this.hasAd(AD_POSITION.BACK)) {
+                if (this.hasAd(AD_POSITION.WAIT)) {
+                    this.mSecond = 3;
+                    this.showExportClose();
+                    this.schedule(this.showExportClose, 1);
+                }
+                else {
+                    this.exportClose.active = true;
+                    this.btnBack.active = true;
+                    this.exportCloseTxt.active = false;
+                }
+            }
+            else {
+                this.exportClose.active = false;
+                this.btnBack.active = false;
+                this.exportCloseTxt.active = false;
+            }
+        };
+        CocosAdForm.prototype.showExportClose = function () {
+            this.mSecond -= 1;
+            this.exportCloseTxt.active = true;
+            var closeLabel = this.exportCloseTxt.getComponent(cc.Label);
+            if (this.mSecond <= 0) {
+                this.exportClose.active = true;
+                this.btnBack.active = true;
+                this.exportCloseTxt.active = false;
+                this.unschedule(this.showExportClose);
+                return;
+            }
+            closeLabel.string = "\u5269\u4F59" + this.mSecond + "\u79D2\u53EF\u5173\u95ED";
+        };
         CocosAdForm.prototype.onFwUpdate = function () {
             for (var i = 0; i < this.mScrollVec.length; i++) {
                 var item = this.mScrollVec[i];
@@ -1790,77 +1828,21 @@
         MISTOUCH_BANNER_TYPE[MISTOUCH_BANNER_TYPE["MAST"] = 2] = "MAST";
     })(MISTOUCH_BANNER_TYPE || (MISTOUCH_BANNER_TYPE = {}));
 
-    var UIForms = /** @class */ (function () {
-        function UIForms() {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+    var UIFormSetting = /** @class */ (function () {
+        function UIFormSetting() {
         }
-        Object.defineProperty(UIForms, "mapping", {
+        UIFormSetting.append = function (setting) {
+            this.mSetting = __assign(__assign({}, this.mSetting), setting);
+        };
+        Object.defineProperty(UIFormSetting, "mapping", {
             get: function () {
-                var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-                return {
-                    adForm: (_a = {},
-                        _a[moosnow.APP_PLATFORM.WX] = "adForm",
-                        _a),
-                    pauseForm: (_b = {},
-                        _b[moosnow.APP_PLATFORM.WX] = "pauseForm",
-                        _b[moosnow.APP_PLATFORM.BYTEDANCE] = "pauseFormTT",
-                        _b[moosnow.APP_PLATFORM.OPPO] = "pauseFormOPPO",
-                        _b[moosnow.APP_PLATFORM.OPPO_ZS] = "pauseFormOPPO",
-                        _b[moosnow.APP_PLATFORM.VIVO] = "pauseFormOPPO",
-                        _b[moosnow.APP_PLATFORM.QQ] = "pauseFormTT",
-                        _b),
-                    respawnForm: (_c = {},
-                        _c[moosnow.APP_PLATFORM.WX] = "respawnForm",
-                        _c[moosnow.APP_PLATFORM.BYTEDANCE] = "respawnFormTT",
-                        _c[moosnow.APP_PLATFORM.OPPO] = "respawnFormOPPO",
-                        _c[moosnow.APP_PLATFORM.OPPO_ZS] = "respawnFormOPPO",
-                        _c[moosnow.APP_PLATFORM.VIVO] = "respawnFormOPPO",
-                        _c[moosnow.APP_PLATFORM.QQ] = "respawnFormQQ",
-                        _c),
-                    endForm: (_d = {},
-                        _d[moosnow.APP_PLATFORM.WX] = "endForm",
-                        _d[moosnow.APP_PLATFORM.BYTEDANCE] = "endFormTT",
-                        _d[moosnow.APP_PLATFORM.OPPO] = "endFormOPPO",
-                        _d[moosnow.APP_PLATFORM.OPPO_ZS] = "endFormOPPO",
-                        _d[moosnow.APP_PLATFORM.VIVO] = "endFormOPPO",
-                        _d),
-                    totalForm: (_e = {},
-                        _e[moosnow.APP_PLATFORM.WX] = "totalForm",
-                        _e[moosnow.APP_PLATFORM.BYTEDANCE] = "totalFormTT",
-                        _e[moosnow.APP_PLATFORM.QQ] = "totalFormQQ",
-                        _e),
-                    tryForm: (_f = {},
-                        _f[moosnow.APP_PLATFORM.WX] = "tryForm",
-                        _f[moosnow.APP_PLATFORM.BYTEDANCE] = "tryFormTT",
-                        _f[moosnow.APP_PLATFORM.QQ] = "tryFormTT",
-                        _f),
-                    mistouchForm: (_g = {},
-                        _g[moosnow.APP_PLATFORM.WX] = "mistouchForm",
-                        _g[moosnow.APP_PLATFORM.QQ] = "mistouchFormQQ",
-                        _g[moosnow.APP_PLATFORM.BYTEDANCE] = "mistouchFormTT",
-                        _g),
-                    prizeForm: (_h = {},
-                        _h[moosnow.APP_PLATFORM.BYTEDANCE] = "prizeFormTT",
-                        _h[moosnow.APP_PLATFORM.QQ] = "prizeForm",
-                        _h),
-                    shareForm: (_j = {},
-                        _j[moosnow.APP_PLATFORM.WX] = "shareFormTT",
-                        _j[moosnow.APP_PLATFORM.BYTEDANCE] = "shareFormTT",
-                        _j),
-                    setForm: (_k = {},
-                        _k[moosnow.APP_PLATFORM.WX] = "setForm",
-                        _k),
-                    toastForm: (_l = {},
-                        _l[moosnow.APP_PLATFORM.WX] = "toastForm",
-                        _l),
-                    coinForm: (_m = {},
-                        _m[moosnow.APP_PLATFORM.WX] = "coinForm",
-                        _m)
-                };
+                return this.mSetting;
             },
             enumerable: true,
             configurable: true
         });
-        UIForms.convertUIName = function (mappingForm) {
+        UIFormSetting.convertUIName = function (mappingForm) {
             if (!mappingForm) {
                 console.warn("convertUIName fail  mappingForm is null ");
                 return null;
@@ -1876,21 +1858,21 @@
             }
             return null;
         };
-        Object.defineProperty(UIForms, "AdForm", {
+        Object.defineProperty(UIFormSetting, "AdForm", {
             get: function () {
                 return this.convertUIName(this.mapping.adForm);
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(UIForms, "CoinForm", {
+        Object.defineProperty(UIFormSetting, "CoinForm", {
             get: function () {
                 return this.convertUIName(this.mapping.coinForm);
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(UIForms, "ShareForm", {
+        Object.defineProperty(UIFormSetting, "ShareForm", {
             get: function () {
                 return this.convertUIName(this.mapping.shareForm);
             },
@@ -1898,7 +1880,7 @@
             configurable: true
         });
         ;
-        Object.defineProperty(UIForms, "TotalForm", {
+        Object.defineProperty(UIFormSetting, "TotalForm", {
             get: function () {
                 return this.convertUIName(this.mapping.totalForm);
             },
@@ -1906,7 +1888,7 @@
             configurable: true
         });
         ;
-        Object.defineProperty(UIForms, "EndForm", {
+        Object.defineProperty(UIFormSetting, "EndForm", {
             /**
              * 结束页
              */
@@ -1916,28 +1898,28 @@
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(UIForms, "ToastForm", {
+        Object.defineProperty(UIFormSetting, "ToastForm", {
             get: function () {
                 return this.convertUIName(this.mapping.toastForm);
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(UIForms, "PauseForm", {
+        Object.defineProperty(UIFormSetting, "PauseForm", {
             get: function () {
                 return this.convertUIName(this.mapping.pauseForm);
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(UIForms, "RespawnForm", {
+        Object.defineProperty(UIFormSetting, "RespawnForm", {
             get: function () {
                 return this.convertUIName(this.mapping.respawnForm);
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(UIForms, "SetForm", {
+        Object.defineProperty(UIFormSetting, "SetForm", {
             get: function () {
                 return this.convertUIName(this.mapping.setForm);
             },
@@ -1945,7 +1927,7 @@
             configurable: true
         });
         ;
-        Object.defineProperty(UIForms, "PrizeForm", {
+        Object.defineProperty(UIFormSetting, "PrizeForm", {
             get: function () {
                 return this.convertUIName(this.mapping.prizeForm);
             },
@@ -1953,21 +1935,91 @@
             configurable: true
         });
         ;
-        Object.defineProperty(UIForms, "MistouchForm", {
+        Object.defineProperty(UIFormSetting, "MistouchForm", {
             get: function () {
                 return this.convertUIName(this.mapping.mistouchForm);
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(UIForms, "TryForm", {
+        Object.defineProperty(UIFormSetting, "TryForm", {
             get: function () {
                 return this.convertUIName(this.mapping.tryForm);
             },
             enumerable: true,
             configurable: true
         });
-        return UIForms;
+        Object.defineProperty(UIFormSetting, "HomeForm", {
+            get: function () {
+                return this.convertUIName(this.mapping.homeForm);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        UIFormSetting.mSetting = {
+            adForm: (_a = {},
+                _a[moosnow.APP_PLATFORM.WX] = "adForm",
+                _a),
+            pauseForm: (_b = {},
+                _b[moosnow.APP_PLATFORM.WX] = "pauseForm",
+                _b[moosnow.APP_PLATFORM.BYTEDANCE] = "pauseFormTT",
+                _b[moosnow.APP_PLATFORM.OPPO] = "pauseFormOPPO",
+                _b[moosnow.APP_PLATFORM.OPPO_ZS] = "pauseFormOPPO",
+                _b[moosnow.APP_PLATFORM.VIVO] = "pauseFormOPPO",
+                _b[moosnow.APP_PLATFORM.QQ] = "pauseFormTT",
+                _b),
+            respawnForm: (_c = {},
+                _c[moosnow.APP_PLATFORM.WX] = "respawnForm",
+                _c[moosnow.APP_PLATFORM.BYTEDANCE] = "respawnFormTT",
+                _c[moosnow.APP_PLATFORM.OPPO] = "respawnFormOPPO",
+                _c[moosnow.APP_PLATFORM.OPPO_ZS] = "respawnFormOPPO",
+                _c[moosnow.APP_PLATFORM.VIVO] = "respawnFormOPPO",
+                _c[moosnow.APP_PLATFORM.QQ] = "respawnFormQQ",
+                _c),
+            endForm: (_d = {},
+                _d[moosnow.APP_PLATFORM.WX] = "endForm",
+                _d[moosnow.APP_PLATFORM.BYTEDANCE] = "endFormTT",
+                _d[moosnow.APP_PLATFORM.OPPO] = "endFormOPPO",
+                _d[moosnow.APP_PLATFORM.OPPO_ZS] = "endFormOPPO",
+                _d[moosnow.APP_PLATFORM.VIVO] = "endFormOPPO",
+                _d),
+            totalForm: (_e = {},
+                _e[moosnow.APP_PLATFORM.WX] = "totalForm",
+                _e[moosnow.APP_PLATFORM.BYTEDANCE] = "totalFormTT",
+                _e[moosnow.APP_PLATFORM.QQ] = "totalFormQQ",
+                _e),
+            tryForm: (_f = {},
+                _f[moosnow.APP_PLATFORM.WX] = "tryForm",
+                _f[moosnow.APP_PLATFORM.BYTEDANCE] = "tryFormTT",
+                _f[moosnow.APP_PLATFORM.QQ] = "tryFormTT",
+                _f),
+            mistouchForm: (_g = {},
+                _g[moosnow.APP_PLATFORM.WX] = "mistouchForm",
+                _g[moosnow.APP_PLATFORM.QQ] = "mistouchFormQQ",
+                _g[moosnow.APP_PLATFORM.BYTEDANCE] = "mistouchFormTT",
+                _g),
+            prizeForm: (_h = {},
+                _h[moosnow.APP_PLATFORM.BYTEDANCE] = "prizeFormTT",
+                _h[moosnow.APP_PLATFORM.QQ] = "prizeForm",
+                _h),
+            shareForm: (_j = {},
+                _j[moosnow.APP_PLATFORM.WX] = "shareFormTT",
+                _j[moosnow.APP_PLATFORM.BYTEDANCE] = "shareFormTT",
+                _j),
+            setForm: (_k = {},
+                _k[moosnow.APP_PLATFORM.WX] = "setForm",
+                _k),
+            toastForm: (_l = {},
+                _l[moosnow.APP_PLATFORM.WX] = "toastForm",
+                _l),
+            coinForm: (_m = {},
+                _m[moosnow.APP_PLATFORM.WX] = "coinForm",
+                _m),
+            homeForm: (_o = {},
+                _o[moosnow.APP_PLATFORM.WX] = "homeForm",
+                _o)
+        };
+        return UIFormSetting;
     }());
 
     var MistouchForm = /** @class */ (function (_super) {
@@ -2064,7 +2116,7 @@
             if (this.mCurrentNum >= this.mMaxNum) {
                 moosnow.platform.hideBanner();
                 this.mBannerShow = false;
-                moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+                moosnow.ui.destroyUIForm(UIFormSetting.MistouchForm, null);
                 if (this.FormData && this.FormData.callback)
                     this.FormData.callback(true);
             }
@@ -2176,7 +2228,7 @@
                 });
             }
             else {
-                moosnow.ui.hideUIForm(UIForms.MistouchForm, null);
+                moosnow.ui.hideUIForm(UIFormSetting.MistouchForm, null);
             }
         };
         MistouchFormTT.prototype.checkboxChange = function () {
@@ -2341,7 +2393,7 @@
                 moosnow.platform.hideBanner();
                 this.mBannerShow = false;
                 this.scheduleOnce(function () {
-                    moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+                    moosnow.ui.destroyUIForm(UIFormSetting.MistouchForm, null);
                     if (_this.FormData && _this.FormData.callback)
                         _this.FormData.callback();
                 }, 0.2);
@@ -2615,13 +2667,13 @@
         };
         PrizeForm.prototype.closeForm = function () {
             var _this = this;
-            moosnow.ui.destroyUIForm(UIForms.PrizeForm, null);
-            moosnow.ui.destroyUIForm(UIForms.MistouchForm, null);
+            moosnow.ui.destroyUIForm(UIFormSetting.PrizeForm, null);
+            moosnow.ui.destroyUIForm(UIFormSetting.MistouchForm, null);
             if (this.FormData.showCoinAnim == true) {
-                moosnow.ui.pushUIForm(UIForms.CoinForm, __assign(__assign({}, Common.deepCopy(this.FormData)), { callback: function () {
+                moosnow.ui.pushUIForm(UIFormSetting.CoinForm, __assign(__assign({}, Common.deepCopy(this.FormData)), { callback: function () {
                         if (_this.FormData.callback)
                             _this.FormData.callback();
-                    } }));
+                    } }), function () { }, ROOT_CONFIG.UI_ROOT);
             }
             else {
                 if (this.FormData.callback)
@@ -2729,7 +2781,7 @@
             var num = this.mTotalSecond - this.mCurrentSecond;
             if (num < 0) {
                 this.unschedule(this.onCountdown);
-                moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                moosnow.ui.hideUIForm(UIFormSetting.PrizeForm, null);
                 return;
             }
             this.txtCoutdown.string = num + "\u79D2";
@@ -2755,7 +2807,7 @@
             // this.unchecked.off(CocosNodeEvent.TOUCH_END, this.onChecked, this)
         };
         PrizeFormTT.prototype.closeForm = function () {
-            moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+            moosnow.ui.hideUIForm(UIFormSetting.PrizeForm, null);
         };
         PrizeFormTT.prototype.onChecked = function () {
         };
@@ -2768,7 +2820,7 @@
                 _this.resumeCountdown();
                 if (_this.FormData) {
                     if (_this.FormData.hideForm)
-                        moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                        moosnow.ui.hideUIForm(UIFormSetting.PrizeForm, null);
                     if (_this.FormData.shareCallback)
                         _this.FormData.shareCallback(shared);
                 }
@@ -2779,7 +2831,7 @@
                 this.onVideo();
             else if (this.FormData) {
                 if (this.FormData.hideForm)
-                    moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                    moosnow.ui.hideUIForm(UIFormSetting.PrizeForm, null);
                 if (this.FormData.callback)
                     this.FormData.callback();
             }
@@ -2791,7 +2843,7 @@
                 if (res == moosnow.VIDEO_STATUS.END) {
                     if (_this.FormData) {
                         if (_this.FormData.hideForm)
-                            moosnow.ui.hideUIForm(UIForms.PrizeForm, null);
+                            moosnow.ui.hideUIForm(UIFormSetting.PrizeForm, null);
                         if (_this.FormData.videoCallback)
                             _this.FormData.videoCallback();
                     }
@@ -2879,7 +2931,7 @@
                 }
                 _this.scheduleOnce(function () {
                     if (_this.FormData.hideForm)
-                        moosnow.ui.hideUIForm(UIForms.CoinForm, null);
+                        moosnow.ui.hideUIForm(UIFormSetting.CoinForm, null);
                     if (Common.isFunction(callback))
                         callback();
                 }, 2.1);
@@ -2952,8 +3004,8 @@
             }
         };
         TotalForm.prototype.openEndForm = function (coin) {
-            moosnow.ui.hideUIForm(UIForms.TotalForm, null);
-            moosnow.ui.pushUIForm(UIForms.EndForm, __assign({ coin: coin, level: this.FormData.level, levelShareCoinNum: this.mLevelShareCoinNum }, this.FormData));
+            moosnow.ui.hideUIForm(UIFormSetting.TotalForm, null);
+            moosnow.ui.pushUIForm(UIFormSetting.EndForm, __assign({ coin: coin, level: this.FormData.level, levelShareCoinNum: this.mLevelShareCoinNum }, this.FormData), function () { }, ROOT_CONFIG.UI_ROOT);
         };
         TotalForm.prototype.onShareChange = function () {
             this.mCheckedVideo = !this.mCheckedVideo;
@@ -3032,7 +3084,7 @@
         };
         ShareFormTT.prototype.onBack = function () {
             if (this.FormData.hideForm)
-                moosnow.ui.hideUIForm(UIForms.ShareForm, null);
+                moosnow.ui.hideUIForm(UIFormSetting.ShareForm, null);
             if (this.FormData && this.FormData.callback)
                 this.FormData.callback();
         };
@@ -3075,7 +3127,7 @@
                 _this.mShareing = false;
                 if (res == moosnow.VIDEO_STATUS.END) {
                     if (_this.FormData.hideForm)
-                        moosnow.ui.hideUIForm(UIForms.ShareForm, null);
+                        moosnow.ui.hideUIForm(UIFormSetting.ShareForm, null);
                     if (_this.FormData && _this.FormData.videoCallback)
                         _this.FormData.videoCallback();
                 }
@@ -3095,7 +3147,7 @@
                 _this.mShareing = false;
                 if (res) {
                     if (_this.FormData.hideForm)
-                        moosnow.ui.hideUIForm(UIForms.ShareForm, null);
+                        moosnow.ui.hideUIForm(UIFormSetting.ShareForm, null);
                     if (_this.FormData && _this.FormData.shareCallback)
                         _this.FormData.shareCallback(res);
                 }
@@ -3381,10 +3433,11 @@
             moosnow.ui.showToast(msg);
         };
         /**
-         * 预加载广告
+         *  预加载广告
+         * @param callback
          */
-        UIForm.prototype.preloadAd = function () {
-            moosnow.ui.pushUIForm(UIForms.AdForm, { showAd: moosnow.AD_POSITION.NONE }, null);
+        UIForm.prototype.preloadAd = function (callback) {
+            moosnow.ui.pushUIForm(UIFormSetting.AdForm, { showAd: moosnow.AD_POSITION.NONE }, callback, ROOT_CONFIG.UI_ROOT);
         };
         /**
          * 显示广告
@@ -3393,7 +3446,6 @@
          * @param zIndex  层级
          */
         UIForm.prototype.showAd = function (adType, callback, zIndex) {
-            var _this = this;
             if (adType === void 0) { adType = AD_POSITION.NONE; }
             if (zIndex === void 0) { zIndex = 999; }
             //
@@ -3401,24 +3453,14 @@
                 console.log('头条iphone 不显示广告');
                 return;
             }
-            if (!this.mLoadedAdFrom) {
-                moosnow.ui.pushUIForm(UIForms.AdForm, { showAd: moosnow.AD_POSITION.NONE }, function () {
-                    _this.mLoadedAdFrom = true;
-                    var adForm = moosnow.ui.getUIFrom(UIForms.AdForm);
-                    adForm.node.zIndex = zIndex;
-                    moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback, zIndex: zIndex });
-                });
-            }
-            else {
-                moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback, zIndex: zIndex });
-            }
+            moosnow.event.sendEventImmediately(EventType.AD_VIEW_CHANGE, { showAd: adType, callback: callback, zIndex: zIndex });
         };
         /**
          * 金币动画
          * @param options
          */
         UIForm.prototype.showCoin = function (options) {
-            moosnow.ui.pushUIForm(UIForms.CoinForm, options);
+            moosnow.ui.pushUIForm(UIFormSetting.CoinForm, options, function () { }, ROOT_CONFIG.UI_ROOT);
         };
         /**
          * 显示狂点页面
@@ -3426,8 +3468,8 @@
          * @param type 类型 仅对QQ平台生效 1 是按钮点击  2 动画点击
          */
         UIForm.prototype.showMistouch = function (options) {
-            moosnow.ui.pushUIForm(UIForms.MistouchForm, options, function () {
-            });
+            moosnow.ui.pushUIForm(UIFormSetting.MistouchForm, options, function () {
+            }, ROOT_CONFIG.UI_ROOT);
         };
         /**
          * 显示奖励
@@ -3437,8 +3479,8 @@
          * @param callback
          */
         UIForm.prototype.showPrize = function (options) {
-            moosnow.ui.pushUIForm(UIForms.PrizeForm, options, function () {
-            });
+            moosnow.ui.pushUIForm(UIFormSetting.PrizeForm, options, function () {
+            }, ROOT_CONFIG.UI_ROOT);
         };
         /**
          * 显示结算统计页
@@ -3446,7 +3488,7 @@
          * @param callback
          */
         UIForm.prototype.showTotal = function (options) {
-            moosnow.ui.pushUIForm(UIForms.TotalForm, options);
+            moosnow.ui.pushUIForm(UIFormSetting.TotalForm, options, function () { }, ROOT_CONFIG.UI_ROOT);
         };
         /**
         * 显示结算统计页
@@ -3454,13 +3496,13 @@
         * @param callback
         */
         UIForm.prototype.showEnd = function (options) {
-            moosnow.ui.pushUIForm(UIForms.EndForm, options);
+            moosnow.ui.pushUIForm(UIFormSetting.EndForm, options, function () { }, ROOT_CONFIG.UI_ROOT);
         };
         /**
          *  showShare
          */
         UIForm.prototype.showShare = function (options) {
-            moosnow.ui.pushUIForm(UIForms.ShareForm, options);
+            moosnow.ui.pushUIForm(UIFormSetting.ShareForm, options, function () { }, ROOT_CONFIG.UI_ROOT);
         };
         return UIForm;
     }());
@@ -3874,10 +3916,6 @@
                 coinOptions: showCoinOptions
             };
             /**
-             * 默认的预制体映射
-             */
-            this.formSetting = UIForms;
-            /**
              * form UI 操作
              */
             this.mForm = new UIForm();
@@ -3898,6 +3936,7 @@
             window["moosnow"].form = this.form;
             window["moosnow"].control = this.control;
             window["moosnow"].delay = this.delay;
+            window["moosnow"].formSetting = UIFormSetting;
         }
         moosnowUI.prototype.initUI = function () {
             this.mUi = new CocosUIModule();

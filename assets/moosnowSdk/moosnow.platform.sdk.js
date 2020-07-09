@@ -668,6 +668,7 @@
         EventType.AD_VIEW_CHANGE = "AD_VIEW_CHANGE";
         EventType.AD_VIEW_REFRESH = "AD_VIEW_REFRESH";
         EventType.COIN_CHANGED = "COIN_CHANGED";
+        EventType.RANDOWM_NAVIGATE = "RANDOWM_NAVIGATE";
         return EventType;
     }());
 
@@ -1275,6 +1276,7 @@
             this.shareInfoArr = shareInfoArr;
             window[this.platformName].showShareMenu({
                 withShareTicket: true,
+                menus: ['shareAppMessage', 'shareTimeline'],
                 success: null,
                 fail: null,
                 complete: null
@@ -1443,6 +1445,16 @@
         PlatformModule.prototype.pauseRecord = function () {
         };
         PlatformModule.prototype.resumeRecord = function () {
+        };
+        /**
+         *
+         * @param style
+         * @param timeRange
+         * @param callback
+         */
+        PlatformModule.prototype.showShareButton = function (style, timeRange, callback) {
+        };
+        PlatformModule.prototype.hideShareButton = function () {
         };
         //-----------------注册事件------------------
         /**
@@ -1956,6 +1968,24 @@
             };
             this.postMessage(data);
         };
+        /**
+         * 用户是否关注抖音号
+         * @param success
+         * @param fail
+         */
+        PlatformModule.prototype.checkFollowAwemeSate = function (success, fail) {
+            if (success)
+                success(true);
+        };
+        /**
+         * 调用后跳转个人主页，并且回调关注成功/失败回调，异步回调接口
+         * @param success
+         * @param fail
+         */
+        PlatformModule.prototype.openAwemeUserProile = function (success, fail) {
+            if (success)
+                success(true);
+        };
         PlatformModule.prototype.onDisable = function () {
         };
         return PlatformModule;
@@ -1969,6 +1999,8 @@
         function WXModule() {
             var _this = _super.call(this) || this;
             _this.platformName = "wx";
+            _this.writeTime = 0;
+            _this.recordCb = null;
             _this._regisiterWXCallback();
             _this.initBanner();
             _this.initInter();
@@ -2046,6 +2078,120 @@
                 if (Common.isFunction(callback))
                     callback({});
             });
+        };
+        WXModule.prototype.initRecord = function () {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].getGameRecorder)
+                return;
+            // if (!this.isDouyin()) return;
+            this.record = window[this.platformName].getGameRecorder();
+        };
+        /**
+         * 开始录屏
+         * @param duration 录屏时长
+         * @param callback 如果不是抖音回调参数=false
+         */
+        WXModule.prototype.startRecord = function (duration, callback) {
+            var _this = this;
+            if (duration === void 0) { duration = 300; }
+            if (callback === void 0) { callback = null; }
+            console.log('record startRecord');
+            if (!this.record) {
+                if (callback)
+                    callback(false);
+                return;
+            }
+            this.record.start()
+                .then(function (res) {
+                _this.record.on('timeUpdate', function (res) {
+                    console.log("\u89C6\u9891\u65F6\u957F: " + res.currentTime);
+                    _this.writeTime = Math.min(res.currentTime, 60000);
+                });
+                _this.record.on('start', function () {
+                    if (callback)
+                        callback();
+                });
+                // stop 事件的回调函数的执行表示录制完成
+                _this.record.on('stop', function (res) {
+                    console.log("\u5BF9\u5C40\u56DE\u653E\u65F6\u957F: ", res);
+                    _this.recordCb(res);
+                });
+            });
+        };
+        /**
+        * 停止录屏
+        * @param callback 如果不是抖音回调参数=false，如果录制成功，回调参数中录屏地址=res.videoPath
+        */
+        WXModule.prototype.stopRecord = function (callback) {
+            var _this = this;
+            if (callback === void 0) { callback = null; }
+            console.log(' stop Record  callback  ', !!callback);
+            if (!this.record) {
+                if (callback)
+                    callback(false);
+                return;
+            }
+            this.recordCb = callback;
+            var stopPromise = this.record.stop();
+            stopPromise && stopPromise.then(function (res) {
+                if (!res.error.code) {
+                    _this.record.off('timeUpdate');
+                    // this.showShareButton(
+                    //     () => {
+                    //     }
+                    // );
+                }
+                console.log(' stop Record  then  ', res);
+            })
+                .catch(function (res) {
+                console.log(' stop Record  catch  ', res);
+            });
+        };
+        WXModule.prototype.pauseRecord = function () {
+            if (this.record) {
+                this.record.pause();
+            }
+        };
+        WXModule.prototype.resumeRecord = function () {
+            if (this.record) {
+                this.record.resume();
+            }
+        };
+        WXModule.prototype.showShareButton = function (style, timeRange, callback) {
+            var _this = this;
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createGameRecorderShareButton)
+                return;
+            if (!timeRange)
+                timeRange = [[0, this.writeTime]];
+            moosnow.http.getAllConfig(function (res) {
+                _this.mShareButton = window[_this.platformName].createGameRecorderShareButton({
+                    // 样式参数
+                    style: __assign(__assign({ left: 10, top: 150, height: 50 }, style), { color: '#ffffff', textAlign: 'center', fontSize: 16, borderRadius: 4, iconMarginRight: 16, paddingLeft: 1, paddingRight: 30 }),
+                    // 按钮的背景图片
+                    text: res.shareButtonText || '自定义文案',
+                    // 分享参数
+                    share: {
+                        query: 'a=1&b=2',
+                        // 背景音乐的路径
+                        bgm: '',
+                        timeRange: timeRange
+                    }
+                });
+                _this.mShareButton.show();
+                _this.mShareButton.onTap(function (res) {
+                    console.log("\u9519\u8BEF\u7801\uFF1A" + res.error.code + "\uFF0C\u9519\u8BEF\u4FE1\u606F\uFF1A" + res.error.message);
+                    if (callback)
+                        callback(res);
+                });
+            });
+        };
+        WXModule.prototype.hideShareButton = function () {
+            if (this.mShareButton) {
+                this.mShareButton.hide();
+            }
         };
         return WXModule;
     }(PlatformModule));
@@ -2317,6 +2463,12 @@
         return AdModule;
     }(BaseModule));
 
+    var ROOT_CONFIG = {
+        UI_ROOT: "moosnow/prefab/ui/",
+        ENTITY_ROOT: "moosnow/prefab/entity/",
+        HTTP_ROOT: "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com",
+    };
+
     var ErrorType = {
         ONERROR: "HTTP协议链接出错",
         ONTIMEOUT: "HTTP协议链接超时",
@@ -2337,13 +2489,12 @@
             _this.versionNumber = "";
             _this.version = "2.0.4";
             _this.baseUrl = "https://api.liteplay.com.cn/";
-            _this._cdnUrl = "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com";
             _this.mLaunchOptions = {};
             _this.cfgData = null;
             _this.areaData = null;
             _this._cfgQuene = [];
             _this._localQuene = [];
-            var versionUrl = _this._cdnUrl + "/SDK/version.json?t=" + Date.now();
+            var versionUrl = ROOT_CONFIG.HTTP_ROOT + "/SDK/version.json?t=" + Date.now();
             if (Common.platform == PlatformType.PC) {
                 _this.request(versionUrl, {}, 'GET', function (res) {
                     if (_this.version < res.version) {
@@ -2390,22 +2541,6 @@
          */
         HttpModule.prototype.request = function (url, data, method, success, fail, complete) {
             var newUrl = "";
-            // if (moosnow && moosnow.platform && moosnow.platform.getSystemInfoSync) {
-            //     let sys = moosnow.platform.getSystemInfoSync();
-            //     if (sys && sys.brand && sys.brand.toLocaleLowerCase().indexOf("vivo") != -1) {
-            //         let originUrl = "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/"
-            //         let cdnUrl = "https://cdn.liteplay.com.cn/"
-            //         newUrl = url.replace(originUrl, cdnUrl);
-            //         if (newUrl.indexOf('?') == -1) {
-            //             newUrl += '?t1=' + Date.now();
-            //         }
-            //         else
-            //             newUrl += '&t1=' + Date.now();
-            //     }
-            //     else
-            //         newUrl = url;
-            // }
-            // else
             newUrl = url;
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
@@ -2613,9 +2748,7 @@
                                 exportAutoNavigate = 0;
                             if (res.exportAutoNavigate == 2)
                                 exportAutoNavigate = 1;
-                            var retValue = __assign(__assign({}, res), { mistouchNum: 0, mistouchPosNum: 0, mistouchInterval: 0, exportBtnNavigate: 0, exportAutoNavigate: exportAutoNavigate, bannerShowCountLimit: 1, isLimitArea: 1 });
-                            retValue.exportAutoNavigate = exportAutoNavigate;
-                            callback();
+                            callback(__assign(__assign({}, res), { mistouchNum: 0, mistouchPosNum: 0, mistouchInterval: 0, exportBtnNavigate: 0, exportAutoNavigate: exportAutoNavigate, bannerShowCountLimit: 1, isLimitArea: 1 }));
                         }
                         else {
                             if (res.exportAutoNavigate == 2)
@@ -2639,7 +2772,7 @@
                 if (Common.config.url)
                     url = Common.config.url + "?t=" + Date.now();
                 else
-                    url = this._cdnUrl + "/config/" + Common.config.moosnowAppId + ".json?t=" + Date.now();
+                    url = ROOT_CONFIG.HTTP_ROOT + "/config/" + Common.config.moosnowAppId + ".json?t=" + Date.now();
                 this.request(url, {}, 'GET', function (res) {
                     //总开关控制
                     var mistouchOn = res && res.mistouchOn == 1 ? true : false;
@@ -2821,7 +2954,7 @@
         };
         HttpModule.prototype.getShareInfo = function (cb) {
             var _this = this;
-            this.request(this._cdnUrl + "/share/" + Common.config.moosnowAppId + ".json", {
+            this.request(ROOT_CONFIG.HTTP_ROOT + "/share/" + Common.config.moosnowAppId + ".json", {
                 appid: Common.config.moosnowAppId
             }, "GET", function (res) {
                 cb(res);
@@ -3636,7 +3769,7 @@
         }
         OPPOAdModule.prototype.getRemoteAd = function (cb) {
             var _this = this;
-            var url = "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/exportConfig/" + moosnow.platform.moosnowConfig.moosnowAppId + ".json?t=" + Date.now();
+            var url = ROOT_CONFIG.HTTP_ROOT + "/exportConfig/" + Common.config.moosnowAppId + ".json?t=" + Date.now();
             moosnow.http.request(url, {}, 'GET', function (res) {
                 cb(res);
                 console.log('WXAdModule getRemoteAd', res);
@@ -3657,7 +3790,7 @@
         }
         WXAdModule.prototype.getRemoteAd = function (cb) {
             var _this = this;
-            var url = "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/exportConfig/" + moosnow.platform.moosnowConfig.moosnowAppId + ".json?t=" + Date.now();
+            var url = ROOT_CONFIG.HTTP_ROOT + "/exportConfig/" + Common.config.moosnowAppId + ".json?t=" + Date.now();
             moosnow.http.request(url, {}, 'GET', function (res) {
                 cb(res);
                 console.log('WXAdModule getRemoteAd', res);
@@ -4238,6 +4371,64 @@
             this.showAppBox(function () {
                 console.log('tt showAppBox close ');
             }, false);
+        };
+        /**
+          * 调用后跳转个人主页，并且回调关注成功/失败回调，异步回调接口
+          * @param success
+          * @param fail
+          */
+        TTModule.prototype.checkFollowAwemeSate = function (success, fail) {
+            if (!window[this.platformName]) {
+                success(true);
+                return;
+            }
+            if (!window[this.platformName].checkFollowAwemeState) {
+                success(true);
+                return;
+            }
+            window[this.platformName].checkFollowAwemeState({
+                success: function (res) {
+                    console.log('---- check success, res:', res);
+                    var hasFollowed = res.hasFollowed;
+                    success(hasFollowed);
+                },
+                fail: function (err) {
+                    fail(err);
+                    // console.log('---- check fail,', err)
+                },
+                complete: function (res) {
+                    // console.log('---- check complete, res: ', res)
+                }
+            });
+        };
+        /**
+         * 调用后跳转个人主页，并且回调关注成功/失败回调，异步回调接口
+         * @param success
+         * @param fail
+         */
+        TTModule.prototype.openAwemeUserProile = function (success, fail) {
+            if (!window[this.platformName]) {
+                success(true);
+                return;
+            }
+            if (!window[this.platformName].openAwemeUserProfile) {
+                success(true);
+                return;
+            }
+            window[this.platformName].openAwemeUserProfile({
+                success: function (res) {
+                    console.log('---- open success, res: ', res);
+                    var hasFollowed = res.hasFollowed;
+                    success(hasFollowed);
+                },
+                fail: function (err) {
+                    // console.log('---- open fail, err: ', err)
+                    fail(err);
+                },
+                complete: function (res) {
+                    // console.log('---- open complete, res: ',res)
+                }
+            });
         };
         return TTModule;
     }(PlatformModule));

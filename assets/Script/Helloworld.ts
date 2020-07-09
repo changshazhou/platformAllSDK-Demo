@@ -35,6 +35,16 @@ export default class Helloworld extends cc.Component {
         moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_PLATFORM_SHOW, this, (res) => {
             console.log('平台显示时', res)
         })
+
+
+        // moosnow.platform.createGameRecorderShareButton(
+        //     'https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/SDK/guide/guide_error2.png',
+        //     'https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/SDK/guide/guide_error2.png',
+        //     {},
+        //     () => {
+
+        //     }
+        // );
     }
 
     showToast() {
@@ -298,14 +308,23 @@ export default class Helloworld extends cc.Component {
     }
     private videoPath: string = "";
     stopRecord() {
-        moosnow.platform.stopRecord((res) => {
-            if (res.videoPath) {
-                this.videoPath = res.videoPath
-                // setTimeout(() => {
-                //     this.shareRecord();
-                // }, 200);
-            }
-        });
+        if (moosnow.getAppPlatform() == moosnow.APP_PLATFORM.BYTEDANCE)
+            moosnow.platform.stopRecord((res) => {
+                if (res.videoPath) {
+                    this.videoPath = res.videoPath
+                }
+            });
+        else {
+            moosnow.platform.stopRecord((res) => {
+                //left =  center 表示居中 
+                // left = 10 表示居左10像素 类似 banner 中的left 
+                moosnow.platform.showShareButton({
+                    left: "center",
+                    top: 0
+                });
+
+            });
+        }
     }
 
     shareRecord() {
@@ -319,6 +338,9 @@ export default class Helloworld extends cc.Component {
     }
 
 
+    hideShareButton() {
+        moosnow.platform.hideShareButton();
+    }
 
     showInter() {
         moosnow.platform.showInter();

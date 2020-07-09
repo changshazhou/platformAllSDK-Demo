@@ -190,6 +190,15 @@ export default class PlatformModule extends BaseModule {
     pauseRecord(): void;
     resumeRecord(): void;
     /**
+     *
+     * @param style
+     * @param timeRange
+     * @param callback
+     */
+    showShareButton(style: object, timeRange?: Array<Array<number>>, callback?: Function): void;
+    hideShareButton(): void;
+
+    /**
      * 注册微信各种回调
      */
     _regisiterWXCallback(): void;
