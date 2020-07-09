@@ -316,10 +316,9 @@ export default class Helloworld extends cc.Component {
             });
         else {
             moosnow.platform.stopRecord((res) => {
-                //left =  center 表示居中 
                 // left = 10 表示居左10像素 类似 banner 中的left 
                 moosnow.platform.showShareButton({
-                    left: "center",
+                    left: 0,
                     top: 0
                 });
 
