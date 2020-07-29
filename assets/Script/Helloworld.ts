@@ -1,5 +1,3 @@
-import UIForms from "../resources/moosnow/config/UIForms";
-
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -20,7 +18,45 @@ export default class Helloworld extends cc.Component {
         })
 
 
-        moosnow.form.preloadAd();
+        moosnow.form.loadAd({
+            floatPositon: [{
+                x: -496.015,
+                y: -128
+            }, {
+                x: -183.045,
+                y: 24
+            }, {
+                x: 434.285,
+                y: 123
+            }, {
+                x: 592,
+                y: 7
+            }],
+            hideForm: true,
+            callback: () => {
+                // moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.EXPORT_FIXED, () => {
+
+                // })
+                // moosnow.form.showAd(moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.EXPORT_FIXED, () => {
+
+                // })
+                // moosnow.form.showAd(moosnow.AD_POSITION.BACK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.EXPORT, () => {
+                //     console.log('点击了返回按钮')
+                //     moosnow.form.showAd(moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.BANNER, () => {
+                //         console.log('点击了返回按钮')
+                //     })
+                // })
+            }
+        })
+
+        // moosnow.form.showAd(moosnow.AD_POSITION.BANNER|moosnow.AD_POSITION.FLOAT,)
+
+        moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_BANNER_ERROR, this, () => {
+            console.log('moosnow.PLATFORM_EVENT.ON_BANNER_ERROR')
+        })
+        moosnow.event.sendEventImmediately(moosnow.PLATFORM_EVENT.ON_BANNER_ERROR, null);
+
+
 
         // if (moosnow.APP_PLATFORM.WX == moosnow.getAppPlatform() && window["wx"])
         //     cc.loader.downloader.loadSubpackage('tex', (err) => {
@@ -60,13 +96,14 @@ export default class Helloworld extends cc.Component {
     }
 
     showMistouch() {
-        let options = new moosnow.showOptions.touchOptions();
-        options.type = 2;
-        options.callback = () => {
-
-        }
-
-        moosnow.form.showMistouch(options);
+        moosnow.form.showMistouch({
+            hideForm: true,
+            url: "",
+            coinNum: 500,
+            callback: () => {
+                console.log('callback')
+            }
+        })
     }
 
 
@@ -81,60 +118,26 @@ export default class Helloworld extends cc.Component {
 
 
     showShare() {
+        moosnow.form.showShare({
+            hideForm: true,
+            shareCoinNum: 500,
+            shareCallback: (res) => {
+                console.log('shareCallback', res)
+            },
+            callback: () => {
+                console.log('callback')
+            }
+        })
 
-        let coinOptions = new moosnow.showOptions.coinOptions();
-        coinOptions.coinNum = 500;
-        coinOptions.endVec = { x: 800, y: 300 }
-        coinOptions.callback = () => {
-            console.log('金币动画完成3')
-        }
 
-
-        let options = new moosnow.showOptions.shareOptions();
-        options.shareCoinNum = 500;
-        options.shareCallback = (shared) => {
-            console.log('分享', shared)
-            moosnow.form.showCoin(coinOptions)
-        };
-        options.videoCallback = () => {
-            console.log('视频结束')
-            moosnow.form.showCoin(coinOptions)
-
-        }
-        options.callback = () => {
-            console.log('结束')
-            moosnow.form.showCoin(coinOptions)
-
-        }
-        moosnow.form.showShare(options)
     }
 
     showPrize() {
 
-        let coinOptions = new moosnow.showOptions.coinOptions();
-        coinOptions.coinNum = 500;
-        coinOptions.callback = () => {
-            console.log('金币动画完成2')
-        }
-
-
-        let options = new moosnow.showOptions.prizeOptions();
-        options.callback = () => {
-            console.log('奖励完成')
-        }
-        options.showCoinAnim = true;
-        options.coinOptions = coinOptions;
-
-        moosnow.form.showPrize(options)
     }
 
     showPrize2() {
-        let options = new moosnow.showOptions.prizeOptions();
-        options.callback = () => {
-            console.log('奖励完成')
-        }
-        options.showCoinAnim = false;
-        moosnow.form.showPrize(options)
+
     }
     showAd4() {
         moosnow.form.showAd(moosnow.AD_POSITION.TOP, () => { });
@@ -148,7 +151,7 @@ export default class Helloworld extends cc.Component {
     }
 
     showAd2() {
-        moosnow.form.showAd(moosnow.AD_POSITION.CENTER | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
+        moosnow.form.showAd(moosnow.AD_POSITION.LEFTRIGHT, () => {
             moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.SIDE, () => {
 
             });
@@ -164,49 +167,22 @@ export default class Helloworld extends cc.Component {
     }
 
     showTotal() {
-        let touchOptions = new moosnow.showOptions.touchOptions();
-        touchOptions.type = 1;
-        touchOptions.callback = () => {
-            console.log("误触页-结束")
-        }
-
-
-        let coinOptions = new moosnow.showOptions.coinOptions();
-        coinOptions.endVec = { x: 500, y: 500 }
-        coinOptions.starVec = { x: 0, y: 0 }
-
-        let endOptions = new moosnow.showOptions.endOptions();
-        endOptions.isWin = true;
-        endOptions.onReceive = () => {
-            console.log("结束页-点了领取")
-        }
-        endOptions.onVideoReceive = () => {
-            console.log("结束页-点了领取")
-        }
-
-        let options = new moosnow.showOptions.totalOptions();
-        options.coinNum = 500;
-        options.videoNum = 1000;
-        options.shareCoinNum = 1500;
-        options.onReceive = () => {
-            console.log("结束页-点了领取")
-        }
-        options.onVideoReceive = () => {
-            console.log("结束页-点了视频领取")
-        }
-        options.onMore = () => {
-            console.log("点了更多游戏")
-        }
-        options.endOptions = endOptions;
-        options.coinOptions = coinOptions;
-        options.touchOptions = touchOptions;
-
-        moosnow.form.showTotal(options)
+        moosnow.form.showTotal({
+            coinNum: 500,
+            hideForm: true,
+            videoText: "5倍视频领取",
+            callback: () => {
+                console.log('点继续游戏')
+            },
+            videoCallback: () => {
+                console.log('看完视频后点继续游戏')
+            }
+        });
     }
 
 
     showRespawn() {
-        moosnow.ui.pushUIForm(UIForms.RespawnForm, { coin: 500, shareCoin: 1000 })
+
     }
 
 
@@ -363,5 +339,66 @@ export default class Helloworld extends cc.Component {
         // }, () => {
 
         // })
+    }
+
+    showTry() {
+        moosnow.form.showTry({
+            skinUrl: "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/Game/demo/tryForm/7.png",
+            hideForm: true,
+            callback: () => {
+                console.log('点继续游戏')
+            },
+            videoCallback: () => {
+                console.log('看完视频后点继续游戏')
+            }
+        });
+    }
+
+    showEnd() {
+        moosnow.form.showEnd({
+            hideForm: true,
+            callback: () => {
+                console.log('点击了确认')
+            }
+        })
+    }
+
+    showPause() {
+        moosnow.form.showPause({
+            hideForm: true,
+            callback: () => {
+                console.log('点击了确认')
+            }
+        })
+    }
+
+
+    showSet() {
+        moosnow.form.showSet({
+            hideForm: true,
+            vibrateCallback: () => {
+                console.log('vibrateCallback')
+            },
+            musicCallback: () => {
+                console.log('musicCallback')
+            }
+        });
+    }
+
+    showEgg() {
+        moosnow.form.showBox({
+            rowNum: 3,
+            colNum: 3,
+            coinNum: [100, 300],
+            videoCoinNum: [100, 300],
+            videoNum: [1, 5, 7],
+            openCallback: (num) => {
+                console.log('openCallback', num)
+            },
+            callback: () => {
+                console.log('callback')
+            },
+            hideForm: true
+        });
     }
 }

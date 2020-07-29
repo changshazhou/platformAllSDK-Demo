@@ -1,4 +1,4 @@
-(function () {
+var mx = (function () {
     'use strict';
 
     /*! *****************************************************************************
@@ -223,6 +223,32 @@
             var Rand = Math.random();
             var num = Min + Math.round(Rand * Range); //四舍五入
             return num;
+        };
+        /**
+        * 传入概率值数组，返回中标的概率下标
+        * @param parr 概率数组
+        */
+        MathUtils.probabilitys = function (parr) {
+            var arr = 0;
+            var pres = __spreadArrays(parr);
+            var probabilityCount = 0;
+            for (var i = 0; i < pres.length; i++) {
+                probabilityCount += pres[i];
+            }
+            if (probabilityCount != 100) {
+                throw '所有概率值总和不等于100%';
+            }
+            var nums = new Array();
+            for (var i = 0; i < pres.length; i++) {
+                var element = pres[i];
+                for (var index = 0; index < element; index++) {
+                    nums.push(arr);
+                }
+                arr++;
+            }
+            var random = this.randomNumBoth(0, 99);
+            var targetIndex = nums[random];
+            return targetIndex;
         };
         return MathUtils;
     }());
@@ -473,6 +499,14 @@
             enumerable: true,
             configurable: true
         });
+        Common.colorRGB2Hex = function (color) {
+            var rgb = color.split(',');
+            var r = parseInt(rgb[0].split('(')[1]);
+            var g = parseInt(rgb[1]);
+            var b = parseInt(rgb[2].split(')')[0]);
+            var hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+            return hex;
+        };
         Common.deepCopy = function (obj) {
             //判断拷贝的要进行深拷贝的是数组还是对象，是数组的话进行数组拷贝，对象的话进行对象拷贝
             var objClone = Array.isArray(obj) ? [] : {};
@@ -663,12 +697,15 @@
         EventType.MUSICSWITCH_CHANGED = "MUSICSWITCH_CHANGED";
         EventType.ON_PLATFORM_SHOW = "ON_PLATFORM_SHOW";
         EventType.ON_PLATFORM_HIDE = "ON_PLATFORM_HIDE";
+        EventType.ON_BANNER_ERROR = "ON_BANNER_ERROR";
         EventType.ON_BANNER_HIDE = "ON_BANNER_HIDE";
         EventType.ON_AD_SHOW = "ON_AD_SHOW";
         EventType.AD_VIEW_CHANGE = "AD_VIEW_CHANGE";
         EventType.AD_VIEW_REFRESH = "AD_VIEW_REFRESH";
         EventType.COIN_CHANGED = "COIN_CHANGED";
         EventType.RANDOWM_NAVIGATE = "RANDOWM_NAVIGATE";
+        EventType.COMPONENT_CHECKBOX_TOGGLE = "COMPONENT_CHECKBOX_TOGGLE";
+        EventType.PRIZE_BOX_UNLOCAK = "PRIZE_BOX_UNLOCAK";
         return EventType;
     }());
 
@@ -716,8 +753,9 @@
             _this.native = null;
             _this.box = null;
             _this.platformName = "wx";
-            _this.bannerId = "";
-            _this.videoId = "";
+            _this.mBannerId = "";
+            _this.mBannerIndex = 0;
+            _this.mVideoIndex = 0;
             _this.interId = "";
             _this.boxId = "";
             /**
@@ -729,6 +767,9 @@
             _this.bannerHeigth = 96;
             _this.bannerShowCount = 0;
             _this.bannerShowCountLimit = 3;
+            _this.bannerShowTime = 0;
+            _this.bannerShowTimeLimit = 15;
+            _this.bannerLimitType = 0;
             _this.bannerCb = null;
             _this.bannerPosition = BANNER_POSITION.BOTTOM;
             _this.bannerStyle = null;
@@ -742,7 +783,7 @@
             _this.nativeAdResult = null;
             _this.nativeCb = null;
             _this.nativeLoading = false;
-            _this.record = null;
+            _this.recordObj = null;
             _this.shareInfoArr = [];
             _this.versionRet = null;
             _this.prevNavigate = Date.now();
@@ -756,6 +797,44 @@
             _this.initRecord();
             return _this;
         }
+        Object.defineProperty(PlatformModule.prototype, "bannerId", {
+            get: function () {
+                var id = Common.config["bannerId"];
+                if (id instanceof Array) {
+                    if (this.mBannerIndex > id.length - 1)
+                        this.mBannerIndex = 0;
+                    var retValue = id[this.mBannerIndex];
+                    this.mBannerIndex++;
+                    console.log('使用banner id ', retValue);
+                    return retValue;
+                }
+                else {
+                    return id;
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(PlatformModule.prototype, "videoId", {
+            get: function () {
+                var id = Common.config["videoId"];
+                if (id instanceof Array) {
+                    if (this.mBannerIndex > id.length - 1)
+                        this.mBannerIndex = 0;
+                    var retValue = id[this.mBannerIndex];
+                    this.mBannerIndex++;
+                    console.log('使用 video id ', retValue);
+                    return retValue;
+                }
+                else {
+                    return id;
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
         PlatformModule.prototype.onEnable = function () {
         };
         PlatformModule.prototype.vibrateSwitch = function (on) {
@@ -768,8 +847,6 @@
         // }
         PlatformModule.prototype.initAppConfig = function () {
             this.moosnowConfig = Common.config;
-            this.bannerId = this.moosnowConfig["bannerId"];
-            this.videoId = this.moosnowConfig["videoId"];
             this.interId = this.moosnowConfig["interId"];
             this.boxId = this.moosnowConfig["boxId"];
             this.nativeId = this.moosnowConfig["nativeId"];
@@ -1285,6 +1362,11 @@
                 window[this.platformName].onShareAppMessage(function () {
                     return _this._buildShareInfo();
                 });
+            if (window[this.platformName].onShareTimeline)
+                // 绑定分享参数
+                window[this.platformName].onShareTimeline(function () {
+                    return _this._buildShareInfo();
+                });
         };
         PlatformModule.prototype.getShareInfo = function (ticket, success, fail) {
             if (fail === void 0) { fail = null; }
@@ -1424,7 +1506,7 @@
         PlatformModule.prototype.startRecord = function (duration, callback) {
             if (duration === void 0) { duration = 300; }
             if (callback === void 0) { callback = null; }
-            if (!this.record) {
+            if (!this.recordObj) {
                 if (callback)
                     callback(false);
                 return;
@@ -1436,7 +1518,7 @@
          */
         PlatformModule.prototype.stopRecord = function (callback) {
             if (callback === void 0) { callback = null; }
-            if (!this.record) {
+            if (!this.recordObj) {
                 if (callback)
                     callback(false);
                 return;
@@ -1528,6 +1610,8 @@
                 this.banner.offResize(this._bottomCenterBanner);
                 this.banner.offError(this._onBannerError);
                 this.banner.offLoad(this._onBannerLoad);
+                this.banner.destroy();
+                this.banner = null;
             }
             this.banner = this._createBannerAd();
             if (this.banner) {
@@ -1543,15 +1627,18 @@
                 return;
             var wxsys = this.getSystemInfoSync();
             var windowWidth = wxsys.windowWidth;
+            var windowHeight = wxsys.windowHeight;
             var left = (windowWidth - this.bannerWidth) / 2;
-            if (Common.isEmpty(this.bannerId)) {
+            var bannerId = this.bannerId;
+            if (Common.isEmpty(bannerId)) {
                 console.warn(MSG.BANNER_KEY_IS_NULL);
                 return;
             }
+            this.bannerShowTime = Date.now();
             var banner = window[this.platformName].createBannerAd({
-                adUnitId: this.bannerId,
+                adUnitId: bannerId,
                 style: {
-                    top: 0,
+                    top: windowHeight - this.bannerHeigth,
                     left: left,
                     width: this.bannerWidth
                 }
@@ -1566,6 +1653,7 @@
             this.banner = null;
             this.isBannerShow = false;
             moosnow.event.sendEventImmediately(EventType.ON_BANNER_HIDE, null);
+            moosnow.event.sendEventImmediately(EventType.ON_BANNER_ERROR, null);
         };
         PlatformModule.prototype._bottomCenterBanner = function (size) {
             // if (Common.isEmpty(size)) {
@@ -1661,14 +1749,15 @@
         /**
          * 会自动隐藏的banner
          * 一般用游戏中
-         *
+         * @param remoteOn 是否被后台开关控制 默认 true，误触的地方传 true  普通的地方传 false
          */
-        PlatformModule.prototype.showAutoBanner = function () {
+        PlatformModule.prototype.showAutoBanner = function (remoteOn) {
             var _this = this;
+            if (remoteOn === void 0) { remoteOn = true; }
             console.log('执行自动显示和隐藏Banner功能');
             moosnow.http.getAllConfig(function (res) {
                 if (res && res.gameBanner == 1) {
-                    moosnow.platform.showBanner();
+                    moosnow.platform.showBanner(remoteOn);
                     var time = isNaN(res.gameBanenrHideTime) ? 1 : parseFloat(res.gameBanenrHideTime);
                     _this.mTimeoutId = setTimeout(function () {
                         console.log('自动隐藏时间已到，开始隐藏Banner');
@@ -1681,6 +1770,8 @@
                     }, time * 1000);
                 }
             });
+        };
+        PlatformModule.prototype.exitApplication = function () {
         };
         /**
          * 连续不断的显示和隐藏 banner
@@ -1713,16 +1804,31 @@
             }
             this.bannerShowCount++;
             if (this.banner) {
-                if (this.bannerShowCount >= this.bannerShowCountLimit) {
-                    console.log('banner destroy');
-                    this.banner.hide();
-                    this.banner.destroy();
-                    this.banner = null;
-                    this._prepareBanner();
-                    // console.log('banner---destory');
+                if (this.bannerLimitType == 0) {
+                    if (this.bannerShowCount >= this.bannerShowCountLimit) {
+                        console.log('次数满足,销毁banner');
+                        this.banner.hide();
+                        this.banner.destroy();
+                        this.banner = null;
+                        this._prepareBanner();
+                        // console.log('banner---destory');
+                    }
+                    else {
+                        this.banner.hide();
+                    }
                 }
                 else {
-                    this.banner.hide();
+                    if (Date.now() - this.bannerShowTime > this.bannerShowTimeLimit * 1000) {
+                        console.log('时间满足，销毁banner');
+                        this.banner.hide();
+                        this.banner.destroy();
+                        this.banner = null;
+                        this._prepareBanner();
+                    }
+                    else {
+                        console.log('时间太短，隐藏banner');
+                        this.banner.hide();
+                    }
                 }
             }
             else {
@@ -1746,14 +1852,15 @@
                 moosnow.platform.videoCb(VIDEO_STATUS.END);
                 return;
             }
-            if (Common.isEmpty(this.videoId)) {
+            var videoId = this.videoId;
+            if (Common.isEmpty(videoId)) {
                 console.warn(MSG.VIDEO_KEY_IS_NULL);
                 moosnow.platform.videoCb(VIDEO_STATUS.END);
                 return;
             }
             if (!this.video) {
                 this.video = window[this.platformName].createRewardedVideoAd({
-                    adUnitId: this.videoId
+                    adUnitId: videoId
                 });
                 if (!this.video) {
                     console.warn('创建视频广告失败');
@@ -1986,6 +2093,12 @@
             if (success)
                 success(true);
         };
+        PlatformModule.prototype.hasShortcutInstalled = function (success) {
+            success(false);
+        };
+        PlatformModule.prototype.installShortcut = function (success, message) {
+            if (message === void 0) { message = "方便下次快速启动"; }
+        };
         PlatformModule.prototype.onDisable = function () {
         };
         return PlatformModule;
@@ -2085,7 +2198,7 @@
             if (!window[this.platformName].getGameRecorder)
                 return;
             // if (!this.isDouyin()) return;
-            this.record = window[this.platformName].getGameRecorder();
+            this.recordObj = window[this.platformName].getGameRecorder();
         };
         /**
          * 开始录屏
@@ -2097,23 +2210,23 @@
             if (duration === void 0) { duration = 300; }
             if (callback === void 0) { callback = null; }
             console.log('record startRecord');
-            if (!this.record) {
+            if (!this.recordObj) {
                 if (callback)
                     callback(false);
                 return;
             }
-            this.record.start()
+            this.recordObj.start()
                 .then(function (res) {
-                _this.record.on('timeUpdate', function (res) {
+                _this.recordObj.on('timeUpdate', function (res) {
                     console.log("\u89C6\u9891\u65F6\u957F: " + res.currentTime);
                     _this.writeTime = Math.min(res.currentTime, 60000);
                 });
-                _this.record.on('start', function () {
+                _this.recordObj.on('start', function () {
                     if (callback)
                         callback();
                 });
                 // stop 事件的回调函数的执行表示录制完成
-                _this.record.on('stop', function (res) {
+                _this.recordObj.on('stop', function (res) {
                     console.log("\u5BF9\u5C40\u56DE\u653E\u65F6\u957F: ", res);
                     _this.recordCb(res);
                 });
@@ -2127,16 +2240,16 @@
             var _this = this;
             if (callback === void 0) { callback = null; }
             console.log(' stop Record  callback  ', !!callback);
-            if (!this.record) {
+            if (!this.recordObj) {
                 if (callback)
                     callback(false);
                 return;
             }
             this.recordCb = callback;
-            var stopPromise = this.record.stop();
+            var stopPromise = this.recordObj.stop();
             stopPromise && stopPromise.then(function (res) {
                 if (!res.error.code) {
-                    _this.record.off('timeUpdate');
+                    _this.recordObj.off('timeUpdate');
                     // this.showShareButton(
                     //     () => {
                     //     }
@@ -2149,13 +2262,13 @@
             });
         };
         WXModule.prototype.pauseRecord = function () {
-            if (this.record) {
-                this.record.pause();
+            if (this.recordObj) {
+                this.recordObj.pause();
             }
         };
         WXModule.prototype.resumeRecord = function () {
-            if (this.record) {
-                this.record.resume();
+            if (this.recordObj) {
+                this.recordObj.resume();
             }
         };
         WXModule.prototype.showShareButton = function (style, timeRange, callback) {
@@ -2167,11 +2280,18 @@
             if (!timeRange)
                 timeRange = [[0, this.writeTime]];
             moosnow.http.getAllConfig(function (res) {
+                //     sys.pixelRatio
+                // if (style.left == "center") {
+                //     let sys = this.getSystemInfoSync();
+                //     style.left = (sys.windowWidth - 168) / 2
+                // }
                 _this.mShareButton = window[_this.platformName].createGameRecorderShareButton({
                     // 样式参数
                     style: __assign(__assign({ left: 10, top: 150, height: 50 }, style), { color: '#ffffff', textAlign: 'center', fontSize: 16, borderRadius: 4, iconMarginRight: 16, paddingLeft: 1, paddingRight: 30 }),
                     // 按钮的背景图片
-                    text: res.shareButtonText || '自定义文案',
+                    text: res.shareButtonText || "",
+                    image: res.shareBgImage || "",
+                    icon: res.shareIconImage || "",
                     // 分享参数
                     share: {
                         query: 'a=1&b=2',
@@ -2487,7 +2607,7 @@
             _this.appid = "";
             _this.secret = "";
             _this.versionNumber = "";
-            _this.version = "2.0.4";
+            _this.version = "2.0.6";
             _this.baseUrl = "https://api.liteplay.com.cn/";
             _this.mLaunchOptions = {};
             _this.cfgData = null;
@@ -2687,8 +2807,8 @@
             if (Common.platform == PlatformType.WX)
                 if (window['wx'] && window['wx'].aldStage)
                     window['wx'].aldStage.onStart({
-                        stageId: level,
-                        stageName: level,
+                        stageId: "" + level,
+                        stageName: "" + level,
                         userId: moosnow.data.getToken() //用户ID
                     });
                 else
@@ -2706,8 +2826,8 @@
             var desc = isWin ? "关卡完成" : "关卡失败";
             if (window['wx'] && window['wx'].aldStage)
                 window['wx'].aldStage.onEnd({
-                    stageId: level,
-                    stageName: level,
+                    stageId: "" + level,
+                    stageName: "" + level,
                     userId: moosnow.data.getToken(),
                     event: event,
                     params: {
@@ -2748,7 +2868,7 @@
                                 exportAutoNavigate = 0;
                             if (res.exportAutoNavigate == 2)
                                 exportAutoNavigate = 1;
-                            callback(__assign(__assign({}, res), { mistouchNum: 0, mistouchPosNum: 0, mistouchInterval: 0, exportBtnNavigate: 0, exportAutoNavigate: exportAutoNavigate, bannerShowCountLimit: 1, isLimitArea: 1 }));
+                            callback(__assign(__assign({}, res), { mistouchNum: 0, mistouchPosNum: 0, mistouchInterval: 0, exportBtnNavigate: 0, checkBoxMistouch: 0, exportAutoNavigate: exportAutoNavigate, bannerShowCountLimit: 1, isLimitArea: 1, nativeErrorShowInter: 0, bannerErrorShowInter: 0 }));
                         }
                         else {
                             if (res.exportAutoNavigate == 2)
@@ -2776,9 +2896,18 @@
                 this.request(url, {}, 'GET', function (res) {
                     //总开关控制
                     var mistouchOn = res && res.mistouchOn == 1 ? true : false;
-                    _this.cfgData = __assign(__assign({}, Common.deepCopy(res)), { zs_native_click_switch: res && res.mx_native_click_switch ? res.mx_native_click_switch : 0, zs_jump_switch: res && res.mx_jump_switch ? res.mx_jump_switch : 0, mistouchNum: mistouchOn ? res.mistouchNum : 0, mistouchPosNum: mistouchOn ? res.mistouchPosNum : 0, mistouchInterval: mistouchOn ? res.mistouchInterval : 0, exportAutoNavigate: mistouchOn ? res.exportAutoNavigate : 0, exportBtnNavigate: mistouchOn ? res.exportBtnNavigate : 0 });
+                    if (!mistouchOn)
+                        console.log('总开关已关闭----------------');
+                    _this.cfgData = __assign(__assign({}, Common.deepCopy(res)), { zs_native_click_switch: res && res.mx_native_click_switch ? res.mx_native_click_switch : 0, zs_jump_switch: res && res.mx_jump_switch ? res.mx_jump_switch : 0, mistouchNum: mistouchOn ? res.mistouchNum : 0, mistouchPosNum: mistouchOn ? res.mistouchPosNum : 0, mistouchInterval: mistouchOn ? res.mistouchInterval : 0, exportAutoNavigate: mistouchOn ? res.exportAutoNavigate : 0, exportBtnNavigate: mistouchOn ? res.exportBtnNavigate : 0, checkBoxMistouch: mistouchOn ? res.checkBoxMistouch : 0, nativeErrorShowInter: mistouchOn ? res.nativeErrorShowInter : 0, bannerErrorShowInter: mistouchOn ? res.bannerErrorShowInter : 0, checkBoxProbabilitys: [100, 0, 0, 0, 0] });
                     if (moosnow.platform) {
-                        moosnow.platform.bannerShowCountLimit = parseInt(res.bannerShowCountLimit);
+                        if (res) {
+                            if (!isNaN(res.bannerShowCountLimit))
+                                moosnow.platform.bannerShowCountLimit = parseInt(res.bannerShowCountLimit);
+                            if (!isNaN(res.bannerLimitType))
+                                moosnow.platform.bannerLimitType = parseInt(res.bannerLimitType);
+                            if (!isNaN(res.bannerShowTimeLimit))
+                                moosnow.platform.bannerShowTimeLimit = parseInt(res.bannerShowTimeLimit);
+                        }
                     }
                     _this._cfgQuene.forEach(function (item) {
                         item(_this.cfgData);
@@ -2787,6 +2916,8 @@
                 }, function () {
                     _this._cfgQuene.forEach(function (item) {
                         item({
+                            checkBoxMistouch: 0,
+                            checkBoxProbabilitys: [100, 0, 0, 0, 0],
                             mistouchNum: 0,
                             mistouchPosNum: 0,
                             bannerShowCountLimit: 1,
@@ -2928,10 +3059,12 @@
                 }
             }
             if (this.appLaunchOptions && res) {
+                console.log('后台禁止场景 1 ', res.seachEntryScene);
+                console.log('后台禁止场景 2 ', res.shareEntryScene);
                 if ((res.seachEntryOn == 1 && res.seachEntryScene && res.seachEntryScene.indexOf(this.appLaunchOptions.scene) != -1)
                     || (res.shareEntryOn == 1 && res.shareEntryScene && res.shareEntryScene.indexOf(this.appLaunchOptions.scene) != -1)) {
                     callback(true);
-                    console.log('appLaunchOptions', this.appLaunchOptions);
+                    console.log('后台禁止场景 ', this.appLaunchOptions.scene);
                     return;
                 }
             }
@@ -3598,6 +3731,7 @@
             _this.COIN = "COIN";
             _this.mUserToken = "";
             _this.VIBRATE_SWITCH = "VIBRATE_SWITCH";
+            _this.USER_PRIZE_KEY = "USER_PRIZE_KEY";
             _this.mCoin = 0;
             _this.mCurrentMisTouchCount = 0;
             _this.mChannel_id = "0";
@@ -3668,6 +3802,40 @@
         GameDataCenter.prototype.setVibrateSetting = function (on) {
             moosnow.setting.setBool(this.VIBRATE_SWITCH, on);
             moosnow.event.sendEventImmediately(EventType.VIBRATESWITCH_CHANGED, on);
+        };
+        GameDataCenter.prototype.getPrizeBox = function () {
+            if (!this.mPrizeBox)
+                this.mPrizeBox = {};
+            return this.mPrizeBox;
+        };
+        GameDataCenter.prototype.clearPrizeBox = function () {
+            this.mPrizeBox = {};
+        };
+        GameDataCenter.prototype.lockPrizeBox = function (prizeId, type, coinNum) {
+            if (coinNum === void 0) { coinNum = 0; }
+            var userBox = this.getPrizeBox();
+            userBox[prizeId] = {
+                prizeId: prizeId,
+                type: type == 0 ? 0 : 1,
+                coinNum: coinNum
+            };
+            this.mPrizeBox = userBox;
+        };
+        GameDataCenter.prototype.getUserPrizeBoxById = function (prizeId) {
+            var userBox = this.getPrizeBox();
+            return userBox[prizeId];
+        };
+        GameDataCenter.prototype.getPrizeKey = function () {
+            if (this.mPrizeKey == null)
+                this.mPrizeKey = 3;
+            return this.mPrizeKey;
+        };
+        GameDataCenter.prototype.addPrizeKey = function (keyNum) {
+            this.mPrizeKey += keyNum;
+        };
+        GameDataCenter.prototype.clearPrizeKey = function () {
+            this.mPrizeKey = null;
+            moosnow.setting.setValue(this.USER_PRIZE_KEY, "");
         };
         return GameDataCenter;
     }(BaseModule));
@@ -3804,7 +3972,7 @@
         WXAdModule.prototype.repairAd = function (cb) {
             var url = this.baseUrl + 'wx_export/getExport';
             var signParams = {
-                appid: moosnow.platform.moosnowConfig.moosnowAppId,
+                appid: Common.config.moosnowAppId
             };
             var data = signParams;
             moosnow.http.request(url, data, 'POST', function (res) {
@@ -3916,14 +4084,14 @@
             if (!window[this.platformName].getGameRecorderManager)
                 return;
             // if (!this.isDouyin()) return;
-            this.record = window[this.platformName].getGameRecorderManager();
+            this.recordObj = window[this.platformName].getGameRecorderManager();
         };
         TTModule.prototype.clipRecord = function () {
-            if (!this.record)
+            if (!this.recordObj)
                 return;
             this.recordNumber++;
             console.log('clipRecord', this.recordNumber);
-            this.record.recordClip({
+            this.recordObj.recordClip({
                 timeRange: [2, 2],
                 success: function (r) {
                     console.log('clipRecord 成功 ', r);
@@ -3940,7 +4108,7 @@
             if (duration === void 0) { duration = 300; }
             if (callback === void 0) { callback = null; }
             console.log('record startRecord');
-            if (!this.record) {
+            if (!this.recordObj) {
                 if (callback)
                     callback(false);
                 return;
@@ -3948,16 +4116,16 @@
             this.recordNumber = 0;
             this.recordCb = null;
             this.recordRes = null;
-            this.record.onStart(function (res) {
+            this.recordObj.onStart(function (res) {
                 console.log('record onStart');
                 if (callback)
                     callback(res);
             });
             var recordRes = this.recordRes;
-            this.record.onStop(function (res) {
+            this.recordObj.onStop(function (res) {
                 console.log('on stop ', res);
                 if (_this.recordNumber >= 4) {
-                    _this.record.clipVideo({
+                    _this.recordObj.clipVideo({
                         path: res.videoPath,
                         success: function (r) {
                             console.log('record clip succes:', r);
@@ -3980,7 +4148,7 @@
                         _this.recordCb(res);
                 }
             });
-            this.record.start({
+            this.recordObj.start({
                 duration: duration
             });
         };
@@ -3991,7 +4159,7 @@
         TTModule.prototype.stopRecord = function (callback) {
             if (callback === void 0) { callback = null; }
             console.log(' stop Record  callback  ', !!callback);
-            if (!this.record) {
+            if (!this.recordObj) {
                 if (callback)
                     callback(false);
                 return;
@@ -4003,17 +4171,17 @@
             }
             else {
                 this.recordCb = callback;
-                this.record.stop();
+                this.recordObj.stop();
                 console.log('record stop  ', this.recordRes);
             }
         };
         TTModule.prototype.pauseRecord = function () {
-            if (this.record)
-                this.record.pause();
+            if (this.recordObj)
+                this.recordObj.pause();
         };
         TTModule.prototype.resumeRecord = function () {
-            if (this.record)
-                this.record.resume();
+            if (this.recordObj)
+                this.recordObj.resume();
         };
         /**
           * 分享
@@ -4857,7 +5025,7 @@
             if (/huawei/.test(brand) || /honor/.test(brand))
                 return;
             // if (!this.isDouyin()) return;
-            this.record = window[this.platformName].getVideoRecorderManager();
+            this.recordObj = window[this.platformName].getVideoRecorderManager();
         };
         /**
          * 开始录屏
@@ -4871,24 +5039,24 @@
             console.log('record startRecord');
             this.recordRes = null;
             this.recordCb = null;
-            if (!this.record) {
+            if (!this.recordObj) {
                 if (callback)
                     callback(false);
                 return;
             }
-            this.record.onStart(function (res) {
+            this.recordObj.onStart(function (res) {
                 console.log('record onStart');
                 if (callback)
                     callback(res);
             });
-            this.record.onStop(function (res) {
+            this.recordObj.onStop(function (res) {
                 _this.recordRes = res;
                 if (_this.recordCb) {
                     console.log('stop 2');
                     _this.recordCb(res);
                 }
             });
-            this.record.start({
+            this.recordObj.start({
                 duration: duration
             });
         };
@@ -4899,7 +5067,7 @@
         BDModule.prototype.stopRecord = function (callback) {
             if (callback === void 0) { callback = null; }
             console.log('record stopRecord');
-            if (!this.record) {
+            if (!this.recordObj) {
                 if (callback)
                     callback(false);
                 return;
@@ -4910,7 +5078,7 @@
             }
             else {
                 this.recordCb = callback;
-                this.record.stop();
+                this.recordObj.stop();
             }
         };
         return BDModule;
@@ -5286,7 +5454,7 @@
         VIVOModule.prototype.initAdService = function () {
             // this.initBanner();
             // this.initInter();
-            // this._prepareNative();
+            this._prepareNative();
             moosnow.event.addListener(EventType.ON_PLATFORM_SHOW, this, this.onAppShow);
         };
         /**
@@ -5346,7 +5514,7 @@
         };
         VIVOModule.prototype.supportVersion = function (version) {
             var oppoSys = this.getSystemInfoSync();
-            return oppoSys.platformVersion >= version;
+            return oppoSys.platformVersionCode >= version;
         };
         /**
          * 游戏登录
@@ -5568,6 +5736,7 @@
                 this._showBanner();
         };
         VIVOModule.prototype._showBanner = function () {
+            var _this = this;
             if (!this.banner) {
                 this.initBanner();
             }
@@ -5578,6 +5747,12 @@
             adshow && adshow.then(function () {
                 console.log("banner广告展示成功");
             }).catch(function (err) {
+                moosnow.http.getAllConfig(function (res) {
+                    if (res.bannerErrorShowInter == 1) {
+                        console.log('banner加载出错，用插屏代替');
+                        _this.showInter();
+                    }
+                });
                 switch (err.code) {
                     case 30003:
                         console.log("新用户1天内不能曝光Banner，请将手机时间调整为1天后，退出游戏重新进入");
@@ -5661,10 +5836,8 @@
             }
             moosnow.event.sendEventImmediately(EventType.ON_PLATFORM_SHOW, {});
             if (moosnow.platform.videoCb) {
-                var ret_1 = (!!isEnd.isEnded) ? VIDEO_STATUS.END : VIDEO_STATUS.NOTEND;
-                setTimeout(function () {
-                    moosnow.platform.videoCb(ret_1);
-                }, 50);
+                var ret = (!!isEnd.isEnded) ? VIDEO_STATUS.END : VIDEO_STATUS.NOTEND;
+                moosnow.platform.videoCb(ret);
             }
         };
         VIVOModule.prototype.prepareInter = function () {
@@ -5674,41 +5847,35 @@
             }
             if (!window[this.platformName])
                 return;
-            if (this.supportVersion("1061")) {
-                if (typeof window[this.platformName].createInterstitialAd != "function")
-                    return;
-                this.inter = window[this.platformName].createInterstitialAd({
-                    adUnitId: this.interId
-                });
-                this.inter.onLoad(this._onInterLoad.bind(this));
-                this.inter.onClose(this._onInterClose.bind(this));
-                this.inter.load();
+            if (!window[this.platformName].createInterstitialAd)
+                return;
+            if (this.inter) {
+                this.inter.offLoad();
+                this.inter.offClose();
+                this.inter.offError();
+                this.inter = null;
             }
-            else {
-                if (typeof window[this.platformName].createInsertAd != "function")
-                    return;
-                this.inter = window[this.platformName].createInsertAd({
-                    adUnitId: this.interId
-                });
-                this.inter.onLoad(this._onInterLoad.bind(this));
-                this.inter.onShow(this._onInterOnShow.bind(this));
-                this.inter.load();
-            }
+            console.log('创建插屏广告');
+            this.inter = window[this.platformName].createInterstitialAd({
+                posId: this.interId
+            });
+            this.inter.onLoad(this._onInterLoad.bind(this));
+            this.inter.onClose(this._onInterClose.bind(this));
+            this.inter.onError(this._onInterError.bind(this));
+            this.inter.load();
         };
         ;
         VIVOModule.prototype.showInter = function () {
-            if (this.inter)
-                this.inter.show();
-            else
-                this.interLoadedShow = true;
+            this.prepareInter();
         };
         VIVOModule.prototype._onInterLoad = function () {
-            if (this.interLoadedShow) {
-                if (this.inter) {
-                    this.inter.show();
-                }
-                else
-                    this.interLoadedShow = false;
+            if (this.inter) {
+                var t = this.inter.show();
+                t && t.then(function () {
+                    console.log('插屏广告展示完成');
+                }).catch(function (err) {
+                    console.log('插屏广告展示失败', err);
+                });
             }
         };
         VIVOModule.prototype._onInterOnShow = function () {
@@ -5729,7 +5896,7 @@
             if (isLoad === void 0) { isLoad = false; }
             if (!window[this.platformName])
                 return;
-            if (typeof window[this.platformName].createNativeAd != "function")
+            if (!window[this.platformName].createNativeAd)
                 return;
             this.native = window[this.platformName].createNativeAd({
                 posId: this.nativeId[this.nativeIdIndex]
@@ -5741,10 +5908,11 @@
                 this.native.load();
         };
         VIVOModule.prototype._onNativeLoad = function (res) {
+            var _this = this;
             this.nativeLoading = false;
             console.log(MSG.NATIVE_LOAD_COMPLETED, res);
             if (res && res.adList && res.adList.length > 0) {
-                this.nativeAdResult = res.adList[0];
+                this.nativeAdResult = res.adList[res.adList.length - 1];
                 if (!Common.isEmpty(this.nativeAdResult.adId)) {
                     console.log(MSG.NATIVE_REPORT);
                     this.native.reportAdShow({
@@ -5758,11 +5926,20 @@
             else {
                 console.log(MSG.NATIVE_LIST_NULL);
                 if (Common.isFunction(this.nativeCb)) {
-                    this.nativeCb(null);
+                    moosnow.http.getAllConfig(function (res) {
+                        if (res.nativeErrorShowInter == 1) {
+                            console.log('原生加载出错，用插屏代替');
+                            _this.showInter();
+                        }
+                        else {
+                            _this.nativeCb(null);
+                        }
+                    });
                 }
             }
         };
         VIVOModule.prototype._onNativeError = function (err) {
+            var _this = this;
             this.nativeLoading = false;
             this.nativeAdResult = null;
             if (err.code == 20003) {
@@ -5770,23 +5947,24 @@
                     console.log(MSG.NATIVE_ERROR, err);
                     this.nativeIdIndex += 1;
                     this._destroyNative();
-                    // this._prepareNative();
-                    this.nativeCb(null);
                 }
                 else {
                     console.log(MSG.NATIVE_NOT_ID_USE);
                     this.nativeIdIndex = 0;
-                    if (Common.isFunction(this.nativeCb)) {
-                        this.nativeCb(null);
-                    }
                 }
             }
             else {
                 console.log(MSG.NATIVE_ERROR2, err);
-                if (Common.isFunction(this.nativeCb)) {
-                    this.nativeCb(null);
-                }
             }
+            moosnow.http.getAllConfig(function (res) {
+                if (res.nativeErrorShowInter == 1) {
+                    console.log('原生加载出错，用插屏代替');
+                    _this.showInter();
+                }
+                else {
+                    _this.nativeCb(null);
+                }
+            });
         };
         VIVOModule.prototype._destroyNative = function () {
             this.nativeLoading = false;
@@ -5820,9 +5998,18 @@
             if (this.native) {
                 var ret = this.native.load();
                 ret && ret.then(function () {
-                    console.log('加载完成');
+                    console.log('原生广告加载完成');
                 }).catch(function (err) {
-                    _this.nativeCb(null);
+                    console.log('原生广告加载失败');
+                    moosnow.http.getAllConfig(function (res) {
+                        if (res.nativeErrorShowInter == 1) {
+                            console.log('原生加载出错，用插屏代替');
+                            _this.showInter();
+                        }
+                        else {
+                            _this.nativeCb(null);
+                        }
+                    });
                 });
             }
             else {
@@ -5830,10 +6017,6 @@
                 // if (this.native)
                 //     this.native.load();
             }
-            // if (!this.nativeLoading && !Common.isEmpty(this.nativeAdResult)) {
-            //     let nativeData = Common.deepCopy(this.nativeAdResult)
-            //     callback(nativeData)
-            // }
         };
         /**
          * 目前只有OPPO平台有此功能
@@ -5866,6 +6049,46 @@
                 if (Common.isFunction(this.mClickedNativeCallback))
                     this.mClickedNativeCallback();
             }
+        };
+        VIVOModule.prototype.hasShortcutInstalled = function (success) {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].hasShortcutInstalled)
+                return;
+            window[this.platformName].hasShortcutInstalled({
+                success: function (status) {
+                    if (success)
+                        success(!!status);
+                    if (status) {
+                        console.log('已创建');
+                    }
+                    else {
+                        console.log('未创建');
+                    }
+                }
+            });
+        };
+        VIVOModule.prototype.installShortcut = function (success, message) {
+            if (message === void 0) { message = "方便下次快速启动"; }
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].installShortcut)
+                return;
+            window[this.platformName].installShortcut({
+                message: message,
+                success: function (status) {
+                    if (success)
+                        success();
+                    console.log('创建成功');
+                }
+            });
+        };
+        VIVOModule.prototype.exitApplication = function () {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].exitApplication)
+                return;
+            window[this.platformName].exitApplication();
         };
         return VIVOModule;
     }(PlatformModule));
@@ -5953,18 +6176,27 @@
          */
         ResourceModule.prototype.loadAsset = function (url, assetType, callback) {
             if (Common.getEngine() == ENGINE_TYPE.COCOS) {
-                var res = cc.loader.getRes(url, assetType);
-                if (res) {
-                    if (callback) {
-                        callback(null, res);
-                    }
-                    return;
+                if (cc.resources)
+                    cc.resources.load(url, assetType, function (err, asset) {
+                        if (err) {
+                            console.log(' cc.resources.load ', err);
+                            return;
+                        }
+                        if (callback) {
+                            callback(err, asset);
+                        }
+                    });
+                else {
+                    var res_1 = cc.loader.load(url, assetType, function (err, asset) {
+                        if (err) {
+                            console.log(' cc.loader.load ', err);
+                            return;
+                        }
+                        if (callback) {
+                            callback(null, res_1);
+                        }
+                    });
                 }
-                cc.loader.loadRes(url, assetType, function (err, asset) {
-                    if (callback) {
-                        callback(err, asset);
-                    }
-                });
             }
             else if (Common.getEngine() == ENGINE_TYPE.LAYA) {
                 var res = Laya.loader.getRes(url);
@@ -6009,6 +6241,186 @@
         return ResourceModule;
     }(BaseModule));
 
+    var AudioModule = /** @class */ (function (_super) {
+        __extends(AudioModule, _super);
+        function AudioModule() {
+            var _this = _super.call(this) || this;
+            /**
+                * 存储在本地声音有关的设置key（字段字符串）
+                * IS_MUTE 是否所有都静音{boolean}
+                * IS_MUTE_MUSIC 是否背景音乐静音{boolean}
+                * IS_MUTE_SOUND 是否音效静音{boolean}
+                * VOLUME_MUSIC 背景音乐音量大小{number}
+                * VOLUME_SOUND 音效音量大小{number}
+               */
+            _this.IS_MUTE = "isMute";
+            _this.IS_MUTE_MUSIC = "isMuteMusic";
+            _this.IS_MUTE_SOUND = "isMuteSound";
+            _this.VOLUME_MUSIC = "volumeMusic";
+            _this.VOLUME_SOUND = "volumeSound";
+            _this._volumeMusic = 1;
+            _this._volumeSound = 1;
+            _this._isMuteMusic = false;
+            _this._isMuteSound = false;
+            _this._isMute = false;
+            moosnow.event.addListener(EventType.ON_PLATFORM_HIDE, _this, function (res) {
+                console.log('game state  ON_PLATFORM_HIDE ', res);
+                _this.stopMusic();
+            });
+            moosnow.event.addListener(EventType.ON_PLATFORM_SHOW, _this, function (res) {
+                console.log('game state  ON_PLATFORM_SHOW ', res);
+                if (!moosnow.platform.videoPlaying)
+                    _this._replayMusic();
+            });
+            return _this;
+        }
+        Object.defineProperty(AudioModule.prototype, "isMuteSound", {
+            /**
+                * 设置获取是否静音音效音乐
+               */
+            get: function () {
+                return this._isMuteSound;
+            },
+            set: function (value) {
+                this._isMuteSound = value;
+                //Laya.SoundManager.soundMuted = value;
+                this.save();
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(AudioModule.prototype, "isMute", {
+            /**
+             * 设置获取是否所有静音
+            */
+            get: function () {
+                return this._isMute;
+            },
+            set: function (value) {
+                this._isMute = value;
+                this.save();
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(AudioModule.prototype, "isMuteMusic", {
+            /**
+              * 设置获取是否静音背景音乐
+             */
+            get: function () {
+                return this._isMuteMusic;
+            },
+            set: function (value) {
+                this._isMuteMusic = value;
+                //Laya.SoundManager.musicMuted = value;
+                this.save();
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(AudioModule.prototype, "volumeSound", {
+            /**
+             * 设置获取音效声音大小
+             */
+            get: function () {
+                return this._volumeSound;
+            },
+            set: function (value) {
+                this._volumeSound = value;
+                //Laya.SoundManager.setSoundVolume(value);
+                this.save();
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+          * 播放音效
+          */
+        AudioModule.prototype.playSound = function (audioClip, loops, complete, soundClass, startTime) {
+            if (loops === void 0) { loops = false; }
+            if (complete === void 0) { complete = null; }
+            if (soundClass === void 0) { soundClass = null; }
+            if (startTime === void 0) { startTime = 0; }
+            if (this.isMute)
+                return;
+            var soundId = cc.audioEngine.playEffect(audioClip, loops);
+            cc.audioEngine.setFinishCallback(soundId, function (res) {
+                if (complete) {
+                    complete(res);
+                }
+                if (!loops) {
+                    //cc.audioEngine.getState(soundId)==cc.audioEngine.AudioState.PLAYING
+                    cc.audioEngine.stop(soundId);
+                }
+            });
+            return soundId;
+        };
+        AudioModule.prototype._replayMusic = function () {
+            this.playMusic(this._musicClip, this._musicLoops, this._musicComplete);
+        };
+        /**
+         * 播放背景音乐 仅支持Laya cocos
+         * @param audioClip cocos cc.AudioClip  laya 文件路径
+         * @param loops 是否循环播放
+         * @param complete 播放完成回调
+         */
+        AudioModule.prototype.playMusic = function (audioClip, loops, complete) {
+            if (loops === void 0) { loops = true; }
+            if (complete === void 0) { complete = null; }
+            if (this.isMute)
+                return;
+            this._musicClip = audioClip;
+            this._musicLoops = loops;
+            this._musicComplete = complete;
+            if (Common.getEngine() == ENGINE_TYPE.COCOS) {
+                if (!cc.audioEngine)
+                    return;
+                if (!cc.audioEngine.playMusic)
+                    return;
+                var soundId = cc.audioEngine.playMusic(audioClip, loops);
+                cc.audioEngine.setFinishCallback(soundId, function (res) {
+                    if (complete) {
+                        complete(res);
+                    }
+                });
+                return soundId;
+            }
+            else if (Common.getEngine() == ENGINE_TYPE.LAYA) {
+                Laya.SoundManager.playMusic("" + audioClip, 1, new Laya.Handler(this, function (res) {
+                    if (complete) {
+                        complete(res);
+                    }
+                }));
+            }
+        };
+        /**
+         * 关闭所有背景音效
+         */
+        AudioModule.prototype.stopMusic = function () {
+            // if (this.mMusicId)
+            //     cc.audioEngine.stop(this.mMusicId)
+            if (Common.getEngine() == ENGINE_TYPE.COCOS)
+                cc.audioEngine.stopMusic();
+            else if (Common.getEngine() == ENGINE_TYPE.LAYA)
+                Laya.SoundManager.stopMusic();
+        };
+        /**
+         * 保存数据到本地
+        */
+        AudioModule.prototype.save = function () {
+            moosnow.setting.setValue(this.IS_MUTE, "" + this.isMute);
+            moosnow.setting.setValue(this.IS_MUTE_MUSIC, "" + this.isMuteMusic);
+            moosnow.setting.setValue(this.IS_MUTE_SOUND, "" + this.isMuteSound);
+            // cc.sys.localStorage.setItem(this.VOLUME_MUSIC, "" + this.volumeMusic);
+            // cc.sys.localStorage.setItem(this.VOLUME_SOUND, "" + this.volumeSound);
+        };
+        AudioModule.prototype.getSave = function () {
+            this.isMute = moosnow.setting.getString(this.IS_MUTE, "false") == "true" ? true : false;
+            this.isMuteMusic = moosnow.setting.getString(this.IS_MUTE_MUSIC, "false") == "true" ? true : false;
+        };
+        return AudioModule;
+    }(BaseModule));
+
     var moosnow$1 = /** @class */ (function () {
         function moosnow() {
             this.VIDEO_STATUS = VIDEO_STATUS;
@@ -6023,14 +6435,17 @@
             this.mData = new GameDataCenter();
             this.mResource = new ResourceModule();
             this.mSetting = new SettingModule();
-            this.mAudio = null;
+            /**
+             * 事件消息
+             */
+            this.mEvent = new EventModule();
             (window["moosnow"]) = this;
             this.mData = new GameDataCenter();
             this.mSetting = new SettingModule();
-            this.mEvent = new EventModule();
             this.initPlatform();
             this.initHttp();
             this.initAd();
+            this.mAudio = new AudioModule();
         }
         /**
              * 获取当前的游戏平台
@@ -6152,5 +6567,7 @@
         return moosnow;
     }());
     new moosnow$1();
+
+    return moosnow$1;
 
 }());

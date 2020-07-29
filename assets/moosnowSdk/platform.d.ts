@@ -1,27 +1,23 @@
-import PlatformModule from "./platform/PlatformModule";
-import AdModule from "./ad/AdModule";
-import { HttpModule } from "./http/HttpModule";
-import GameDataCenter from "./framework/GameDataCenter";
-import SettingModule from "./framework/SettingModule";
-import Common from "./utils/Common";
-import { PlatformType } from "./enum/PlatformType";
-import EventModule from "./framework/EventModule";
-import EventType from "./utils/EventType";
-import { BaseUIModule } from "./ui/engine/BaseUIModule";
-import BaseEntityModule from "./ui/engine/BaseEntityModule";
-import LogicControl from "./ui/LogicControl";
-import UIForm from "./ui/UIForm";
-import Delay from "./framework/Delay";
-import ResourceModule from "./framework/ResourceModule";
-import AudioModule from "./framework/AudioModule";
-
 import showEndOptions from "./model/showEndOptions";
 import showPrizeOptions from "./model/showPrizeOptions";
 import showShareOptions from "./model/showShareOptions";
 import showTotalOptions from "./model/showTotalOptions";
 import showTouchOptions from "./model/showTouchOptions";
 import showCoinOptions from "./model/showCoinOptions";
-import UIFormSetting from "./config/UIFormSetting";
+
+import Common from "./utils/Common";
+import EventType from "./utils/EventType";
+import PlatformModule from "./platform/PlatformModule";
+import { PlatformType } from "./enum/PlatformType";
+import { HttpModule } from "./http/HttpModule";
+import AdModule from "./ad/AdModule";
+import SettingModule from "./framework/SettingModule";
+import GameDataCenter from "./framework/GameDataCenter";
+import EventModule from "./framework/EventModule";
+import FormUtil from "./ui/FormUtil";
+import Delay from "./framework/Delay";
+import AudioModule from "./framework/AudioModule";
+import ResourceModule from "./framework/ResourceModule";
 
 declare global {
     class moosnow {
@@ -60,7 +56,6 @@ declare global {
         static Common: typeof Common;
         static PLATFORM_EVENT: typeof EventType;
         static APP_PLATFORM: typeof PlatformType;
-        static formSetting: typeof UIFormSetting;
         static AD_POSITION: {
             NONE: number;
             BANNER: number;
@@ -90,10 +85,7 @@ declare global {
         static setting: SettingModule
         static data: GameDataCenter
         static event: EventModule
-        static ui: BaseUIModule
-        static entity: BaseEntityModule
-        static form: UIForm
-        static control: LogicControl
+        static form: FormUtil
         static delay: Delay
         static audio: AudioModule
         static resource: ResourceModule

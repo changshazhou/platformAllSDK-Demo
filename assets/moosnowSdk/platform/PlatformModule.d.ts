@@ -19,8 +19,12 @@ export default class PlatformModule extends BaseModule {
     native: any;
     box: any;
     platformName: string;
-    bannerId: string;
-    videoId: string;
+    mBannerId: string;
+    mBannerIndex: number;
+    get bannerId(): any;
+    mVideoId: string;
+    mVideoIndex: number;
+    get videoId(): any;
     interId: string;
     boxId: string;
     /**
@@ -32,6 +36,9 @@ export default class PlatformModule extends BaseModule {
     bannerHeigth: number;
     bannerShowCount: number;
     bannerShowCountLimit: number;
+    bannerShowTime: number;
+    bannerShowTimeLimit: number;
+    bannerLimitType: number;
     bannerCb: Function;
     bannerPosition: string;
     bannerStyle: bannerStyle;
@@ -45,7 +52,7 @@ export default class PlatformModule extends BaseModule {
     nativeAdResult: nativeAdRow;
     nativeCb: Function;
     nativeLoading: boolean;
-    record: any;
+    recordObj: any;
     shareInfoArr: {
         img: string;
         title: string;
@@ -197,7 +204,6 @@ export default class PlatformModule extends BaseModule {
      */
     showShareButton(style: object, timeRange?: Array<Array<number>>, callback?: Function): void;
     hideShareButton(): void;
-
     /**
      * 注册微信各种回调
      */
@@ -226,9 +232,10 @@ export default class PlatformModule extends BaseModule {
     /**
      * 会自动隐藏的banner
      * 一般用游戏中
-     *
+     * @param remoteOn 是否被后台开关控制 默认 true，误触的地方传 true  普通的地方传 false
      */
-    showAutoBanner(): void;
+    showAutoBanner(remoteOn?: boolean): void;
+    exitApplication(): void;
     /**
      * 连续不断的显示和隐藏 banner
      */
@@ -325,5 +332,19 @@ export default class PlatformModule extends BaseModule {
     showRank(): void;
     updateUserScore(score: any): void;
     hideRank(): void;
+    /**
+     * 用户是否关注抖音号
+     * @param success
+     * @param fail
+     */
+    checkFollowAwemeSate(success: (hasFollowed: any) => void, fail: (err: any) => void): void;
+    /**
+     * 调用后跳转个人主页，并且回调关注成功/失败回调，异步回调接口
+     * @param success
+     * @param fail
+     */
+    openAwemeUserProile(success: (hasFollowed: any) => void, fail: (err: any) => void): void;
+    hasShortcutInstalled(success: (has: any) => void): void;
+    installShortcut(success: () => void, message?: string): void;
     onDisable(): void;
 }
