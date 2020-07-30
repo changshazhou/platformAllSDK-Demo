@@ -1,7 +1,7 @@
 {
   "appid": "wx642a0c9d182a2ee6",
   "orientation": "landscape",
-  "separate_engine": false,
+  "separate_engine": true,
   "REMOTE_SERVER_ROOT": "",
   "subContext": ""
 }

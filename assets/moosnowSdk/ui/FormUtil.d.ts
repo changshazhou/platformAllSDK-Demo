@@ -1,5 +1,4 @@
 import showCoinOptions from "../model/showCoinOptions";
-import showOptions from "../model/showOptions";
 import showTotalOptions from "../model/showTotalOptions";
 import showEndOptions from "../model/showEndOptions";
 import showMistouchOptions from "../model/showMistouchOptions";
@@ -10,12 +9,13 @@ import showTryOptions from "../model/showTryOptions";
 import showSetOptions from "../model/showSetOptions";
 import showBoxOptions from "../model/showBoxOptions";
 import loadAdOptions from "../model/loadAdOptions";
+import FormFactory from "./engine/FormFactory";
 /**
  * 广告结果
  */
 export default class FormUtil {
+    formFactory: FormFactory;
     constructor();
-    optionsFactory: typeof showOptions;
     /**
      * Toast消息
      * @param msg  消息内容
@@ -82,5 +82,14 @@ export default class FormUtil {
         *  showShare
         */
     showBox(options: showBoxOptions): void;
+    /**
+     * 显示窗体  此方法只会显示UI内容，不包含任何逻辑,一般用于自定义窗体
+     * @param formName FormLayout 中的枚举值或者 字符串
+     */
     createForm(formName: string): void;
+    /**
+     * 隐藏窗体
+     * @param formName FormLayout 中的枚举值或者 字符串
+     */
+    hideForm(formName: string): void;
 }

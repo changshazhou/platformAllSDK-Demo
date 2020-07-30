@@ -133,14 +133,20 @@ export default class Helloworld extends cc.Component {
     }
 
     showPrize() {
-
+        moosnow.form.showPrize({
+            hideForm: true,
+            logo: ""
+        })
     }
 
     showPrize2() {
 
     }
     showAd4() {
-        moosnow.form.showAd(moosnow.AD_POSITION.TOP, () => { });
+        moosnow.form.showAd(moosnow.AD_POSITION.ROTATE | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK | moosnow.AD_POSITION.MASK, () => {
+            moosnow.form.showAd(moosnow.AD_POSITION.TOP, () => { });
+        })
+
     }
     showAd3() {
         moosnow.form.showAd(moosnow.AD_POSITION.EXPORT_FIXED | moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.BACK, () => {
