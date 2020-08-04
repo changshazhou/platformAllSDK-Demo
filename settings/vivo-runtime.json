@@ -5,7 +5,7 @@
   "versionName": "6",
   "versionCode": "6",
   "minPlatformVersion": "1063",
-  "deviceOrientation": "portrait",
+  "deviceOrientation": "landscape",
   "logLevel": "log",
   "npmPath": "",
   "tinyPackageMode": false,

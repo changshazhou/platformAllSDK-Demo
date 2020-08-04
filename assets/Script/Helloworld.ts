@@ -236,8 +236,6 @@ export default class Helloworld extends cc.Component {
 
     showIntervalBanner() {
         moosnow.platform.showIntervalBanner();
-
-
     }
 
     hideBanner() {
@@ -405,6 +403,20 @@ export default class Helloworld extends cc.Component {
                 console.log('callback')
             },
             hideForm: true
+        });
+    }
+
+
+    showNative() {
+        moosnow.form.showNativeAd({
+            x: 0, y: 0,
+            hideForm: true,
+            callback: () => {
+
+            },
+            nullCallback: () => {
+
+            }
         });
     }
 }
