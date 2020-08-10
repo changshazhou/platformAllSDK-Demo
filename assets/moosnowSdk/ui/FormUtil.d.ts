@@ -11,6 +11,7 @@ import showBoxOptions from "../model/showBoxOptions";
 import loadAdOptions from "../model/loadAdOptions";
 import FormFactory from "./engine/FormFactory";
 import showNativeOptions from "../model/showNativeOptions";
+import showRespawnOptions from "../model/showRespawnOptions";
 /**
  * 广告结果
  */
@@ -28,9 +29,11 @@ export default class FormUtil {
      * 显示广告
      * @param adType 广告类型
      * @param callback  有返回按钮时的回调
+     * @param points  层级
+     * @param templetes  层级
      * @param zIndex  层级
      */
-    showAd(adType: number, callback: Function, zIndex?: number): void;
+    showAd(adType: number, callback: Function, points?: Array<cc.Vec2>, templetes?: Array<string>, zIndex?: number): void;
     hideAd(callback: Function): void;
     /**
      * 金币动画
@@ -62,6 +65,12 @@ export default class FormUtil {
     * @param callback
     */
     showEnd(options: showEndOptions): void;
+    /**
+        * 显示复活页面
+        * @param coinNum
+        * @param callback
+        */
+    showRespawn(options: showRespawnOptions): void;
     /**
       * 显示结算统计页
       * @param coinNum
