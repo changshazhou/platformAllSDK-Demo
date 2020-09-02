@@ -476,6 +476,20 @@ var mx = (function () {
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(Common, "isOnlyUI", {
+            get: function () {
+                return window["onlyUI"] == true;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Common, "isPC", {
+            get: function () {
+                return cc.sys.browserType === cc.sys.BROWSER_TYPE_CHROME;
+            },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(Common, "config", {
             get: function () {
                 var winCfg = window["moosnowConfig"];
@@ -1779,9 +1793,19 @@ var mx = (function () {
             if (this.banner) {
                 console.log('show banner style ', this.banner.style);
                 this.banner.hide();
+                /**
+                 * 先设置位置
+                 */
+                this._resetBanenrStyle({
+                    width: this.banner.style.width,
+                    height: this.banner.style.realHeight
+                });
                 var showPromise = this.banner.show();
                 showPromise && showPromise
                     .then(function () {
+                    /**
+                     * 再微调，banner 大小可能跟上一个有变化
+                     */
                     _this._resetBanenrStyle({
                         width: _this.banner.style.width,
                         height: _this.banner.style.realHeight
@@ -1887,21 +1911,24 @@ var mx = (function () {
         };
         PlatformModule.prototype.createRewardAD = function (show) {
             var _this = this;
-            if (moosnow.platform.videoLoading) {
+            if (this.videoLoading) {
                 return;
             }
             if (!window[this.platformName]) {
-                moosnow.platform.videoCb(VIDEO_STATUS.END);
+                if (moosnow.platform.videoCb)
+                    moosnow.platform.videoCb(VIDEO_STATUS.END);
                 return;
             }
             if (!window[this.platformName].createRewardedVideoAd) {
-                moosnow.platform.videoCb(VIDEO_STATUS.END);
+                if (moosnow.platform.videoCb)
+                    moosnow.platform.videoCb(VIDEO_STATUS.END);
                 return;
             }
             var videoId = this.videoId;
             if (Common.isEmpty(videoId)) {
                 console.warn(MSG.VIDEO_KEY_IS_NULL);
-                moosnow.platform.videoCb(VIDEO_STATUS.END);
+                if (moosnow.platform.videoCb)
+                    moosnow.platform.videoCb(VIDEO_STATUS.END);
                 return;
             }
             if (!this.video) {
@@ -3776,11 +3803,11 @@ var mx = (function () {
         __extends(GameDataCenter, _super);
         function GameDataCenter() {
             var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.TOKEN = "token";
-            _this.COIN = "COIN";
+            _this.TOKEN = "MOOSNOW_SDK_TOKEN";
+            _this.COIN = "MOOSNOW_SDK_COIN";
             _this.mUserToken = "";
-            _this.VIBRATE_SWITCH = "VIBRATE_SWITCH";
-            _this.USER_PRIZE_KEY = "USER_PRIZE_KEY";
+            _this.VIBRATE_SWITCH = "MOOSNOW_VIBRATE_SWITCH";
+            _this.USER_PRIZE_KEY = "MOOSNOW_USER_PRIZE_KEY";
             _this.mCoin = 0;
             _this.mCurrentMisTouchCount = 0;
             _this.mChannel_id = "0";
@@ -4070,7 +4097,10 @@ var mx = (function () {
             _this._registerTTCallback();
             _this.initBanner();
             _this.initRecord();
-            // this.initInter();
+            // 
+            _this.scheduleOnce(function () {
+                _this.initVideo();
+            }, 1);
             _this.bannerWidth = 208;
             return _this;
         }

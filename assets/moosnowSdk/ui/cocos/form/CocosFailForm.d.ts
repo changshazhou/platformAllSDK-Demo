@@ -1,15 +1,15 @@
 import CocosBaseForm from "./CocosBaseForm";
-import showEndOptions from "../../../model/showEndOptions";
-export default class CocosEndForm extends CocosBaseForm {
+import showFailOptions from "../../../model/showFailOptions";
+export default class CocosFailForm extends CocosBaseForm {
     btnBack: cc.Node;
-    btnContinue: cc.Node;
+    btnVideo: cc.Node;
     /**
      * 父类缓存willShow，onShow传递到实体的逻辑数据
      */
-    get FormData(): showEndOptions;
+    get FormData(): showFailOptions;
     private addListener;
     private removeListener;
-    willShow(data: any): void;
+    private onVideo;
     onShow(data: any): void;
     willHide(): void;
     private onBack;

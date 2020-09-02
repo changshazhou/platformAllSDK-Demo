@@ -16,8 +16,6 @@ export default class Helloworld extends cc.Component {
         moosnow.http.getAllConfig(res => {
             console.log('所有配置', res)
         })
-
-
         moosnow.form.loadAd({
             floatPositon: [{
                 x: -496.015,
@@ -49,28 +47,28 @@ export default class Helloworld extends cc.Component {
             }
         })
 
-        // moosnow.form.showAd(moosnow.AD_POSITION.BANNER|moosnow.AD_POSITION.FLOAT,)
+        // // moosnow.form.showAd(moosnow.AD_POSITION.BANNER|moosnow.AD_POSITION.FLOAT,)
 
-        moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_BANNER_ERROR, this, () => {
-            console.log('moosnow.PLATFORM_EVENT.ON_BANNER_ERROR')
-        })
-        moosnow.event.sendEventImmediately(moosnow.PLATFORM_EVENT.ON_BANNER_ERROR, null);
+        // moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_BANNER_ERROR, this, () => {
+        //     console.log('moosnow.PLATFORM_EVENT.ON_BANNER_ERROR')
+        // })
+        // moosnow.event.sendEventImmediately(moosnow.PLATFORM_EVENT.ON_BANNER_ERROR, null);
 
 
 
-        // if (moosnow.APP_PLATFORM.WX == moosnow.getAppPlatform() && window["wx"])
-        //     cc.loader.downloader.loadSubpackage('tex', (err) => {
-        //         if (err) {
-        //             return console.error(err);
-        //         }
-        //     });
+        // // if (moosnow.APP_PLATFORM.WX == moosnow.getAppPlatform() && window["wx"])
+        // //     cc.loader.downloader.loadSubpackage('tex', (err) => {
+        // //         if (err) {
+        // //             return console.error(err);
+        // //         }
+        // //     });
 
-        moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_PLATFORM_HIDE, this, (res) => {
-            console.log('平台隐藏时', res)
-        })
-        moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_PLATFORM_SHOW, this, (res) => {
-            console.log('平台显示时', res)
-        })
+        // moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_PLATFORM_HIDE, this, (res) => {
+        //     console.log('平台隐藏时', res)
+        // })
+        // moosnow.event.addListener(moosnow.PLATFORM_EVENT.ON_PLATFORM_SHOW, this, (res) => {
+        //     console.log('平台显示时', res)
+        // })
 
 
         // moosnow.platform.createGameRecorderShareButton(

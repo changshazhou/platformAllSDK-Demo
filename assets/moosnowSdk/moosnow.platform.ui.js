@@ -529,6 +529,20 @@ var mx = (function () {
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(Common, "isOnlyUI", {
+            get: function () {
+                return window["onlyUI"] == true;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Common, "isPC", {
+            get: function () {
+                return cc.sys.browserType === cc.sys.BROWSER_TYPE_CHROME;
+            },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(Common, "config", {
             get: function () {
                 var winCfg = window["moosnowConfig"];
@@ -941,6 +955,13 @@ var mx = (function () {
             }
             return [];
         };
+        /**
+         * 更新layout缓存，非专业人员不要使用！！
+         * @param res
+         */
+        FormFactory.prototype.setLayout = function (res) {
+            this.mCachedLayout = res;
+        };
         FormFactory.prototype.getLayout = function (callback) {
             var _this = this;
             if (!this.mCachedLayout) {
@@ -957,6 +978,13 @@ var mx = (function () {
             }
             else
                 callback(this.mCachedLayout);
+        };
+        /**
+         * 更新模板缓存 ，非专业人员不要使用！！
+         * @param res
+         */
+        FormFactory.prototype.setTemplates = function (res) {
+            this.mCachedTemplates = res;
         };
         FormFactory.prototype.getTemplates = function (callback) {
             var _this = this;
@@ -1206,6 +1234,8 @@ var mx = (function () {
                     this.node.x = data.x;
                 if (data.y)
                     this.node.y = data.y;
+                if (data.zIndex)
+                    this.node.zIndex = data.zIndex;
             }
             this.formComponents.forEach(function (item) {
                 item.willShow(data);
@@ -1287,6 +1317,9 @@ var mx = (function () {
         __extends(LayoutAttribute, _super);
         function LayoutAttribute() {
             var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.layoutType = cc.Layout.Type.GRID;
+            _this.resizeMode = cc.Layout.ResizeMode.CONTAINER;
+            _this.startAxis = cc.Layout.AxisDirection.HORIZONTAL;
             _this.left = 30;
             _this.top = 30;
             _this.right = 30;
@@ -1297,9 +1330,9 @@ var mx = (function () {
         }
         LayoutAttribute.parse = function (json) {
             var retValue = __assign(__assign({}, new LayoutAttribute()), json);
+            retValue.layoutType = NodeAttribute.convertStr2Enum(cc.Layout.Type, json.layoutType, cc.Layout.Type.GRID);
             retValue.resizeMode = NodeAttribute.convertStr2Enum(cc.Layout.ResizeMode, json.resizeMode, cc.Layout.ResizeMode.CONTAINER);
             retValue.startAxis = NodeAttribute.convertStr2Enum(cc.Layout.AxisDirection, json.startAxis, cc.Layout.AxisDirection.HORIZONTAL);
-            retValue.layoutType = NodeAttribute.convertStr2Enum(cc.Layout.Type, json.layoutType, cc.Layout.Type.GRID);
             return retValue;
         };
         return LayoutAttribute;
@@ -1348,7 +1381,12 @@ var mx = (function () {
         }
         Object.defineProperty(CocosNodeHelper, "canvasNode", {
             get: function () {
-                return cc.Canvas.instance.node;
+                if (!this.mRootNode)
+                    this.mRootNode = cc.Canvas.instance.node;
+                return this.mRootNode;
+            },
+            set: function (value) {
+                this.mRootNode = value;
             },
             enumerable: true,
             configurable: true
@@ -1435,6 +1473,7 @@ var mx = (function () {
             layout.paddingBottom = layoutCfg.bottom;
             layout.spacingX = layoutCfg.spacingX;
             layout.spacingY = layoutCfg.spacingY;
+            layout.startAxis = layoutCfg.startAxis;
             node.x = layoutCfg.x;
             node.y = layoutCfg.y;
             node.width = this.convertWidth(layoutCfg.width);
@@ -1523,43 +1562,37 @@ var mx = (function () {
             //     debugger
             if (imgCfg.url) {
                 var isRemote = imgCfg.url.indexOf("http") != -1;
-                // if (cc.resources)
-                //     if (!isRemote)
-                //         cc.resources.load(imgCfg.url, cc.Texture2D, (err, tex: cc.Texture2D) => {
-                //             if (err) {
-                //                 console.log(' cc.resources.load ', err)
-                //                 return;
-                //             }
-                //             this.updateSprite(sprite, tex);
-                //             this.setSpriteGrid(imgCfg, sprite);
-                //             if (callback)
-                //                 callback();
-                //         });
-                //     else {
-                //         cc.loader.load(imgCfg.url, (err, tex: cc.Texture2D) => {
-                //             if (err) {
-                //                 console.log(' cc.assetManager.loadRemote ', err)
-                //                 return;
-                //             }
-                //             this.updateSprite(sprite, tex);
-                //             this.setSpriteGrid(imgCfg, sprite);
-                //             if (callback)
-                //                 callback();
-                //         });
-                //     }
-                // else {
-                cc.loader.load(imgCfg.url, function (err, tex) {
-                    if (err) {
-                        console.log(' cc.loader.load ', err);
+                if (isRemote)
+                    cc.loader.load(imgCfg.url, function (err, tex) {
+                        if (err) {
+                            console.log(' cc.loader.load ', err);
+                            return;
+                        }
+                        _this.updateSprite(sprite, tex);
+                        _this.checkSize(sprite, _this.convertWidth(imgCfg.width), _this.convertHeight(imgCfg.height));
+                        // this.schedule(this.checkSize, 0.16, [sprite, imgCfg.width, imgCfg.height])
+                        _this.setSpriteGrid(imgCfg, sprite);
+                        if (callback)
+                            callback();
+                    });
+                else {
+                    var res_1 = cc.loader.getRes(imgCfg.url, cc.SpriteFrame);
+                    if (res_1) {
+                        sprite.spriteFrame = res_1;
+                        this.checkSize(sprite, this.convertWidth(imgCfg.width), this.convertHeight(imgCfg.height));
+                        if (callback) {
+                            callback();
+                        }
                         return;
                     }
-                    _this.updateSprite(sprite, tex);
-                    _this.checkSize(sprite, _this.convertWidth(imgCfg.width), _this.convertHeight(imgCfg.height));
-                    // this.schedule(this.checkSize, 0.16, [sprite, imgCfg.width, imgCfg.height])
-                    _this.setSpriteGrid(imgCfg, sprite);
-                    if (callback)
-                        callback();
-                });
+                    cc.loader.loadRes(imgCfg.url, cc.SpriteFrame, function (err, asset) {
+                        sprite.spriteFrame = res_1;
+                        this.checkSize(sprite, this.convertWidth(imgCfg.width), this.convertHeight(imgCfg.height));
+                        if (callback) {
+                            callback();
+                        }
+                    });
+                }
                 // }
             }
         };
@@ -1619,6 +1652,8 @@ var mx = (function () {
             this.addStopPropagation(mask);
         };
         CocosNodeHelper.addStopPropagation = function (node) {
+            if (Common.isOnlyUI && Common.isPC)
+                return;
             if (node)
                 node.on(CocosNodeEvent.TOUCH_START, this.onMaskMouseDown, this);
         };
@@ -1627,8 +1662,8 @@ var mx = (function () {
                 node.on(CocosNodeEvent.TOUCH_START, this.onMaskMouseDown, this);
         };
         CocosNodeHelper.onMaskMouseDown = function (e) {
-            e.stopPropagation();
             console.log('阻止事件传递, node name ', e.getCurrentTarget().name);
+            e.stopPropagation();
         };
         CocosNodeHelper.findNodeByName = function (node, attrName) {
             var targetNode = null;
@@ -1806,46 +1841,49 @@ var mx = (function () {
             // this._createChild(formNode, formCfg.child);
             var logic = new formLogic();
             logic.initForm(formNode);
-            logic.willShow(formData);
-            formNode.active = true;
-            logic.onShow(formNode);
+            this.logicShow(logic, formNode, formData);
             this.addForm2Quene(formCfg.name, formNode, logic);
             return formNode;
         };
         CocosFormFactory.prototype.hideFormByLogic = function (logic, formData) {
+            var _this = this;
             this.removeFormByLogic(logic, function (formKV) {
                 if (formKV instanceof Array) {
                     formKV.forEach(function (item) {
-                        item.formLogic.willHide(formData);
-                        item.formNode.active = false;
-                        item.formLogic.onHide(formData);
-                        item.formNode.removeFromParent();
+                        _this.logicHide(item.formLogic, item.formNode, formData);
                     });
                 }
                 else {
-                    formKV.formLogic.willHide(formData);
-                    formKV.formNode.active = false;
-                    formKV.formLogic.onHide(formData);
-                    formKV.formNode.removeFromParent();
+                    _this.logicHide(formKV.formLogic, formKV.formNode, formData);
                 }
             });
         };
         CocosFormFactory.prototype.hideForm = function (name, formNode, formData) {
+            var _this = this;
             if (formNode) {
                 this.removeFormFromQuene(name, formNode, function (formKV) {
-                    formKV.formLogic.willHide(formData);
-                    formKV.formNode.active = false;
-                    formKV.formLogic.onHide(formData);
-                    formKV.formNode.removeFromParent();
+                    _this.logicHide(formKV.formLogic, formKV.formNode, formData);
                 });
             }
             else
                 this.removeAllFormFromQuene(name, function (formKV) {
-                    formKV.formLogic.willHide(formData);
-                    formKV.formNode.active = false;
-                    formKV.formLogic.onHide(formData);
-                    formKV.formNode.removeFromParent();
+                    _this.logicHide(formKV.formLogic, formKV.formNode, formData);
                 });
+        };
+        CocosFormFactory.prototype.logicShow = function (formLogic, formNode, formData) {
+            if (Common.isOnlyUI && Common.isPC)
+                return;
+            formLogic.willShow(formData);
+            formNode.active = true;
+            formLogic.onShow(formData);
+        };
+        CocosFormFactory.prototype.logicHide = function (formLogic, formNode, formData) {
+            if (Common.isOnlyUI && Common.isPC)
+                return;
+            formLogic.willHide(formData);
+            formNode.active = true;
+            formLogic.onHide(formData);
+            formNode.removeFromParent();
         };
         CocosFormFactory.prototype.showForm = function (name, formLogic, formData, parent, callback, remoteLayout, layoutOptions) {
             var _this = this;
@@ -1856,9 +1894,7 @@ var mx = (function () {
             var formKV = this.getFormFromCached(name);
             if (formKV) {
                 parent.addChild(formKV.formNode);
-                formKV.formLogic.willShow(formData);
-                formKV.formNode.active = true;
-                formKV.formLogic.onShow(formData);
+                this.logicShow(formKV.formLogic, formKV.formNode, formData);
                 this.addForm2Quene(name, formKV.formNode, formKV.formLogic);
             }
             else {
@@ -1890,9 +1926,7 @@ var mx = (function () {
             var formKV = this.getFormFromCached(name);
             if (formKV) {
                 parent.addChild(formKV.formNode);
-                formKV.formLogic.willShow(tempData);
-                formKV.formNode.active = true;
-                formKV.formLogic.onShow(tempData);
+                this.logicShow(formKV.formLogic, formKV.formNode, tempData);
                 this.addForm2Quene(name, formKV.formNode, formKV.formLogic);
             }
             else {
@@ -1913,20 +1947,15 @@ var mx = (function () {
             }
         };
         CocosFormFactory.prototype.hideNodeByTemplate = function (name, formNode, formData) {
+            var _this = this;
             if (formNode) {
                 this.removeFormFromQuene(name, formNode, function (formKV) {
-                    formKV.formLogic.willHide(formData);
-                    formKV.formNode.active = false;
-                    formKV.formLogic.onHide(formData);
-                    formKV.formNode.removeFromParent();
+                    _this.logicHide(formKV.formLogic, formKV.formNode, formData);
                 });
             }
             else
                 this.removeAllFormFromQuene(name, function (formKV) {
-                    formKV.formLogic.willHide(formData);
-                    formKV.formNode.active = false;
-                    formKV.formLogic.onHide(formData);
-                    formKV.formNode.removeFromParent();
+                    _this.logicHide(formKV.formLogic, formKV.formNode, formData);
                 });
         };
         CocosFormFactory.prototype.getTemplate = function (tempName, callback) {
@@ -1964,26 +1993,48 @@ var mx = (function () {
                     callback();
             }, this)));
         };
+        CocosBaseForm.prototype.getClickQueneItem = function (e) {
+            var queneId = e.getCurrentTarget().uuid;
+            var retVal = this.mClickQuene[queneId];
+            if (retVal)
+                return retVal;
+            else
+                return null;
+        };
         CocosBaseForm.prototype.onTouchStart = function (e) {
+            var quene = this.getClickQueneItem(e);
+            if (!quene)
+                return;
+            if (quene.once && quene.clicking)
+                return;
             console.log('onMouseDown');
-            this.downAnim(e.getCurrentTarget());
+            moosnow.audio.playClickEffect();
+            this.downAnim(quene.node);
             if (this.mDowning)
                 return;
             this.mDowning = true;
         };
         CocosBaseForm.prototype.onTouchEnd = function (e) {
-            var _this = this;
+            var quene = this.getClickQueneItem(e);
+            if (!quene)
+                return;
+            if (quene.once && quene.clicking)
+                return;
             console.log('onMouseUp');
-            var queneId = e.getCurrentTarget().uuid;
-            this.upAnim(e.getCurrentTarget(), function () {
-                if (_this.mClickQuene[queneId] && _this.mClickQuene[queneId].callback)
-                    _this.mClickQuene[queneId].callback();
+            this.upAnim(quene.node, function () {
+                if (quene && quene.callback)
+                    quene.callback();
             });
-            if (this.mClickQuene[queneId] && this.mClickQuene[queneId].stopPropagation)
+            if (quene && quene.stopPropagation)
                 e.stopPropagation();
         };
         CocosBaseForm.prototype.onTouchCancel = function (e) {
-            this.upAnim(e.getCurrentTarget());
+            var quene = this.getClickQueneItem(e);
+            if (!quene)
+                return;
+            if (quene.once && quene.clicking)
+                return;
+            this.upAnim(quene.node);
         };
         /**
          * 应用点击动画
@@ -1995,12 +2046,15 @@ var mx = (function () {
         CocosBaseForm.prototype.applyClickAnim = function (node, callback, stopPropagation, once) {
             if (stopPropagation === void 0) { stopPropagation = false; }
             if (once === void 0) { once = true; }
+            if (Common.isOnlyUI && Common.isPC)
+                return;
             if (node && node.uuid) {
                 this.mClickQuene[node.uuid] = {
                     node: node,
                     stopPropagation: stopPropagation,
                     callback: callback,
-                    once: once
+                    once: once,
+                    clicking: false
                 };
                 node.on(CocosNodeEvent.TOUCH_START, this.onTouchStart, this);
                 node.on(CocosNodeEvent.TOUCH_END, this.onTouchEnd, this);
@@ -2030,6 +2084,7 @@ var mx = (function () {
         function CocosEndForm() {
             var _this = _super !== null && _super.apply(this, arguments) || this;
             _this.btnBack = null;
+            _this.btnContinue = null;
             return _this;
         }
         Object.defineProperty(CocosEndForm.prototype, "FormData", {
@@ -2045,6 +2100,9 @@ var mx = (function () {
         CocosEndForm.prototype.addListener = function () {
             var _this = this;
             this.applyClickAnim(this.btnBack, function () {
+                _this.onBack();
+            });
+            this.applyClickAnim(this.btnContinue, function () {
                 _this.onBack();
             });
         };
@@ -2115,13 +2173,16 @@ var mx = (function () {
             this.removeClickAnim(this.btnReplay);
         };
         CocosPauseForm.prototype.willShow = function (data) {
+            _super.prototype.willShow.call(this, data);
             this.addListener();
             moosnow.platform.hideBanner();
         };
         CocosPauseForm.prototype.willHide = function (data) {
+            _super.prototype.willHide.call(this, data);
             this.removeListener();
         };
-        CocosPauseForm.prototype.onShow = function () {
+        CocosPauseForm.prototype.onShow = function (data) {
+            _super.prototype.onShow.call(this, data);
             moosnow.platform.pauseRecord();
         };
         CocosPauseForm.prototype.onContinue = function () {
@@ -2130,11 +2191,13 @@ var mx = (function () {
                 this.FormData.callback();
         };
         CocosPauseForm.prototype.onToHome = function () {
+            this.hideForm();
             moosnow.platform.stopRecord();
             if (this.FormData.homeCallback)
                 this.FormData.homeCallback();
         };
         CocosPauseForm.prototype.onReplay = function () {
+            this.hideForm();
             moosnow.platform.stopRecord(function () {
                 moosnow.platform.startRecord();
             });
@@ -2209,6 +2272,7 @@ var mx = (function () {
          * @param callback
          */
         function CheckboxComponent(isChecked, callback, checkedName, uncheckedName) {
+            if (isChecked === void 0) { isChecked = true; }
             var _this = _super.call(this) || this;
             _this.checkedName = "checked";
             _this.uncheckedName = "unchecked";
@@ -2216,7 +2280,7 @@ var mx = (function () {
             _this.mCanNum = 0;
             _this.mCheckBoxMistouch = false;
             _this.mClickNum = 0;
-            _this.mVideoNum = 4;
+            _this.mCheckBoxVideoNum = 3;
             _this.toggleCallback = callback;
             _this.mCheckedVideo = isChecked;
             if (checkedName)
@@ -2231,20 +2295,20 @@ var mx = (function () {
         }
         CheckboxComponent.prototype.addListener = function () {
             var _this = this;
-            if (!this[this.uncheckedName])
-                console.log('unchecked node is null');
-            if (!this[this.checkedName])
-                console.log('checked node is null');
-            this.applyClickAnim(this[this.uncheckedName], function () {
-                _this.checkToggle(true);
-            });
-            this.applyClickAnim(this[this.checkedName], function () {
-                _this.checkToggle(true);
-            });
+            if (this[this.uncheckedName])
+                this.applyClickAnim(this[this.uncheckedName], function () {
+                    _this.checkToggle();
+                });
+            if (this[this.checkedName])
+                this.applyClickAnim(this[this.checkedName], function () {
+                    _this.checkToggle();
+                });
         };
         CheckboxComponent.prototype.removeListener = function () {
-            this.removeClickAnim(this[this.checkedName]);
-            this.removeClickAnim(this[this.uncheckedName]);
+            if (this[this.checkedName])
+                this.removeClickAnim(this[this.checkedName]);
+            if (this[this.uncheckedName])
+                this.removeClickAnim(this[this.uncheckedName]);
         };
         CheckboxComponent.prototype.onReceive = function () {
             var _this = this;
@@ -2267,24 +2331,21 @@ var mx = (function () {
                     this.FormData.callback();
             }
         };
-        CheckboxComponent.prototype.checkToggle = function (mistouch) {
-            if (mistouch === void 0) { mistouch = false; }
-            if (mistouch && this.mCheckBoxMistouch) {
+        CheckboxComponent.prototype.checkToggle = function () {
+            if (this.mCheckBoxMistouch) {
                 this.mClickNum++;
-                if (this.mClickNum == this.mVideoNum) {
+                if (this.mClickNum == this.mCheckBoxVideoNum) {
                     moosnow.platform.showVideo(function () { });
                 }
                 if (this.mClickNum >= this.mCanNum) {
                     this.mCheckedVideo = !this.mCheckedVideo;
-                    this[this.checkedName].active = this.mCheckedVideo;
-                    this[this.uncheckedName].active = !this.mCheckedVideo;
-                    this.checkCallback();
+                    this.updateCheckbox();
                 }
+                this.checkCallback();
                 return;
             }
             this.mCheckedVideo = !this.mCheckedVideo;
-            this[this.checkedName].active = this.mCheckedVideo;
-            this[this.uncheckedName].active = !this.mCheckedVideo;
+            this.updateCheckbox();
             this.checkCallback();
         };
         CheckboxComponent.prototype.onShow = function (data) {
@@ -2292,12 +2353,18 @@ var mx = (function () {
             _super.prototype.onShow.call(this, data);
             moosnow.http.getAllConfig(function (res) {
                 _this.mCanNum = MathUtils.probabilitys(res.checkBoxProbabilitys) + 1;
+                _this.mCheckBoxVideoNum = res && !isNaN(res.checkBoxVideoNum) ? res.checkBoxVideoNum : 3;
                 _this.mCheckBoxMistouch = res.checkBoxMistouch == 1;
             });
             this.addListener();
-            this[this.checkedName].active = this.mCheckedVideo;
-            this[this.uncheckedName].active = !this.mCheckedVideo;
+            this.updateCheckbox();
             this.checkCallback();
+        };
+        CheckboxComponent.prototype.updateCheckbox = function () {
+            if (this[this.checkedName])
+                this[this.checkedName].active = this.mCheckedVideo;
+            if (this[this.uncheckedName])
+                this[this.uncheckedName].active = !this.mCheckedVideo;
         };
         CheckboxComponent.prototype.checkCallback = function () {
             if (this.toggleCallback)
@@ -3139,6 +3206,7 @@ var mx = (function () {
             _this.rightContainer_scroll = null;
             _this.rightContainer_layout = null;
             _this.rotateContainer = null;
+            _this.rotateContainer_layout = null;
             _this.sideContainer = null;
             _this.sideView = null;
             _this.sideLayout = null;
@@ -3661,7 +3729,7 @@ var mx = (function () {
             var scrollView = this.exportContainer_scroll.getComponent(cc.ScrollView);
             layout.type = cc.Layout.Type.GRID;
             layout.resizeMode = cc.Layout.ResizeMode.CONTAINER;
-            layout.startAxis = cc.Layout.AxisDirection.VERTICAL;
+            // layout.startAxis = cc.Layout.AxisDirection.VERTICAL;
             this.initView(scrollView, this.exportContainer_layout, "大导出", "exportAdItem");
         };
         CocosAdForm.prototype.disableRotate = function () {
@@ -3705,10 +3773,10 @@ var mx = (function () {
                 endAd.forEach(function (adRow) {
                     adRow.source = source;
                     adRow.showIds = showIds;
-                    moosnow.form.formFactory.createNodeByTemplate(tempName, CocosAdViewItem, adRow, _this.rotateContainer);
+                    moosnow.form.formFactory.createNodeByTemplate(tempName, CocosAdViewItem, adRow, _this.rotateContainer_layout);
                 });
                 var t = cc.Canvas.instance.node.width / 2 / 800;
-                _this.rotateContainer.children.forEach(function (item, idx) {
+                _this.rotateContainer_layout.children.forEach(function (item, idx) {
                     item.x = pos[idx].x - cc.Canvas.instance.node.width / 2;
                     item.stopAllActions();
                     item.runAction(cc.spawn(cc.moveTo(t, new cc.Vec2(pos[idx].x, pos[idx].y)), cc.rotateBy(t, 360)));
@@ -3892,6 +3960,7 @@ var mx = (function () {
         FormLayout.TotalForm = "totalForm";
         FormLayout.EndForm = "endForm";
         FormLayout.RespawnForm = "respawnForm";
+        FormLayout.FailForm = "failForm";
         FormLayout.PauseForm = "pauseForm";
         FormLayout.ShareForm = "shareForm";
         FormLayout.TryForm = "tryForm";
@@ -4060,13 +4129,109 @@ var mx = (function () {
         return CocosRespawnForm;
     }(CocosBaseForm));
 
+    var CocosFailForm = /** @class */ (function (_super) {
+        __extends(CocosFailForm, _super);
+        function CocosFailForm() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.btnBack = null;
+            _this.btnVideo = null;
+            return _this;
+        }
+        Object.defineProperty(CocosFailForm.prototype, "FormData", {
+            /**
+             * 父类缓存willShow，onShow传递到实体的逻辑数据
+             */
+            get: function () {
+                return this.mFormData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        CocosFailForm.prototype.addListener = function () {
+            var _this = this;
+            this.applyClickAnim(this.btnBack, function () {
+                _this.onBack();
+            });
+            this.applyClickAnim(this.btnVideo, function () {
+                _this.onVideo();
+            });
+        };
+        CocosFailForm.prototype.removeListener = function () {
+            this.removeClickAnim(this.btnBack);
+        };
+        CocosFailForm.prototype.onVideo = function () {
+            var _this = this;
+            moosnow.platform.showVideo(function (res) {
+                if (res == VIDEO_STATUS.END) {
+                    _this.hideForm();
+                    if (_this.FormData.videoCallback)
+                        _this.FormData.videoCallback();
+                }
+                else if (res == VIDEO_STATUS.ERR) {
+                    moosnow.form.showToast(VIDEO_MSG.ERR);
+                }
+                else if (res == VIDEO_STATUS.NOTEND) {
+                    moosnow.form.showToast(VIDEO_MSG.NOTEND);
+                }
+            });
+        };
+        CocosFailForm.prototype.onShow = function (data) {
+            this.addListener();
+        };
+        CocosFailForm.prototype.willHide = function () {
+            this.removeListener();
+        };
+        CocosFailForm.prototype.onBack = function () {
+            this.hideForm();
+            if (this.FormData.callback)
+                this.FormData.callback();
+        };
+        return CocosFailForm;
+    }(CocosBaseForm));
+
     /**
      * 广告结果
      */
     var FormUtil = /** @class */ (function () {
         function FormUtil() {
+            this.mBaseForm = new CocosBaseForm();
             this.formFactory = new CocosFormFactory();
         }
+        /**
+         * 初始化多选框状态
+         * @param defaultChecked 默认选择状态
+         * @param callback checkboxToggle 触发的回调 isChecked 表示选择状态
+         */
+        FormUtil.prototype.initCheckboxState = function (defaultChecked, callback) {
+            if (defaultChecked === void 0) { defaultChecked = true; }
+            this.mCheckbox = new CheckboxComponent(defaultChecked, callback);
+            this.mCheckbox.onShow(null);
+        };
+        /**
+         * 执行点击
+         */
+        FormUtil.prototype.checkboxToggle = function () {
+            this.mCheckbox.checkToggle();
+        };
+        /**
+         * 增加点击效果和事件回调
+         * @param node
+         * @param callback
+         * @param stopPropagation
+         * @param once
+         */
+        FormUtil.prototype.applyClickAnim = function (node, callback, stopPropagation, once) {
+            if (stopPropagation === void 0) { stopPropagation = false; }
+            if (once === void 0) { once = true; }
+            this.mBaseForm.applyClickAnim(node, callback, stopPropagation, once);
+        };
+        /**
+         * 删除点击效果和事件回调
+         * @param node
+         */
+        FormUtil.prototype.removeClickAnim = function (node) {
+            this.mBaseForm.removeClickAnim(node);
+        };
         /**
          * Toast消息
          * @param msg  消息内容
@@ -4149,6 +4314,14 @@ var mx = (function () {
             */
         FormUtil.prototype.showRespawn = function (options) {
             this.formFactory.showForm(FormLayout.RespawnForm, CocosRespawnForm, options);
+        };
+        /**
+         * 显示失败页面
+         * @param coinNum
+         * @param callback
+         */
+        FormUtil.prototype.showFail = function (options) {
+            this.formFactory.showForm(FormLayout.FailForm, CocosFailForm, options);
         };
         /**
           * 显示结算统计页
@@ -4521,6 +4694,7 @@ var mx = (function () {
                 return;
             }
             window["moosnow"].form = this.formUtil;
+            window["moosnow"].nodeHelper = CocosNodeHelper;
             // window["moosnow"].delay = this.delay
         }
         Object.defineProperty(moosnowUI.prototype, "formUtil", {

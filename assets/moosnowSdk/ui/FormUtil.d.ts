@@ -12,12 +12,39 @@ import loadAdOptions from "../model/loadAdOptions";
 import FormFactory from "./engine/FormFactory";
 import showNativeOptions from "../model/showNativeOptions";
 import showRespawnOptions from "../model/showRespawnOptions";
+import showFailOptions from "../model/showFailOptions";
+import CheckboxComponent from "./cocos/common/CheckboxComponent";
 /**
  * 广告结果
  */
 export default class FormUtil {
     formFactory: FormFactory;
     constructor();
+    mCheckbox: CheckboxComponent;
+    /**
+     * 初始化多选框状态
+     * @param defaultChecked 默认选择状态
+     * @param callback checkboxToggle 触发的回调 isChecked 表示选择状态
+     */
+    initCheckboxState(defaultChecked?: boolean, callback?: (isChecked: any) => void): void;
+    /**
+     * 执行点击
+     */
+    checkboxToggle(): void;
+    private mBaseForm;
+    /**
+     * 增加点击效果和事件回调
+     * @param node
+     * @param callback
+     * @param stopPropagation
+     * @param once
+     */
+    applyClickAnim(node: cc.Node, callback?: Function, stopPropagation?: boolean, once?: boolean): void;
+    /**
+     * 删除点击效果和事件回调
+     * @param node
+     */
+    removeClickAnim(node: cc.Node): void;
     /**
      * Toast消息
      * @param msg  消息内容
@@ -71,6 +98,12 @@ export default class FormUtil {
         * @param callback
         */
     showRespawn(options: showRespawnOptions): void;
+    /**
+     * 显示失败页面
+     * @param coinNum
+     * @param callback
+     */
+    showFail(options: showFailOptions): void;
     /**
       * 显示结算统计页
       * @param coinNum
