@@ -3,28 +3,30 @@ import moosnowAdRow from "../model/moosnowAdRow";
 import moosnowAppConfig from "../model/moosnowAppConfig";
 import nativeAdRow from "../model/nativeAdRow";
 import bannerStyle from "../model/bannerStyle";
+import { BANNER_HORIZONTAL, BANNER_VERTICAL } from "../enum/BANNER_POSITION";
+import { BLOCK_HORIZONTAL, BLOCK_VERTICAL } from "../enum/BLOCK_POSITION";
 export default class PlatformModule extends BaseModule {
     constructor();
     baseUrl: string;
     moosnowConfig: moosnowAppConfig;
     share_clickTime: number;
-    currentShareCallback: Function;
+    currentShareCallback: (success: boolean) => void;
     currentShortCall: Function;
     shareFail: boolean;
     vibrateOn: boolean;
     systemInfo: any;
+    block: any;
+    currentBannerId: string;
     banner: any;
+    currentVideoId: string;
     video: any;
     inter: any;
     native: any;
     box: any;
     platformName: string;
-    mBannerId: string;
-    mBannerIndex: number;
-    get bannerId(): any;
-    mVideoId: string;
-    mVideoIndex: number;
-    get videoId(): any;
+    getBannerId(idx?: number, random?: boolean): any;
+    getBlockId(idx?: number): any;
+    getVideoId(idx?: number): any;
     interId: string;
     boxId: string;
     /**
@@ -32,17 +34,24 @@ export default class PlatformModule extends BaseModule {
      */
     nativeId: Array<number>;
     nativeIdIndex: number;
-    bannerWidth: number;
+    mBannerWidth: number;
+    get bannerWidth(): number;
+    set bannerWidth(value: number);
     bannerHeigth: number;
+    bannerHorizontal: BANNER_HORIZONTAL;
+    bannerVertical: BANNER_VERTICAL;
     bannerShowCount: number;
     bannerShowCountLimit: number;
     bannerShowTime: number;
     bannerShowTimeLimit: number;
     bannerLimitType: number;
     bannerCb: Function;
-    bannerPosition: string;
     bannerStyle: bannerStyle;
     isBannerShow: boolean;
+    blockWidth: number;
+    blockHeigth: number;
+    blockHorizontal: BLOCK_HORIZONTAL;
+    blockVertical: BLOCK_VERTICAL;
     videoCb: Function;
     videoLoading: boolean;
     videoPlaying: boolean;
@@ -97,6 +106,9 @@ export default class PlatformModule extends BaseModule {
         action: number;
         data?: any;
     }): void;
+    navigate2Video(videoid: any): void;
+    getClipboardData(success: (res: any) => void, fail: (res: any) => void): void;
+    setClipboardData(msg: string, success: (res: any) => void, fail: (res: any) => void): void;
     prevNavigate: number;
     /**
      * 跳转到指定App
@@ -182,7 +194,12 @@ export default class PlatformModule extends BaseModule {
     private _onShareback;
     private _initLoginButton;
     initRecord(): void;
-    clipRecord(): void;
+    /**
+     * 裁剪视频
+     * @param timeRange 默认[2,2] 裁剪视频时保留的前后时长
+     * @param callback 剪切完成时回调
+     */
+    clipRecord(timeRange: Array<number>, callback: (res: any) => void): void;
     /**
      * 开始录屏
      * @param duration 录屏时长
@@ -214,51 +231,68 @@ export default class PlatformModule extends BaseModule {
     private _onHideCallback;
     initBanner(): void;
     _prepareBanner(): void;
-    _createBannerAd(): any;
-    _onBannerLoad(): void;
-    _onBannerError(err: any): void;
-    _bottomCenterBanner(size: any): void;
-    _resetBanenrStyle(size: any): void;
+    /**
+     * 创建banner
+     * @param adIndex
+     * @return bannerId
+     */
+    _createBannerAd(adIndex: number): string;
+    _onBannerLoad(bannerId: any): void;
+    _onBannerError(bannerId: any, err: any): void;
+    _onBannerResize(bannerId: any, size: any): void;
+    _resetBanenrStyle(e: any): void;
+    applyCustomStyle(e: any): void;
+    _getBannerPosition(): {
+        left: number;
+        top: number;
+    };
+    preloadBanner(idIndex?: number): void;
     /**
       * 显示平台的banner广告
       * @param remoteOn 是否被后台开关控制 默认 true，误触的地方传 true  普通的地方传 false
       * @param callback 点击回调
-      * @param position banner的位置，默认底部
+      * @param horizontal banner的位置，默认底部
+      * @param vertical banner的位置，默认底部
+      * @param idIndex id顺序 -1 会随机
       * @param style 自定义样式
       */
-    showBanner(remoteOn?: boolean, callback?: (isOpend: boolean) => void, position?: string, style?: bannerStyle): void;
-    _showBanner(): void;
-    private mTimeoutId;
+    showBanner(remoteOn?: boolean, callback?: (isOpend: boolean) => void, horizontal?: BANNER_HORIZONTAL, vertical?: BANNER_VERTICAL, idIndex?: number, style?: bannerStyle): void;
+    _showBanner(idIndex: any): void;
+    mTimeoutId: number;
     /**
      * 会自动隐藏的banner
      * 一般用游戏中
-     * @param position banner的位置，默认底部
+     * @param horizontal banner的位置，默认底部
+     * @param vertical banner的位置，默认底部
+     * @param idIndex id顺序 -1 会随机
      */
-    showAutoBanner(position?: string): void;
+    showAutoBanner(horizontal?: BANNER_HORIZONTAL, vertical?: BANNER_VERTICAL, idIndex?: number): void;
     exitApplication(): void;
     /**
      * 连续不断的显示和隐藏 banner
      * @param position
      */
-    showIntervalBanner(position?: string): void;
+    showIntervalBanner(horizontal?: BLOCK_HORIZONTAL, vertical?: BLOCK_VERTICAL): void;
     /**
      * 取消banner
      */
     clearIntervalBanner(): void;
     /**
-     * 隐藏banner
-     */
-    hideBanner(): void;
+    * 隐藏banner
+    * @param destroy
+    */
+    hideBanner(destroy?: boolean): void;
     initVideo(): void;
-    createRewardAD(show: any): void;
+    createRewardAD(show: boolean, idIndex?: number): void;
     _onVideoError(msg: any, code: any): void;
     _onVideoClose(isEnd: any): void;
     _onVideoLoad(): void;
     /**
      * 唤起视频
      * @param completeCallback
+     * @param position
      */
-    showVideo(completeCallback?: any): void;
+    showVideo(completeCallback?: any, idIndex?: number): void;
     initInter(): void;
     prepareInter(): void;
     showInter(): void;
@@ -293,7 +327,7 @@ export default class PlatformModule extends BaseModule {
      * 目前只有OPPO平台有此功能
      * 用户点击了展示原生广告的图片时，使用此方法
      * 例如 cocos
-     * this.node.on(cc.Node.EventType.TOUCH_END, () => {
+     * this.node.on(cc.Node.PLATFORM_EVENT.TOUCH_END, () => {
      *     moosnow.platform.clickNative();
      * }, this)
      *
@@ -345,7 +379,14 @@ export default class PlatformModule extends BaseModule {
      * @param fail
      */
     openAwemeUserProile(success: (hasFollowed: any) => void, fail: (err: any) => void): void;
-    hasShortcutInstalled(success: (has: any) => void): void;
-    installShortcut(success: () => void, message?: string): void;
+    hasShortcutInstalled(success: (has: any) => void, fail: (err: any) => void): void;
+    installShortcut(success: (res: any) => void, message: string, fail: (err: any) => void): void;
+    showBlock(horizontal?: BLOCK_HORIZONTAL, vertical?: BLOCK_VERTICAL, orientation?: number, size?: number): void;
+    hideBlock(): void;
+    private isLoaded;
+    /**
+     * 屏蔽iphone关闭退出按钮
+     */
+    hideExitButton(): void;
     onDisable(): void;
 }

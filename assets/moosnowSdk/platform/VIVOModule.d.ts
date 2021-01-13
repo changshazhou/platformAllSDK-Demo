@@ -1,6 +1,7 @@
 import PlatformModule from "./PlatformModule";
 import moosnowAdRow from "../model/moosnowAdRow";
 import bannerStyle from "../model/bannerStyle";
+import { BANNER_HORIZONTAL, BANNER_VERTICAL } from "../enum/BANNER_POSITION";
 export default class VIVOModule extends PlatformModule {
     platformName: string;
     appSid: string;
@@ -32,7 +33,10 @@ export default class VIVOModule extends PlatformModule {
      */
     _onBannerError(err: any): void;
     getSystemInfoSync(): any;
-    _prepareBanner(): void;
+    _getBannerPosition(): {
+        left: number;
+        top: number;
+    };
     private mShowTime;
     private mMinInterval;
     _createBannerAd(): any;
@@ -40,7 +44,6 @@ export default class VIVOModule extends PlatformModule {
     _bottomCenterBanner(size: any): void;
     _onBannerClose(): void;
     _onBannerHide(): void;
-    destroyBanner(): void;
     /**
       * 显示平台的banner广告
       * @param remoteOn 是否被后台开关控制 默认 true，误触的地方传 true  普通的地方传 false
@@ -48,9 +51,12 @@ export default class VIVOModule extends PlatformModule {
       * @param position banner的位置，默认底部
       * @param style 自定义样式
       */
-    showBanner(remoteOn?: boolean, callback?: (isOpend: boolean) => void, position?: string, style?: bannerStyle): void;
+    showBanner(remoteOn?: boolean, callback?: (isOpend: boolean) => void, horizontal?: BANNER_HORIZONTAL, vertical?: BANNER_VERTICAL, idIndex?: number, style?: bannerStyle): void;
     _showBanner(): void;
+    private mHideTime;
+    private mMinHideInterval;
     hideBanner(): void;
+    private mVideoTime;
     createRewardAD(show: any): void;
     _onVideoLoad(): void;
     _onVideoClose(isEnd: any): void;
@@ -103,7 +109,7 @@ export default class VIVOModule extends PlatformModule {
     private mClickedNativeCallback;
     private mIsClickedNative;
     private onAppShow;
-    hasShortcutInstalled(success: (has: any) => void): void;
-    installShortcut(success: () => void, message?: string): void;
+    hasShortcutInstalled(success: (has: any) => void, fail: (err: any) => void): void;
+    installShortcut(success: (res: any) => void, message: string, fail: (err: any) => void): void;
     exitApplication(): void;
 }

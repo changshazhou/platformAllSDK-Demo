@@ -1,26 +1,24 @@
-window.onlyUI = false;
+
 window.moosnowConfig = {
     debug: "wx",
     /**
      * 微信平台
      */
     wx: {
-        bannerId: "adunit-e51b3123060eec9e",   //请填写你自己的APP banner id
-        videoId: "adunit-a322f5ee40076372",    //请填写你自己的APP video id
+        bannerId: ["adunit-036215d84182fff2", "adunit-e51b3123060eec9e"],   //请填写你自己的APP banner id
+        videoId: ["adunit-2a455209360b04ec", "adunit-a322f5ee40076372"],    //请填写你自己的APP video id
         interId: "adunit-7c61767905a3940a", //请填写你自己的APP inter id   
         nativeId: "",
-        moosnowAppId: "landscape", //请填写你自己的APP id
-        version: "1.1.0",
-        url: "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/config/tp_hzyx_config_wx.json",//游戏的配置json，如果用到了getMistouchNum,后台必须配置mistouchNum字段
+        moosnowAppId: "wx882cb8f171ef34a2", //请填写你自己的APP id
+        version: "1.1.0"
     },
     oppo: {
-        bannerId: "168776",
-        videoId: "168781",
+        bannerId: "232024",
+        videoId: "232025",
         interId: "168777",
-        nativeId: ["168779", "168780"],
-        moosnowAppId: "30251588",
-        version: "1.1.0",
-        url: "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/config/tp_truckloader_config_oppo.json",
+        nativeId: ["232026"],
+        moosnowAppId: "0365699",
+        version: "1.1.0"
     },
     vivo: {
         bannerId: "aa9a8f1e5403435fa51ec680dbbf0da2",
@@ -55,7 +53,7 @@ window.moosnowConfig = {
         videoId: "168781",
         interId: "168777",
         nativeId: ["168779", "168780"],
-        moosnowAppId: "t1c2b6a9683015c7d",
+        moosnowAppId: "tt07e4715998dfbc8b",
         version: "1.1.0",
     }
 }

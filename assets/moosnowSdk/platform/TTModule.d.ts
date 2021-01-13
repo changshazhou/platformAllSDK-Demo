@@ -1,4 +1,5 @@
 import PlatformModule from "./PlatformModule";
+import { BANNER_HORIZONTAL, BANNER_VERTICAL } from "../enum/BANNER_POSITION";
 import bannerStyle from "../model/bannerStyle";
 import moosnowAdRow from "../model/moosnowAdRow";
 export default class TTModule extends PlatformModule {
@@ -12,7 +13,12 @@ export default class TTModule extends PlatformModule {
     showInter(): void;
     _bottomCenterBanner(size: any): void;
     initRecord(): void;
-    clipRecord(): void;
+    /**
+     * 裁剪视频
+     * @param timeRange 默认[2,2] 裁剪视频时保留的前后时长
+     * @param callback 剪切完成时回调
+     */
+    clipRecord(timeRange: Array<number>, callback: (res: any) => void): void;
     /**
      * 开始录屏
      * @param duration 录屏时长
@@ -34,6 +40,7 @@ export default class TTModule extends PlatformModule {
       * @param shortCall 时间过短时回调 ,err 是具体错误信息，目前只在头条分享录屏时用到
       */
     share(query?: Object, callback?: (shared: boolean) => void, shortCall?: (err: any) => void): void;
+    private shareVideoId;
     _buildShareInfo(query: any): {
         channel: string;
         title: string;
@@ -42,14 +49,15 @@ export default class TTModule extends PlatformModule {
         extra: {
             videoPath: any;
             videoTopics: string[];
+            withVideoId: boolean;
         };
-        success: () => void;
+        success: (res: any) => void;
         fail: (e: any) => void;
     };
+    navigate2Video(videoId: any): void;
     private mBannerLoaded;
     _onBannerLoad(): void;
     _prepareBanner(): void;
-    _resetBanenrStyle(size: any): void;
     /**
      * 显示平台的banner广告
      * @param remoteOn 是否被后台开关控制 默认 true，误触的地方传 true  普通的地方传 false
@@ -57,7 +65,7 @@ export default class TTModule extends PlatformModule {
      * @param position banner的位置，默认底部
      * @param style 自定义样式
      */
-    showBanner(remoteOn?: boolean, callback?: (isOpend: boolean) => void, position?: string, style?: bannerStyle): void;
+    showBanner(remoteOn?: boolean, callback?: (isOpend: boolean) => void, horizontal?: BANNER_HORIZONTAL, vertical?: BANNER_VERTICAL, adIndex?: number, style?: bannerStyle): void;
     _showBanner(): void;
     /**
     * 盒子广告

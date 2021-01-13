@@ -5,6 +5,7 @@ export declare class HttpModule extends BaseModule {
     private versionNumber;
     version: string;
     baseUrl: string;
+    private instanceTime;
     constructor();
     private mLaunchOptions;
     private get appLaunchOptions();
@@ -21,8 +22,8 @@ export declare class HttpModule extends BaseModule {
     _object2Query(obj: any): string;
     isDisableArea(callback: any): void;
     /**
-       * Loading加载完成
-       */
+     * Loading加载完成
+     */
     finishLoading(): void;
     /**
       * 点击了banner
@@ -41,12 +42,10 @@ export declare class HttpModule extends BaseModule {
      * @param jump_appid
      * @param callback
      */
-    navigate(jump_appid: string, callback: Function): void;
     /**
      * 跳转完成
      * @param code
      */
-    navigateEnd(code: string): void;
     /**
      *
      * @param url
@@ -83,6 +82,13 @@ export declare class HttpModule extends BaseModule {
     cfgData: any;
     areaData: any;
     _cfgQuene: any[];
+    private getCfg;
+    /**
+     *
+     * @param res
+     * @param applyRemote 使用后台数据
+     */
+    private defaultCfg;
     loadCfg(callback: any): void;
     private _localQuene;
     loadArea(callback: any): void;

@@ -16,36 +16,48 @@ export default class Helloworld extends cc.Component {
         moosnow.http.getAllConfig(res => {
             console.log('所有配置', res)
         })
-        moosnow.form.loadAd({
-            floatPositon: [{
-                x: -496.015,
-                y: -128
-            }, {
-                x: -183.045,
-                y: 24
-            }, {
-                x: 434.285,
-                y: 123
-            }, {
-                x: 592,
-                y: 7
-            }],
-            hideForm: true,
-            callback: () => {
-                // moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.EXPORT_FIXED, () => {
+        // moosnow.form.loadAd({
+        //     floatPositon: [{
+        //         x: -496.015,
+        //         y: -128
+        //     }, {
+        //         x: -183.045,
+        //         y: 24
+        //     }, {
+        //         x: 434.285,
+        //         y: 123
+        //     }, {
+        //         x: 592,
+        //         y: 7
+        //     }],
+        //     floatTempletes: ["floatAdItem4"],
+        //     hideForm: true,
+        //     callback: () => {
+        //         moosnow.form.showAd(moosnow.AD_POSITION.FLOAT, () => { }, [new cc.Vec2(-300, 0), new cc.Vec2(-100, 0), new cc.Vec2(100, 0), new cc.Vec2(300, 0)], ["floatAdItem4"]);
+        //         // moosnow.form.showAd(moosnow.AD_POSITION.BANNER | moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.EXPORT_FIXED, () => {
 
-                // })
-                // moosnow.form.showAd(moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.EXPORT_FIXED, () => {
+        //         // })
+        //         // moosnow.form.showAd(moosnow.AD_POSITION.MASK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.EXPORT_FIXED, () => {
 
-                // })
-                // moosnow.form.showAd(moosnow.AD_POSITION.BACK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.EXPORT, () => {
-                //     console.log('点击了返回按钮')
-                //     moosnow.form.showAd(moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.BANNER, () => {
-                //         console.log('点击了返回按钮')
-                //     })
-                // })
-            }
-        })
+        //         // })
+        //         // moosnow.form.showAd(moosnow.AD_POSITION.BACK | moosnow.AD_POSITION.WAIT | moosnow.AD_POSITION.EXPORT, () => {
+        //         //     console.log('点击了返回按钮')
+        //         //     moosnow.form.showAd(moosnow.AD_POSITION.FLOAT | moosnow.AD_POSITION.BANNER, () => {
+        //         //         console.log('点击了返回按钮')
+        //         //     })
+        //         // })
+        //     }
+        // })
+        // let b = window["qq"].createBannerAd({
+        //     adUnitId: "34c452729bdb7803449ea3ecb964adb5",
+        //     style: {
+        //         top: 50,
+        //         left: 50,
+        //         width: 320,
+        //         height: 320 / 300 * 72.8071
+        //     }
+        // });
+        // b.show();
 
         // // moosnow.form.showAd(moosnow.AD_POSITION.BANNER|moosnow.AD_POSITION.FLOAT,)
 
@@ -79,6 +91,8 @@ export default class Helloworld extends cc.Component {
 
         //     }
         // );
+
+        moosnow.platform.preloadBanner(1);
     }
 
     showToast() {
@@ -106,12 +120,7 @@ export default class Helloworld extends cc.Component {
 
 
     showCoin() {
-        let options = new moosnow.showOptions.coinOptions();
-        options.coinNum = 500;
-        options.callback = () => {
-            console.log('金币动画完成')
-        }
-        moosnow.form.showCoin(options)
+
     }
 
 
@@ -209,26 +218,43 @@ export default class Helloworld extends cc.Component {
                 default:
                     break;
             }
-        })
+        }, 0)
+    }
+    showVideo2() {
+        moosnow.platform.showVideo(res => {
+            switch (res) {
+                case moosnow.VIDEO_STATUS.NOTEND:
+                    console.log('视频未观看完成 ')
+                    break;
+                case moosnow.VIDEO_STATUS.ERR:
+                    console.log('获取视频错误 ')
+                    break;
+                case moosnow.VIDEO_STATUS.END:
+                    console.log('观看视频结束 ')
+                default:
+                    break;
+            }
+        }, 1)
     }
 
     showBanner() {
-        moosnow.platform.showBanner();
+        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_HORIZONTAL.CENTER, moosnow.BANNER_VERTICAL.BOTTOM, Math.random() > 0.5 ? 0 : 1);
     }
 
     showBottomBanner() {
-        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_POSITION.BOTTOM);
+        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_HORIZONTAL.CENTER, moosnow.BANNER_VERTICAL.BOTTOM);
     }
     showCenterBanner() {
-        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_POSITION.CENTER);
+        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_HORIZONTAL.CENTER, moosnow.BANNER_VERTICAL.CENTER);
     }
     showTopBanner() {
-        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_POSITION.TOP);
+        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_HORIZONTAL.CENTER, moosnow.BANNER_VERTICAL.TOP);
     }
 
 
     showAutoBanner() {
-        moosnow.platform.showAutoBanner();
+
+        moosnow.platform.showAutoBanner(moosnow.BANNER_HORIZONTAL.CENTER, moosnow.BANNER_VERTICAL.BOTTOM, 1);
 
     }
 
@@ -406,15 +432,17 @@ export default class Helloworld extends cc.Component {
 
 
     showNative() {
-        moosnow.form.showNativeAd({
-            x: 0, y: 0,
-            hideForm: true,
-            callback: () => {
-
-            },
-            nullCallback: () => {
-
-            }
+        moosnow.platform.showNativeAd((res) => {
+            console.log("🚀 ~ file: Helloworld.ts ~ line 436 ~ Helloworld ~ moosnow.platform.showNativeAd ~ res", res)
         });
+    }
+
+    showCustomBanner() {
+        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_HORIZONTAL.CENTER, moosnow.BANNER_VERTICAL.BOTTOM, 0, {
+            left: 0,
+            top: 0,
+            width: 320,
+            height: 210
+        })
     }
 }
