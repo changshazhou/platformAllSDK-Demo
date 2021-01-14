@@ -9,7 +9,7 @@ window.moosnowConfig = {
         videoId: ["adunit-2a455209360b04ec", "adunit-a322f5ee40076372"],    //请填写你自己的APP video id
         interId: "adunit-7c61767905a3940a", //请填写你自己的APP inter id   
         nativeId: "",
-        moosnowAppId: "wx882cb8f171ef34a2", //请填写你自己的APP id
+        moosnowAppId: "wxe06a0af132efcdda", //请填写你自己的APP id
         version: "1.1.0"
     },
     oppo: {
