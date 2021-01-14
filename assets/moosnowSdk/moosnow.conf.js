@@ -17,8 +17,9 @@ window.moosnowConfig = {
         videoId: "232025",
         interId: "168777",
         nativeId: ["232026"],
-        moosnowAppId: "0365699",
-        version: "1.1.0"
+        moosnowAppId: "30270711",
+        version: "1.1.0",
+        url:"https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/config/wx9acb3a48ebe80eab.json"
     },
     vivo: {
         bannerId: "aa9a8f1e5403435fa51ec680dbbf0da2",

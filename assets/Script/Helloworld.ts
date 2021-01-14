@@ -1,3 +1,5 @@
+import { PlatformType } from "../moosnowSdk/enum/PlatformType";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -6,12 +8,11 @@ export default class Helloworld extends cc.Component {
     @property(cc.Label)
     label: cc.Label = null;
 
-    @property
-    text: string = 'hello';
+    @property(cc.EditBox)
+    txtToken: cc.EditBox = null;
 
     start() {
-        // init logic
-        this.label.string = this.text;
+
 
         moosnow.http.getAllConfig(res => {
             console.log('所有配置', res)
@@ -350,23 +351,19 @@ export default class Helloworld extends cc.Component {
     }
 
     navigate2Mini() {
-        // let row = {
-        //     appid: "30238187",
-        //     atlas: "",
-        //     boxAppid: "",
-        //     desc: "",
-        //     img: "https://txcdn.ylll111.xyz/more_channel/6fb282c9ba4a7f6859f6d26c70335c58.png",
-        //     path: "",
-        //     pkgName: "com.cszs.qscssd.nearme.gamecenter",
-        //     title: "枪神传说3D",
-        // }
-        // moosnow.platform.navigate2Mini(row, () => {
+        moosnow.ad.getAd(res => {
+            if (res.indexLeft.length == 0)
+                return;
+            let row = res.indexLeft[0]
+            moosnow.platform.navigate2Mini(row, () => {
 
-        // }, () => {
+            }, () => {
 
-        // }, () => {
+            }, () => {
 
-        // })
+            })
+        })
+
     }
 
     showTry() {
@@ -444,5 +441,11 @@ export default class Helloworld extends cc.Component {
             width: 320,
             height: 210
         })
+    }
+
+    showLogin() {
+        moosnow.platform.login(() => {
+            this.txtToken.string = ""
+        });
     }
 }
