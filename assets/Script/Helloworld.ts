@@ -11,12 +11,16 @@ export default class Helloworld extends cc.Component {
     @property(cc.EditBox)
     txtToken: cc.EditBox = null;
 
+    @property(cc.Label)
+    txtLog: cc.Label = null;
+
     start() {
 
-
+        moosnow.http.finishLoading();
         moosnow.http.getAllConfig(res => {
             console.log('所有配置', res)
         })
+        moosnow.platform.initRecord();
         // moosnow.form.loadAd({
         //     floatPositon: [{
         //         x: -496.015,
@@ -209,12 +213,15 @@ export default class Helloworld extends cc.Component {
         moosnow.platform.showVideo(res => {
             switch (res) {
                 case moosnow.VIDEO_STATUS.NOTEND:
+                    this.txtLog.string = "视频未观看完成";
                     console.log('视频未观看完成 ')
                     break;
                 case moosnow.VIDEO_STATUS.ERR:
+                    this.txtLog.string = "获取视频错误";
                     console.log('获取视频错误 ')
                     break;
                 case moosnow.VIDEO_STATUS.END:
+                    this.txtLog.string = "观看视频结束";
                     console.log('观看视频结束 ')
                 default:
                     break;
@@ -225,12 +232,15 @@ export default class Helloworld extends cc.Component {
         moosnow.platform.showVideo(res => {
             switch (res) {
                 case moosnow.VIDEO_STATUS.NOTEND:
+                    this.txtLog.string = "视频未观看完成";
                     console.log('视频未观看完成 ')
                     break;
                 case moosnow.VIDEO_STATUS.ERR:
+                    this.txtLog.string = "获取视频错误";
                     console.log('获取视频错误 ')
                     break;
                 case moosnow.VIDEO_STATUS.END:
+                    this.txtLog.string = "观看视频结束";
                     console.log('观看视频结束 ')
                 default:
                     break;
@@ -309,26 +319,15 @@ export default class Helloworld extends cc.Component {
 
 
     startRecord() {
-        moosnow.platform.startRecord();
+        moosnow.platform.startRecord(300, () => {
+            this.txtLog.string = "开始录屏"
+        });
     }
     private videoPath: string = "";
     stopRecord() {
-        if (moosnow.getAppPlatform() == moosnow.APP_PLATFORM.BYTEDANCE)
-            moosnow.platform.stopRecord((res) => {
-                if (res.videoPath) {
-                    this.videoPath = res.videoPath
-                }
-            });
-        else {
-            moosnow.platform.stopRecord((res) => {
-                // left = 10 表示居左10像素 类似 banner 中的left 
-                moosnow.platform.showShareButton({
-                    left: 0,
-                    top: 0
-                });
-
-            });
-        }
+        moosnow.platform.stopRecord((res) => {
+            this.txtLog.string = "结束录屏"
+        });
     }
 
     shareRecord() {

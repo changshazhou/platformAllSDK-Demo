@@ -19,7 +19,7 @@ window.moosnowConfig = {
         nativeId: ["232026"],
         moosnowAppId: "30270711",
         version: "1.1.0",
-        url:"https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/config/wx9acb3a48ebe80eab.json"
+        url: "https://liteplay-1253992229.cos.ap-guangzhou.myqcloud.com/config/wx9acb3a48ebe80eab.json"
     },
     vivo: {
         bannerId: "aa9a8f1e5403435fa51ec680dbbf0da2",
@@ -55,6 +55,22 @@ window.moosnowConfig = {
         interId: "168777",
         nativeId: ["168779", "168780"],
         moosnowAppId: "tt07e4715998dfbc8b",
+        version: "1.1.0",
+    },
+    hw: {
+        bannerId: "168776",
+        videoId: "168781",
+        interId: "168777",
+        nativeId: ["168779", "168780"],
+        moosnowAppId: "tt07e4715998dfbc8b",
+        version: "1.1.0",
+    },
+    kuai: {
+        bannerId: "168776",
+        videoId: "2300000672_01",
+        interId: "168777",
+        nativeId: ["168779", "168780"],
+        moosnowAppId: "ks668221594932228918",
         version: "1.1.0",
     }
 }
