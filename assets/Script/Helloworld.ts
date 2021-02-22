@@ -433,15 +433,17 @@ export default class Helloworld extends cc.Component {
         });
     }
 
-    showCustomBanner() {
-        moosnow.platform.showBanner(false, () => { }, moosnow.BANNER_HORIZONTAL.CENTER, moosnow.BANNER_VERTICAL.BOTTOM, 0, {
-            left: 0,
-            top: 0,
-            width: 320,
-            height: 210
+    showGamePortalAd() {
+        moosnow.platform.showGamePortalAd(() => {
+            console.log(" 主动关闭了")
         })
     }
-
+    showGameBannerAd() {
+        moosnow.platform.showGameBannerAd()
+    }
+    hideGameBannerAd() {
+        moosnow.platform.hideGameBannerAd()
+    }
     showLogin() {
         moosnow.platform.login(() => {
             this.txtToken.string = ""

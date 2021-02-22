@@ -34,5 +34,13 @@ export declare enum APP_PLATFORM {
     /**
     * VIVO
     */
-    UC = 8
+    UC = 8,
+    /**
+    * HW
+    */
+    HW = 9,
+    /**
+     * 快手
+     */
+    KUAI = 10
 }

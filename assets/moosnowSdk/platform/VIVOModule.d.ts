@@ -5,7 +5,7 @@ import { BANNER_HORIZONTAL, BANNER_VERTICAL } from "../enum/BANNER_POSITION";
 export default class VIVOModule extends PlatformModule {
     platformName: string;
     appSid: string;
-    bannerWidth: number;
+    mBannerWidth: number;
     bannerHeight: number;
     private interLoadedShow;
     constructor();
@@ -41,7 +41,7 @@ export default class VIVOModule extends PlatformModule {
     private mMinInterval;
     _createBannerAd(): any;
     private getNotchHeight;
-    _bottomCenterBanner(size: any): void;
+    _onBannerResize(size: any): void;
     _onBannerClose(): void;
     _onBannerHide(): void;
     /**
@@ -57,7 +57,7 @@ export default class VIVOModule extends PlatformModule {
     private mMinHideInterval;
     hideBanner(): void;
     private mVideoTime;
-    createRewardAD(show: any): void;
+    createRewardAD(show: boolean, idIndex?: number): void;
     _onVideoLoad(): void;
     _onVideoClose(isEnd: any): void;
     prepareInter(): void;
@@ -69,6 +69,7 @@ export default class VIVOModule extends PlatformModule {
     _prepareNative(isLoad?: boolean): void;
     _onNativeLoad(res: any): void;
     _onNativeError(err: any): void;
+    private _nativeCallback;
     _destroyNative(): void;
     /**
     * 目前只有OPPO VIVO 平台有此功能

@@ -924,6 +924,7 @@ var mx = (function () {
             _this.interShowCountLimit = 3;
             _this.isInterLoaded = false;
             _this.nativeAdResult = null;
+            _this.nativeAdList = [];
             _this.nativeCb = null;
             _this.nativeLoading = false;
             _this.recordObj = null;
@@ -931,6 +932,7 @@ var mx = (function () {
             _this.versionRet = null;
             _this.prevNavigate = Date.now();
             _this.navigateEnd = true;
+            _this.mLaunchOption = undefined;
             _this.preloadBannerId = "";
             _this.isLoaded = false;
             // this._regisiterWXCallback();
@@ -998,6 +1000,22 @@ var mx = (function () {
         Object.defineProperty(PlatformModule.prototype, "nativeId", {
             get: function () {
                 return this.getAdId(Common.config.nativeId, -1);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(PlatformModule.prototype, "gameBannerId", {
+            get: function () {
+                return this.getAdId(Common.config.gameBannerId, -1);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        Object.defineProperty(PlatformModule.prototype, "gamePortalId", {
+            get: function () {
+                return this.getAdId(Common.config.gamePortalId, -1);
             },
             enumerable: true,
             configurable: true
@@ -1538,7 +1556,7 @@ var mx = (function () {
          * shareTicket	string	shareTicket   分享到群后点击进入小游戏会有此变量
          */
         PlatformModule.prototype.getLaunchOption = function () {
-            if (!this.mLaunchOption) {
+            if (this.mLaunchOption == undefined) {
                 if (window[this.platformName]) {
                     if (window[this.platformName].getEnterOptionsSync)
                         this.mLaunchOption = window[this.platformName].getEnterOptionsSync();
@@ -1893,9 +1911,11 @@ var mx = (function () {
             return bannerId;
         };
         PlatformModule.prototype.triggerBannerError = function (bannerId) {
-            if (this.bannerErrorQuene[bannerId].isError
-                && this.bannerErrorQuene[bannerId].isShow) {
-                this.bannerErrorQuene[bannerId] = null;
+            if (moosnow.platform.bannerErrorQuene
+                && moosnow.platform.bannerErrorQuene[bannerId]
+                && moosnow.platform.bannerErrorQuene[bannerId].isError
+                && moosnow.platform.bannerErrorQuene[bannerId].isShow) {
+                moosnow.platform.bannerErrorQuene[bannerId] = {};
                 moosnow.event.sendEventImmediately(PLATFORM_EVENT.ON_BANNER_ERROR, {
                     bannerId: bannerId,
                     horizontal: this.bannerHorizontal,
@@ -1905,19 +1925,19 @@ var mx = (function () {
         };
         PlatformModule.prototype._onBannerLoad = function (bannerId) {
             console.log("PlatformModule ~ _onBannerLoad ~ bannerId", bannerId);
-            this.bannerErrorQuene[bannerId] = null;
+            this.bannerErrorQuene[bannerId] = {};
             this.bannerShowCount = 0;
         };
         PlatformModule.prototype._onBannerError = function (bannerId, err) {
             console.warn('banner___error:', err);
-            this.banner[bannerId] = null;
-            this.isBannerShow = false;
-            if (!this.bannerErrorQuene[bannerId])
-                this.bannerErrorQuene[bannerId] = {};
-            this.bannerErrorQuene[bannerId].isError = true;
+            moosnow.platform.banner[bannerId] = null;
+            moosnow.platform.isBannerShow = false;
+            if (!moosnow.platform.bannerErrorQuene[bannerId])
+                moosnow.platform.bannerErrorQuene[bannerId] = {};
+            moosnow.platform.bannerErrorQuene[bannerId].isError = true;
             this.triggerBannerError(bannerId);
             if (err && err.errCode != 1004) {
-                this.unschedule(this.refreshBanner);
+                moosnow.platform.unschedule(this.refreshBanner);
             }
         };
         PlatformModule.prototype._onBannerResize = function (bannerId, size) {
@@ -2243,6 +2263,8 @@ var mx = (function () {
             if (!this.banner[this.currentBannerId])
                 return;
             this.banner[this.currentBannerId].bannerShowCount++;
+            if (!this.bannerErrorQuene[this.currentBannerId])
+                this.bannerErrorQuene[this.currentBannerId] = {};
             this.bannerErrorQuene[this.currentBannerId].isShow = false;
             if (this.banner[this.currentBannerId].bannerShowCount >= this.bannerShowCountLimit) {
                 console.log('次数满足,销毁banner');
@@ -2588,6 +2610,16 @@ var mx = (function () {
                 }
             });
         };
+        PlatformModule.prototype.showGameBannerAd = function () {
+        };
+        PlatformModule.prototype.hideGameBannerAd = function () {
+        };
+        PlatformModule.prototype.showGamePortalAd = function (onClose) {
+            if (onClose)
+                onClose();
+        };
+        PlatformModule.prototype.hideGamePortalAd = function () {
+        };
         PlatformModule.prototype.onDisable = function () {
         };
         return PlatformModule;
@@ -2621,7 +2653,7 @@ var mx = (function () {
             });
             var self = this;
             var userToken = moosnow.data.getToken();
-            if (!isNaN(userToken)) {
+            if (userToken && !isNaN(userToken)) {
                 self.getUserToken("", userToken, callback);
             }
             else {
@@ -3174,8 +3206,9 @@ var mx = (function () {
                         }
                         catch (e) {
                             console.error('json parse error ', response);
-                            if (fail)
-                                fail(e);
+                            // if (fail)
+                            //     fail(e);
+                            result = response;
                         }
                         // }
                         if (success)
@@ -3638,48 +3671,6 @@ var mx = (function () {
                 callback(false);
             }
         };
-        /**
-         * 获取误点间隔次数，启动游戏时调用
-         * @param {Funtion} callback 回调参数为misTouchNum:int，当misTouchNum=0时关闭误点，当misTouchNum=n(0除外)时，每隔n次，触发误点1次
-         */
-        HttpModule.prototype.getMisTouchNum = function (callback) {
-            var _this = this;
-            this.loadCfg(function (res) {
-                _this.loadArea(function (res2) {
-                    _this.disableAd(res, res2, function (disable) {
-                        if (disable) {
-                            callback(0);
-                            console.log('getMisTouchNum', 0, 'disableAd', disable);
-                        }
-                        else {
-                            callback(parseInt(res.mistouchNum));
-                            console.log('getMisTouchNum', res.mistouchNum, 'disableAd', disable);
-                        }
-                    });
-                });
-            });
-        };
-        /**
-          * 获取位移间隔次数，启动游戏时调用
-          * @param {Funtion} callback 回调参数为mistouchPosNum:int，当misTouchNum=0时关闭误点，当mistouchPosNum=n(0除外)时，每隔n次，触发误点1次
-          */
-        HttpModule.prototype.getMistouchPosNum = function (callback) {
-            var _this = this;
-            this.loadCfg(function (res) {
-                _this.loadArea(function (res2) {
-                    _this.disableAd(res, res2, function (disable) {
-                        if (disable) {
-                            callback(0);
-                            console.log('getMistouchPosNum', 0, 'disableAd', disable);
-                        }
-                        else {
-                            callback(parseInt(res.mistouchPosNum));
-                            console.log('getMistouchPosNum', res.mistouchPosNum, 'disableAd', disable);
-                        }
-                    });
-                });
-            });
-        };
         HttpModule.prototype.getBannerShowCountLimit = function (callback) {
             this.loadCfg(function (res) {
                 if (isNaN(res.bannerShowCountLimit))
@@ -3801,9 +3792,14 @@ var mx = (function () {
                     appId: Common.config.moosnowAppId,
                     success: function (res) {
                         console.log("\u521D\u59CB\u5316\u5E7F\u544A");
-                        // self.initBanner();
-                        // self.initInter();
-                        self._prepareNative();
+                        moosnow.http.getAllConfig(function (res) {
+                            for (var k in Common.config) {
+                                if (res && res.hasOwnProperty(k)) {
+                                    Common.config[k] = res[k];
+                                }
+                                self._prepareNative();
+                            }
+                        });
                     },
                     fail: function (res) {
                         console.warn("\u521D\u59CB\u5316\u5E7F\u544A\u9519\u8BEF " + res.code + "  " + res.msg);
@@ -3845,13 +3841,6 @@ var mx = (function () {
                             // errCode、errMsg
                             _super.prototype.login.call(_this, callback, fail);
                         }
-                    }).then(function (res) {
-                        if (res.data.token) {
-                            // 使用token进行服务端对接
-                            _this.getUserToken(res.data.token, "", callback);
-                        }
-                    }, function (err) {
-                        _super.prototype.login.call(_this, callback, fail);
                     });
             }
         };
@@ -3891,7 +3880,7 @@ var mx = (function () {
             console.log('token params', params);
             moosnow.http.request(this.baseUrl + "api/login/oppo", params, "POST", function (respone) {
                 console.log("WXModule -> getUserToken -> respone.data", respone.data);
-                if (respone.code == 0 && respone.data && respone.data.user_id) {
+                if (respone.data && !isNaN(respone.data.user_id)) {
                     moosnow.data.setToken(respone.data.user_id);
                 }
                 if (Common.isFunction(callback))
@@ -4510,6 +4499,72 @@ var mx = (function () {
             if (!window[this.platformName].exitApplication)
                 return;
             window[this.platformName].exitApplication();
+        };
+        OPPOModule.prototype.showGameBannerAd = function () {
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createGameBannerAd)
+                return;
+            if (this.getSystemInfoSync().platformVersionCode >= 1076) {
+                if (!this.gameBannerAd) {
+                    this.gameBannerAd = window[this.platformName].createGameBannerAd({
+                        adUnitId: this.gameBannerId
+                    });
+                    this.gameBannerAd.onError(function (err) {
+                        console.log('showGameBannerAd', err);
+                    });
+                }
+                this.gameBannerAd.show().then(function () {
+                    console.log('showGameBannerAd success');
+                }).catch(function (error) {
+                    console.log('showGameBannerAd fail with:' + error.errCode + ',' + error.errMsg);
+                });
+            }
+        };
+        OPPOModule.prototype.hideGameBannerAd = function () {
+            if (this.gameBannerAd)
+                this.gameBannerAd.hide();
+        };
+        OPPOModule.prototype.showGamePortalAd = function (onClose) {
+            var _this = this;
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createGamePortalAd)
+                return;
+            if (this.getSystemInfoSync().platformVersionCode >= 1076) {
+                if (!this.gamePortalAd) {
+                    this.gamePortalAd = window[this.platformName].createGamePortalAd({
+                        adUnitId: this.gamePortalId
+                    });
+                    this.gamePortalAd.onClose(function () {
+                        if (onClose && Common.isFunction(onClose))
+                            onClose();
+                        console.log('互推盒子九宫格广告关闭');
+                    });
+                    this.gamePortalAd.onError(function (err) {
+                        console.log('showGamePortalAd err', err);
+                    });
+                    this.gamePortalAd.onLoad(function () {
+                        console.log('互推盒子九宫格广告加载成功');
+                        _this.gamePortalAd.show()
+                            .then(function () {
+                            console.log('showGamePortalAd success');
+                        }).catch(function (error) {
+                            console.log('showGamePortalAd fail with:' + error.errCode + ',' + error.errMsg);
+                        });
+                    });
+                }
+                else
+                    this.gamePortalAd.load().then(function () {
+                        console.log('load success');
+                    }).catch(function (error) {
+                        console.log('load fail with:' + error.errCode + ',' + error.errMsg);
+                    });
+            }
+        };
+        OPPOModule.prototype.hideGamePortalAd = function () {
+            if (this.gamePortalAd)
+                this.gamePortalAd.hide();
         };
         return OPPOModule;
     }(PlatformModule));
@@ -5779,6 +5834,49 @@ var mx = (function () {
             this.block.style.left = style.left;
             console.log('重置block位置', style);
         };
+        //--------------插屏广告---------------
+        QQModule.prototype.initInter = function () {
+        };
+        QQModule.prototype.prepareInter = function () {
+        };
+        QQModule.prototype.showInter = function () {
+            var _this = this;
+            if (!window[this.platformName])
+                return;
+            if (!window[this.platformName].createInterstitialAd)
+                return;
+            if (Common.isEmpty(this.interId)) {
+                console.warn(MSG.INTER_KEY_IS_NULL);
+                return;
+            }
+            if (!this.inter) {
+                this.inter = window[this.platformName].createInterstitialAd({
+                    adUnitId: this.interId
+                });
+                console.log('创建插屏');
+                this.inter.onLoad(this._onInterLoad);
+                this.inter.onClose(this._onInterClose);
+                this.inter.onError(this._onInterError);
+            }
+            var p = this.inter.load();
+            if (p) {
+                p.then(function (res) {
+                    _this.inter.show();
+                    // console.error('load ok ', res)
+                }).catch(function (err) {
+                    console.error('load error ', err);
+                });
+            }
+        };
+        QQModule.prototype._onInterError = function (res) {
+            console.log('插屏加载错误', res);
+        };
+        QQModule.prototype._onInterLoad = function () {
+            console.log('插屏加载完成');
+        };
+        QQModule.prototype._onInterClose = function () {
+            // this.inter.load();
+        };
         return QQModule;
     }(PlatformModule));
 
@@ -6088,24 +6186,6 @@ var mx = (function () {
         function ZSHttpModule() {
             return _super !== null && _super.apply(this, arguments) || this;
         }
-        /**
-         * 获取误点间隔次数，启动游戏时调用
-         * @param {Funtion} callback 回调参数为misTouchNum:int，当misTouchNum=0时关闭误点，当misTouchNum=n(0除外)时，每隔n次，触发误点1次
-         */
-        ZSHttpModule.prototype.getMisTouchNum = function (callback) {
-            this.loadCfg(function (res) {
-                callback(parseInt(res.mistouchNum));
-            });
-        };
-        /**
-         * 获取位移间隔次数，启动游戏时调用
-         * @param {Funtion} callback 回调参数为mistouchPosNum:int，当misTouchNum=0时关闭误点，当mistouchPosNum=n(0除外)时，每隔n次，触发误点1次
-         */
-        ZSHttpModule.prototype.getMistouchPosNum = function (callback) {
-            this.loadCfg(function (res) {
-                callback(parseInt(res.mistouchPosNum));
-            });
-        };
         ZSHttpModule.prototype.getBannerShowCountLimit = function (callback) {
             this.loadCfg(function (res) {
                 if (isNaN(res.bannerShowCountLimit))
@@ -6467,52 +6547,8 @@ var mx = (function () {
          * @param complete
          */
         VIVOModule.prototype.navigate2Mini = function (row, success, fail, complete) {
-            var _this = this;
-            console.log(MSG.NAVIGATE_DATA, row);
-            if (Date.now() - this.prevNavigate < 300) {
-                console.log(MSG.NAVIGATE_FAST);
-                return;
-            }
-            this.prevNavigate = Date.now();
-            if (!window[this.platformName]) {
-                if (success)
-                    success();
-                return;
-            }
-            var appid = row.appid, path = row.path, extraData = row.extraData, pkgName = row.pkgName;
-            extraData = extraData || {};
-            // 跳转小游戏按钮，支持最低平台版本号'1044' (minPlatformVersion>='1044')
-            if (!this.supportVersion(1044)) {
-                console.log(MSG.PLATFORM_UNSUPPORT);
-                return;
-            }
-            window[this.platformName].navigateToMiniGame({
-                appId: appid,
-                path: path,
-                pkgName: pkgName || appid,
-                extraData: extraData,
-                success: function () {
-                    if (window[_this.platformName] && window[_this.platformName].aldSendEvent) {
-                        window[_this.platformName].aldSendEvent('跳转', {
-                            position: row.position,
-                            appid: appid,
-                            img: row.atlas || row.img
-                        });
-                    }
-                    moosnow.http.exportUser();
-                    if (success)
-                        success();
-                },
-                fail: function (err) {
-                    console.log('navigateToMiniProgram error ', err);
-                    if (fail)
-                        fail();
-                },
-                complete: function () {
-                    if (complete)
-                        complete();
-                }
-            });
+            if (Common.isFunction(success))
+                success();
         };
         VIVOModule.prototype.supportVersion = function (version) {
             var oppoSys = this.getSystemInfoSync();
@@ -6941,7 +6977,12 @@ var mx = (function () {
             this.nativeLoading = false;
             console.log(MSG.NATIVE_LOAD_COMPLETED, res);
             if (res && res.adList && res.adList.length > 0) {
-                this.nativeAdResult = res.adList[res.adList.length - 1];
+                var temp_1 = [];
+                res.adList.forEach(function (item, idx) {
+                    temp_1.push(__assign(__assign({}, item), { hasClick: idx > _this.nativeAdList.length - 1 ? false : _this.nativeAdList[idx].hasClick }));
+                });
+                this.nativeAdList = temp_1;
+                this.nativeAdResult = this.nativeAdList[this.nativeAdList.length - 1];
                 if (!Common.isEmpty(this.nativeAdResult.adId)) {
                     console.log(MSG.NATIVE_REPORT);
                     this.native.reportAdShow({
@@ -6954,23 +6995,11 @@ var mx = (function () {
             }
             else {
                 console.log(MSG.NATIVE_LIST_NULL);
-                if (Common.isFunction(this.nativeCb)) {
-                    moosnow.http.getAllConfig(function (res) {
-                        if (res.nativeErrorShowInter == 1) {
-                            console.log('原生加载出错，用插屏代替');
-                            _this.showInter();
-                        }
-                        else {
-                            _this.nativeCb(null);
-                        }
-                    });
-                }
+                this._nativeCallback();
             }
         };
         VIVOModule.prototype._onNativeError = function (err) {
-            var _this = this;
             this.nativeLoading = false;
-            this.nativeAdResult = null;
             if (err.code == 20003) {
                 if (this.nativeIdIndex < this.nativeId.length - 1) {
                     console.log(MSG.NATIVE_ERROR, err);
@@ -6985,14 +7014,27 @@ var mx = (function () {
             else {
                 console.log(MSG.NATIVE_ERROR2, err);
             }
+            this._nativeCallback();
+        };
+        VIVOModule.prototype._nativeCallback = function () {
+            var _this = this;
             moosnow.http.getAllConfig(function (res) {
                 if (res.nativeErrorShowInter == 1) {
                     console.log('原生加载出错，用插屏代替');
                     _this.showInter();
                 }
                 else {
-                    if (_this.nativeCb)
-                        _this.nativeCb(null);
+                    if (_this.nativeCb) {
+                        var no_click_list = _this.nativeAdList.filter(function (item) { return !item.hasClick; });
+                        if (no_click_list.length > 0)
+                            _this.nativeCb(no_click_list[0]);
+                        else {
+                            if (_this.nativeAdList.length > 0)
+                                _this.nativeCb(_this.nativeAdList[Common.randomNumBoth(0, _this.nativeAdList.length - 1)]);
+                            else
+                                _this.nativeCb(null);
+                        }
+                    }
                 }
             });
         };
@@ -7067,12 +7109,18 @@ var mx = (function () {
          *
          */
         VIVOModule.prototype.clickNative = function (callback) {
+            var _this = this;
             if (this.nativeAdResult && !Common.isEmpty(this.nativeAdResult.adId)) {
                 this.mClickedNativeCallback = callback;
                 this.mIsClickedNative = true;
                 console.log(MSG.NATIVE_CLICK, this.nativeAdResult.adId);
                 this.native.reportAdClick({
                     adId: this.nativeAdResult.adId
+                });
+                this.nativeAdList.forEach(function (item) {
+                    if (item == _this.nativeAdResult) {
+                        item.hasClick = true;
+                    }
                 });
             }
         };
